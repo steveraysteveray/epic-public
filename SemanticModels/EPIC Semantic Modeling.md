@@ -372,8 +372,7 @@ In the case of Event Signals, the OpenADR Specification assumes that the Interva
 ```
 
 
-_Figure 6. Excerpt of an OpenADR message illustrating Intervals of an Pricing Event` \
-`_
+_Figure 6. Excerpt of an OpenADR message illustrating Intervals of an Pricing Event
 
 A SPIN Rule is attached to the _fsgim-sequence:IntervalDataContainer_ Class. The rule will fire iteratively for all Intervals in the Event Sequence. Using a “Property Path” traversal (in the reverse direction now, from child to parent), the rule first finds the dtStart time of the ActivePeriod which corresponds to the dtStart of the first Interval in the sequence (assuming it has uid = ‘0’ (zero)). For any consecutive Intervals which have not yet been assigned a dtStart, the rule calculates its dtStart via the function _efunc:calculateDtStart_. 
 
