@@ -1,4 +1,4 @@
-This repository contains the semantic technology software for a project funded by the California Energy Commission, [Electric Program Investment Charge Program - EPIC](https://www.energy.ca.gov/programs-and-topics/programs/electric-program-investment-charge-epic-program), and led by the University of California - Berkeley. Siemens Corporation and Carnegie Mellon University operated as subcontractors to UC Berkeley to provide these semantic technology deliverables.
+This repository contains the semantic technology software that was completed in 2019 for a project funded by the California Energy Commission, [Electric Program Investment Charge Program - EPIC](https://www.energy.ca.gov/programs-and-topics/programs/electric-program-investment-charge-epic-program), and led by the University of California - Berkeley. Siemens Corporation and Carnegie Mellon University operated as subcontractors to UC Berkeley to provide these semantic technology deliverables.
 
 Credit is due to the following team:
 
@@ -11,7 +11,7 @@ Team members (CMU): Ankit Jain, Rajat Pandey, Dimitris Tzannetos, Prabhu Saitu
 
 # Understanding the EPIC Semantic Modeling Software
 
-Note: This file was generated from some excellent documentation written by Dimitris Tzannetos while he was a graduate student at CMU. However, some of the functions documented may have changed slightly from the time this was written.
+Note: This README file was generated from some excellent documentation written by Dimitris Tzannetos while he was a graduate student at CMU. However, some of the functions documented may have changed slightly from the time this was written.
 
 # Table of Contents
 
