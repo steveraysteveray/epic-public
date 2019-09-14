@@ -338,9 +338,6 @@ In the case of Event Signals, the OpenADR Specification assumes that the Interva
 
 
 ```
-
-
-```
                  <strm:intervals>
                     	<ei:interval>
                        	 <xcal:duration>
