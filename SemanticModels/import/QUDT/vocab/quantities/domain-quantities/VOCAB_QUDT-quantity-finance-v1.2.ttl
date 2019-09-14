@@ -1,0 +1,122 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/finance
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/finance>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "QUDT Finance Quantity Kinds"^^xsd:string ;
+  dc:title "QUDT ISQ Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "TBD"^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-28 00:44:17 -0700 (Thu, 28 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/chemistry"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/isq/quantity/finance> ;
+.
+quantity:Asset
+  rdf:type qudt:FinanceQuantityKind ;
+  qudt:description "An Asset is an economic resource owned by a business or company. Simply stated, assets are things of value that can be readily converted into cash (although cash itself is also considered an asset)."^^xsd:string ;
+  rdfs:label "Asset"^^xsd:string ;
+  skos:prefLabel "Asset"^^xsd:string ;
+.
+quantity:Asset
+  rdf:type qudt:FinanceQuantityKind ;
+  qudt:description "An Asset is an economic resource owned by a business or company. Simply stated, assets are things of value that can be readily converted into cash (although cash itself is also considered an asset)."^^xsd:string ;
+  rdfs:label "Asset"^^xsd:string ;
+  skos:prefLabel "Asset"^^xsd:string ;
+.
+
+quantity:Currency
+  rdf:type qudt:CurrencyQuantityKind ;
+  qudt:description "In economics, currency is a generally accepted medium of exchange. These are usually the coins and banknotes of a particular government, which comprise the physical aspects of a nation's money supply. The other part of a nation's money supply consists of bank deposits (sometimes called deposit money), ownership of which can be transferred by means of cheques, debit cards, or other forms of money transfer. Deposit money and currency are money in the sense that both are acceptable as a means of payment."^^xsd:string ;
+  rdfs:label "Currency"^^xsd:string ;
+  skos:broader quantity:Asset ;
+  skos:exactMatch <http://dbpedia.org/resource/Currency> ;
+  skos:prefLabel "Currency"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Currency> ;
+.
+
+

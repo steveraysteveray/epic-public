@@ -1,0 +1,854 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:cd="http://www.topbraidcomposer.org/2006/04/02/ClassDiagrams.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <cd:Diagram>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >591</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1007</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >86</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >534</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >264</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1198</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >80</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >942</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1015</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicEiEvent-Event"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1023</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1015</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiTargetRef from path energyinterop:eiTargetRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiTarget-Target&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >150</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >443</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >749</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >493</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >166</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >815</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >734</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1200</cd:x>
+        <cd:class rdf:resource="http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#EiEventType"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1050</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1015</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEventDescriptorRef from path energyinterop:eventDescriptorRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEventDescriptor-EventDescriptor&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >198</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >777</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >942</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1190</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/epic#Event"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >102</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >661</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >158</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >281</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:selectedResource rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >102</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >542</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >581</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1197</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >191</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1023</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrPayload"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrPayload-OadrPayload&gt;: derive oadr_helper:hasOadrSignedObjectRef from p2012-07:oadrSignedObjectRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >164</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1023</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrPayload-OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >969</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1015</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiActivePeriodRef from path energyinterop:eiActivePeriodRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiActivePeriod-EmixBaseType&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >264</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1023</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+    <rdfs:label>Top level classes - Rev 2</rdfs:label>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >70</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >447</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >164</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1198</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >618</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1007</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent&gt;: derive oadr_helper:hasEiEventsRef from path p2012-07:oadrEventRef/p2012-07:eiEventRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >996</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1015</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiEventSignalRef from path energyinterop:eiEventSignalsRef/energyinterop:eiEventSignalRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiEventSignal-EventSignal&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >291</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1023</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrSignedObject"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject&gt;: derive oadr_helper:hasOadrDistributeEventRef from p2012-07:oadrDistributeEventRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >182</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >433</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >944</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >502</cd:x>
+        <cd:class rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >438</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >559</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >290</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >383</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+  </cd:Diagram>
+  <cd:Diagram>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >438</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >559</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >544</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >122</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >70</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >447</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >416</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >930</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:selectedResource rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >128</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >751</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEventDescriptorRef from path energyinterop:eventDescriptorRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEventDescriptor-EventDescriptor&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1061</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >718</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >578</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >743</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrSignedObject"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject&gt;: derive oadr_helper:hasOadrDistributeEventRef from p2012-07:oadrDistributeEventRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >102</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >542</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1096</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >888</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >86</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >534</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >551</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >918</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >443</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >755</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrPayload"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrPayload-OadrPayload&gt;: derive oadr_helper:hasOadrSignedObjectRef from p2012-07:oadrSignedObjectRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >74</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >751</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiEventSignalRef from path energyinterop:eiEventSignalsRef/energyinterop:eiEventSignalRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiEventSignal-EventSignal&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1154</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >725</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent&gt;: derive oadr_helper:hasEiEventsRef from path p2012-07:oadrEventRef/p2012-07:eiEventRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >150</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >443</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1061</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >198</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >80</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >20</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >751</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicEiEvent-Event"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >102</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >661</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >412</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >20</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <rdfs:label>Top level classes</rdfs:label>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >551</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >743</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >182</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >433</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >20</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >248</cd:x>
+        <cd:class rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >416</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >755</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrPayload-OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >198</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >777</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >20</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >926</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/epic#Event"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >101</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >751</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiTargetRef from path energyinterop:eiTargetRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiTarget-Target&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >47</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >751</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiActivePeriodRef from path energyinterop:eiActivePeriodRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiActivePeriod-EmixBaseType&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+  </cd:Diagram>
+  <cd:Diagram>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1173</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1078</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiEventSignalRef from path energyinterop:eiEventSignalsRef/energyinterop:eiEventSignalRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiEventSignal-EventSignal&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >88</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1154</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrPayload"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrPayload-OadrPayload&gt;: derive oadr_helper:hasOadrSignedObjectRef from p2012-07:oadrSignedObjectRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1227</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1078</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEventDescriptorRef from path energyinterop:eventDescriptorRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEventDescriptor-EventDescriptor&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >150</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >443</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >673</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >546</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >161</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1154</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >86</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >534</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >161</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1329</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >198</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >777</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1119</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1253</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/epic#Event"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >166</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >815</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >856</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1131</cd:x>
+        <cd:class rdf:resource="http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#EiEventType"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >706</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1145</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent&gt;: derive oadr_helper:hasEiEventsRef from path p2012-07:oadrEventRef/p2012-07:eiEventRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >86</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >324</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1028</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >654</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEventType-oadrEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >182</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >433</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1148</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >543</cd:x>
+        <cd:class rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >679</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1145</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:selectedResource rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1146</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1078</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiActivePeriodRef from path energyinterop:eiActivePeriodRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiActivePeriod-EmixBaseType&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >102</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >661</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >54</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >436</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1200</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1078</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicEiEvent-Event&gt;: derive eiclasses---energy_interoperation_wd36_pr03:hasEiTargetRef from path energyinterop:eiTargetRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicEiTarget-Target&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >134</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >443</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >869</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >541</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEventType"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >70</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >447</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >61</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1329</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >103</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >61</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1154</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicOadrPayload-OadrPayload"/>
+      </cd:URINode>
+    </cd:nodes>
+    <rdfs:label>Top level classes - Rev 3</rdfs:label>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >102</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >542</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >679</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1320</cd:x>
+        <cd:class rdf:resource="http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:BNode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >188</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1154</cd:x>
+        <cd:hostPredicate rdf:resource="http://spinrdf.org/spinmap#rule"/>
+        <cd:hostClass rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrSignedObject"/>
+        <cd:expression>Map into &lt;http://siemens.com/mapping/oadr2epicOadrSignedObject-OadrSignedObject&gt;: derive oadr_helper:hasOadrDistributeEventRef from p2012-07:oadrDistributeEventRef using spinmap:targetResource(?arg1, &lt;http://siemens.com/mapping/oadr2epicOadrDistributeEvent-OadrDistributeEvent&gt;)</cd:expression>
+      </cd:BNode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >17</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >80</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1119</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1078</cd:x>
+        <cd:class rdf:resource="http://siemens.com/mapping/oadr2epicEiEvent-Event"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >438</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >559</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >186</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >538</cd:x>
+        <cd:class rdf:resource="http://openadr.org/oadr-2.0b/2012/07#OadrSignedObject"/>
+      </cd:URINode>
+    </cd:nodes>
+  </cd:Diagram>
+</rdf:RDF>

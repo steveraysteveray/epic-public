@@ -1,0 +1,274 @@
+# baseURI: http://siemens.com/schemas/kps/epic
+# imports: http://cmu.sv.edu/fsgim
+# imports: http://topbraid.org/schema/schema-single-range
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/ns/org
+# prefix: epic
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://siemens.com/schemas/ssf_datatype#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix fsgim-calendar: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#> .
+@prefix fsgim-device: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/device---device_and_model_components#> .
+@prefix fsgim-einterop: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#> .
+@prefix fsgim-em: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_manager_component---device_and_model_components#> .
+@prefix fsgim-emix: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#> .
+@prefix fsgim-energy: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_measurements---measurements#> .
+@prefix fsgim-primitive: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim-sequence: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#> .
+@prefix fsgim-time: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#> .
+@prefix measurements---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/goodrelations/v1#BusinessEntity>
+  rdf:type owl:Class ;
+  rdfs:subClassOf org:FormalOrganization ;
+.
+<http://siemens.com/schemas/kps/epic>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The EPIC ontology is the root ontology for the EPIC project, which is a standards-based and system-agnostic information model integrating energy and building models."^^xsd:string ;
+  dc:subject "Energy and building model integration"^^xsd:string ;
+  dc:title "The EPIC ontology"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "The EPIC ontology integrates energy and building information models."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/epic#"^^xsd:string ;
+  vaem:namespacePrefix "epic"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/epic"^^xsd:anyURI ;
+  rdfs:label "EPIC ontology"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_EPIC-v1.0.ttl 1954 2018-08-22 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://cmu.sv.edu/fsgim> ;
+  owl:imports <http://topbraid.org/schema/schema-single-range> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/ns/org> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+epic:ElectricityPriceKind
+  rdf:type epic:UnitPriceQuantityKind ;
+.
+epic:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://www.linkedmodel.org/schema/dtype#EnumeratedValue> ;
+.
+epic:Event
+  rdf:type owl:Class ;
+  rdfs:subClassOf fsgim-einterop:EiEventType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:EventBaseline ;
+      owl:onProperty fsgim-einterop:hasEiEventBaselineRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:EventDescriptor ;
+      owl:onProperty fsgim-einterop:hasEventDescriptorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:EventSignal ;
+      owl:onProperty fsgim-einterop:hasEiEventSignalRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:Target ;
+      owl:onProperty fsgim-einterop:hasEiTargetRef ;
+    ] ;
+.
+epic:EventBaseline
+  rdf:type owl:Class ;
+  rdfs:subClassOf fsgim-einterop:EiEventBaselineType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:Resource ;
+      owl:onProperty epic:hasResource ;
+    ] ;
+.
+epic:EventDescriptor
+  rdf:type owl:Class ;
+  rdfs:subClassOf fsgim-einterop:EventDescriptorType ;
+.
+epic:EventSignal
+  rdf:type owl:Class ;
+  rdfs:subClassOf fsgim-einterop:EiEventSignalType ;
+.
+epic:Group
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:Target ;
+  rdfs:subClassOf org:Organization ;
+.
+epic:MeasurementMetadataType_1
+  rdf:type measurements---common_primitive_types_classes_and_enumerations:MeasurementMetadataType ;
+.
+epic:Node
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:Target ;
+  rdfs:subClassOf fsgim-em:EM ;
+.
+epic:Party
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:Target ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:Node ;
+      owl:onProperty epic:ownsNode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:Party ;
+      owl:onProperty epic:hasSubParty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:Resource ;
+      owl:onProperty epic:ownsResource ;
+    ] ;
+.
+epic:PayloadFloat
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:PayloadGeneric ;
+  rdfs:subClassOf fsgim-einterop:PayloadFloatType ;
+.
+epic:PayloadGeneric
+  rdf:type owl:Class ;
+  rdfs:subClassOf fsgim-einterop:PayloadBaseType ;
+  rdfs:subClassOf fsgim-em:EMIntervalData ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:Quantity ;
+      owl:onProperty epic:hasQuantity ;
+    ] ;
+.
+epic:PayloadLevel
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:PayloadGeneric ;
+  rdfs:subClassOf fsgim-einterop:PayloadLevelType ;
+.
+epic:PayloadPrice
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:PayloadGeneric ;
+  rdfs:subClassOf fsgim-einterop:PayloadPriceType ;
+.
+epic:PayloadPriceMultiplier
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:PayloadGeneric ;
+  rdfs:subClassOf fsgim-einterop:PayloadPriceMultiplierType ;
+.
+epic:PayloadPriceRelative
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:PayloadGeneric ;
+  rdfs:subClassOf fsgim-einterop:PayloadPriceRelativeType ;
+.
+epic:PayloadQuantity
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:PayloadGeneric ;
+  rdfs:subClassOf fsgim-einterop:PayloadQuantityType ;
+.
+epic:PriceTierQuantityKind
+  rdf:type qudt:DimensionlessQuantityKind ;
+.
+epic:Resource
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:Target ;
+  rdfs:subClassOf fsgim-device:ComponentElement ;
+.
+epic:Target
+  rdf:type owl:Class ;
+  rdfs:subClassOf fsgim-einterop:EiTargetType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:Party ;
+      owl:onProperty epic:hasParty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:VEN ;
+      owl:onProperty epic:hasNode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom org:Organization ;
+      owl:onProperty epic:hasGroup ;
+    ] ;
+.
+epic:USD-Per-kWh
+  rdf:type epic:UnitPriceUnit ;
+.
+epic:UnitPriceQuantityKind
+  rdf:type owl:Class ;
+  rdfs:subClassOf qudt:CurrencyQuantityKind ;
+.
+epic:UnitPriceUnit
+  rdf:type owl:Class ;
+  rdfs:subClassOf qudt:DerivedUnit ;
+  rdfs:subClassOf qudt:FinancialUnit ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:UnitPriceQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+epic:VEN
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:Node ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom epic:Resource ;
+      owl:onProperty epic:managesResource ;
+    ] ;
+.
+epic:VTN
+  rdf:type owl:Class ;
+  rdfs:subClassOf epic:Node ;
+.
+epic:hasGroup
+  rdf:type owl:ObjectProperty ;
+.
+epic:hasNode
+  rdf:type owl:ObjectProperty ;
+.
+epic:hasParty
+  rdf:type owl:ObjectProperty ;
+.
+epic:hasQuantity
+  rdf:type owl:ObjectProperty ;
+  rdfs:range qudt:Quantity ;
+.
+epic:hasResource
+  rdf:type owl:ObjectProperty ;
+  rdfs:range epic:Resource ;
+.
+epic:hasSubParty
+  rdf:type owl:ObjectProperty ;
+  rdfs:range epic:Party ;
+  rdfs:subPropertyOf org:hasSubOrganization ;
+.
+epic:hasTag
+  rdf:type owl:ObjectProperty ;
+.
+epic:managesResource
+  rdf:type owl:ObjectProperty ;
+.
+epic:ownsNode
+  rdf:type owl:ObjectProperty ;
+  rdfs:range epic:Node ;
+.
+epic:ownsResource
+  rdf:type owl:ObjectProperty ;
+  rdfs:range epic:Resource ;
+.
+epic:target
+  rdf:type owl:ObjectProperty ;
+.
+fsgim-einterop:SignalTypeEnumeratedTypeEnumeratedValue
+  rdfs:subClassOf fsgim-einterop:SignalTypeType ;
+.

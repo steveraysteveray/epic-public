@@ -1,0 +1,833 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/propulsion
+# imports: http://qudt.org/1.2/collection/units
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mc: <http://www.linkedmodel.org/owl/schema/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/quantity/propulsion>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Ankur Oberai"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/collection/units> ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity> ;
+.
+quantity:AccelerationOfGravity
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "The acceleration of freely falling bodies under the influence of terrestrial gravity, equal to approximately 9.81 meters (32 feet) per second per second."^^xsd:string ;
+  qudt:symbol "g"^^xsd:string ;
+  rdfs:label "Acceleration Of Gravity"^^xsd:string ;
+  skos:prefLabel "Acceleration Of Gravity"^^xsd:string ;
+.
+quantity:ActionTime
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  rdfs:comment "Action Time (sec)"^^xsd:string ;
+  rdfs:label "Action Time"^^xsd:string ;
+  skos:prefLabel "Action Time"^^xsd:string ;
+.
+quantity:AmbientPressure
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description """The ambient pressure on an object is the pressure of the surrounding medium, such as a gas or liquid, which comes into contact with the object.
+The SI unit of pressure is the pascal (Pa), which is a very small unit relative to atmospheric pressure on Earth, so kilopascals ($kPa$) are more commonly used in this context. """^^xsd:string ;
+  qudt:symbol "p_a"^^xsd:string ;
+  rdfs:label "Ambient Pressure"^^xsd:string ;
+  skos:prefLabel "Ambient Pressure"^^xsd:string ;
+.
+quantity:AngleOfAttack
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Angle of attack  is the angle between the oncoming air or relative wind and a reference line on the airplane or wing."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  rdfs:label "Angle Of Attack"^^xsd:string ;
+  skos:prefLabel "Angle Of Attack"^^xsd:string ;
+.
+quantity:AngularDistance
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Angular distance travelled by orbiting vehicle measured from the azimuth of closest approach."^^xsd:string ;
+  qudt:symbol "\\theta"^^xsd:string ;
+  rdfs:label "Angular Distance"^^xsd:string ;
+  skos:prefLabel "Angular Distance"^^xsd:string ;
+.
+quantity:ApogeeRadius
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Apogee radius of an elliptical orbit"^^xsd:string ;
+  qudt:symbol "r_2"^^xsd:string ;
+  rdfs:label "Apogee Radius"^^xsd:string ;
+  skos:prefLabel "Apogee Radius Of An Elliptical Orbit" ;
+.
+quantity:AverageHeadEndPressure
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "AHEP"^^xsd:string ;
+  qudt:applicableUnit unit:LBF-PER-IN2 ;
+  rdfs:label "Average Head End Pressure"^^xsd:string ;
+  skos:broader quantity:HeadEndPressure ;
+  skos:prefLabel "Average Head End Pressure"^^xsd:string ;
+.
+quantity:AverageSpecificImpulse
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdfs:comment "Avg Specific Impulse (lbf-sec/lbm) "^^xsd:string ;
+  rdfs:label "Average Specific Impulse"^^xsd:string ;
+  skos:broader quantity:SpecificImpulse ;
+  skos:prefLabel "Average Specific Impulse" ;
+.
+quantity:AverageVacuumThrust
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "AVT"^^xsd:string ;
+  qudt:applicableUnit unit:MegaLBF ;
+  rdfs:label "Average Vacuum Thrust"^^xsd:string ;
+  skos:broader quantity:VacuumThrust ;
+  skos:prefLabel "Average Vacuum Thrust"^^xsd:string ;
+.
+quantity:BevelGearPitchAngle
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Pitch angle in bevel gears is the angle between an element of a pitch cone and its axis. In external and internal bevel gears, the pitch angles are respectively less than and greater than 90 degrees."^^xsd:string ;
+  qudt:symbol "\\theta"^^xsd:string ;
+  rdfs:label "Bevel Gear Pitch Angle"^^xsd:string ;
+.
+quantity:BucklingFactor
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "B"^^xsd:string ;
+  rdfs:label "Buckling Factor"^^xsd:string ;
+  skos:prefLabel "Buckling Factor" ;
+.
+quantity:BurnRate
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdfs:label "Burn Rate"^^xsd:string ;
+  skos:prefLabel "Burn Rate"^^xsd:string ;
+.
+quantity:BurnTime
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "t"^^xsd:string ;
+  rdfs:label "Burn Time"^^xsd:string ;
+  skos:prefLabel "Burn Time"^^xsd:string ;
+.
+quantity:CharacteristicVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Characteristic velocity or $c^{*}$ is a measure of the combustion performance of a rocket engine independent of nozzle performance, and is used to compare different propellants and propulsion systems."^^xsd:string ;
+  qudt:symbol "c^{*}" ;
+  rdfs:label "Characteristic Velocity"^^xsd:string ;
+  skos:prefLabel "Characteristic Velocity" ;
+.
+quantity:ClosestApproachRadius
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "r_o"^^xsd:string ;
+  rdfs:label "Closest Approach Radius"^^xsd:string ;
+.
+quantity:CombustionChamberTemperature
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "T_c"^^xsd:string ;
+  rdfs:label "Combustion Chamber Temperature"^^xsd:string ;
+.
+quantity:CrossSectionalArea
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Cross-sectional Area"^^xsd:string ;
+  skos:prefLabel "Cross-sectional Area"^^xsd:string ;
+.
+quantity:DensityInCombustionChamber
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "\\rho_c"^^xsd:string ;
+  rdfs:label "Density In Combustion Chamber"^^xsd:string ;
+.
+quantity:DensityOfTheExhaustGases
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  rdfs:label "Density Of The Exhaust Gases" ;
+  skos:prefLabel "Density Of The Exhaust Gases" ;
+.
+quantity:DistanceTraveledDuringBurn
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "s"^^xsd:string ;
+  rdfs:label "Distance Traveled During a Burn"^^xsd:string ;
+  skos:prefLabel "Distance Traveled During a Burn"^^xsd:string ;
+.
+quantity:DragCoefficient
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "In fluid dynamics, the drag coefficient is a dimensionless quantity that is used to quantify the drag or resistance of an object in a fluid environment such as air or water."^^xsd:string ;
+  qudt:symbol "C_{D}" ;
+  rdfs:label "Drag Coefficient" ;
+  skos:prefLabel "Drag Coefficient" ;
+.
+quantity:DragForce
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description """In fluid dynamics, drag refers to forces which act on a solid object in the direction of the relative fluid flow velocity. Unlike other resistive forces such as dry friction, which is nearly independent of velocity, drag forces depend on velocity.
+Drag forces always decrease fluid velocity relative to the solid object in the fluid's path."""^^xsd:string ;
+  qudt:symbol "D or F_D"^^xsd:string ;
+  rdfs:label "Drag Force" ;
+  skos:prefLabel "Drag Force" ;
+.
+quantity:DynamicPressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Dynamic Pressure (indicated with q, or Q, and sometimes called velocity pressure) is the quantity defined by: $q = 1/2 * \\rho v^{2}$, where (using SI units),  $q$ is dynamic pressure in $pascals$, $\\rho$ is fluid density in $kg/m^{3}$ (for example, density of air) and $v $ is fluid velocity in $m/s$."^^xsd:string ;
+  qudt:symbol "q"^^xsd:string ;
+  rdfs:label "Dynamic Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:exactMatch <http://dbpedia.org/resource/Dynamic_pressure> ;
+  skos:prefLabel "Dynamic Pressure"^^xsd:string ;
+.
+quantity:EarthClosestApproachVehicleVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "V_o"^^xsd:string ;
+  rdfs:label "Earth Closest Approach Vehicle Velocity"^^xsd:string ;
+  skos:broader quantity:VehicleVelocity ;
+.
+quantity:EccentricityOfOrbit
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The orbital eccentricity of an astronomical object is a parameter that determines the amount by which its orbit around another body deviates from a perfect circle. In a two-body problem with inverse-square-law force, every orbit is a Kepler orbit. The eccentricity of this Kepler orbit is a positive number that defines its shape."^^xsd:string ;
+  qudt:symbol "\\varepsilon"^^xsd:string ;
+  rdfs:label "Eccentricity Of Orbit" ;
+  skos:prefLabel "Eccentricity Of Orbit" ;
+.
+quantity:EffectiveExhaustVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The velocity of an exhaust stream after reduction by effects such as friction, non-axially directed flow, and pressure differences between the inside of the rocket and its surroundings. The effective exhaust velocity is one of two factors determining the thrust, or accelerating force, that a rocket can develop, the other factor being the quantity of reaction mass expelled from the rocket in unit time. In most cases, the effective exhaust velocity is close to the actual exhaust velocity."^^xsd:string ;
+  qudt:symbol "v_{e}" ;
+  rdfs:label "Effective Exhaustvelocity" ;
+  skos:prefLabel "Effective Exhaustvelocity" ;
+.
+quantity:ElectricPower
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description """\\textit{Electric Power} is the rate at which electrical energy is transferred by an electric circuit. In the simple case of direct current circuits, electric power can be calculated as the product of the potential difference in the circuit (V) and the amount of current flowing in the circuit (I): $P = VI$, where 
+
+$P$ is the power, $V$ is the potential difference, and $I$ is the current. However, in general electric power is calculated by taking the integral of the vector cross-product of the electrical and magnetic fields over a specified area."""^^xsd:string ;
+  qudt:symbol "p, P_E"^^xsd:string ;
+  rdfs:label "Electric Power"^^xsd:string ;
+  skos:prefLabel "Electric Power"^^xsd:string ;
+.
+quantity:ElectricPropulsionPropellantMass
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "M_P"^^xsd:string ;
+  rdfs:label "Electric Propulsion Propellant Mass"^^xsd:string ;
+  skos:broader quantity:PropellantMass ;
+.
+quantity:ElectricalPowerToMassRatio
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "\\xi"^^xsd:string ;
+  rdfs:label "Electrical Power To Mass Ratio"^^xsd:string ;
+.
+quantity:EllipticalOrbitApogeeVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Velocity at apogee for an elliptical orbit velocity"^^xsd:string ;
+  qudt:symbol "V_a"^^xsd:string ;
+  rdfs:label "Elliptical Orbit Apogee Velocity"^^xsd:string ;
+  skos:broader quantity:VehicleVelocity ;
+.
+quantity:EllipticalOrbitPerigeeVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Velocity at apogee for an elliptical orbit velocity."^^xsd:string ;
+  qudt:symbol "V_p"^^xsd:string ;
+  rdfs:label "Elliptical Orbit Perigee Velocity"^^xsd:string ;
+  skos:broader quantity:VehicleVelocity ;
+.
+quantity:ExhaustGasMeanMolecularWeight
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdfs:label "Exhaust Gas Mean Molecular Weight"^^xsd:string ;
+  skos:prefLabel "Exhaust Gas Mean Molecular Weight"^^xsd:string ;
+.
+quantity:ExhaustGasesSpecificHeat
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Specific heat of exhaust gases at constant pressure."^^xsd:string ;
+  qudt:symbol "c_p"^^xsd:string ;
+  rdfs:label "Exhaust Gases Specific Heat"^^xsd:string ;
+.
+quantity:ExhaustStreamPower
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  rdfs:label "Exhaust Stream Power"^^xsd:string ;
+.
+quantity:ExitPlaneCrossSectionalArea
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Cross-sectional area at exit plane of nozzle"^^xsd:string ;
+  qudt:symbol "A_{e}" ;
+  rdfs:label "Exit Plane Cross-sectional Area"^^xsd:string ;
+.
+quantity:ExitPlanePressure
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "p_{e}" ;
+  rdfs:label "Exit Plane Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+.
+quantity:ExitPlaneTemperature
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "T_e"^^xsd:string ;
+  rdfs:label "Exit Plane Temperature"^^xsd:string ;
+.
+quantity:ExpansionRatio
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit quantity:DimensionlessRatio ;
+  rdfs:label "Expansion Ratio"^^xsd:string ;
+  skos:prefLabel "Expansion Ratio"^^xsd:string ;
+.
+quantity:FastFissionFactor
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdfs:label "Fast Fission Factor"^^xsd:string ;
+  skos:prefLabel "Fast Fission Factor"^^xsd:string ;
+.
+quantity:FinalOrCurrentVehicleMass
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Final Or Current Vehicle Mass" ;
+  skos:prefLabel "Final Or Current Vehicle Mass" ;
+.
+quantity:FirstStageMassRatio
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "Mass ratio for the first stage of a multistage launcher."^^xsd:string ;
+  qudt:symbol "R_1"^^xsd:string ;
+  rdfs:label "First Stage Mass Ratio"^^xsd:string ;
+  skos:broader quantity:MassRatio ;
+.
+quantity:FissionCoreRadiusToHeightRatio
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "R/H"^^xsd:string ;
+  rdfs:label "Fission Core Radius To Height Ratio"^^xsd:string ;
+.
+quantity:FissionFuelUtilizationFactor
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdfs:label "Fission Fuel Utilization Factor"^^xsd:string ;
+.
+quantity:FissionMultiplicationFactor
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The number of fission neutrons produced per absorption in the fuel."^^xsd:string ;
+  rdfs:label "Fission Multiplication Factor"^^xsd:string ;
+.
+quantity:FlightPathAngle
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Flight path angle is defined in two different ways. To the aerodynamicist, it is the angle between the flight path vector (where the airplane is going) and the local atmosphere. To the flight crew, it is normally known as the angle between the flight path vector and the horizon, also known as the climb (or descent) angle."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  rdfs:label "Flight Path Angle" ;
+  skos:prefLabel "Flight Path Angle" ;
+.
+quantity:ForcePerArea
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+.
+quantity:FractionalMass_Stage1
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "Fractional mass allocated to stage 1"^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Fractional Mass (Stage 1)"^^xsd:string ;
+.
+quantity:FractionalMass_Stage2
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "Fractional mass allocated to stage 2"^^xsd:string ;
+  qudt:symbol "B"^^xsd:string ;
+  rdfs:label "Fractional Mass (Stage 2)"^^xsd:string ;
+.
+quantity:FractionalMass_Stage3
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "Fractional mass allocated to stage 3"^^xsd:string ;
+  qudt:symbol "C"^^xsd:string ;
+  rdfs:label "Fractional Mass (Stage 3)"^^xsd:string ;
+.
+quantity:FractionallMass_Stages1-3
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "Fraction of propellant and structural mass assigned to stages 1, 2 and 3."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  rdfs:label "Fractional Mass (Stages 1 through 3)"^^xsd:string ;
+.
+quantity:GravitationalConstant
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The gravitational constant denoted by letter G, is an empirical physical constant involved in the calculation(s) of gravitational force between two bodies."^^xsd:string ;
+  qudt:symbol "G"^^xsd:string ;
+  rdfs:label "Gravitational Constant" ;
+  skos:prefLabel "Gravitational Constant" ;
+.
+quantity:HeadEndPressure
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "HEP"^^xsd:string ;
+  qudt:applicableUnit unit:LBF-PER-IN2 ;
+  rdfs:label "Head End Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:prefLabel "Head End Pressure"^^xsd:string ;
+.
+quantity:HorizontalVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Component of a projectile's velocity, which acts parallel to the ground and does not lift the projectile in the air."^^xsd:string ;
+  qudt:symbol "V_{X}" ;
+  rdfs:label "Horizontal Velocity" ;
+  skos:prefLabel "Horizontal Velocity" ;
+.
+quantity:IgnitionIntervalTime
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  rdfs:label "Ignition interval time"^^xsd:string ;
+  skos:broader quantity:Time ;
+  skos:prefLabel "Ignition interval time"^^xsd:string ;
+.
+quantity:InitialExpansionRatio
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit quantity:DimensionlessRatio ;
+  rdfs:label "Initial Expansion Ratio"^^xsd:string ;
+  skos:broader quantity:ExpansionRatio ;
+  skos:prefLabel "Initial Expansion Ratio"^^xsd:string ;
+.
+quantity:InitialNozzleThroatDiameter
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit unit:IN ;
+  rdfs:label "Initial Nozzle Throat Diameter"^^xsd:string ;
+  skos:broader quantity:NozzleThroatDiameter ;
+.
+quantity:InitialVehicleMass
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "M_{o}" ;
+  rdfs:label "Initial Vehicle Mass" ;
+  skos:prefLabel "Initial Vehicle Mass" ;
+.
+quantity:InitialVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The velocity of a moving body at starting; especially, the velocity of a projectile as it leaves the mouth of a firearm from which it is discharged."^^xsd:string ;
+  qudt:symbol "V_{i}" ;
+  rdfs:label "Initial Velocity"^^xsd:string ;
+  skos:prefLabel "Initial Velocity"^^xsd:string ;
+.
+quantity:IonCurrent
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "An ion current is the influx and/or efflux of ions through an ion channel."^^xsd:string ;
+  qudt:symbol "j"^^xsd:string ;
+  rdfs:label "Ion Current" ;
+  skos:prefLabel "Ion Current" ;
+.
+quantity:IonDensity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "N, n^+, n^-"^^xsd:string ;
+  rdfs:label "Ion Density"^^xsd:string ;
+  skos:prefLabel "Ion Density"^^xsd:string ;
+.
+quantity:IonicCharge
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The total charge of an ion. The charge of an electron; the charge of any ion is equal to this electron charge in magnitude, or is an integral multiple of it."^^xsd:string ;
+  qudt:symbol "q"^^xsd:string ;
+  rdfs:label "Ionic Charge" ;
+  skos:prefLabel "Ionic Charge" ;
+.
+quantity:LiftCoefficient
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The lift coefficient is a dimensionless coefficient that relates the lift generated by a lifting body, the dynamic pressure of the fluid flow around the body, and a reference area associated with the body."^^xsd:string ;
+  qudt:symbol "C_{L}" ;
+  rdfs:label "Lift Coefficient" ;
+  skos:prefLabel "Lift Coefficient" ;
+.
+quantity:LiftForce
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The lift force, lifting force or simply lift is the sum of all the forces on a body that force it to move perpendicular to the direction of flow."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:label "Lift Force" ;
+  skos:prefLabel "Lift Force" ;
+.
+quantity:MachNumber
+  rdf:type qudt:CharacteristicNumber ;
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "\\textit{Mach Number} is a dimensionless quantity representing the speed of an object moving through air or other fluid divided by the local speed of sound. It is commonly used to represent the speed of an object when it is traveling close to or above the speed of sound. The Mach number is commonly used both with objects traveling at high speed in a fluid, and with high-speed fluid flows inside channels such as nozzles, diffusers or wind tunnels. As it is defined as a ratio of two speeds, it is a dimensionless number."^^xsd:string ;
+  qudt:latexDefinition "$Ma = \\frac{v_o}{c_o}$, where $v_0$ is speed, and $c_o$ is speed of sound."^^xsd:string ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+  qudt:symbol "Ma"^^xsd:string ;
+  mc:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Mach Number"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:closeMatch <http://dbpedia.org/resource/Mach_number> ;
+  skos:exactMatch <http://dbpedia.org/resource/Mach_number> ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Mach_number> ;
+  skos:prefLabel "Mach Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31896> ;
+.
+quantity:MassFlowRate
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "\\textit{Mass Flow Rate} is a measure of Mass flux. The common symbol is $\\dot{m}$ (pronounced \"m-dot\"), although sometimes $\\mu$ is used. The SI units are $kg s-1$."^^xsd:string ;
+  qudt:symbol "\\dot{m}"^^xsd:string ;
+  rdfs:label "Mass Flow Rate"^^xsd:string ;
+  rdfs:seeAlso quantity:SpecificImpulse ;
+  skos:prefLabel "Mass Flow Rate"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_flow_rate> ;
+.
+quantity:MassOfElectricalPowerSupply
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "M_{E}" ;
+  rdfs:label "Mass Of Electrical Power Supply" ;
+  skos:prefLabel "Mass Of Electrical Power Supply" ;
+.
+quantity:MassOfSolidBooster
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "M_{SB}" ;
+  rdfs:label "Mass Of Solid Booster" ;
+  skos:prefLabel "Mass Of Solid Booster" ;
+.
+quantity:MassOfTheEarth
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Earth mass is the unit of mass equal to that of the Earth.  Earth mass is often used to describe masses of rocky terrestrial planets."^^xsd:string ;
+  qudt:symbol "M_{oplus}" ;
+  rdfs:label "Mass Of The Earth" ;
+  skos:prefLabel "Mass Of The Earth" ;
+.
+quantity:MassRatio
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "In aerospace engineering, mass ratio is a measure of the efficiency of a rocket. It describes how much more massive the vehicle is with propellant than without; that is, it is the ratio of the rocket's wet mass (vehicle plus contents plus propellant) to its dry mass (vehicle plus contents)"^^xsd:string ;
+  qudt:symbol "R or M_{R}"^^xsd:string ;
+  rdfs:label "Mass Ratio" ;
+  skos:prefLabel "Mass Ratio" ;
+.
+quantity:MaxExpectedOperatingThrust
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "MEOT"^^xsd:string ;
+  qudt:applicableUnit unit:MegaLBF ;
+  rdfs:label "Maximum Expected Operating Thrust"^^xsd:string ;
+  skos:broader quantity:MaxOperatingThrust ;
+  skos:prefLabel "Maximum Expected Operating Thrust"^^xsd:string ;
+.
+quantity:MaxOperatingThrust
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "MOT"^^xsd:string ;
+  qudt:applicableUnit unit:MegaLBF ;
+  rdfs:label "Max Operating Thrust"^^xsd:string ;
+  skos:broader quantity:Thrust ;
+  skos:prefLabel "Max Operating Thrust"^^xsd:string ;
+.
+quantity:MaxSeaLevelThrust
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdfs:comment "Max Sea Level thrust (Mlbf) "^^xsd:string ;
+  rdfs:label "Max Sea Level Thrust"^^xsd:string ;
+  skos:broader quantity:Thrust ;
+  skos:prefLabel "Max Sea Level thrust "^^xsd:string ;
+.
+quantity:MaximumExpectedOperatingPressure
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "MEOP"^^xsd:string ;
+  rdfs:label "Maximum Expected Operating Pressure"^^xsd:string ;
+  skos:prefLabel "Maximum Expected Operating Pressure"^^xsd:string ;
+.
+quantity:MaximumOperatingPressure
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "MOP"^^xsd:string ;
+  qudt:applicableUnit unit:LBF-PER-IN2 ;
+  rdfs:label "Maximum Operating Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:prefLabel "Maximum Operating Pressure"^^xsd:string ;
+.
+quantity:NeutronDiffusionLength
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The neutron diffusion length is equivalent to the relaxation length, that is, to the distance, in which the neutron flux decreases by a factor e"^^xsd:string ;
+  qudt:symbol "L_{r}" ;
+  rdfs:label "Neutron Diffusion Length" ;
+  skos:prefLabel "Neutron Diffusion Length" ;
+.
+quantity:NozzleThroatCrossSectionalArea
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Cross-sectional area of the nozzle at the throat."^^xsd:string ;
+  qudt:symbol "A^*"^^xsd:string ;
+  rdfs:label "Nozzle Throat Cross-sectional Area"^^xsd:string ;
+.
+quantity:NozzleThroatDiameter
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit unit:IN ;
+  rdfs:label "Nozzle Throat Diameter"^^xsd:string ;
+  skos:prefLabel "Nozzle Throat Diameter"^^xsd:string ;
+.
+quantity:NozzleThroatPressure
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "p^*"^^xsd:string ;
+  rdfs:label "Nozzle Throat Pressure"^^xsd:string ;
+  skos:prefLabel "Nozzle Throat Pressure"^^xsd:string ;
+.
+quantity:NozzleWallsThrustReaction
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "F_R"^^xsd:string ;
+  rdfs:label "Nozzle Walls Thrust Reaction"^^xsd:string ;
+.
+quantity:OrbitalAngularMomentumPerUnitMass
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Angular momentum of the orbit per unit mass of the vehicle"^^xsd:string ;
+  qudt:symbol "h"^^xsd:string ;
+  rdfs:label "Orbital Angular Momentum per Unit Mass"^^xsd:string ;
+  skos:prefLabel "Orbital Angular Momentum per Unit Mass"^^xsd:string ;
+.
+quantity:OrbitalRadialDistance
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "r"^^xsd:string ;
+  rdfs:label "Orbital Radial Distance"^^xsd:string ;
+  skos:prefLabel "Orbital Radial Distance"^^xsd:string ;
+.
+quantity:OverRangeDistance
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Additional distance traveled by a rocket because Of excessive initial velocity."^^xsd:string ;
+  qudt:symbol "s_i"^^xsd:string ;
+  rdfs:label "Over-range distance"^^xsd:string ;
+.
+quantity:PayloadMass
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "Payload mass is the mass of the payload carried by the craft. In a multistage spacecraft the payload mass of the last stage is the mass of the payload and the payload masses of the other stages are considered to be the gross masses of the next stages."^^xsd:string ;
+  qudt:symbol "M_P"^^xsd:string ;
+  rdfs:label "Payload Mass"^^xsd:string ;
+  skos:prefLabel "Payload Mass"^^xsd:string ;
+.
+quantity:PayloadRatio
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The payload ratio is defined as the mass of the payload divided by the empty mass of the structure. Because of the extra cost involved in staging rockets, given the choice, it's often more economic to use few stages with a small payload ratio rather than more stages each with a high payload ratio."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:label "Payload Ratio" ;
+  skos:prefLabel "Payload Ratio" ;
+.
+quantity:PermittivityOfFreeSpace
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description """The physical constant called the vacuum permittivity, permittivity of free space or electric constant is an ideal, (baseline) physical constant, which is the value of the absolute dielectric permittivity of classical vacuum. Its value is:
+    """^^xsd:string ;
+  rdfs:label "Permittivity Of Free Space" ;
+  skos:prefLabel "Permittivity Of Free Space" ;
+.
+quantity:PressureBurningRateConstant
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  rdfs:label "Pressure Burning Rate Constant"^^xsd:string ;
+.
+quantity:PressureBurningRateIndex
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "\\beta"^^xsd:string ;
+  rdfs:label "Pressure Burning Rate Index"^^xsd:string ;
+  skos:prefLabel "Pressure Burning Rate Index"^^xsd:string ;
+.
+quantity:PropellantBurnRate
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit unit:IN-PER-SEC ;
+  rdfs:label "Propellant Burn Rate"^^xsd:string ;
+  skos:broader quantity:BurnRate ;
+  skos:prefLabel "Propellant Burn Rate"^^xsd:string ;
+.
+quantity:PropellantMass
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "M_f"^^xsd:string ;
+  rdfs:label "Propellant Mass"^^xsd:string ;
+.
+quantity:PropellantMeanBulkTemperature
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "PMBT"^^xsd:string ;
+  rdfs:label "Propellant Mean Bulk Temperature"^^xsd:string ;
+  skos:broader quantity:PropellantTemperature ;
+  skos:prefLabel "Propellant Mean Bulk Temperature"^^xsd:string ;
+.
+quantity:PropellantTemperature
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdfs:label "Propellant Temperature"^^xsd:string ;
+  skos:broader quantity:TemperaturePerTime ;
+  skos:prefLabel "Propellant Temperature"^^xsd:string ;
+.
+quantity:ResonanceEscapeProbabilityForFission
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Fraction of fission neutrons that manage to slow down from fission to thermal energies without being absorbed."^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  rdfs:label "Resonance Escape Probability For Fission" ;
+  skos:prefLabel "Resonance Escape Probability For Fission" ;
+.
+quantity:RocketAtmosphericTransverseForce
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Transverse force on rocket due to an atmosphere"^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  rdfs:label "Rocket Atmospheric Transverse Force"^^xsd:string ;
+.
+quantity:SecondStageMassRatio
+  rdf:type qudt:MassQuantityKind ;
+  qudt:description "Mass ratio for the second stage of a multistage launcher."^^xsd:string ;
+  qudt:symbol "R_2"^^xsd:string ;
+  rdfs:label "Second Stage Mass Ratio"^^xsd:string ;
+  skos:broader quantity:MassRatio ;
+.
+quantity:SingleStageLauncherMassRatio
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "R_o"^^xsd:string ;
+  rdfs:label "Single Stage Launcher Mass Ratio"^^xsd:string ;
+  skos:broader quantity:MassRatio ;
+.
+quantity:SpecificHeatsRatio
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The ratio of specific heats, for the exhaust gases adiabatic gas constant, is the relative amount of compression/expansion energy that goes into temperature $T$ versus pressure $P$ can be characterized by the heat capacity ratio: $\\gamma\\frac{C_P}{C_V}$, where $C_P$ is the specific heat (also called heat capacity) at constant pressure, while $C_V$ is the specific heat at constant volume. "^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  rdfs:label "Specific Heats Ratio"^^xsd:string ;
+.
+quantity:SpecificImpulse
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The impulse produced by a rocket divided by the mass $mp$ of propellant consumed. Specific impulse ${I_{sp}}$ is a widely used measure of performance for chemical, nuclear, and electric rockets. It is usually given in seconds for both U.S. Customary and International System (SI) units.  The impulse produced by a rocket is the thrust force $F$ times its duration $t$ in seconds. $I_{sp}$ is the thrust per unit mass flowrate, but with $g_o$, is the thrust per weight flowrate. The specific impulse is given by the equation: $I_{sp} = \\frac{F}{\\dot{m}g_o}$."^^xsd:string ;
+  rdfs:label "Specific Impulse" ;
+  rdfs:seeAlso quantity:MassFlowRate ;
+  skos:prefLabel "Specific Impulse" ;
+  prov:wasInfluencedBy <http://www.grc.nasa.gov/WWW/K-12/airplane/specimp.html> ;
+.
+quantity:SpecificThrust
+  rdf:type qudt:PhysicsQuantityKind ;
+  qudt:description "Specific impulse (usually abbreviated Isp) is a way to describe the efficiency of rocket and jet engines. It represents the force with respect to the amount of propellant used per unit time.[1] If the \"amount\" of propellant is given in terms of mass (such as kilograms), then specific impulse has units of velocity. If it is given in terms of Earth-weight (such as kiloponds), then specific impulse has units of time. The conversion constant between the two versions of specific impulse is g. The higher the specific impulse, the lower the propellant flow rate required for a given thrust, and in the case of a rocket the less propellant is needed for a given delta-v per the Tsiolkovsky rocket equation."^^xsd:string ;
+  qudt:designator "Q-160-100"^^xsd:string ;
+  rdfs:label "Specific thrust"^^xsd:string ;
+  rdfs:seeAlso quantity:SpecificImpulse ;
+  owl:sameAs <http://dbpedia.org/resource/Specific_thrust> ;
+  skos:prefLabel "Specific thrust"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Specific_thrust> ;
+.
+quantity:StagePropellantMass
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "M_F"^^xsd:string ;
+  rdfs:label "Stage Propellant Mass"^^xsd:string ;
+.
+quantity:StageStructuralMass
+  rdf:type qudt:MassQuantityKind ;
+  qudt:symbol "M_S"^^xsd:string ;
+  rdfs:label "Stage Structure Mass"^^xsd:string ;
+.
+quantity:StructuralEfficiency
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Structural efficiency is a function of the weight of structure to the afforded vehicle's strength."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  rdfs:label "Structural Efficiency" ;
+  skos:prefLabel "Structural Efficiency" ;
+.
+quantity:ThermalUtilizationFactorForFission
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Probability that a neutron that gets absorbed does so in the fuel material."^^xsd:string ;
+  qudt:symbol "f"^^xsd:string ;
+  rdfs:label "Thermal Utilization Factor For Fission" ;
+  skos:prefLabel "Thermal Utilization Factor For Fission" ;
+.
+quantity:Thrust
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:LongDescription """Thrust is a reaction force described quantitatively by Newton's Second and Third Laws. When a system expels or accelerates mass in one direction the accelerated mass will cause a proportional but opposite force on that system.
+
+1. The pushing or pulling force developed by an aircraft engine or a rocket engine. 
+2. The force exerted in any direction by a fluid jet or by a powered screw, as, the thrust of an antitorque rotor. 
+3. (symbol F). Specifically, in rocketry, F = mv where m is propellant mass flow and v is exhaust velocity relative to the vehicle. Also called momentum thrust."""^^xsd:string ;
+  qudt:description "Thrust is a reaction force described quantitatively by Newton's Second and Third Laws. When a system expels or accelerates mass in one direction the accelerated mass will cause a proportional but opposite force on that system."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/cgs> ;
+  rdfs:label "Thrust"^^xsd:string ;
+  skos:broader quantity:Force ;
+  skos:exactMatch <http://dbpedia.org/resource/Thrust> ;
+  skos:prefLabel "Thrust"^^xsd:string ;
+.
+quantity:ThrustCoefficient
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The thrust force of a jet-propulsion engine per unit of frontal area per unit of incompressible dynamic pressure "^^xsd:string ;
+  qudt:symbol "C_{F}" ;
+  rdfs:label "Thrust Coefficient" ;
+  skos:prefLabel "Thrust Coefficient" ;
+.
+quantity:ThrustToWeightRatio
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "Thrust-to-weight ratio is a ratio of thrust to weight of a rocket, jet engine, propeller engine, or a vehicle propelled by such an engine. It is a dimensionless quantity and is an indicator of the performance of the engine or vehicle."^^xsd:string ;
+  qudt:symbol "\\psi"^^xsd:string ;
+  rdfs:label "Thrust To Weight Ratio" ;
+  skos:prefLabel "Thrust To Weight Ratio" ;
+.
+quantity:ThrusterPowerToThrustEfficiency
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "\\eta"^^xsd:string ;
+  rdfs:label "Thruster Power To Thrust Efficiency"^^xsd:string ;
+.
+quantity:TrueExhaustVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "u_{e}" ;
+  rdfs:label "True Exhaust Velocity" ;
+  skos:prefLabel "True Exhaust Velocity" ;
+.
+quantity:UniversalGasConstant
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description """The gas constant (also known as the molar, universal, or ideal gas constant) is a physical constant which is featured in many fundamental equations in the physical sciences, such as the ideal gas law and the Nernst equation.
+Physically, the gas constant is the constant of proportionality that happens to relate the energy scale in physics to the temperature scale, when a mole of particles at the stated temperature is being considered."""^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  rdfs:label "Universal Gas Constant" ;
+  skos:prefLabel "Universal Gas Constant" ;
+.
+quantity:VacuumThrust
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:abbreviation "VT"^^xsd:string ;
+  qudt:applicableUnit unit:MegaLBF ;
+  rdfs:label "Vacuum Thrust"^^xsd:string ;
+  skos:broader quantity:Thrust ;
+  skos:prefLabel "Vacuum Thrust"^^xsd:string ;
+.
+quantity:VehicleVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:symbol "V"^^xsd:string ;
+  rdfs:label "Vehicle Velocity" ;
+  skos:broader quantity:Velocity ;
+  skos:prefLabel "Vehicle Velocity" ;
+.
+quantity:VerticalVelocity
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:description "The rate at which a body moves upwards at an angle of 90 u00b0 to the ground. It is the component of a projectile's velocity which is concerned with lifting the projectile."^^xsd:string ;
+  qudt:symbol "V_{Z}" ;
+  rdfs:label "Vertical Velocity" ;
+  skos:prefLabel "Vertical Velocity" ;
+.
+quantity:WebTime
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  rdfs:comment "Web Time"^^xsd:string ;
+  rdfs:label "Web Time"^^xsd:string ;
+  skos:prefLabel "Web Time"^^xsd:string ;
+.
+quantity:WebTimeAveragePressure
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit unit:LBF-PER-IN2 ;
+  rdfs:label "Web Time Average Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:prefLabel "Web Time Average Pressure"^^xsd:string ;
+.
+quantity:WebTimeAverageThrust
+  rdf:type qudt:PropulsionQuantityKind ;
+  qudt:applicableUnit unit:MegaLBF ;
+  rdfs:comment "Web Time Avg Thrust (Mlbf)"^^xsd:string ;
+  rdfs:label "Web Time Average Thrust"^^xsd:string ;
+  skos:broader quantity:Thrust ;
+  skos:prefLabel "Web Time Average Thrust"^^xsd:string ;
+.
+<http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Catalog Entry v1.2"^^xsd:string ;
+.

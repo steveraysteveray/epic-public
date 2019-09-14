@@ -1,0 +1,2000 @@
+# baseURI: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://www.linkedmodel.org/1.0/schema/dtype
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/schema/quantity>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "David Price"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Quantities, Units, and Dimensions"^^xsd:string ;
+  dc:title "QUDT Quantity Ontology Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2011-01-04T14:44:26"^^xsd:dateTime ;
+  vaem:description "The 'Quantity' Ontology provides a schema for defining quantities. A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. A quantity has meaning in the context of a measurement (i.e. the thing measured, the measured value, the accuracy of measurement, etc.) whereas the underlying quantity kind is independent of any particular measurement. Thus, length is a quantity kind while the height of a rocket is a specific quantity of length; its magnitude that may be expressed in meters, feet, inches, etc.  Or, as stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure. Many of these quantities are related to each other by various physical laws, and as a result the units of some of the quantities can be expressed as products (or ratios) of powers of other units (e.g., momentum is mass times velocity and velocity is measured in distance divided by time)."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITY-SchemaCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "The intent of the QUDT Quantity Ontology is to specify an OWL schema for describing the attributes and fundamental relationships of quantities. A quantity is a kind of property which exists as a magnitude or multitude with a unit of measure. When a quantity is associated with some thing it becomes a property of that thing."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:name "QUDT"^^xsd:string ;
+  vaem:namespace "http://qudt.org/schema/quantity"^^xsd:string ;
+  vaem:namespacePrefix "quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITY-SchemaCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "Quantity Schema"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://www.linkedmodel.org/1.0/schema/dtype> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:versionIRI <http://qudt.org/1.2/schema/quantity> ;
+  owl:versionInfo "$Id: SCHEMA_quantity-v1.2.ttl 1937 2013-04-03 01:53:29Z rhodgson $"^^xsd:string ;
+.
+qudt:AbsorbedDoseRateUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AbsorbedDoseRate ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AbsorbedDoseUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AbsorbedDose ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AccelerationUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:AcousticsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Acoustics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+.
+qudt:ActivityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Activity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AeroThermalDynamicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Aerothermal Dynamics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AerodynamicsQuantityKind ;
+.
+qudt:AerodynamicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Aerodynamics is a branch of dynamics concerned with the study of forces and the resulting motion of objects through the air, particularly when it interacts with a solid object. Aerodynamics is a subfield of fluid dynamics and gas dynamics, with much theory shared between them. Aerodynamics is often used synonymously with gas dynamics, with the difference being that gas dynamics applies to all gases."^^xsd:string ;
+  rdfs:label "Aerodynamics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:FluidDynamicsQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Aerodynamics> ;
+  prov:wasInfluencedBy <http://www.grc.nasa.gov/WWW/K-12/airplane/short.html> ;
+.
+qudt:AmountOfSubstanceTemperatureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:TemperatureAmountOfSubstance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AmountOfSubstanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AmountOfSubstance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AngleUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Angle ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AngularAccelerationUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AngularAcceleration ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AngularMassUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MomentOfInertia ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AngularMomentumUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AngularMomentum ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AngularVelocityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AngularVelocity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AreaAngleUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AreaAngle ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AreaTemperatureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AreaTemperature ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AreaThermalExpansionUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AreaThermalExpansion ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AreaTimeTemperatureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AreaTimeTemperature ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AreaUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Area ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ArtificalGravityQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Artifical Gravity Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:StructuresAndMechanicsQuantityKind ;
+.
+qudt:AstrionicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Astrionics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+  skos:definition "Astrionics is the science and technology of the development and application of electronic systems, sub-systems, and components used in spacecraft. The electronic systems on board a spacecraft include attitude determination and control, communications, command and telemetry, and computer systems. Sensors refers to the electronic components on board a spacecraft. For engineers one of the most important considerations that must be made in the design process is the environment in which the spacecraft systems and components must operate and endure. The challenges of designing systems and components for the space environment include more than the fact that space is a vacuum."^^xsd:string ;
+.
+qudt:AstrobiologyQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Astrobiology Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:BiologyQuantityKind ;
+.
+qudt:AstrodynamicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Astrodynamics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+.
+qudt:AtmosphericChemistryQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Atmospheric chemistry is a branch of atmospheric science in which the chemistry of the Earth's atmosphere and that of other planets is studied. It is a multidisciplinary field of research and draws on environmental chemistry, physics, meteorology, computer modeling, oceanography, geology and volcanology and other disciplines. Research is increasingly connected with other areas of study such as climatology."^^xsd:string ;
+  rdfs:label "Atmospheric chemistry quantity kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AtmosphericScienceQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Atmospheric_chemistry> ;
+.
+qudt:AtmosphericPhysicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Atmospheric physics is the application of physics to the study of the atmosphere. Atmospheric physicists attempt to model Earth's atmosphere and the atmospheres of the other planets using fluid flow equations, chemical models, radiation balancing, and energy transfer processes in the atmosphere (as well as how these tie in to other systems such as the oceans). In order to model weather systems, atmospheric physicists employ elements of scattering theory, wave propagation models, cloud physics, statistical mechanics and spatial statistics which are highly mathematical and related to physics. It has close links to meteorology and climatology and also covers the design and construction of instruments for studying the atmosphere and the interpretation of the data they provide, including remote sensing instruments. At the dawn of the space age and the introduction of sounding rockets, aeronomy became a subdiscipline concerning the upper layers of the atmosphere, where dissociation and ionization are important."^^xsd:string ;
+  rdfs:label "Atmospheric Physics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AtmosphericScienceQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Atmospheric_physics> ;
+.
+qudt:AtmosphericScienceQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Atmospheric Science Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ScienceQuantityKind ;
+.
+qudt:AtomicChargeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AtomicCharge ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AtomicMassUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:AtomicPhysicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Atomic Physics" ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+.
+qudt:AtomicUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:AtomicPhysicsQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:AtomicPhysicsQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:AttitudeControlQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Attitude Control Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AstrionicsQuantityKind ;
+.
+qudt:AvionicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Avionics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:BaseUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:BendingMomentOrTorqueUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LengthByForce ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:BinaryPrefixUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:BioChemistryQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Bio chemistry quantity kind"^^xsd:string ;
+  rdfs:subClassOf qudt:LifeSciencesQuantityKind ;
+.
+qudt:BioInformaticsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Bio informatics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:InformaticsQuantityKind ;
+.
+qudt:BiologyQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Biology"^^xsd:string ;
+  rdfs:subClassOf qudt:ScienceQuantityKind ;
+.
+qudt:BiomechanicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Biomechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+.
+qudt:BiomedicalUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:CapacitanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Capacitance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:CatalyticActivityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:CatalyticActivity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:CelestialMechanicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description "The branch of astronomy that calculates the orbits of celestial bodies and their gravitational attractions, and the orbits of artificial satellites and space probes. A spacecraft approaching a planet can use radio science to measure its own acceleration caused by the planet's gravity. This can be translated into a measurement of the planet's mass and, if images are available, its density."^^xsd:string ;
+  rdfs:label "Celestial Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780192806314.001.0001/acref-9780192806314-e-298> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199765324.001.0001/acref-9780199765324-e-0341> ;
+.
+qudt:CharacteristicNumber
+  rdf:type owl:Class ;
+  dc:description "\\textit{Characteristic Numbers} are quantities of dimension one. Hence the coherent unit of all characteristic numbers is the number one, symbol $1$. For example, characteristic numbers are used in fluid dynamics to describe an aspect of the flow. Other examples are \\textit{Biot Number},\\textit{Euler Number},\\textit{Froude Number},\\textit{Grashof Number},\\textit{Knudsen Number},\\textit{Mach Number},\\textit{Nusselt Number},Pé\\textit{clet Number},\\textit{Prandtl Number},\\textit{Rayleigh Number},\\textit{Reynolds Number},\\textit{Schmidt Number},\\textit{Sherwood Number},\\textit{Stanton Number},\\textit{Strouhal Number},and \\textit{Weber}."^^xsd:string ;
+  rdfs:label "Characteristic Number"^^xsd:string ;
+  rdfs:subClassOf qudt:Quantity ;
+  skos:prefLabel "Characteristic Number"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Characteristic_number_(fluid_dynamics)> ;
+.
+qudt:ChemicalEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Chemical Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+.
+qudt:ChemistryQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Chemistry Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ScienceQuantityKind ;
+  skos:exactMatch <http://dbpedia.org/resource/Chemistry> ;
+.
+qudt:ChemistryUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:ChemistryQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:ChemistryQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ClassicalMechanicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Classical Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:MechanicsQuantityKind ;
+.
+qudt:ClimatologyQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Climatology is the study of climate, scientifically defined as weather conditions averaged over a period of time.Traditionally it is regarded as a branch of the atmospheric sciences."^^xsd:string ;
+  rdfs:label "Climatology Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AtmosphericScienceQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Climatology> ;
+.
+qudt:CoefficientOfHeatTransferUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:CoefficientOfHeatTransfer ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:CommunicationsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Communications Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+  skos:exactMatch <http://dbpedia.org/resource/Communication> ;
+.
+qudt:CommunicationsUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:ComputerScienceQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Computer Science Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ScienceQuantityKind ;
+.
+qudt:ComputingUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:ConcentrationUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AmountOfSubstancePerUnitVolume ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ConductanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricConductivity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ConfigurationManagementQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Configuration Management Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+.
+qudt:ConstantValue
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Constant value"^^xsd:string ;
+  rdfs:subClassOf qudt:QuantityValue ;
+.
+qudt:ContinuumMechanicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Continuum Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:MechanicsQuantityKind ;
+.
+qudt:ControlEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Control Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+.
+qudt:CostEstimationQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Cost estimation"^^xsd:string ;
+  rdfs:subClassOf qudt:FinanceQuantityKind ;
+.
+qudt:CountingUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:CryogenicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Cryogenics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+.
+qudt:CurrencyQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Currency Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:FinanceQuantityKind ;
+.
+qudt:CurrencyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Currency ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:CurrentPerAngleUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricCurrentPerAngle ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:CurvatureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:DataRateUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:DataRate ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:DecimalPrefixUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:DerivedUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:DimensionlessQuantityKind
+  rdf:type owl:Class ;
+  dc:description "A \\textit{Dimensionless} Quantity is simply a numeric value that  is typically a count or a ratio. Dimensionless quantities are often defined as products or ratios of quantities that are not dimensionless, but whose dimensions cancel out when their powers are multiplied."^^xsd:string ;
+  rdfs:label "Dimensionless Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:QuantityKind ;
+.
+qudt:DimensionlessUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Dimensionless ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Dimensionless ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:DoseEquivalentUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:DoseEquivalent ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:DynamicViscosityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:DynamicViscosity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricChargeAreaDensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:PolarizationField ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricChargeDensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:ElectricChargeLineDensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricChargeLineDensity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricChargeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricCharge ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricChargeVolumeDensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricChargeVolumeDensity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricCurrentDensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricCurrentDensity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricCurrentUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricCurrent ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricDipoleMomentUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricDipoleMoment ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricFieldStrengthUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricFieldStrength ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricFluxDensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricDisplacement ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectricFluxUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:ElectricalEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Electrical Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+  skos:prefLabel "Electrical engineering quantity kind"^^xsd:string ;
+.
+qudt:ElectricityAndMagnetismQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Electricity and Magnetism"^^xsd:string ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+.
+qudt:ElectricityAndMagnetismUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:ElectricityAndMagnetismQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:ElectricityAndMagnetismQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ElectrochemistryUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:ElectronicEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Electronic Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+.
+qudt:EnergyAndWorkPerMassAmountOfSubstance
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:EnergyAndWorkPerMassAmountOfSubstance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:EnergyAndWorkUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:EnergyAndWork ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:EnergyDensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:EnergyDensity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:EnergyPerAreaUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:EnergyPerArea ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:EnergyPerElectricChargeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectromotiveForce ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:EnergyQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Energy quantity kind"^^xsd:string ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+.
+qudt:EngineeringQuantityKind
+  rdf:type owl:Class ;
+  dc:description """Engineering is the science, skill, and profession of acquiring and applying scientific, economic, social, and practical knowledge, in order to design and also build structures, machines, devices, systems, materials and processes.
+
+\\textit{Quantity Kinds} are organzied primarily by domain (subject area of knowledge), however, some \\textit{Quantity Kinds} are specific to the application of a domain of knowledge.  These \\textit{Quantity Kinds} are organized according to  well-known fields of engineering."""^^xsd:string ;
+  rdfs:label "Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:QuantityKind ;
+  skos:prefLabel "Engineering quantity kind"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Engineering> ;
+.
+qudt:EnumeratedValue
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:Enumeration
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:EnvironmentControlQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Environment Control Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:EventUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:ExposureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Exposure ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:FinanceQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Finance Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:QuantityKind ;
+  skos:exactMatch <http://dbpedia.org/resource/Finance> ;
+.
+qudt:FinancialUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:FinanceQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:FinanceQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:FluidDynamicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description """Fluid dynamics is the sub-discipline of fluid mechanics dealing with fluids (liquids and gases) in motion. It has several subdisciplines itself, including aerodynamics (the study of gases in motion) and hydrodynamics (the study of liquids in motion). Fluid dynamics has a wide range of applications, including calculating forces and moments on aircraft, determining the mass flow rate of petroleum through pipelines, predicting weather patterns, understanding nebulae in interstellar space and reportedly modelling fission weapon detonation. Some of its principles are even used in traffic engineering, where traffic is treated as a continuous fluid.
+
+Fluid dynamics offers a systematic structure that underlies these practical disciplines and that embraces empirical and semi-empirical laws, derived from flow measurement, used to solve practical problems. The solution of a fluid dynamics problem typically involves calculation of various properties of the fluid, such as velocity, pressure, density, and temperature, as functions of space and time."""^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Fluid Dynamics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:FluidMechanicsQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fluid_dynamics> ;
+.
+qudt:FluidMechanicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Fluid Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+.
+qudt:ForcePerElectricChargeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ForcePerElectricCharge ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ForcePerLengthUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ForcePerLength ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ForceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Force ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:FrequencyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:GravitationalAttractionUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:GravitationalAttraction ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:GuidanceAndNavigationQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Guidance And Navigation Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AstrionicsQuantityKind ;
+  rdfs:subClassOf qudt:AvionicsQuantityKind ;
+.
+qudt:HeartRateUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:HeartRate ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:HeatCapacityAndEntropyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:HeatCapacity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:HeatFlowRateUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricPower ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:HeatFlowRate ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:HumanFactorsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Human Factors Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SocialScienceQuantityKind ;
+.
+qudt:HumanUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:HydraulicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Hydraulics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+.
+qudt:HydrodynamicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Hydrodynamics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:FluidDynamicsQuantityKind ;
+.
+qudt:HypersonicAerodynamicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Hypersonic Aerodynamics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AerodynamicsQuantityKind ;
+  skos:definition "Hypersonic aerodynamics is a special branch of the study of aeronautics. The chief characteristic of hypersonic aerodynamics is that the temperature of the flow around the aircraft is so great that the chemistry of the gas must be considered. At low hypersonic speeds, the molecular bonds vibrate, which changes the magnitude of the forces generated by the air on the aircraft. At higher hypersonic speeds, the molecules break apart producing an electrically charged plasma around the aircraft. Large variations in air density and pressure occur because of shock waves, and expansions. Hypersonic aircraft typically have very thick boundary layers along the surface and high heat transfer to the surface. All of these high speed flow phenomena lead to a vehicle design unlike the typical airliner or fighter aircraft."^^xsd:string ;
+  prov:wasInfluencedBy <http://www.grc.nasa.gov/WWW/BGH/bgh.html> ;
+.
+qudt:IlluminanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Illuminance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:InductanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Inductance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:InformaticsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Infomatics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ComputerScienceQuantityKind ;
+  skos:prefLabel "Infomatics quantity kind"^^xsd:string ;
+.
+qudt:InformationEntropyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:InformationEntropy ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:InformationTheoryQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Information Theory Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:InformaticsQuantityKind ;
+  skos:exactMatch <http://dbpedia.org/resource/Information> ;
+.
+qudt:IntegratedSystemHealthMonitoringQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Integrated System Health Management (ISHM) is the unified capability of systems to assess the current or future state of the member system health and integrate that picture of system health within a framework of available resources and operational demand."^^xsd:string ;
+  rdfs:label "Integrated System Health Monitoring (ISHM) Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+  skos:prefLabel "Integrated system health monitoring"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Integrated_Vehicle_Health_Management> ;
+.
+qudt:IntegratedVehicleHealthManagementQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Integrated Vehicle Health Management (IVHM) is the unified capability of systems to assess the current or future state of the member system health and integrate that picture of system health within a framework of available resources and operational demand."^^xsd:string ;
+  rdfs:label "Integrated Vehicle Health Management (IVHM) Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+  prov:wasInfluencedBy <http://archive.org/details/nasa_techdoc_20020063487> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Integrated_Vehicle_Health_Management> ;
+  prov:wasInfluencedBy <http://www.nasa.gov/centers/ames/research/humaninspace/humansinspace-ivhm.html> ;
+.
+qudt:InverseAmountOfSubstanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:KinematicViscosityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:KinematicViscosity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:KinematicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Kinematics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+.
+qudt:KnowledgeEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Knowledge Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+.
+qudt:LengthTemperatureTimeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LengthTemperatureTime ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LengthTemperatureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LengthTemperature ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LengthUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Length ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LifeSciencesQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Life Sciences Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:BiologyQuantityKind ;
+.
+qudt:LightQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Light quantity kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ScienceQuantityKind ;
+.
+qudt:LinearAccelerationUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LinearAcceleration ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LinearEnergyTransferUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LinearEnergyTransfer ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LinearMomentumUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LinearMomentum ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LinearThermalExpansionUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LinearThermalExpansion ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LinearVelocityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LinearVelocity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LoadsAnalysisQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Loads Analysis Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:StructuresAndMechanicsQuantityKind ;
+.
+qudt:LoadsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Loads Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:LogarithmicUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:LogisticsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Logistics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ManagementQuantityKind ;
+.
+qudt:LuminanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Luminance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LuminousEfficacyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:LuminousEnergyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:LuminousFluxUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LuminousFlux ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:LuminousIntensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LuminousIntensity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MagneticFieldStrengthUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AuxillaryMagneticField ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MagneticFluxDensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MagneticFluxDensity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MagneticFluxUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MagneticFlux ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MagnetomotiveForceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MagnetomotiveForce ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ManagementQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Management Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:QuantityKind ;
+.
+qudt:MassAmountOfSubstanceTemperatureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MassAmountOfSubstanceTemperature ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MassAmountOfSubstanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MassAmountOfSubstance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MassPerAreaUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MassPerArea ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MassPerLengthUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MassPerLength ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MassPerTimeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MassPerTime ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MassPerVolumeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Density ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MassPropertyQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Mass property quantity kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+.
+qudt:MassQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Mass Properties Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ClassicalMechanicsQuantityKind ;
+.
+qudt:MassTemperatureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MassTemperature ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MassUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Mass ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MaterialsScienceQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Materials Science Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ScienceQuantityKind ;
+.
+qudt:MechanicalEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Mechanical Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+  skos:exactMatch <http://dbpedia.org/resource/Mechanics> ;
+.
+qudt:MechanicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Mechanics is the branch of science concerned with the behavior of physical bodies when subjected to forces or displacements, and the subsequent effects of the bodies on their environment. The foundation is known as classical mechanics. It is a branch of classical physics that deals with the particles that are moving either with less velocity or that are at rest. It can also be defined as a branch of science which deals with the motion and force of the particular object."^^xsd:string ;
+  rdfs:label "Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mechanics> ;
+.
+qudt:MechanicsUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:MechanicalEngineeringQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:MechanicalEngineeringQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MechanismsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Mechanisms Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:StructuresAndMechanicsQuantityKind ;
+.
+qudt:MedicalInformaticsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Medical Informatics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:InformaticsQuantityKind ;
+.
+qudt:MedicineQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Medicine Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:LifeSciencesQuantityKind ;
+.
+qudt:MeteorologyQuantityKind
+  rdf:type owl:Class ;
+  dc:description """Meteorology is the interdisciplinary scientific study of the atmosphere. Meteorological phenomena are observable weather events which illuminate, and are explained by the science of meteorology. Those events are bound by the variables that exist in Earth's atmosphere; temperature, air pressure, water vapor, and the gradients and interactions of each variable, and how they change in time. Different spatial scales are studied to determine how systems on local, regional, and global levels impact weather and climatology.
+Meteorology, climatology, atmospheric physics, and atmospheric chemistry are sub-disciplines of the atmospheric sciences. 
+
+Meteorology and hydrology compose the interdisciplinary field of hydrometeorology. Interactions between Earth's atmosphere and the oceans are part of coupled ocean-atmosphere studies. Meteorology has application in many diverse fields such as the military, energy production, transport, agriculture and construction."""^^xsd:string ;
+  rdfs:label "Meteorology Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AtmosphericScienceQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Meteorology> ;
+.
+qudt:MicrobialFormationUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MicrobialFormation ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MissionPlanningQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Mission Planning Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ManagementQuantityKind ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:ModelingAndSimulationQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Modeling and Simulation Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+.
+qudt:MolalConcentrationUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AmountOfSubstancePerUnitMass ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MolarConcentrationUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AmountOfSubstancePerUnitVolume ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MolarEnergyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MolarEnergy ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MolarHeatCapacityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:MolarHeatCapacity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:MomentumUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:NaturalUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:NonSI-Unit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:NotUsedWithSI-Unit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:NuclearPhysicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Nuclear Physics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:QuantumMechanicsQuantityKind ;
+.
+qudt:NutritionQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Nutrition Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:LifeSciencesQuantityKind ;
+.
+qudt:OpticsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Optics"^^xsd:string ;
+  rdfs:subClassOf qudt:LightQuantityKind ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+  skos:exactMatch <http://dbpedia.org/resource/Light> ;
+.
+qudt:OpticsUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:OpticsQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:OpticsQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:OrbitalMechanicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description """\\textit{Orbital Mechanics} or \\textit{astrodynamics} is the application of ballistics and celestial mechanics to the practical problems concerning the motion of rockets and other spacecraft. The motion of these objects is usually calculated from Newton's laws of motion and Newton's law of universal gravitation. It is a core discipline within space mission design and control. Celestial mechanics treats more broadly the orbital dynamics of systems under the influence of gravity, including both spacecraft and natural astronomical bodies such as star systems, planets, moons, and comets. 
+
+Orbital mechanics focuses on spacecraft trajectories, including orbital maneuvers, orbit plane changes, and interplanetary transfers, and is used by mission planners to predict the results of propulsive maneuvers. General relativity is a more exact theory than Newton's laws for calculating orbits, and is sometimes necessary for greater accuracy or in high-gravity situations (such as orbits close to the Sun)."""^^xsd:string ;
+  rdfs:label "Orbital Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:AstrodynamicsQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Orbital_mechanics> ;
+.
+qudt:ParticlePhysicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Particle physics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:QuantumMechanicsQuantityKind ;
+.
+qudt:PermeabilityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Permeability ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Permeability ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:PermittivityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Permittivity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:PhotometryQuantityKind
+  rdf:type owl:Class ;
+  qudt:description "Photometry is the field that studies the measurement of electromagnetic radiation, including visible light. Note that light is also measured using the techniques of photometry, which deal with brightness as perceived by the human eye, rather than absolute power."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Photometry Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:OpticsQuantityKind ;
+.
+qudt:PhotometryUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:PhysicalConstant
+  rdf:type owl:Class ;
+  dc:description "A physical constant is a physical quantity that is generally believed to be both universal in nature and constant in time. It can be contrasted with a mathematical constant, which is a fixed numerical value but does not directly involve any physical measurement. There are many physical constants in science, some of the most widely recognized being the speed of light in vacuum c, Newton's gravitational constant G, Planck's constant h, the electric permittivity of free space ε0, and the elementary charge e. Physical constants can take many dimensional forms, or may be dimensionless depending on the system of quantities and units used."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Physical Constant"^^xsd:string ;
+  rdfs:subClassOf qudt:Quantity ;
+  skos:exactMatch <http://dbpedia.org/resource/Physical_constant> ;
+.
+qudt:PhysicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description "The study of the laws that determine the structure of the universe with reference to the matter and energy of which it consists. It is concerned not with chemical changes that occur but with the forces that exist between objects and the interrelationship between matter and energy. Physics covers phenomena associated with heat, light, sound, electricity and magnetism, and mechanics. Since the turn of the century, quantum mechanics and relativistic physics have led to the growth of modern physics embracing atomic physics, nuclear physics, and particle physics. The physics of astronomical bodies and their interactions is known as astrophysics, the physics of the earth is known as geophysics, and the study of the physical aspects of biology is called biophysics. Each phenomenon of physics has \\textit{Quantity Kinds}. These are paritioned according to their respective fields of knowledge."^^xsd:string ;
+  rdfs:label "Physics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ScienceQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Physics> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-2324> ;
+  prov:wasInfluencedBy <http://www.physicsforums.com> ;
+.
+qudt:PhysicsUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:PlaneAngleUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:PlasmaDynamicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description "\\textit{Plasma Dynamics} is a branch of \\textit{Plasma Physics} which characterizes phenomena associated with the flows of nonequilibrium gases and plasmas. The field has relevance for the research and devlopment of systems of electric propulsion, hypersonic aerothermodynamics, flows involving very small length scales (MEMS devices), and materials processing (jets used in deposition thin films for advanced materials). Due to nonequilibrium effects, these flows cannot always be computed accurately with the macroscopic equations of gas dynamics and plasma physics. "^^xsd:string ;
+  rdfs:label "Plasma Dynamics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:PlasmaPhysicsQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nonequilibrium_Gas_and_Plasma_Dynamics_Laboratory> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Plasma_physics> ;
+.
+qudt:PlasmaPhysicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description """In physics and chemistry, plasma is a state of matter similar to gas in which a certain portion of the particles is ionized. Heating a gas may ionize its molecules or atoms (reduce or increase the number of electrons in them), thus turning it into a plasma, which contains charged particles: positive ions and negative electrons or ions. 
+
+Ionization can be induced by other means, such as strong electromagnetic field applied with a laser or microwave generator, and is accompanied by the dissociation of molecular bonds, if present. The presence of a non-negligible number of charge carriers makes the plasma electrically conductive so that it responds strongly to electromagnetic fields. 
+
+Plasma, therefore, has properties quite unlike those of solids, liquids, or gases and is considered a distinct state of matter. Like gas, plasma does not have a definite shape or a definite volume unless enclosed in a container; unlike gas, under the influence of a magnetic field, it may form structures such as filaments, beams and double layers. Some common plasmas are found in stars and neon signs. In the universe, plasma is the most common state of matter for ordinary matter, most of which is in the rarefied intergalactic plasma (particularly intracluster medium) and in stars. Much of the understanding of plasmas has come from the pursuit of controlled nuclear fusion and fusion power, for which plasma physics provides the scientific basis."""^^xsd:string ;
+  rdfs:label "Plasma Physics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Plasma_physics> ;
+.
+qudt:PowerPerAreaUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:PowerPerArea ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:PowerPerElectricChargeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:PowerUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ElectricPower ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:PrefixUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Dimensionless ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Dimensionless ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:PressureOrStressRateUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:PressureOrStressUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Stress ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:PressurizedSystemsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Pressurized systems"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+.
+qudt:ProportionalityConstant
+  rdf:type owl:Class ;
+  dc:description """Two quantities proportional if they vary in such a way that one of the quantities is a constant multiple of the other. The multiple is the constant of proportionality between the two quantities. Constants of proportionality may be dimensioned in some quantity systems and dimensionless in others. For example, in the SI system, the permittivity of a vacuum has the dimensions L^-3 M^-1 T^4 I^2 and is measured in Farads per Meter; in the CGS-EMU system it has dimensions L^-2T^2 and is measured in Abfarads per Centimeter; in the CGS-ESU system it is dimensionless.
+
+
+
+Constants of proportionality are important in the definition of systems of natural units, where units are chosen in order to make certain constants of proportionality dimensionless and equal to 1."""^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Constant of Proportionality"^^xsd:string ;
+  rdfs:subClassOf qudt:Quantity ;
+  skos:closeMatch <http://dbpedia.org/resource/Proportionality_%28mathematics%29> ;
+.
+qudt:PropulsionQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Propulsion Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:QuantityType
+  rdf:type owl:Class ;
+  dc:description "A quantity type is an enumeration of units that are measures of the same quantity kind."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Quantity type"^^xsd:string ;
+  rdfs:subClassOf qudt:Enumeration ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:Unit ;
+      owl:onProperty qudt:default ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:Unit ;
+      owl:onProperty qudt:element ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:elementKind ;
+    ] ;
+.
+qudt:QuantityValue
+  rdf:type owl:Class ;
+  dc:description "A quantity value expresses the numerical value of a quantity with respect to a chosen unit of measure. For example, the value of Planck's constant in Joule-Seconds (J s) is approximately 6.62606896E-34, whereas the value in Erg-Seconds ($erg s$) is approximately 6.62606896E-27."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Quantity value"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:Unit ;
+      owl:onProperty qudt:unit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:numericUnion ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom xsd:double ;
+      owl:onProperty qudt:relativeStandardUncertainty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom xsd:double ;
+      owl:onProperty qudt:standardUncertainty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty qudt:unit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:relativeStandardUncertainty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:standardUncertainty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:valueQuantity ;
+    ] ;
+.
+qudt:QuantumMechanicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Quantum mechanics (QM – also known as quantum physics, or quantum theory) is a branch of physics dealing with physical phenomena where the action is on the order of the Planck constant. Quantum mechanics departs from classical mechanics primarily at the quantum realm of atomic and subatomic length scales. QM provides a mathematical description of much of the dual particle-like and wave-like behavior and interactions of energy and matter."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Quantum Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:MechanicsQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_mechanics> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-2483> ;
+.
+qudt:RF-PowerUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:RF-Power ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:RadianceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:PowerPerAreaAngle ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:RadiantIntensityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:RadiantIntensity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:RadiationQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Radiation Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+.
+qudt:RadiologyQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Radiology"^^xsd:string ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+  skos:exactMatch <http://dbpedia.org/resource/Radiology> ;
+.
+qudt:RadiologyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:RadiologyQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:RadiologyQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:RadiometryQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Radiometry Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:OpticsQuantityKind ;
+.
+qudt:RadiometryUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:RateOfReturnUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:RequirementsEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Requirements Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+.
+qudt:ResistanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Resistance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ResourceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:RespiratoryRateUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:RespiratoryRate ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:RiskManagementQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Risk Management Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ManagementQuantityKind ;
+.
+qudt:SI-BaseUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:SI-DerivedUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:SI-Unit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:ScienceQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Science Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:QuantityKind ;
+  skos:prefLabel "Science quantity kind"^^xsd:string ;
+.
+qudt:SerumOrPlasmaLevelUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:SerumOrPlasmaLevel ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:SignalDetectionThresholdUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:SignalDetectionThreshold ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:SocialScienceQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Social Science Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ScienceQuantityKind ;
+.
+qudt:SoftwareEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Software Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+.
+qudt:SolidAngleUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:SolidAngle ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:SolidStatePhysicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Solid State Physics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+.
+qudt:SpaceAndTimeQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Space and Time" ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+.
+qudt:SpaceAndTimeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:SpaceAndTimeQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:SpaceAndTimeQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:SpaceSystemEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Space System Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+.
+qudt:SpecificEnergyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:SpecificEnergy ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:SpecificHeatCapacityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:SpecificHeatCapacity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:SpecificHeatPressureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:SpecificHeatVolumeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:SpectroscopyQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Spectroscopy Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:LightQuantityKind ;
+  rdfs:subClassOf qudt:PhysicsQuantityKind ;
+.
+qudt:StatisticalMechanicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Statistical Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:MechanicsQuantityKind ;
+.
+qudt:StructuresAndMechanicsQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Determination of initial mass probabilities, centroids, moments of inertia, etc."^^xsd:string ;
+  rdfs:label "Structures And Mechanics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:StructuresQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Structures Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:StructuresAndMechanicsQuantityKind ;
+.
+qudt:SystemDesignQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "System Design Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+.
+qudt:SystemEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "System Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+.
+qudt:SystemIntegrationQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "System Integration Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+.
+qudt:SystemOfNaturalUnits
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:SystemOfUnits
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:SystemTestingQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "System Testing Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SystemEngineeringQuantityKind ;
+.
+qudt:TelebiometricsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Telebiometrics Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:ComputerScienceQuantityKind ;
+  skos:prefLabel "Telebiometrics Quantity Kind"^^xsd:string ;
+.
+qudt:TelemetryQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Telemetry Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:TemperaturePerTimeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:TemperatureUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThermodynamicTemperature ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThermalConductivityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThermalConductivity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThermalControlQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Thermal Control Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:ThermalDiffusivityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThermalDiffusivity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThermalEnergyLengthUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThermalEnergyLength ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThermalEnergyUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:EnergyAndWork ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThermalEnergy ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThermalEngineeringQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Thermal Engineering Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:EngineeringQuantityKind ;
+.
+qudt:ThermalExpansionUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:ThermalInsulanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThermalInsulance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThermalProtectionQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Thermal Protection Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:ThermalResistanceUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThermalResistance ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThermalResistivityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThermalResistivity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThermodynamicsQuantityKind
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/schema/quantity> ;
+  rdfs:label "Thermodynamics"^^xsd:string ;
+  rdfs:subClassOf qudt:MechanicsQuantityKind ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermodynamics> ;
+.
+qudt:ThermodynamicsUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:ThermodynamicsQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:ThermodynamicsQuantityKind ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:ThrustToMassRatioUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:ThrustToMassRatio ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:TimeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:TradeStudiesQuantityKind
+  rdf:type owl:Class ;
+  rdfs:label "Trade studies"^^xsd:string ;
+  rdfs:subClassOf qudt:ManagementQuantityKind ;
+.
+qudt:TrajectoryQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Planet-centric and Heliocentric trajectory analysis"^^xsd:string ;
+  rdfs:label "Trajectory Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:SpaceSystemEngineeringQuantityKind ;
+.
+qudt:TurbidityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Turbidity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:Unit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:isMetricUnit ;
+    ] ;
+.
+qudt:UsedWithSI-Unit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:VelocityUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:Velocity ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:VibrationQuantityKind
+  rdf:type owl:Class ;
+  dc:description "Vibration is a mechanical phenomenon whereby oscillations occur about an equilibrium point."^^xsd:string ;
+  rdfs:label "Vibration Quantity Kind"^^xsd:string ;
+  rdfs:subClassOf qudt:MechanicsQuantityKind ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Vibration> ;
+.
+qudt:VideoFrameRateUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:VideoFrameRate ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:VolumeThermalExpansionUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:VolumeThermalExpansion ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+.
+qudt:VolumeUnit
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:floatPercentage
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:integerPercentage
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+qudt:string1024
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+.
+voag:QUDT-QUANTITY-SchemaCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT QUANTITY Schema Catalog Entry"^^xsd:string ;
+.

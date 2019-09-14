@@ -1,0 +1,1048 @@
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+
+
+unit:A-HR
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:A-PER-Deg
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentPerAngle ;
+.
+unit:A-PER-J
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentPerUnitEnergy ;
+.
+unit:A-PER-M
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:A-PER-M2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:A-PER-RAD
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentPerAngle ;
+.
+unit:A-t-PER-IN
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:A-t-PER-M
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:AC-FT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Volume ;
+.
+unit:ACRE
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:ANGSTROM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:ARE
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:AT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+.
+unit:ATM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:AU
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:AbA
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:AbA-PER-CM2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:AbC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:AbC-PER-CM2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricChargePerArea ;
+.
+unit:AbF
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:AbF-PER-CM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Permittivity ;
+.
+unit:AbH
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:AbOHM
+  qudt:quantityKind quantity:Resistance ;
+.
+unit:AbS
+  qudt:quantityKind quantity:ElectricConductivity ;
+.
+unit:AbT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+  qudt:quantityKind quantity:MagneticField ;
+.
+unit:AbV
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+.
+unit:AbV-PER-CM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricField ;
+.
+unit:AbV-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagneticFlux ;
+.
+unit:ArcMIN
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:ArcSEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:AtmosphereTechnical
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:Atto
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:BAN
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:BAR
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:BARN
+  qudt:quantityKind quantity:Area ;
+.
+unit:BARREL
+  qudt:quantityKind quantity:Volume ;
+.
+unit:BIOT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:BIT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:BIT-PER-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:BQ
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Activity ;
+.
+unit:BREATH-PER-MIN
+  qudt:quantityKind quantity:RespiratoryRate ;
+.
+unit:BTU-FT-PER-FT2-HR-DegF
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:BTU-IN-PER-FT2-HR-DegF
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:BTU-IN-PER-FT2-SEC-DegF
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:BTU-PER-DegR
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:HeatCapacity ;
+.
+unit:BTU-PER-FT2
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:BTU-PER-FT2-HR-DegF
+  qudt:quantityKind quantity:CoefficientOfHeatTransfer ;
+.
+unit:BTU-PER-FT2-SEC-DegF
+  qudt:quantityKind quantity:CoefficientOfHeatTransfer ;
+.
+unit:BTU-PER-HR
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:BTU-PER-HR-FT2
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:BTU-PER-LB-DegF
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+.
+unit:BTU-PER-LB-DegR
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+.
+unit:BTU-PER-LB-MOL
+  qudt:quantityKind quantity:EnergyAndWorkPerMassAmountOfSubstance ;
+.
+unit:BTU-PER-SEC
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:BTU-PER-SEC-FT2
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:BTU_IT-PER-DegF
+  qudt:quantityKind quantity:HeatCapacity ;
+.
+unit:BTU_IT-PER-LB
+  qudt:quantityKind quantity:SpecificEnergy ;
+.
+unit:BTU_TH
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:BYTE
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:Bushel
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:C-M
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricDipoleMoment ;
+.
+unit:C-PER-M3
+  qudt:quantityKind quantity:ElectricChargeVolumeDensity ;
+.
+unit:CAL
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:CANDELA
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LuminousIntensity ;
+.
+unit:CANDLE
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LuminousIntensity ;
+.
+unit:CD-PER-IN2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Luminance ;
+.
+unit:CD-PER-M2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Luminance ;
+.
+unit:CHAIN
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:CM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:CM-PER-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:CM-PER-SEC2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:CM-SEC-DegC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LengthTemperatureTime ;
+.
+unit:COULOMB
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:Candlepower
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LuminousIntensity ;
+.
+unit:Carat
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:Centi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:CentiP
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:CentimeterOfWater
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:CircularMil
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:Clo
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ThermalInsulance ;
+.
+unit:ColonyFormingUnit
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MicrobialFormation ;
+.
+unit:Cord
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:Curie
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Activity ;
+.
+unit:DB
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:RF-Power ;
+  qudt:quantityKind quantity:SignalStrength ;
+.
+unit:DBC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SignalDetectionThreshold ;
+.
+unit:DIOPTER
+  qudt:quantityKind quantity:Curvature ;
+.
+unit:Dalton
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MolecularMass ;
+.
+unit:Day
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:Debye
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricDipoleMoment ;
+.
+unit:Deca
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Deci
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:DecibelReferredToOneMilliwatt
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+.
+unit:Deg
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:DegC-CM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LengthTemperature ;
+.
+unit:DegreeFahrenheitHourPerBtu
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ThermalResistance ;
+.
+unit:Denier
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:DryPintUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:DryQuartUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:ERG
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:ERG-PER-CM2-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:ERG-PER-CM3
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyDensity ;
+.
+unit:ERG-PER-G
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SpecificEnergy ;
+.
+unit:ERG-PER-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:ERG-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AngularMomentum ;
+.
+unit:Exa
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Exbi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:FBM
+  qudt:quantityKind quantity:Volume ;
+.
+unit:FT-PDL
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:FT2-HR-DegF-PER-BTU
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ThermalInsulance ;
+.
+unit:Femto
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Femtometer
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:Fermi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:FootPoundForcePerSquareFoot
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:FootUSSurvey
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:FractionalArea
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SolidAngle ;
+.
+unit:GAL_IMP
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:GAUSS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagneticField ;
+.
+unit:GI
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+.
+unit:GRAIN-PER-GAL
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Density ;
+.
+unit:GallonUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:GallonUSPerDay
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:GallonUSPerMinute
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:Gamma
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagneticField ;
+.
+unit:Gibi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Giga
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:GigaHertz
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:Gravity
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:HeartBeatsPerMinute
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:HeartRate ;
+.
+unit:Hecto
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Horsepower
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerBoiler
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerElectric
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerMetric
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerWater
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HourSidereal
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:IN2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:InchPoundForce
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:InternationalUnit
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AmountOfSubstance ;
+.
+unit:InternationalUnitPerLiter
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SerumOrPlasmaLevel ;
+.
+unit:KM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:KW
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:Katal
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:CatalyticActivity ;
+.
+unit:Kibi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Kilo
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:KiloCAL-PER-CM2-DegC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:KiloHertz
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:KiloPascal
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:KiloPascalAbsolute
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:KiloPond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Force ;
+.
+unit:KilobitsPerSecond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:KilocaloriePerGramDegreeCelsius
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+.
+unit:KilogramPerMole
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MolarMass ;
+.
+unit:LiquidCupUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidOunceUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidPintUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidQuartUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LongFur
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:LongHundredWeight
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:Lux
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+.
+unit:MACH
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+.
+unit:MOL-PER-KG
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AmountOfSubstancePerUnitMass ;
+.
+unit:Mebi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Mega
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:MegaHertz
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:MegabitsPerSecond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:MetricTon
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:Micro
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:MicroF
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:MicroHenry
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:MicroInch
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:MicroSecond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:MilAngle
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:MilLength
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:MileInternational
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:Milli
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:MilliH
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:MilliSecond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:MilliTorr
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:MinuteSidereal
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:MinuteTime
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:Nano
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:NanoFarad
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:NephelometricTurbidityUnit
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Turbidity ;
+.
+unit:OunceImperial
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:Pebi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Peck
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:PerMeter
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InverseLength ;
+.
+unit:PerMeterKelvin
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InverseLengthTemperature ;
+.
+unit:PerMole
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InverseAmountOfSubstance ;
+.
+unit:PerSquareGigaElectronVolt
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InverseSquareEnergy ;
+.
+unit:PerTeslaMeter
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LengthPerUnitMagneticFlux ;
+.
+unit:PerTeslaSecond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+.
+unit:Peta
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Phot
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+.
+unit:Pica
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:Pico
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:PicoFarad
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:PintImperial
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Volume ;
+.
+unit:PlanckArea
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:PlanckCharge
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:PlanckCurrent
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:PlanckCurrentDensity
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:PlanckDensity
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Density ;
+.
+unit:PlanckEnergy
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:PlanckForce
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Force ;
+.
+unit:PlanckFrequency
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:PlanckLength
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:PlanckMass
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:PlanckMomentum
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LinearMomentum ;
+.
+unit:PlanckPower
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:PlanckPressure
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:PlanckTemperature
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+.
+unit:PlanckTime
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:PlanckVolt
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+.
+unit:PlanckVolume
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Volume ;
+.
+unit:QuarticCoulombMeterPerCubicEnergy
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:QuarticElectricDipoleMomentPerCubicEnergy ;
+.
+unit:RelativePermeability
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Permeability ;
+.
+unit:RelativePermittivity
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Permittivity ;
+.
+unit:SEC2-FT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AreaTime ;
+.
+unit:SECOND
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:SLUG-PER-FT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:SLUG-PER-FT2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerArea ;
+.
+unit:SLUG-PER-FT3
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Density ;
+.
+unit:SLUG-PER-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:ShortHundredWeight
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:ShortTon-PER-YD3
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Density ;
+.
+unit:SiderealDay
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:SiderealYear
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:SlugPerFootSecond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:SquareFootPerBtuInch
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ThermalResistivity ;
+.
+unit:StatA
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:StatvoltCentimeter
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricFlux ;
+.
+unit:TON-PER-YD3
+  qudt:quantityKind quantity:Density ;
+.
+unit:TON_LONG
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TON_SHORT
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TON_SHORT-PER-HR
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:Tebi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Tera
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:TeslaMeter
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagneticFluxPerUnitLength ;
+.
+unit:TeslaSecond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerElectricCharge ;
+.
+unit:ThermEEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:ThermUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:TonAssay
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TonEnergy
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:TonOfOilEquivalent
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:TonOfRefrigeration
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:Torr
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:UnifiedAtomicMassUnit
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:UnitPole
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagneticFlux ;
+.
+unit:VoltMeter
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricFlux ;
+.
+unit:W-M2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PowerArea ;
+.
+unit:W-M2-PER-St
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PowerAreaPerSolidAngle ;
+.
+unit:W-PER-M2-K
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PowerPerAreaQuarticTemperature ;
+.
+unit:WATT
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:Weber
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagneticFlux ;
+.
+unit:YARD
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:Year365Day
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:YearTropical
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:Yobi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Yocto
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Yotta
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Z
+  qudt:quantityKind quantity:AtomicCharge ;
+.
+unit:Zebi
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Zepto
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Zetta
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.

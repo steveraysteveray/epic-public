@@ -1,0 +1,1679 @@
+# baseURI: http://epic/scripts/insertConvertToPriceEvent
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: insertConvertToPriceEvent
+
+@prefix A: <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#> .
+@prefix Atom: <http://www.w3.org/2005/Atom#> .
+@prefix Sample_oadrDistributeEvent_W_Baseline: <file:///demandresponse/Reference/oadr-samples/Sample_oadrDistributeEvent_W_Baseline.xml#> .
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix atom: <http://www.w3.org/2005/Atom#> .
+@prefix avwx---wxxm: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx---wxxm#> .
+@prefix avwx_areaofinterestwx---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx_areaofinterestwx---avwx#> .
+@prefix avwx_datatypes---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx_datatypes---avwx#> .
+@prefix avwx_features---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx_features---avwx#> .
+@prefix avwx_measures---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx_measures---avwx#> .
+@prefix avwx_phenom_hazards---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx_phenom_hazards---avwx#> .
+@prefix avwx_phenom_tropicalcyclone---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx_phenom_tropicalcyclone---avwx#> .
+@prefix avwx_phenom_volcanic---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx_phenom_volcanic---avwx#> .
+@prefix avwx_phenom_wind---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/avwx_phenom_wind---avwx#> .
+@prefix basicdas---iec61850_7_2: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/basicdas---iec61850_7_2#> .
+@prefix ccts: <urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2#> .
+@prefix cdcanalogueinfo---commondataclasses: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/cdcanalogueinfo---commondataclasses#> .
+@prefix cdcanalogueset---commondataclasses: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/cdcanalogueset---commondataclasses#> .
+@prefix cdccontrol---commondataclasses: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/cdccontrol---commondataclasses#> .
+@prefix cdcdescription---commondataclasses: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/cdcdescription---commondataclasses#> .
+@prefix cdcstatusinfo---commondataclasses: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/cdcstatusinfo---commondataclasses#> .
+@prefix cdcstatusset---commondataclasses: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/cdcstatusset---commondataclasses#> .
+@prefix citation_and_responsible_party_information---iso_19115_metadata: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/citation_and_responsible_party_information---iso_19115_metadata#> .
+@prefix cmof: <http://uml.topquadrant.com/owl/cmof/osg/cmof#> .
+@prefix collections_rulesets_and_aggregations---energy_manager_component: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/collections_rulesets_and_aggregations---energy_manager_component#> .
+@prefix common_primitive_types_classes_and_enumerations---model: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/common_primitive_types_classes_and_enumerations---model#> .
+@prefix commondataclasses---iec61850_7_3: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/commondataclasses---iec61850_7_3#> .
+@prefix commondataclasses---iec61850_7_420: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/commondataclasses---iec61850_7_420#> .
+@prefix commonusagepackages---wxxm: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/commonusagepackages---wxxm#> .
+@prefix component-collection: <http://uml.topquadrant.com/testsuite/owl/fsgim.rofficial/submodels/component-collection#> .
+@prefix constructeddas---iec61850_7_3: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/constructeddas---iec61850_7_3#> .
+@prefix coordinate_geometry---_geometry: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/coordinate_geometry---_geometry#> .
+@prefix coordinate_reference_systems---iso_19111_spatial_referencing_by_coordinates: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/coordinate_reference_systems---iso_19111_spatial_referencing_by_coordinates#> .
+@prefix coretypes---iec61850_7_2: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/coretypes---iec61850_7_2#> .
+@prefix cultural_and_linguistic_adapdability---iso_19139_metadata: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/cultural_and_linguistic_adapdability---iso_19139_metadata#> .
+@prefix daenums---iec61850_7_3: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/daenums---iec61850_7_3#> .
+@prefix daenums---iec61850_7_420: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/daenums---iec61850_7_420#> .
+@prefix data_quality_information---iso_19115_metadata: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/data_quality_information---iso_19115_metadata#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix derivedcdcs---iec61850_7_4: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/derivedcdcs---iec61850_7_4#> .
+@prefix device---device_and_model_components: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/device---device_and_model_components#> .
+@prefix ds: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix dsig: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix dtype: <http://siemens.com/schemas/ssf_datatype#> .
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix ei: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix eiclasses---energy_interoperation_wd36_pr03: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#> .
+@prefix emissions_measurements---measurements: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emissions_measurements---measurements#> .
+@prefix emix: <http://docs.oasis-open.org/ns/emix/2011/06#> .
+@prefix emix---emix_pr04: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#> .
+@prefix emix-terms---emix_pr04: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix-terms---emix_pr04#> .
+@prefix emix-warrants---emix_pr04: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix-warrants---emix_pr04#> .
+@prefix emix_pr04---oasis: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix_pr04---oasis#> .
+@prefix energy_interoperation_wd36_pr03---oasis: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_interoperation_wd36_pr03---oasis#> .
+@prefix energy_manager_component---device_and_model_components: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_manager_component---device_and_model_components#> .
+@prefix energy_measurements---measurements: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_measurements---measurements#> .
+@prefix energyinterop: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix energyrouter---energy_manager_component: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energyrouter---energy_manager_component#> .
+@prefix enumerations---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix epic-datetime: <http://siemens.com/spin/epic-datetime#> .
+@prefix epic-spin: <http://siemens.com/spin/namespace_functions#> .
+@prefix extent_information---iso_19115_metadata: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/extent_information---iso_19115_metadata#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix fsgim: <http://cmu.sv.edu/fsgim#> .
+@prefix fsgim-calendar: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#> .
+@prefix fsgim-device: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/device---device_and_model_components#> .
+@prefix fsgim-einterop: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#> .
+@prefix fsgim-em: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_manager_component---device_and_model_components#> .
+@prefix fsgim-emix: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#> .
+@prefix fsgim-energy: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_measurements---measurements#> .
+@prefix fsgim-generator: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/generator_component---device_and_model_components#> .
+@prefix fsgim-load: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/load_component---device_and_model_components#> .
+@prefix fsgim-meter: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/meter_component---device_and_model_components#> .
+@prefix fsgim-other: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim-power: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#> .
+@prefix fsgim-primitive: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim-router: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energyrouter---energy_manager_component#> .
+@prefix fsgim-sequence: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#> .
+@prefix fsgim-time: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgimweather---energy_manager_component: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/fsgimweather---energy_manager_component#> .
+@prefix generator_component---device_and_model_components: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/generator_component---device_and_model_components#> .
+@prefix geometry---iso_19107_spatial_schema: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/geometry---iso_19107_spatial_schema#> .
+@prefix gml: <http://www.opengis.net/gml/3.2#> .
+@prefix gml-3_2: <http://www.opengis.net/gml/3.2#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix icalendar: <urn:ietf:params:xml:ns:icalendar-2.0#> .
+@prefix icalendar-stream: <urn:ietf:params:xml:ns:icalendar-2.0:stream#> .
+@prefix icao_annex_3_base---avwx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/icao_annex_3_base---avwx#> .
+@prefix identification_information---iso_19115_metadata: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/identification_information---iso_19115_metadata#> .
+@prefix iec61850---model_elements_from_external_sources: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iec61850---model_elements_from_external_sources#> .
+@prefix iec61850_7_2---iec61850: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iec61850_7_2---iec61850#> .
+@prefix iec61850_7_3---iec61850: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iec61850_7_3---iec61850#> .
+@prefix iec61850_7_4---iec61850: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iec61850_7_4---iec61850#> .
+@prefix iec61850_7_420---iec61850: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iec61850_7_420---iec61850#> .
+@prefix iec_cim_naesb_eui_model_20101111update_20120802---model_elements_from_external_sources: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iec_cim_naesb_eui_model_20101111update_20120802---model_elements_from_external_sources#> .
+@prefix insertConvertToPriceEvent: <http://epic/scripts/insertConvertToPriceEvent#> .
+@prefix insertOadrCheck: <http://epic/scripts/insertOadrMessages#> .
+@prefix iso_00639_human_language---iso_standard_packages: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iso_00639_human_language---iso_standard_packages#> .
+@prefix iso_03166_country_codes---iso_standard_packages: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iso_03166_country_codes---iso_standard_packages#> .
+@prefix iso_19107_spatial_schema---iso_standard_packages: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iso_19107_spatial_schema---iso_standard_packages#> .
+@prefix iso_19111_spatial_referencing_by_coordinates---iso_standard_packages: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iso_19111_spatial_referencing_by_coordinates---iso_standard_packages#> .
+@prefix iso_19115_metadata---iso_standard_packages: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iso_19115_metadata---iso_standard_packages#> .
+@prefix iso_19139_metadata---iso_standard_packages: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iso_19139_metadata---iso_standard_packages#> .
+@prefix iso_standard_packages---wxxm: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/iso_standard_packages---wxxm#> .
+@prefix key_energy_manager_concepts---energy_manager_component: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/key_energy_manager_concepts---energy_manager_component#> .
+@prefix lngroupf---logicalnodes: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/lngroupf---logicalnodes#> .
+@prefix lngroupl---logicalnodes: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/lngroupl---logicalnodes#> .
+@prefix lngroupm---logicalnodes: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/lngroupm---logicalnodes#> .
+@prefix load_component---device_and_model_components: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/load_component---device_and_model_components#> .
+@prefix logicalnodeenums---iec61850_7_4: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/logicalnodeenums---iec61850_7_4#> .
+@prefix logicalnodes---iec61850_7_4: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/logicalnodes---iec61850_7_4#> .
+@prefix logicalnodes---iec61850_7_420: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/logicalnodes---iec61850_7_420#> .
+@prefix maintenance_information---iso_19115_metadata: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/maintenance_information---iso_19115_metadata#> .
+@prefix measurements---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#> .
+@prefix measurements_under_consideration---under_consideration: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements_under_consideration---under_consideration#> .
+@prefix measures---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measures---wx#> .
+@prefix metadata_entity_set_information---iso_19115_metadata: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/metadata_entity_set_information---iso_19115_metadata#> .
+@prefix metamodel---iec61850_7_2: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/metamodel---iec61850_7_2#> .
+@prefix meter_component---device_and_model_components: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/meter_component---device_and_model_components#> .
+@prefix model_elements_from_external_sources---model: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/model_elements_from_external_sources---model#> .
+@prefix n2: <http://www.altova.com/samplexml/other-namespace#> .
+@prefix naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#> .
+@prefix namespace_functions: <http://siemens.com/spin/namespace_functions#> .
+@prefix oadr: <http://openadr.org/oadr-2.0b/2012/07#> .
+@prefix oadr2epic: <http://siemens.com/mapping/oadr2epic#> .
+@prefix oadr_helper: <http://siemens.com/schemas/kps/oadr_helper#> .
+@prefix oasis---model_elements_from_external_sources: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/oasis---model_elements_from_external_sources#> .
+@prefix objectreferences---iec61850_7_2: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/objectreferences---iec61850_7_2#> .
+@prefix observation---om1_observation: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/observation---om1_observation#> .
+@prefix om1_observation---swe: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/om1_observation---swe#> .
+@prefix om2_sampling---swe: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/om2_sampling---swe#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix other_common_classes---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#> .
+@prefix ouml: <http://uml.topquadrant.com/owl/uml/osg/uml#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix owlTime: <http://www.w3.org/2006/time#> .
+@prefix p1: <http://example.org/file1#> .
+@prefix p2010-04-07: <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#> .
+@prefix p2011-06: <http://docs.oasis-open.org/ns/emix/2011/06#> .
+@prefix p2012-07: <http://openadr.org/oadr-2.0b/2012/07#> .
+@prefix payloads: <http://docs.oasis-open.org/ns/energyinterop/201110/payloads#> .
+@prefix postMappingFix: <http://siemens.com/spin/postMappingFix#> .
+@prefix power: <http://docs.oasis-open.org/ns/emix/2011/06/power#> .
+@prefix power---emix_pr04: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power---emix_pr04#> .
+@prefix power-quality---emix_pr04: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power-quality---emix_pr04#> .
+@prefix power_measurements---measurements: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#> .
+@prefix primitive_data_types---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#> .
+@prefix process---sensorml: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/process---sensorml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pyld: <http://docs.oasis-open.org/ns/energyinterop/201110/payloads#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix queries: <http://uml.linkedmodels.org/sg/schema/fsgim/queries#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reference_system_information---iso_19115_metadata: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/reference_system_information---iso_19115_metadata#> .
+@prefix resource---emix_pr04: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/resource---emix_pr04#> .
+@prefix sample_ev: <file:///demandresponse/EPIC/Software/epic_api/sample_ev.xml#> .
+@prefix samplingbase---om2_sampling: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/samplingbase---om2_sampling#> .
+@prefix scale: <http://docs.oasis-open.org/ns/emix/2011/06/siscale#> .
+@prefix schema: <http://schema.org/> .
+@prefix schemax: <http://topbraid.org/schemax/> .
+@prefix sensorml---swe: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sensorml---swe#> .
+@prefix sequences_and_intervals---energy_manager_component: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#> .
+@prefix siscale: <http://docs.oasis-open.org/ns/emix/2011/06/siscale#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix spinmapl: <http://topbraid.org/spin/spinmapl#> .
+@prefix spinx: <http://spinrdf.org/spinx#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix standard_aggregations---collections_rulesets_and_aggregations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/standard_aggregations---collections_rulesets_and_aggregations#> .
+@prefix strm: <urn:ietf:params:xml:ns:icalendar-2.0:stream#> .
+@prefix swe---wxxm: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/swe---wxxm#> .
+@prefix time---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#> .
+@prefix time-functions: <http://siemens.com/functions/time-functions#> .
+@prefix tweaks: <http://sgt.6/tweaks#> .
+@prefix uml: <http://schema.omg.org/spec/UML/2.1/uml.xml#> .
+@prefix uml-extension: <http://schema.omg.org/spec/UML/2.1/uml-extension#> .
+@prefix under_consideration---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/under_consideration---common_primitive_types_classes_and_enumerations#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix voag: <http://voag.linkedmodel.org/voag#> .
+@prefix wscalendarpim---oasis: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#> .
+@prefix wx---wxxm: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx---wxxm#> .
+@prefix wx_base---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_base---wx#> .
+@prefix wx_cloud---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_cloud---wx#> .
+@prefix wx_coverage---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_coverage---wx#> .
+@prefix wx_datatypes---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_datatypes---wx#> .
+@prefix wx_features---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_features---wx#> .
+@prefix wx_forecast---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_forecast---wx#> .
+@prefix wx_measures---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_measures---wx#> .
+@prefix wx_motionvector---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_motionvector---wx#> .
+@prefix wx_observation---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_observation---wx#> .
+@prefix wx_phenombase---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_phenombase---wx#> .
+@prefix wx_process---wx: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wx_process---wx#> .
+@prefix wxxm---model_elements_from_external_sources: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wxxm---model_elements_from_external_sources#> .
+@prefix xcal: <urn:ietf:params:xml:ns:icalendar-2.0#> .
+@prefix xmldsig: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#> .
+
+<http://epic/scripts/insertConvertToPriceEvent>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+insertConvertToPriceEvent:ApplyConstruct_1
+  a sml:ApplyConstruct ;
+  sm:next insertConvertToPriceEvent:LockDB ;
+  sml:constructQuery [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "groupID" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasGroupID ;
+            sp:subject [
+                sp:varName "target" ;
+              ] ;
+          ]
+          [
+            sp:object "ENERGY_PRICE"^^xsd:anySimpleType ;
+            sp:predicate fsgim-einterop:hasSignalName ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            sp:object "price" ;
+            sp:predicate fsgim-einterop:hasSignalTypeRef ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "requestedPrice" ;
+              ] ;
+            sp:predicate other_common_classes---common_primitive_types_classes_and_enumerations:hasQuantity ;
+            sp:subject [
+                sp:varName "intervalPrice" ;
+              ] ;
+          ]
+          [
+            sp:object 0.0 ;
+            sp:predicate other_common_classes---common_primitive_types_classes_and_enumerations:hasQuantity ;
+            sp:subject [
+                sp:varName "basePrice" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "target" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasEiTargetRef ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "es" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasEiEventSignalRef ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object epic:EventSignal ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "intervalPrice" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 [
+                    a sp:SeqPath ;
+                    sp:path1 [
+                        a sp:SeqPath ;
+                        sp:path1 [
+                            a sp:SeqPath ;
+                            sp:path1 fsgim-einterop:hasEventIntervalRef ;
+                            sp:path2 sequences_and_intervals---energy_manager_component:hasIntervalsRef ;
+                          ] ;
+                        sp:path2 sequences_and_intervals---energy_manager_component:hasAttachRef ;
+                      ] ;
+                    sp:path2 fsgim-einterop:hasPriceRef ;
+                  ] ;
+                sp:path2 fsgim-emix:hasValueRef ;
+              ] ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "basePrice" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 [
+                    a sp:SeqPath ;
+                    sp:path1 [
+                        a sp:SeqPath ;
+                        sp:path1 fsgim-einterop:hasCurrentValueRef ;
+                        sp:path2 fsgim-einterop:hasPayloadBaseRef ;
+                      ] ;
+                    sp:path2 fsgim-einterop:hasPriceRef ;
+                  ] ;
+                sp:path2 fsgim-emix:hasValueRef ;
+              ] ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:replace false ;
+  rdfs:label "Add Price Signal triples" ;
+  skos:prefLabel "" ;
+.
+insertConvertToPriceEvent:ApplyTopSPIN_1
+  a sml:ApplyTopSPIN ;
+  sm:next insertConvertToPriceEvent:RemoveSimpleTriples ;
+  sml:predicate spin:rule ;
+  sml:replace true ;
+  sml:singlePass false ;
+  rdfs:label "Map OpenADR to EPIC instances" ;
+.
+insertConvertToPriceEvent:BindBySelect_1
+  a sml:BindBySelect ;
+  sm:next insertConvertToPriceEvent:ConvertXMLToRDF_1 ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "baseURI" ;
+          ]
+          [
+            sp:varName "tempURI" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a afn:now ;
+              ] ;
+            sp:variable [
+                sp:varName "now" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:cast ;
+                arg:datatype xsd:string ;
+                sp:arg1 [
+                    sp:varName "now" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "nowString" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:concat ;
+                sp:arg1 "http://siemens.com/" ;
+                sp:arg2 [
+                    sp:varName "nowString" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "baseURI" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a fn:concat ;
+                    sp:arg1 "http://siemens.com/vocab/kps/epic_instances/" ;
+                    sp:arg2 [
+                        a spif:cast ;
+                        arg:datatype xsd:string ;
+                        sp:arg1 [
+                            a spif:random ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:comment "This module creates the unique baseURI by appending the timestamp to the prefix URI, pre-defined \"http://siemens.com/\". Also defines a temporary URI for swing space graph." ;
+  rdfs:label "Create baseURI with Timestamp" ;
+.
+insertConvertToPriceEvent:BranchByAsk_1
+  a sml:BranchByAsk ;
+  sm:else insertConvertToPriceEvent:PerformUpdate_1 ;
+  sm:if insertConvertToPriceEvent:InsertExistingTriplesToTemp ;
+  sm:next insertConvertToPriceEvent:Placeholder ;
+  sml:askQuery [
+      a sp:Ask ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "inEventID" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasEventID ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "inModNum" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasModificationNumber ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "desc" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasEventDescriptorRef ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "inSignalName" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 fsgim-einterop:hasEiEventSignalRef ;
+                      sp:path2 fsgim-einterop:hasSignalName ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        a sp:TriplePath ;
+                        sp:object [
+                            sp:varName "rID" ;
+                          ] ;
+                        sp:path [
+                            a sp:SeqPath ;
+                            sp:path1 fsgim-einterop:hasEiTargetRef ;
+                            sp:path2 fsgim-einterop:hasResourceID ;
+                          ] ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:or ;
+                      sp:arg1 [
+                          a sp:and ;
+                          sp:arg1 [
+                              a sp:and ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "rID" ;
+                                    ] ;
+                                ] ;
+                              sp:arg2 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "inResourceID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              a sp:eq ;
+                              sp:arg1 [
+                                  sp:varName "rID" ;
+                                ] ;
+                              sp:arg2 [
+                                  sp:varName "inResourceID" ;
+                                ] ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          a sp:and ;
+                          sp:arg1 [
+                              a sp:not ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "rID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              a sp:not ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "inResourceID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                        ] ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Check for duplicates" ;
+.
+insertConvertToPriceEvent:ConvertXMLToRDF_1
+  a sml:ConvertXMLToRDF ;
+  sm:next insertConvertToPriceEvent:ApplyTopSPIN_1 ;
+  sml:baseURI "{?baseURI}" ;
+  sml:replace true ;
+  sml:xml "{?xmlStringInput}"^^rdf:XMLLiteral ;
+  rdfs:label "Convert OpenADR XML to RDF triples" ;
+.
+insertConvertToPriceEvent:ImportRDFFromWorkspace_1
+  a sml:ImportRDFFromWorkspace ;
+  sm:next insertConvertToPriceEvent:ConvertXMLToRDF_1 ;
+  sml:baseURI "http://openadr.org/oadr-2.0b/2012/07" ;
+  sml:ignoreImports false ;
+  rdfs:label "Import OpenADR Schema" ;
+.
+insertConvertToPriceEvent:ImportRDFFromWorkspace_2
+  a sml:ImportRDFFromWorkspace ;
+  sm:next insertConvertToPriceEvent:ApplyTopSPIN_1 ;
+  sml:baseURI "http://siemens.com/mapping/oadr2epic" ;
+  sml:ignoreImports false ;
+  rdfs:label "Import Mapping File OpenADR to EPIC" ;
+.
+insertConvertToPriceEvent:InsertExistingTriplesToTemp
+  a sml:PerformUpdate ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "gID" ;
+                    ] ;
+                  sp:predicate <http://hasGroupID> ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "rID" ;
+                    ] ;
+                  sp:predicate <http://hasResourceID> ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tag" ;
+                    ] ;
+                  sp:predicate epic:hasTag ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "inEventID" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasEventID ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "inModNum" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasModificationNumber ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "desc" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasEventDescriptorRef ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        a sp:TriplePath ;
+                        sp:object [
+                            sp:varName "rID" ;
+                          ] ;
+                        sp:path [
+                            a sp:SeqPath ;
+                            sp:path1 fsgim-einterop:hasEiTargetRef ;
+                            sp:path2 fsgim-einterop:hasResourceID ;
+                          ] ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:or ;
+                      sp:arg1 [
+                          a sp:and ;
+                          sp:arg1 [
+                              a sp:and ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "rID" ;
+                                    ] ;
+                                ] ;
+                              sp:arg2 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "inResourceID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              a sp:eq ;
+                              sp:arg1 [
+                                  sp:varName "rID" ;
+                                ] ;
+                              sp:arg2 [
+                                  sp:varName "inResourceID" ;
+                                ] ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          a sp:and ;
+                          sp:arg1 [
+                              a sp:not ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "rID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              a sp:not ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "inResourceID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        a sp:TriplePath ;
+                        sp:object [
+                            sp:varName "gID" ;
+                          ] ;
+                        sp:path [
+                            a sp:SeqPath ;
+                            sp:path1 fsgim-einterop:hasEiTargetRef ;
+                            sp:path2 fsgim-einterop:hasGroupID ;
+                          ] ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tag" ;
+                    ] ;
+                  sp:predicate epic:hasTag ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Insert event identifier to temp graph" ;
+.
+insertConvertToPriceEvent:InsertNewTriplesToTemp
+  a sml:PerformUpdate ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "gID" ;
+                    ] ;
+                  sp:predicate <http://hasGroupID> ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "rID" ;
+                    ] ;
+                  sp:predicate <http://hasResourceID> ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tag" ;
+                    ] ;
+                  sp:predicate epic:hasTag ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "inEventID" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasEventID ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "inModNum" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasModificationNumber ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "desc" ;
+                    ] ;
+                  sp:predicate fsgim-einterop:hasEventDescriptorRef ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        a sp:TriplePath ;
+                        sp:object [
+                            sp:varName "rID" ;
+                          ] ;
+                        sp:path [
+                            a sp:SeqPath ;
+                            sp:path1 fsgim-einterop:hasEiTargetRef ;
+                            sp:path2 fsgim-einterop:hasResourceID ;
+                          ] ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:or ;
+                      sp:arg1 [
+                          a sp:and ;
+                          sp:arg1 [
+                              a sp:and ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "rID" ;
+                                    ] ;
+                                ] ;
+                              sp:arg2 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "inResourceID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              a sp:eq ;
+                              sp:arg1 [
+                                  sp:varName "rID" ;
+                                ] ;
+                              sp:arg2 [
+                                  sp:varName "inResourceID" ;
+                                ] ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          a sp:and ;
+                          sp:arg1 [
+                              a sp:not ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "rID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              a sp:not ;
+                              sp:arg1 [
+                                  a sp:bound ;
+                                  sp:arg1 [
+                                      sp:varName "inResourceID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        a sp:TriplePath ;
+                        sp:object [
+                            sp:varName "gID" ;
+                          ] ;
+                        sp:path [
+                            a sp:SeqPath ;
+                            sp:path1 fsgim-einterop:hasEiTargetRef ;
+                            sp:path2 fsgim-einterop:hasGroupID ;
+                          ] ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tag" ;
+                    ] ;
+                  sp:predicate epic:hasTag ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Insert event identifiers to temp graph" ;
+.
+insertConvertToPriceEvent:InsertOadrDE_Return
+  a sml:ReturnText ;
+  sml:fileName "dummy.txt" ;
+  sml:text "{?result}" ;
+  rdfs:comment """Converts and inserts a “simple” OpenADR DistributeEvent message in XML format into a price-based message, giving the caller the option of specifying the price of a demand event, and the associated groupID value. The constructed message retains all the same intervals as the incoming message, but changes the following properties:
+
+Property name			Incoming value			Amended value
+signalName				simple							ENERGY_PRICE
+signalType					level							price
+basePrice					<varies>						0.0
+intervalPrice				<none>						user-argument (.90)
+groupID						<none>						user-argument (PGEPDP)
+resourceID					<varies>						<deleted>
+venID							<varies>						<deleted>
+
+Returns:
+the tag and groupID of the new signal""" ;
+.
+insertConvertToPriceEvent:IterateOverSelect_1
+  a sml:IterateOverSelect ;
+  sm:body insertConvertToPriceEvent:BranchByAsk_1 ;
+  sm:next insertConvertToPriceEvent:SerializeSPARQLResults_1 ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "inRequestID" ;
+          ]
+          [
+            sp:varName "inEventID" ;
+          ]
+          [
+            sp:varName "inModNum" ;
+          ]
+          [
+            sp:varName "inResourceID" ;
+          ]
+          [
+            sp:varName "inGroupID" ;
+          ]
+          [
+            sp:varName "inSignalName" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "inRequestID" ;
+              ] ;
+            sp:predicate oadr_helper:hasRequestID ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "event" ;
+              ] ;
+            sp:predicate oadr_helper:hasEiEventsRef ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasEventDescriptorRef ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "inEventID" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasEventID ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "inModNum" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasModificationNumber ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "inSignalName" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 fsgim-einterop:hasEiEventSignalRef ;
+                sp:path2 fsgim-einterop:hasSignalName ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:Optional ;
+            sp:elements (
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "inResourceID" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 fsgim-einterop:hasEiTargetRef ;
+                      sp:path2 fsgim-einterop:hasResourceID ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            a sp:Optional ;
+            sp:elements (
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "inGroupID" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 fsgim-einterop:hasEiTargetRef ;
+                      sp:path2 fsgim-einterop:hasGroupID ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+        ) ;
+    ] ;
+.
+insertConvertToPriceEvent:LockDB
+  a sml:RequestLock ;
+  sm:next insertConvertToPriceEvent:IterateOverSelect_1 ;
+  sml:uri "http://siemens.com/vocab/kps/epic_instances" ;
+  rdfs:label "Lock Database" ;
+.
+insertConvertToPriceEvent:PerformUpdate_1
+  a sml:PerformUpdate ;
+  sm:next insertConvertToPriceEvent:InsertNewTriplesToTemp ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tag" ;
+                    ] ;
+                  sp:predicate epic:hasTag ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object oadr_helper:OadrDistributeEvent ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "inRequestID" ;
+              ] ;
+            sp:predicate oadr_helper:hasRequestID ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "event" ;
+              ] ;
+            sp:predicate oadr_helper:hasEiEventsRef ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasEventDescriptorRef ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "inEventID" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasEventID ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "inModNum" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasModificationNumber ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a fn:concat ;
+                    sp:arg1 [
+                        a afn:namespace ;
+                        sp:arg1 [
+                            sp:varName "de" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a spif:encodeURL ;
+                        sp:arg1 [
+                            sp:varName "inEventID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "tag" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a afn:localname ;
+                sp:arg1 [
+                    sp:varName "event" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "eventLocalName" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a fn:string-length ;
+                sp:arg1 [
+                    sp:varName "eventLocalName" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "eventNameLength" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a afn:localname ;
+                sp:arg1 [
+                    sp:varName "s" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "localName" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:or ;
+                sp:arg1 [
+                    a fn:contains ;
+                    sp:arg1 [
+                        sp:varName "localName" ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "eventLocalName" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:lt ;
+                    sp:arg1 [
+                        a fn:string-length ;
+                        sp:arg1 [
+                            sp:varName "localName" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "eventNameLength" ;
+                      ] ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Inserted EPIC Instances to Named Graph" ;
+.
+insertConvertToPriceEvent:Placeholder
+  a sml:Merge ;
+  rdfs:label "Placeholder for next" ;
+.
+insertConvertToPriceEvent:RemoveSimpleTriples
+  a sml:FilterByConstruct ;
+  sm:next insertConvertToPriceEvent:ApplyConstruct_1 ;
+  sml:constructQuery [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasResourceID ;
+            sp:subject [
+                sp:varName "target" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "venID" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasVenID ;
+            sp:subject [
+                sp:varName "target" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "name" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasSignalName ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "type" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasSignalTypeRef ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "intervalVal" ;
+              ] ;
+            sp:predicate other_common_classes---common_primitive_types_classes_and_enumerations:hasQuantity ;
+            sp:subject [
+                sp:varName "mon" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "baseVal" ;
+              ] ;
+            sp:predicate other_common_classes---common_primitive_types_classes_and_enumerations:hasQuantity ;
+            sp:subject [
+                sp:varName "mon2" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object epic:Event ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "target" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasEiTargetRef ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasResourceID ;
+            sp:subject [
+                sp:varName "target" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "venID" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasVenID ;
+            sp:subject [
+                sp:varName "target" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "es" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasEiEventSignalRef ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object epic:EventSignal ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "name" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasSignalName ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "type" ;
+              ] ;
+            sp:predicate fsgim-einterop:hasSignalTypeRef ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "mon" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 [
+                    a sp:SeqPath ;
+                    sp:path1 [
+                        a sp:SeqPath ;
+                        sp:path1 [
+                            a sp:SeqPath ;
+                            sp:path1 fsgim-einterop:hasEventIntervalRef ;
+                            sp:path2 sequences_and_intervals---energy_manager_component:hasIntervalsRef ;
+                          ] ;
+                        sp:path2 sequences_and_intervals---energy_manager_component:hasAttachRef ;
+                      ] ;
+                    sp:path2 fsgim-einterop:hasPriceRef ;
+                  ] ;
+                sp:path2 fsgim-emix:hasValueRef ;
+              ] ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "intervalVal" ;
+              ] ;
+            sp:predicate other_common_classes---common_primitive_types_classes_and_enumerations:hasQuantity ;
+            sp:subject [
+                sp:varName "mon" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "mon2" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 [
+                    a sp:SeqPath ;
+                    sp:path1 [
+                        a sp:SeqPath ;
+                        sp:path1 fsgim-einterop:hasCurrentValueRef ;
+                        sp:path2 fsgim-einterop:hasPayloadBaseRef ;
+                      ] ;
+                    sp:path2 fsgim-einterop:hasPriceRef ;
+                  ] ;
+                sp:path2 fsgim-emix:hasValueRef ;
+              ] ;
+            sp:subject [
+                sp:varName "es" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "baseVal" ;
+              ] ;
+            sp:predicate other_common_classes---common_primitive_types_classes_and_enumerations:hasQuantity ;
+            sp:subject [
+                sp:varName "mon2" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Remove SIMPLE triples" ;
+.
+insertConvertToPriceEvent:RemoveTempTriples
+  a sml:PerformUpdate ;
+  sm:next insertConvertToPriceEvent:UnlockDB ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:deletePattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Remove Temporary Triples" ;
+.
+insertConvertToPriceEvent:SerializeSPARQLResults_1
+  a sml:SerializeSPARQLResults ;
+  sm:next insertConvertToPriceEvent:RemoveTempTriples ;
+  sm:outputVariable "result" ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "tag" ;
+          ]
+          [
+            sp:varName "resourceID" ;
+          ]
+          [
+            sp:varName "groupID" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "tag" ;
+                    ] ;
+                  sp:predicate epic:hasTag ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        sp:object [
+                            sp:varName "resourceID" ;
+                          ] ;
+                        sp:predicate <http://hasResourceID> ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        sp:object [
+                            sp:varName "groupID" ;
+                          ] ;
+                        sp:predicate <http://hasGroupID> ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:serialization sm:JSON ;
+  rdfs:label "Get event Identifiers" ;
+.
+insertConvertToPriceEvent:UnlockDB
+  a sml:ReleaseLock ;
+  sm:next insertConvertToPriceEvent:InsertOadrDE_Return ;
+  sml:uri "http://siemens.com/vocab/kps/epic_instances" ;
+  rdfs:label "Unlock Database" ;
+.
+insertConvertToPriceEvent:XMLInsert2Price
+  a sm:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:defaultValue 0.90 ;
+      spl:optional true ;
+      spl:predicate sp:requestedPrice ;
+      spl:valueType xsd:decimal ;
+      sm:next insertConvertToPriceEvent:ApplyConstruct_1 ;
+      rdfs:comment "Optional price to set (default is 0.75)" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:defaultValue "PGEPDP" ;
+      spl:optional true ;
+      spl:predicate sp:groupID ;
+      spl:valueType xsd:string ;
+      sm:next insertConvertToPriceEvent:ApplyConstruct_1 ;
+      rdfs:comment "The groupID string to insert in the updated payload" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:xmlStringInput ;
+      spl:valueType xsd:string ;
+      sm:next insertConvertToPriceEvent:ConvertXMLToRDF_1 ;
+      rdfs:comment "The XML message represented as a String to be mapped from oadr to epic." ;
+    ] ;
+  sm:returnModule insertConvertToPriceEvent:InsertOadrDE_Return ;
+  rdfs:comment """This SPARQLMotion function is called to persist an OpenADR message into the triplestore
+The series of  steps is as follows:
+1. Parse the incoming XML message  
+2. Convert the XML into RDF triples according to the OpenADR schema
+3. Transform (Map) the OpenADR triples into EPIC triples
+4. Selectively replace \"simple\" values with price values, using the price arg
+5. Store the EPIC triples in the triplestore
+6. Return a JSON structure  with the eventID, requestID and modificationNumber of the incoming
+    message. Optionally, the resourceID will also be return, if included in the incoming message.
+""" ;
+  rdfs:subClassOf sm:Functions ;
+.
+sp:baseURIString
+  a rdf:Property ;
+  rdfs:comment "The baseURI represented as a String." ;
+  rdfs:range xsd:string ;
+.
+sp:graphURIString
+  a rdf:Property ;
+  rdfs:comment "The named graph to insert the RDF triples into." ;
+  rdfs:range xsd:string ;
+.
+sp:groupID
+  a rdf:Property ;
+  rdfs:label "Optional groupID for XMLInsert2Price" ;
+  rdfs:range xsd:string ;
+.
+sp:requestedPrice
+  a rdf:Property ;
+  rdfs:range xsd:decimal ;
+.
+sp:xmlStringInput
+  a rdf:Property ;
+  rdfs:comment "The named graph to insert the RDF triples into." ;
+  rdfs:range xsd:string ;
+.

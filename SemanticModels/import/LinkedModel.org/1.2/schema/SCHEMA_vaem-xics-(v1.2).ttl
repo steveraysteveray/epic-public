@@ -1,0 +1,173 @@
+# Saved by TopBraid on Mon Oct 10 15:11:45 PDT 2011
+# baseURI: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vaem:    <http://www.linkedmodel.org/schema/vaem#> .
+@prefix vaem-xics-1.2:  <http://www.linkedmodel.org/1.2/schema/vaem-xics#> .
+@prefix voag:    <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+voag:VAEM-XICS-CatalogEntry
+      rdf:type vaem:CatalogEntry ;
+      rdfs:label "VAEM XICS catalog entry"^^xsd:string .
+
+<http://www.linkedmodel.org/1.2/schema/vaem-xics>
+      rdf:type owl:Ontology ;
+      dc:author "Ralph Hodgson"^^xsd:string ;
+      dc:title "Vocabulary for Attaching Essential Metadata for Intent, Context and Scope"^^xsd:string ;
+      vaem:dateCreated "2011-08-19"^^vaem:dateUnion ;
+      vaem:description "VAEM-XICS is an extension to VAEM for metadata describing 'intent', 'context' and dimension properties for domain, discipline, aspect and viewpoint. These properties are attached to the 'owl:Ontology' class to fully qualify the ontology. "^^xsd:string ;
+      vaem:hasCatalogEntry
+              voag:VAEM-XICS-CatalogEntry ;
+      vaem:hasGraphRole vaem:SchemaGraph ;
+      vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+      vaem:intent "To provide essential resources and metadata for ontologies and controlled vocabularies so that the provenance, governance and licensing aspects of an ontology can be understand."^^xsd:string ;
+      vaem:name "VAEM-XICS"^^xsd:string ;
+      vaem:namespace "http://www.linkedmodel.org/schema/vaem-xics"^^xsd:anyURI ;
+      vaem:namespacePrefix
+              "vaem-xics"^^xsd:string ;
+      vaem:revision "1.2"^^xsd:string ;
+      vaem:usesNonImportedResource
+              dc:description ;
+      owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+vaem:Aspect
+      rdf:type owl:Class ;
+      rdfs:comment "Aspect is used to distinguish among sets of features of a domain or subject area. The term is borrowed from 'aspect-oriented' programming, where it is used to separate concerns. An ontology may be characterized by this dimension so as to parition features that are orthogonal. For example,  in an SBFI systems ontology we can distinguish aspects for 'structure', 'function', 'behavior' and 'interface'."^^xsd:string ;
+      rdfs:label "Aspect"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+vaem:Discipline
+      rdf:type owl:Class ;
+      rdfs:comment "A Discipline is a specific area of work or study. Examples of disciplines in the engineering domain are electrical engineering, mechanical engineering and, in the financial domain, risk assessment, investment analysis.  In VAEM, 'Discipline' is used as a dimension for characterizing an ontology graph."^^xsd:string ;
+      rdfs:label "Discipline"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+vaem:Domain
+      rdf:type owl:Class ;
+      rdfs:comment "A domain is a subject area of interest. Examples of domains are 'enterprise', 'process', 'organization' and 'system'. In VAEM, 'Domain' is used as a dimension for characterizing an ontology graph."^^xsd:string ;
+      rdfs:label "Domain"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+vaem:Viewpoint
+      rdf:type owl:Class ;
+      rdfs:comment "Viewpoint is used to denote how a set of resources, or an individual resource, is relevant to a context of use. The term 'viewpoint' is adopted from the ISO RM-ODP specifications and its more recent use in enterprise architecture descriptions.  In VAEM, 'Viewpoint' is used as a dimension for characterizing an ontology graph."^^xsd:string ;
+      rdfs:label "Viewpoint"^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+vaem:hasAspectScope
+      rdf:type rdf:Property ;
+      rdfs:comment "The property 'vaem:hasAspectScope' is used to distinguish among sets of features of a domain or subject area. The term is borrowed from 'aspect-oriented' programming, where it is used to separate concerns. An ontology may be characterized by this dimension so as to parition features that are orthogonal. For example,  in a systems ontology we can distinguish aspects for 'structure', 'function', 'behavior' and 'interface'.  The property is an 'rdf:Property' to allow both scalar and object values."^^xsd:string ;
+      rdfs:label "has aspect scope"^^xsd:string ;
+      rdfs:subPropertyOf vaem:hasScope .
+
+vaem:hasContext
+      rdf:type rdf:Property ;
+      rdfs:comment "The property 'vaem:hasContext' is used indicate a 'situation' in which an ontology has relevance.  InVAEM, the property can used as a dimension for characterizing an ontology graph.  The property is an 'rdf:Property' to allow both scalar and object values."^^xsd:string ;
+      rdfs:label "has context"^^xsd:string .
+
+vaem:hasDisciplineScope
+      rdf:type rdf:Property ;
+      rdfs:comment "The property 'vaem:hasDisciplineScope' is used to indicate relevance of a set of resources, or a resource itself, to a specific discipline of work or study. Examples of disciplines in the engineering domain are electrical engineering, mechanical engineering and, in the financial domain, risk assessment, investment analysis.  In VAEM, the property is used as a dimension for characterizing an ontology graph.  The property is an 'rdf:Property' to allow both scalar and object values."^^xsd:string ;
+      rdfs:label "has discipline scope"^^xsd:string ;
+      rdfs:subPropertyOf vaem:hasScope .
+
+vaem:hasDomainScope
+      rdf:type rdf:Property ;
+      rdfs:comment "The property 'vaem:hasDomainScope' is used to specify how  a set of resources, or an individual resource is grounded in a domain, that is, a subject area of interest. Examples of domains are 'enterprise', 'process', 'organization' and 'system'. In VAEM, the property is used as a dimension for characterizing an ontology graph. The property is an 'rdf:Property' to allow both scalar and object values."^^xsd:string ;
+      rdfs:label "has domain scope"^^xsd:string ;
+      rdfs:subPropertyOf vaem:hasScope .
+
+vaem:hasScope
+      rdf:type rdf:Property ;
+      rdfs:comment "The property 'vaem:hasScope' is used indicate a scope of relevance of an ontology.  In VAEM, the property is used as a dimension for characterizing an ontology graph.  The property is an 'rdf:Property' to allow both scalar and object values."^^xsd:string ;
+      rdfs:label "has scope"^^xsd:string .
+
+vaem:hasViewpointScope
+      rdf:type rdf:Property ;
+      rdfs:comment "The property 'vaem:hasVewpointScope' is used to denote how a set of resources, or an individual resource, is relevant to a context of use. The term 'viewpoint' is adopted from the ISO RM-ODP specifications and its more recent use in enterprise architecture descriptions.  In VAEM, the property is used as a dimension for characterizing an ontology graph.  The property is an 'rdf:Property' to allow both scalar and object values."^^xsd:string ;
+      rdfs:label "has viewpoint scope"^^xsd:string ;
+      rdfs:subPropertyOf vaem:hasScope .
+
+vaem:integer1to5
+      rdf:type rdfs:Datatype ;
+      rdfs:label "integer 1 to 5"^^xsd:string ;
+      rdfs:subClassOf xsd:integer ;
+      owl:equivalentClass
+              [ rdf:type rdfs:Datatype ;
+                owl:onDatatype xsd:positiveInteger ;
+                owl:withRestrictions
+                        ([ xsd:maxInclusive "5"^^xsd:positiveInteger
+                          ])
+              ] ;
+      owl:onDatatype xsd:positiveInteger .
+
+vaem:intent
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The property 'vaem:intent' is used to outline  a statement of purpose. This typically expresses one or more desired outcomes."^^xsd:string ;
+      rdfs:label "intent"^^xsd:string ;
+      rdfs:range xsd:string .
+
+vaem:rationale
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "A description of a justification for some other assertion or value."^^xsd:string ;
+      rdfs:label "rationale"^^xsd:string ;
+      rdfs:range xsd:string .
+
+vaem:specificity
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The property 'vaem:specificity' is intended to specify the level of detail of an ontology.  The values that can be set for this property are restriced to an integer from 1 to 5. An ontology at level 1 has concepts of more general applicability than one at level 5. By having graphs at different levels of specificity it is possible to support greater modularity for selective imports."^^xsd:string ;
+      rdfs:label "specificity"^^xsd:string ;
+      rdfs:range vaem:integer1to5 .
+
+owl:Ontology
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty vaem:hasContext
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty vaem:hasScope
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:allValuesFrom vaem:integer1to5 ;
+                owl:onProperty vaem:specificity
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty vaem:hasAspectScope
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty vaem:specificity
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty vaem:hasDisciplineScope
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty vaem:hasDomainScope
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+                owl:onProperty vaem:intent
+              ] ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+                owl:onProperty vaem:hasViewpointScope
+              ] .

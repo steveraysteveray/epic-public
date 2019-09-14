@@ -1,0 +1,640 @@
+# baseURI: http://qudt.org/1.2/schema/unicode
+# imports: http://www.linkedmodel.org/1.0/schema/dtype
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+# imports: http://www.w3.org/2004/02/skos/core
+
+# c14n-version: 3
+@prefix creativecommons: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/schema/dimension#> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix uc: <http://qudt.org/unicode/> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/schema/unicode>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:source "http://milde.users.sourceforge.net/LUCR/Math/unimathsymbols.xhtml"^^xsd:string ;
+  dc:subject "Quantities, Units, and Dimensions"^^xsd:string ;
+  dc:title "QUDT Dimension Ontology Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T11:17:52"^^xsd:dateTime ;
+  vaem:description "QUDT, or the 'Quantity, Unit, Dimension and Types' ontology defines the base classes properties, and restrictions used for modeling physical quantities, units of measure, and their dimensions in various measurement systems. In physics and science, dimensional analysis is a tool to find or check relations among physical quantities by using their dimensions. The dimension of a physical quantity is the combination of the basic physical dimensions (usually mass, length, time, electric charge, and temperature) which describe it; for example, speed has the dimension length / time, and may be measured in meters per second, miles per hour, or other units."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-DIMENSION-SchemaCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "The intent of the QUDT UNICODE Ontology is to provide an OWL Schema for converting Unicode to LaTeX"^^xsd:string ;
+  vaem:namespace "http://qudt.org/unicode"^^xsd:string ;
+  vaem:namespacePrefix "uc"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT UNICODE Ontology"^^xsd:string ;
+  owl:imports <http://www.linkedmodel.org/1.0/schema/dtype> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionIRI <http://qudt.org/1.2/schema/unicode> ;
+.
+<http://qudt.org/1.2/schema/unicode#us:CURRENCY-SYMBOLS>
+  rdf:type uc:CharacterSet ;
+  rdfs:label "CURRENCY-SYMBOLS"^^xsd:string ;
+.
+uc:ALPHABETIC-PRESENTATION-FORMS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "ALPHABETIC-PRESENTATION-FORMS"^^xsd:string ;
+.
+uc:ARROWS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "ARROWS"^^xsd:string ;
+.
+uc:AccentSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Accent Symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:AccentedLetter
+  rdf:type owl:Class ;
+  rdfs:label "Accented letter"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:AngleSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Angle symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:ArrowSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Arrow Symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Symbol ;
+.
+uc:BASIC-LATIN
+  rdf:type uc:CharacterSet ;
+  rdfs:label "BASIC-LATIN"^^xsd:string ;
+.
+uc:BOX-DRAWING
+  rdf:type uc:CharacterSet ;
+  rdfs:label "BOX-DRAWING"^^xsd:string ;
+.
+uc:BOX-ELEMENTS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "BOX-ELEMENTS"^^xsd:string ;
+.
+uc:BasicLatinCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Basic latin character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:BinaryOperator
+  rdf:type owl:Class ;
+  rdfs:label "Binary operator"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalOperator ;
+.
+uc:BoxDrawingCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Box character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:BoxElement
+  rdf:type owl:Class ;
+  rdfs:label "Box element"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:CAT_MATHACCENT
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHACCENT"^^xsd:string ;
+.
+uc:CAT_MATHALPHA
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHALPHA"^^xsd:string ;
+.
+uc:CAT_MATHBIN
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHBIN"^^xsd:string ;
+.
+uc:CAT_MATHCLOSE
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHCLOSE"^^xsd:string ;
+.
+uc:CAT_MATHFENCE
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHFENCE"^^xsd:string ;
+.
+uc:CAT_MATHOP
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHOP"^^xsd:string ;
+.
+uc:CAT_MATHOPEN
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHOPEN"^^xsd:string ;
+.
+uc:CAT_MATHORD
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHORD"^^xsd:string ;
+.
+uc:CAT_MATHOVER
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHOVER"^^xsd:string ;
+.
+uc:CAT_MATHPUNCT
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHPUNCT"^^xsd:string ;
+.
+uc:CAT_MATHRADICAL
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHRADICAL"^^xsd:string ;
+.
+uc:CAT_MATHREL
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHREL"^^xsd:string ;
+.
+uc:CAT_MATHUNDER
+  rdf:type uc:Category ;
+  rdfs:label "CAT MATHUNDER"^^xsd:string ;
+.
+uc:CJK-SYMBOLS-AND-PUNCTUATION
+  rdf:type uc:CharacterSet ;
+  rdfs:label "CJK-SYMBOLS-AND-PUNCTUATION"^^xsd:string ;
+.
+uc:CJK-SymbolOrPunctuationCharacter
+  rdf:type owl:Class ;
+  rdfs:label "CJK-Symbol or punctuation character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:COMBINING
+  rdf:type uc:CharacterSet ;
+  rdfs:label "COMBINING"^^xsd:string ;
+.
+uc:COMBINING-DIACRITICAL-MARKS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "COMBINING-DIACRITICAL-MARKS"^^xsd:string ;
+.
+uc:CYRILLIC
+  rdf:type uc:CharacterSet ;
+  rdfs:label "CYRILLIC"^^xsd:string ;
+.
+uc:CalculusSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Calculus symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:Category
+  rdf:type owl:Class ;
+  rdfs:label "Category"^^xsd:string ;
+  rdfs:subClassOf uc:EnumeratedValue ;
+.
+uc:CharacterSet
+  rdf:type owl:Class ;
+  rdfs:label "Character set"^^xsd:string ;
+  rdfs:subClassOf uc:EnumeratedValue ;
+.
+uc:ChemicalSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Chemical symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Symbol ;
+.
+uc:CombingCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Combing character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:CombiningDiacriticalMark
+  rdf:type owl:Class ;
+  rdfs:label "Combining diacritical mark"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:CurrencySymbol
+  rdf:type owl:Class ;
+  rdfs:label "Currency symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:CyrillicLetter
+  rdf:type owl:Class ;
+  rdfs:label "Cyrillic Letter"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:DINGBATS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "DINGBATS"^^xsd:string ;
+.
+uc:Dingbat
+  rdf:type owl:Class ;
+  rdfs:label "Dingbat"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:ENCLOSED-ALPHANUMERICS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "ENCLOSED-ALPHANUMERICS"^^xsd:string ;
+.
+uc:EllipseSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Ellipse Symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:EnclosedAlphanumericCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Enclosed alphanumeric character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:EnclosureSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Enclosure symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value"^^xsd:string ;
+  rdfs:subClassOf dtype:EnumeratedValue ;
+.
+uc:FormCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Form character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:GENERAL
+  rdf:type uc:CharacterSet ;
+  rdfs:label "GENERAL"^^xsd:string ;
+.
+uc:GEOMETRIC-SHAPES
+  rdf:type uc:CharacterSet ;
+  rdfs:label "GEOMETRIC-SHAPES"^^xsd:string ;
+.
+uc:GREEK-AND-COPTIC
+  rdf:type uc:CharacterSet ;
+  rdfs:label "GREEK-AND-COPTIC"^^xsd:string ;
+.
+uc:GeneralCharacter
+  rdf:type owl:Class ;
+  rdfs:label "General character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:GeometricShape
+  rdf:type owl:Class ;
+  rdfs:label "Geometric shape"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:GraphicBuildingBlock
+  rdf:type owl:Class ;
+  rdfs:label "Graphic building block"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:GreekOrCopticCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Unicode Greek or Coptic Character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:HALFWIDTH-AND-FULLWIDTH-FORMS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "HALFWIDTH-AND-FULLWIDTH-FORMS"^^xsd:string ;
+.
+uc:HIRAGANA
+  rdf:type uc:CharacterSet ;
+  rdfs:label "HIRAGANA"^^xsd:string ;
+.
+uc:HarpoonSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Harpoon symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:HebrewCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Hebrew character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:HiraganaCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Hiragana character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:LATIN-1
+  rdf:type uc:CharacterSet ;
+  rdfs:label "LATIN-1"^^xsd:string ;
+.
+uc:LATIN-EXTENDED-A
+  rdf:type uc:CharacterSet ;
+  rdfs:label "LATIN-EXTENDED-A"^^xsd:string ;
+.
+uc:LATIN-EXTENDED-B
+  rdf:type uc:CharacterSet ;
+  rdfs:label "LATIN-EXTENDED-B"^^xsd:string ;
+.
+uc:LETTERLIKE-SYMBOLS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "LETTERLIKE-SYMBOLS"^^xsd:string ;
+.
+uc:Latin1Character
+  rdf:type owl:Class ;
+  rdfs:label "Latin1Character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:LatinExtenedACharacter
+  rdf:type owl:Class ;
+  rdfs:label "Latin extened ACharacter"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:LatinExtenedBCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Latin extened BCharacter"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:LetterLikeSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Letter like symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Symbol ;
+.
+uc:LogicSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Logic symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:MATHEMATICAL-ALPHANUMERIC-SYMBOLS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "MATHEMATICAL-ALPHANUMERIC-SYMBOLS"^^xsd:string ;
+.
+uc:MATHEMATICAL-OPERATORS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "MATHEMATICAL-OPERATORS"^^xsd:string ;
+.
+uc:MISC
+  rdf:type uc:CharacterSet ;
+  rdfs:label "MISC"^^xsd:string ;
+.
+uc:MISC-SYMBOLS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "MISC-SYMBOLS"^^xsd:string ;
+.
+uc:MISC-SYMBOLS-AND-ARROWS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "MISC-SYMBOLS-AND-ARROWS"^^xsd:string ;
+.
+uc:MISC-TECHNICAL
+  rdf:type uc:CharacterSet ;
+  rdfs:label "MISC-TECHNICAL"^^xsd:string ;
+.
+uc:MathematicalAlphanumericSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Mathematical alphanumeric symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:MathematicalOperator
+  rdf:type owl:Class ;
+  rdfs:label "Mathematical operator"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:MathematicalSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Mathematical symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Symbol ;
+.
+uc:MiscCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Misc character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:MiscSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Misc symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Symbol ;
+.
+uc:MiscSymbolOrArrow
+  rdf:type owl:Class ;
+  rdfs:label "Misc symbol or arrow"^^xsd:string ;
+  rdfs:subClassOf uc:Symbol ;
+.
+uc:MiscTechnicalCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Misc technical character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:ModifierSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Modifier symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:NegatedBinaryOperator
+  rdf:type owl:Class ;
+  rdfs:label "Negated binary operator"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalOperator ;
+.
+uc:SMALL-FORM-VARIANTS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "SMALL-FORM-VARIANTS"^^xsd:string ;
+.
+uc:SPACING-MODIFIER
+  rdf:type uc:CharacterSet ;
+  rdfs:label "SPACING-MODIFIER"^^xsd:string ;
+.
+uc:SUPERSCRIPTS-AND-SUBSCRIPTS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "SUPERSCRIPTS-AND-SUBSCRIPTS"^^xsd:string ;
+.
+uc:SUPPLEMENTAL-ARROWS-A
+  rdf:type uc:CharacterSet ;
+  rdfs:label "SUPPLEMENTAL-ARROWS-A"^^xsd:string ;
+.
+uc:SUPPLEMENTAL-ARROWS-B
+  rdf:type uc:CharacterSet ;
+  rdfs:label "SUPPLEMENTAL-ARROWS-B"^^xsd:string ;
+.
+uc:SUPPLEMENTAL-MATHEMATICAL-OPERATORS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "SUPPLEMENTAL-MATHEMATICAL-OPERATORS"^^xsd:string ;
+.
+uc:SetTheorySymbol
+  rdf:type owl:Class ;
+  rdfs:label "Set theory symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:SimpleFraction
+  rdf:type owl:Class ;
+  rdfs:label "Simple fraction"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:SmallFormVariantCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Small form variant character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:SpacingModifierCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Spacing modifier character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:SuperscriptOrSubscriptCharacter
+  rdf:type owl:Class ;
+  rdfs:label "Superscript or Subscript Character"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:SupplementalArrowTypeA
+  rdf:type owl:Class ;
+  rdfs:label "Supplemental arrow type a"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:SupplementalArrowTypeB
+  rdf:type owl:Class ;
+  rdfs:label "Supplemental arrow type b"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:SupplementalMathematicalOperator
+  rdf:type owl:Class ;
+  rdfs:label "Supplemental mathematical operator"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:Symbol
+  rdf:type owl:Class ;
+  rdfs:label "Symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:UnarySymbol
+  rdf:type owl:Class ;
+  rdfs:label "Unary symbol"^^xsd:string ;
+  rdfs:subClassOf uc:MathematicalSymbol ;
+.
+uc:Unicode
+  rdf:type owl:Class ;
+  rdfs:label "Unicode"^^xsd:string ;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:chr ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:code ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:latex ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:unicode-math ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:comments ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:hasCategory ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:name ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:requirements ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty uc:set ;
+    ] ;
+.
+uc:UnitSymbol
+  rdf:type owl:Class ;
+  rdfs:label "Unit symbol"^^xsd:string ;
+  rdfs:subClassOf uc:Symbol ;
+.
+uc:VARIATION-SELECTORS
+  rdf:type uc:CharacterSet ;
+  rdfs:label "VARIATION-SELECTORS"^^xsd:string ;
+.
+uc:VariationSelector
+  rdf:type owl:Class ;
+  rdfs:label "Variation selector"^^xsd:string ;
+  rdfs:subClassOf uc:Unicode ;
+.
+uc:chr
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "chr"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+uc:cls
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "cls"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+uc:code
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "code"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+uc:comments
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "comments"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+uc:hasCategory
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "category"^^xsd:string ;
+  rdfs:range uc:Category ;
+.
+uc:latex
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "latex"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+uc:name
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "name"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+uc:requirements
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "requirements"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+uc:set
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "set"^^xsd:string ;
+  rdfs:range uc:CharacterSet ;
+.
+uc:unicode-math
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain uc:Unicode ;
+  rdfs:label "unicode-math"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+voag:QUDT-UNICODE-SchemaCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT DIMENSION Schema Catalog Entry"^^xsd:string ;
+.

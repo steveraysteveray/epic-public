@@ -1,0 +1,64 @@
+# baseURI: http://siemens.com/vocab/kps/epic/building_data
+# imports: http://siemens.com/spin/epic-retrieval-functions
+# imports: http://siemens.com/vocab/kps/epic/building_instances
+# imports: http://siemens.com/vocab/kps/epic/pilot-buildings
+# imports: https://w3id.org/saref
+# prefix: bldgdata
+
+@prefix b2e: <http://siemens.com/mapping/brick2epic#> .
+@prefix bb: <http://www.siemens.com/import/brick/Brick_Building#> .
+@prefix bldg: <http://siemens.com/schemas/kps/epic-building#> .
+@prefix bldgdata: <http://siemens.com/vocab/kps/epic/building_data#> .
+@prefix brick2epic: <http://siemens.com/mapping/brick2epic#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix dsig: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix epicbldg: <http://siemens.com/vocab/kps/epic/building_instances#> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pilot: <http://siemens.com/vocab/kps/epic/pilot-buildings#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix spinmapl: <http://topbraid.org/spin/spinmapl#> .
+@prefix spinx: <http://spinrdf.org/spinx#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix tariff: <http://siemens.com/schemas/kps/cim-tariff#> .
+@prefix tf: <http://siemens.com/functions/tariff-functions#> .
+@prefix time-functions: <http://siemens.com/functions/time-functions#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xhtml: <http://topbraid.org/xhtml#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xmldsig: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/vocab/kps/epic/building_data>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/spin/epic-retrieval-functions> ;
+  owl:imports <http://siemens.com/vocab/kps/epic/building_instances> ;
+  owl:imports <http://siemens.com/vocab/kps/epic/pilot-buildings> ;
+  owl:imports <https://w3id.org/saref> ;
+.
+bldgdata:groupList
+  rdf:type rdf:List ;
+  rdf:first "CIEE" ;
+  rdf:rest rdf:nil
+.
+bldgdata:foo
+  rdf:type rdf:List ;
+  rdf:first "CIEE" ;
+  rdf:rest () ;
+.

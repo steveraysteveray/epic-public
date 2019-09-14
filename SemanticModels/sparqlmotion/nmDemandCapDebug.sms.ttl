@@ -1,0 +1,1725 @@
+# baseURI: http://epic/scripts/nmDemandDebug
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: nmdd
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix nmdd: <http://epic/scripts/nmDemandDebug#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix spr: <http://spinrdf.org/spr#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/nmDemandDebug>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+nmdd:AddTableToTempURI
+  a sml:PerformUpdate ;
+  sm:next nmdd:CreateSPINResultSet_1 ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "eID" ;
+                    ] ;
+                  sp:predicate <http://hasEID> ;
+                  sp:subject [
+                      sp:varName "ttag" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "mNum" ;
+                    ] ;
+                  sp:predicate <http://hasMNUM> ;
+                  sp:subject [
+                      sp:varName "ttag" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "rID" ;
+                    ] ;
+                  sp:predicate <http://hasRID> ;
+                  sp:subject [
+                      sp:varName "ttag" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "row" ;
+              ] ;
+            sp:predicate spr:rowIndices ;
+            sp:subject [
+                sp:varName "table" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spr:cell ;
+                sp:arg1 [
+                    sp:varName "table" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "row" ;
+                  ] ;
+                sp:arg3 0 ;
+              ] ;
+            sp:variable [
+                sp:varName "eID" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spr:cell ;
+                sp:arg1 [
+                    sp:varName "table" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "row" ;
+                  ] ;
+                sp:arg3 1 ;
+              ] ;
+            sp:variable [
+                sp:varName "mNum" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spr:cell ;
+                sp:arg1 [
+                    sp:varName "table" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "row" ;
+                  ] ;
+                sp:arg3 2 ;
+              ] ;
+            sp:variable [
+                sp:varName "rID" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spr:cell ;
+                sp:arg1 [
+                    sp:varName "table" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "row" ;
+                  ] ;
+                sp:arg3 3 ;
+              ] ;
+            sp:variable [
+                sp:varName "ttag" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Add table results to tempURI" ;
+.
+nmdd:AddTargetResourceID
+  a sml:PerformUpdate ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "fResourceID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                  sp:subject [
+                      sp:varName "newTarget" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:bound ;
+                      sp:arg1 [
+                          sp:varName "nPriceTag" ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "forecastTag" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "fResourceID" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "nPriceTag" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+                  sp:subject [
+                      sp:varName "newEvent" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "newTarget" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                  sp:subject [
+                      sp:varName "newEvent" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:bound ;
+                      sp:arg1 [
+                          sp:varName "newEvent" ;
+                        ] ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Add target resourceID" ;
+.
+nmdd:BindBySelect_1
+  a sml:BindBySelect ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "response" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression "Would have changed" ;
+            sp:variable [
+                sp:varName "response" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Respond \"Would have changed\"" ;
+.
+nmdd:BindNewTag
+  a sml:BindBySelect ;
+  sm:next nmdd:UpdateDB ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "nPriceTag" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "nPriceTag" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+            sp:subject [
+                sp:varName "anything" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Bind new tag as variable" ;
+.
+nmdd:CacheNewTag
+  a sml:PerformUpdate ;
+  sm:next nmdd:BindNewTag ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "newTag" ;
+                    ] ;
+                  sp:predicate <http://hasNewTag> ;
+                  sp:subject [
+                      sp:varName "forecastTag" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "newTag" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+            sp:subject [
+                sp:varName "anything" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Cache new tag in tempURI" ;
+.
+nmdd:ClearTempDB
+  a sml:PerformUpdate ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:deletePattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Clear temporary DB" ;
+.
+nmdd:ClearWorkingMemory
+  a sml:ApplyConstruct ;
+  sm:next nmdd:IsDemandOK ;
+  sml:constructQuery [
+      a sp:Construct ;
+      sp:templates () ;
+      sp:where () ;
+    ] ;
+  sml:replace true ;
+  rdfs:label "Clear working memory" ;
+.
+nmdd:CloneNewPriceSignals
+  a sml:ApplyConstruct ;
+  sm:next nmdd:DidNewSignalGetCreated ;
+  sml:constructQuery [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "newO" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "newS" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a afn:now ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "now" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "forecastTag" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "fResourceID" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "fEventID" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a efunc:getLargestModNum ;
+                      sp:arg1 [
+                          sp:varName "fEventID" ;
+                        ] ;
+                      sp:arg2 "ENERGY_PRICE"^^xsd:anySimpleType ;
+                      sp:arg3 [
+                          sp:varName "fResourceID" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "bigModNum" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a efunc:selectEventEMSrTag ;
+                      sp:arg1 [
+                          sp:varName "fEventID" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "bigModNum" ;
+                        ] ;
+                      sp:arg3 "ENERGY_PRICE"^^xsd:anySimpleType ;
+                      sp:arg4 [
+                          sp:varName "fResourceID" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "pTag" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:bound ;
+                      sp:arg1 [
+                          sp:varName "pTag" ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:cast ;
+                      arg:datatype xsd:string ;
+                      sp:arg1 [
+                          sp:varName "now" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "nowString" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression "http://siemens.com/" ;
+                  sp:variable [
+                      sp:varName "startString" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a sp:concat ;
+                      sp:arg1 [
+                          sp:varName "startString" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "nowString" ;
+                        ] ;
+                      sp:arg3 [
+                          a spif:cast ;
+                          arg:datatype xsd:string ;
+                          sp:arg1 [
+                              a spif:random ;
+                            ] ;
+                        ] ;
+                      sp:arg4 "_EPIC#" ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "baseURI" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "pTag" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a fn:starts-with ;
+                      sp:arg1 [
+                          a afn:namespace ;
+                          sp:arg1 [
+                              sp:varName "s" ;
+                            ] ;
+                        ] ;
+                      sp:arg2 "http://siemens.com/2" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 [
+                              a afn:localname ;
+                              sp:arg1 [
+                                  sp:varName "s" ;
+                                ] ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "newS" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a sp:if ;
+                      sp:arg1 [
+                          a sp:and ;
+                          sp:arg1 [
+                              a smf:isURL ;
+                              arg:string [
+                                  a xsd:string ;
+                                  sp:arg1 [
+                                      sp:varName "o" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              a fn:starts-with ;
+                              sp:arg1 [
+                                  a afn:namespace ;
+                                  sp:arg1 [
+                                      sp:varName "o" ;
+                                    ] ;
+                                ] ;
+                              sp:arg2 "http://siemens.com/2" ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          a spif:buildURI ;
+                          sp:arg1 [
+                              a fn:concat ;
+                              sp:arg1 [
+                                  sp:varName "baseURI" ;
+                                ] ;
+                              sp:arg2 [
+                                  a efunc:stringTrimTo ;
+                                  sp:arg1 [
+                                      sp:varName "o" ;
+                                    ] ;
+                                  sp:arg2 "#" ;
+                                ] ;
+                            ] ;
+                        ] ;
+                      sp:arg3 [
+                          sp:varName "o" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "newO" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  sml:replace true ;
+  rdfs:label "Clone new price signals" ;
+.
+nmdd:CreateSPINResultSet_1
+  a sml:CreateSPINResultSet ;
+  sm:next nmdd:getEarliestExcessiveInterval ;
+  sm:next nmdd:getLatestExcessiveInterval ;
+  sm:outputVariable "sums" ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:groupBy (
+          [
+            sp:varName "uID" ;
+          ]
+        ) ;
+      sp:orderBy (
+          [
+            a xsd:integer ;
+            sp:arg1 [
+                sp:varName "uID" ;
+              ] ;
+          ]
+        ) ;
+      sp:resultVariables (
+          [
+            sp:varName "uID" ;
+          ]
+          [
+            sp:expression [
+                a sp:Sum ;
+                sp:expression [
+                    sp:varName "demand" ;
+                  ] ;
+              ] ;
+            sp:varName "total" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate efunc:relevantBuildings ;
+            sp:subject [
+                sp:varName "eventID" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getLargestModNum ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+                sp:arg2 "BID_LOAD" ;
+                sp:arg3 [
+                    sp:varName "resourceID" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "modNum" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "modNum" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?3" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object "BID_LOAD" ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?4" ;
+              ] ;
+            sp:predicate efunc:getQuantitySet ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?5" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "demand" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Add all demand forecasts" ;
+.
+nmdd:CreateTempURI
+  a sml:BindBySelect ;
+  sm:next nmdd:AddTableToTempURI ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "tempURI" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a fn:concat ;
+                    sp:arg1 "http://siemens.com/vocab/kps/epic_instances/" ;
+                    sp:arg2 [
+                        a spif:cast ;
+                        arg:datatype xsd:string ;
+                        sp:arg1 [
+                            a spif:random ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Create tempURI" ;
+.
+nmdd:DidNewSignalGetCreated
+  a sml:BranchByAsk ;
+  sm:else nmdd:Placeholder1 ;
+  sm:if nmdd:CacheNewTag ;
+  sm:next nmdd:Placeholder2 ;
+  sml:askQuery [
+      a sp:Ask ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Did new signal get created?" ;
+.
+nmdd:GetTagOfLatestPriceSignal
+  a sml:BindBySelect ;
+  sm:next nmdd:getLatestDemandForecasts ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "tag" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression "ENERGY_PRICE" ;
+            sp:variable [
+                sp:varName "signalName" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:bound ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getLargestModNum ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "signalName" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "modNum" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:bound ;
+                sp:arg1 [
+                    sp:varName "modNum" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:selectEventEMSrTag ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "modNum" ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "signalName" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "tag" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Get Tag of latest price signal" ;
+.
+nmdd:ImportBuildingDB
+  a sml:ImportRDFFromWorkspace ;
+  sm:next nmdd:CreateSPINResultSet_1 ;
+  sml:baseURI "http://siemens.com/vocab/kps/epic/pilot-buildings" ;
+  sml:ignoreImports true ;
+  rdfs:label "Import buildings db" ;
+.
+nmdd:ImportInstanceDB
+  a sml:ImportRDFFromWorkspace ;
+  sm:next nmdd:CreateSPINResultSet_1 ;
+  sm:next nmdd:GetTagOfLatestPriceSignal ;
+  sml:baseURI "http://siemens.com/vocab/kps/epic_instances" ;
+  sml:ignoreImports true ;
+  rdfs:label "Import instance DB" ;
+.
+nmdd:IsDemandOK
+  a sml:BranchByAsk ;
+  sm:else nmdd:BindBySelect_1 ;
+  sm:if nmdd:RespondNoChange ;
+  sm:next nmdd:nmDemandDebug_Return ;
+  sml:askQuery [
+      a sp:Ask ;
+      sp:where (
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:and ;
+                sp:arg1 [
+                    a sp:eq ;
+                    sp:arg1 [
+                        sp:varName "earliest" ;
+                      ] ;
+                    sp:arg2 99 ;
+                  ] ;
+                sp:arg2 [
+                    a sp:eq ;
+                    sp:arg1 [
+                        sp:varName "latest" ;
+                      ] ;
+                    sp:arg2 -99 ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Is demand OK?" ;
+.
+nmdd:IterateOverForecastSignals
+  a sml:IterateOverSelect ;
+  sm:body nmdd:CloneNewPriceSignals ;
+  sm:next nmdd:UnlockInstanceDB ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "forecastTag" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "fEventID" ;
+                    ] ;
+                  sp:predicate <http://hasEID> ;
+                  sp:subject [
+                      sp:varName "forecastTag" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Iterate over forecast signals" ;
+.
+nmdd:LockDB
+  a sml:RequestLock ;
+  sm:next nmdd:IterateOverForecastSignals ;
+  sml:uri "http://siemens.com/vocab/kps/epic_instances" ;
+  rdfs:label "Lock DB" ;
+.
+nmdd:Merge_1
+  a sml:Merge ;
+  sm:next nmdd:ClearWorkingMemory ;
+  rdfs:label "Merge" ;
+.
+nmdd:Placeholder1
+  a sml:Merge ;
+  rdfs:label "Placeholder 1" ;
+.
+nmdd:Placeholder2
+  a sml:Merge ;
+  rdfs:label "Placeholder 2" ;
+.
+nmdd:RespondNoChange
+  a sml:BindBySelect ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "response" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression "No change" ;
+            sp:variable [
+                sp:varName "response" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Respond 'No change'" ;
+.
+nmdd:SerializeNewTags
+  a sml:SerializeSPARQLResults ;
+  sm:next nmdd:ClearTempDB ;
+  sm:outputVariable "response" ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "eventID" ;
+          ]
+          [
+            sp:varName "resourceID" ;
+          ]
+          [
+            sp:varName "newPriceTag" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "newPriceTag" ;
+                    ] ;
+                  sp:predicate <http://hasNewTag> ;
+                  sp:subject [
+                      sp:varName "forecastTag" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "resourceID" ;
+                    ] ;
+                  sp:predicate <http://hasRID> ;
+                  sp:subject [
+                      sp:varName "forecastTag" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "eventID" ;
+                    ] ;
+                  sp:predicate <http://hasEID> ;
+                  sp:subject [
+                      sp:varName "forecastTag" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode [
+                sp:varName "tempURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:serialization sm:JSON ;
+  rdfs:label "Serialize new tags" ;
+.
+nmdd:UnlockInstanceDB
+  a sml:ReleaseLock ;
+  sm:next nmdd:SerializeNewTags ;
+  sml:uri "http://siemens.com/vocab/kps/epic_instances" ;
+  rdfs:label "Unlock Instance DB" ;
+.
+nmdd:UpdateDB
+  a sml:PerformUpdate ;
+  sm:next nmdd:UpdatePricesInIntervals ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Update the DB" ;
+.
+nmdd:UpdateNewModNum
+  a sml:PerformUpdate ;
+  sm:next nmdd:AddTargetResourceID ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:deletePattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "modificationNumber" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "newMod" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:bound ;
+                      sp:arg1 [
+                          sp:varName "nPriceTag" ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "nPriceTag" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "modificationNumber" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a sp:add ;
+                      sp:arg1 [
+                          sp:varName "modificationNumber" ;
+                        ] ;
+                      sp:arg2 1 ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "newMod" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Update modification number" ;
+.
+nmdd:UpdatePricesInIntervals
+  a sml:PerformUpdate ;
+  sm:next nmdd:UpdateNewModNum ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:deletePattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "oldPrice" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#hasQuantity> ;
+                  sp:subject [
+                      sp:varName "value" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "newPrice" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#hasQuantity> ;
+                  sp:subject [
+                      sp:varName "value" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:bound ;
+                      sp:arg1 [
+                          sp:varName "nPriceTag" ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "nPriceTag" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+                  sp:subject [
+                      sp:varName "intDataContainer" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "uid" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasInstanceUid> ;
+                  sp:subject [
+                      sp:varName "intDataContainer" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:and ;
+                      sp:arg1 [
+                          a sp:ge ;
+                          sp:arg1 [
+                              a xsd:int ;
+                              sp:arg1 [
+                                  sp:varName "uid" ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "earliest" ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          a sp:le ;
+                          sp:arg1 [
+                              a xsd:int ;
+                              sp:arg1 [
+                                  sp:varName "uid" ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "latest" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "value" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 [
+                          a sp:SeqPath ;
+                          sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasAttachRef> ;
+                          sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPriceRef> ;
+                        ] ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#hasValueRef> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "intDataContainer" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "oldPrice" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#hasQuantity> ;
+                  sp:subject [
+                      sp:varName "value" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a sp:mul ;
+                      sp:arg1 [
+                          sp:varName "oldPrice" ;
+                        ] ;
+                      sp:arg2 1.1 ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "newPrice" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Update prices in excess intervals" ;
+.
+nmdd:getEarliestExcessiveInterval
+  a sml:BindBySelect ;
+  sm:next nmdd:Merge_1 ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:expression [
+                a sp:Min ;
+                sp:expression [
+                    sp:varName "euID" ;
+                  ] ;
+              ] ;
+            sp:varName "earliest" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "row" ;
+              ] ;
+            sp:predicate spr:rowIndices ;
+            sp:subject [
+                sp:varName "sums" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:if ;
+                sp:arg1 [
+                    a sp:gt ;
+                    sp:arg1 [
+                        a spr:cell ;
+                        sp:arg1 [
+                            sp:varName "sums" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "row" ;
+                          ] ;
+                        sp:arg3 1 ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "maxDemand" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a xsd:int ;
+                    sp:arg1 [
+                        a spr:cell ;
+                        sp:arg1 [
+                            sp:varName "sums" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "row" ;
+                          ] ;
+                        sp:arg3 0 ;
+                      ] ;
+                  ] ;
+                sp:arg3 99 ;
+              ] ;
+            sp:variable [
+                sp:varName "euID" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Find earliest interval of excessive demand" ;
+.
+nmdd:getLatestDemandForecasts
+  a sml:CreateSPINResultSet ;
+  sm:next nmdd:AddTableToTempURI ;
+  sm:outputVariable "table" ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "eventID" ;
+          ]
+          [
+            sp:varName "modNum" ;
+          ]
+          [
+            sp:varName "resourceID" ;
+          ]
+          [
+            sp:varName "ftag" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression "BID_LOAD"^^xsd:anySimpleType ;
+            sp:variable [
+                sp:varName "signalName" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate efunc:relevantBuildings ;
+            sp:subject [
+                sp:varName "eventID" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "signalName" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalName> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getLargestModNum ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "signalName" ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "resourceID" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "modNum" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "modNum" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "ftag" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Get latest demand forecasts" ;
+.
+nmdd:getLatestExcessiveInterval
+  a sml:BindBySelect ;
+  sm:next nmdd:Merge_1 ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:expression [
+                a sp:Max ;
+                sp:expression [
+                    sp:varName "euID" ;
+                  ] ;
+              ] ;
+            sp:varName "latest" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "row" ;
+              ] ;
+            sp:predicate spr:rowIndices ;
+            sp:subject [
+                sp:varName "sums" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:if ;
+                sp:arg1 [
+                    a sp:gt ;
+                    sp:arg1 [
+                        a spr:cell ;
+                        sp:arg1 [
+                            sp:varName "sums" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "row" ;
+                          ] ;
+                        sp:arg3 1 ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "maxDemand" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a xsd:int ;
+                    sp:arg1 [
+                        a spr:cell ;
+                        sp:arg1 [
+                            sp:varName "sums" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "row" ;
+                          ] ;
+                        sp:arg3 0 ;
+                      ] ;
+                  ] ;
+                sp:arg3 -99 ;
+              ] ;
+            sp:variable [
+                sp:varName "euID" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Find latest interval of excessive demand" ;
+.
+nmdd:nmDemandDebug
+  a sm:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:eventID ;
+      spl:valueType xsd:string ;
+      sm:next nmdd:GetTagOfLatestPriceSignal ;
+      rdfs:comment "The eventID to be evaluated" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:maxDemand ;
+      spl:valueType xsd:float ;
+      sm:next nmdd:GetTagOfLatestPriceSignal ;
+      rdfs:comment "The maximum total demand that the collection of customers should not exceed" ;
+    ] ;
+  sm:returnModule nmdd:nmDemandDebug_Return ;
+  rdfs:subClassOf sm:Functions ;
+.
+nmdd:nmDemandDebug_Return
+  a sml:ReturnText ;
+  sml:text "{?response}" ;
+  rdfs:comment """The nmDemandDebug script/web service takes two arguments:
+eventID - the string value for the event, which may have multiple versions in the DB with different modificationNumber and different signalName (BID_LOAD or ENERGY_PRICE), but is presumed to always be referring to the same Event in the sense of OpenADR.
+maxDemand - the maximum allowed demand in kW for the total group or set of resources receiving this event.
+
+The script returns \"No change\" unless all the following are true:
+1. There exists an event with eventID and a signalName of \"ENERGY_PRICE\"
+2. There exists at least one demand forecast for this event, with a signalName of \"BID_LOAD\"
+3. The sum of the demand forecasts for any interval in the Event exceeds the value of maxDemand
+
+If all the above conditions are met, then the script returns the retrieval tag of an updated ENERGY_PRICE signal. This updated signal contains prices of 110% of the most recent (i.e. largest modificationNumber) ENERGY_PRICE signal with this eventID, for the intervals where forecast demand exceeds the maximum.
+The intention is that the calling service would pass this updated signal on to the affected buildings, who would in turn respond with updated demand forecasts. This iteration would continue until the total demand forecasts fall below the value of maxDemand for all intervals.""" ;
+.
+sp:eventID
+  a rdf:Property ;
+  rdfs:label "event ID" ;
+  rdfs:subPropertyOf sp:arg1 ;
+.
+sp:maxDemand
+  a rdf:Property ;
+  rdfs:label "max demand" ;
+  rdfs:subPropertyOf sp:arg1 ;
+.

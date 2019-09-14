@@ -1,0 +1,500 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/informatics
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/unit/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/unit/informatics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Daniel Mekonnen"^^xsd:string ;
+  dc:contributor "Irene Polikoff"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Infomatics Units of Measure"^^xsd:string ;
+  dc:title "QUDT Units Vocabulary (without dimensions) Version 1.1"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science and Engineering Units"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used units. This comprises the SI and many non-SI Units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 15:18:25 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:versionIRI <http://qudt.org/1.1/vocab/unit> ;
+  owl:versionInfo "$Id: OVG_units-qudt-(v1.1).ttl 4990 2011-06-01 22:18:25Z RalphHodgson $"^^xsd:string ;
+.
+quantity:DataRate
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Data Rate"^^xsd:string ;
+.
+unit:BAN
+  rdf:type qudt:InformationEntropyUnit ;
+  qudt:abbreviation "ban"^^xsd:string ;
+  qudt:conversionMultiplier "2.30258509"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A ban is a logarithmic unit which measures information or entropy, based on base 10 logarithms and powers of 10, rather than the powers of 2 and base 2 logarithms which define the bit. One ban is approximately $3.32 (log_2 10) bits$."^^xsd:string ;
+  qudt:quantityKind quantity:InformationEntropy ;
+  qudt:symbol "ban"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Ban"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Ban> ;
+  skos:prefLabel "ban"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ban?oldid=472969907> ;
+.
+unit:BIT
+  rdf:type qudt:InformationEntropyUnit ;
+  qudt:abbreviation "b"^^xsd:string ;
+  qudt:code "3045"^^xsd:string ;
+  qudt:conversionMultiplier "0.693147181"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In information theory, a bit is the amount of information that, on average, can be stored in a discrete bit. It is thus the amount of information carried by a choice between two equally likely outcomes. One bit corresponds to about 0.693 nats (ln(2)), or 0.301 hartleys (log10(2))."^^xsd:string ;
+  qudt:designator "U-150-3045"^^xsd:string ;
+  qudt:quantityKind quantity:InformationEntropy ;
+  qudt:symbol "b"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Bit"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bit> ;
+  skos:prefLabel "bit"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bit?oldid=495288173> ;
+.
+unit:BIT-PER-SEC
+  rdf:type qudt:DataRateUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "bps"^^xsd:string ;
+  qudt:code "2240"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In telecommunications and computing, bit rate (sometimes written bitrate, data (transfer) rate) is the number of bits that are conveyed or processed per unit of time. The bit rate is quantified using the bits per second (bit/s) unit, often in conjunction with an SI prefix such as kilo- (kbit/s), mega- (Mbit/s), giga- (Gbit/s) or tera- (Tbit/s). Note that, unlike many other computer-related units, 1 kbit/s is traditionally defined as 1,000 bit/s, not 1,024 bit/s, etc., also before 1999 when SI prefixes were introduced for units of information in the standard IEC 60027-2. Uppercase K as in Kbit/s should never be used. The formal abbreviation for 'bits per second' is 'bit/s' (not 'bits/s'). In less formal contexts the abbreviations 'b/s' or 'bps' are sometimes used, though this risks confusion with 'bytes per second' ('B/s', 'Bps'), and the use of the abbreviation ps is also inconsistent with the SI symbol for picosecond."^^xsd:string ;
+  qudt:designator "U-150-2240"^^xsd:string ;
+  qudt:quantityKind quantity:DataRate ;
+  qudt:symbol "bps"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Bits per Second"^^xsd:string ;
+  skos:prefLabel "bits-per-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bit_rate> ;
+.
+unit:BYTE
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:ResourceUnit ;
+  qudt:abbreviation "B"^^xsd:string ;
+  qudt:code "3040"^^xsd:string ;
+  qudt:conversionMultiplier "5.54517744"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The byte is a unit of digital information in computing and telecommunications that most commonly consists of eight bits."^^xsd:string ;
+  qudt:designator "U-150-3040"^^xsd:string ;
+  qudt:quantityKind quantity:InformationEntropy ;
+  qudt:symbol "B"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Byte"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Byte> ;
+  skos:prefLabel "byte"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Byte?oldid=493588918> ;
+.
+unit:ERLANG
+  rdf:type qudt:DataRateUnit ;
+  qudt:abbreviation "Er"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Erlang} is a dimensionless unit that is used in telephony as a measure of offered load or carried load on service-providing elements such as telephone circuits or telephone switching equipment."^^xsd:string ;
+  qudt:quantityKind quantity:InformationEntropy ;
+  qudt:symbol "E"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Erlang"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Erlang_(unit)> ;
+  skos:prefLabel "Erlang"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Erlang_(unit)> ;
+.
+unit:FRAME-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VideoFrameRateUnit ;
+  qudt:abbreviation "fps"^^xsd:string ;
+  qudt:code "3000"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Frame per Second}' is a C.G.S System unit for  'Video Frame Rate' expressed as $fps$."^^xsd:string ;
+  qudt:quantityKind quantity:VideoFrameRate ;
+  qudt:symbol "fps"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Frame per Second"^^xsd:string ;
+  skos:prefLabel "frame-per-second"^^xsd:string ;
+.
+unit:GigaBYTE
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:ResourceUnit ;
+  qudt:abbreviation "gbyte"^^xsd:string ;
+  qudt:conversionMultiplier "1073741824"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The gigabyte is a multiple of the unit byte for digital information storage. The prefix giga means 10 in the International System of Units (SI), therefore 1 gigabyte is $1,000,000,000 \\; bytes$. The unit symbol for the gigabyte is $GB$ or $Gbyte$, but not $Gb$ (lower case b) which is typically used for the gigabit. Historically, the term has also been used in some fields of computer science and information technology to denote the $gibibyte$, or $1073741824 \\; bytes$."^^xsd:string ;
+  qudt:hasMultiplier unit:Giga ;
+  qudt:symbol "GB"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "GigaByte"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gigabyte> ;
+  skos:prefLabel "gigabyte"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gigabyte?oldid=493019145> ;
+.
+unit:GigaHZ
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  qudt:abbreviation "GHz"^^xsd:string ;
+  qudt:code "3035"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-3035"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "GHz"^^xsd:string ;
+  rdfs:label "Gigahertz"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hertz> ;
+  skos:prefLabel "gigahertz"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hertz?oldid=495463170> ;
+.
+unit:HART-PER-SEC
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:InformationEntropyUnit ;
+  qudt:abbreviation "Hart/s"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Hartley per Second} is a unit of information rate."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Hartley per Second"^^xsd:string ;
+  skos:prefLabel "Hartley per Second"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ban_(information)> ;
+.
+unit:HARTLEY
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:InformationEntropyUnit ;
+  qudt:abbreviation "Hart"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Hartley} is a unit of information."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Hartley"^^xsd:string ;
+  skos:prefLabel "Hartley"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ban_(information)> ;
+.
+unit:HZ
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Hz"^^xsd:string ;
+  qudt:code "3020"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The hertz (symbol Hz) is the SI unit of frequency defined as the number of cycles per second of a periodic phenomenon. One of its most common uses is the description of the sine wave, particularly those used in radio and audio applications, such as the frequency of musical tones. The word \"hertz\" is named for Heinrich Rudolf Hertz, who was the first to conclusively prove the existence of electromagnetic waves."^^xsd:string ;
+  qudt:designator "U-150-3020"^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "Hz"^^xsd:string ;
+  rdfs:label "Hertz"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hertz> ;
+  skos:prefLabel "hertz"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hertz?oldid=495463170> ;
+.
+unit:KHZ
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  qudt:abbreviation "KHz"^^xsd:string ;
+  qudt:code "3025"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-3025"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "KHz"^^xsd:string ;
+  rdfs:label "Kilohertz"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Hertz> ;
+  skos:prefLabel "kilohertz"^^xsd:string ;
+.
+unit:KiloBIT-PER-SEC
+  rdf:type qudt:DataRateUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "kbps"^^xsd:string ;
+  qudt:code "3010"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A kilobit per second (kB/s) is a unit of data transfer rate equal to 1,000 bits per second."^^xsd:string ;
+  qudt:isScalingOf unit:BIT-PER-SEC ;
+  qudt:symbol "kbps"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Kilobit per Second"^^xsd:string ;
+  skos:prefLabel "kilobit-per-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Data_rate_units#Kilobyte_per_second> ;
+.
+unit:KiloBYTE
+  rdf:type qudt:BinaryScaledUnit ;
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:ResourceUnit ;
+  qudt:abbreviation "KB"^^xsd:string ;
+  qudt:conversionMultiplier "1024"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The kilobyte is a multiple of the unit byte for digital information equivalent to 1024 bytes. Although the prefix kilo- means 1000, the term kilobyte and symbol kB have historically been used to refer to either 1024 (210) bytes or 1000 (103) bytes, dependent upon context, in the fields of computer science and information technology."^^xsd:string ;
+  qudt:hasMultiplier unit:Kibi ;
+  qudt:symbol "kB"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Kilo Byte"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Byte> ;
+  skos:prefLabel "kilo-byte"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Byte?oldid=493588918> ;
+.
+unit:KiloBYTE-PER-SEC
+  rdf:type qudt:DataRateUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "kbps"^^xsd:string ;
+  qudt:code "3010"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A kilobyte per second (kByte/s) is a unit of data transfer rate equal to 8,000 bits per second, or 1,000 bytes per second, or 8 kilobits per second."^^xsd:string ;
+  qudt:isScalingOf unit:BIT-PER-SEC ;
+  qudt:symbol "kbps"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Kilobyte per Second"^^xsd:string ;
+  skos:prefLabel "kilobyte-per-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Data_rate_units#Kilobyte_per_second> ;
+.
+unit:MHz
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  qudt:abbreviation "MHz"^^xsd:string ;
+  qudt:code "3030"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-3030"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "MHz"^^xsd:string ;
+  rdfs:label "Megahertz"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Hertz> ;
+  skos:prefLabel "megahertz"^^xsd:string ;
+.
+unit:MegaBIT-PER-SEC
+  rdf:type qudt:DataRateUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "mbps"^^xsd:string ;
+  qudt:code "3015"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A megabit per second (Mbit/s or Mb/s; not to be confused with mbit/s which means millibit per second, or with Mbitps which means megabit picosecond) is a unit of data transfer rate equal to 1,000,000 bits per second or 1,000 kilobits per second or 125,000 bytes per second or 125 kilobytes per second."^^xsd:string ;
+  qudt:isScalingOf unit:KiloBIT-PER-SEC ;
+  qudt:quantityKind quantity:DataRate ;
+  qudt:symbol "mbps"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Megabit per Second"^^xsd:string ;
+  skos:prefLabel "megabit-per-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Data_rate_units> ;
+.
+unit:MegaBYTE
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:ResourceUnit ;
+  qudt:abbreviation "mB"^^xsd:string ;
+  qudt:conversionMultiplier "1048576"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The megabyte is a multiple of the unit byte for digital information equivalent to $2^{6} bytes$. Although the prefix mega means $10^{6}$, the term megabyte and symbol $mB$ have historically been used to refer to $1024^{3} bytes$ or $2^{30} bytes$. The megabyte is a multiple of the unit byte for digital information storage or transmission with three different values depending on context: 1048576 bytes generally for computer memory; and one million bytes (10, see prefix mega-) generally for computer storage. In rare cases, it is used to mean $1000 \\times 1024 (1024,000) bytes$. The IEEE Standards Board has confirmed that mega means $1000,000$, with exceptions allowed for the base-two meaning."^^xsd:string ;
+  qudt:hasMultiplier unit:Mega ;
+  qudt:symbol "mB"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Mega byte"^^xsd:string ;
+  owl:sameAs unit:MegaBYTE ;
+  skos:exactMatch <http://dbpedia.org/resource/Megabyte> ;
+  skos:prefLabel "megabyte"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Megabyte?oldid=487094486> ;
+.
+unit:MegaBYTE_M
+  rdf:type qudt:BinaryScaledUnit ;
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:ResourceUnit ;
+  qudt:abbreviation "mB"^^xsd:string ;
+  qudt:conversionMultiplier "1048576"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The megabyte is a multiple of the unit byte for digital information equivalent to $2^{6} bytes$. Although the prefix mega means $10^{6}$, the term megabyte and symbol $mB$ have historically been used to refer to $1024^{3} bytes$ or $2^{30} bytes$. The megabyte is a multiple of the unit byte for digital information storage or transmission with three different values depending on context: 1048576 bytes generally for computer memory; and one million bytes (10, see prefix mega-) generally for computer storage. In rare cases, it is used to mean $1000 \\times 1024 (1024,000) bytes$. The IEEE Standards Board has confirmed that mega- means 1000000, with exceptions allowed for the base-two meaning."^^xsd:string ;
+  qudt:hasMultiplier unit:Exbi ;
+  qudt:symbol "mB"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "MegaByte of Memory"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Megabyte> ;
+  skos:prefLabel "megabyte"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Megabyte?oldid=487094486> ;
+.
+unit:NAT
+  rdf:type qudt:InformationEntropyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "nat"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A nat is a logarithmic unit of information or entropy, based on natural logarithms and powers of e, rather than the powers of 2 and base 2 logarithms which define the bit. The nat is the natural unit for information entropy. Physical systems of natural units which normalize Boltzmann's constant to 1 are effectively measuring thermodynamic entropy in nats."^^xsd:string ;
+  qudt:quantityKind quantity:InformationEntropy ;
+  qudt:symbol "nat"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Nat"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Nat> ;
+  skos:prefLabel "Nat"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nat?oldid=474010287> ;
+.
+unit:NAT-PER-SEC
+  rdf:type qudt:InformationEntropyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "nat-per-sec"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Nat per Second} is information rate in natural units."^^xsd:string ;
+  qudt:quantityKind quantity:InformationEntropy ;
+  qudt:symbol "nat-sec^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Nat per Second"^^xsd:string ;
+  skos:prefLabel "Nat per Second"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nat?oldid=474010287> ;
+.
+unit:PER-SEC
+  rdf:type qudt:DataRateUnit ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Per Second"^^xsd:string ;
+  skos:prefLabel "Per Second"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+unit:PebiBYTE
+  rdf:type qudt:BinaryScaledUnit ;
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:ResourceUnit ;
+  qudt:abbreviation "PiB"^^xsd:string ;
+  qudt:conversionMultiplier "1125899906842624"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The pebibyte is a standards-based binary multiple (prefix pebi, symbol Pi) of the byte, a unit of digital information storage. The pebibyte unit symbol is PiB. 1 pebibyte =  1125899906842624bytes = 1024 tebibytes The pebibyte is closely related to the petabyte, which is defined as $10^{15} bytes = 1,000,000,000,000,000 bytes$."^^xsd:string ;
+  qudt:hasMultiplier unit:Pebi ;
+  qudt:symbol "PiB"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "PebiByte"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pebibyte> ;
+  skos:prefLabel "pebibyte"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pebibyte?oldid=492685015> ;
+.
+unit:PetaBYTE
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:ResourceUnit ;
+  qudt:abbreviation "PB"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e15 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A petabyte is a unit of information equal to one quadrillion bytes, or 1024 terabytes. The unit symbol for the petabyte is PB. The prefix peta (P) indicates the fifth power to 1000: 1 PB = 1000000000000000B, 1 million gigabytes = 1 thousand terabytes The pebibyte (PiB), using a binary prefix, is the corresponding power of 1024, which is more than $12\\% $greater ($2^{50} bytes = 1,125,899,906,842,624 bytes$)."^^xsd:string ;
+  qudt:hasMultiplier unit:Peta ;
+  qudt:symbol "PB"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "PetaByte"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Petabyte> ;
+  skos:prefLabel "petabyte"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Petabyte?oldid=494735969> ;
+.
+unit:SH-PER-SEC
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:InformationEntropyUnit ;
+  qudt:abbreviation "Sh/s"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Shannon per Second} is a unit of information rate."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Shannon per Second"^^xsd:string ;
+  skos:prefLabel "Shannon per Second"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ban_(information)> ;
+.
+unit:SHANNON
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:InformationEntropyUnit ;
+  qudt:abbreviation "Sh"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Shannon} is a unit of information."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "Shannon"^^xsd:string ;
+  skos:prefLabel "Shannon"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ban_(information)> ;
+.
+unit:TeraBYTE
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:InformaticsUnit ;
+  rdf:type qudt:ResourceUnit ;
+  qudt:abbreviation "TB"^^xsd:string ;
+  qudt:conversionMultiplier "1048576"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The terabyte is a multiple of the unit byte for digital information. The prefix tera means 10 in the International System of Units (SI), and therefore 1 terabyte is 1000000000000bytes, or 1 trillion bytes, or 1000 gigabytes. 1 terabyte in binary prefixes is 0.9095 tebibytes, or 931.32 gibibytes. The unit symbol for the terabyte is TB or TByte, but not Tb (lower case b) which refers to terabit."^^xsd:string ;
+  qudt:hasMultiplier unit:Tera ;
+  qudt:symbol "TB"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/informatics> ;
+  rdfs:label "TeraByte"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Terabyte> ;
+  skos:prefLabel "terabyte"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Terabyte?oldid=494671550> ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.
+unit:BYTE
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InformationEntropy ;
+.

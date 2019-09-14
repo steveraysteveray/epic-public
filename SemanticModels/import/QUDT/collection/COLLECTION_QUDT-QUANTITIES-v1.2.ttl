@@ -1,0 +1,290 @@
+# baseURI: http://qudt.org/1.2/collection/quantities
+# imports: http://qudt.org/1.2/collection/units
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/characteristic-numbers
+# imports: http://qudt.org/1.2/vocab/isq/quantity/physical-chemistry-and-molecular-physics
+# imports: http://qudt.org/1.2/vocab/isq/quantity/solid-state-physics
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/acoustics
+# imports: http://qudt.org/1.2/vocab/quantity/aerodynamics
+# imports: http://qudt.org/1.2/vocab/quantity/atmospheric-physics
+# imports: http://qudt.org/1.2/vocab/quantity/atomic-and-nuclear-physics
+# imports: http://qudt.org/1.2/vocab/quantity/celestial-mechanics
+# imports: http://qudt.org/1.2/vocab/quantity/cgs
+# imports: http://qudt.org/1.2/vocab/quantity/characteristic-numbers
+# imports: http://qudt.org/1.2/vocab/quantity/chemistry
+# imports: http://qudt.org/1.2/vocab/quantity/communications
+# imports: http://qudt.org/1.2/vocab/quantity/electricity-and-magnetism
+# imports: http://qudt.org/1.2/vocab/quantity/energy
+# imports: http://qudt.org/1.2/vocab/quantity/finance
+# imports: http://qudt.org/1.2/vocab/quantity/fluid-dynamics
+# imports: http://qudt.org/1.2/vocab/quantity/imperial
+# imports: http://qudt.org/1.2/vocab/quantity/information-theory
+# imports: http://qudt.org/1.2/vocab/quantity/iso
+# imports: http://qudt.org/1.2/vocab/quantity/mass
+# imports: http://qudt.org/1.2/vocab/quantity/mechanics
+# imports: http://qudt.org/1.2/vocab/quantity/nasa
+# imports: http://qudt.org/1.2/vocab/quantity/nuclear-physics
+# imports: http://qudt.org/1.2/vocab/quantity/photometry
+# imports: http://qudt.org/1.2/vocab/quantity/physical-chemistry-and-molecular-physics
+# imports: http://qudt.org/1.2/vocab/quantity/physics
+# imports: http://qudt.org/1.2/vocab/quantity/planck
+# imports: http://qudt.org/1.2/vocab/quantity/propulsion
+# imports: http://qudt.org/1.2/vocab/quantity/radiology
+# imports: http://qudt.org/1.2/vocab/quantity/radiometry
+# imports: http://qudt.org/1.2/vocab/quantity/si
+# imports: http://qudt.org/1.2/vocab/quantity/solid-state-physics
+# imports: http://qudt.org/1.2/vocab/quantity/space-and-time
+# imports: http://qudt.org/1.2/vocab/quantity/telebiometrics
+# imports: http://qudt.org/1.2/vocab/quantity/thermodynamics
+# imports: http://qudt.org/1.2/vocab/quantity/uscustomary
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://qudt.org/1.2/collection/quantities>
+  a owl:Ontology ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc." ;
+  dc:subject "Quantities, Units, Dimensions and Types" ;
+  dc:title "QUDT (Quantities, Units, Dimensions, and Types) Ontologies Version 1.2" ;
+  vaem:acronym "QUDT" ;
+  vaem:dateCreated "2011-01-31T10:00:00"^^xsd:dateTime ;
+  vaem:description "QUDT (Quantities, Units, Dimensions, and Types) Ontologies and vocabularies, and generated XSD schemas and XML Vocabularies, were developed for the NASA Exploration Initiatives Ontology Models (NExIOM) project as a foundational part of a comprehensive Information Architecture for NASA’s Constellation Program.  This effort was led by TopQuadrant working with NASA Ames Research Center (ARC).  The goals of the QUDT ontologies are to provide a unified reusable model of measurable quantities, units for measuring different kinds of quantities, the numerical values of quantities in different units of measure, and the data structures and data types used to store and manipulate these objects in software." ;
+  vaem:hasGraphRole vaem:CollectionGraph ;
+  vaem:hasLicenseType <http://www.linkedmodel.org/owl/schema/core#CreativeCommonsAttributionShareAlike3.0_UnitedStatesLicense> ;
+  vaem:intent "QUDT is intended to provide a set of information models and vocabularies for standardizing units of measure, quantities and data types for the purpose of data interoperability and metadata management in  linked data and semantic web infrastructures. Not all applications of QUDT will require a full dimensional treatment of units. For this reason, there is a vocabulary graph for a basic treatment of units, 'QUDT Unit' , and another graph, 'QUDT Dimensional Units' , for the full treatment." ;
+  vaem:lastChangedDate "$LastChangedDate: 2013-03-28 00:43:49 -0700 (Thu, 28 Mar 2013) $" ;
+  vaem:namespace "<http://qudt.org/1.2/collection/quantities>" ;
+  vaem:namespacePrefix "qudt-collection" ;
+  vaem:ownedBy "qudt.org" ;
+  vaem:revisionNumber "1.2" ;
+  vaem:specificity 1 ;
+  vaem:url "http://qudt.org"^^xsd:anyURI ;
+  vaem:urlForHTML "http://qudt.org/1.1/html/qudt.html"^^xsd:anyURI ;
+  vaem:withAttributionTo qudt:NASA-ARC-Attribution ;
+  vaem:withAttributionTo vaem:TopQuadrantAttribution ;
+  owl:imports <http://qudt.org/1.2/collection/units> ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/characteristic-numbers> ;
+  owl:imports <http://qudt.org/1.2/vocab/isq/quantity/physical-chemistry-and-molecular-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/isq/quantity/solid-state-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/aerodynamics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/atmospheric-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/atomic-and-nuclear-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/celestial-mechanics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/cgs> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/characteristic-numbers> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/chemistry> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/communications> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/electricity-and-magnetism> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/energy> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/finance> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/fluid-dynamics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/imperial> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/information-theory> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/iso> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/mass> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/mechanics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/nasa> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/nuclear-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/photometry> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/physical-chemistry-and-molecular-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/planck> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/propulsion> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/radiology> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/radiometry> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/si> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/solid-state-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/space-and-time> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/telebiometrics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/uscustomary> ;
+  owl:versionIRI <http://qudt.org/1.2/collection/quantities> ;
+  owl:versionInfo "$Id: COLLECTION_QUDT-QUANTITIES-v1.2.ttl 1930 2013-03-28 07:43:49Z rhodgson $" ;
+.
+qudt:AcousticsQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+.
+qudt:AtmosphericPhysicsQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/atmospheric-physics> ;
+.
+qudt:AtomicPhysicsQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/atomic-and-nuclear-physics> ;
+.
+qudt:CharacteristicNumber
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/characteristic-numbers> ;
+.
+qudt:ChemistryQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/chemistry> ;
+.
+qudt:CommunicationsQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/communications> ;
+.
+qudt:CurrencyQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/currency> ;
+.
+qudt:ElectricityAndMagnetismQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/electricity-and-magnetism> ;
+.
+qudt:FindAllUnitsNotInSystemOfUnits
+  a qudt:Query ;
+  spin:query [
+      a sp:Select ;
+      sp:where (
+          [
+            a sp:TriplePath ;
+            sp:object qudt:Unit ;
+            sp:path [
+                a sp:ModPath ;
+                sp:modMax -2 ;
+                sp:modMin 0 ;
+                sp:subPath rdfs:subClassOf ;
+              ] ;
+            sp:subject [
+                sp:varName "uC" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uC" ;
+              ] ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "u" ;
+              ] ;
+          ]
+          [
+            a sp:NotExists ;
+            sp:elements (
+                [
+                  sp:object qudt:SOU_CGS-MECHANICS ;
+                  sp:predicate qudt:belongsToSystemOfUnits ;
+                  sp:subject [
+                      sp:varName "u" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            sp:object [
+                sp:varName "u" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object rdf:type ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uC" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "g" ;
+              ] ;
+            sp:predicate <http://www.topbraid.org/tops#statementDefinedIn> ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:eq ;
+                sp:arg1 [
+                    sp:varName "g" ;
+                  ] ;
+                sp:arg2 "http://qudt.org/1.2/vocab/unit/cgs/mechanics" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Find all units not in system of units" ;
+.
+qudt:InformationTheoryQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/information-theory> ;
+.
+qudt:MassQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/mass> ;
+.
+qudt:MechanicsQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/mechanics> ;
+.
+qudt:PhotometryQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/photometry> ;
+.
+qudt:PropulsionQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/propulsion> ;
+.
+qudt:RadiologyQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/radiology> ;
+.
+qudt:RadiometryQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/radiometry> ;
+.
+qudt:SolidStatePhysicsQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/solid-state-physics> ;
+.
+qudt:SpaceAndTimeQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/space-and-time> ;
+.
+qudt:TelebiometricsQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/telebiometrics> ;
+.
+qudt:ThermodynamicsQuantityKind
+  qudt:hasVocabulary <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+.
+<http://qudt.org/vocab/quantity#QualityFactor>
+  vaem:todo "Resolve Quality Facor - electronics and also doses" ;
+.

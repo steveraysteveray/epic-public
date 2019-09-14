@@ -1,0 +1,692 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/acoustics
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/acoustics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Acoustics Quantity Kinds Vocabulary"^^xsd:string ;
+  dc:title "QUDT Acoustics Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "TBD"^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-03 23:22:44 -0700 (Wed, 03 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/chemistry"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#QUDT-QUANTITY-KINDS-VocabCatalogEntry_v1.2> ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/isq/quantity/currency> ;
+.
+quantity:Absorptance
+  rdf:type qudt:AcousticsQuantityKind ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+.
+quantity:AcousticImpedance
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "pa.sec/m3"^^xsd:string ;
+  qudt:applicableUnit unit:PA-SEC-PER-M3 ;
+  qudt:description "Acoustic impedance at a surface is the complex quotient of the average sound pressure over that surface by the sound volume flow rate through that surface."^^xsd:string ;
+  qudt:latexDefinition "$Z_a= \\frac{p}{q} = \\frac{p}{vS}$, where $p$ is the sound pressure, $q$ is the sound volume velocity, $v$ is sound particle velocity, and $S$ is the surface area through which an acoustic wave of frequence $f$ propagates."^^xsd:string ;
+  qudt:symbol "Z"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Acoustic Impedance"^^xsd:string ;
+  skos:prefLabel "Acoustic Impedance"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Acoustic_impedance> ;
+.
+quantity:AngularFrequency
+  rdf:type qudt:AcousticsQuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:abbreviation "$\\omega$"^^xsd:string ;
+  qudt:applicableUnit unit:HZ ;
+  qudt:description "\\textit{Angular frequency}, symbol $\\omega$ (also referred to by the terms angular speed, radial frequency, circular frequency, orbital frequency, radian frequency, and pulsatance) is a scalar measure of rotation rate. Angular frequency (or angular speed) is the magnitude of the vector quantity angular velocity."^^xsd:string ;
+  qudt:latexDefinition "$\\omega = 2\\pi f$, where $f$ is frequency."^^xsd:string ;
+  qudt:symbol "\\omega"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Angular Frequency"^^xsd:string ;
+  skos:broader quantity:Frequency ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_frequency> ;
+  skos:prefLabel "Angular Frequency"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Angular_frequency> ;
+.
+quantity:AngularWavenumber
+  rdf:type qudt:AcousticsQuantityKind ;
+  rdf:type qudt:SpectroscopyQuantityKind ;
+  qudt:abbreviation "k"^^xsd:string ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{wavenumber} is the spatial frequency of a wave - the number of waves that exist over a specified distance. More formally, it is the reciprocal of the wavelength. It is also the magnitude of the wave vector."^^xsd:string ;
+  qudt:latexDefinition """$k = \\frac{2\\pi}{\\lambda}= \\frac{2\\pi\\upsilon}{\\upsilon_p}=\\frac{\\omega}{\\upsilon_p}$, where $\\upsilon$ is the frequency of the wave, $\\lambda$ is the wavelength, $\\omega = 2\\pi \\upsilon$ is the angular frequency of the wave, and $\\upsilon_p$ is the phase velocity of the wave.
+
+Alternatively:
+
+$k = \\frac{p}{\\hbar}$, where $p$ is the linear momentum of quasi free electrons in an electron gas and $\\hbar$ is the reduced Planck constant ($h$ divided by $2\\pi$); for phonons, its magnitude is $k = \\frac{2\\pi}{\\lambda}$, where $\\lambda$ is the wavelength of the lattice vibrations."""^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Angular Wave Number"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Wavenumber> ;
+.
+quantity:AttenuationCoefficient
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "The attenuation coefficient is a quantity that characterizes how easily a material or medium can be penetrated by a beam of light, sound, particles, or other energy or matter. A large attenuation coefficient means that the beam is quickly \"attenuated\" (weakened) as it passes through the medium, and a small attenuation coefficient means that the medium is relatively transparent to the beam. The Attenuation Coefficient is also called linear attenuation coefficient, narrow beam attenuation coefficient, or absorption coefficient."^^xsd:string ;
+  qudt:latexDefinition "$F(x) = Ae^{-\\alpha x} \\cos{[\\beta (x - x_0)]}$, then $\\alpha$ is the attenuation coefficient and $\\beta$ is the phase coefficient."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Attenuation Coefficient"^^xsd:string ;
+  skos:prefLabel "Attenuation Coefficient"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Attenuation_coefficient> ;
+.
+quantity:CharacteristicAcousticImpedance
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "pa.sec/m"^^xsd:string ;
+  qudt:applicableUnit unit:PA-SEC-PER-M ;
+  qudt:description "Characteristic impedance at a point in a non-dissipative medium and for a plane progressive wave, the quotient of the sound pressure $p$ by the component of the sound particle velocity $v$ in the direction of the wave propagation."^^xsd:string ;
+  qudt:latexDefinition "$Z_c = pc$, where $p$ is the sound pressure and $c$ is the phase speed of sound."^^xsd:string ;
+  qudt:symbol "Z"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Characteristic Acoustic Impedance"^^xsd:string ;
+  skos:broader quantity:AcousticImpedance ;
+  skos:prefLabel "Characteristic Acoustic Impedance"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Acoustic_impedance#Characteristic_acoustic_impedance> ;
+.
+quantity:Density
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "m-l^{-3}"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/m^3"^^xsd:string ;
+  qudt:latexDefinition "$\\rho = m/V$, where $\\rho$ is the density, $m$ is the mass, and $V$ is the volume."^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Density> ;
+  skos:prefLabel "Density"^^xsd:string ;
+.
+quantity:Dissipance
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Dissipance, or dissipation factor for sound power, is the ratio of dissipated sound power to incident sound power. The dissipation factor (DF) is a measure of loss-rate of energy of a mode of oscillation (mechanical, electrical, or electromechanical) in a dissipative system. It is the reciprocal of quality factor, which represents the quality of oscillation."^^xsd:string ;
+  qudt:latexDefinition "$\\delta = \\frac{\\P_d}{\\P_i}$, where $\\P_d$ is the dissipated sound power, and $\\P_i$ is the incident sound power."^^xsd:string ;
+  qudt:symbol "\\delta"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Dissipance"^^xsd:string ;
+  skos:prefLabel "Dissipance"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Dissipation_factor> ;
+.
+quantity:EquivalentAbsorptionArea
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "m2"^^xsd:string ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "In a diffuse sound field, the Equivalent Absorption Area is that area of a surface having an absorption factor equal to 1, which, if diffraction effects are neglected, would, in the same diffuse sound field, absorb the same power."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Equivalent Absorption Area"^^xsd:string ;
+  skos:prefLabel "Equivalent Absorption Area"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.rockfon.co.uk/acoustics/comparing+ceilings/sound+absorption/equivalent+absorption+area> ;
+.
+quantity:Frequency
+  rdf:type qudt:AcousticsQuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:abbreviation "f"^^xsd:string ;
+  qudt:applicableUnit unit:HZ ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:baseUnitDimensions "/s"^^xsd:string ;
+  qudt:latexDefinition """$f = 1/T$, where $T$ is a period.
+
+Alternatively,
+
+$\\nu = 1/T$"""^^xsd:string ;
+  qudt:symbol "\\nu, f"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Frequency"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Frequency> ;
+  skos:prefLabel "Frequency"^^xsd:string ;
+.
+quantity:GroupSpeedOfSound
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "c"^^xsd:string ;
+  qudt:applicableUnit unit:M-PER-SEC ;
+  qudt:description "In a dispersive medium sound speed is a function of sound frequency, through the dispersion relation. The spatial and temporal distribution of a propagating disturbance will continually change. The group speed of sound describes the propagation of the disturbance."^^xsd:string ;
+  qudt:latexDefinition "$c_g = \\frac{d\\omega}{dk}$, where $\\omega$ is the angular frequency and $k$ is angular wavenumber."^^xsd:string ;
+  qudt:symbol "c"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Group Speed of Sound"^^xsd:string ;
+  skos:broader quantity:SpeedOfSound ;
+  skos:prefLabel "Group Speed of Sound"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Speed_of_sound> ;
+.
+quantity:LogarithmicFrequencyInterval
+  rdf:type qudt:AcousticsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:latexDefinition "$G = \\log_{2}(f2/f1)$, where $f1$ and $f2 \\geq f1$ are frequencies of two tones."^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Logarithmic Frequency Interval"^^xsd:string ;
+  skos:prefLabel "Logarithmic Frequency Interval"^^xsd:string ;
+.
+quantity:MechanicalSurfaceImpedance
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "n.sec/m"^^xsd:string ;
+  qudt:applicableUnit unit:N-SEC-PER-M ;
+  qudt:description "Mechanical surface impedance at a surface, is the complex quotient of the total force on the surface by the component of the average sound particle velocity at the surface in the direction of the force"^^xsd:string ;
+  qudt:latexDefinition "$Z_m = Z_a A^2$, where $A$ is the area of the surface considered and $Z_a$ is the acoustic impedance."^^xsd:string ;
+  qudt:symbol "Z"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Mechanical Surface Impedance"^^xsd:string ;
+  skos:prefLabel "Mechanical Surface Impedance"^^xsd:string ;
+.
+quantity:Period
+  rdf:type qudt:AcousticsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "Duration of one cycle of a periodic phenomenon."^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Period"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Period> ;
+  skos:prefLabel "Period"^^xsd:string ;
+.
+quantity:PhaseCoefficient
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "m^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "The phase coefficient is the amount of phase shift that occurs as the wave travels one meter. Increasing the loss of the material, via the manipulation of the material's conductivity, will decrease the wavelength (increase $\\beta$) and increase the attenuation coefficient (increase $\\alpha$)."^^xsd:string ;
+  qudt:latexDefinition "If $F(x) = Ae^{-\\alpha x} \\cos{[\\beta (x - x_0)]}$, then $\\alpha$ is the attenuation coefficient and $\\beta$ is the phase coefficient."^^xsd:string ;
+  qudt:symbol "\\beta"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Phase Coefficient"^^xsd:string ;
+  skos:prefLabel "Phase Coefficient"^^xsd:string ;
+  skos:related quantity:AttenuationCoefficient ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Attenuation_coefficient> ;
+.
+quantity:PhaseSpeedOfSound
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "c"^^xsd:string ;
+  qudt:applicableUnit unit:M-PER-SEC ;
+  qudt:description "In a dispersive medium sound speed is a function of sound frequency, through the dispersion relation. The spatial and temporal distribution of a propagating disturbance will continually change. Each frequency component propagates at its own Phase Velocity of Sound."^^xsd:string ;
+  qudt:latexDefinition "$c = \\frac{\\omega}{k} = \\lambda f$, where $\\omega$ is the angular frequency, $k$ is angular wavenumber, $\\lambda$ is the wavelength, and $f$ is the frequency."^^xsd:string ;
+  qudt:symbol "c"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Phase Speed of Sound"^^xsd:string ;
+  skos:broader quantity:SpeedOfSound ;
+  skos:prefLabel "Phase Speed of Sound"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Speed_of_sound> ;
+.
+quantity:PropagationCoefficient
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "m^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "The propagation constant, symbol $\\gamma$, for a given system is defined by the ratio of the amplitude at the source of the wave to the amplitude at some distance x."^^xsd:string ;
+  qudt:latexDefinition "$\\gamma = \\alpha + j\\beta$, where $\\alpha$ is the attenuation coefficient and $\\beta$ is the phase coefficient."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Propagation Coefficient"^^xsd:string ;
+  skos:prefLabel "Propagation Coefficient"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Propagation_constant> ;
+.
+quantity:Reflectance
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Reflectance, or reflection factor for sound power, is the ratio of reflected sound power to incident sound power."^^xsd:string ;
+  qudt:latexDefinition "$r= \\frac{\\P_r}{\\P_i}$, where $\\P_r$ is the reflected sound power, and $\\P_i$ is the incident sound power."^^xsd:string ;
+  qudt:symbol "r"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Reflectance"^^xsd:string ;
+  skos:prefLabel "Reflectance"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Dissipation_factor> ;
+.
+quantity:ReverberationTime
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "sec"^^xsd:string ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "Reverberation Time is the time required for reflections of a direct sound to decay by 60 dB below the level of the direct sound."^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Reverberation Time"^^xsd:string ;
+  skos:prefLabel "Reverberation Time"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Reverberation> ;
+.
+quantity:SoundEnergyDensity
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "n/m2"^^xsd:string ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_SI ;
+  qudt:description "Sound energy density is the time-averaged sound energy in a given volume divided by that volume. The sound energy density or sound density (symbol $E$ or $w$) is an adequate measure to describe the sound field at a given point as a sound energy value."^^xsd:string ;
+  qudt:latexDefinition "$E = \\frac{I}{c}$, where $I$ is the sound intensity in $\\frac{W}{m^2}$ and $c$ is the sound speed in $\\frac{m}{s}$."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Energy Density"^^xsd:string ;
+  skos:broader quantity:EnergyDensity ;
+  skos:prefLabel "Sound Energy Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sound_energy_density> ;
+.
+quantity:SoundExposure
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "pa2.s"^^xsd:string ;
+  qudt:applicableUnit unit:PA2-SEC ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_SI ;
+  qudt:description "Sound Exposure is the energy of the A-weighted sound calculated over the measurement time(s). For a given period of time, an increase of 10 dB(A) in sound pressure level corresponds to a tenfold increase in E."^^xsd:string ;
+  qudt:latexDefinition "$E = \\int_{t1}^{t2}p^2dt$, where $t1$ and $t2$ are the starting and ending times for the integral and $p$ is the sound pressure."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Exposure"^^xsd:string ;
+  skos:prefLabel "Sound Exposure"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.acoustic-glossary.co.uk/definitions-s.htm> ;
+.
+quantity:SoundExposureLevel
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "db"^^xsd:string ;
+  qudt:applicableUnit unit:DB ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_SI ;
+  qudt:description "Sound Exposure Level abbreviated as $SEL$ and $LAE$, is the total noise energy produced from a single noise event."^^xsd:string ;
+  qudt:latexDefinition "$L_E = 10 \\log_{10} \\frac{E}{E_0} dB$, where $E$ is sound power and the reference value is $E_0 = 400 \\mu Pa^2 s$."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Exposure Level"^^xsd:string ;
+  skos:prefLabel "Sound Exposure Level"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.diracdelta.co.uk/science/source/s/o/sound%20exposure%20level/source.html> ;
+.
+quantity:SoundIntensity
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "w/m2"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_SI ;
+  qudt:description "Sound intensity or acoustic intensity ($I$) is defined as the sound power $P_a$ per unit area $A$. The usual context is the noise measurement of sound intensity in the air at a listener's location as a sound energy quantity."^^xsd:string ;
+  qudt:latexDefinition "$I = pv$, where $p$ is the sound pressure and $v$ is sound particle velocity."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Intensity"^^xsd:string ;
+  skos:prefLabel "Sound Intensity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sound_intensity> ;
+.
+quantity:SoundParticleAcceleration
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "m-s^{-2}"^^xsd:string ;
+  qudt:applicableUnit unit:M-PER-SEC2 ;
+  qudt:description "In a compressible sound transmission medium - mainly air - air particles get an accelerated motion: the particle acceleration or sound acceleration with the symbol a in $m/s2$. In acoustics or physics, acceleration (symbol: $a$) is defined as the rate of change (or time derivative) of velocity."^^xsd:string ;
+  qudt:latexDefinition "$a = \\frac{\\partial v}{\\partial t}$, where $v$ is sound particle velocity and $t$ is time."^^xsd:string ;
+  qudt:symbol "a"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Particle Acceleration"^^xsd:string ;
+  skos:prefLabel "Sound Particle Acceleration"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Particle_acceleration> ;
+.
+quantity:SoundParticleDisplacement
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "l"^^xsd:string ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "Sound Particle Displacement is the nstantaneous displacement of a particle in a medium from what would be its position in the absence of sound waves."^^xsd:string ;
+  qudt:symbol "\\xi"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Particle Displacement"^^xsd:string ;
+  skos:prefLabel "Sound Particle Displacement"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Particle_displacement> ;
+.
+quantity:SoundParticleVelocity
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "m/s"^^xsd:string ;
+  qudt:applicableUnit unit:M-PER-SEC ;
+  qudt:description "Sound Particle velocity is the velocity v of a particle (real or imagined) in a medium as it transmits a wave. In many cases this is a longitudinal wave of pressure as with sound, but it can also be a transverse wave as with the vibration of a taut string. When applied to a sound wave through a medium of a fluid like air, particle velocity would be the physical speed of a parcel of fluid as it moves back and forth in the direction the sound wave is travelling as it passes."^^xsd:string ;
+  qudt:latexDefinition "$v = \\frac{\\partial\\delta }{\\partial t}$, where $\\delta$ is sound particle displacement and $t$ is time."^^xsd:string ;
+  qudt:symbol "v"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Particle Velocity"^^xsd:string ;
+  skos:prefLabel "Sound Particle Velocity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Particle_velocity> ;
+.
+quantity:SoundPower
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "w"^^xsd:string ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_SI ;
+  qudt:description "Sound power or acoustic power $P_a$ is a measure of sonic energy $E$ per time $t$ unit. It is measured in watts and can be computed as sound intensity ($I$) times area ($A$)."^^xsd:string ;
+  qudt:latexDefinition "$P_a = IA$, where $I$ is the sound intensity in $\\frac{W}{m^2}$ and $A$ is the area in $m^2$."^^xsd:string ;
+  qudt:symbol "P"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Power"^^xsd:string ;
+  skos:broader quantity:Power ;
+  skos:prefLabel "Sound Power"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sound_power> ;
+.
+quantity:SoundPowerLevel
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "db"^^xsd:string ;
+  qudt:applicableUnit unit:DB ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_SI ;
+  qudt:description "Sound Power Level abbreviated as $SWL$ expresses sound power more practically as a relation to the threshold of hearing - 10-12 W - in a logarithmic scale."^^xsd:string ;
+  qudt:latexDefinition "$L_W = 10 \\log_{10} \\frac{P}{P_0} dB$, where $P$ is sound power and the reference value is $P_0 =1pW$."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Power Level"^^xsd:string ;
+  skos:prefLabel "Sound Power Level"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sound_power#Sound_power_level> ;
+.
+quantity:SoundPressure
+  rdf:type qudt:AcousticsQuantityKind ;
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:abbreviation "p"^^xsd:string ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:description "Sound Pressure is the difference between instantaneous total pressure and static pressure."^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Static Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:prefLabel "Static Pressure"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Static_pressure> ;
+.
+quantity:SoundPressureLevel
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "db"^^xsd:string ;
+  qudt:applicableUnit unit:DB ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_SI ;
+  qudt:description "Sound pressure level ($SPL$) or sound level  is a logarithmic measure of the effective sound pressure of a sound relative to a reference value. It is measured in decibels (dB) above a standard reference level."^^xsd:string ;
+  qudt:latexDefinition "$L_P = 10 \\log_{10} \\frac{p^2}{p_0^2} dB$, where $p$ is sound pressure and the reference value in airborne acoustics is $p_0 = 20 \\mu Pa$."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Pressure Level"^^xsd:string ;
+  skos:prefLabel "Sound Pressure Level"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sound_pressure#Sound_pressure_level> ;
+.
+quantity:SoundReductionIndex
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "db"^^xsd:string ;
+  qudt:applicableUnit unit:DB ;
+  qudt:description "The Sound Reduction Index is used to measure the level of sound insulation provided by a structure such as a wall, window, door, or ventilator."^^xsd:string ;
+  qudt:latexDefinition "$R = 10 \\log (\\frac{1}{\\tau}) dB$, where $\\tau$ is the transmission factor."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Reduction Index"^^xsd:string ;
+  skos:prefLabel "Sound Reduction Index"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sound_reduction_index> ;
+.
+quantity:SoundVolumeVelocity
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "m3/sec"^^xsd:string ;
+  qudt:applicableUnit unit:M3-PER-SEC ;
+  qudt:description "Sound Volume Velocity is the product of particle velocity $v$ and the surface area $S$ through which an acoustic wave of frequency $f$ propagates. Also, the surface integral of the normal component of the sound particle velocity over the cross-section (through which the sound propagates). It is used to calculate acoustic impedance."^^xsd:string ;
+  qudt:latexDefinition "$q= vS$, where $v$ is sound particle velocity and $S$ is the surface area through which an acoustic wave of frequence $f$ propagates."^^xsd:string ;
+  qudt:symbol "q"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Sound Volume Velocity"^^xsd:string ;
+  skos:prefLabel "Sound Volume Velocity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Acoustic_impedance> ;
+.
+quantity:SpeedOfSound
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "c"^^xsd:string ;
+  qudt:applicableUnit unit:M-PER-SEC ;
+  qudt:description "The speed of sound is the distance travelled during a unit of time by a sound wave propagating through an elastic medium."^^xsd:string ;
+  qudt:latexDefinition "$c = \\sqrt{\\frac{K}{\\rho}}$, where $K$ is the coefficient of stiffness, the bulk modulus (or the modulus of bulk elasticity for gases), and $\\rho$ is the density. Also, $c^2 = \\frac{\\partial p}{\\partial \\rho}$, where $p$ is the pressure and $\\rho$ is the density."^^xsd:string ;
+  qudt:symbol "c"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Speed of Sound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Speed_of_sound> ;
+  skos:prefLabel "Speed of Sound"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Speed_of_sound> ;
+.
+quantity:StaticPressure
+  rdf:type qudt:AcousticsQuantityKind ;
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:abbreviation "p"^^xsd:string ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:description "\\textit{Static Pressure} is the pressure at a nominated point in a fluid. Every point in a steadily flowing fluid, regardless of the fluid speed at that point, has its own static pressure $P$, dynamic pressure $q$, and total pressure $P_0$. The total pressure is the sum of the dynamic and static pressures, that is $P_0 = P + q$."^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Static Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:prefLabel "Static Pressure"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Static_pressure> ;
+.
+quantity:TimeAveragedSoundIntensity
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "w/m2"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_SI ;
+  qudt:description "Sound intensity or acoustic intensity ($I$) is defined as the sound power $P_a$ per unit area $A$. The usual context is the noise measurement of sound intensity in the air at a listener's location as a sound energy quantity."^^xsd:string ;
+  qudt:latexDefinition "$I = \\frac{1}{t2 - t1} \\int_{t1}^{t2}i(t)dt$, where $t1$ and $t2$ are the starting and ending times for the integral and $i$ is sound intensity."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Time Averaged Sound Intensity"^^xsd:string ;
+  skos:broader quantity:SoundIntensity ;
+  skos:prefLabel "Time Averaged Sound Intensity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sound_intensity> ;
+.
+quantity:Transmittance
+  rdf:type qudt:AcousticsQuantityKind ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+.
+quantity:Wavelength
+  rdf:type qudt:AcousticsQuantityKind ;
+  vaem:todo "belongs to SOQ-ISO"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+.
+quantity:Wavenumber
+  rdf:type qudt:AcousticsQuantityKind ;
+  qudt:abbreviation "wavenum"^^xsd:string ;
+  qudt:description "\\textit{Wavenumber} is the spatial frequency of a wave - the number of waves that exist over a specified distance. More formally, it is the reciprocal of the wavelength. It is also the magnitude of the wave vector. Light passing through different media keeps its frequency, but not its wavelength or wavenumber. The unit for wavenumber commonly used in spectroscopy is centimetre to power minus one, PER-CM, rather than metre to power minus one, PER-M."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/acoustics> ;
+  rdfs:label "Wave Number"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Wavenumber> ;
+.
+<http://voag.linkedmodel.org/schema/voag#QUDT-QUANTITY-KINDS-VocabCatalogEntry_v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Vocabulary Catalog Entry v1.2"^^xsd:string ;
+.
+unit:DECADE
+  rdf:type qudt:AcousticsUnit ;
+  rdf:type qudt:DimensionlessUnit ;
+  rdf:type qudt:LogarithmicUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Dec"^^xsd:string ;
+  qudt:code "0508"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "One decade is a factor of 10 difference between two numbers (an order of magnitude difference) measured on a logarithmic scale. It is especially useful when referring to frequencies and when describing frequency response of electronic systems, such as audio amplifiers and filters. The factor-of-ten in a decade can be in either direction: so one decade up from 100 Hz is 1000 Hz, and one decade down is 10 Hz. The factor-of-ten is what is important, not the unit used, so $3.14 rad/s$ is one decade down from $31.4 rad/s$."^^xsd:string ;
+  qudt:designator "U-150-0508"^^xsd:string ;
+  qudt:symbol "oct"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/acoustics> ;
+  rdfs:label "Dec"^^xsd:string ;
+  skos:prefLabel "dec"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Decade_(log_scale)> ;
+.
+unit:J-PER-M3
+  rdf:type qudt:AcousticsUnit ;
+.
+unit:KG-PER-M3
+  rdf:type qudt:AcousticsUnit ;
+.
+unit:M
+  rdf:type qudt:AcousticsUnit ;
+.
+unit:M-PER-SEC
+  rdf:type qudt:AcousticsUnit ;
+.
+unit:M-PER-SEC2
+  rdf:type qudt:AcousticsUnit ;
+.
+unit:M2
+  rdf:type qudt:AcousticsUnit ;
+.
+
+unit:M3-PER-SEC
+  rdf:type qudt:AcousticsUnit ;
+.
+unit:N-SEC-PER-M
+  rdf:type qudt:AcousticsUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "N-s/m"^^xsd:string ;
+  qudt:code "1246"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Newton Per Meter (N/m) is a unit in the category of Surface tension. It is also known as newtons per meter, newton per metre, newtons per metre, newton/meter, newton/metre. This unit is commonly used in the SI unit system. Newton Per Meter (N/m) has a dimension of MT-2 where M is mass, and T is time. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:designator "U-150-1246"^^xsd:string ;
+  qudt:symbol "N-s/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/acoustics> ;
+  rdfs:label "Newton Second per Meter"^^xsd:string ;
+  skos:prefLabel "newton-second-per-meter"^^xsd:string ;
+.
+unit:RAD-PER-M
+  rdf:type qudt:AcousticsUnit ;
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rad/m"^^xsd:string ;
+  qudt:code "1561"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1561"^^xsd:string ;
+  qudt:symbol "rad/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/acoustics> ;
+  rdfs:label "Radian per Meter"^^xsd:string ;
+  skos:prefLabel "radian-per-meter"^^xsd:string ;
+.
+unit:W-PER-M2
+  rdf:type qudt:AcousticsUnit ;
+.

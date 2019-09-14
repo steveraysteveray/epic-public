@@ -1,0 +1,277 @@
+# baseURI: http://siemens.com/vocab/kps/epic-building
+# imports: http://siemens.com/schemas/kps/epic-building
+# prefix: bldg
+
+@prefix IFC4: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix bldg: <http://siemens.com/schemas/kps/epic-building#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix system: <http://data.nasa.gov/sysmo/schema/system#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xhtml: <http://topbraid.org/xhtml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bldg:ClimateZone1
+  rdf:type epic:ClimateZoneType ;
+  rdfs:label "1 Climate Zone" ;
+  skos:prefLabel "Climate zone 1" ;
+.
+bldg:ClimateZone10
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "10 Climate Zone" ;
+  skos:prefLabel "Climate zone 10" ;
+.
+bldg:ClimateZone11
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "11 Climate Zone" ;
+  skos:prefLabel "Climate zone 11" ;
+.
+bldg:ClimateZone12
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "12 Climate Zone" ;
+  skos:prefLabel "Climate zone 12" ;
+.
+bldg:ClimateZone13
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "13 Climate Zone" ;
+  skos:prefLabel "Climate zone 13" ;
+.
+bldg:ClimateZone2
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "2 Climate Zone" ;
+  skos:prefLabel "Climate zone 2" ;
+.
+bldg:ClimateZone3
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "3 Climate Zone" ;
+  skos:prefLabel "Climate zone 3" ;
+.
+bldg:ClimateZone4
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "4 Climate Zone" ;
+  skos:prefLabel "Climate zone 4" ;
+.
+bldg:ClimateZone5
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "5 Climate Zone" ;
+  skos:prefLabel "Climate zone 5" ;
+.
+bldg:ClimateZone6
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "6 Climate Zone" ;
+  skos:prefLabel "Climate zone 6" ;
+.
+bldg:ClimateZone7
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "7 Climate Zone" ;
+  skos:prefLabel "Climate zone 7" ;
+.
+bldg:ClimateZone8
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "8 Climate Zone" ;
+  skos:prefLabel "Climate zone 8" ;
+.
+bldg:ClimateZone9
+  rdf:type bldg:ClimateZoneType ;
+  rdfs:label "9 Climate Zone" ;
+  skos:prefLabel "Climate zone 9" ;
+.
+bldg:ClimateZoneType
+  rdf:type owl:Class ;
+  rdfs:label "Climate Zone Type" ;
+  rdfs:subClassOf bldg:EnumeratedValue ;
+  owl:oneOf (
+      bldg:ClimateZone1
+      bldg:ClimateZone2
+      bldg:ClimateZone3
+      bldg:ClimateZone4
+      bldg:ClimateZone5
+      bldg:ClimateZone6
+      bldg:ClimateZone7
+      bldg:ClimateZone8
+      bldg:ClimateZone9
+      bldg:ClimateZone10
+      bldg:ClimateZone11
+      bldg:ClimateZone12
+      bldg:ClimateZone13
+    ) ;
+  skos:prefLabel "Climate zone type" ;
+.
+bldg:OccupancyA1
+  rdf:type bldg:OccupancyType ;
+  rdfs:label "A_1 Occupancy Type" ;
+  skos:prefLabel "A_1 occupancy type" ;
+.
+bldg:OccupancyA2
+  rdf:type bldg:OccupancyType ;
+  rdfs:label "A_2 Occupancy Type" ;
+  skos:prefLabel "A_2 occupancy type" ;
+.
+bldg:OccupancyA3
+  rdf:type bldg:OccupancyType ;
+  rdfs:label "A_3 Occupancy Type" ;
+  skos:prefLabel "A_3 occupancy type" ;
+.
+bldg:OccupancyB
+  rdf:type bldg:OccupancyType ;
+  rdfs:label "B Occupancy Type" ;
+  skos:prefLabel "B occupancy type" ;
+.
+bldg:OccupancyF1
+  rdf:type bldg:OccupancyType ;
+  rdfs:label "F_1 Occupancy Type" ;
+  skos:prefLabel "F_1 occupancy type" ;
+.
+bldg:OccupancyM
+  rdf:type bldg:OccupancyType ;
+  rdfs:label "M Occupancy Type" ;
+  skos:prefLabel "M occupancy type" ;
+.
+bldg:OccupancyType
+  rdf:type owl:Class ;
+  rdfs:label "Occupancy Type" ;
+  rdfs:subClassOf bldg:EnumeratedValue ;
+  owl:oneOf (
+      bldg:OccupancyA1
+      bldg:OccupancyA2
+      bldg:OccupancyA3
+      bldg:OccupancyB
+      bldg:OccupancyF1
+      bldg:OccupancyM
+    ) ;
+  skos:prefLabel "Occupancy type" ;
+.
+bldg:Storey1
+  rdf:type bldg:StoreyType ;
+  rdfs:label "1 Storey" ;
+  skos:prefLabel "1 storey" ;
+.
+bldg:Storey2
+  rdf:type bldg:StoreyType ;
+  rdfs:label "2 Storey" ;
+  skos:prefLabel "2 storey" ;
+.
+bldg:Storey3
+  rdf:type bldg:StoreyType ;
+  rdfs:label "3 Storey" ;
+  skos:prefLabel "3 storey" ;
+.
+bldg:Storey4
+  rdf:type bldg:StoreyType ;
+  rdfs:label "4 Storey" ;
+  skos:prefLabel "4 storey" ;
+.
+bldg:Storey7
+  rdf:type bldg:StoreyType ;
+  rdfs:label "7 Storey" ;
+  skos:prefLabel "7 storey" ;
+.
+bldg:StoreyType
+  rdf:type owl:Class ;
+  rdfs:label "Storey Type" ;
+  rdfs:subClassOf bldg:EnumeratedValue ;
+  owl:oneOf (
+      bldg:Storey1
+      bldg:Storey2
+      bldg:Storey3
+      bldg:Storey4
+      bldg:Storey7
+    ) ;
+  skos:prefLabel "Storey type" ;
+.
+bldg:ElectricalService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Electrical Service" ;
+  skos:prefLabel "Electrical" ;
+.
+bldg:GasService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Gas Service" ;
+  skos:prefLabel "Gas" ;
+.
+bldg:WaterService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Water Service" ;
+  skos:prefLabel "Water" ;
+.
+bldg:SewageService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Sewage Service" ;
+  skos:prefLabel "Sewage" ;
+.
+bldg:InternetService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Internet Service" ;
+  skos:prefLabel "Internet" ;
+.
+bldg:FacilitiesService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Facilities Service" ;
+  skos:prefLabel "Facilities" ;
+.
+bldg:CustodialService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Custodail Service" ;
+  skos:prefLabel "Custodial" ;
+.
+bldg:SecurityService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Security Service" ;
+  skos:prefLabel "Security" ;
+.
+bldg:ManagementService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Management Service" ;
+  skos:prefLabel "Management" ;
+.
+bldg:JanitorialService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Janitorial Service" ;
+  skos:prefLabel "Janitorial" ;
+.
+bldg:OperationsService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Operations Service" ;
+  skos:prefLabel "Operations" ;
+.
+bldg:FoodService
+  rdf:type bldg:ServiceType ;
+  rdfs:label "Food Service" ;
+  skos:prefLabel "Food" ;
+.
+bldg:ServiceType
+  rdf:type owl:Class ;
+  rdfs:label "Service Type" ;
+  rdfs:subClassOf bldg:EnumeratedValue ;
+  owl:oneOf (
+      bldg:ElectricalService
+      bldg:GasService
+      bldg:WaterService
+      bldg:SewageService
+      bldg:InternetService
+      bldg:FacilitiesService
+      bldg:SecurityService
+      bldg:CustodialService
+      bldg:OperationsService
+      bldg:FoodService
+    ) ;
+  skos:prefLabel "Storey type" ;
+.
+<http://siemens.com/vocab/kps/epic-building>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic-building> ;
+.

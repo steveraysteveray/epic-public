@@ -1,0 +1,1983 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/uscustomary
+# imports: http://qudt.org/1.2/collection/units
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/quantity/uscustomary>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-25 00:09:12 -0700 (Mon, 25 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/collection/units> ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity> ;
+  owl:versionInfo "$Id: VOCAB_QUDT-USCUSTOMARY-quantity-v1.2.ttl 1906 2013-03-25 07:09:12Z rhodgson $"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-H
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:literal "H"^^xsd:string ;
+  qudt:order "4"^^xsd:nonNegativeInteger ;
+  qudt:symbol "H "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(\\Theta)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:Length ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:literal "L"^^xsd:string ;
+  qudt:order "1"^^xsd:nonNegativeInteger ;
+  qudt:symbol "L "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L-1M
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:MassPerLength ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^-1 M "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^{-1}M)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L-1M-1T3H
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-USCUSTOMARY-H1 ;
+  qudt:hasReferenceQuantityKind quantity:ThermalResistivity ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^-1 M^-1 T^3 Θ"^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^{-1}M^{-1}T^3\\Theta)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L-1MT-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:DynamicViscosity ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^-1 M T^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^{-1}MT^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L-1MT-2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:EnergyDensity ;
+  qudt:hasReferenceQuantityKind quantity:ForcePerArea ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^-1 M T^-2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^{-1}MT^{-2})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L-2M
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:MassPerArea ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^-2 M "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^{-2}M)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L-2M-1T3H
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:ThermalResistance ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^-2 M^-1 T^3 Θ"^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^{-2}M^{-1}T^3\\Theta)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L-3M
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L-3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:Density ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^-3 M "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^{-3}M)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:Area ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2H
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:AreaTemperature ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 Θ"^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2\\Theta)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2MT-2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:EnergyAndWork ;
+  qudt:hasReferenceQuantityKind quantity:Torque ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 M T^-2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2MT^{-2})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2MT-2H-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:EnergyPerTemperature ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 M T^-2  Θ^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2MT^{-2}\\Theta^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2MT-3
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:Power ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 M T^-3 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2MT^{-3})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2T
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:AreaTime ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 T "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2T)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2T-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:AreaPerTime ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 T^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2T^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2T-2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:SpecificEnergy ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 T^-2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2T^{-2})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2T-2H-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:SpecificHeatCapacity ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 T^-2  Θ^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2T^{-2}\\Theta^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L2TH
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T1 ;
+  qudt:hasReferenceQuantityKind quantity:AreaTimeTemperature ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^2 T Θ"^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^2T\\Theta)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L3
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:Volume ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^3 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^3)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L3MT-2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:ThermalEnergyLength ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^3 M T^-2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^3MT^{-2})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-L3T-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:VolumePerUnitTime ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L^3 T^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(L^3T^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-LMT-2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:Force ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L M T^-2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(LMT^{-2})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-LMT-3H-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:ThermalConductivity ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L.M.T^{-3} .\\Theta^{-1}"^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(LMT^{-3}\\Theta^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-LT-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:LinearVelocity ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L T^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(LT^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-LT-2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:LinearAcceleration ;
+  qudt:hasReferenceQuantityKind quantity:ThrustToMassRatio ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "L T^-2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(LT^{-2})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-M
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:Mass ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:literal "M"^^xsd:string ;
+  qudt:order "2"^^xsd:nonNegativeInteger ;
+  qudt:symbol "M "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(M)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-M-1T3H
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:ThermalInsulance ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "M^-1 T^3 Θ"^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(M^{-1}T^3\\Theta)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-MH
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:MassTemperature ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "M Θ"^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(M\\Theta)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-MT-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:MassPerTime ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "M T^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(MT^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-MT-2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:EnergyPerArea ;
+  qudt:hasReferenceQuantityKind quantity:ForcePerLength ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "M T^-2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(MT^{-2})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-MT-3
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:PowerPerArea ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "M T^-3 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(MT^{-3})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-MT-3H-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-3 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:CoefficientOfHeatTransfer ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "M T^-3  Θ^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(MT^{-3}\\Theta^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-T
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:Time ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:literal "T"^^xsd:string ;
+  qudt:order "3"^^xsd:nonNegativeInteger ;
+  qudt:symbol "T "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(T)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-T2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U0 ;
+  qudt:hasReferenceQuantityKind quantity:TimeSquared ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "T^2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(T^2)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-U
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U1 ;
+  qudt:hasReferenceQuantityKind quantity:Dimensionless ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:literal "U"^^xsd:string ;
+  qudt:order "0"^^xsd:nonNegativeInteger ;
+  qudt:symbol "U "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(U)$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-UT-1
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-1 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U1 ;
+  qudt:hasReferenceQuantityKind quantity:AngularVelocity ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "U T^-1 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(UT^{-1})$"^^xsd:string ;
+.
+qudt:DIM_USCUSTOMARY-UT-2
+  rdf:type qudt:Dimension ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-H0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-L0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-M0 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-T-2 ;
+  qudt:hasDimensionVector qudt:DV_USCUSTOMARY-U1 ;
+  qudt:hasReferenceQuantityKind quantity:AngularAcceleration ;
+  qudt:isDimensionInSystem qudt:SOQ_USCustomary ;
+  qudt:symbol "U T^-2 "^^xsd:string ;
+  rdfs:label "$DIM_{USCUSTOMARY}(UT^{-2})$"^^xsd:string ;
+.
+<http://qudt.org/schema/qudt#DV_L-0.5>
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-0.5"^^xsd:float ;
+  rdfs:label "$L^{-0.5}$"^^xsd:string ;
+.
+<http://qudt.org/schema/qudt#DV_L-1.5>
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-1.5"^^xsd:float ;
+  rdfs:label "$L^{-1.5}$"^^xsd:string ;
+.
+<http://qudt.org/schema/qudt#DV_L0.5>
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "0.5"^^xsd:float ;
+  rdfs:label "$L^{0.5}$"^^xsd:string ;
+.
+<http://qudt.org/schema/qudt#DV_L1.5>
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "1.5"^^xsd:float ;
+  rdfs:label "$L^1.5$"^^xsd:string ;
+.
+<http://qudt.org/schema/qudt#DV_M-0.5>
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-0.5"^^xsd:float ;
+  rdfs:label "$M^{-0.5}$"^^xsd:string ;
+.
+<http://qudt.org/schema/qudt#DV_M0.5>
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "0.5"^^xsd:float ;
+  rdfs:label "$M^{0.5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-1
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for \\textit{thermodynamic temperature} with exponent $-1$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "Theta-1"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-10
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-10$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-2
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-2$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-3
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-3$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-4
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-4$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-5
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-5$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-6
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-6$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-7
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-7$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-8
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-8$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H-9
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $-9$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H0
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $0$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{0}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H1
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $1$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H10
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $10$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H2
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $2$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H3
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $3$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H4
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $4$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H5
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $5$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H6
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $6$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H7
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $7$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H8
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $8$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-H9
+  rdf:type qudt:DimensionVector ;
+  qudt:description "Dimension Vector for $\\Theta$ with exponent $9$."^^xsd:string ;
+  qudt:hasBaseQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$\\Theta^{9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "$I^{-1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$I^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$I^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$I^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$I^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$I^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$I^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$I^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$I^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I-9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$I^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I0
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$I^0$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$I^1$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$I^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "$I^2$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$I^3$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$I^4$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$I^5$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$I^6$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$I^7$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$I^8$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-I9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCurrent ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$I^9$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "$J^{-1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$J^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$J^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$J^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$J^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$J^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$J^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$J^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$J^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J-9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$J^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J0
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$J^0$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$J^1$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$J^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "$J^2$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$J^3$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$J^4$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$J^5$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$J^6$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$J^7$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$J^8$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-J9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:LuminousIntensity ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$J^9$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "$L^{-1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$L^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$L^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$L^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$L^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$L^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$L^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$L^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$L^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L-9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$L^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L0
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$L^0$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$L^1$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$L^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "L^2"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$L^3$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$L^4$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$L^5$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$L^6$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$L^7$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$L^8$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-L9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Length ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$L^9$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "$M^{-1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$M^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$M^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$M^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$M^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$M^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$M^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$M^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$M^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M-9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$M^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M0
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$M^0$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$M^1$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$M^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "$M^2$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$M^3$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$M^4$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$M^5$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$M^6$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$M^7$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$M^8$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-M9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Mass ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$M^9$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "$N^{-1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$N^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$N^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$N^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$N^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$N^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$N^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$N^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$N^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N-9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$N^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N0
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$N^0$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$N^1$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$N^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "$N^2$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$N^3$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$N^4$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$N^5$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$N^6$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$N^7$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$N^8$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-N9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:AmountOfSubstance ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$N^9$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "$Q^{-1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$Q^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$Q^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$Q^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$Q^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$Q^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$Q^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$Q^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$Q^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q-9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$Q^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q0
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$Q^0$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$Q^1$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$Q^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "$Q^2$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$Q^3$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$Q^4$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$Q^5$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$Q^6$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$Q^7$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$Q^8$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-Q9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:ElectricCharge ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$Q^9$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "$T^{-1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$T^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$T^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$T^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$T^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$T^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$T^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$T^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$T^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T-9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$T^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T0
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$T^0$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$T^1$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$T^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "$T^2$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$T^3$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$T^4$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$T^5$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$T^6$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$T^7$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$T^8$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-T9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Time ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$T^9$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-1.0"^^xsd:float ;
+  rdfs:label "$U^{-1}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-10.0"^^xsd:float ;
+  rdfs:label "$U^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-2.0"^^xsd:float ;
+  rdfs:label "$U^{-2}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-3.0"^^xsd:float ;
+  rdfs:label "$U^{-3}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-4.0"^^xsd:float ;
+  rdfs:label "$U^{-4}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-5.0"^^xsd:float ;
+  rdfs:label "$U^{-5}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-6.0"^^xsd:float ;
+  rdfs:label "$U^{-6}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-7.0"^^xsd:float ;
+  rdfs:label "$U^{-7}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-8.0"^^xsd:float ;
+  rdfs:label "$U^{-8}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U-9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "-9.0"^^xsd:float ;
+  rdfs:label "$U^{-9}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U0
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "0.0"^^xsd:float ;
+  rdfs:label "$U^0$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U1
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "1.0"^^xsd:float ;
+  rdfs:label "$U^1$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U10
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "10.0"^^xsd:float ;
+  rdfs:label "$U^{10}$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U2
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "2.0"^^xsd:float ;
+  rdfs:label "$U^2$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U3
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "3.0"^^xsd:float ;
+  rdfs:label "$U^3$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U4
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "4.0"^^xsd:float ;
+  rdfs:label "$U^4$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U5
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "5.0"^^xsd:float ;
+  rdfs:label "$U^5$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U6
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "6.0"^^xsd:float ;
+  rdfs:label "$U^6$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U7
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "7.0"^^xsd:float ;
+  rdfs:label "$U^7$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U8
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "8.0"^^xsd:float ;
+  rdfs:label "$U^8$"^^xsd:string ;
+.
+qudt:DV_USCUSTOMARY-U9
+  rdf:type qudt:DimensionVector ;
+  qudt:hasBaseQuantityKind quantity:Dimensionless ;
+  qudt:vectorMagnitude "9.0"^^xsd:float ;
+  rdfs:label "$U^9$"^^xsd:string ;
+.
+qudt:SOQ_USCustomary
+  rdf:type qudt:SystemOfQuantities ;
+  qudt:baseDimensionEnumeration qudt:SystemBaseDimensionEnumeration_USCustomary ;
+  qudt:hasQuantityKind quantity:AngularAcceleration ;
+  qudt:hasQuantityKind quantity:AngularVelocity ;
+  qudt:hasQuantityKind quantity:Area ;
+  qudt:hasQuantityKind quantity:AreaTemperature ;
+  qudt:hasQuantityKind quantity:AreaTime ;
+  qudt:hasQuantityKind quantity:AreaTimeTemperature ;
+  qudt:hasQuantityKind quantity:CoefficientOfHeatTransfer ;
+  qudt:hasQuantityKind quantity:Density ;
+  qudt:hasQuantityKind quantity:DynamicViscosity ;
+  qudt:hasQuantityKind quantity:EnergyAndWork ;
+  qudt:hasQuantityKind quantity:EnergyPerArea ;
+  qudt:hasQuantityKind quantity:Force ;
+  qudt:hasQuantityKind quantity:ForcePerArea ;
+  qudt:hasQuantityKind quantity:ForcePerLength ;
+  qudt:hasQuantityKind quantity:HeatCapacity ;
+  qudt:hasQuantityKind quantity:HeatFlowRate ;
+  qudt:hasQuantityKind quantity:KinematicViscosity ;
+  qudt:hasQuantityKind quantity:Length ;
+  qudt:hasQuantityKind quantity:LinearAcceleration ;
+  qudt:hasQuantityKind quantity:LinearVelocity ;
+  qudt:hasQuantityKind quantity:LiquidVolume ;
+  qudt:hasQuantityKind quantity:Mass ;
+  qudt:hasQuantityKind quantity:MassPerArea ;
+  qudt:hasQuantityKind quantity:MassPerLength ;
+  qudt:hasQuantityKind quantity:MassPerTime ;
+  qudt:hasQuantityKind quantity:MassTemperature ;
+  qudt:hasQuantityKind quantity:MolarHeatCapacity ;
+  qudt:hasQuantityKind quantity:Power ;
+  qudt:hasQuantityKind quantity:PowerPerArea ;
+  qudt:hasQuantityKind quantity:SpecificEnergy ;
+  qudt:hasQuantityKind quantity:SpecificHeatCapacity ;
+  qudt:hasQuantityKind quantity:ThermalConductivity ;
+  qudt:hasQuantityKind quantity:ThermalDiffusivity ;
+  qudt:hasQuantityKind quantity:ThermalEnergy ;
+  qudt:hasQuantityKind quantity:ThermalEnergyLength ;
+  qudt:hasQuantityKind quantity:ThermalInsulance ;
+  qudt:hasQuantityKind quantity:ThermalResistance ;
+  qudt:hasQuantityKind quantity:ThermalResistivity ;
+  qudt:hasQuantityKind quantity:ThermodynamicTemperature ;
+  qudt:hasQuantityKind quantity:ThrustToMassRatio ;
+  qudt:hasQuantityKind quantity:Time ;
+  qudt:hasQuantityKind quantity:Torque ;
+  qudt:hasQuantityKind quantity:Volume ;
+  qudt:hasQuantityKind quantity:VolumePerUnitTime ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-H ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L-1M ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L-1M-1T3H ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L-1MT-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L-1MT-2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L-2M ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L-2M-1T3H ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L-3M ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2H ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2MT-2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2MT-2H-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2MT-3 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2T ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2T-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2T-2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2T-2H-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L2TH ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L3 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L3MT-2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-L3T-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-LMT-2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-LMT-3H-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-LT-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-LT-2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-M ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-M-1T3H ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-MH ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-MT-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-MT-2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-MT-3 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-MT-3H-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-T ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-T2 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-U ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-UT-1 ;
+  qudt:systemDimension qudt:DIM_USCUSTOMARY-UT-2 ;
+  rdfs:label "US Customary System of Quantities"^^xsd:string ;
+  skos:prefLabel "US Customary System of Quantities"^^xsd:string ;
+.
+qudt:SystemBaseDimensionEnumeration_USCustomary
+  rdf:type qudt:Enumeration ;
+  qudt:element qudt:DIM_USCUSTOMARY-H ;
+  qudt:element qudt:DIM_USCUSTOMARY-L ;
+  qudt:element qudt:DIM_USCUSTOMARY-M ;
+  qudt:element qudt:DIM_USCUSTOMARY-T ;
+  qudt:element qudt:DIM_USCUSTOMARY-U ;
+  rdfs:label "US Customary System Base Dimensions"^^xsd:string ;
+.
+quantity:AngularAcceleration
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-UT-2 ;
+.
+quantity:AngularVelocity
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-UT-1 ;
+.
+quantity:Area
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2 ;
+.
+quantity:AreaPerTime
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2T-1 ;
+.
+quantity:AreaTemperature
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2H ;
+.
+quantity:AreaTime
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2T ;
+.
+quantity:AreaTimeTemperature
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2TH ;
+.
+quantity:Breadth
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:CartesianArea
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2 ;
+.
+quantity:CartesianCoordinates
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:CartesianVolume
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L3 ;
+.
+quantity:CoefficientOfHeatTransfer
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-MT-3H-1 ;
+.
+quantity:ConductionSpeed
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-LT-1 ;
+.
+quantity:Density
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L-3M ;
+.
+quantity:Diameter
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:Dimensionless
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-U ;
+.
+quantity:Displacement
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:Distance
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:DynamicViscosity
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L-1MT-1 ;
+.
+quantity:EnergyAndWork
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2MT-2 ;
+.
+quantity:EnergyDensity
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L-1MT-2 ;
+.
+quantity:EnergyPerArea
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-MT-2 ;
+.
+quantity:EnergyPerTemperature
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2MT-2H-1 ;
+.
+quantity:Force
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-LMT-2 ;
+.
+quantity:ForcePerArea
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L-1MT-2 ;
+.
+quantity:ForcePerLength
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-MT-2 ;
+.
+quantity:Height
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:Length
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:LinearAcceleration
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-LT-2 ;
+.
+quantity:LinearVelocity
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-LT-1 ;
+.
+quantity:Mass
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-M ;
+.
+quantity:MassPerArea
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L-2M ;
+.
+quantity:MassPerLength
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L-1M ;
+.
+quantity:MassPerTime
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-MT-1 ;
+.
+quantity:MassTemperature
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-MH ;
+.
+quantity:PathLength
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:PositionVector
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:Power
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2MT-3 ;
+.
+quantity:PowerPerArea
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-MT-3 ;
+.
+quantity:RadialDistance
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:Radius
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:RadiusOfCurvature
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:SpecificEnergy
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2T-2 ;
+.
+quantity:SpecificHeatCapacity
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2T-2H-1 ;
+.
+quantity:ThermalConductivity
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-LMT-3H-1 ;
+.
+quantity:ThermalEnergyLength
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L3MT-2 ;
+.
+quantity:ThermalInsulance
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-M-1T3H ;
+.
+quantity:ThermalResistance
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L-2M-1T3H ;
+.
+quantity:ThermalResistivity
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L-1M-1T3H ;
+.
+quantity:ThermodynamicTemperature
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-H ;
+.
+quantity:Thickness
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+.
+quantity:ThrustToMassRatio
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-LT-2 ;
+.
+quantity:Time
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-T ;
+.
+quantity:TimeSquared
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-T2 ;
+.
+quantity:Torque
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2MT-2 ;
+.
+quantity:Volume
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L3 ;
+.
+quantity:VolumePerUnitTime
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L3T-1 ;
+.

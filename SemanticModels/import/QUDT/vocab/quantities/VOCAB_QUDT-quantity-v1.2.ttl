@@ -1,0 +1,4002 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/unit/base
+# imports: http://qudt.org/1.2/vocab/unit/cgs
+# imports: http://qudt.org/1.2/vocab/unit/currency
+# imports: http://qudt.org/1.2/vocab/unit/imperial
+# imports: http://qudt.org/1.2/vocab/unit/nasa
+# imports: http://qudt.org/1.2/vocab/unit/nonsi
+# imports: http://qudt.org/1.2/vocab/unit/other
+# imports: http://qudt.org/1.2/vocab/unit/planck
+# imports: http://qudt.org/1.2/vocab/unit/si
+# imports: http://qudt.org/1.2/vocab/unit/uscustomary
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/quantity>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 13:34:19 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/cgs> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/currency> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/imperial> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/nasa> ;
+#  owl:imports <http://qudt.org/1.2/vocab/unit/nonsi> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/other> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/planck> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/si> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/uscustomary> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity> ;
+  owl:versionInfo "$Id: OVG_quantities-qudt-(v1.1).ttl 4988 2011-06-01 20:34:19Z RalphHodgson $"^^xsd:string ;
+.
+quantity:AbsoluteHumidity
+  rdf:type qudt:QuantityKind ;
+  qudt:description "Absolute humidity is the mass of water in a particular volume of air. It is a measure of the density of water vapor in an atmosphere."^^xsd:string ;
+  qudt:generalization quantity:Density ;
+  rdfs:label "Absolute Humidity"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Humidity> ;
+.
+quantity:AbsorbedDose
+  rdf:type qudt:RadiologyQuantityKind ;
+  qudt:description """Absorbed dose (also known as Total Ionizing Dose, TID) is a measure of the energy deposited in a medium by ionizing radiation. It is equal to the energy deposited per unit mass of medium, and so has the unit J/kg, which is given the special name Gray (Gy).
+Note that the absorbed dose is not a good indicator of the likely biological effect. 1 Gy of alpha radiation would be much more biologically damaging than 1 Gy of photon radiation for example. Appropriate weighting factors can be applied reflecting the different relative biological effects to find the equivalent dose.
+The risk of stoctic effects due to radiation exposure can be quantified using the effective dose, which is a weighted average of the equivalent dose to each organ depending upon its radiosensitivity. When ionising radiation is used to treat cancer, the doctor will usually prescribe the radiotherapy treatment in Gy. When risk from ionising radiation is being discussed, a related unit, the Sievert is used."""^^xsd:string ;
+  qudt:generalization quantity:SpecificEnergy ;
+  rdfs:label "Absorbed Dose"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Absorbed_dose> ;
+.
+quantity:AbsorbedDoseRate
+  rdf:type qudt:RadiologyQuantityKind ;
+  rdfs:label "Absorbed Dose Rate"^^xsd:string ;
+.
+quantity:Acceleration
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description """Acceleration is the (instantaneous) rate of change of velocity. Acceleration may be either linear acceleration, or angular acceleration. It is a vector quantity with dimension length/time^2 for linear acceleration, or in the case of angular acceleration, with dimension angle/time^2. In SI units, linear acceleration is measured in meters/second^2 (m·s^-2) and angular acceleration is measured in radians/second^2. 
+In common speech, the term acceleration is only used for an increase in speed. In physics, any increase or decrease in speed is referred to as acceleration and similarly, motion in a circle at constant speed is also an acceleration, since the direction component of the velocity is changing."""^^xsd:string ;
+  rdfs:label "Acceleration"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Acceleration> ;
+.
+quantity:Action
+  rdf:type qudt:QuantumMechanicsQuantityKind ;
+  qudt:abbreviation "S"^^xsd:string ;
+  qudt:symbol "S"^^xsd:string ;
+  rdfs:label "Action"^^xsd:string ;
+.
+quantity:Activity
+  rdf:type qudt:QuantumMechanicsQuantityKind ;
+  qudt:description "Activity is the term used to characterise the number of nuclei which disintegrate in a radioactive substance per unit time. Activity is usually measured in Becquerels (Bq), where 1 Bq is 1 disintegration per second."^^xsd:string ;
+  qudt:generalization quantity:StochasticProcess ;
+  rdfs:label "Activity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Radioactive_decay> ;
+.
+quantity:AmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:symbol "N"^^xsd:string ;
+  rdfs:label "Amount of Substance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Amount_of_substance> ;
+.
+quantity:AmountOfSubstancePerUnitMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:generalization quantity:Concentration ;
+  rdfs:label "Amount of substance per unit mass"^^xsd:string ;
+.
+quantity:AmountOfSubstancePerUnitVolume
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:generalization quantity:Concentration ;
+  rdfs:label "Amount of Substance Per Unit Volume"^^xsd:string ;
+.
+quantity:Angle
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "The inclination to each other of two intersecting lines, measured by the arc of a circle intercepted between the two lines forming the angle, the center of the circle being the point of intersection.  An acute angle is less than 90°; a right angle 90 °; an obtuse angle, more than 90° but less than 180 °; a straight angle, 180°; a reflex angle, more than 180° but less than 360°; a perigon, 360°. Any angle not a multiple of 90° is an oblique angle. If the sum of two angles is 90°, they are complementary angles; if 180°, supplementary angles; if 360°, explementary angles. Two adjacent angles have a common vertex and lie on opposite sides of a common side. A dihedral angle is the angle between two intersecting planes. A spherical angle is the angle between two intersecting great circles."^^xsd:string ;
+  qudt:generalization quantity:DimensionlessRatio ;
+  rdfs:label "Angle"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Angle> ;
+.
+quantity:AngularAcceleration
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description """Angular acceleration is the rate of change of angular velocity over time. Measurement of the change made in the rate of change of an angle that a spinning object undergoes per unit time. It is a vector quantity.  Also called Rotational acceleration.
+In SI units, it is measured in radians per second squared (rad/s^2), and is usually denoted by the Greek letter alpha."""^^xsd:string ;
+  qudt:generalization quantity:Acceleration ;
+  rdfs:label "Angular Acceleration"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_acceleration> ;
+.
+quantity:AngularFrequency
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "Angular frequency is a scalar measure of rotation rate. It is the magnitude of the vector quantity angular velocity. "^^xsd:string ;
+  qudt:generalization quantity:Frequency ;
+  qudt:symbol "ω"^^xsd:string ;
+  rdfs:label "Angular Frequency"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_frequency> ;
+.
+quantity:AngularMomentum
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description "In physics, the angular momentum of an object rotating about some reference point is the measure of the extent to which the object will continue to rotate about that point unless acted upon by an external torque. In particular, if a point mass rotates about an axis, then the angular momentum with respect to a point on the axis is related to the mass of the object, the velocity and the distance of the mass to the axis. While the motion associated with linear momentum has no absolute frame of reference, the rotation associated with angular momentum is sometimes spoken of as being measured relative to the fixed stars. {Wikipedia]"^^xsd:string ;
+  qudt:generalization quantity:Momentum ;
+  qudt:latexDefinition "M = I\\omega"^^xsd:string ;
+  qudt:mathMLdefinition """<math xmlns=\"http://www.w3.org/1998/Math/MathML\">    
+  	<mstyle displaystyle=\"true\">
+  		<mrow>
+  			<mi>M</mi>
+  			<mo>=</mo>
+  			<mi>I</mi>
+  			<mi>ω</mi>
+  		</mrow>    
+  	</mstyle>
+</math>"""^^xsd:string ;
+  rdfs:label "Angular Momentum"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_momentum> ;
+.
+quantity:AngularVelocity
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "The change of angle per unit time; specifically, in celestial mechanics, the change in angle of the radius vector per unit time."^^xsd:string ;
+  qudt:generalization quantity:Velocity ;
+  rdfs:label "Angular Velocity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_velocity> ;
+.
+quantity:Area
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "Area is a quantity expressing the two-dimensional size of a defined part of a surface, typically a region bounded by a closed curve."^^xsd:string ;
+  rdfs:label "Area"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Area> ;
+.
+quantity:AreaAngle
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdfs:label "Area Angle"^^xsd:string ;
+.
+quantity:AreaPerTime
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Area per Time"^^xsd:string ;
+.
+quantity:AreaTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Area Temperature"^^xsd:string ;
+.
+quantity:AreaThermalExpansion
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description """When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.
+
+Different coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:
+
+    * linear thermal expansion
+    * area thermal expansion
+    * volumetric thermal expansion
+
+These characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.
+
+Some substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients. [Wikipedia]"""^^xsd:string ;
+  rdfs:label "Area Thermal Expansion"^^xsd:string ;
+.
+quantity:AreaTime
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdfs:label "Area Time"^^xsd:string ;
+.
+quantity:AreaTimeTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Area Time Temperature"^^xsd:string ;
+.
+quantity:Asset
+  rdf:type qudt:FinanceQuantityKind ;
+  qudt:description "An Asset is an economic resource owned by a business or company. Simply stated, assets are things of value that can be readily converted into cash (although cash itself is also considered an asset)."^^xsd:string ;
+  rdfs:label "Asset"^^xsd:string ;
+.
+quantity:AtmosphericPressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "The pressure exerted at a point due to the presence of an atmosphere. In most circumstances atmospheric pressure is closely approximated by the hydrostatic pressure caused by the weight of air above the measurement point. Low pressure areas have less atmospheric mass above their location, whereas high pressure areas have more atmospheric mass above their location. Similarly, as elevation increases there is less overlying atmospheric mass, so that pressure decreases with increasing elevation. [Wikipedia]"^^xsd:string ;
+  qudt:generalization quantity:Pressure ;
+  rdfs:label "Atmospheric Pressure"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Atmospheric_pressure> ;
+.
+quantity:AtomicCharge
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdfs:label "Atomic Charge"^^xsd:string ;
+.
+quantity:AuxillaryMagneticField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "H"^^xsd:string ;
+  qudt:description "Magnetic Fields surround magnetic materials and electric currents and are detected by the force they exert on other magnetic materials and moving electric charges. The electric and magnetic fields are two interrelated aspects of a single object, called the electromagnetic field. A pure electric field in one reference frame is observed as a combination of both an electric field and a magnetic field in a moving reference frame. The Auxillary Magnetic Field, H characterizes how the true Magnetic Field B influences the organization of magnetic dipoles in a given medium."^^xsd:string ;
+  qudt:generalization quantity:ElectricCurrentPerUnitLength ;
+  rdfs:label "Auxillary Magnetic Field"^^xsd:string ;
+.
+quantity:Capacitance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "Capacitance is the ability of a body to hold an electrical charge; it is quantified as the amount of electric charge stored for a given electric potential. Capacitance is a scalar-valued quantity."^^xsd:string ;
+  rdfs:label "Capacitance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Capacitance> ;
+.
+quantity:Capacity
+  rdf:type qudt:InformationScienceQuantityKind ;
+  qudt:description """In computer operations, (a) the largest quantity which can be stored, processed, or transferred; (b) the largest number of digits or characters which may regularly be processed; (c) the upper and lower limits of the quantities which may be processed.
+In other contexts, the amount of material that  can be stored, such as fuel or food."""^^xsd:string ;
+  qudt:symbol "TBD"^^xsd:string ;
+  rdfs:label "Capacity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Capacity> ;
+.
+quantity:CatalyticActivity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Catalytic Activity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Catalysis> ;
+.
+quantity:Circulation
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "In fluid dynamics, circulation is the line integral around a closed curve of the fluid velocity. It has dimensions of length squared over time."^^xsd:string ;
+  qudt:generalization quantity:AreaPerTime ;
+  qudt:symbol "Γ"^^xsd:string ;
+  rdfs:label "Circulation"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Circulation_%28fluid_dynamics%29> ;
+.
+quantity:CoefficientOfHeatTransfer
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Coefficient of Heat Transfer"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Heat_transfer> ;
+.
+quantity:CompressibilityFactor
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "The compressibility factor (Z) is a useful thermodynamic property for modifying the ideal gas law to account for the real gas behaviour. The closer a gas is to a phase change, the larger the deviations from ideal behavior. Values for compressibility are calculated using equations of state (EOS), such as the virial equation and van der Waals equation. The compressibility factor for specific gases can be obtained, with out calculation, from compressibility charts. These charts are created by plotting Z as a function of pressure at constant temperature."^^xsd:string ;
+  qudt:generalization quantity:DimensionlessRatio ;
+  qudt:symbol "Z"^^xsd:string ;
+  rdfs:label "Compressibility Factor"^^xsd:string ;
+.
+quantity:Concentration
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Concentration"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Concentration> ;
+.
+quantity:CubicElectricDipoleMomentPerSquareEnergy
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Cubic Electric Dipole Moment per Square Energy"^^xsd:string ;
+.
+quantity:Currency
+  rdf:type qudt:FinanceQuantityKind ;
+  qudt:generalization quantity:Asset ;
+  rdfs:label "Currency"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Currency> ;
+.
+quantity:Curvature
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description """The canonical example of extrinsic curvature is that of a circle, which has curvature equal to the inverse of its radius everywhere. Smaller circles bend more sharply, and hence have higher curvature. The curvature of a smooth curve is defined as the curvature of its osculating circle at each point. The osculating circle of a sufficiently smooth plane curve at a given point on the curve is the circle whose center lies on the inner normal line and whose curvature is the same as that of the given curve at that point. This circle is tangent to the curve at the given point.
+
+That is, given a point P on a smooth curve C, the curvature of C at P is defined to be 1/R where R is the radius of the osculating circle of C at P. The magnitude of curvature at points on physical curves can be measured in diopters (also spelled dioptre) — this is the convention in optics. [Wikipedia]"""^^xsd:string ;
+  rdfs:label "Curvature"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Curvature> ;
+.
+quantity:DataRate
+  rdf:type qudt:InformationScienceQuantityKind ;
+  qudt:description "The frequency derived from the period of time required to transmit one bit. This represents the amount of data transferred per second by a communications channel or a computing or storage device. Data rate is measured in units of bits per second (written \"b/s\" or \"bps\"), bytes per second (Bps), or baud. When applied to data rate, the multiplier prefixes \"kilo-\", \"mega-\", \"giga-\", etc. (and their abbreviations, \"k\", \"M\", \"G\", etc.) always denote powers of 1000. For example, 64 kbps is 64,000 bits per second. This contrasts with units of storage which use different prefixes to denote multiplication by powers of 1024, e.g. 1 kibibit = 1024 bits."^^xsd:string ;
+  rdfs:label "Data Rate"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Data_rate> ;
+.
+quantity:Density
+  rdfs:label "Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Density> ;
+.
+quantity:Dimensionless
+  rdf:type qudt:QuantityKind ;
+  qudt:symbol "U"^^xsd:string ;
+  rdfs:label "Dimensionless"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Dimensionless_quantity> ;
+.
+quantity:DimensionlessRatio
+  rdf:type qudt:QuantityKind ;
+  qudt:generalization quantity:Dimensionless ;
+  qudt:symbol "ψ"^^xsd:string ;
+  rdfs:label "Dimensionless Ratio"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Ratio> ;
+.
+quantity:DoseEquivalent
+  rdf:type qudt:RadiologyQuantityKind ;
+  qudt:description "The equivalent dose to a tissue is found by multiplying the absorbed dose, in gray, by a dimensionless \"quality factor\" Q, dependent upon radiation type, and by another dimensionless factor N, dependent on all other pertinent factors. N depends upon the part of the body irradiated, the time and volume over which the dose was spread, even the species of the subject."^^xsd:string ;
+  qudt:generalization quantity:SpecificEnergy ;
+  rdfs:label "Dose Equivalent"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Equivalent_dose> ;
+.
+quantity:DryVolume
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:generalization quantity:Volume ;
+  rdfs:label "Dry Volume"^^xsd:string ;
+.
+quantity:DynamicPressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description """Dynamic Pressure (indicated with q, or Q, and sometimes called velocity pressure) is the quantity defined by:
+
+q = 1/2 * ρv^2
+ 
+where (using SI units):
+
+q = dynamic pressure in pascals 
+ρ = fluid density in kg/m3 (e.g. density of air) 
+v = fluid velocity in m/s"""^^xsd:string ;
+  qudt:generalization quantity:Pressure ;
+  qudt:symbol "q"^^xsd:string ;
+  rdfs:label "Dynamic Pressure"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Dynamic_pressure> ;
+.
+quantity:DynamicViscosity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:generalization quantity:Viscosity ;
+  qudt:symbol "μ"^^xsd:string ;
+  rdfs:label "Dynamic Viscosity"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Viscosity> ;
+.
+quantity:ElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "Electric charge is a fundamental conserved property of some subatomic particles, which determines their electromagnetic interaction. Electrically charged matter is influenced by, and produces, electromagnetic fields. The electric charge on a body may be positive or negative. Two positively charged bodies experience a mutual repulsive force, as do two negatively charged bodies. A positively charged body and a negatively charged body experience an attractive force."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  rdfs:label "Electric Charge"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Electric_charge> ;
+.
+quantity:ElectricChargeLineDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Electric Charge Line Density"^^xsd:string ;
+.
+quantity:ElectricChargePerAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Electric Charge per Amount of Substance"^^xsd:string ;
+.
+quantity:ElectricChargePerArea
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Electric Charge per Unit Area"^^xsd:string ;
+.
+quantity:ElectricChargePerMass
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Electric Charge per Mass"^^xsd:string ;
+.
+quantity:ElectricChargeVolumeDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:symbol "ρ"^^xsd:string ;
+  rdfs:label "Electric Charge Volume Density"^^xsd:string ;
+.
+quantity:ElectricConductivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description """Electric conductivity or specific conductance is a measure of a material's ability to conduct an electric current. When an electrical potential difference is placed across a conductor, its movable charges flow, giving rise to an electric current. The conductivity σ is defined as the ratio of the electric current density J to the electric field E:
+
+J = σE
+
+In isotropic materials, conductivity is scalar-valued, however in general, conductivity is a tensor-valued quantity."""^^xsd:string ;
+  qudt:symbol "σ"^^xsd:string ;
+  rdfs:label "Electric Conductivity"^^xsd:string ;
+.
+quantity:ElectricCurrent
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "Electric Current is the flow (movement) of electric charge. The amount of electric current through some surface, e.g., a section through a copper conductor, is defined as the amount of electric charge flowing through that surface over time. Current is a scalar-valued quantity."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  rdfs:label "Electric Current"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Electric_current> ;
+.
+quantity:ElectricCurrentDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "J"^^xsd:string ;
+  qudt:description "Electric current density is a measure of the density of flow of electric charge; it is the electric current per unit area of cross section. Electric current density is a vector-valued quantity."^^xsd:string ;
+  qudt:symbol "J"^^xsd:string ;
+  rdfs:label "Electric Current Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Current_density> ;
+.
+quantity:ElectricCurrentPerAngle
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Electric Current per Angle"^^xsd:string ;
+.
+quantity:ElectricCurrentPerUnitEnergy
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Electric Current per Unit Energy"^^xsd:string ;
+.
+quantity:ElectricCurrentPerUnitLength
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Electric Current per Unit Length"^^xsd:string ;
+.
+quantity:ElectricDipoleMoment
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "The Electric Dipole Moment is a measure of the separation of positive and negative electrical charges in a system of (discrete or continuous) charges. It is a vector-valued quantity. If the system of charges is neutral, that is if the sum of all charges is zero, then the dipole moment of the system is independent of the choice of a reference frame; however in a non-neutral system, such as the dipole moment of a single proton, a dependence on the choice of reference point arises. In such cases it is conventional to choose the reference point to be the center of mass of the system or the center of charge, not some arbitrary origin. This convention ensures that the dipole moment is an intrinsic property of the system."^^xsd:string ;
+  rdfs:label "Electric Dipole Moment"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Dipole> ;
+.
+quantity:ElectricDisplacementField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "D"^^xsd:string ;
+  qudt:description "In a dielectric material the presence of an electric field E causes the bound charges in the material (atomic nuclei and their electrons) to slightly separate, inducing a local electric dipole moment. The Electric Displacement Field, D, is a vector field that accounts for the effects of free charges within such dielectric materials. "^^xsd:string ;
+  qudt:generalization quantity:ElectricChargePerArea ;
+  qudt:symbol "D"^^xsd:string ;
+  rdfs:label "Electric Displacement Field"^^xsd:string ;
+.
+quantity:ElectricField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "E"^^xsd:string ;
+  qudt:description "The space surrounding an electric charge or in the presence of a time-varying magnetic field has a property called an electric field. This electric field exerts a force on other electrically charged objects. In the idealized case, the force exerted between two point charges is inversely proportional to the square of the distance between them. (Coulomb's Law)"^^xsd:string ;
+  rdfs:label "Electric Field"^^xsd:string ;
+.
+quantity:ElectricFlux
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "The Electric Flux through an area is defined as the electric field multiplied by the area of the surface projected in a plane perpendicular to the field. Electric Flux is a scalar-valued quantity."^^xsd:string ;
+  rdfs:label "Electric Flux"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Electric_flux> ;
+.
+quantity:ElectricPotential
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "The Electric Potential is a scalar valued quantity associated with an electric field. The electric potential Φ(x) at a point, x, is formally defined as the line integral of the electric field taken along a path from x to the point at infinity. If the electric field is static, i.e. time independent, then the choice of the path is arbitrary; however if the electric field is time dependent, taking the integral along different paths will produce different results."^^xsd:string ;
+  qudt:generalization quantity:EnergyPerElectricCharge ;
+  qudt:symbol "Φ"^^xsd:string ;
+  rdfs:label "Electric Potential"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Category:Units_of_electrical_potential> ;
+.
+quantity:ElectricPower
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description """Electric power is the rate at which electrical energy is transferred by an electric circuit. In the simple case of direct current circuits, electric power can be calculated as the product of the potential difference in the circuit (V) and the amount of current flowing in the circuit (I):
+
+P = VI
+
+where 
+P is the power
+V is the potential difference
+I is the current.
+
+However, in general electric power is calculated by taking the integral of the vector cross-product of the electrical and magnetic fields over a specified area."""^^xsd:string ;
+  qudt:generalization quantity:Power ;
+  rdfs:label "Electric Power"^^xsd:string ;
+.
+quantity:ElectricQuadrupoleMoment
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "The Electric Quadrupole Moment is a quantity which describes the effective shape of the ellipsoid of nuclear charge distribution. A non-zero quadrupole moment Q indicates that the charge distribution is not spherically symmetric. By convention, the value of Q is taken to be positive if the ellipsoid is prolate and negative if it is oblate. In general, the electric quadrupole moment is tensor-valued."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  rdfs:label "Electric Quadrupole Moment"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Quadrupole> ;
+.
+quantity:ElectromotiveForce
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "In physics, electromotive force, or most commonly emf (seldom capitalized), or (occasionally) electromotance is \"that which tends to cause current (actual electrons and ions) to flow.\"[1]. More formally, emf is the external work expended per unit of charge to produce an electric potential difference across two open-circuited terminals.[2][3] The electric potential difference is created by separating positive and negative charges, thereby generating an electric field.[4][5] The created electrical potential difference drives current flow if a circuit is attached to the source of emf. When current flows, however, the voltage across the terminals of the source of emf is no longer the open-circuit value, due to voltage drops inside the device due to its internal resistance. [Wikipedia]"^^xsd:string ;
+  qudt:generalization quantity:EnergyPerElectricCharge ;
+  qudt:symbol "ℰ"^^xsd:string ;
+  rdfs:label "Electromotive Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Electromotive_force> ;
+.
+quantity:EnergyAndWork
+  rdfs:label "Energy and Work"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Energy> ;
+  skos:exactMatch <http://dbpedia.org/resource/Work_%28physics%29> ;
+.
+quantity:EnergyAndWorkPerMassAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Energy and Work per Mass Amount of Substance"^^xsd:string ;
+.
+quantity:EnergyDensity
+  qudt:description "Energy density is defined as energy per unit volume. The SI unit for energy density is the joule per cubic meter."^^xsd:string ;
+  rdfs:label "Energy Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Energy_density> ;
+.
+quantity:EnergyInternal
+  qudt:generalization quantity:EnergyAndWork ;
+  rdfs:label "Internal Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Internal_energy> ;
+.
+quantity:EnergyKinetic
+  qudt:generalization quantity:EnergyAndWork ;
+  rdfs:label "Kinetic Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kinetic_energy> ;
+.
+quantity:EnergyPerArea
+  rdfs:label "Energy per Area"^^xsd:string ;
+.
+quantity:EnergyPerAreaElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Energy per Area Electric Charge"^^xsd:string ;
+.
+quantity:EnergyPerElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Energy per Electric Charge"^^xsd:string ;
+.
+quantity:EnergyPerSquareMagneticFluxDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Energy per Square Magnetic Flux Density"^^xsd:string ;
+.
+quantity:EnergyPerTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Energy per Temperature"^^xsd:string ;
+.
+quantity:Enthalpy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "Static enthalpy per unit mass. The specific enthalpy of a working mass is a property of that mass used in thermodynamics, defined as h=u+p . v where u is the specific internal energy, p is the pressure, and v is specific volume. In other words, h = H / m where m is the mass of the system. The SI unit for specific enthalpy is joules per kilogram. [Wikipedia]"^^xsd:string ;
+  qudt:generalization quantity:EnergyAndWork ;
+  rdfs:label "Enthalpy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Enthalpy> ;
+.
+quantity:Exposure
+  rdf:type qudt:RadiologyQuantityKind ;
+  qudt:generalization quantity:ElectricChargePerMass ;
+  rdfs:label "Exposure"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Exposure> ;
+.
+quantity:FirstMomentOfArea
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "The first moment of area is the summation of area times distance to an axis. It is a measure of the distribution of the area of a shape in relationship to an axis."^^xsd:string ;
+  qudt:generalization quantity:Volume ;
+  rdfs:label "First Moment of Area"^^xsd:string ;
+.
+quantity:Force
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description """Force is an influence that causes mass to accelerate. It may be experienced as a lift, a push, or a pull. Force is defined by Newton's Second Law as F = m · a, where F is force, m is mass and a is acceleration.
+Net force is mathematically equal to the time rate of change of the momentum of the body on which it acts. Since momentum is a vector quantity (has both a magnitude and direction), force also is a vector quantity."""^^xsd:string ;
+  rdfs:label "Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Force> ;
+.
+quantity:ForceMagnitude
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Force Magnitude"^^xsd:string ;
+.
+quantity:ForcePerArea
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Force Per Area"^^xsd:string ;
+.
+quantity:ForcePerAreaTime
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Force Per Area Time"^^xsd:string ;
+.
+quantity:ForcePerElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Force per Electric Charge"^^xsd:string ;
+.
+quantity:ForcePerLength
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Force per Unit Length"^^xsd:string ;
+.
+quantity:Frequency
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "Frequency is the number of occurrences of a repeating event per unit time. The repetition of the events may be periodic (i.e. the length of time between event repetitions is fixed) or aperiodic (i.e. the length of time between event repetitions varies). Therefore, we distinguish between periodic and aperiodic frequencies. In the SI system, periodic frequency is measured in hertz (Hz) or multiples of hertz, while aperiodic frequency is measured in becquerel (Bq)."^^xsd:string ;
+  rdfs:label "Frequency"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Frequency> ;
+.
+quantity:Friction
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description "Friction is the force of two surfaces In contact, or the force of a medium acting on a moving object (i.e. air on an aircraft). When contacting surfaces move relative to each other, the friction between the two objects converts kinetic energy into thermal energy."^^xsd:string ;
+  qudt:generalization quantity:Force ;
+  rdfs:label "Friction"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Friction> ;
+.
+quantity:Gain
+  rdf:type qudt:QuantityKind ;
+  qudt:description "A general term used to denote an increase in signal power or signal strength in transmission from one point to another. Gain is usually expressed in decibels and is widely used to denote transducer gain.  An increase or amplification. In radar there are two general usages of the term: (a) antenna gain, or gain factor, is the ratio of the power transmitted along the beam axis to that of an isotropic radiator transmitting the same total power; (b) receiver gain, or video gain, is the amplification given a signal by the receiver."^^xsd:string ;
+  qudt:generalization quantity:DimensionlessRatio ;
+  rdfs:label "Gain"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gain> ;
+.
+quantity:GravitationalAttraction
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Gravitational Attraction"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Gravitational_constant> ;
+.
+quantity:GyromagneticRatio
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:generalization quantity:ElectricChargePerMass ;
+  qudt:symbol "γ"^^xsd:string ;
+  rdfs:label "Gyromagnetic Ratio"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gyromagnetic_ratio> ;
+.
+quantity:HeartRate
+  rdf:type qudt:BiologyQuantityKind ;
+  rdfs:label "Heart Rate"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Heart_rate> ;
+.
+quantity:Heat
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "Energy transferred by a thermal process.  Heat can be measured in terms of the dynamical units of energy, as the erg, joule, etc., or in terms of the amount of energy required to produce a definite thermal change in some substance, as, for example, the energy required per degree to raise the temperature of a unit mass of water at some temperature ( calorie, Btu)."^^xsd:string ;
+  qudt:generalization quantity:ThermalEnergy ;
+  rdfs:label "Heat"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Heat> ;
+.
+quantity:HeatCapacity
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:generalization quantity:EnergyPerTemperature ;
+  qudt:symbol "Cp"^^xsd:string ;
+  rdfs:label "Heat Capacity"^^xsd:string ;
+.
+quantity:HeatCapacityRatio
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "The heat capacity ratio, or ratio of specific heats, is the ratio of the heat capacity at constant pressure (C_P) to heat capacity at constant volume (C_V). For an ideal gas, the heat capacity is constant with temperature (Θ). Accordingly we can express the enthalpy as H = C_P*Θ and the internal energy as U = C_V*Θ. Thus, it can also be said that the heat capacity ratio is the ratio between enthalpy and internal energy"^^xsd:string ;
+  qudt:generalization quantity:DimensionlessRatio ;
+  rdfs:label "Heat Capacity Ratio"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Heat_capacity_ratio> ;
+.
+quantity:HeatFlowRate
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:generalization quantity:Power ;
+  rdfs:label "Heat Flow Rate"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Heat_transfer> ;
+.
+quantity:HeatFlowRatePerUnitArea
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:generalization quantity:PowerPerArea ;
+  rdfs:label "Heat Flow Rate per Unit Area"^^xsd:string ;
+.
+quantity:Illuminance
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:description "Illuminance is the total luminous flux incident on a surface, per unit area. It is a measure of the intensity of the incident light, wavelength-weighted by the luminosity function to correlate with human brightness perception."^^xsd:string ;
+  qudt:generalization quantity:LuminousFluxPerArea ;
+  rdfs:label "Illuminance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Illuminance> ;
+.
+quantity:Inductance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "Inductance is an electromagentic quantity that characterizes a circuit's resistance to any change of electric current; a change in the electric current through induces an opposing electromotive force (EMF). Quantitatively, inductance is proportional to the magnetic flux per unit of electric current."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:label "Inductance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Inductance> ;
+.
+quantity:InformationEntropy
+  rdfs:label "Information Entropy"^^xsd:string ;
+.
+quantity:InverseAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Inverse Amount of Substance"^^xsd:string ;
+.
+quantity:InverseEnergy
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Inverse Energy"^^xsd:string ;
+.
+quantity:InverseLength
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdfs:label "Inverse Length"^^xsd:string ;
+.
+quantity:InverseLengthTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Inverse Length Temperature"^^xsd:string ;
+.
+quantity:InverseMagneticFlux
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Inverse Magnetic Flux"^^xsd:string ;
+.
+quantity:InversePermittivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Inverse Permittivity"^^xsd:string ;
+.
+quantity:InverseSquareEnergy
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Inverse Square Energy"^^xsd:string ;
+.
+quantity:InverseTimeTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Inverse Time Temperature"^^xsd:string ;
+.
+quantity:InverseVolume
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdfs:label "Inverse Volume"^^xsd:string ;
+.
+quantity:Irradiance
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:description "Irradiance and Radiant Emittance are radiometry terms for the power per unit area of electromagnetic radiation at a surface. \"Irradiance\" is used when the electromagnetic radiation is incident on the surface. \"Radiant emmitance\" (or \"radiant exitance\") is used when the radiation is emerging from the surface."^^xsd:string ;
+  qudt:generalization quantity:PowerPerArea ;
+  rdfs:label "Irradiance"^^xsd:string ;
+.
+quantity:KinematicViscosity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:abbreviation "The Kinematic Viscosity of a fluid is the dynamic viscosity divided by the fluid density."^^xsd:string ;
+  qudt:generalization quantity:AreaPerTime ;
+  rdfs:label "Kinematic Viscosity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Viscosity> ;
+.
+quantity:KineticEnergy
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description """The energy which a body possesses as a consequence of its motion, defined as one-half the product of its mass m and the square of its speed v, 1/2 mv^2. The kinetic energy per unit volume of a fluid parcel is the 1/2 p v2 , where p is the density and v the speed of the parcel. See potential energy. 
+For relativistic speeds the kinetic energy is given by 
+Ek = mc^2 - m0c^2 
+where c is the velocity of light in a vacuum, m0 is the rest mass, and m is the moving mass."""^^xsd:string ;
+  qudt:generalization quantity:EnergyAndWork ;
+  rdfs:label "Kinetic Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kinetic_energy> ;
+.
+quantity:Length
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:label "Length"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Length> ;
+.
+quantity:LengthByForce
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Length Force"^^xsd:string ;
+.
+quantity:LengthEnergy
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Length Energy"^^xsd:string ;
+.
+quantity:LengthMass
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Length Mass"^^xsd:string ;
+.
+quantity:LengthMolarEnergy
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Length Molar Energy"^^xsd:string ;
+.
+quantity:LengthPerUnitElectricCurrent
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Length per Unit Electric Current"^^xsd:string ;
+.
+quantity:LengthPerUnitMagneticFlux
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Length per Unit Magnetic Flux"^^xsd:string ;
+.
+quantity:LengthTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Length Temperature"^^xsd:string ;
+.
+quantity:LengthTemperatureTime
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Length Temperature Time"^^xsd:string ;
+.
+quantity:LinearAcceleration
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:generalization quantity:Acceleration ;
+  rdfs:label "Linear Acceleration"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Acceleration> ;
+.
+quantity:LinearEnergyTransfer
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdfs:label "Linear Energy Transfer"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Linear_energy_transfer> ;
+.
+quantity:LinearMomentum
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description "Linear momentum is the quantity obtained by multiplying the mass of a body by its linear velocity. Angular momentum is the quantity obtained by multiplying the moment of inertia of a body by its angular velocity. The momentum of a system of particles is given by the sum of the momenta of the individual particles which make up the system or by the product of the total mass of the system and the velocity of the center of gravity of the system. The momentum of a continuous medium is given by the integral of the velocity over the mass of the medium or by the product of the total mass of the medium and the velocity of the center of gravity of the medium.The SI unit for linear momentum is meter-kilogram per second (m-kg/s)."^^xsd:string ;
+  qudt:generalization quantity:Momentum ;
+  qudt:latexDefinition "p = m\\upsilon"^^xsd:string ;
+  qudt:mathMLdefinition """<math xmlns=\"http://www.w3.org/1998/Math/MathML\">
+    <mstyle displaystyle=\"true\">
+      <mrow>
+        <mi>p</mi>
+        <mo>=</mo>
+        <mi>m</mi>
+         <mi>υ</mi>
+      </mrow>
+ </mstyle>
+</math>"""^^xsd:string ;
+  rdfs:label "Linear Momentum"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Momentum> ;
+.
+quantity:LinearThermalExpansion
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description """When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.
+
+Different coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:
+
+    * linear thermal expansion
+    * area thermal expansion
+    * volumetric thermal expansion
+
+These characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.
+
+Some substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients. [Wikipedia]"""^^xsd:string ;
+  rdfs:label "Linear Thermal Expansion"^^xsd:string ;
+.
+quantity:LinearVelocity
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:generalization quantity:Velocity ;
+  rdfs:label "Linear Velocity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Velocity> ;
+.
+quantity:LiquidVolume
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:generalization quantity:Volume ;
+  rdfs:label "Liquid Volume"^^xsd:string ;
+.
+quantity:Luminance
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:description "Luminance is a photometric measure of the luminous intensity per unit area of light travelling in a given direction. It describes the amount of light that passes through or is emitted from a particular area, and falls within a given solid angle."^^xsd:string ;
+  rdfs:label "Luminance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Luminance> ;
+.
+quantity:LuminousEfficacy
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:description "Luminous Efficacy is the ratio of luminous flux (in lumens) to power (usually measured in watts). Depending on context, the power can be either the radiant flux of the source's output, or it can be the total electric power consumed by the source."^^xsd:string ;
+  rdfs:label "Luminous Efficacy"^^xsd:string ;
+.
+quantity:LuminousEmmitance
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:description "Luminous Emittance is the luminous flux per unit area emitted from a surface."^^xsd:string ;
+  qudt:generalization quantity:LuminousFluxPerArea ;
+  rdfs:label "Luminous Emmitance"^^xsd:string ;
+.
+quantity:LuminousEnergy
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:description "Luminous Energy is the perceived energy of light. This is sometimes also called the quantity of light."^^xsd:string ;
+  qudt:symbol "Qv"^^xsd:string ;
+  rdfs:label "Luminous Energy"^^xsd:string ;
+.
+quantity:LuminousFlux
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:description "Luminous Flux or Luminous Power is the measure of the perceived power of light. It differs from radiant flux, the measure of the total power of light emitted, in that luminous flux is adjusted to reflect the varying sensitivity of the human eye to different wavelengths of light."^^xsd:string ;
+  qudt:symbol "F"^^xsd:string ;
+  rdfs:label "Luminous Flux"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Luminous_flux> ;
+.
+quantity:LuminousFluxPerArea
+  rdf:type qudt:PhotometryQuantityKind ;
+  rdfs:label "Luminous Flux per Area"^^xsd:string ;
+.
+quantity:LuminousIntensity
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:description "Luminous Intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction per unit solid angle. The weighting is determined by the luminosity function, a standardized model of the sensitivity of the human eye to different wavelengths."^^xsd:string ;
+  qudt:symbol "J"^^xsd:string ;
+  rdfs:label "Luminous Intensity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Luminous_intensity> ;
+.
+quantity:MachNumber
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description """Mach number (Ma) is the speed of an object moving through air, or any fluid substance, divided by the speed of sound as it is in that substance:
+
+    M = V_o/V_s
+
+where
+
+    M is the Mach number
+    V_o is the velocity of the object relative to the medium and
+    V_s is the velocity of sound in the medium 
+
+The Mach number is commonly used both with objects traveling at high speed in a fluid, and with high-speed fluid flows inside channels such as nozzles, diffusers or wind tunnels. As it is defined as a ratio of two speeds, it is a dimensionless number. [Wikipedia]"""^^xsd:string ;
+  qudt:generalization quantity:DimensionlessRatio ;
+  rdfs:label "Mach Number"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mach_number> ;
+.
+quantity:MagneticDipoleMoment
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "The magnetic moment of a system is a measure of the magnitude and the direction of its magnetism. Magnetic moment usually refers to its Magnetic Dipole Moment, and quantifies the contribution of the system's internal magnetism to the external dipolar magnetic field produced by the system (that is, the component of the external magnetic field that is inversely proportional to the cube of the distance to the observer). The Magnetic Dipole Moment is a vector-valued quantity."^^xsd:string ;
+  qudt:symbol "μ"^^xsd:string ;
+  rdfs:label "Magnetic Dipole Moment"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Magnetic_moment> ;
+.
+quantity:MagneticField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "B"^^xsd:string ;
+  qudt:description "The Magnetic Field, denoted B, is a fundamental field in electrodynamics which characterizes the magnetic force exerted by electric currents.  It is closely related to the auxillary magnetic field H (see quantity:AuxillaryMagneticField)."^^xsd:string ;
+  qudt:symbol "B"^^xsd:string ;
+  rdfs:label "Magnetic Field"^^xsd:string ;
+.
+quantity:MagneticFlux
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "Magnetic Flux is the product of the average magnetic field times the perpendicular area that it penetrates."^^xsd:string ;
+  qudt:symbol "Φ"^^xsd:string ;
+  rdfs:label "Magnetic Flux"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Magnetic_flux> ;
+.
+quantity:MagneticFluxPerUnitLength
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Magnetic Flux per Unit Length"^^xsd:string ;
+.
+quantity:MagnetizationField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "M"^^xsd:string ;
+  qudt:description "The Magnetization Field is defined as the ratio of magnetic moment per unit volume. It is a vector-valued quantity."^^xsd:string ;
+  qudt:generalization quantity:ElectricCurrentPerUnitLength ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Magnetization Field"^^xsd:string ;
+.
+quantity:MagnetomotiveForce
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "Magnetomotive Force (mmf) is the ability of an electric circuit to produce magnetic flux. Just as the ability of a battery to produce electric current is called its electromotive force or emf, mmf is taken as the work required to move a unit magnet pole from any point through any path which links the electric circuit back the same point in the presence of the magnetic force produced by the electric current in the circuit."^^xsd:string ;
+  rdfs:label "Magnetomotive Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Magnetomotive_force> ;
+.
+quantity:Mass
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mass> ;
+.
+quantity:MassAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Mass Amount of Substance"^^xsd:string ;
+.
+quantity:MassAmountOfSubstanceTemperature
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Mass Amount of Substance Temperature"^^xsd:string ;
+.
+quantity:MassPerArea
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Mass per Area"^^xsd:string ;
+.
+quantity:MassPerAreaTime
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Mass per Area Time"^^xsd:string ;
+.
+quantity:MassPerElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Mass per Electric Charge"^^xsd:string ;
+.
+quantity:MassPerLength
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Mass per Length"^^xsd:string ;
+.
+quantity:MassPerTime
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Mass per Time"^^xsd:string ;
+.
+quantity:MassTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Mass Temperature"^^xsd:string ;
+.
+quantity:MicrobialFormation
+  rdf:type qudt:BiologyQuantityKind ;
+  rdfs:label "Microbial Formation"^^xsd:string ;
+.
+quantity:MolarAngularMomentum
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Molar Angular Momentum"^^xsd:string ;
+.
+quantity:MolarEnergy
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Molar Energy"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Energy> ;
+.
+quantity:MolarHeatCapacity
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Molar Heat Capacity"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Specific_heat_capacity> ;
+.
+quantity:MolarMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Molar Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molar_mass> ;
+.
+quantity:MolarVolume
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:symbol "V_m"^^xsd:string ;
+  rdfs:label "Molar Volume"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molar_volume> ;
+.
+quantity:MoleFraction
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:description "In chemistry, the mole fraction of a component in a mixture is the relative proportion of molecules belonging to the component to those in the mixture, by number of molecules. It is one way of measuring concentration."^^xsd:string ;
+  qudt:generalization quantity:DimensionlessRatio ;
+  rdfs:label "Mole Fraction"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mole_fraction> ;
+.
+quantity:MolecularMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:description "The molecular mass, or molecular weight of a chemical compound is the mass of one molecule of that compound, relative to the unified atomic mass unit, u. Molecular mass should not be confused with molar mass, which is the mass of one mole of a substance."^^xsd:string ;
+  qudt:generalization quantity:Mass ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Molecular Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molecular_mass> ;
+.
+quantity:MolecularViscosity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:generalization quantity:Viscosity ;
+  rdfs:label "Molecular Viscosity"^^xsd:string ;
+.
+quantity:MomentOfInertia
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Moment of Inertia"^^xsd:string ;
+.
+quantity:Momentum
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description """Quantity of motion.  Linear momentum is the quantity obtained by multiplying the mass of a body by its linear speed. Angular momentum is the quantity obtained by multiplying the moment of inertia of a body by its angular speed. 
+The momentum of a system of particles is given by the sum of the momentums of the individual particles which make up the system or by the product of the total mass of the system and the velocity of the center of gravity of the system. 
+The momentum of a continuous medium is given by the integral of the velocity over the mass of the medium or by the product of the total mass of the medium and the velocity of the center of gravity of the medium."""^^xsd:string ;
+  rdfs:label "Momentum"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Momentum> ;
+.
+quantity:NumberDensity
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "In physics, astronomy, and chemistry, number density (symbol: n) is a kind of quantity used to describe the degree of concentration of countable objects (atoms, molecules, dust particles, galaxies, etc.) in the three-dimensional physical space."^^xsd:string ;
+  qudt:generalization quantity:InverseVolume ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Number Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Number_density> ;
+.
+quantity:Permeability
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "Permeability is the degree of magnetization of a material that responds linearly to an applied magnetic field. In general permeability is a tensor-valued quantity."^^xsd:string ;
+  qudt:symbol "μ"^^xsd:string ;
+  rdfs:label "Permeability"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Permeability> ;
+.
+quantity:Permittivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "Permittivity is a physical quantity that describes how an electric field affects, and is affected by a dielectric medium, and is determined by the ability of a material to polarize in response to the field, and thereby reduce the total electric field inside the material.  Permittivity is often a scalar valued quantity, however in the general case it is tensor-valued."^^xsd:string ;
+  qudt:symbol "ε"^^xsd:string ;
+  rdfs:label "Permittivity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Permittivity> ;
+.
+quantity:PlaneAngle
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:generalization quantity:Angle ;
+  rdfs:label "Plane Angle"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Plane_angle> ;
+.
+quantity:PolarMomentOfInertia
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description "The polar moment of inertia is a quantity used to predict an object's ability to resist torsion, in objects (or segments of objects) with an invariant circular cross-section and no significant warping or out-of-plane deformation. It is used to calculate the angular displacement of an object subjected to a torque. It is analogous to the area moment of inertia, which characterizes an object's ability to resist bending."^^xsd:string ;
+  rdfs:label "Polar moment of inertia"^^xsd:string ;
+.
+quantity:Polarizability
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description """Polarizability is the relative tendency of a charge distribution, like the electron cloud of an atom or molecule, to be distorted from its normal shape by an external electric field, which may be caused by the presence of a nearby ion or dipole.
+
+The electronic polarizability α is defined as the ratio of the induced dipole moment of an atom to the electric field that produces this dipole moment. Polarizability is often a scalar valued quantity, however in the general case it is tensor-valued."""^^xsd:string ;
+  qudt:symbol "α"^^xsd:string ;
+  rdfs:label "Polarizability"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Polarizability> ;
+.
+quantity:PolarizationField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "The Polarization Field is the vector field that expresses the density of permanent or induced electric dipole moments in a dielectric material. The polarization vector P is defined as the ratio of electric dipole moment per unit volume."^^xsd:string ;
+  qudt:generalization quantity:ElectricChargePerArea ;
+  qudt:symbol "P"^^xsd:string ;
+  rdfs:label "Polarization Field"^^xsd:string ;
+.
+quantity:PotentialEnergy
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description "Energy possessed by a body by virtue of its position in a gravity field in contrast with kinetic energy, that possessed by virtue of its motion."^^xsd:string ;
+  qudt:generalization quantity:EnergyAndWork ;
+  rdfs:label "Potential Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Potential_energy> ;
+.
+quantity:Power
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description """Power is the rate at which work is performed or energy is transmitted, or the amount of energy required or expended for a given unit of time. As a rate of change of work done or the energy of a subsystem, power is:
+
+P = W/t
+
+where P is power 
+W is work 
+t is time. [Wikipedia]"""^^xsd:string ;
+  rdfs:label "Power"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Power> ;
+.
+quantity:PowerArea
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Power Area"^^xsd:string ;
+.
+quantity:PowerAreaPerSolidAngle
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Power Area per Solid Angle"^^xsd:string ;
+.
+quantity:PowerPerArea
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Power per Area"^^xsd:string ;
+.
+quantity:PowerPerAreaAngle
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Power per Area Angle"^^xsd:string ;
+.
+quantity:PowerPerAreaQuarticTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Power per Area Quartic Temperature"^^xsd:string ;
+.
+quantity:PowerPerElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Power per Electric Charge"^^xsd:string ;
+.
+quantity:Pressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "Pressure is an effect which occurs when a force is applied on a surface. Pressure is the amount of force acting on a unit area. Pressure is distinct from stress, as the former is the ratio of the component of force normal to a surface to the surface area. Stress is a tensor that relates the vector force to the vector area."^^xsd:string ;
+  qudt:generalization quantity:ForcePerArea ;
+  rdfs:label "Pressure"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pressure> ;
+.
+quantity:QuarticElectricDipoleMomentPerCubicEnergy
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Quartic Electric Dipole Moment per Cubic Energy"^^xsd:string ;
+.
+quantity:RF-Power
+  rdf:type qudt:CommunicationsQuantityKind ;
+  qudt:generalization quantity:SignalStrength ;
+  rdfs:label "RF-Power"^^xsd:string ;
+.
+quantity:Radiance
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:description "Radiance is a radiometric measure that describes the amount of light that passes through or is emitted from a particular area, and falls within a given solid angle in a specified direction."^^xsd:string ;
+  qudt:generalization quantity:PowerPerAreaAngle ;
+  rdfs:label "Radiance"^^xsd:string ;
+.
+quantity:RadiantEmmitance
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:description "Irradiance and Radiant Emittance are radiometry terms for the power per unit area of electromagnetic radiation at a surface. \"Irradiance\" is used when the electromagnetic radiation is incident on the surface. \"Radiant emmitance\" (or \"radiant exitance\") is used when the radiation is emerging from the surface."^^xsd:string ;
+  qudt:generalization quantity:PowerPerArea ;
+  rdfs:label "Radiant Emmitance"^^xsd:string ;
+.
+quantity:RadiantEnergy
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:description "Radiant Energy is the energy of electromagnetic waves. The quantity of radiant energy may be calculated by integrating radiant flux (or power) with respect to time"^^xsd:string ;
+  qudt:generalization quantity:EnergyAndWork ;
+  rdfs:label "Radiant Energy"^^xsd:string ;
+.
+quantity:RadiantFlux
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:description "Radiant Flux, or radiant power, is the measure of the total power of electromagnetic radiation (including infrared, ultraviolet, and visible light). The power may be the total emitted from a source, or the total landing on a particular surface."^^xsd:string ;
+  qudt:generalization quantity:Power ;
+  qudt:symbol "Φ"^^xsd:string ;
+  rdfs:label "Radiant Flux"^^xsd:string ;
+.
+quantity:RadiantIntensity
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:description "Radiant Intensity is a measure of the intensity of electromagnetic radiation. It is defined as power per unit solid angle."^^xsd:string ;
+  rdfs:label "Radiant Intensity"^^xsd:string ;
+.
+quantity:Radiosity
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:description "Radiosity is the total emitted and reflected radiation leaving a surface."^^xsd:string ;
+  qudt:generalization quantity:PowerPerArea ;
+  rdfs:label "Radiosity"^^xsd:string ;
+.
+quantity:Resistance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "The electrical resistance of an object is a measure of its opposition to the passage of a steady electric current."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  rdfs:label "Resistance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Resistance> ;
+.
+quantity:RespiratoryRate
+  rdf:type qudt:BiologyQuantityKind ;
+  rdfs:label "Respiratory Rate"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Respiratory_rate> ;
+.
+quantity:ReynoldsNumber
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "The Reynolds number (Re) is a dimensionless number defined as the ratio of inertial forces to viscous forces and, consequently, it quantifies the relative importance of these two types of forces for given flow conditions."^^xsd:string ;
+  qudt:generalization quantity:DimensionlessRatio ;
+  rdfs:label "Reynolds Number"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Reynolds_number> ;
+.
+quantity:SecondMomentOfArea
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "The second moment of area is a property of a physical object that can be used to predict its resistance to bending and deflection. The deflection of an object under load depends not only on the load, but also on the geometry of the object's cross-section."^^xsd:string ;
+  rdfs:label "Second Moment of Area"^^xsd:string ;
+.
+quantity:SerumOrPlasmaLevel
+  rdf:type qudt:BiologyQuantityKind ;
+  qudt:generalization quantity:AmountOfSubstancePerUnitVolume ;
+  rdfs:label "Serum or Plasma Level"^^xsd:string ;
+.
+quantity:SignalDetectionThreshold
+  rdf:type qudt:CommunicationsQuantityKind ;
+  rdfs:label "Signal Detection Threshold"^^xsd:string ;
+.
+quantity:SignalStrength
+  rdf:type qudt:CommunicationsQuantityKind ;
+  qudt:description "In telecommunications, particularly in radio, signal strength refers to the magnitude of the electric field at a reference point that is a significant distance from the transmitting antenna. It may also be referred to as received signal level or field strength. Typically, it is expressed in voltage per length or signal power received by a reference antenna. High-powered transmissions, such as those used in broadcasting, are expressed in dB-millivolts per metre (dBmV/m). [Wikipedia]"^^xsd:string ;
+  qudt:generalization quantity:ElectricField ;
+  rdfs:label "Signal Strength"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Signal_strength> ;
+.
+quantity:SolidAngle
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "The solid angle subtended by a surface S is defined as the surface area of a unit sphere covered by the surface S's projection onto the sphere. A solid angle is related to the surface of a sphere in the same way an ordinary angle is related to the circumference of a circle. Since the total surface area of the unit sphere is 4*pi, the measure of solid angle will always be between 0 and 4*pi."^^xsd:string ;
+  qudt:generalization quantity:Angle ;
+  rdfs:label "Solid Angle"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Solid_angle> ;
+.
+quantity:SpecificEnergy
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Specific Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Specific_energy> ;
+.
+quantity:SpecificHeatCapacity
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Specific Heat Capacity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Specific_heat_capacity> ;
+.
+quantity:SpecificHeatPressure
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "Specific heat at a constant pressure."^^xsd:string ;
+  rdfs:label "Specific Heat Pressure"^^xsd:string ;
+.
+quantity:SpecificHeatVolume
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "Specific heat per constant volume."^^xsd:string ;
+  rdfs:label "Specific Heat Volume"^^xsd:string ;
+.
+quantity:SpecificImpulseByMass
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:generalization quantity:LinearVelocity ;
+  rdfs:label "Specific Impulse by Mass"^^xsd:string ;
+.
+quantity:SpecificImpulseByWeight
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:generalization quantity:Time ;
+  rdfs:label "Specific Impulse by Weight"^^xsd:string ;
+.
+quantity:SpecificVolume
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:abbreviation "ν"^^xsd:string ;
+  qudt:description "Specific volume (ν) is the volume occupied by a unit of mass of a material. It is equal to the inverse of density."^^xsd:string ;
+  qudt:symbol "ν"^^xsd:string ;
+  rdfs:label "Specific Volume"^^xsd:string ;
+.
+quantity:Speed
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "Speed is the magnitude of velocity."^^xsd:string ;
+  rdfs:label "Speed"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Speed> ;
+.
+quantity:SquareEnergy
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Square Energy"^^xsd:string ;
+.
+quantity:StandardGravitationalParameter
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:symbol "μ"^^xsd:string ;
+  rdfs:label "Standard Gravitational Parameter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Standard_gravitational_parameter> ;
+.
+quantity:StaticPressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "Static Pressure is the pressure at a nominated point in a fluid. Every point in a steadily flowing fluid, regardless of the fluid speed at that point, has its own static pressure P, dynamic pressure q, and total pressure P_0. The total pressure is the sum of the dynamic and static pressures, i.e. P_0 = P + q."^^xsd:string ;
+  qudt:generalization quantity:Pressure ;
+  rdfs:label "Static Pressure"^^xsd:string ;
+.
+quantity:StochasticProcess
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:generalization quantity:Frequency ;
+  rdfs:label "Stochastic Process"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Stochastic_process> ;
+.
+quantity:Strain
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "In any branch of science dealing with materials and their behaviour, strain is the geometrical expression of deformation caused by the action of stress on a physical body. Strain is calculated by first assuming a change between two body states: the beginning state and the final state. Then the difference in placement of two points in this body in those two states expresses the numerical value of strain. Strain therefore expresses itself as a change in size and/or shape. [Wikipedia]"^^xsd:string ;
+  qudt:generalization quantity:Dimensionless ;
+  rdfs:label "Strain"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Strain> ;
+.
+quantity:StrainEnergyDensity
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:generalization quantity:EnergyDensity ;
+  qudt:symbol "u"^^xsd:string ;
+  rdfs:label "Strain Energy Density"^^xsd:string ;
+.
+quantity:Stress
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "Stress is a measure of the average amount of force exerted per unit area of a surface within a deformable body on which internal forces act. In other words, it is a measure of the intensity or internal distribution of the total internal forces acting within a deformable body across imaginary surfaces. These internal forces are produced between the particles in the body as a reaction to external forces applied on the body."^^xsd:string ;
+  qudt:generalization quantity:ForcePerArea ;
+  qudt:latexDefinition "{\\rm{Stress}} = \\frac{F}{A}"^^xsd:string ;
+  qudt:mathMLdefinition """<math xmlns=\"http://www.w3.org/1998/Math/MathML\">
+<mrow>
+	<mrow>
+		\\rm
+		<mrow>
+		Stress
+		</mrow>
+	</mrow>
+	<mo>=</mo>
+	<mfrac linethickness=\"1\">
+		<mi>F</mi>
+		<mi>A</mi>
+	</mfrac>
+</mrow>
+</math>"""^^xsd:string ;
+  rdfs:label "Stress"^^xsd:string ;
+.
+quantity:SystemOfQuantities_CGS
+  rdf:type qudt:SystemOfQuantities ;
+  qudt:systemBaseQuantityKind quantity:Dimensionless ;
+  qudt:systemBaseQuantityKind quantity:Length ;
+  qudt:systemBaseQuantityKind quantity:Mass ;
+  qudt:systemBaseQuantityKind quantity:Time ;
+  qudt:systemDerivedQuantityKind quantity:AngularAcceleration ;
+  qudt:systemDerivedQuantityKind quantity:AngularMomentum ;
+  qudt:systemDerivedQuantityKind quantity:AngularVelocity ;
+  qudt:systemDerivedQuantityKind quantity:Area ;
+  qudt:systemDerivedQuantityKind quantity:AreaAngle ;
+  qudt:systemDerivedQuantityKind quantity:AreaTime ;
+  qudt:systemDerivedQuantityKind quantity:Curvature ;
+  qudt:systemDerivedQuantityKind quantity:Density ;
+  qudt:systemDerivedQuantityKind quantity:DynamicViscosity ;
+  qudt:systemDerivedQuantityKind quantity:EnergyAndWork ;
+  qudt:systemDerivedQuantityKind quantity:EnergyDensity ;
+  qudt:systemDerivedQuantityKind quantity:EnergyPerArea ;
+  qudt:systemDerivedQuantityKind quantity:Force ;
+  qudt:systemDerivedQuantityKind quantity:ForcePerArea ;
+  qudt:systemDerivedQuantityKind quantity:ForcePerLength ;
+  qudt:systemDerivedQuantityKind quantity:Frequency ;
+  qudt:systemDerivedQuantityKind quantity:LengthMass ;
+  qudt:systemDerivedQuantityKind quantity:LinearAcceleration ;
+  qudt:systemDerivedQuantityKind quantity:LinearMomentum ;
+  qudt:systemDerivedQuantityKind quantity:LinearVelocity ;
+  qudt:systemDerivedQuantityKind quantity:MassPerArea ;
+  qudt:systemDerivedQuantityKind quantity:MassPerLength ;
+  qudt:systemDerivedQuantityKind quantity:MassPerTime ;
+  qudt:systemDerivedQuantityKind quantity:MomentOfInertia ;
+  qudt:systemDerivedQuantityKind quantity:Power ;
+  qudt:systemDerivedQuantityKind quantity:PowerPerArea ;
+  qudt:systemDerivedQuantityKind quantity:PowerPerAreaAngle ;
+  qudt:systemDerivedQuantityKind quantity:Pressure ;
+  qudt:systemDerivedQuantityKind quantity:RadiantIntensity ;
+  qudt:systemDerivedQuantityKind quantity:SpecificEnergy ;
+  qudt:systemDerivedQuantityKind quantity:Stress ;
+  qudt:systemDerivedQuantityKind quantity:TimeSquared ;
+  qudt:systemDerivedQuantityKind quantity:Torque ;
+  qudt:systemDerivedQuantityKind quantity:Volume ;
+  qudt:systemDerivedQuantityKind quantity:VolumePerUnitTime ;
+  qudt:unitSystem unit:SystemOfUnits_CGS ;
+  rdfs:label "CGS System of Quantities"^^xsd:string ;
+.
+quantity:SystemOfQuantities_CGS-EMU
+  rdf:type qudt:SystemOfQuantities ;
+  dc:description "The electromagnetic system of units is used to measure electrical quantities of electric charge, current, and voltage, within the centimeter gram second (or \"CGS\") metric system of units. In electromagnetic units, electric current is derived the CGS base units length, mass, and time by solving Ampere's Law (expressing the force between two parallel conducting wires) for current and setting the constant of proportionality (k_m) equal to unity. Thus, in the CGS-EMU system, electric current is derived from length, mass, and time."^^xsd:string ;
+  qudt:systemBaseQuantityKind quantity:Dimensionless ;
+  qudt:systemBaseQuantityKind quantity:Length ;
+  qudt:systemBaseQuantityKind quantity:Mass ;
+  qudt:systemBaseQuantityKind quantity:Time ;
+  qudt:systemDerivedQuantityKind quantity:AuxillaryMagneticField ;
+  qudt:systemDerivedQuantityKind quantity:Capacitance ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCharge ;
+  qudt:systemDerivedQuantityKind quantity:ElectricConductivity ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrent ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrentDensity ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrentPerUnitLength ;
+  qudt:systemDerivedQuantityKind quantity:ElectricDipoleMoment ;
+  qudt:systemDerivedQuantityKind quantity:ElectricDisplacementField ;
+  qudt:systemDerivedQuantityKind quantity:ElectricField ;
+  qudt:systemDerivedQuantityKind quantity:ElectricFlux ;
+  qudt:systemDerivedQuantityKind quantity:ElectricPotential ;
+  qudt:systemDerivedQuantityKind quantity:ElectromotiveForce ;
+  qudt:systemDerivedQuantityKind quantity:EnergyPerElectricCharge ;
+  qudt:systemDerivedQuantityKind quantity:Inductance ;
+  qudt:systemDerivedQuantityKind quantity:LengthPerUnitElectricCurrent ;
+  qudt:systemDerivedQuantityKind quantity:MagneticDipoleMoment ;
+  qudt:systemDerivedQuantityKind quantity:MagneticField ;
+  qudt:systemDerivedQuantityKind quantity:MagneticFlux ;
+  qudt:systemDerivedQuantityKind quantity:MagneticFluxPerUnitLength ;
+  qudt:systemDerivedQuantityKind quantity:MagnetizationField ;
+  qudt:systemDerivedQuantityKind quantity:MagnetomotiveForce ;
+  qudt:systemDerivedQuantityKind quantity:Permeability ;
+  qudt:systemDerivedQuantityKind quantity:Permittivity ;
+  qudt:systemDerivedQuantityKind quantity:Resistance ;
+  qudt:unitSystem unit:SystemOfUnits_CGS-EMU ;
+  rdfs:label "CGS-EMU System of Quantities"^^xsd:string ;
+.
+quantity:SystemOfQuantities_CGS-ESU
+  rdf:type qudt:SystemOfQuantities ;
+  dc:description "The electrostatic system of units is used to measure electrical quantities of electric charge, current, and voltage within the centimeter gram second (or \"CGS\") metric system of units. In electrostatic units, electric charge is derived from Coulomb's Law (expressing the force exerted between two charged particles separated by a distance) by solving for electric charge and setting the constant of proportionality (k_s) equal to unity. Thus, in electrostatic units, the dimensionality of electric charge is derived from the base CGS quantities of length, mass, and time."^^xsd:string ;
+  qudt:systemBaseQuantityKind quantity:Dimensionless ;
+  qudt:systemBaseQuantityKind quantity:Length ;
+  qudt:systemBaseQuantityKind quantity:Mass ;
+  qudt:systemBaseQuantityKind quantity:Time ;
+  qudt:systemDerivedQuantityKind quantity:AuxillaryMagneticField ;
+  qudt:systemDerivedQuantityKind quantity:Capacitance ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCharge ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrent ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrentDensity ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrentPerUnitLength ;
+  qudt:systemDerivedQuantityKind quantity:ElectricDipoleMoment ;
+  qudt:systemDerivedQuantityKind quantity:ElectricDisplacementField ;
+  qudt:systemDerivedQuantityKind quantity:ElectricField ;
+  qudt:systemDerivedQuantityKind quantity:ElectricFlux ;
+  qudt:systemDerivedQuantityKind quantity:ElectricPotential ;
+  qudt:systemDerivedQuantityKind quantity:ElectromotiveForce ;
+  qudt:systemDerivedQuantityKind quantity:EnergyPerElectricCharge ;
+  qudt:systemDerivedQuantityKind quantity:Inductance ;
+  qudt:systemDerivedQuantityKind quantity:LengthPerUnitElectricCurrent ;
+  qudt:systemDerivedQuantityKind quantity:MagneticDipoleMoment ;
+  qudt:systemDerivedQuantityKind quantity:MagneticField ;
+  qudt:systemDerivedQuantityKind quantity:MagneticFlux ;
+  qudt:systemDerivedQuantityKind quantity:MagneticFluxPerUnitLength ;
+  qudt:systemDerivedQuantityKind quantity:MagnetizationField ;
+  qudt:systemDerivedQuantityKind quantity:MagnetomotiveForce ;
+  qudt:systemDerivedQuantityKind quantity:Permeability ;
+  qudt:systemDerivedQuantityKind quantity:Permittivity ;
+  qudt:systemDerivedQuantityKind quantity:Resistance ;
+  rdfs:label "CGS-ESU System of Quantities"^^xsd:string ;
+.
+quantity:SystemOfQuantities_CGS-Gauss
+  rdf:type qudt:SystemOfQuantities ;
+  qudt:systemBaseQuantityKind quantity:Dimensionless ;
+  qudt:systemBaseQuantityKind quantity:Length ;
+  qudt:systemBaseQuantityKind quantity:Mass ;
+  qudt:systemBaseQuantityKind quantity:Time ;
+  qudt:systemDerivedQuantityKind quantity:AuxillaryMagneticField ;
+  qudt:systemDerivedQuantityKind quantity:Capacitance ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCharge ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrent ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrentDensity ;
+  qudt:systemDerivedQuantityKind quantity:ElectricCurrentPerUnitLength ;
+  qudt:systemDerivedQuantityKind quantity:ElectricDipoleMoment ;
+  qudt:systemDerivedQuantityKind quantity:ElectricDisplacementField ;
+  qudt:systemDerivedQuantityKind quantity:ElectricField ;
+  qudt:systemDerivedQuantityKind quantity:ElectricFlux ;
+  qudt:systemDerivedQuantityKind quantity:ElectricPotential ;
+  qudt:systemDerivedQuantityKind quantity:ElectromotiveForce ;
+  qudt:systemDerivedQuantityKind quantity:EnergyPerElectricCharge ;
+  qudt:systemDerivedQuantityKind quantity:Inductance ;
+  qudt:systemDerivedQuantityKind quantity:LengthPerUnitElectricCurrent ;
+  qudt:systemDerivedQuantityKind quantity:MagneticDipoleMoment ;
+  qudt:systemDerivedQuantityKind quantity:MagneticField ;
+  qudt:systemDerivedQuantityKind quantity:MagneticFlux ;
+  qudt:systemDerivedQuantityKind quantity:MagneticFluxPerUnitLength ;
+  qudt:systemDerivedQuantityKind quantity:MagnetizationField ;
+  qudt:systemDerivedQuantityKind quantity:Permeability ;
+  qudt:systemDerivedQuantityKind quantity:Permittivity ;
+  qudt:systemDerivedQuantityKind quantity:Resistance ;
+  qudt:unitSystem unit:SystemOfUnits_CGS-Gauss ;
+  rdfs:label "CGS-Gauss System of Quantities"^^xsd:string ;
+.
+quantity:TemperatureAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Temperature Amount of Substance"^^xsd:string ;
+.
+quantity:TemperaturePerMagneticFluxDensity
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Temperature per Magnetic Flux Density"^^xsd:string ;
+.
+quantity:TemperaturePerTime
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Temperature per Time"^^xsd:string ;
+.
+quantity:Tension
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "Tension is the magnitude of the pulling force exerted by a string, cable, chain, or similar object on another object. It is the opposite of compression."^^xsd:string ;
+  qudt:generalization quantity:ForceMagnitude ;
+  rdfs:label "Tension"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tension> ;
+.
+quantity:ThermalConductivity
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Thermal Conductivity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_conductivity> ;
+.
+quantity:ThermalDiffusivity
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:generalization quantity:AreaPerTime ;
+  rdfs:label "Thermal Diffusivity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_diffusivity> ;
+.
+quantity:ThermalEfficiency
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "Thermal efficiency is a dimensionless performance measure of a thermal device such as an internal combustion engine, a boiler, or a furnace. The input to the device is heat, or the heat-content of a fuel that is consumed. The desired output is mechanical work, or heat, or possibly both."^^xsd:string ;
+  qudt:generalization quantity:DimensionlessRatio ;
+  rdfs:label "Thermal Efficiency"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_efficiency> ;
+.
+quantity:ThermalEnergy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:generalization quantity:EnergyAndWork ;
+  rdfs:label "Thermal Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_energy> ;
+.
+quantity:ThermalEnergyLength
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Thermal Energy Length"^^xsd:string ;
+.
+quantity:ThermalInsulance
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Thermal Insulance"^^xsd:string ;
+.
+quantity:ThermalResistance
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Thermal Resistance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_resistance> ;
+.
+quantity:ThermalResistivity
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "The reciprocal of thermal conductivity is thermal resistivity, measured in kelvin-metres per watt (K*m/W)."^^xsd:string ;
+  rdfs:label "Thermal Resistivity"^^xsd:string ;
+.
+quantity:ThermodynamicEntropy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description """Thermodynamic Entropy is a measure of the unavailability of a system’s energy to do work.
+
+It is a measure of the randomness of molecules in a system and is central to the second law of thermodynamics and the fundamental thermodynamic relation, which deal with physical processes and whether they occur spontaneously. Spontaneous changes, in isolated systems, occur with an increase in entropy. Spontaneous changes tend to smooth out differences in temperature, pressure, density, and chemical potential that may exist in a system, and entropy is thus a measure of how far this smoothing-out process has progressed. 
+
+It can be seen that the dimensions of entropy are energy divided by temperature, which is the same as the dimensions of Boltzmann's constant (kB) and heat capacity. The SI unit of entropy is joule per kelvin. [Wikipedia]"""^^xsd:string ;
+  qudt:generalization quantity:EnergyPerTemperature ;
+  rdfs:label "Thermodynamic Entropy"^^xsd:string ;
+.
+quantity:ThermodynamicTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:symbol "Θ"^^xsd:string ;
+  rdfs:label "Temperature"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Temperature> ;
+.
+quantity:Thrust
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description """Thrust is a reaction force described quantitatively by Newton's Second and Third Laws. When a system expels or accelerates mass in one direction the accelerated mass will cause a proportional but opposite force on that system.
+1. The pushing or pulling force developed by an aircraft engine or a rocket engine. 
+2. The force exerted in any direction by a fluid jet or by a powered screw, as, the thrust of an antitorque rotor. 
+3. (symbol F). Specifically, in rocketry, F = mv where m is propellant mass flow and v is exhaust velocity relative to the vehicle. Also called momentum thrust."""^^xsd:string ;
+  qudt:generalization quantity:Force ;
+  rdfs:label "Thrust"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thrust> ;
+.
+quantity:ThrustToMassRatio
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  rdfs:label "Thrust to Mass Ratio"^^xsd:string ;
+.
+quantity:Time
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "Time is a basic component of the measuring system used to sequence events, to compare the durations of events and the intervals between them, and to quantify the motions of objects."^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  rdfs:label "Time"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Time> ;
+.
+quantity:TimeSquared
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdfs:label "Time Squared"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Time_Squared> ;
+.
+quantity:TimeTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Time Temperature"^^xsd:string ;
+.
+quantity:Torque
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description """In physics, a torque (τ) is a vector that measures the tendency of a force to rotate an object about some axis [1]. The magnitude of a torque is defined as force times its lever arm [2]. Just as a force is a push or a pull, a torque can be thought of as a twist.
+
+The SI unit for torque is newton meters (N m). In U.S. customary units, it is measured in foot pounds (ft lbf) (also known as 'pounds feet'). 
+
+Mathematically, the torque on a particle (which has the position r in some reference frame) can be defined as the cross product:
+
+τ = r x F
+
+where
+
+r is the particle's position vector relative to the fulcrum 
+F is the force acting on the particles, 
+or, more generally, torque can be defined as the rate of change of angular momentum,
+
+τ = dL/dt
+
+where
+
+L is the angular momentum vector 
+t stands for time. [Wikipedia]"""^^xsd:string ;
+  rdfs:label "Torque"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Torque> ;
+.
+quantity:TotalPressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description " The total pressure is the sum of the dynamic and static pressures, i.e. P_0 = P + q."^^xsd:string ;
+  qudt:generalization quantity:Pressure ;
+  qudt:symbol "P_0"^^xsd:string ;
+  rdfs:label "Total Pressure"^^xsd:string ;
+.
+quantity:Turbidity
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:description "Turbidity is the cloudiness or haziness of a fluid, or of air, caused by individual particles (suspended solids) that are generally invisible to the naked eye, similar to smoke in air. Turbidity in open water is often caused by phytoplankton and the measurement of turbidity is a key test of water quality. The higher the turbidity, the higher the risk of the drinkers developing gastrointestinal diseases, especially for immune-compromised people, because contaminants like virus or bacteria can become attached to the suspended solid. The suspended solids interfere with water disinfection with chlorine because the particles act as shields for the virus and bacteria. Similarly suspended solids can protect bacteria from UV sterilisation of water. Fluids can contain suspended solid matter consisting of particles of many different sizes. While some suspended material will be large enough and heavy enough to settle rapidly to the bottom container if a liquid sample is left to stand (the settleable solids), very small particles will settle only very slowly or not at all if the sample is regularly agitated or the particles are colloidal. These small solid particles cause the liquid to appear turbid."^^xsd:string ;
+  rdfs:label "Turbidity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Turbidity> ;
+.
+quantity:Velocity
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdfs:label "Velocity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Velocity> ;
+.
+quantity:VideoFrameRate
+  rdfs:label "Video Frame Rate"^^xsd:string ;
+.
+quantity:Viscosity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "Viscosity is a measure of the resistance of a fluid which is being deformed by either shear stress or extensional stress. In general terms it is the resistance of a liquid to flow, or its \"thickness\". Viscosity describes a fluid's internal resistance to flow and may be thought of as a measure of fluid friction. [Wikipedia]"^^xsd:string ;
+  rdfs:label "Viscosity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Viscosity> ;
+.
+quantity:Volume
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "The volume of a solid object is the three-dimensional concept of how much space it occupies, often quantified numerically. One-dimensional figures (such as lines) and two-dimensional shapes (such as squares) are assigned zero volume in the three-dimensional space."^^xsd:string ;
+  rdfs:label "Volume"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Volume> ;
+.
+quantity:VolumePerUnitTime
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdfs:label "Volume per Unit Time"^^xsd:string ;
+.
+quantity:VolumeThermalExpansion
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description """When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.
+
+Different coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:
+
+    * linear thermal expansion
+    * area thermal expansion
+    * volumetric thermal expansion
+
+These characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.
+
+Some substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients. [Wikipedia]"""^^xsd:string ;
+  rdfs:label "Volume Thermal Expansion"^^xsd:string ;
+.
+quantity:VolumetricHeatCapacity
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Volumetric Heat Capacity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Volumetric_heat_capacity> ;
+.
+quantity:Vorticity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "In the simplest sense, vorticity is the tendency for elements of a fluid to \"spin.\" More formally, vorticity can be related to the amount of \"circulation\" or \"rotation\" (or more strictly, the local angular rate of rotation) in a fluid. The average vorticity in a small region of fluid flow is equal to the circulation C around the boundary of the small region, divided by the area A of the small region. Mathematically, vorticity is a vector field and is defined as the curl of the velocity field."^^xsd:string ;
+  qudt:generalization quantity:AngularVelocity ;
+  qudt:symbol "ω"^^xsd:string ;
+  rdfs:label "Vorticity"^^xsd:string ;
+.
+quantity:Weight
+  rdf:type qudt:MechanicalEngineeringQuantityKind ;
+  qudt:description """1. The force with which a body is attracted toward an astronomical body. 
+2. The product of the mass of a body and the acceleration acting on a body. 
+In a dynamic situation, the weight can be a multiple of that under resting conditions. Weight also varies on other planets in accordance with their gravity."""^^xsd:string ;
+  rdfs:label "Weight"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Weight> ;
+.
+unit:Abampere
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:AbamperePerSquareCentimeter
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:Abcoulomb
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:AbcoulombPerSquareCentimeter
+  qudt:quantityKind quantity:ElectricChargePerArea ;
+.
+unit:Abfarad
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:AbfaradPerCentimeter
+  qudt:quantityKind quantity:Permittivity ;
+.
+unit:Abhenry
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:Abohm
+  qudt:quantityKind quantity:Resistance ;
+.
+unit:Absiemen
+  qudt:quantityKind quantity:ElectricConductivity ;
+.
+unit:Abtesla
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+  qudt:quantityKind quantity:MagneticField ;
+.
+unit:Abvolt
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+.
+unit:AbvoltCentimeter
+  qudt:quantityKind quantity:ElectricFlux ;
+.
+unit:AbvoltPerCentimeter
+  qudt:quantityKind quantity:ElectricField ;
+.
+unit:AbvoltSecond
+  qudt:quantityKind quantity:MagneticFlux ;
+.
+unit:Acre
+  qudt:quantityKind quantity:Area ;
+.
+unit:AcreFoot
+  qudt:quantityKind quantity:Volume ;
+.
+unit:Afghani
+  qudt:quantityKind quantity:Currency ;
+.
+unit:AlgerianDinar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Ampere
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:AmpereHour
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:AmperePerDegree
+  qudt:quantityKind quantity:ElectricCurrentPerAngle ;
+.
+unit:AmperePerJoule
+  qudt:quantityKind quantity:ElectricCurrentPerUnitEnergy ;
+.
+unit:AmperePerMeter
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:AmperePerRadian
+  qudt:quantityKind quantity:ElectricCurrentPerAngle ;
+.
+unit:AmperePerSquareMeter
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:AmpereTurn
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+.
+unit:AmpereTurnPerInch
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:AmpereTurnPerMeter
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:Angstrom
+  qudt:quantityKind quantity:Length ;
+.
+unit:ArcMinute
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:ArcSecond
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:Are
+  qudt:quantityKind quantity:Area ;
+.
+unit:ArgentinePeso
+  qudt:quantityKind quantity:Currency ;
+.
+unit:ArmenianDram
+  qudt:quantityKind quantity:Currency ;
+.
+unit:ArubanGuilder
+  qudt:quantityKind quantity:Currency ;
+.
+unit:AstronomicalUnit
+  qudt:quantityKind quantity:Length ;
+.
+unit:AtmosphereStandard
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:AtmosphereTechnical
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:AtomicNumber
+  qudt:quantityKind quantity:AtomicCharge ;
+.
+unit:Atto
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:AustralianDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:AzerbaijanianManat
+  qudt:quantityKind quantity:Currency ;
+.
+unit:BahamianDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:BahrainiDinar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Baht
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Balboa
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Ban
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:BangladeshiTaka
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Bar
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:BarbadosDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Barn
+  qudt:quantityKind quantity:Area ;
+.
+unit:Barrel
+  qudt:quantityKind quantity:Volume ;
+.
+unit:Becquerel
+  qudt:quantityKind quantity:Activity ;
+.
+unit:BelarussianRuble
+  qudt:quantityKind quantity:Currency ;
+.
+unit:BelizeDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:BermudaDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Biot
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:Bit
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:BitsPerSecond
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:BoardFoot
+  qudt:quantityKind quantity:Volume ;
+.
+unit:BolivianMvdol
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Boliviano
+  qudt:quantityKind quantity:Currency ;
+.
+unit:BrazilianReal
+  qudt:quantityKind quantity:Currency ;
+.
+unit:BreathPerMinute
+  qudt:quantityKind quantity:RespiratoryRate ;
+.
+unit:BritishThermalUnitInternationalTable
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:BritishThermalUnitThermochemical
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:BruneiDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:BtuFoot
+  qudt:quantityKind quantity:ThermalEnergyLength ;
+.
+unit:BtuFootPerSquareFootHourDegreeFahrenheit
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:BtuInch
+  qudt:quantityKind quantity:ThermalEnergyLength ;
+.
+unit:BtuInchPerSquareFootHourDegreeFahrenheit
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:BtuInchPerSquareFootSecondDegreeFahrenheit
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:BtuPerDegreeFahrenheit
+  qudt:quantityKind quantity:HeatCapacity ;
+.
+unit:BtuPerDegreeRankine
+  qudt:quantityKind quantity:HeatCapacity ;
+.
+unit:BtuPerHour
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:BtuPerHourSquareFoot
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:BtuPerPound
+  qudt:quantityKind quantity:SpecificEnergy ;
+.
+unit:BtuPerPoundDegreeFahrenheit
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+.
+unit:BtuPerPoundDegreeRankine
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+.
+unit:BtuPerPoundMole
+  qudt:quantityKind quantity:EnergyAndWorkPerMassAmountOfSubstance ;
+.
+unit:BtuPerPoundMoleDegreeFahrenheit
+  qudt:quantityKind quantity:MolarHeatCapacity ;
+.
+unit:BtuPerSecond
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:BtuPerSecondSquareFoot
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:BtuPerSquareFoot
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:BtuPerSquareFootHourDegreeFahrenheit
+  qudt:quantityKind quantity:CoefficientOfHeatTransfer ;
+.
+unit:BtuPerSquareFootSecondDegreeFahrenheit
+  qudt:quantityKind quantity:CoefficientOfHeatTransfer ;
+.
+unit:BulgarianLev
+  qudt:quantityKind quantity:Currency ;
+.
+unit:BurundianFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Bushel
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:Byte
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:CFAFrancBCEAO
+  qudt:quantityKind quantity:Currency ;
+.
+unit:CFAFrancBEAC
+  qudt:quantityKind quantity:Currency ;
+.
+unit:CFPFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:CalorieNutritional
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:CalorieThermochemical
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:CanadianDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Candela
+  qudt:quantityKind quantity:LuminousIntensity ;
+.
+unit:CandelaPerSquareInch
+  qudt:quantityKind quantity:Luminance ;
+.
+unit:CandelaPerSquareMeter
+  qudt:quantityKind quantity:Luminance ;
+.
+unit:Candle
+  qudt:quantityKind quantity:LuminousIntensity ;
+.
+unit:Candlepower
+  qudt:quantityKind quantity:LuminousIntensity ;
+.
+unit:CapeVerdeEscudo
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Carat
+  qudt:quantityKind quantity:Mass ;
+.
+unit:CaymanIslandsDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Cedi
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Centi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Centimeter
+  qudt:quantityKind quantity:Length ;
+.
+unit:CentimeterOfWater
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:CentimeterPerSecond
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:CentimeterPerSecondSquared
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:CentimeterSecondDegreeCelsius
+  qudt:quantityKind quantity:LengthTemperatureTime ;
+.
+unit:Centipoise
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:Centistokes
+  qudt:quantityKind quantity:KinematicViscosity ;
+.
+unit:Chain
+  qudt:quantityKind quantity:Length ;
+.
+unit:ChileanPeso
+  qudt:quantityKind quantity:Currency ;
+.
+unit:CircularMil
+  qudt:quantityKind quantity:Area ;
+.
+unit:Clo
+  qudt:quantityKind quantity:ThermalInsulance ;
+.
+unit:ColombianPeso
+  qudt:quantityKind quantity:Currency ;
+.
+unit:ColonyFormingUnit
+  qudt:quantityKind quantity:MicrobialFormation ;
+.
+unit:ComoroFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:ConvertibleMark
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Cord
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:CordobaOro
+  qudt:quantityKind quantity:Currency ;
+.
+unit:CostaRicanColon
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Coulomb
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:CoulombMeter
+  qudt:quantityKind quantity:ElectricDipoleMoment ;
+.
+unit:CoulombPerCubicMeter
+  qudt:quantityKind quantity:ElectricChargeVolumeDensity ;
+.
+unit:CoulombPerKilogram
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+.
+unit:CoulombPerMeter
+  qudt:quantityKind quantity:ElectricChargeLineDensity ;
+.
+unit:CoulombPerMole
+  qudt:quantityKind quantity:ElectricChargePerAmountOfSubstance ;
+.
+unit:CoulombPerSquareMeter
+  qudt:quantityKind quantity:ElectricChargePerArea ;
+.
+unit:CoulombSquareMeter
+  qudt:quantityKind quantity:ElectricQuadrupoleMoment ;
+.
+unit:CroatianKuna
+  qudt:quantityKind quantity:Currency ;
+.
+unit:CubanPeso
+  qudt:quantityKind quantity:Currency ;
+.
+unit:CubicCentimeter
+  qudt:quantityKind quantity:Volume ;
+.
+unit:CubicCoulombMeterPerSquareJoule
+  qudt:quantityKind quantity:CubicElectricDipoleMomentPerSquareEnergy ;
+.
+unit:CubicFoot
+  qudt:quantityKind quantity:Volume ;
+.
+unit:CubicFootPerMinute
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:CubicFootPerSecond
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:CubicInch
+  qudt:quantityKind quantity:Volume ;
+.
+unit:CubicInchPerMinute
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:CubicKilometerPerSecondSquared
+  qudt:quantityKind quantity:StandardGravitationalParameter ;
+.
+unit:CubicMeter
+  qudt:quantityKind quantity:Volume ;
+.
+unit:CubicMeterPerHour
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:CubicMeterPerKelvin
+  qudt:quantityKind quantity:VolumeThermalExpansion ;
+.
+unit:CubicMeterPerKilogram
+  qudt:quantityKind quantity:SpecificVolume ;
+.
+unit:CubicMeterPerKilogramSecondSquared
+  qudt:quantityKind quantity:GravitationalAttraction ;
+.
+unit:CubicMeterPerMole
+  qudt:quantityKind quantity:MolarVolume ;
+.
+unit:CubicMeterPerSecond
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:CubicMeterPerSecondSquared
+  qudt:quantityKind quantity:StandardGravitationalParameter ;
+.
+unit:CubicMile
+  qudt:quantityKind quantity:Volume ;
+.
+unit:CubicYard
+  qudt:quantityKind quantity:Volume ;
+.
+unit:CubicYardPerMinute
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:Curie
+  qudt:quantityKind quantity:Activity ;
+.
+unit:CyprusPound
+  qudt:quantityKind quantity:Currency ;
+.
+unit:CzechKoruna
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Dalasi
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Dalton
+  qudt:quantityKind quantity:MolecularMass ;
+.
+unit:DanishKrone
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Day
+  qudt:quantityKind quantity:Time ;
+.
+unit:DaySidereal
+  qudt:quantityKind quantity:Time ;
+.
+unit:Debye
+  qudt:quantityKind quantity:ElectricDipoleMoment ;
+.
+unit:Deca
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Deci
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Decibel
+  qudt:quantityKind quantity:RF-Power ;
+  qudt:quantityKind quantity:SignalStrength ;
+.
+unit:DecibelCarrier
+  qudt:quantityKind quantity:SignalDetectionThreshold ;
+.
+unit:DecibelReferredToOneMilliwatt
+  qudt:quantityKind quantity:DimensionlessRatio ;
+.
+unit:DegreeAngle
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:DegreeCelsius
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+.
+unit:DegreeCelsiusCentimeter
+  qudt:quantityKind quantity:LengthTemperature ;
+.
+unit:DegreeCelsiusPerHour
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:DegreeCelsiusPerMinute
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:DegreeCelsiusPerSecond
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:DegreeCentigrade
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+.
+unit:DegreeFahrenheit
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+.
+unit:DegreeFahrenheitHour
+  qudt:quantityKind quantity:ThermalResistivity ;
+.
+unit:DegreeFahrenheitHourPerBtu
+  qudt:quantityKind quantity:ThermalResistance ;
+.
+unit:DegreeFahrenheitPerHour
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:DegreeFahrenheitPerMinute
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:DegreeFahrenheitPerSecond
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:DegreePerHour
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:DegreePerMinute
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:DegreePerSecond
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:DegreePerSecondSquared
+  qudt:quantityKind quantity:AngularAcceleration ;
+.
+unit:DegreeRankine
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+.
+unit:DegreeRankinePerHour
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:DegreeRankinePerMinute
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:DegreeRankinePerSecond
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:Denar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Denier
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:Diopter
+  qudt:quantityKind quantity:Curvature ;
+.
+unit:DjiboutiFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Dobra
+  qudt:quantityKind quantity:Currency ;
+.
+unit:DominicanPeso
+  qudt:quantityKind quantity:Currency ;
+.
+unit:DryGallonUS
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:DryPintUS
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:DryQuartUS
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:Dyne
+  qudt:quantityKind quantity:Force ;
+.
+unit:DyneCentimeter
+  qudt:quantityKind quantity:Torque ;
+.
+unit:DynePerSquareCentimeter
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:EastCaribbeanDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:EgyptianPound
+  qudt:quantityKind quantity:Currency ;
+.
+unit:ElectronVolt
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:ElectronVoltPerKelvin
+  qudt:quantityKind quantity:HeatCapacity ;
+.
+unit:ElectronVoltPerTesla
+  qudt:quantityKind quantity:MagneticDipoleMoment ;
+.
+unit:ElectronVoltSecond
+  qudt:quantityKind quantity:AngularMomentum ;
+.
+unit:Erg
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:ErgPerCubicCentimeter
+  qudt:quantityKind quantity:EnergyDensity ;
+.
+unit:ErgPerGram
+  qudt:quantityKind quantity:SpecificEnergy ;
+.
+unit:ErgPerSecond
+  qudt:quantityKind quantity:Power ;
+.
+unit:ErgPerSquareCentimeterSecond
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:ErgSecond
+  qudt:quantityKind quantity:AngularMomentum ;
+.
+unit:EthiopianBirr
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Euro
+  qudt:quantityKind quantity:Currency ;
+.
+unit:EuropeanCompositeUnit
+  qudt:quantityKind quantity:Currency ;
+.
+unit:EuropeanMonetaryUnit
+  qudt:quantityKind quantity:Currency ;
+.
+unit:EuropeanUnitOfAccount17
+  qudt:quantityKind quantity:Currency ;
+.
+unit:EuropeanUnitOfAccount9
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Exa
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Exbi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:FalklandIslandsPound
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Farad
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:FaradPerMeter
+  qudt:quantityKind quantity:Permittivity ;
+.
+unit:Faraday
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:Fathom
+  qudt:quantityKind quantity:Length ;
+.
+unit:Femto
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Femtometer
+  qudt:quantityKind quantity:Length ;
+.
+unit:Fermi
+  qudt:quantityKind quantity:Length ;
+.
+unit:FijiDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Foot
+  qudt:quantityKind quantity:Length ;
+.
+unit:FootCandle
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+.
+unit:FootLambert
+  qudt:quantityKind quantity:Luminance ;
+.
+unit:FootOfWater
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:FootPerHour
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:FootPerMinute
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:FootPerSecond
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:FootPerSecondSquared
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:FootPoundForce
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:FootPoundForcePerHour
+  qudt:quantityKind quantity:Power ;
+.
+unit:FootPoundForcePerMinute
+  qudt:quantityKind quantity:Power ;
+.
+unit:FootPoundForcePerSecond
+  qudt:quantityKind quantity:Power ;
+.
+unit:FootPoundForcePerSquareFoot
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:FootPoundForcePerSquareFootSecond
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:FootPoundForcePerSquareMeter
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:FootPoundForceSecond
+  qudt:quantityKind quantity:AngularMomentum ;
+.
+unit:FootPoundal
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:FootUSSurvey
+  qudt:quantityKind quantity:Length ;
+.
+unit:Forint
+  qudt:quantityKind quantity:Currency ;
+.
+unit:FractionalArea
+  qudt:quantityKind quantity:SolidAngle ;
+.
+unit:FramePerSecond
+  qudt:quantityKind quantity:VideoFrameRate ;
+.
+unit:FrancCongolais
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Franklin
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:Furlong
+  qudt:quantityKind quantity:Length ;
+.
+unit:Gal
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:GallonImperial
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:GallonUS
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:GallonUSPerDay
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:GallonUSPerMinute
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:Gamma
+  qudt:quantityKind quantity:MagneticField ;
+.
+unit:Gauss
+  qudt:quantityKind quantity:MagneticField ;
+.
+unit:Gibi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:GibraltarPound
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Giga
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:GigaElectronVolt
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:GigaHertz
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:Gilbert
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+.
+unit:Gold-OunceTroy
+  qudt:quantityKind quantity:Currency ;
+.
+unit:GoldFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Gon
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:Grad
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:Grade
+  qudt:quantityKind quantity:DimensionlessRatio ;
+.
+unit:Grain
+  qudt:quantityKind quantity:Mass ;
+.
+unit:GrainPerGallon
+  qudt:quantityKind quantity:Density ;
+.
+unit:Gram
+  qudt:quantityKind quantity:Mass ;
+.
+unit:GramDegreeCelsius
+  qudt:quantityKind quantity:MassTemperature ;
+.
+unit:Gravity
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:Gray
+  qudt:quantityKind quantity:AbsorbedDose ;
+.
+unit:GrayPerSecond
+  qudt:quantityKind quantity:AbsorbedDoseRate ;
+.
+unit:Guarani
+  qudt:quantityKind quantity:Currency ;
+.
+unit:GuineaFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:GuyanaDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:HaitiGourde
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Hartree
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:HeartBeatsPerMinute
+  qudt:quantityKind quantity:HeartRate ;
+.
+unit:Hectare
+  qudt:quantityKind quantity:Area ;
+.
+unit:Hecto
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Henry
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:HenryPerMeter
+  qudt:quantityKind quantity:Permeability ;
+.
+unit:Hertz
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:HertzPerKelvin
+  qudt:quantityKind quantity:InverseTimeTemperature ;
+.
+unit:HertzPerTesla
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+.
+unit:HertzPerVolt
+  qudt:quantityKind quantity:InverseMagneticFlux ;
+.
+unit:HongKongDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Horsepower
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerBoiler
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerElectric
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerMetric
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerWater
+  qudt:quantityKind quantity:Power ;
+.
+unit:Hour
+  qudt:quantityKind quantity:Time ;
+.
+unit:HourSidereal
+  qudt:quantityKind quantity:Time ;
+.
+unit:HourSquareFoot
+  qudt:quantityKind quantity:AreaTime ;
+.
+unit:Hryvnia
+  qudt:quantityKind quantity:Currency ;
+.
+unit:HundredWeightLong
+  qudt:quantityKind quantity:Mass ;
+.
+unit:HundredWeightShort
+  qudt:quantityKind quantity:Mass ;
+.
+unit:IcelandKrona
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Inch
+  qudt:quantityKind quantity:Length ;
+.
+unit:InchOfMercury
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:InchOfWater
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:InchPerSecond
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:InchPerSecondSquared
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:InchPoundForce
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:IndianRupee
+  qudt:quantityKind quantity:Currency ;
+.
+unit:InternationalUnit
+  qudt:quantityKind quantity:AmountOfSubstance ;
+.
+unit:InternationalUnitPerLiter
+  qudt:quantityKind quantity:SerumOrPlasmaLevel ;
+.
+unit:IranianRial
+  qudt:quantityKind quantity:Currency ;
+.
+unit:IraqiDinar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:JamaicanDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:JapaneseYen
+  qudt:quantityKind quantity:Currency ;
+.
+unit:JordanianDinar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Joule
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:JouleMeterPerMole
+  qudt:quantityKind quantity:LengthMolarEnergy ;
+.
+unit:JoulePerCubicMeter
+  qudt:quantityKind quantity:EnergyDensity ;
+.
+unit:JoulePerCubicMeterKelvin
+  qudt:quantityKind quantity:VolumetricHeatCapacity ;
+.
+unit:JoulePerKelvin
+  qudt:quantityKind quantity:HeatCapacity ;
+.
+unit:JoulePerKilogram
+  qudt:quantityKind quantity:SpecificEnergy ;
+.
+unit:JoulePerKilogramKelvin
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+.
+unit:JoulePerKilogramKelvinPerCubicMeter
+  qudt:quantityKind quantity:SpecificHeatVolume ;
+.
+unit:JoulePerKilogramKelvinPerPascal
+  qudt:quantityKind quantity:SpecificHeatPressure ;
+.
+unit:JoulePerMole
+  qudt:quantityKind quantity:MolarEnergy ;
+.
+unit:JoulePerMoleKelvin
+  qudt:quantityKind quantity:MolarHeatCapacity ;
+.
+unit:JoulePerSquareMeter
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:JoulePerSquareTesla
+  qudt:quantityKind quantity:EnergyPerSquareMagneticFluxDensity ;
+.
+unit:JoulePerTesla
+  qudt:quantityKind quantity:MagneticDipoleMoment ;
+.
+unit:JouleSecond
+  qudt:quantityKind quantity:AngularMomentum ;
+.
+unit:JouleSecondPerMole
+  qudt:quantityKind quantity:MolarAngularMomentum ;
+.
+unit:Katal
+  qudt:quantityKind quantity:CatalyticActivity ;
+.
+unit:Kelvin
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+.
+unit:KelvinPerHour
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:KelvinPerMinute
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:KelvinPerSecond
+  qudt:quantityKind quantity:TemperaturePerTime ;
+.
+unit:KelvinPerTesla
+  qudt:quantityKind quantity:TemperaturePerMagneticFluxDensity ;
+.
+unit:KelvinPerWatt
+  qudt:quantityKind quantity:ThermalResistance ;
+.
+unit:KenyanShilling
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Kibi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Kilo
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:KiloElectronVolt
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:KiloElectronVoltPerMicrometer
+  qudt:quantityKind quantity:LinearEnergyTransfer ;
+.
+unit:KiloHertz
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:KiloPascal
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:KiloPascalAbsolute
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:KiloPond
+  qudt:quantityKind quantity:Force ;
+.
+unit:KilobitsPerSecond
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:Kilocalorie
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:KilocaloriePerCentimeterSecondDegreeCelsius
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:KilocaloriePerGram
+  qudt:quantityKind quantity:SpecificEnergy ;
+.
+unit:KilocaloriePerGramDegreeCelsius
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+.
+unit:KilocaloriePerMinute
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:KilocaloriePerMole
+  qudt:quantityKind quantity:MolarEnergy ;
+.
+unit:KilocaloriePerMoleDegreeCelsius
+  qudt:quantityKind quantity:MolarHeatCapacity ;
+.
+unit:KilocaloriePerSecond
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:KilocaloriePerSquareCentimeter
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:KilocaloriePerSquareCentimeterMinute
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:KilocaloriePerSquareCentimeterSecond
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:Kilogram
+  qudt:quantityKind quantity:Mass ;
+.
+unit:KilogramForce
+  qudt:quantityKind quantity:Force ;
+.
+unit:KilogramForceMeter
+  qudt:quantityKind quantity:Torque ;
+.
+unit:KilogramForcePerSquareCentimeter
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:KilogramKelvin
+  qudt:quantityKind quantity:MassTemperature ;
+.
+unit:KilogramMeterPerSecond
+  qudt:quantityKind quantity:LinearMomentum ;
+.
+unit:KilogramMeterSquared
+  qudt:quantityKind quantity:MomentOfInertia ;
+.
+unit:KilogramPerCubicMeter
+  qudt:quantityKind quantity:Density ;
+.
+unit:KilogramPerHour
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:KilogramPerMeter
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:KilogramPerMole
+  qudt:quantityKind quantity:MolarMass ;
+.
+unit:KilogramPerSecond
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:KilogramPerSquareMeter
+  qudt:quantityKind quantity:MassPerArea ;
+.
+unit:Kilometer
+  qudt:quantityKind quantity:Length ;
+.
+unit:KilometerPerHour
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:KilometerPerSecond
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:Kilowatt
+  qudt:quantityKind quantity:Power ;
+.
+unit:Kilowatthour
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:Kina
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Kip
+  qudt:quantityKind quantity:Force ;
+.
+unit:KipPerSquareInch
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:Knot
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:KnotPerSecond
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:Kroon
+  qudt:quantityKind quantity:Currency ;
+.
+unit:KuwaitiDinar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Kwanza
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Kyat
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Lambert
+  qudt:quantityKind quantity:Luminance ;
+.
+unit:Lari
+  qudt:quantityKind quantity:Currency ;
+.
+unit:LatvianLats
+  qudt:quantityKind quantity:Currency ;
+.
+unit:LebanesePound
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Lek
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Lempira
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Leone
+  qudt:quantityKind quantity:Currency ;
+.
+unit:LiberianDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:LibyanDinar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:LightYear
+  qudt:quantityKind quantity:Length ;
+.
+unit:Lilangeni
+  qudt:quantityKind quantity:Currency ;
+.
+unit:LiquidCupUS
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidOunceUS
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidPintUS
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidQuartUS
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:Liter
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LithuanianLitas
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Loti
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Lumen
+  qudt:quantityKind quantity:LuminousFlux ;
+.
+unit:LumenPerWatt
+  qudt:quantityKind quantity:LuminousEfficacy ;
+.
+unit:LumenSecond
+  qudt:quantityKind quantity:LuminousEnergy ;
+.
+unit:Lux
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+.
+unit:Mach
+  qudt:quantityKind quantity:DimensionlessRatio ;
+.
+unit:MalagasyAriary
+  qudt:quantityKind quantity:Currency ;
+.
+unit:MalawiKwacha
+  qudt:quantityKind quantity:Currency ;
+.
+unit:MalaysianRinggit
+  qudt:quantityKind quantity:Currency ;
+.
+unit:MalteseLira
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Manat
+  qudt:quantityKind quantity:Currency ;
+.
+unit:MauritiusRupee
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Maxwell
+  qudt:quantityKind quantity:MagneticFlux ;
+.
+unit:Mebi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Mega
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:MegaElectronVolt
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:MegaElectronVoltFemtometer
+  qudt:quantityKind quantity:LengthEnergy ;
+.
+unit:MegaElectronVoltPerCentimeter
+  qudt:quantityKind quantity:LinearEnergyTransfer ;
+.
+unit:MegaElectronVoltPerSpeedOfLight
+  qudt:quantityKind quantity:LinearMomentum ;
+.
+unit:MegaHertz
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:MegaHertzPerKelvin
+  qudt:quantityKind quantity:InverseTimeTemperature ;
+.
+unit:MegaHertzPerTesla
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+.
+unit:MegabitsPerSecond
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:Meter
+  qudt:quantityKind quantity:Length ;
+.
+unit:MeterKelvin
+  qudt:quantityKind quantity:LengthTemperature ;
+.
+unit:MeterKelvinPerWatt
+  qudt:quantityKind quantity:ThermalResistivity ;
+.
+unit:MeterKilogram
+  qudt:quantityKind quantity:LengthMass ;
+.
+unit:MeterPerFarad
+  qudt:quantityKind quantity:InversePermittivity ;
+.
+unit:MeterPerHour
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:MeterPerKelvin
+  qudt:quantityKind quantity:LinearThermalExpansion ;
+.
+unit:MeterPerMinute
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:MeterPerSecond
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:MeterPerSecondSquared
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:Metical
+  qudt:quantityKind quantity:Currency ;
+.
+unit:MetricTon
+  qudt:quantityKind quantity:Mass ;
+.
+unit:MexicanPeso
+  qudt:quantityKind quantity:Currency ;
+.
+unit:MexicanUnidadDeInversion
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Mho
+  qudt:quantityKind quantity:ElectricConductivity ;
+.
+unit:Micro
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:MicroFarad
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:MicroHenry
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:MicroInch
+  qudt:quantityKind quantity:Length ;
+.
+unit:MicroSecond
+  qudt:quantityKind quantity:Time ;
+.
+unit:MicroTorr
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:Microgravity
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:Micrometer
+  qudt:quantityKind quantity:Length ;
+.
+unit:MilAngle
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:MilLength
+  qudt:quantityKind quantity:Length ;
+.
+unit:MileInternational
+  qudt:quantityKind quantity:Length ;
+.
+unit:MilePerHour
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:MilePerMinute
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:MileUSStatute
+  qudt:quantityKind quantity:Length ;
+.
+unit:Milli
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:MilliHenry
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:MilliSecond
+  qudt:quantityKind quantity:Time ;
+.
+unit:MilliTorr
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:Millibar
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:Milligravity
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:MillimeterOfMercury
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:MillimeterOfMercuryAbsolute
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:MillionUSDollars
+  qudt:quantityKind quantity:Currency ;
+.
+unit:MinuteSidereal
+  qudt:quantityKind quantity:Time ;
+.
+unit:MinuteTime
+  qudt:quantityKind quantity:Time ;
+.
+unit:MoldovanLeu
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Mole
+  qudt:quantityKind quantity:AmountOfSubstance ;
+.
+unit:MoleDegreeCelsius
+  qudt:quantityKind quantity:TemperatureAmountOfSubstance ;
+.
+unit:MoleKelvin
+  qudt:quantityKind quantity:TemperatureAmountOfSubstance ;
+.
+unit:MolePerCubicMeter
+  qudt:quantityKind quantity:AmountOfSubstancePerUnitVolume ;
+.
+unit:MolePerKilogram
+  qudt:quantityKind quantity:AmountOfSubstancePerUnitMass ;
+.
+unit:MoroccanDirham
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Naira
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Nakfa
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NamibianDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Nano
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:NanoFarad
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:Nat
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:NauticalMile
+  qudt:quantityKind quantity:Length ;
+.
+unit:NauticalMilePerHour
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:NauticalMilePerMinute
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:NepaleseRupee
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NephelometricTurbidityUnit
+  qudt:quantityKind quantity:Turbidity ;
+.
+unit:NetherlandsAntillianGuilder
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NewIsraeliShekel
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NewTaiwanDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NewTurkishLira
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NewZealandDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Newton
+  qudt:quantityKind quantity:Force ;
+.
+unit:NewtonMeter
+  qudt:quantityKind quantity:Torque ;
+.
+unit:NewtonPerCoulomb
+  qudt:quantityKind quantity:ForcePerElectricCharge ;
+.
+unit:NewtonPerKilogram
+  qudt:quantityKind quantity:ThrustToMassRatio ;
+.
+unit:NewtonPerMeter
+  qudt:quantityKind quantity:ForcePerLength ;
+.
+unit:Ngultrum
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NorthKoreanWon
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NorwegianKrone
+  qudt:quantityKind quantity:Currency ;
+.
+unit:NuevoSol
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Number
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:NumberPerYear
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:Oersted
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:OerstedCentimeter
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+.
+unit:Ohm
+  qudt:quantityKind quantity:Resistance ;
+.
+unit:OmaniRial
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Ouguiya
+  qudt:quantityKind quantity:Currency ;
+.
+unit:OunceForce
+  qudt:quantityKind quantity:Force ;
+.
+unit:OunceForceInch
+  qudt:quantityKind quantity:Torque ;
+.
+unit:OunceImperial
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:OunceMass
+  qudt:quantityKind quantity:Mass ;
+.
+unit:OuncePerCubicInch
+  qudt:quantityKind quantity:Density ;
+.
+unit:OuncePerGallon
+  qudt:quantityKind quantity:Density ;
+.
+unit:OuncePerSquareFoot
+  qudt:quantityKind quantity:MassPerArea ;
+.
+unit:OuncePerSquareYard
+  qudt:quantityKind quantity:MassPerArea ;
+.
+unit:OunceTroy
+  qudt:quantityKind quantity:Mass ;
+.
+unit:Paanga
+  qudt:quantityKind quantity:Currency ;
+.
+unit:PakistanRupee
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Palladium-OunceTroy
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Pascal
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:PascalPerHour
+  qudt:quantityKind quantity:ForcePerAreaTime ;
+.
+unit:PascalPerMinute
+  qudt:quantityKind quantity:ForcePerAreaTime ;
+.
+unit:PascalPerSecond
+  qudt:quantityKind quantity:ForcePerAreaTime ;
+.
+unit:PascalSecond
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:Pataca
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Pebi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Peck
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:PennyWeight
+  qudt:quantityKind quantity:Mass ;
+.
+unit:PerCubicMeter
+  qudt:quantityKind quantity:InverseVolume ;
+.
+unit:PerMeter
+  qudt:quantityKind quantity:InverseLength ;
+.
+unit:PerMeterKelvin
+  qudt:quantityKind quantity:InverseLengthTemperature ;
+.
+unit:PerMole
+  qudt:quantityKind quantity:InverseAmountOfSubstance ;
+.
+unit:PerSecond
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:PerSquareGigaElectronVolt
+  qudt:quantityKind quantity:InverseSquareEnergy ;
+.
+unit:PerTeslaMeter
+  qudt:quantityKind quantity:LengthPerUnitMagneticFlux ;
+.
+unit:PerTeslaSecond
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+.
+unit:Percent
+  qudt:quantityKind quantity:DimensionlessRatio ;
+.
+unit:Peta
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:PhilippinePeso
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Phot
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+.
+unit:Pica
+  qudt:quantityKind quantity:Length ;
+.
+unit:Pico
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:PicoFarad
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:PintImperial
+  qudt:quantityKind quantity:Volume ;
+.
+unit:PlanckArea
+  qudt:quantityKind quantity:Area ;
+.
+unit:PlanckCharge
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:PlanckCurrent
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:PlanckCurrentDensity
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:PlanckDensity
+  qudt:quantityKind quantity:Density ;
+.
+unit:PlanckEnergy
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:PlanckForce
+  qudt:quantityKind quantity:Force ;
+.
+unit:PlanckFrequency
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:PlanckLength
+  qudt:quantityKind quantity:Length ;
+.
+unit:PlanckMass
+  qudt:quantityKind quantity:Mass ;
+.
+unit:PlanckMomentum
+  qudt:quantityKind quantity:LinearMomentum ;
+.
+unit:PlanckPower
+  qudt:quantityKind quantity:Power ;
+.
+unit:PlanckPressure
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:PlanckResistance
+  qudt:quantityKind quantity:Resistance ;
+.
+unit:PlanckTemperature
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+.
+unit:PlanckTime
+  qudt:quantityKind quantity:Time ;
+.
+unit:PlanckVolt
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+.
+unit:PlanckVolume
+  qudt:quantityKind quantity:Volume ;
+.
+unit:Platinum-OunceTroy
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Point
+  qudt:quantityKind quantity:Length ;
+.
+unit:Poise
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:PoundDegreeFahrenheit
+  qudt:quantityKind quantity:MassTemperature ;
+.
+unit:PoundDegreeRankine
+  qudt:quantityKind quantity:MassTemperature ;
+.
+unit:PoundForce
+  qudt:quantityKind quantity:Force ;
+.
+unit:PoundForceFoot
+  qudt:quantityKind quantity:Torque ;
+.
+unit:PoundForceInch
+  qudt:quantityKind quantity:Torque ;
+.
+unit:PoundForcePerFoot
+  qudt:quantityKind quantity:ForcePerLength ;
+.
+unit:PoundForcePerInch
+  qudt:quantityKind quantity:ForcePerLength ;
+.
+unit:PoundForcePerPound
+  qudt:quantityKind quantity:ThrustToMassRatio ;
+.
+unit:PoundForcePerSquareFoot
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:PoundForcePerSquareInch
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:PoundForcePerSquareInchSecond
+  qudt:quantityKind quantity:ForcePerAreaTime ;
+.
+unit:PoundForceSecondPerSquareFoot
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:PoundForceSecondPerSquareInch
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:PoundMass
+  qudt:quantityKind quantity:Mass ;
+.
+unit:PoundMole
+  qudt:quantityKind quantity:MassAmountOfSubstance ;
+.
+unit:PoundMoleDegreeFahrenheit
+  qudt:quantityKind quantity:MassAmountOfSubstanceTemperature ;
+.
+unit:PoundPerCubicFoot
+  qudt:quantityKind quantity:Density ;
+.
+unit:PoundPerCubicInch
+  qudt:quantityKind quantity:Density ;
+.
+unit:PoundPerCubicMeter
+  qudt:quantityKind quantity:Density ;
+.
+unit:PoundPerCubicYard
+  qudt:quantityKind quantity:Density ;
+.
+unit:PoundPerFoot
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:PoundPerFootHour
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:PoundPerFootSecond
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:PoundPerGallon
+  qudt:quantityKind quantity:Density ;
+.
+unit:PoundPerHour
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:PoundPerInch
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:PoundPerMinute
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:PoundPerSquareFoot
+  qudt:quantityKind quantity:MassPerArea ;
+.
+unit:PoundSterling
+  qudt:quantityKind quantity:Currency ;
+.
+unit:PoundTroy
+  qudt:quantityKind quantity:Mass ;
+.
+unit:Poundal
+  qudt:quantityKind quantity:Force ;
+.
+unit:PoundalPerSquareFoot
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:Pula
+  qudt:quantityKind quantity:Currency ;
+.
+unit:QatariRial
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Quad
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:QuarticCoulombMeterPerCubicEnergy
+  qudt:quantityKind quantity:QuarticElectricDipoleMomentPerCubicEnergy ;
+.
+unit:Quetzal
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Rad
+  qudt:quantityKind quantity:AbsorbedDose ;
+.
+unit:Radian
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:RadianPerHour
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:RadianPerMinute
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:RadianPerSecond
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:RadianPerSecondSquared
+  qudt:quantityKind quantity:AngularAcceleration ;
+.
+unit:RegisterTon
+  qudt:quantityKind quantity:Volume ;
+.
+unit:RelativePermeability
+  qudt:quantityKind quantity:Permeability ;
+.
+unit:RelativePermittivity
+  qudt:quantityKind quantity:Permittivity ;
+.
+unit:Rem
+  qudt:quantityKind quantity:DoseEquivalent ;
+.
+unit:Revolution
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:RevolutionPerHour
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:RevolutionPerMinute
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:RevolutionPerSecond
+  qudt:quantityKind quantity:AngularVelocity ;
+.
+unit:RevolutionPerSecondSquared
+  qudt:quantityKind quantity:AngularAcceleration ;
+.
+unit:Riel
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Rod
+  qudt:quantityKind quantity:Length ;
+.
+unit:Roentgen
+  qudt:quantityKind quantity:Exposure ;
+.
+unit:RomanianNeLeu
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Rufiyaa
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Rupiah
+  qudt:quantityKind quantity:Currency ;
+.
+unit:RussianRuble
+  qudt:quantityKind quantity:Currency ;
+.
+unit:RwandaFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SaintHelenaPound
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SamoanTala
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SamplePerSecond
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:SaudiRiyal
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SecondSquareFoot
+  qudt:quantityKind quantity:AreaTime ;
+.
+unit:SecondTime
+  qudt:quantityKind quantity:Time ;
+.
+unit:SecondTimeSquared
+  qudt:quantityKind quantity:TimeSquared ;
+.
+unit:SerbianDinar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SeychellesRupee
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Shake
+  qudt:quantityKind quantity:Time ;
+.
+unit:Siemens
+  qudt:quantityKind quantity:ElectricConductivity ;
+.
+unit:Sievert
+  qudt:quantityKind quantity:DoseEquivalent ;
+.
+unit:Silver-OunceTroy
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SingaporeDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SlovakKoruna
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Slug
+  qudt:quantityKind quantity:Mass ;
+.
+unit:SlugPerCubicFoot
+  qudt:quantityKind quantity:Density ;
+.
+unit:SlugPerFoot
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:SlugPerFootSecond
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:SlugPerSecond
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:SlugPerSquareFoot
+  qudt:quantityKind quantity:MassPerArea ;
+.
+unit:SolomonIslandsDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Som
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SomaliShilling
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Somoni
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SouthAfricanRand
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SouthKoreanWon
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SpecialDrawingRights
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SquareCentimeter
+  qudt:quantityKind quantity:Area ;
+.
+unit:SquareCentimeterMinute
+  qudt:quantityKind quantity:AreaTime ;
+.
+unit:SquareCentimeterSecond
+  qudt:quantityKind quantity:AreaTime ;
+.
+unit:SquareCoulombMeterPerJoule
+  qudt:quantityKind quantity:Polarizability ;
+.
+unit:SquareDegree
+  qudt:quantityKind quantity:SolidAngle ;
+.
+unit:SquareFoot
+  qudt:quantityKind quantity:Area ;
+.
+unit:SquareFootDegreeFahrenheit
+  qudt:quantityKind quantity:AreaTemperature ;
+.
+unit:SquareFootHourDegreeFahrenheit
+  qudt:quantityKind quantity:AreaTimeTemperature ;
+.
+unit:SquareFootHourDegreeFahrenheitPerBtu
+  qudt:quantityKind quantity:ThermalInsulance ;
+.
+unit:SquareFootPerBtuInch
+  qudt:quantityKind quantity:ThermalResistivity ;
+.
+unit:SquareFootPerHour
+  qudt:quantityKind quantity:KinematicViscosity ;
+  qudt:quantityKind quantity:ThermalDiffusivity ;
+.
+unit:SquareFootPerSecond
+  qudt:quantityKind quantity:KinematicViscosity ;
+.
+unit:SquareFootSecondDegreeFahrenheit
+  qudt:quantityKind quantity:AreaTimeTemperature ;
+.
+unit:SquareInch
+  qudt:quantityKind quantity:Area ;
+.
+unit:SquareMeter
+  qudt:quantityKind quantity:Area ;
+.
+unit:SquareMeterKelvin
+  qudt:quantityKind quantity:AreaTemperature ;
+.
+unit:SquareMeterKelvinPerWatt
+  qudt:quantityKind quantity:ThermalInsulance ;
+.
+unit:SquareMeterPerKelvin
+  qudt:quantityKind quantity:AreaThermalExpansion ;
+.
+unit:SquareMeterPerSecond
+  qudt:quantityKind quantity:AreaPerTime ;
+.
+unit:SquareMeterSteradian
+  qudt:quantityKind quantity:AreaAngle ;
+.
+unit:SquareMile
+  qudt:quantityKind quantity:Area ;
+.
+unit:SquareYard
+  qudt:quantityKind quantity:Area ;
+.
+unit:SriLankaRupee
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Statampere
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:StatamperePerSquareCentimeter
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:Statcoulomb
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:StatcoulombPerMole
+  qudt:quantityKind quantity:ElectricChargePerAmountOfSubstance ;
+.
+unit:StatcoulombPerSquareCentimeter
+  qudt:quantityKind quantity:ElectricChargePerArea ;
+.
+unit:Statfarad
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:Stathenry
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:StathenryPerCentimeter
+  qudt:quantityKind quantity:Permeability ;
+.
+unit:Statmho
+  qudt:quantityKind quantity:ElectricConductivity ;
+.
+unit:Statohm
+  qudt:quantityKind quantity:Resistance ;
+.
+unit:Statvolt
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+.
+unit:StatvoltCentimeter
+  qudt:quantityKind quantity:ElectricFlux ;
+.
+unit:StatvoltPerCentimeter
+  qudt:quantityKind quantity:ElectricField ;
+.
+unit:Steradian
+  qudt:quantityKind quantity:SolidAngle ;
+.
+unit:Stere
+  qudt:quantityKind quantity:Volume ;
+.
+unit:Stilb
+  qudt:quantityKind quantity:Luminance ;
+.
+unit:Stokes
+  qudt:quantityKind quantity:KinematicViscosity ;
+.
+unit:SudanesePound
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SurinamDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SwedishKrona
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SwissFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:SyrianPound
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Tablespoon
+  qudt:quantityKind quantity:Volume ;
+.
+unit:TanzanianShilling
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Teaspoon
+  qudt:quantityKind quantity:Volume ;
+.
+unit:Tebi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Tenge
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Tera
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Tesla
+  qudt:quantityKind quantity:MagneticField ;
+.
+unit:TeslaMeter
+  qudt:quantityKind quantity:MagneticFluxPerUnitLength ;
+.
+unit:TeslaSecond
+  qudt:quantityKind quantity:MassPerElectricCharge ;
+.
+unit:Tex
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:ThermEEC
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:ThermUS
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:TonAssay
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TonEnergy
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:TonLong
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TonLongPerCubicYard
+  qudt:quantityKind quantity:Density ;
+.
+unit:TonOfOilEquivalent
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:TonOfRefrigeration
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:TonShort
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TonShortPerCubicYard
+  qudt:quantityKind quantity:Density ;
+.
+unit:TonShortPerHour
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:Torr
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:TrinidadAndTobagoDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Tugrik
+  qudt:quantityKind quantity:Currency ;
+.
+unit:TunisianDinar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:UAEDirham
+  qudt:quantityKind quantity:Currency ;
+.
+unit:UICFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:USDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:USDollar-NextDay
+  qudt:quantityKind quantity:Currency ;
+.
+unit:USDollar-SameDay
+  qudt:quantityKind quantity:Currency ;
+.
+unit:UgandaShilling
+  qudt:quantityKind quantity:Currency ;
+.
+unit:UnidadDeValorReal
+  qudt:quantityKind quantity:Currency ;
+.
+unit:UnidadesDeFormento
+  qudt:quantityKind quantity:Currency ;
+.
+unit:UnifiedAtomicMassUnit
+  qudt:quantityKind quantity:Mass ;
+.
+unit:UnitPole
+  qudt:quantityKind quantity:MagneticFlux ;
+.
+unit:Unitless
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:UruguayPeso
+  qudt:quantityKind quantity:Currency ;
+.
+unit:UzbekistanSom
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Vatu
+  qudt:quantityKind quantity:Currency ;
+.
+unit:VenezuelanBolvar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:VietnameseDong
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Volt
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+.
+unit:VoltMeter
+  qudt:quantityKind quantity:ElectricFlux ;
+.
+unit:VoltPerMeter
+  qudt:quantityKind quantity:ElectricField ;
+.
+unit:VoltPerSecond
+  qudt:quantityKind quantity:PowerPerElectricCharge ;
+.
+unit:VoltPerSquareMeter
+  qudt:quantityKind quantity:EnergyPerAreaElectricCharge ;
+.
+unit:WIREuro
+  qudt:quantityKind quantity:Currency ;
+.
+unit:WIRFranc
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Watt
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:WattPerMeterKelvin
+  qudt:quantityKind quantity:ThermalConductivity ;
+.
+unit:WattPerSquareCentimeter
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:WattPerSquareFoot
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:WattPerSquareInch
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:WattPerSquareMeter
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:WattPerSquareMeterKelvin
+  qudt:quantityKind quantity:CoefficientOfHeatTransfer ;
+.
+unit:WattPerSquareMeterQuarticKelvin
+  qudt:quantityKind quantity:PowerPerAreaQuarticTemperature ;
+.
+unit:WattPerSquareMeterSteradian
+  qudt:quantityKind quantity:Radiance ;
+.
+unit:WattPerSteradian
+  qudt:quantityKind quantity:RadiantIntensity ;
+.
+unit:WattSquareMeter
+  qudt:quantityKind quantity:PowerArea ;
+.
+unit:WattSquareMeterPerSteradian
+  qudt:quantityKind quantity:PowerAreaPerSolidAngle ;
+.
+unit:Watthour
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:Weber
+  qudt:quantityKind quantity:MagneticFlux ;
+.
+unit:Yard
+  qudt:quantityKind quantity:Length ;
+.
+unit:Year365Day
+  qudt:quantityKind quantity:Time ;
+.
+unit:YearTropical
+  qudt:quantityKind quantity:Time ;
+.
+unit:YemeniRial
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Yobi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Yocto
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Yotta
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:YuanRenminbi
+  qudt:quantityKind quantity:Currency ;
+.
+unit:ZambianKwacha
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Zebi
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Zepto
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:Zetta
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:ZimbabweDollar
+  qudt:quantityKind quantity:Currency ;
+.
+unit:Zloty
+  qudt:quantityKind quantity:Currency ;
+.
+voag:QUDT-QUANTITIES-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT QUANTITIES Vocab Catalog Entry"^^xsd:string ;
+.

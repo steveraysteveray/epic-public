@@ -1,0 +1,926 @@
+# baseURI: http://siemens.com/vocab/kps/epic/pilot-buildings
+# imports: http://siemens.com/schemas/kps/epic-building
+# imports: http://siemens.com/vocab/kps/cim-tariff
+# prefix: pilot
+
+@prefix bldg: <http://siemens.com/schemas/kps/epic-building#> .
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pilot: <http://siemens.com/vocab/kps/epic/pilot-buildings#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix system: <http://data.nasa.gov/sysmo/schema/system#> .
+@prefix tariff: <http://siemens.com/schemas/kps/cim-tariff#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xhtml: <http://topbraid.org/xhtml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/vocab/kps/epic/pilot-buildings>
+  a owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic-building> ;
+  owl:imports <http://siemens.com/vocab/kps/cim-tariff> ;
+.
+pilot:AASElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:AASElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "AAS Electrical Service" ;
+  skos:prefLabel "AAS Electrical Service" ;
+.
+pilot:AASElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A01_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "AAS Electricity Service contract" ;
+  skos:prefLabel "AAS Electricity Service contract" ;
+.
+pilot:AASGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "682"^^xsd:float ;
+  schema:latitude "36.0019922"^^xsd:float ;
+  schema:longitude "-120.11105550000002"^^xsd:float ;
+  schema:postalCode "93204" ;
+  rdfs:label "AASGeo coordinates" ;
+  skos:prefLabel "AASGeo coordinates" ;
+.
+pilot:AMTElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:AMTElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "AMT Electrical Service" ;
+  skos:prefLabel "AMT Electrical Service" ;
+.
+pilot:AMTElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_E19_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "AMT Electricity Service contract" ;
+  skos:prefLabel "AMT Electricity Service contract" ;
+.
+pilot:AMTGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "682"^^xsd:float ;
+  schema:latitude "36.0026293"^^xsd:float ;
+  schema:longitude "-120.13523029999999"^^xsd:float ;
+  schema:postalCode "93204" ;
+  rdfs:label "AMTGeo coordinates" ;
+  skos:prefLabel "AMTGeo coordinates" ;
+.
+pilot:APWDElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:APWDElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "APWD Electrical Service" ;
+  skos:prefLabel "APWD Electrical Service" ;
+.
+pilot:APWDElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A01_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "APWD Electricity Service contract" ;
+  skos:prefLabel "APWD Electricity Service contract" ;
+.
+pilot:APWDGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "682"^^xsd:float ;
+  schema:latitude "36.0018291"^^xsd:float ;
+  schema:longitude "-120.11278340000001"^^xsd:float ;
+  schema:postalCode "93204" ;
+  rdfs:label "APWDGeo coordinates" ;
+  skos:prefLabel "APWDGeo coordinates" ;
+.
+pilot:ARCElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:ARCElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "ARC Electrical Service" ;
+  skos:prefLabel "ARC Electrical Service" ;
+.
+pilot:ARCElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A01_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "ARC Electricity Service contract" ;
+  skos:prefLabel "ARC Electricity Service contract" ;
+.
+pilot:ARCGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "682"^^xsd:float ;
+  schema:latitude "36.0085588"^^xsd:float ;
+  schema:longitude "-120.12672750000002"^^xsd:float ;
+  schema:postalCode "93204" ;
+  rdfs:label "ARCGeo coordinates" ;
+  skos:prefLabel "ARCGeo coordinates" ;
+.
+pilot:AVHElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:AVHElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "AVH Electrical Service" ;
+  skos:prefLabel "AVH Electrical Service" ;
+.
+pilot:AVHElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A01_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "AVH Electricity Service contract" ;
+  skos:prefLabel "AVH Electricity Service contract" ;
+.
+pilot:AVHGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "682"^^xsd:float ;
+  schema:latitude "36.0022507"^^xsd:float ;
+  schema:longitude "-120.1384749"^^xsd:float ;
+  schema:postalCode "93204" ;
+  rdfs:label "AVHGeo coordinates" ;
+  skos:prefLabel "AVHGeo coordinates" ;
+.
+pilot:BCElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:BCElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "BC Electrical Service" ;
+  skos:prefLabel "BC Electrical Service" ;
+.
+pilot:BCElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A06_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "BC Electricity Service contract" ;
+  skos:prefLabel "BC Electricity Service contract" ;
+.
+pilot:BCGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "141"^^xsd:float ;
+  schema:latitude "37.8694137"^^xsd:float ;
+  schema:longitude "-122.26654539999998"^^xsd:float ;
+  schema:postalCode "94704" ;
+  rdfs:label "BCGeo coordinates" ;
+  skos:prefLabel "BCGeo coordinates" ;
+.
+pilot:BCYElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:BCYElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "BCY Electrical Service" ;
+  skos:prefLabel "BCY Electrical Service" ;
+.
+pilot:BCYElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A10_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "BCY Electricity Service contract" ;
+  skos:prefLabel "BCY Electricity Service contract" ;
+.
+pilot:BCYGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "72"^^xsd:float ;
+  schema:latitude "37.8664513"^^xsd:float ;
+  schema:longitude "-122.2851152"^^xsd:float ;
+  schema:postalCode "94702" ;
+  rdfs:label "BCYGeo coordinates" ;
+  skos:prefLabel "BCYGeo coordinates" ;
+.
+pilot:CIEEElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:CIEEElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "CIEE Electrical Service" ;
+  skos:prefLabel "CIEE Electrical Service" ;
+.
+pilot:CIEEElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A01_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "CIEE Electricity Service contract" ;
+  skos:prefLabel "CIEE Electricity Service contract" ;
+.
+pilot:CIEEGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "141"^^xsd:float ;
+  schema:latitude "37.8712728"^^xsd:float ;
+  schema:longitude "-122.26871870000002"^^xsd:float ;
+  schema:postalCode "94704" ;
+  rdfs:label "CIEEGeo coordinates" ;
+  skos:prefLabel "CIEEGeo coordinates" ;
+.
+pilot:CSUDHElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:CSUDHElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "CSUDH Electrical Service" ;
+  skos:prefLabel "CSUDH Electrical Service" ;
+.
+pilot:CSUDHElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#SCE_08B_PricingStructure> ;
+  rdfs:label "CSUDH Electricity Service contract" ;
+  skos:prefLabel "CSUDH Electricity Service contract" ;
+.
+pilot:CSUDominguezHillsAddress
+  a ifc:IfcPostalAddress ;
+  ifc:addressLines_IfcPostalAddress pilot:SAC2_Postal_Address ;
+  ifc:country_IfcPostalAddress pilot:SAC2_Country ;
+  ifc:postalCode_IfcPostalAddress pilot:SAC2_PostalCode ;
+  ifc:town_IfcPostalAddress pilot:SAC2_Town ;
+  rdfs:label "CSUDominguez hills address" ;
+  skos:prefLabel "CSUDominguez hills address" ;
+.
+pilot:CityOfBerkeley
+  a bldg:Organization ;
+  rdfs:label "City of Berkeley" ;
+  skos:prefLabel "City of Berkeley" ;
+.
+pilot:CityOfOrinda
+  a bldg:Organization ;
+  rdfs:label "City of Orinda" ;
+  skos:prefLabel "City of orinda" ;
+.
+pilot:FCCElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:FCCElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "FCC Electrical Service" ;
+  skos:prefLabel "FCC Electrical Service" ;
+.
+pilot:FCCElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#SCE_TGS3_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "FCC Electricity Service contract" ;
+  skos:prefLabel "FCC Electricity Service contract" ;
+.
+pilot:FCCGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "1100"^^xsd:float ;
+  schema:latitude "34.15361199999999"^^xsd:float ;
+  schema:longitude "-117.46444400000001"^^xsd:float ;
+  schema:postalCode " 92336" ;
+  rdfs:label "FCCGeo coordinates" ;
+  skos:prefLabel "FCCGeo coordinates" ;
+.
+pilot:GSHElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:GSHElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "GSH Electrical Service" ;
+  skos:prefLabel "GSH Electrical Service" ;
+.
+pilot:GSHElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_E19_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "GSH Electricity Service contract" ;
+  skos:prefLabel "GSH Electricity Service contract" ;
+.
+pilot:GSHGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "75"^^xsd:float ;
+  schema:latitude "37.8609269"^^xsd:float ;
+  schema:longitude "-122.2491698"^^xsd:float ;
+  schema:postalCode "94705" ;
+  rdfs:label "GSHGeo coordinates" ;
+  skos:prefLabel "GSHGeo coordinates" ;
+.
+pilot:HFS1ElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:HFS1ElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "HFS1 Electrical Service" ;
+  skos:prefLabel "HFS1 Electrical Service" ;
+.
+pilot:HFS1ElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A10_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "HFS1 Electricity Service contract" ;
+  skos:prefLabel "HFS1 Electricity Service contract" ;
+.
+pilot:HFS1GeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "234"^^xsd:float ;
+  schema:latitude "37.6717027"^^xsd:float ;
+  schema:longitude "-122.08121460000001"^^xsd:float ;
+  schema:postalCode "94541" ;
+  rdfs:label "HFS1Geo coordinates" ;
+  skos:prefLabel "HFS1Geo coordinates" ;
+.
+pilot:HFS8ElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:HFS8ElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "HFS8 Electrical Service" ;
+  skos:prefLabel "HFS8 Electrical Service" ;
+.
+pilot:HFS8ElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A06_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "HFS8 Electricity Service contract" ;
+  skos:prefLabel "HFS8 Electricity Service contract" ;
+.
+pilot:HFS8GeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "584"^^xsd:float ;
+  schema:latitude "37.675162"^^xsd:float ;
+  schema:longitude "-122.03007079999998"^^xsd:float ;
+  schema:postalCode "94552" ;
+  rdfs:label "HFS8Geo coordinates" ;
+  skos:prefLabel "HFS8Geo coordinates" ;
+.
+pilot:LBNLElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:LBNLElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "LBNL Electrical Service" ;
+  skos:prefLabel "LBNL Electrical Service" ;
+.
+pilot:LBNLElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#Flat06_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "LBNL Electricity Service contract" ;
+  skos:prefLabel "LBNL Electricity Service contract" ;
+.
+pilot:LBNLGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "660"^^xsd:float ;
+  schema:latitude "37.8759277"^^xsd:float ;
+  schema:longitude "-122.25002740000002"^^xsd:float ;
+  schema:postalCode "94720" ;
+  rdfs:label "LBNLGeo coordinates" ;
+  skos:prefLabel "LBNLGeo coordinates" ;
+.
+pilot:LBSElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:LBSElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "LBS Electrical Service" ;
+  skos:prefLabel "LBS Electrical Service" ;
+.
+pilot:LBSElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_E19_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "LBS Electricity Service contract" ;
+  skos:prefLabel "LBS Electricity Service contract" ;
+.
+pilot:LBSGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "190"^^xsd:float ;
+  schema:latitude "37.87800910000001"^^xsd:float ;
+  schema:longitude "-122.26933639999999"^^xsd:float ;
+  schema:postalCode " 94709" ;
+  rdfs:label "LBS Geo coordinates" ;
+  skos:prefLabel "LBS Geo coordinates" ;
+.
+pilot:NBSCElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:NBSCElectricityServiceContract ;
+  rdfs:label "NBSC Electrical Service" ;
+  skos:prefLabel "NBSC Electrical Service" ;
+.
+pilot:NBSCElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A10_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "NBSC Electricity Service contract" ;
+  skos:prefLabel "NBSC Electricity Service contract" ;
+.
+pilot:NBSCGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "190"^^xsd:float ;
+  schema:latitude "37.87800910000001" ;
+  schema:longitude "-122.26933639999999" ;
+  schema:postalCode "94709" ;
+  rdfs:label "NBSC Geo coordinates" ;
+  skos:prefLabel "NBSC Geo coordinates" ;
+.
+pilot:NBSCOwnerOrganization
+  a bldg:Organization ;
+  rdfs:label "North Berkeley Senior Center" ;
+  skos:prefLabel "North Berkeley senior center" ;
+.
+pilot:NBSCTenantOrganization
+  a bldg:Organization ;
+  rdfs:label "North Berkeley Senior Center" ;
+  skos:prefLabel "North Berkeley senior center" ;
+.
+pilot:NBSC_Country
+  a ifc:IfcLabel ;
+  rdfs:label "United States of America" ;
+  skos:prefLabel "USA" ;
+.
+pilot:NBSC_PostalCode
+  a ifc:IfcLabel ;
+  rdfs:label "94709" ;
+  skos:prefLabel "94709" ;
+.
+pilot:NBSC_Postal_Address
+  a rdfs:Resource ;
+  rdfs:label "1901 Hearst Street" ;
+  skos:prefLabel "1901 Hearst Street" ;
+.
+pilot:NBSC_Town
+  a ifc:IfcLabel ;
+  rdfs:label "Berkeley" ;
+  skos:prefLabel "Berkeley" ;
+.
+pilot:NorthBerkeleySeniorCenter
+  a bldg:Organization ;
+  rdfs:label "North berkeley senior center" ;
+  skos:prefLabel "North berkeley senior center" ;
+.
+pilot:NorthBerkeleySeniorCenterAddress
+  a ifc:IfcPostalAddress ;
+  ifc:addressLines_IfcPostalAddress pilot:NBSC_Postal_Address ;
+  ifc:country_IfcPostalAddress pilot:NBSC_Country ;
+  ifc:postalCode_IfcPostalAddress pilot:NBSC_PostalCode ;
+  ifc:town_IfcPostalAddress pilot:NBSC_Town ;
+  rdfs:label "North Berkeley Senior Center Address" ;
+  skos:prefLabel "North Berkeley senior center address" ;
+.
+pilot:OCCElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:OCCElectricityServiceContract ;
+  rdfs:label "OCC Electrical Service" ;
+  skos:prefLabel "OCC Electrical Service" ;
+.
+pilot:OCCElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A10_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "OCC Electricity Service contract" ;
+  skos:prefLabel "OCC Electricity Service contract" ;
+.
+pilot:OCCGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "666"^^xsd:float ;
+  schema:latitude "37.883165"^^xsd:float ;
+  schema:longitude "-122.18781949999999"^^xsd:float ;
+  schema:postalCode "94563" ;
+  rdfs:label "OCC Geo coordinates" ;
+  skos:prefLabel "OCC Geo coordinates" ;
+.
+pilot:OCCOwnerOrganization
+  a bldg:Organization ;
+  rdfs:label "City of Orinda" ;
+  skos:prefLabel "City of Orinda" ;
+.
+pilot:OCCTenantOrganization
+  a bldg:Organization ;
+  rdfs:label "Orinda Community Center" ;
+  skos:prefLabel "Orinda Community Center" ;
+.
+pilot:OCC_Country
+  a ifc:IfcLabel ;
+  rdfs:label "United States of America" ;
+  skos:prefLabel "USA" ;
+.
+pilot:OCC_PostalCode
+  a ifc:IfcLabel ;
+  rdfs:label "94563" ;
+  skos:prefLabel "94563" ;
+.
+pilot:OCC_Town
+  a ifc:IfcLabel ;
+  rdfs:label "Orinda" ;
+  skos:prefLabel "Orinda" ;
+.
+pilot:OLElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:OLElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "OL Electrical Service" ;
+  skos:prefLabel "OL Electrical Service" ;
+.
+pilot:OLElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A10_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "OL Electricity Service contract" ;
+  skos:prefLabel "OL Electricity Service contract" ;
+.
+pilot:OLGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "666"^^xsd:float ;
+  schema:latitude "37.8823692"^^xsd:float ;
+  schema:longitude "-122.18722609999998"^^xsd:float ;
+  schema:postalCode "94533" ;
+  rdfs:label "OLGeo coordinates" ;
+  skos:prefLabel "OLGeo coordinates" ;
+.
+pilot:OrindaCommunityCenterAddress
+  a ifc:IfcPostalAddress ;
+  ifc:addressLines_IfcPostalAddress pilot:OCC_Postal_Address ;
+  ifc:country_IfcPostalAddress pilot:OCC_Country ;
+  ifc:postalCode_IfcPostalAddress pilot:OCC_PostalCode ;
+  ifc:town_IfcPostalAddress pilot:OCC_Town ;
+  rdfs:label "Orinda Community Center address" ;
+  skos:prefLabel "Orinda Community Center address" ;
+.
+pilot:PGE
+  a bldg:Organization ;
+  rdfs:label "Pacific Gas and Electric" ;
+  skos:prefLabel "PGE" ;
+.
+pilot:PilotBuilding_AvenalAnimalShelter
+  a bldg:Building ;
+  bldg:geoPosition pilot:AASGeoCoordinates ;
+  bldg:groupID "PGEA01" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_avenal" ;
+  bldg:resourceID "AAS" ;
+  bldg:service pilot:AASElectricalService ;
+  rdfs:label "Avenal: Animal Shelter" ;
+  skos:prefLabel "Avenal: Animal Shelter" ;
+.
+pilot:PilotBuilding_AvenalMovieTheatre
+  a bldg:Building ;
+  bldg:geoPosition pilot:AMTGeoCoordinates ;
+  bldg:groupID "PGEE19" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_avenal" ;
+  bldg:resourceID "AMT" ;
+  bldg:service pilot:AMTElectricalService ;
+  rdfs:label "Avenal: Movie Theatre" ;
+  skos:prefLabel "Avenal: Movie Theatre" ;
+.
+pilot:PilotBuilding_AvenalPublicWorksDepartment
+  a bldg:Building ;
+  bldg:geoPosition pilot:APWDGeoCoordinates ;
+  bldg:groupID "PGEA01" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_avenal" ;
+  bldg:resourceID "APWD" ;
+  bldg:service pilot:APWDElectricalService ;
+  rdfs:label "Avenal: Public Works Department" ;
+  skos:prefLabel "Avenal: Public Works Department" ;
+.
+pilot:PilotBuilding_AvenalRecreationCenter
+  a bldg:Building ;
+  bldg:geoPosition pilot:ARCGeoCoordinates ;
+  bldg:groupID "PGEA01" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_avenal" ;
+  bldg:resourceID "ARC" ;
+  bldg:service pilot:ARCElectricalService ;
+  rdfs:label "Avenal: Recreation Center" ;
+  skos:prefLabel "Avenal: Recreation Center" ;
+.
+pilot:PilotBuilding_AvenalVeteransHall
+  a bldg:Building ;
+  bldg:geoPosition pilot:AVHGeoCoordinates ;
+  bldg:groupID "PGEA01" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_avenal" ;
+  bldg:resourceID "AVH" ;
+  bldg:service pilot:AVHElectricalService ;
+  rdfs:label "Avenal: Veterans Hall" ;
+  skos:prefLabel "Avenal: Veterans Hall" ;
+.
+pilot:PilotBuilding_BerkeleyCorporationYard
+  a bldg:Building ;
+  bldg:geoPosition pilot:BCYGeoCoordinates ;
+  bldg:groupID "PGEA10" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "BCY" ;
+  bldg:service pilot:BCYElectricalService ;
+  rdfs:label "Berkeley Corporation Yard" ;
+  skos:prefLabel "Berkeley Corporation Yard" ;
+.
+pilot:PilotBuilding_BrowerCenter
+  a bldg:Building ;
+  bldg:geoPosition pilot:BCGeoCoordinates ;
+  bldg:groupID "PGEA06" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "BC" ;
+  bldg:service pilot:BCElectricalService ;
+  rdfs:label "Brower Center" ;
+  skos:prefLabel "Brower Center" ;
+.
+pilot:PilotBuilding_CIEE
+  a bldg:Building ;
+  bldg:geoPosition pilot:CIEEGeoCoordinates ;
+  bldg:groupID "PGEA01" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "CIEE" ;
+  bldg:service pilot:CIEEElectricalService ;
+  rdfs:label "CIEE" ;
+  skos:prefLabel "CIEE" ;
+.
+pilot:PilotBuilding_CSU_DominguezHills
+  a bldg:Building ;
+  epic:address pilot:CSUDominguezHillsAddress ;
+  epic:geoPosition pilot:SAC2GeoCoordinates ;
+  epic:owner pilot:SAC2OwnerOrganization ;
+  epic:tenant pilot:SAC2TenantOrganization ;
+  bldg:climateZone bldg:ClimateZone8 ;
+  bldg:geoPosition pilot:SAC2GeoCoordinates ;
+  bldg:groupID "SCE08B" ;
+  bldg:groupID "SCEPDP" ;
+  bldg:occupancy bldg:OccupancyB ;
+  bldg:resourceID "CSUDH" ;
+  bldg:service pilot:CSUDHElectricalService ;
+  bldg:storeys bldg:Storey1 ;
+  rdfs:label "CSU Dominguez Hills (SAC2)" ;
+  skos:prefLabel "CSU Dominguez Hills (SAC2)" ;
+.
+pilot:PilotBuilding_FireStation1Hayward
+  a bldg:Building ;
+  bldg:geoPosition pilot:HFS1GeoCoordinates ;
+  bldg:groupID "PGEA10" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_firehouse" ;
+  bldg:resourceID "HFS1" ;
+  bldg:service pilot:HFS1ElectricalService ;
+  rdfs:label "Fire Station 1, Hayward" ;
+  skos:prefLabel "Fire Station 1, Hayward" ;
+.
+pilot:PilotBuilding_FireStation8Hayward
+  a bldg:Building ;
+  bldg:geoPosition pilot:HFS8GeoCoordinates ;
+  bldg:groupID "PGEA06" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_firehouse" ;
+  bldg:resourceID "HFS8" ;
+  bldg:service pilot:HFS8ElectricalService ;
+  rdfs:label "Fire Station 8, Hayward" ;
+  skos:prefLabel "Fire Station 8, Hayward" ;
+.
+pilot:PilotBuilding_FontanaCommunityCenter
+  a bldg:Building ;
+  bldg:geoPosition pilot:FCCGeoCoordinates ;
+  bldg:groupID "SCEPDP" ;
+  bldg:groupID "SCETGS3" ;
+  bldg:resourceID "JTFCC" ;
+  bldg:service pilot:FCCElectricalService ;
+  rdfs:label "Jesse Turner Fontana Community Center" ;
+  skos:prefLabel "Jesse Turner Fontana Community Center" ;
+.
+pilot:PilotBuilding_GarberStHouseBerkeley
+  a bldg:Building ;
+  bldg:geoPosition pilot:GSHGeoCoordinates ;
+  bldg:groupID "PGEE19" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "GSH" ;
+  bldg:service pilot:GSHElectricalService ;
+  rdfs:label "Garber St House, Berkeley" ;
+  skos:prefLabel "Garber St House, Berkeley" ;
+.
+pilot:PilotBuilding_LBNLBuilding
+  a bldg:Building ;
+  bldg:geoPosition pilot:LBNLGeoCoordinates ;
+  bldg:groupID "FLAT06" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "LBNL" ;
+  bldg:service pilot:LBNLElectricalService ;
+  rdfs:label "LBNL Building" ;
+  skos:prefLabel "LBNL Building" ;
+.
+pilot:PilotBuilding_NorthBerkeleySeniorCenter
+  a bldg:Building ;
+  epic:address pilot:NorthBerkeleySeniorCenterAddress ;
+  epic:geoPosition pilot:NBSCGeoCoordinates ;
+  epic:owner pilot:NBSCOwnerOrganization ;
+  epic:tenant pilot:NBSCTenantOrganization ;
+  bldg:climateZone bldg:ClimateZone4 ;
+  bldg:geoPosition pilot:NBSCGeoCoordinates ;
+  bldg:groupID "PGEA10" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:occupancy bldg:OccupancyA3 ;
+  bldg:occupancy bldg:OccupancyM ;
+  bldg:owner pilot:NorthBerkeleySeniorCenter ;
+  bldg:resourceID "NBSC" ;
+  bldg:service pilot:NBSCElectricalService ;
+  bldg:storeys bldg:Storey2 ;
+  bldg:tenant pilot:NorthBerkeleySeniorCenter ;
+  rdfs:label "North Berkeley Senior Center" ;
+  skos:prefLabel "North Berkeley senior center (NBSC)" ;
+.
+pilot:PilotBuilding_OrindaCommunityCenter
+  a bldg:Building ;
+  epic:address pilot:OrindaCommunityCenterAddress ;
+  epic:geoPosition pilot:OCCGeoCoordinates ;
+  epic:owner pilot:OCCOwnerOrganization ;
+  epic:tenant pilot:OCCTenantOrganization ;
+  bldg:climateZone bldg:ClimateZone13 ;
+  bldg:geoPosition pilot:OCCGeoCoordinates ;
+  bldg:groupID "PGEA10" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_orinda" ;
+  bldg:occupancy bldg:OccupancyB ;
+  bldg:owner pilot:CityOfOrinda ;
+  bldg:resourceID "OCC" ;
+  bldg:service pilot:OCCElectricalService ;
+  bldg:storeys bldg:Storey1 ;
+  rdfs:label "Orinda Community Center" ;
+  skos:prefLabel "Orinda Community Center (OCC)" ;
+.
+pilot:PilotBuilding_OrindaLibrary
+  a bldg:Building ;
+  bldg:geoPosition pilot:OLGeoCoordinates ;
+  bldg:groupID "PGEA10" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:groupID "campus_orinda" ;
+  bldg:resourceID "OL" ;
+  bldg:service pilot:OLElectricalService ;
+  rdfs:label "Orinda Library" ;
+  skos:prefLabel "Orinda Library" ;
+.
+pilot:PilotBuilding_RichmondFieldStation
+  a bldg:Building ;
+  bldg:geoPosition pilot:RFSGeoCoordinates ;
+  bldg:groupID "PGEE19" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "RFS" ;
+  bldg:service pilot:RFSElectricalService ;
+  rdfs:label "Richmond Field Station" ;
+  skos:prefLabel "Richmond Field Station" ;
+.
+pilot:PilotBuilding_SouthBerkeleySeniorCenter
+  a bldg:Building ;
+  bldg:geoPosition pilot:SBSCGeoCoordinates ;
+  bldg:groupID "PGEA01" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "SBSC" ;
+  bldg:service pilot:SBSCElectricalService ;
+  rdfs:label "South Berkeley Senior Center" ;
+  skos:prefLabel "South Berkeley Senior Center" ;
+.
+pilot:PilotBuilding_SutardjaDaiHall
+  a bldg:Building ;
+  bldg:geoPosition pilot:SDHGeoCoordinates ;
+  bldg:groupID "PGEE20" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "SDH" ;
+  bldg:service pilot:SDHElectricalService ;
+  rdfs:label "Sutardja Dai Hall" ;
+  skos:prefLabel "Sutardja Dai Hall" ;
+.
+pilot:PilotBuilding_TheLocalButcherShop
+  a bldg:Building ;
+  bldg:geoPosition pilot:LBSGeoCoordinates ;
+  bldg:groupID "PGEE19" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "LBS" ;
+  bldg:service pilot:LBSElectricalService ;
+  rdfs:label "The Local Butcher Shop" ;
+  skos:prefLabel "The Local Butcher Shop" ;
+.
+pilot:PilotBuilding_WordOfFaithChristianCenter
+  a bldg:Building ;
+  bldg:geoPosition pilot:WFCCGeoCoordinates ;
+  bldg:groupID "PGEA01" ;
+  bldg:groupID "PGEPDP" ;
+  bldg:resourceID "WFCC" ;
+  bldg:service pilot:WFCCElectricalService ;
+  rdfs:label "Word of Faith Christian Center" ;
+  skos:prefLabel "Word of Faith Christian Center" ;
+.
+pilot:RFSElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:RFSElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "RFS Electrical Service" ;
+  skos:prefLabel "RFS Electrical Service" ;
+.
+pilot:RFSElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_E19_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "RFS Electricity Service contract" ;
+  skos:prefLabel "RFS Electricity Service contract" ;
+.
+pilot:RFSGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "10"^^xsd:float ;
+  schema:latitude "37.9132931"^^xsd:float ;
+  schema:longitude "-122.33408099999997"^^xsd:float ;
+  schema:postalCode "94804" ;
+  rdfs:label "RFSGeo coordinates" ;
+  skos:prefLabel "RFSGeo coordinates" ;
+.
+pilot:SAC2GeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "137"^^xsd:float ;
+  schema:latitude "33.86337059999999"^^xsd:float ;
+  schema:longitude "-118.2552809"^^xsd:float ;
+  schema:postalCode "90747" ;
+  rdfs:label "SAC2 Geo coordinates" ;
+  skos:prefLabel "SAC2 Geo coordinates" ;
+.
+pilot:SAC2OwnerOrganization
+  a bldg:Organization ;
+  rdfs:label "California State University Dominguez Hills" ;
+  skos:prefLabel "CSU Dominguez Hills Owner organization" ;
+.
+pilot:SAC2TenantOrganization
+  a bldg:Organization ;
+  rdfs:label "CSU Dominguez Hills Tenant organization" ;
+  skos:prefLabel "CSU Dominguez Hills Tenant organization" ;
+.
+pilot:SAC2_Country
+  a ifc:IfcLabel ;
+  rdfs:label "United States of America" ;
+  skos:prefLabel "USA" ;
+.
+pilot:SAC2_PostalCode
+  a ifc:IfcLabel ;
+  rdfs:label "90747" ;
+  skos:prefLabel "90747" ;
+.
+pilot:SAC2_Postal_Address
+  a rdfs:Resource ;
+  rdfs:label "1000 E Victoria St" ;
+  rdfs:label "28 Orinda Way" ;
+  skos:prefLabel "1000 E Victoria St" ;
+  skos:prefLabel "28 Orinda Way" ;
+.
+pilot:SAC2_Town
+  a ifc:IfcLabel ;
+  rdfs:label "Carson" ;
+  skos:prefLabel "Carson" ;
+.
+pilot:SBSCElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:SBSCElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "SBSC Electrical Service" ;
+  skos:prefLabel "SBSC Electrical Service" ;
+.
+pilot:SBSCElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A01_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "SBSC Electricity Service contract" ;
+  skos:prefLabel "SBSC Electricity Service contract" ;
+.
+pilot:SBSCGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "75"^^xsd:float ;
+  schema:latitude "37.8543356"^^xsd:float ;
+  schema:longitude "-122.272921"^^xsd:float ;
+  schema:postalCode "94703" ;
+  rdfs:label "SBSCGeo coordinates" ;
+  skos:prefLabel "SBSCGeo coordinates" ;
+.
+pilot:SDHElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:SDHElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "SDH Electrical Service" ;
+  skos:prefLabel "SDH Electrical Service" ;
+.
+pilot:SDHElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_E20_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "SDH Electricity Service contract" ;
+  skos:prefLabel "SDH Electricity Service contract" ;
+.
+pilot:SDHGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "446"^^xsd:float ;
+  schema:latitude "37.8756107"^^xsd:float ;
+  schema:longitude "-122.25858069999998"^^xsd:float ;
+  schema:postalCode "94720" ;
+  rdfs:label "SDHGeo coordinates" ;
+  skos:prefLabel "SDHGeo coordinates" ;
+.
+pilot:WFCCElectricalService
+  a bldg:Service ;
+  bldg:serviceContract pilot:WFCCElectricityServiceContract ;
+  bldg:serviceKind bldg:ElectricalService ;
+  rdfs:label "WFCC Electrical Service" ;
+  skos:prefLabel "WFCC Electrical Service" ;
+.
+pilot:WFCCElectricityServiceContract
+  a bldg:ServiceContract ;
+  tariff:pricingStructures <http://siemens.com/vocab/kps/cim-tariff#PGE_A01_PricingStructure> ;
+  bldg:serviceSupplier pilot:PGE ;
+  rdfs:label "WFCC Electricity Service contract" ;
+  skos:prefLabel "WFCC Electricity Service contract" ;
+.
+pilot:WFCCGeoCoordinates
+  a schema:GeoCoordinates ;
+  schema:elevation "39"^^xsd:float ;
+  schema:latitude "38.2736561"^^xsd:float ;
+  schema:longitude "-121.95896449999998"^^xsd:float ;
+  schema:postalCode "94533" ;
+  rdfs:label "WFCCGeo coordinates" ;
+  skos:prefLabel "WFCCGeo coordinates" ;
+.

@@ -1,0 +1,326 @@
+# baseURI: http://siemens.com/schemas/kps/epic-building
+# imports: http://cmu.sv.edu/fsgim
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://siemens.com/schemas/kps/cim-tariff
+# imports: http://siemens.com/schemas/kps/epic
+# imports: http://siemens.com/vocab/kps/epic-building
+# imports: http://www.buildingsmart-tech.org/ifcOWL/IFC4
+# imports: https://w3id.org/saref
+# prefix: bldg
+
+@prefix bldg: <http://siemens.com/schemas/kps/epic-building#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://siemens.com/schemas/ssf_datatype#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/1.2/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/epic-building>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "EPIC Building Model" ;
+  dc:subject "EPIC Building" ;
+  dc:title "The EPIC Buildings Ontology" ;
+  owl:imports <http://cmu.sv.edu/fsgim> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://siemens.com/schemas/kps/cim-tariff> ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports <http://siemens.com/vocab/kps/epic-building> ;
+  owl:imports <http://www.buildingsmart-tech.org/ifcOWL/IFC4> ;
+  owl:imports <https://w3id.org/saref> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+bldg:Building
+  rdf:type owl:Class ;
+  rdfs:label "Building" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bldg:groupID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bldg:resourceID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:address ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:geoPosition ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:owner ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:climateZone ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:occupancy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:storeys ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:buildingDevice ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:buildingElement ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:service ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:tenant ;
+    ] ;
+  skos:prefLabel "Building" ;
+.
+bldg:Building_1
+  rdf:type bldg:Building ;
+  rdfs:label "Building 1" ;
+.
+bldg:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value" ;
+  rdfs:subClassOf epic:EnumeratedValue ;
+  skos:prefLabel "Enumerated value" ;
+.
+bldg:Organization
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#Organization> ;
+  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization> ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:address ;
+    ] ;
+.
+bldg:Service
+  rdf:type owl:Class ;
+  rdfs:label "Building" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/device---device_and_model_components#Device> ;
+      owl:onProperty bldg:serviceMeter ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:serviceKind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:serviceLocation ;
+    ] ;
+  skos:prefLabel "Building" ;
+.
+bldg:ServiceContract
+  rdf:type owl:Class ;
+  rdfs:label "Service Contract" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://siemens.com/schemas/kps/cim-tariff#PricingStructure> ;
+      owl:onProperty <http://siemens.com/schemas/kps/cim-tariff#pricingStructures> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:serviceCustomer ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bldg:serviceSupplier ;
+    ] ;
+  owl:equivalentClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#CustomerAgreement> ;
+  skos:prefLabel "Service contract" ;
+.
+bldg:Storey1
+  rdf:type ifc:IfcBuildingStorey ;
+.
+bldg:Storey2
+  rdf:type ifc:IfcBuildingStorey ;
+.
+bldg:Storey3
+  rdf:type ifc:IfcBuildingStorey ;
+.
+bldg:Storey4
+  rdf:type ifc:IfcBuildingStorey ;
+.
+bldg:Storey7
+  rdf:type ifc:IfcBuildingStorey ;
+.
+bldg:address
+  rdf:type rdf:Property ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          bldg:Building
+          epic:Organization
+        ) ;
+    ] ;
+  rdfs:label "address" ;
+  rdfs:range ifc:IfcPostalAddress ;
+  owl:sameAs ifc:buildingAddress_IfcBuilding ;
+  skos:prefLabel "address" ;
+.
+bldg:buildingDevice
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "building device" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          ifc:IfcElement
+          <https://w3id.org/saref#Device>
+        ) ;
+    ] ;
+.
+bldg:buildingElement
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "building element" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          ifc:IfcBuildingElement
+          <https://w3id.org/saref#BuildingObject>
+        ) ;
+    ] ;
+.
+bldg:climateZone
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "climate zone" ;
+  rdfs:range bldg:ClimateZoneType ;
+  skos:prefLabel "climate zone" ;
+.
+bldg:geoPosition
+  rdf:type rdf:Property ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "geographic position" ;
+  rdfs:range <http://schema.org/GeoCoordinates> ;
+  owl:sameAs <http://schema.org/geo> ;
+  skos:prefLabel "geographic position" ;
+.
+bldg:groupID
+  rdf:type rdf:Property ;
+  rdfs:label "The building's groupID" ;
+  rdfs:range xsd:string ;
+.
+bldg:occupancy
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "occupancy" ;
+  rdfs:range bldg:OccupancyType ;
+  skos:prefLabel "occupancy" ;
+.
+bldg:owner
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "owner" ;
+  rdfs:range bldg:Organization ;
+  skos:prefLabel "owner" ;
+.
+bldg:resourceID
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+bldg:service
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "service" ;
+  rdfs:range bldg:Service ;
+  skos:prefLabel "service" ;
+.
+bldg:serviceContract
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Service ;
+  rdfs:label "service contract" ;
+  rdfs:range bldg:ServiceContract ;
+  owl:equivalentProperty <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#hasCustomerRef> ;
+  skos:prefLabel "service contract" ;
+.
+bldg:serviceCustomer
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:ServiceContract ;
+  rdfs:label "service customer" ;
+  rdfs:range bldg:Organization ;
+  owl:equivalentProperty <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#hasCustomerRef> ;
+  skos:prefLabel "service customer" ;
+.
+bldg:serviceKind
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Service ;
+  rdfs:label "service kind" ;
+  rdfs:range bldg:ServiceType ;
+  skos:prefLabel "service kind" ;
+.
+bldg:serviceLocation
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Service ;
+  rdfs:label "service location" ;
+  rdfs:range bldg:Building ;
+  owl:equivalentProperty <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#hasServiceDeliveryPointsRef> ;
+  skos:prefLabel "service location" ;
+.
+bldg:serviceMeter
+  rdf:type owl:ObjectProperty ;
+.
+bldg:serviceSupplier
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:ServiceContract ;
+  rdfs:label "service supplier" ;
+  rdfs:range bldg:Organization ;
+  owl:equivalentProperty <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#hasServiceSuppliersRef> ;
+  skos:prefLabel "service supplier" ;
+.
+bldg:storeys
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "storeys" ;
+  rdfs:range bldg:StoreyType ;
+  skos:prefLabel "storeys" ;
+.
+bldg:tenant
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bldg:Building ;
+  rdfs:label "tenant" ;
+  rdfs:range bldg:Organization ;
+  skos:prefLabel "tenant" ;
+.

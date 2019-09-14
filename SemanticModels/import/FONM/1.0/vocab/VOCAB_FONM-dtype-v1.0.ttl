@@ -1,0 +1,242 @@
+# baseURI: http://fonm.org/1.0/vocab/dtype
+# imports: http://fonm.org/1.0/schema/core
+# imports: http://fonm.org/1.0/schema/dtype
+# imports: http://qudt.org/1.2/schema/qudt
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://fonm.org/1.0/schema/dtype#> .
+@prefix dtypedtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix nc: <https://siemens.com/schema/nc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/1.0/vocab/dtype>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The FONM 'dtype' vocabulary provides controlled vocabularies used by the FONM ontologies." ;
+  dc:subject "Type vocabulary" ;
+  dc:title "The FONM dtype vocabulary" ;
+  vaem:hasCatalogEntry voag:FONM-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This vocabulary is used reference FONM type enumerations." ;
+  vaem:namespace "http://fonm.org/1.0/vocab/dtype#" ;
+  vaem:namespacePrefix "fonm" ;
+  vaem:specificity "1"^^xsd:int ;
+  vaem:url "http://fonm.org/1.0/vocab/dtype"^^xsd:anyURI ;
+  rdfs:label "FONM dtype vocabulary" ;
+  owl:imports <http://fonm.org/1.0/schema/core> ;
+  owl:imports <http://fonm.org/1.0/schema/dtype> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:versionIRI <http://fonm.org/1.0/vocab/dtype> ;
+  owl:versionInfo "$Id: VOCAB_FONM_dtype-v1.0.ttl 4989 2018-08-23 21:56:40Z JackHodges $" ;
+.
+fonm:AboutDepth
+  rdf:type fonm:CartesianDimensionType ;
+  rdf:type fonm:DimensionType ;
+  rdf:type fonm:PolarDimensionType ;
+  rdfs:label "About Depth" ;
+  nc:literal "ABOUT-DEPTH" ;
+.
+fonm:AboutLength
+  rdf:type fonm:CartesianDimensionType ;
+  rdf:type fonm:DimensionType ;
+  rdf:type fonm:PolarDimensionType ;
+  rdfs:label "About Length" ;
+  nc:literal "ABOUT-LENGTH" ;
+.
+fonm:AboutRadius
+  rdf:type fonm:DimensionType ;
+  rdf:type fonm:PolarDimensionType ;
+  rdfs:label "About Radius" ;
+  nc:literal "ABOUT-RADIUS" ;
+.
+fonm:AboutWidth
+  rdf:type fonm:CartesianDimensionType ;
+  rdf:type fonm:DimensionType ;
+  rdfs:label "About Width" ;
+  nc:literal "ABOUT-WIDTH" ;
+.
+fonm:AlongDepth
+  rdf:type fonm:CartesianDimensionType ;
+  rdf:type fonm:DimensionType ;
+  rdfs:label "Along Depth" ;
+  nc:literal "ALONG-DEPTH" ;
+.
+fonm:AlongLength
+  rdf:type fonm:CartesianDimensionType ;
+  rdf:type fonm:DimensionType ;
+  rdf:type fonm:PolarDimensionType ;
+  rdfs:label "Along Length" ;
+  nc:literal "ALONG-LENGTH" ;
+.
+fonm:AlongRadius
+  rdf:type fonm:DimensionType ;
+  rdf:type fonm:PolarDimensionType ;
+  rdfs:label "Along Radius" ;
+  nc:literal "ALONG-RADIUS" ;
+.
+fonm:AlongWidth
+  rdf:type fonm:CartesianDimensionType ;
+  rdf:type fonm:DimensionType ;
+  rdfs:label "Along Width" ;
+  nc:literal "ALONG-WIDTH" ;
+.
+fonm:Circular
+  rdf:type fonm:ShapeType ;
+  qudt:literal "Circle" ;
+  rdfs:label "Circular" ;
+.
+fonm:DimensionScaleEnumeration
+  rdf:type fonm:DiscreteStateEnumeration ;
+  fonm:value fonm:AboutDepth ;
+  fonm:value fonm:AboutLength ;
+  fonm:value fonm:AboutRadius ;
+  fonm:value fonm:AboutWidth ;
+  fonm:value fonm:AlongDepth ;
+  fonm:value fonm:AlongLength ;
+  fonm:value fonm:AlongRadius ;
+  fonm:value fonm:AlongWidth ;
+  rdfs:label "Dimension scale enumeration" ;
+.
+fonm:DimvEnumeration
+  rdf:type fonm:DiscreteStateEnumeration ;
+  fonm:value fonm:FarLeft ;
+  fonm:value fonm:FarRight ;
+  fonm:value fonm:Left ;
+  fonm:value fonm:Middle ;
+  fonm:value fonm:NearLeft ;
+  fonm:value fonm:NearRight ;
+  fonm:value fonm:Right ;
+  rdfs:label "Dimv Enumeration" ;
+.
+fonm:DirectionScaleEnumeration
+  rdf:type fonm:DiscreteStateEnumeration ;
+  fonm:value fonm:Neg ;
+  fonm:value fonm:Pos ;
+  rdfs:label "Direction scale enumeration" ;
+.
+fonm:FarLeft
+  rdf:type fonm:DimvType ;
+  qudt:description "\\textit{Far Left} describes an extreme location on an axis/dimension." ;
+  qudt:literal "FAR-LEFT" ;
+  rdfs:label "Far Left" ;
+.
+fonm:FarRight
+  rdf:type fonm:DimvType ;
+  qudt:description "\\textit{Far Right} describes an extreme location on an axis/dimension." ;
+  qudt:literal "FAR-RIGHT" ;
+  rdfs:label "Far Right" ;
+.
+fonm:GreaterThanNominal
+  rdf:type fonm:SizeType ;
+  qudt:literal ">NOM" ;
+  rdfs:label "Greater Than Nominal" ;
+.
+fonm:Left
+  rdf:type fonm:DimvType ;
+  qudt:description "\\textit{Left} describes a mid location on an axis/dimension." ;
+  qudt:literal "LEFT" ;
+  rdfs:label "Left" ;
+.
+fonm:LessThanNominal
+  rdf:type fonm:SizeType ;
+  qudt:literal "<NOM" ;
+  rdfs:label "Less Than Nominal" ;
+.
+fonm:Middle
+  rdf:type fonm:DimvType ;
+  qudt:description "\\textit{Middle} describes the middle location on an axis/dimension." ;
+  qudt:literal "MIDDLE" ;
+  rdfs:label "Middle" ;
+.
+fonm:MuchGreaterThanNominal
+  rdf:type fonm:SizeType ;
+  qudt:literal ">>NOM" ;
+  rdfs:label "Much Greater Than Nominal" ;
+.
+fonm:MuchLessThanNominal
+  rdf:type fonm:SizeType ;
+  qudt:literal "<<NOM" ;
+  rdfs:label "Much Less Than Nominal" ;
+.
+fonm:NearLeft
+  rdf:type fonm:DimvType ;
+  qudt:description "\\textit{Near Left} describes a near middle location on an axis/dimension." ;
+  qudt:literal "NEAR-LEFT" ;
+  rdfs:label "Near Left" ;
+.
+fonm:NearRight
+  rdf:type fonm:DimvType ;
+  qudt:description "\\textit{Near Right} describes a near middle location on an axis/dimension." ;
+  qudt:literal "NEAR-RIGHT" ;
+  rdfs:label "Near Right" ;
+.
+fonm:Neg
+  rdf:type fonm:DirectionType ;
+  rdfs:label "Neg" ;
+.
+fonm:Nominal
+  rdf:type fonm:SizeType ;
+  qudt:literal "NOM" ;
+  rdfs:label "Nominal" ;
+.
+fonm:Parallelogram
+  rdf:type fonm:ShapeType ;
+  qudt:literal "Parallelogram" ;
+  rdfs:label "Parallelogram" ;
+.
+fonm:Pos
+  rdf:type fonm:DirectionType ;
+  rdfs:label "Pos" ;
+.
+fonm:Quadrilateral
+  rdf:type fonm:ShapeType ;
+  qudt:literal "Quadrilateral" ;
+  rdfs:label "Quadrilateral" ;
+.
+fonm:Rectangular
+  rdf:type fonm:ShapeType ;
+  qudt:literal "Rectangle" ;
+  rdfs:label "Rectangular" ;
+.
+fonm:Right
+  rdf:type fonm:DimvType ;
+  qudt:description "\\textit{Right} describes a mid location on an axis/dimension." ;
+  qudt:literal "RIGHT" ;
+  rdfs:label "Right" ;
+.
+fonm:ShapeEnumeration
+  rdf:type fonm:DiscreteStateEnumeration ;
+  fonm:value fonm:Circular ;
+  fonm:value fonm:Rectangular ;
+  fonm:value fonm:Triangular ;
+  rdfs:label "Shape Enumeration" ;
+.
+fonm:Trapezoidal
+  rdf:type fonm:ShapeType ;
+  qudt:literal "Trapezoid" ;
+  rdfs:label "Trapezoidal" ;
+.
+fonm:Triangular
+  rdf:type fonm:ShapeType ;
+  qudt:literal "Triangle" ;
+  rdfs:label "Triangular" ;
+.
+fonm:ValueEnumeration
+  rdf:type fonm:DiscreteStateEnumeration ;
+  fonm:value fonm:GreaterThanNominal ;
+  fonm:value fonm:LessThanNominal ;
+  fonm:value fonm:Nominal ;
+  rdfs:label "Value Enumeration" ;
+.

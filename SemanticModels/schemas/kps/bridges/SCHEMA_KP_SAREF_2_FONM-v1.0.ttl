@@ -1,0 +1,110 @@
+# baseURI: http://siemens.com/schemas/kps/bridges/saref2ssffonm
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: http://siemens.com/schemas/san
+# imports: http://siemens.com/schemas/ssf
+# imports: https://w3id.org/saref
+# prefix: saref2ssffonm
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix san: <http://siemens.com/schemas/san#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix saref2ssffonm: <http://siemens.com/schemas/kps/bridges/saref2ssffonm#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/bridges/saref2ssffonm>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The SAREF to SSF/FONM integration bridge ontology creates an interoperability path between the ontologies."^^xsd:string ;
+  dc:subject "An integration bridge between the SAREF and SSF/FONM models"^^xsd:string ;
+  dc:title "The SAREF to SSF/FONM integration bridge"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology an integration bridge between the SAREF and SSF/FONM models."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/bridges/saref2ssffonm#"^^xsd:string ;
+  vaem:namespacePrefix "saref2ssffonm"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/bridges/saref2ssffonm"^^xsd:anyURI ;
+  rdfs:label "SAREF to SSF/FONM Integration Bridge"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_SAREF_2_FONM-v1.0.ttl 1954 2018-08-21 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:imports <http://siemens.com/schemas/san> ;
+  owl:imports <http://siemens.com/schemas/ssf> ;
+  owl:imports <https://w3id.org/saref> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+saref2ssffonm:Actuation
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:ActuationFunction ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:ActuatingFunction ;
+.
+saref2ssffonm:Actuator
+  rdf:type owl:Class ;
+  rdfs:subClassOf san:Actuator ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:Actuator ;
+.
+saref2ssffonm:Command
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:Operation ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf saref:Command ;
+.
+saref2ssffonm:Device
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:FunctionalDevice ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:Device ;
+.
+saref2ssffonm:Gas
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#Gas> ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:Gas ;
+.
+saref2ssffonm:Sensing
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:SensingFunction ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:SensingFunction ;
+.
+saref2ssffonm:Sensor
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:SensingDevice ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:Sensor ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:SensingFunction ;
+      owl:onProperty ssf:deviceFunction ;
+    ] ;
+.
+saref2ssffonm:State
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:State ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:State ;
+.
+saref2ssffonm:Switch
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:SwitchActuatingDevice ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:Switch ;
+.
+saref2ssffonm:Task
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:Task ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:Task ;
+.
+saref2ssffonm:TemperatureSensor
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssf:TemperatureSensingDevice ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf saref:TemperatureSensor ;
+.

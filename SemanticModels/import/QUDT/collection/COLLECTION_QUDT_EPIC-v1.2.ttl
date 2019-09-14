@@ -1,0 +1,54 @@
+# baseURI: http://siemens.com/import/qudt/1.2/collection/epic
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/unit/thermodynamics
+# prefix: p1
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p1: <http://siemens.com/import/qudt/1.2#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/import/qudt/1.2/collection/epic>
+  rdf:type owl:Ontology ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/acoustics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/cgs> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/currency> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/electromagnetism> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/environmental-science> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/imperial> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/mechanics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/si> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/solid-state-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/space-and-time> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/thermodynamics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/uscustomary> ;
+  owl:imports <http://qudt.org/1.2/vocab/characteristic-numbers> ;
+#  owl:imports <http://qudt.org/1.2/vocab/isq/quantity/solid-state-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/acoustics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/atmospheric-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/cgs> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/characteristic-numbers> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/electricity-and-magnetism> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/energy> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/imperial> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/iso> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/mass> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/mechanics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/planck> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/propulsion> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/si> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/space-and-time> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/uscustomary> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/thermodynamics> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

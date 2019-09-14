@@ -1,0 +1,74 @@
+# baseURI: http://siemens.com/schemas/kps/adapters/ssf2brick
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: http://siemens.com/schemas/ssf
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# prefix: ssf2brick
+
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix ssf2brick: <http://siemens.com/schemas/kps/adapters/ssf2brick#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/adapters/ssf2brick>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The SSF to BRICK mapping creates an interoperability path between these two ontologies."^^xsd:string ;
+  dc:subject "mappings SSF device to BRICK integration mapping"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology creates an interoperability mapping between the SSF device model and the external BRICK building model."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/adapters/ssf2brick#"^^xsd:string ;
+  vaem:namespacePrefix "ssf2brick"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/adapters/ssf2brick"^^xsd:anyURI ;
+  rdfs:label "SSF to BRICK Mapping"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_SSF_2_BRICK-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://siemens.com/schemas/ssf> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ssf2brick:Actuator
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+.
+ssf2brick:MotionSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Motion sensing device" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ssf:MotionSensingDevice ;
+  rdfs:subClassOf brick:Motion_Sensor ;
+.
+ssf2brick:PressureSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Pressure sensing device" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ssf:PressureSensingDevice ;
+  rdfs:subClassOf brick:Pressure_Sensor ;
+.
+ssf2brick:SensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Sensing device" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ssf:SensingDevice ;
+  rdfs:subClassOf brick:Sensor ;
+.
+ssf2brick:TemperatureSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Temperature sensing device" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ssf:TemperatureSensingDevice ;
+  rdfs:subClassOf brick:Temperature_Sensor ;
+.
+ssf2brick:VoltageSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Voltage sensing device" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ssf:VoltageSensingDevice ;
+  rdfs:subClassOf brick:Voltage_Sensor ;
+.

@@ -1,0 +1,2995 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/space-and-time
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/unit/space-and-time>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Irene Polikoff"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Units of Measure"^^xsd:string ;
+  dc:title "QUDT Space andTime Units Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Space and Time Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science and Engineering Units"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used space and time units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate:  $"^^vaem:dateUnion ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/unit/space-and-time> ;
+.
+qudt:SOU_TIME
+  rdf:type qudt:SystemOfUnits ;
+  rdfs:label "TIME System of Units"^^xsd:string ;
+.
+quantity:Time
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Time"^^xsd:string ;
+.
+unit:AC-FT
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "ac-ft"^^xsd:string ;
+  qudt:code "0045"^^xsd:string ;
+  qudt:conversionMultiplier 1233.4818375475202e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An acre-foot is a unit of volume commonly used in the United States in reference to large-scale water resources, such as reservoirs, aqueducts, canals, sewer flow capacity, and river flows. It is defined by the volume of one acre of surface area to a depth of one foot. Since the acre is defined as a chain by a furlong ($66 ft \\times 660 ft$) the acre-foot is exactly $43,560 cubic feet$. For irrigation water, the volume of $1 ft \\times 1 \\; ac = 43,560 \\; ft^{3} (1,233.482 \\; m^{3}, 325,851 \\; US gal)$."^^xsd:string ;
+  qudt:designator "U-150-0045"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "ac-ft"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Acre Foot"^^xsd:string ;
+  skos:prefLabel "acre-foot"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Acre-foot> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-35> ;
+.
+unit:ACRE
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "ac"^^xsd:string ;
+  qudt:code "0040"^^xsd:string ;
+  qudt:conversionMultiplier "4046.8564224"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The acre is a unit of area in a number of different systems, including the imperial and U.S. customary systems. Its international symbol is ac. The most commonly used acres today are the international acre and, in the United States, the survey acre. The most common use of the acre is to measure tracts of land. One international acre is equal to 4046.8564224 square metres. "^^xsd:string ;
+  qudt:designator "U-150-0040"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "ac"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Acre"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Acre> ;
+  skos:prefLabel "acre"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Acre?oldid=495387342> ;
+.
+unit:ANGSTROM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "angstrom"^^xsd:string ;
+  qudt:code "0085"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Angstr\\ddot{o}m} (symbol $\\AA$) is an internationally recognized unit of length equal to $0.1 nanometre$ or $1 \\times 10^{-10}$ metres.  Although accepted for use, it is not formally defined within the International System of Units(SI). The angstrom is often used in the natural sciences to express the sizes of atoms, lengths of chemical bonds and the wavelengths of electromagnetic radiation, and in technology for the dimensions of parts of integrated circuits. It is also commonly used in structural biology."^^xsd:string ;
+  qudt:designator "U-150-0085"^^xsd:string ;
+  qudt:latexDefinition "\\AA"^^xsd:string ;
+  qudt:literal "angstrom"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "\\AA"^^xsd:string ;
+  qudt:uneceCommonCode "A11"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  skos:exactMatch <http://dbpedia.org/resource/%C3%85ngstr%C3%B6m> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ångström?oldid=436192495> ;
+.
+unit:ARE
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:CGS-Unit ;
+  qudt:abbreviation "are"^^xsd:string ;
+  qudt:code "0090"^^xsd:string ;
+  qudt:conversionMultiplier "100"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An 'are' is a unit of area equal to 0.02471 acre and 100 centare."^^xsd:string ;
+  qudt:designator "U-150-0090"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "a"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Are"^^xsd:string ;
+  skos:prefLabel "are"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.anidatech.com/units.html> ;
+.
+unit:AU
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "AU"^^xsd:string ;
+  qudt:code "0095"^^xsd:string ;
+  qudt:conversionMultiplier 1.495978706916E11 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An astronomical unit (abbreviated as AU, au, a.u., or ua) is a unit of length equal to $149,597,870,700 metres$ ($92,955,807.273 mi$) or approximately the mean Earth Sun distance."^^xsd:string ;
+  qudt:designator "U-150-0095"^^xsd:string ;
+  qudt:longDescription "An astronomical unit (abbreviated as AU, au, a.u., or ua) is a unit of length equal to 149,597,870,700 metres (92,955,807.273 mi) or approximately the mean Earth Sun distance. The symbol ua is recommended by the International Bureau of Weights and Measures, and the international standard ISO 80000, while au is recommended by the International Astronomical Union, and is more common in Anglosphere countries. In general, the International System of Units only uses capital letters for the symbols of units which are named after individual scientists, while au or a.u. can also mean atomic unit or even arbitrary unit. However, the use of AU to refer to the astronomical unit is widespread. The astronomical constant whose value is one astronomical unit is referred to as unit distance and is given the symbol A. [Wikipedia]"^^xsd:string ;
+  qudt:longDescription "An astronomical unit (abbreviated as AU, au, a.u., or ua) is a unit of length equal to 149,597,870,700 metres (92,955,807.273 mi) or approximately the mean Earth Sun distance. The symbol ua is recommended by the International Bureau of Weights and Measures, and the international standard ISO 80000, while au is recommended by the International Astronomical Union, and is more common in Anglosphere countries. In general, the International System of Units only uses capital letters for the symbols of units which are named after individual scientists, while au or a.u. can also mean atomic unit or even arbitrary unit. However, the use of AU to refer to the astronomical unit is widespread. The astronomical constant whose value is one astronomical unit is referred to as unit distance and is given the symbol A."^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "AU"^^xsd:string ;
+  qudt:symbol "au"^^xsd:string ;
+  qudt:uneceCommonCode "A12"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/astronomy> ;
+  skos:exactMatch <http://dbpedia.org/resource/Astronomical_unit> ;
+  skos:prefLabel "astronomical-unit"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Astronomical_unit> ;
+.
+unit:ArcMIN
+  rdf:type qudt:AngleUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "arcMin"^^xsd:string ;
+  qudt:baseUnitDimensions "m^{-1}"^^xsd:string ;
+  qudt:code "1195"^^xsd:string ;
+  qudt:conversionMultiplier "0.000290888209"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A minute of arc, arcminute, or minute arc (MOA), is a unit of angular measurement equal to one sixtieth (1/60) of one degree (circle/21,600), or $\\pi /10,800 radians$. In turn, a second of arc or arcsecond is one sixtieth (1/60) of one minute of arc. Since one degree is defined as one three hundred and sixtieth (1/360) of a rotation, one minute of arc is 1/21,600 of a rotation. "^^xsd:string ;
+  qudt:designator "U-150-1195"^^xsd:string ;
+  qudt:exactMatch unit:ArcMIN ;
+  qudt:exactMatch unit:MINUTE_ANGLE ;
+  qudt:quantityKind quantity:AngularMeasurement ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  qudt:siUnitsExpression "1"^^xsd:string ;
+  qudt:symbol "arcMin"^^xsd:string ;
+  qudt:uneceCommonCode "D61"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Arc Minute"^^xsd:string ;
+  owl:sameAs unit:RAD ;
+  skos:prefLabel "arc-minute"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Minute_of_arc> ;
+.
+unit:ArcSEC
+  rdf:type qudt:AngleUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "arcSec"^^xsd:string ;
+  qudt:code "1600"^^xsd:string ;
+  qudt:conversionMultiplier 4.84813681E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Arc Second} is a unit of angular measure, also called the \\textit{second of arc}, equal to $1/60 \\; arcminute$. One arcsecond is a very small angle: there are \\SI{1296000}{\\second} in a circle. The SI defines \\si{\\second} as the symbol for the time unit and recommends \\textit{double prime} ($''$) as the symbol for the arcsecond. The HTML encoding is \\texttt{&Prime;}. The symbol has become common in astronomy, where very small angles are stated in milliarcseconds ($mas$)."^^xsd:string ;
+  qudt:designator "U-150-1600"^^xsd:string ;
+  qudt:exactMatch unit:ArcSEC ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  qudt:symbol "\""^^xsd:string ;
+  qudt:uneceCommonCode "D62"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Arc Second"^^xsd:string ;
+  skos:prefLabel "arc-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Minute_of_arc#Symbols.2C_abbreviations_and_subdivisions> ;
+.
+unit:BARN
+  rdf:type qudt:AreaUnit ;
+  qudt:abbreviation "b"^^xsd:string ;
+  qudt:code "0115"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-28 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A barn (symbol b) is a unit of area. Originally used in nuclear physics for expressing the cross sectional area of nuclei and nuclear reactions, today it is used in all fields of high energy physics to express the cross sections of any scattering process, and is best understood as a measure of the probability of interaction between small particles. A barn is defined as $10^{28} m^2 (100 fm^2)$ and is approximately the cross sectional area of a uranium nucleus. The barn is also the unit of area used in nuclear quadrupole resonance and nuclear magnetic resonance to quantify the interaction of a nucleus with an electric field gradient. While the barn is not an SI unit, it is accepted for use with the SI due to its continued use in particle physics."^^xsd:string ;
+  qudt:designator "U-150-0115"^^xsd:string ;
+  qudt:isAllowedUnitOfSystem qudt:SOU_SI ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "b"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Barn"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Barn> ;
+  skos:prefLabel "barn"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Barn?oldid=492907677> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Barn_(unit)> ;
+.
+unit:BARREL
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "bbl"^^xsd:string ;
+  qudt:code "0120"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A barrel is one of several units of volume, with dry barrels, fluid barrels (UK beer barrel, U.S. beer barrel), oil barrel, etc. The volume of some barrel units is double others, with various volumes in the range of about 100-200 litres (22-44 imp gal; 26-53 US gal). {@en}"^^xsd:string ;
+  qudt:designator "U-150-0120"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "bbl"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Barrel"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Barrel> ;
+  skos:prefLabel "barrel"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Barrel?oldid=494614619> ;
+.
+unit:Bushel
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "bu"^^xsd:string ;
+  qudt:code "0255"^^xsd:string ;
+  qudt:conversionMultiplier "0.03523907"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A bushel is an imperial and U.S. customary unit of dry volume, equivalent in each of these systems to 4 pecks or 8 gallons. It is used for volumes of dry commodities (not liquids), most often in agriculture. It is abbreviated as bsh. or bu. In modern usage, the dry volume is usually only nominal, with bushels referring to standard weights instead."^^xsd:string ;
+  qudt:designator "U-150-0255"^^xsd:string ;
+  qudt:quantityKind quantity:DryVolume ;
+  qudt:symbol "bu"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Bushel"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bushel> ;
+  skos:prefLabel "bushel"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bushel?oldid=476704875> ;
+.
+unit:CHAIN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "ch"^^xsd:string ;
+  qudt:code "0380"^^xsd:string ;
+  qudt:conversionMultiplier "20.1168"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A chain is a unit of length. It measures 66 feet, or 22 yards, or 100 links, or 4 rods. There are 10 chains in a furlong, and 80 chains in one statute mile. An acre is the area of 10 square chains (that is, an area of one chain by one furlong). The chain has been used for several centuries in Britain and in some other countries influenced by British practice."^^xsd:string ;
+  qudt:designator "U-150-0380"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "ch"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Chain"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Chain> ;
+  skos:prefLabel "chain"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Chain?oldid=494116185> ;
+.
+unit:CM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "cm"^^xsd:string ;
+  qudt:code "2016"^^xsd:string ;
+  qudt:conversionMultiplier "0.01"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A centimetre is a unit of length in the metric system, equal to one hundredth of a metre, which is the SI base unit of length. Centi is the SI prefix for a factor of 10.  The centimetre is the base unit of length in the now deprecated centimetre-gram-second (CGS) system of units."^^xsd:string ;
+  qudt:designator "U-150-2016"^^xsd:string ;
+  qudt:literal "centimeter"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "cm"^^xsd:string ;
+  qudt:uneceCommonCode "CMT"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Centimeter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Centimetre> ;
+  skos:prefLabel "centimeter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Centimetre?oldid=494931891> ;
+.
+unit:CM-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "cm/s"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-2 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Centimeter per Second}' is a C.G.S System unit for  'Linear Velocity' expressed as $cm/s$."^^xsd:string ;
+  qudt:latexDefinition "$cm/s$"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "cm/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Centimeter per Second"^^xsd:string ;
+  skos:prefLabel "centimeter-per-second"^^xsd:string ;
+.
+unit:CM-PER-SEC2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "cm/s^2"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-2 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Centimeter per Second Squared} is a C.G.S System unit for  \\textit{Linear Acceleration} expressed as $cm/s^2$."^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "cm/s^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Centimeter per Second Squared"^^xsd:string ;
+  skos:prefLabel "centimeter-per-second-squared"^^xsd:string ;
+.
+unit:CM2
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "sqcm"^^xsd:string ;
+  qudt:code "2038"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of area equal to that of a square, of sides 1cm"^^xsd:string ;
+  qudt:designator "U-150-2038"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "cm^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Centimeter"^^xsd:string ;
+  skos:prefLabel "square-centimeter"^^xsd:string ;
+.
+unit:CM2-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:TimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "cm^{2}m"^^xsd:string ;
+  qudt:code "2042"^^xsd:string ;
+  qudt:conversionMultiplier 0.0060e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square centimeter minute}' is a C.G.S System unit for  'Area Time' expressed as $cm^{2}m$."^^xsd:string ;
+  qudt:designator "U-150-2042"^^xsd:string ;
+  qudt:quantityKind quantity:AreaTime ;
+  qudt:symbol "cm^{2}m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Centimeter Minute"^^xsd:string ;
+  skos:prefLabel "square-centimeter-minute"^^xsd:string ;
+.
+unit:CM2-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:TimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "cm^2 . s"^^xsd:string ;
+  qudt:code "2024"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Centimeter Second}' is a C.G.S System unit for  'Area Time' expressed as $cm^2 . s$."^^xsd:string ;
+  qudt:designator "U-150-2024"^^xsd:string ;
+  qudt:quantityKind quantity:AreaTime ;
+  qudt:symbol "cm^2 . s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Centimeter Second"^^xsd:string ;
+  skos:prefLabel "square-centimeter-second"^^xsd:string ;
+.
+unit:CM3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "cubic-cm"^^xsd:string ;
+  qudt:code "2028"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The CGS unit of volume, equal to 10-6 cubic meter, 1 milliliter, or about 0.061 023 7 cubic inch"^^xsd:string ;
+  qudt:designator "U-150-2028"^^xsd:string ;
+  qudt:symbol "cm^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Centimeter"^^xsd:string ;
+  skos:prefLabel "cubic-centimeter"^^xsd:string ;
+.
+unit:CORD
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "cord"^^xsd:string ;
+  qudt:code "0395"^^xsd:string ;
+  qudt:conversionMultiplier "3.62"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The cord is a unit of measure of dry volume used in Canada and the United States to measure firewood and pulpwood. A cord is the amount of wood that, when 'ranked and well stowed' (arranged so pieces are aligned, parallel, touching and compact), occupies a volume of 128 cubic feet (3.62 m). This corresponds to a well stacked woodpile 4 feet (122 cm) wide, 4 feet (122 cm) high, and 8 feet (244 cm) long; or any other arrangement of linear measurements that yields the same volume. The name cord probably comes from the use of a cord or string to measure it. "^^xsd:string ;
+  qudt:designator "U-150-0395"^^xsd:string ;
+  qudt:quantityKind quantity:DryVolume ;
+  qudt:symbol "C"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cord"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Cord> ;
+  skos:prefLabel "cord"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cord?oldid=490232340> ;
+.
+unit:CircularMil
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:CGS-Unit ;
+  qudt:abbreviation "cmil"^^xsd:string ;
+  qudt:code "0385"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A circular mil is a unit of area, equal to the area of a circle with a diameter of one mil (one thousandth of an inch). It is a convenient unit for referring to the area of a wire with a circular cross section, because the area in circular mils can be calculated without reference to pi ($\\pi$). The area in circular mils, A, of a circle with a diameter of d mils, is given by the formula: Electricians in Canada and the United States are familiar with the circular mil because the National Electrical Code (NEC) uses the circular mil to define wire sizes larger than 0000 AWG. In many NEC publications and uses, large wires may be expressed in thousands of circular mils, which is abbreviated in two different ways: MCM or kcmil. For example, one common wire size used in the NEC has a cross-section of 250,000 circular mils, written as 250 kcmil or 250 MCM, which is the first size larger than 0000 AWG used within the NEC. "^^xsd:string ;
+  qudt:designator "U-150-0385"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "cmil"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Circular Mil"^^xsd:string ;
+  skos:prefLabel "circular-mil"^^xsd:string ;
+.
+unit:DAY
+  rdf:type qudt:TimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "d"^^xsd:string ;
+  qudt:code "0490"^^xsd:string ;
+  qudt:conversionMultiplier "86400"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Mean solar day"^^xsd:string ;
+  qudt:designator "U-150-0490"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "d"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Day"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Day> ;
+  skos:prefLabel "day"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Day?oldid=494970012> ;
+.
+unit:DEG2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:SolidAngleUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "deg^{2}"^^xsd:string ;
+  qudt:conversionMultiplier "0.00030461742"^^xsd:double ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:description "A square degree is a non-SI unit measure of solid angle. It is denoted in various ways, including deg, sq. deg. and $\\circ^2$. Just as degrees are used to measure parts of a circle, square degrees are used to measure parts of a sphere. Analogous to one degree being equal to $\\pi /180 radians$, a square degree is equal to ($\\pi /180)$ or about 1/3283 steradian. The number of square degrees in a whole sphere is or approximately 41 253 deg. This is the total area of the 88 constellations in the list of constellations by area. For example, observed from the surface of the Earth, the Moon has a diameter of approximately $0.5^\\circ$, so it covers a solid angle of approximately 0.196 deg, which is $4.8 \\times 10$ of the total sky sphere."^^xsd:string ;
+  qudt:quantityKind quantity:SolidAngle ;
+  qudt:symbol "deg^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square degree"^^xsd:string ;
+  skos:prefLabel "square-degree"^^xsd:string ;
+.
+unit:DIOPTER
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:CurvatureUnit ;
+  qudt:abbreviation "D"^^xsd:string ;
+  qudt:code "2064"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-2064"^^xsd:string ;
+  qudt:quantityKind quantity:Curvature ;
+  qudt:symbol "D"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Diopter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Dioptre> ;
+  skos:prefLabel "diopter"^^xsd:string ;
+.
+unit:DWT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "dwt"^^xsd:string ;
+  qudt:code "1340"^^xsd:string ;
+  qudt:conversionMultiplier "0.00155517384"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1340"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "dwt"^^xsd:string ;
+  rdfs:label "Penny Weight"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pennyweight> ;
+  skos:prefLabel "penny-weight"^^xsd:string ;
+.
+unit:Decimeter
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "decimeter"^^xsd:string ;
+  qudt:conversionMultiplier "0.1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A decimeter is a tenth of a meter."^^xsd:string ;
+  qudt:hasMultiplier unit:Deci ;
+  qudt:literal "decimeter"^^xsd:string ;
+  qudt:uneceCommonCode "DMT"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Decimeter"^^xsd:string ;
+  skos:prefLabel "Decimeter"^^xsd:string ;
+  skos:prefLabel "decimeter"^^xsd:string ;
+.
+unit:Deg
+  rdf:type qudt:AngleUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "deg"^^xsd:string ;
+  qudt:code "0510"^^xsd:string ;
+  qudt:conversionMultiplier "0.0174532925"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A degree (in full, a degree of arc, arc degree, or arcdegree), usually denoted by $^\\circ$ (the degree symbol), is a measurement of plane angle, representing 1/360 of a full rotation; one degree is equivalent to  $2\\pi /360 rad$, $0.017453 rad$. It is not an SI unit, as the SI unit for angles is radian, but is an accepted SI unit."^^xsd:string ;
+  qudt:designator "U-150-0510"^^xsd:string ;
+  qudt:literal "degree [unit of angle]"^^xsd:string ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  qudt:symbol "\\,^{\\circ}"^^xsd:string ;
+  qudt:uneceCommonCode "DD"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Degree"^^xsd:string ;
+  skos:prefLabel "degree"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-331> ;
+.
+unit:Deg-PER-HR
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "deg/h"^^xsd:string ;
+  qudt:code "2181"^^xsd:string ;
+  qudt:conversionMultiplier 4.84813681E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree per Hour}' is an Imperial unit for  'Angular Velocity' expressed as $deg/h$."^^xsd:string ;
+  qudt:designator "U-150-2181"^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  qudt:symbol "deg/h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Degree per Hour"^^xsd:string ;
+  skos:prefLabel "degree-per-hour"^^xsd:string ;
+.
+unit:Deg-PER-MIN
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "deg-per-min"^^xsd:string ;
+  qudt:conversionMultiplier "0.000290888209"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of measure for the rate of change of plane angle, $d\\omega / dt$,  in durations of one minute.The vector $\\omega$ is directed along the axis of rotation in the direction for which the rotation is clockwise."^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Degree per Minute"^^xsd:string ;
+  skos:prefLabel "degree-per-minute"^^xsd:string ;
+.
+unit:Deg-PER-SEC
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "deg/s"^^xsd:string ;
+  qudt:code "2180"^^xsd:string ;
+  qudt:conversionMultiplier "0.0174532925"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree per Second}' is an Imperial unit for  'Angular Velocity' expressed as $deg/s$."^^xsd:string ;
+  qudt:designator "U-150-2180"^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  qudt:symbol "deg/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Degree per Second"^^xsd:string ;
+  skos:prefLabel "degree-per-second"^^xsd:string ;
+.
+unit:Deg-PER-SEC2
+  rdf:type qudt:AngularAccelerationUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "deg/s^2"^^xsd:string ;
+  qudt:code "2170"^^xsd:string ;
+  qudt:conversionMultiplier "0.0174532925"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Degree per Second Squared} is an Imperial unit for \\textit{Angular Acceleration} expressed as $deg/s^2$."^^xsd:string ;
+  qudt:designator "U-150-2170"^^xsd:string ;
+  qudt:quantityKind quantity:AngularAcceleration ;
+  qudt:symbol "deg/s^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Degree per Second Squared"^^xsd:string ;
+  skos:prefLabel "degree-per-second-squared"^^xsd:string ;
+.
+unit:FATH
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "fath"^^xsd:string ;
+  qudt:code "0610"^^xsd:string ;
+  qudt:conversionMultiplier "1.8288"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A fathom = 1.8288 meters, is a unit of length in the imperial and the U.S. customary systems, used especially for measuring the depth of water. There are two yards in an imperial or U.S. fathom. Originally based on the distance between the man's outstretched arms, the size of a fathom has varied slightly depending on whether it was defined as a thousandth of an (Admiralty) nautical mile or as a multiple of the imperial yard.  Abbreviations: f, fath, fm, fth, fthm."^^xsd:string ;
+  qudt:designator "U-150-0610"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "fath"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Fathom"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Fathom> ;
+  skos:prefLabel "fathom"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fathom?oldid=493265429> ;
+.
+unit:FBM
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "FBM"^^xsd:string ;
+  qudt:code "0135"^^xsd:string ;
+  qudt:conversionMultiplier "0.002360"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The board-foot is a specialized unit of measure for the volume of lumber in the United States and Canada. It is the volume of a one-foot length of a board one foot wide and one inch thick. Board-foot can be abbreviated FBM (for 'foot, board measure'), BDFT, or BF. Thousand board-feet can be abbreviated as MFBM, MBFT or MBF. "^^xsd:string ;
+  qudt:designator "U-150-0135"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "Bf"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Board Foot"^^xsd:string ;
+  skos:prefLabel "board-foot"^^xsd:string ;
+.
+unit:FT
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft"^^xsd:string ;
+  qudt:code "0625"^^xsd:string ;
+  qudt:conversionMultiplier "0.3048"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A foot is a unit of length defined as being 0.3048 m exactly and used in the imperial system of units and United States customary units. It is subdivided into 12 inches. The foot is still officially used in Canada and still commonly used in the United Kingdom, although the latter has partially metricated its units of measurement. "^^xsd:string ;
+  qudt:designator "U-150-0625"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "ft"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Foot"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Foot_%28length%29> ;
+  skos:prefLabel "foot"^^xsd:string ;
+.
+unit:FT-LBF-SEC
+  rdf:type qudt:AngularMomentumUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf / s"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:AngularMomentum ;
+  qudt:symbol "lbf / s"^^xsd:string ;
+  rdfs:label "Foot Pound Force Second"^^xsd:string ;
+  skos:prefLabel "foot-pound-force-second"^^xsd:string ;
+.
+unit:FT-PER-HR
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft/hr"^^xsd:string ;
+  qudt:code "0645"^^xsd:string ;
+  qudt:conversionMultiplier 8.466666666666667E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot per Hour}' is an Imperial unit for  'Linear Velocity' expressed as $ft/hr$."^^xsd:string ;
+  qudt:designator "U-150-0645"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "ft/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Foot per Hour"^^xsd:string ;
+  skos:prefLabel "foot-per-hour"^^xsd:string ;
+.
+unit:FT-PER-MIN
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft/min"^^xsd:string ;
+  qudt:code "0650"^^xsd:string ;
+  qudt:conversionMultiplier 0.00508e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot per Minute}' is an Imperial unit for  'Linear Velocity' expressed as $ft/min$."^^xsd:string ;
+  qudt:designator "U-150-0650"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "ft/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Foot per Minute"^^xsd:string ;
+  skos:prefLabel "foot-per-minute"^^xsd:string ;
+.
+unit:FT-PER-SEC
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft/s"^^xsd:string ;
+  qudt:code "0655"^^xsd:string ;
+  qudt:conversionMultiplier 0.3048e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The foot per second (plural feet per second) is a unit of both speed (scalar) and velocity (vector quantity, which includes direction). It expresses the distance in feet (ft) traveled or displaced, divided by the time in seconds (s, or sec). The corresponding unit in the International System of Units (SI) is the metre per second. Abbreviations include ft/s, ft/sec and fps, and the rarely used scientific notation ft s."^^xsd:string ;
+  qudt:designator "U-150-0655"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "ft/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Foot per Second"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Foot_per_second> ;
+  skos:prefLabel "foot-per-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Foot_per_second?oldid=491316573> ;
+.
+unit:FT-PER-SEC2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft/s^{2}"^^xsd:string ;
+  qudt:code "0660"^^xsd:string ;
+  qudt:conversionMultiplier 0.3048e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Foot per Second Squared} is an Imperial unit for \\textit{Linear Acceleration} expressed as $ft/s^2$."^^xsd:string ;
+  qudt:designator "U-150-0660"^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "ft/s^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Foot per Second Squared"^^xsd:string ;
+  skos:prefLabel "foot-per-second-squared"^^xsd:string ;
+.
+unit:FT2
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft^{2}"^^xsd:string ;
+  qudt:code "1670"^^xsd:string ;
+  qudt:conversionMultiplier "0.09290304"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The square foot (plural square feet; abbreviated $ft^2$ or sq ft) is an imperial unit and U.S. customary unit of area, used mainly in the United States, Canada, United Kingdom, Hong Kong, Bangladesh, India, Pakistan and Afghanistan. It is defined as the area of a square with sides of 1 foot in length."^^xsd:string ;
+  qudt:designator "U-150-1670"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Foot"^^xsd:string ;
+  skos:prefLabel "square-foot"^^xsd:string ;
+.
+unit:FT3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "ft^{3}"^^xsd:string ;
+  qudt:code "0425"^^xsd:string ;
+  qudt:conversionMultiplier 0.028316846592e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The cubic foot is an Imperial and US customary unit of volume, used in the United States and the United Kingdom. It is defined as the volume of a cube with sides of one foot (0.3048 m) in length. To calculate cubic feet multiply length X width X height. "^^xsd:string ;
+  qudt:designator "U-150-0425"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "ft^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Foot"^^xsd:string ;
+  skos:prefLabel "cubic-foot"^^xsd:string ;
+.
+unit:FT3-PER-MIN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "ft^{3}/min"^^xsd:string ;
+  qudt:code "0430"^^xsd:string ;
+  qudt:conversionMultiplier 4.719474432000001E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Cubic Foot per Minute}' is an Imperial unit for  'Volume Per Unit Time' expressed as $ft^{3}/min$."^^xsd:string ;
+  qudt:designator "U-150-0430"^^xsd:string ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+  qudt:symbol "ft^{3}/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Foot per Minute"^^xsd:string ;
+  skos:prefLabel "cubic-foot-per-minute"^^xsd:string ;
+.
+unit:FT3-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "ft^{3}/s"^^xsd:string ;
+  qudt:code "0435"^^xsd:string ;
+  qudt:conversionMultiplier 0.028316846592000004e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Cubic Foot per Second} is an Imperial unit for  \\textit{Volume Per Unit Time} expressed as $ft^{3}/s$."^^xsd:string ;
+  qudt:designator "U-150-0435"^^xsd:string ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+  qudt:symbol "ft^3/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Foot per Second"^^xsd:string ;
+  skos:prefLabel "cubic-foot-per-second"^^xsd:string ;
+.
+unit:FUR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:US-CustomaryUnit ;
+  qudt:abbreviation "fur"^^xsd:string ;
+  qudt:code "0381"^^xsd:string ;
+  qudt:conversionMultiplier "201.1680"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A furlong is a measure of distance in imperial units and U.S. customary units equal to one-eighth of a mile, equivalent to 220 yards, 660 feet, 40 rods, or 10 chains. The exact value of the furlong varies slightly among English-speaking countries. Five furlongs are approximately 1 kilometre (1.0058 km is a closer approximation). Since the original definition of the metre was one-quarter of one ten-millionth of the circumference of the Earth (along the great circle coincident with the meridian of longitude passing through Paris), the circumference of the Earth is about 40,000 km or about 200,000 furlongs. "^^xsd:string ;
+  qudt:designator "U-150-0381"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "fur"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Furlong"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Furlong> ;
+  skos:prefLabel "furlong"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Furlong?oldid=492237369> ;
+.
+unit:Femtometer
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "fm"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-15 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{femtometre} is an SI unit of length equal to $10^{-15} meter$. This distance can also be called \\textit{fermi} and was so named in honour of Enrico Fermi and is often encountered in nuclear physics as a characteristic of this scale. The symbol for the fermi is also $fm$."^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "fm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Femtometer"^^xsd:string ;
+  owl:sameAs unit:Fermi ;
+  skos:closeMatch <http://dbpedia.org/resource/Metre> ;
+  skos:prefLabel "femtometer"^^xsd:string ;
+.
+unit:Fermi
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "fm"^^xsd:string ;
+  qudt:conversionCoefficient "0.0"^^xsd:double ;
+  qudt:conversionMultiplier 1.0E-15 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{fermi}, or \\textit{femtometer} (other spelling femtometre, symbol fm) is an SI unit of length equal to $10^{-15} metre$. This distance is often encountered in nuclear physics as a characteristic of this scale. The symbol for the fermi is also $fm$."^^xsd:string ;
+  qudt:designator "U150-615"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "fm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "fermi"^^xsd:string ;
+  owl:sameAs unit:Femtometer ;
+  skos:prefLabel "fermi"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fermi_(unit)> ;
+.
+unit:FootUSSurvey
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "ftUS"^^xsd:string ;
+  qudt:conversionMultiplier "0.3048006"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Survey Foot}' is a C.G.S System unit for  'Length' expressed as $ftUS$."^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "ft"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Survey Foot"^^xsd:string ;
+  skos:prefLabel "us-survey-foot"^^xsd:string ;
+.
+unit:FractionalArea
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:SolidAngleUnit ;
+  qudt:abbreviation "fa"^^xsd:string ;
+  qudt:conversionMultiplier "12.5663706"^^xsd:double ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:description "'\\textit{Fractional area}' is a C.G.S System unit for  'Solid Angle' expressed as $fa$."^^xsd:string ;
+  qudt:quantityKind quantity:SolidAngle ;
+  qudt:symbol "fa"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Fractional area"^^xsd:string ;
+  skos:prefLabel "fractional-area"^^xsd:string ;
+.
+unit:GAL
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  qudt:abbreviation "Gal"^^xsd:string ;
+  qudt:code "0705"^^xsd:string ;
+  qudt:conversionMultiplier "0.01"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Gal}, sometimes called \\textit{galileo}, is the unit of acceleration of free fall used extensively in the science of gravimetry. The gal is defined as 1 centimeter per second squared ($1 cm/s^2$). The milliGal (mGal) and microGal refer respectively to one thousandth and one millionth of a Gal."^^xsd:string ;
+  qudt:designator "U-150-0705"^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "a"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Gal"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gal> ;
+  skos:prefLabel "gal"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gal?oldid=482010741> ;
+.
+unit:GAL-PER-D
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "gal/d"^^xsd:string ;
+  qudt:code "0715"^^xsd:string ;
+  qudt:conversionMultiplier 4.38126389E-8 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Gallon per Day}' is a C.G.S System unit for  'Volume Per Unit Time' expressed as $gal/d$."^^xsd:string ;
+  qudt:designator "U-150-0715"^^xsd:string ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+  qudt:symbol "gal/d"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Gallon per Day"^^xsd:string ;
+  skos:prefLabel "us-gallon-per-day"^^xsd:string ;
+.
+unit:GAL-PER-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "gal/min"^^xsd:string ;
+  qudt:code "0720"^^xsd:string ;
+  qudt:conversionMultiplier 6.30902E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Gallon per Minute}' is a C.G.S System unit for  'Volume Per Unit Time' expressed as $gal/min$."^^xsd:string ;
+  qudt:designator "U-150-0720"^^xsd:string ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+  qudt:symbol "gal/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Gallon per Minute"^^xsd:string ;
+  skos:prefLabel "us-gallon-per-minute"^^xsd:string ;
+.
+unit:GAL-US
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "galUS"^^xsd:string ;
+  qudt:code "0725"^^xsd:string ;
+  qudt:conversionMultiplier "0.003785412"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Gallon}' is a C.G.S System unit for  'Liquid Volume' expressed as $galUS$."^^xsd:string ;
+  qudt:designator "U-150-0725"^^xsd:string ;
+  qudt:quantityKind quantity:LiquidVolume ;
+  qudt:symbol "gal"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Gallon"^^xsd:string ;
+  skos:prefLabel "us-gallon"^^xsd:string ;
+.
+unit:GAL_IMP
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "galIMP"^^xsd:string ;
+  qudt:code "0710"^^xsd:string ;
+  qudt:conversionMultiplier 4.54609E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Imperial Gallon}' is an Imperial unit for  'Liquid Volume' expressed as $galIMP$."^^xsd:string ;
+  qudt:designator "U-150-0710"^^xsd:string ;
+  qudt:quantityKind quantity:LiquidVolume ;
+  qudt:symbol "gal"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Imperial Gallon"^^xsd:string ;
+  skos:prefLabel "imperial-gallon"^^xsd:string ;
+.
+unit:GON
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PlaneAngleUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "gon"^^xsd:string ;
+  qudt:code "0750"^^xsd:string ;
+  qudt:conversionMultiplier "0.015707963267949"^^xsd:double ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:description "'\\textit{Gon}' is a C.G.S System unit for  'Plane Angle' expressed as $gon$."^^xsd:string ;
+  qudt:designator "U-150-0750"^^xsd:string ;
+  qudt:literal "gon"^^xsd:string ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  qudt:symbol "gon"^^xsd:string ;
+  qudt:uneceCommonCode "A91"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Gon"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gon> ;
+  skos:prefLabel "gon"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gon?oldid=424098171> ;
+.
+unit:GRAD
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PlaneAngleUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "grad"^^xsd:string ;
+  qudt:code "0755"^^xsd:string ;
+  qudt:conversionMultiplier "0.0157079633"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Grad}' is a C.G.S System unit for  'Plane Angle' expressed as $grad$."^^xsd:string ;
+  qudt:designator "U-150-0755"^^xsd:string ;
+  qudt:exactMatch unit:GON ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  qudt:symbol "grad"^^xsd:string ;
+  qudt:uneceCommonCode "A91"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Grad"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Grad> ;
+  skos:prefLabel "grad"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Grad?oldid=490906645> ;
+.
+unit:GRADE
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DimensionlessUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "gr"^^xsd:string ;
+  qudt:code "0760"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "the tangent of an angle of inclination multiplied by 100"^^xsd:string ;
+  qudt:designator "U-150-0760"^^xsd:string ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+  qudt:symbol "gr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Grade"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Grade> ;
+  skos:prefLabel "grade"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Grade?oldid=485504533> ;
+.
+unit:GigaHZ
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  qudt:abbreviation "GHz"^^xsd:string ;
+  qudt:code "3035"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The hertz (symbol Hz) is the SI unit of frequency defined as the number of cycles per second of a periodic phenomenon. A GigaHertz is $10^{9} hz$."^^xsd:string ;
+  qudt:designator "U-150-3035"^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "GHz"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Gigahertz"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hertz> ;
+  skos:prefLabel "gigahertz"^^xsd:string ;
+.
+unit:Gravity
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  qudt:abbreviation "G"^^xsd:string ;
+  qudt:code "2100"^^xsd:string ;
+  qudt:conversionMultiplier "9.80665"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Gravity}' is a C.G.S System unit for  'Linear Acceleration' expressed as $G$."^^xsd:string ;
+  qudt:designator "U-150-2100"^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "G"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Gravity"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Gravitation> ;
+  skos:prefLabel "gravity"^^xsd:string ;
+.
+unit:HA
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ha"^^xsd:string ;
+  qudt:code "0785"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The customary metric unit of land area, equal to 100 ares. One hectare is a square hectometer, that is, the area of a square 100 meters on each side: exactly 10 000 square meters or approximately 107 639.1 square feet, 11 959.9 square yards, or 2.471 054 acres."^^xsd:string ;
+  qudt:designator "U-150-0785"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "ha"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Hectare"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hectare> ;
+  skos:prefLabel "hectare"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hectare?oldid=494256954> ;
+.
+unit:HR
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:TimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "hr"^^xsd:string ;
+  qudt:code "0830"^^xsd:string ;
+  qudt:conversionMultiplier "3600.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The hour (common symbol: h or hr) is a unit of measurement of time. In modern usage, an hour comprises 60 minutes, or 3,600 seconds. It is approximately 1/24 of a mean solar day. An hour in the Universal Coordinated Time (UTC) time standard can include a negative or positive leap second, and may therefore have a duration of 3,599 or 3,601 seconds for adjustment purposes. Although it is not a standard defined by the International System of Units, the hour is a unit accepted for use with SI, represented by the symbol h."^^xsd:string ;
+  qudt:designator "U-150-0830"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Hour"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hour> ;
+  skos:prefLabel "Hour"^^xsd:string ;
+  skos:prefLabel "hour"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hour?oldid=495040268> ;
+.
+unit:HR-FT2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:TimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "hr-ft^{2}"^^xsd:string ;
+  qudt:code "0840"^^xsd:string ;
+  qudt:conversionMultiplier "334.450944"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Hour Square Foot}' is an Imperial unit for  'Area Time' expressed as $hr-ft^{2}$."^^xsd:string ;
+  qudt:designator "U-150-0840"^^xsd:string ;
+  qudt:quantityKind quantity:AreaTime ;
+  qudt:symbol "hr-ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Hour Square Foot"^^xsd:string ;
+  skos:prefLabel "hour-square-foot"^^xsd:string ;
+.
+unit:HZ
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  qudt:abbreviation "Hz"^^xsd:string ;
+  qudt:baseUnitDimensions "s^{-1}"^^xsd:string ;
+  qudt:code "3020"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The hertz (symbol Hz) is the SI unit of frequency defined as the number of cycles per second of a periodic phenomenon. One of its most common uses is the description of the sine wave, particularly those used in radio and audio applications, such as the frequency of musical tones. The word \"hertz\" is named for Heinrich Rudolf Hertz, who was the first to conclusively prove the existence of electromagnetic waves."^^xsd:string ;
+  qudt:designator "U-150-3020"^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "Hz"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Hertz"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hertz> ;
+  skos:prefLabel "hertz"^^xsd:string ;
+.
+unit:HourSidereal
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "hoursidereal"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:IN
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "in"^^xsd:string ;
+  qudt:code "0860"^^xsd:string ;
+  qudt:conversionMultiplier "0.0254"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An inch is the name of a unit of length in a number of different systems, including Imperial units, and United States customary units. There are 36 inches in a yard and 12 inches in a foot. Corresponding units of area and volume are the square inch and the cubic inch."^^xsd:string ;
+  qudt:designator "U-150-0860"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "in"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Inch"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Inch> ;
+  skos:prefLabel "inch"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Inch?oldid=492522790> ;
+.
+unit:IN-PER-SEC
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "in-per-sec"^^xsd:string ;
+  qudt:code "2066"^^xsd:string ;
+  qudt:conversionMultiplier 0.0254e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The inch per second is a unit of speed or velocity. It expresses the distance in inches (in) traveled or displaced, divided by time in seconds (s, or sec). The equivalent SI unit is the metre per second. Abbreviations include in/s, in/sec, ips, and less frequently in s."^^xsd:string ;
+  qudt:designator "U-150-2066"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Inch per Second"^^xsd:string ;
+.
+unit:IN-PER-SEC2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "in/s2"^^xsd:string ;
+  qudt:code "1111"^^xsd:string ;
+  qudt:conversionMultiplier 0.0254e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Inch per second squared} is an Imperial unit for \\textit{Linear Acceleration} expressed as $in/s^2$."^^xsd:string ;
+  qudt:designator "U-150-1111"^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "in/s^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Inch per second squared"^^xsd:string ;
+  skos:prefLabel "inch-per-second-squared"^^xsd:string ;
+.
+unit:IN2
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "in^{2}"^^xsd:string ;
+  qudt:code "1700"^^xsd:string ;
+  qudt:conversionMultiplier 6.4516E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A square inch is a unit of area, equal to the area of a square with sides of one inch. The following symbols are used to denote square inches: square in, sq inches, sq inch, sq in inches/-2, inch/-2, in/-2, inches^2, $inch^2$, $in^2$, $inches^2$, $inch^2$, $in^2$ or in some cases $\"^2$. The square inch is a common unit of measurement in the United States and the United Kingdom."^^xsd:string ;
+  qudt:designator "U-150-1700"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "in^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Inch"^^xsd:string ;
+  skos:prefLabel "square-inch"^^xsd:string ;
+.
+unit:IN3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "in^{3}"^^xsd:string ;
+  qudt:code "0440"^^xsd:string ;
+  qudt:conversionMultiplier 1.6387064E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The cubic inch is a unit of measurement for volume in the Imperial units and United States customary units systems. It is the volume of a cube with each of its three sides being one inch long. The cubic inch and the cubic foot are still used as units of volume in the United States, although the common SI units of volume, the liter, milliliter, and cubic meter, are continually replacing them, especially in manufacturing and high technology. One cubic foot is equal to exactly 1728 cubic inches."^^xsd:string ;
+  qudt:designator "U-150-0440"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "in^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Inch"^^xsd:string ;
+  skos:prefLabel "cubic-inch"^^xsd:string ;
+.
+unit:IN3-PER-MIN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "in^{3}/min"^^xsd:string ;
+  qudt:code "0445"^^xsd:string ;
+  qudt:conversionMultiplier 2.7311773333333333E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Cubic Inch per Minute}' is an Imperial unit for  'Volume Per Unit Time' expressed as $in^{3}/min$."^^xsd:string ;
+  qudt:designator "U-150-0445"^^xsd:string ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+  qudt:symbol "in^{3}/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Inch per Minute"^^xsd:string ;
+  skos:prefLabel "cubic-inch-per-minute"^^xsd:string ;
+.
+unit:KHZ
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  qudt:abbreviation "KHz"^^xsd:string ;
+  qudt:code "3025"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilohertz}' is a C.G.S System unit for  'Frequency' expressed as $KHz$."^^xsd:string ;
+  qudt:designator "U-150-3025"^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "KHz"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Kilohertz"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Hertz> ;
+  skos:prefLabel "kilohertz"^^xsd:string ;
+.
+unit:KM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "km"^^xsd:string ;
+  qudt:code "1091"^^xsd:string ;
+  qudt:conversionMultiplier "1000"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A common metric unit of length or distance. One kilometer equals exactly 1000 meters, about 0.621 371 19 mile, 1093.6133 yards, or 3280.8399 feet. Oddly, higher multiples of the meter are rarely used; even the distances to the farthest galaxies are usually measured in kilometers. "^^xsd:string ;
+  qudt:designator "U-150-1099"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "km"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Kilometer "^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kilometre> ;
+  skos:prefLabel "kilometer"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kilometre?oldid=494821851> ;
+.
+unit:KM-PER-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "km/hr"^^xsd:string ;
+  qudt:code "1015"^^xsd:string ;
+  qudt:conversionMultiplier 0.2777777777777778e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilometer per Hour}' is a C.G.S System unit for  'Linear Velocity' expressed as $km/hr$."^^xsd:string ;
+  qudt:designator "U-150-1015"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "km/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Kilometer per Hour"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kilometres_per_hour> ;
+  skos:prefLabel "kilometer-per-hour"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kilometres_per_hour?oldid=487674812> ;
+.
+unit:KM-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "km/s"^^xsd:string ;
+  qudt:code "1106"^^xsd:string ;
+  qudt:conversionMultiplier 1000.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilometer per Second}' is a C.G.S System unit for  'Linear Velocity' expressed as $km/s$."^^xsd:string ;
+  qudt:designator "U-150-1106"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "km/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Kilometer per Second"^^xsd:string ;
+  skos:prefLabel "kilometer-per-second"^^xsd:string ;
+.
+unit:KM3-PER-SEC2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "km^3/s^2"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Cubic Kilometer per Second Squared} is a C.G.S System unit for \\textit{Standard Gravitational Parameter} expressed as $km$^3/s^2$."^^xsd:string ;
+  qudt:quantityKind quantity:StandardGravitationalParameter ;
+  qudt:symbol "km^3/s^2"^^xsd:string ;
+  rdfs:label "Cubic Kilometer per Second Squared"^^xsd:string ;
+  skos:prefLabel "cubic-kilometer-per-second-squared"^^xsd:string ;
+.
+unit:KNOT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kn"^^xsd:string ;
+  qudt:code "1050"^^xsd:string ;
+  qudt:conversionMultiplier 0.5144444444444445e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The knot (pronounced 'not') is a unit of speed equal to one nautical mile (1.852 km) per hour, approximately 1.151 mph. The abbreviation $kn$ is preferred by the International Hydrographic Organization (IHO), which includes every major sea-faring nation; however, the abbreviations kt (singular) and kts (plural) are also widely used. However, use of the abbreviation kt for knot conflicts with the SI symbol for kilotonne. The knot is a non-SI unit accepted for use with the International System of Units (SI). Worldwide, the knot is used in meteorology, and in maritime and air navigation - for example, a vessel travelling at 1 knot along a meridian travels one minute of geographic latitude in one hour. Etymologically, the term knot derives from counting the number of knots in the line that unspooled from the reel of a chip log in a specific time. "^^xsd:string ;
+  qudt:designator "U-150-1050"^^xsd:string ;
+  qudt:isAllowedUnitOfSystem qudt:SOU_SI ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "kn"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Knot"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Knot> ;
+  skos:prefLabel "knot"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Knot?oldid=495066194> ;
+.
+unit:KNOT-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kt/s"^^xsd:string ;
+  qudt:code "2115"^^xsd:string ;
+  qudt:conversionMultiplier 0.5144444444444445e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Knot per Second}' is a unit for  'Linear Acceleration' expressed as $kt/s$."^^xsd:string ;
+  qudt:designator "U-150-2115"^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "kt/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Knot per Second"^^xsd:string ;
+  skos:prefLabel "knot-per-second"^^xsd:string ;
+.
+unit:LITER
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "L"^^xsd:string ;
+  qudt:code "1070"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{litre} (American spelling: \\textit{liter}; SI symbol l or L) is a non-SI metric system unit of volume equal to $1 cubic decimetre$ ($dm^3$), 1,000 cubic centimetres ($cm^3$) or $1/1000 cubic metre$. If the lower case L is used as the symbol, it is sometimes rendered as a cursive \"l\" to help distinguish it from the capital \"I\", although this usage has no official approval by any international bureau."^^xsd:string ;
+  qudt:designator "U-150-1070"^^xsd:string ;
+  qudt:quantityKind quantity:LiquidVolume ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Liter"^^xsd:string ;
+  owl:sameAs unit:LITER ;
+  skos:altLabel "litre"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Litre> ;
+  skos:prefLabel "liter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Litre?oldid=494846400> ;
+.
+unit:LY
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ly"^^xsd:string ;
+  qudt:code "1065"^^xsd:string ;
+  qudt:conversionMultiplier 9.4607304725808E15 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of length defining the distance, in meters, that light travels in a vacuum in one year."^^xsd:string ;
+  qudt:designator "U-150-1065"^^xsd:string ;
+  qudt:literal "lightyear"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "ly"^^xsd:string ;
+  qudt:uneceCommonCode "B57"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Light Year"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Light-year> ;
+  skos:prefLabel "light-year"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Light-year?oldid=495083584> ;
+.
+unit:LiquidCupUS
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "cup"^^xsd:string ;
+  qudt:code "0475"^^xsd:string ;
+  qudt:conversionMultiplier 2.3658825E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Liquid Cup}' is a C.G.S System unit for  'Liquid Volume' expressed as $cup$."^^xsd:string ;
+  qudt:designator "U-150-0475"^^xsd:string ;
+  qudt:quantityKind quantity:LiquidVolume ;
+  qudt:symbol "cup"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Liquid Cup"^^xsd:string ;
+  skos:prefLabel "us-liquid-cup"^^xsd:string ;
+.
+unit:LiquidOunceUS
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "oz"^^xsd:string ;
+  qudt:code "1320"^^xsd:string ;
+  qudt:conversionMultiplier 2.95735296E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Liquid Ounce}' is a C.G.S System unit for  'Liquid Volume' expressed as $oz$."^^xsd:string ;
+  qudt:designator "U-150-1320"^^xsd:string ;
+  qudt:quantityKind quantity:LiquidVolume ;
+  qudt:symbol "oz"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Liquid Ounce"^^xsd:string ;
+  skos:prefLabel "us-liquid-ounce"^^xsd:string ;
+.
+unit:LiquidPintUS
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "pt"^^xsd:string ;
+  qudt:code "1375"^^xsd:string ;
+  qudt:conversionMultiplier 4.731765E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Liquid Pint}' is a C.G.S System unit for  'Liquid Volume' expressed as $pt$."^^xsd:string ;
+  qudt:designator "U-150-1375"^^xsd:string ;
+  qudt:quantityKind quantity:LiquidVolume ;
+  qudt:symbol "pt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Liquid Pint"^^xsd:string ;
+  skos:prefLabel "us-liquid-pint"^^xsd:string ;
+.
+unit:LiquidQuartUS
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "qt"^^xsd:string ;
+  qudt:code "1545"^^xsd:string ;
+  qudt:conversionMultiplier 9.46353E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Liquid Quart}' is a C.G.S System unit for  'Liquid Volume' expressed as $qt$."^^xsd:string ;
+  qudt:designator "U-150-1545"^^xsd:string ;
+  qudt:quantityKind quantity:LiquidVolume ;
+  qudt:symbol "qt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Liquid Quart"^^xsd:string ;
+  skos:prefLabel "us-liquid-quart"^^xsd:string ;
+.
+unit:M
+  rdf:type qudt:BaseUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m"^^xsd:string ;
+  qudt:code "1090"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The metric and SI base unit of distance.   The meter is equal to approximately 1.093 613 3 yards, 3.280 840 feet, or 39.370 079 inches."^^xsd:string ;
+  qudt:designator "U-000-1090"^^xsd:string ;
+  qudt:longDescription "The metric and SI base unit of distance.  The 17th General Conference on Weights and Measures in 1983 defined the meter as that distance that makes the speed of light in a vacuum equal to exactly 299 792 458 meters per second. The speed of light in a vacuum, $c$, is one of the fundamental constants of nature. The meter is equal to approximately 1.093 613 3 yards, 3.280 840 feet, or 39.370 079 inches."^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "m"^^xsd:string ;
+  qudt:uneceCommonCode "MTR"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Meter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Metre> ;
+  skos:prefLabel "meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Metre?oldid=495145797> ;
+.
+unit:M-KG
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MechanicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m-kg"^^xsd:string ;
+  qudt:code "1100"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1100"^^xsd:string ;
+  qudt:quantityKind quantity:LengthMass ;
+  qudt:symbol "m-kg"^^xsd:string ;
+  rdfs:label "Meter Kilogram"^^xsd:string ;
+  skos:prefLabel "meter-kilogram"^^xsd:string ;
+.
+unit:M-PER-HR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m/h"^^xsd:string ;
+  qudt:conversionMultiplier "0.000277777778"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Metre per hour is a metric unit of both speed (scalar) and velocity (Vector (geometry)). Its symbol is m/h or mu00b7h-1 (not to be confused with the imperial unit symbol mph. By definition, an object travelling at a speed of 1 m/h for an hour would move 1 metre."^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "m h^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Meter per Hour"^^xsd:string ;
+  skos:prefLabel "meter-per-hour"^^xsd:string ;
+.
+unit:M-PER-MIN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m/min"^^xsd:string ;
+  qudt:conversionMultiplier "0.0166666667"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Meter Per Minute (m/min) is a unit in the category of Velocity. It is also known as meter/minute, meters per minute, metre per minute, metres per minute. Meter Per Minute (m/min) has a dimension of LT-1 where L is length, and T is time. It can be converted to the corresponding standard SI unit m/s by multiplying its value by a factor of 0.016666666666"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "m min^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Meter per Minute"^^xsd:string ;
+  skos:prefLabel "meter-per-minute"^^xsd:string ;
+.
+unit:M-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m/s"^^xsd:string ;
+  qudt:code "1105"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description """Metre per second is an SI derived unit of both speed (scalar) and velocity (vector quantity which specifies both magnitude and a specific direction), defined by distance in metres divided by time in seconds.
+The official SI symbolic abbreviation is mu00b7s-1, or equivalently either m/s."""^^xsd:string ;
+  qudt:designator "U-150-1105"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "m s^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Meter per Second"^^xsd:string ;
+  skos:prefLabel "meter-per-second"^^xsd:string ;
+.
+unit:M-PER-SEC2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m/s^2"^^xsd:string ;
+  qudt:code "1110"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{meter per second squared} is the unit of acceleration in the International System of Units (SI). As a derived unit it is composed from the SI base units of length, the metre, and the standard unit of time, the second. Its symbol is written in several forms as $m/s^2$, or $m s^{-2}$. As acceleration, the unit is interpreted physically as change in velocity or speed per time interval, that is, \\textit{metre per second per second}."^^xsd:string ;
+  qudt:designator "U-150-1110"^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "m s^{-2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Meter per Second Squared"^^xsd:string ;
+  skos:prefLabel "meter-per-second-squared"^^xsd:string ;
+.
+unit:M2
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "sq-m"^^xsd:string ;
+  qudt:code "1705"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The S I unit of area is the square metre."^^xsd:string ;
+  qudt:designator "U-150-1705"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "m^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Meter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Square_metre> ;
+  skos:prefLabel "square-meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Square_metre?oldid=490945508> ;
+.
+unit:M2-SR
+  rdf:type qudt:AreaAngleUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m^{2}-sr"^^xsd:string ;
+  qudt:code "1725"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Meter Steradian}' is a unit for  'Area Angle' expressed as $m^{2}-sr$."^^xsd:string ;
+  qudt:designator "U-150-1725"^^xsd:string ;
+  qudt:quantityKind quantity:AreaAngle ;
+  qudt:symbol "m^{2}-sr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Meter Steradian"^^xsd:string ;
+  skos:prefLabel "square-meter-steradian"^^xsd:string ;
+.
+unit:M3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "m^{3}"^^xsd:string ;
+  qudt:code "0450"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of volume, equal to 106 cm3, 1000 liters, 35.3147 ft3, or 1.307 95 yd3. A cubic meter holds about 264.17 U.S. liquid gallons or 219.99 British Imperial gallons."^^xsd:string ;
+  qudt:designator "U-150-0450"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "m^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Meter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Cubic_metre> ;
+  skos:prefLabel "cubic-meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cubic_metre?oldid=490956678> ;
+.
+unit:M3-PER-HR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "m^{3}/h"^^xsd:string ;
+  qudt:code "2010"^^xsd:string ;
+  qudt:conversionMultiplier 2.777777777777778E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Cubic Meter Per Hour (m3/h) is a unit in the category of Volume flow rate. It is also known as cubic meters per hour, cubic metre per hour, cubic metres per hour, cubic meter/hour, cubic metre/hour, cubic meter/hr, cubic metre/hr, flowrate. Cubic Meter Per Hour (m3/h) has a dimension of L3T-1 where L is length, and T is time. It can be converted to the corresponding standard SI unit m3/s by multiplying its value by a factor of 0.00027777777."^^xsd:string ;
+  qudt:designator "U-150-2010"^^xsd:string ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+  qudt:symbol "m^{3}/h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Meter per Hour"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-hour"^^xsd:string ;
+.
+unit:M3-PER-KG
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "m^{3}/kg"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Cubic Meter Per Kilogram (m3/kg) is a unit in the category of Specific volume. It is also known as cubic meters per kilogram, cubic metre per kilogram, cubic metres per kilogram, cubic meter/kilogram, cubic metre/kilogram. This unit is commonly used in the SI unit system. Cubic Meter Per Kilogram (m3/kg) has a dimension of M-1L3 where M is mass, and L is length. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:quantityKind quantity:SpecificVolume ;
+  qudt:symbol "m^{3}/kg"^^xsd:string ;
+  rdfs:label "Cubic Meter per Kilogram"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-kilogram"^^xsd:string ;
+.
+unit:M3-PER-KG-SEC2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:GravitationalAttractionUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m^{3} kg^{-1} s^{-2}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Ads by Google"^^xsd:string ;
+  qudt:quantityKind quantity:GravitationalAttraction ;
+  qudt:symbol "m^{3} kg^{-1} s^{-2}"^^xsd:string ;
+  rdfs:label "Cubic Meter per Kilogram Second Squared"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-kilogram-second-squared"^^xsd:string ;
+.
+unit:M3-PER-MOL
+  rdf:type qudt:ChemistryUnit ;
+  qudt:abbreviation "m^{3} mol^{-1}"^^xsd:string ;
+  qudt:code "0912"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The molar volume, symbol Vm, is the volume occupied by one mole of a substance (chemical element or chemical compound) at a given temperature and pressure. It is equal to the molar mass (M) divided by the mass density ( u03c1 ). It has the SI unit cubic metres per mole (m3/mol), although it is more practical to use the units cubic decimetres per mole (dm3/mol) for gases and cubic centimetres per mole (cm3/mol) for liquids and solids."^^xsd:string ;
+  qudt:designator "U-030-0912"^^xsd:string ;
+  qudt:quantityKind quantity:MolarVolume ;
+  qudt:symbol "m^{3} mol^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Meter per Mole"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-mole"^^xsd:string ;
+.
+unit:M3-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "m^{3}/s"^^xsd:string ;
+  qudt:code "0455"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A cubic metre per second ($m^{3}s^{-1}, m^{3}/s$), cumecs or cubic meter per second in American English) is a derived SI unit of flow rate equal to that of a stere or cube with sides of one metre ( u0303 39.37 in) in length exchanged or moving each second. It is popularly used for water flow, especially in rivers and streams, and fractions for HVAC values measuring air flow."^^xsd:string ;
+  qudt:designator "U-150-0455"^^xsd:string ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+  qudt:symbol "m^{3}/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Meter per Second"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-second"^^xsd:string ;
+.
+unit:M3-PER-SEC2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "m^3/s^2"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Cubic Meter per Second Squared} is a C.G.S System unit for  \\textit{Standard Gravitational Parameter} expressed as $m$^3/s^2$"^^xsd:string ;
+  qudt:quantityKind quantity:StandardGravitationalParameter ;
+  qudt:symbol "m^3/s^2"^^xsd:string ;
+  rdfs:label "Cubic Meter per Second Squared"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-second-squared"^^xsd:string ;
+.
+unit:MACH
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DimensionlessUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mach"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Mach}' is a C.G.S System unit for  'Dimensionless Ratio' expressed as $mach$."^^xsd:string ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Mach"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mach> ;
+  skos:prefLabel "mach"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mach?oldid=492058934> ;
+.
+unit:MAS
+  rdf:type qudt:AngleUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "arcMin"^^xsd:string ;
+  qudt:baseUnitDimensions "m.m^{-4}"^^xsd:string ;
+  qudt:conversionMultiplier 0.290888209e-06 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A minute of arc, arcminute, or minute arc (MOA), is a unit of angular measurement equal to one sixtieth (1/60) of one degree (circle/21,600), or $\\pi /10,800 radians$. In turn, a second of arc or arcsecond is one sixtieth (1/60) of one minute of arc. Since one degree is defined as one three hundred and sixtieth (1/360) of a rotation, one minute of arc is 1/21,600 of a rotation.  the milliarcsecond, abbreviated mas, is used in astronomy."^^xsd:string ;
+  qudt:quantityKind quantity:AngularMeasurement ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  qudt:symbol "mas"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "MilliArc Second"^^xsd:string ;
+  owl:sameAs unit:RAD ;
+  skos:prefLabel "milliarc-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Minute_of_arc> ;
+.
+unit:MHz
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  qudt:abbreviation "MHz"^^xsd:string ;
+  qudt:code "3030"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Megahertz}' is a C.G.S System unit for  'Frequency' expressed as $MHz$."^^xsd:string ;
+  qudt:designator "U-150-3030"^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "MHz"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Megahertz"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Hertz> ;
+  skos:prefLabel "megahertz"^^xsd:string ;
+.
+unit:MI-PER-HR
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mi/hr"^^xsd:string ;
+  qudt:code "1150"^^xsd:string ;
+  qudt:conversionMultiplier "0.44704"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Miles per hour is an imperial unit of speed expressing the number of statute miles covered in one hour. It is currently the standard unit used for speed limits, and to express speeds generally, on roads in the United Kingdom and the United States. A common abbreviation is mph or MPH."^^xsd:string ;
+  qudt:designator "U-150-1150"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "mi/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Mile per Hour"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Miles_per_hour> ;
+  skos:prefLabel "mile-per-hour"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Miles_per_hour?oldid=482840548> ;
+.
+unit:MI-PER-MIN
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mi/min"^^xsd:string ;
+  qudt:code "1155"^^xsd:string ;
+  qudt:conversionMultiplier "26.8224"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Miles per minute is an imperial unit of speed expressing the number of statute miles covered in one minute."^^xsd:string ;
+  qudt:designator "U-150-1155"^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "mi/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Mile per Minute"^^xsd:string ;
+  skos:prefLabel "mile-per-minute"^^xsd:string ;
+.
+unit:MI-US
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "miUS"^^xsd:string ;
+  qudt:code "1160"^^xsd:string ;
+  qudt:conversionMultiplier "1609.347"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The exact length of the land mile varied slightly among English-speaking countries until the international yard and pound agreement in 1959 established the yard as exactly 0.9144 metres, giving a mile of exactly 1,609.344 metres. The United States adopted this international mile for most purposes, but retained the pre-1959 mile for some land-survey data, terming it the US survey mile. In the US, statute mile formally refers to the survey mile, about 3.219 mm (1/8 inch) longer than the international mile (the international mile is exactly 0.0002\\% less than the US survey mile)."^^xsd:string ;
+  qudt:designator "U-150-1160"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "mi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Mile US Statute"^^xsd:string ;
+  skos:prefLabel "us-statute-mile"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mile> ;
+.
+unit:MI2
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "square-mile"^^xsd:string ;
+  qudt:code "1730"^^xsd:string ;
+  qudt:conversionMultiplier "2589988.11"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The square mile (abbreviated as sq mi and sometimes as mi) is an imperial and US unit of measure for an area equal to the area of a square of one statute mile. It should not be confused with miles square, which refers to the number of miles on each side squared. For instance, 20 miles square (20 × 20 miles) is equal to 400 square miles. One square mile is equivalent to: 4,014,489,600 square inches 27,878,400 square feet, 3,097,600 square yards, 640 acres, 258.9988110336 hectares, 2560 roods, 25,899,881,103.36 square centimetres, 2,589,988.110336 square metres, 2.589988110336 square kilometres When applied to a portion of the earth's surface, which is curved rather than flat, 'square mile' is an informal synonym for section. "^^xsd:string ;
+  qudt:designator "U-150-1730"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "mi^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Mile"^^xsd:string ;
+  skos:prefLabel "square-mile"^^xsd:string ;
+.
+unit:MI3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "mi^{3}"^^xsd:string ;
+  qudt:code "0460"^^xsd:string ;
+  qudt:conversionMultiplier 4.16818183E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A cubic mile is an imperial / U.S. customary unit of volume, used in the United States, Canada, and the United Kingdom. It is defined as the volume of a cube with sides of 1 mile in length. "^^xsd:string ;
+  qudt:designator "U-150-0460"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "mi^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Mile"^^xsd:string ;
+  skos:prefLabel "cubic-mile"^^xsd:string ;
+.
+unit:MIL
+  rdf:type qudt:PlaneAngleUnit ;
+  qudt:abbreviation "mil"^^xsd:string ;
+  qudt:code "1135"^^xsd:string ;
+  qudt:conversionMultiplier "0.000490873852"^^xsd:double ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:description "The Mil unit of plane angle, as defined by NATO to be 1/6400 of a circle."^^xsd:string ;
+  qudt:designator "U-150-1135"^^xsd:string ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  rdfs:label "Mil Angle (NATO)"^^xsd:string ;
+  skos:prefLabel "mil-angle-(nato)"^^xsd:string ;
+.
+unit:MIN
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "min"^^xsd:string ;
+  qudt:code "1205"^^xsd:string ;
+  qudt:conversionMultiplier "60.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A minute is a unit of measurement of time. The minute is a unit of time equal to 1/60 (the first sexagesimal fraction of an hour or 60 seconds. In the UTC time scale, a minute on rare occasions has 59 or 61 seconds; see leap second. The minute is not an SI unit; however, it is accepted for use with SI units. The SI symbol for minute or minutes is min (for time measurement) or the prime symbol after a number, e.g. 5' (for angle measurement, even if it is informally used for time)."^^xsd:string ;
+  qudt:designator "U-150-1205"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Minute"^^xsd:string ;
+  owl:sameAs unit:MIN ;
+  skos:prefLabel "minute"^^xsd:string ;
+.
+unit:MINUTE_ANGLE
+  rdf:type qudt:AngleUnit ;
+  rdf:type qudt:CGS-Unit ;
+  qudt:abbreviation "minute-angle (')"^^xsd:string ;
+  qudt:conversionMultiplier "0.0002908882"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:literal "minute [unit of angle]"^^xsd:string ;
+  qudt:symbol "'"^^xsd:string ;
+  qudt:uneceCommonCode "D61"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Minute Angle"^^xsd:string ;
+  skos:prefLabel "minute-angle"^^xsd:string ;
+.
+unit:MI_INT
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "miINT"^^xsd:string ;
+  qudt:code "1140"^^xsd:string ;
+  qudt:conversionMultiplier "1609.344"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The exact length of the land mile varied slightly among English-speaking countries until the international yard and pound agreement in 1959 established the yard as exactly 0.9144 metres, giving a mile of exactly 1,609.344 metres. The United States adopted this international mile for most purposes, but retained the pre-1959 mile for some land-survey data, terming it the US survey mile. In the US, statute mile formally refers to the survey mile, about 3.219 mm (1/8 inch) longer than the international mile (the international mile is exactly 0.0002% less than the US survey mile)."^^xsd:string ;
+  qudt:designator "U-150-1140"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "mi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "International Mile"^^xsd:string ;
+  skos:prefLabel "international-mile"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mile> ;
+.
+unit:MO
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "MO"^^xsd:string ;
+  qudt:code "0490"^^xsd:string ;
+  qudt:conversionMultiplier "2551442.976"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of time corresponding approximately to one cycle of the moon's phases, or about 30 days or 4 weeks. Also known as the 'Synodic Month' and calculated as 29.53059 days."^^xsd:string ;
+  qudt:designator "U-150-0490"^^xsd:string ;
+  qudt:latexDefinition "mo_{j}"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "mo"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Month"^^xsd:string ;
+  owl:sameAs unit:SynodicMonth ;
+  skos:exactMatch <http://dbpedia.org/resource/Month> ;
+  skos:prefLabel "month"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Month?oldid=494371020> ;
+  prov:wasInfluencedBy <http://www.thefreedictionary.com/Synodal+month> ;
+.
+unit:MeanGregorianMonth
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "meangregorianmonth"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Mean Gregorian Month"^^xsd:string ;
+  prov:wasInfluencedBy <http://aurora.regenstrief.org/~ucum/ucum.html#iso1000> ;
+.
+unit:MeanJulianMonth
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "meanjulianmonth"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Mean Julian Month"^^xsd:string ;
+  prov:wasInfluencedBy <http://aurora.regenstrief.org/~ucum/ucum.html#iso1000> ;
+.
+unit:MicroG
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "microG"^^xsd:string ;
+  qudt:code "2110"^^xsd:string ;
+  qudt:conversionMultiplier 9.80665E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Microgravity}' is a C.G.S System unit for  'Linear Acceleration' expressed as $microG$."^^xsd:string ;
+  qudt:designator "U-150-2110"^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "microG"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Microgravity"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Micro-g_environment> ;
+  skos:prefLabel "microgravity"^^xsd:string ;
+.
+unit:MicroIN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "in^{-6}"^^xsd:string ;
+  qudt:code "1125"^^xsd:string ;
+  qudt:conversionMultiplier 2.54E-8 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Microinch}' is an Imperial unit for  'Length' expressed as $in^{-6}$."^^xsd:string ;
+  qudt:designator "U-150-1125"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "in^{-6}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Microinch"^^xsd:string ;
+  skos:prefLabel "microinch"^^xsd:string ;
+.
+unit:MicroInch
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "microinch"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:MicroM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "microm"^^xsd:string ;
+  qudt:code "2012"^^xsd:string ;
+  qudt:conversionMultiplier "0.000001"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Micrometer}' is a C.G.S System unit for  'Length' expressed as $microm$."^^xsd:string ;
+  qudt:designator "U-150-2012"^^xsd:string ;
+  qudt:literal "micrometer (micron)"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "\\mu m"^^xsd:string ;
+  qudt:uneceCommonCode "4H"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Micrometer"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Micrometer> ;
+  skos:prefLabel "Micrometer"^^xsd:string ;
+  skos:prefLabel "micrometer"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Micrometer?oldid=491270437> ;
+.
+unit:MicroSEC
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "microsec"^^xsd:string ;
+  qudt:code "1617"^^xsd:string ;
+  qudt:conversionMultiplier "0.000001"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Microsecond}' is a unit for  'Time' expressed as $microsec$."^^xsd:string ;
+  qudt:designator "U-150-1617"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "microsec"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Microsecond"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/1_E-6_s> ;
+  skos:prefLabel "microsecond"^^xsd:string ;
+.
+unit:MicroSecond
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "microsecond"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:MilLength
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mil"^^xsd:string ;
+  qudt:code "1165"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Mil Length}' is a C.G.S System unit for  'Length' expressed as $mil$."^^xsd:string ;
+  qudt:designator "U-150-1165"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "mil"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Mil Length"^^xsd:string ;
+  skos:prefLabel "mil-length"^^xsd:string ;
+.
+unit:MileInternational
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mileinternational"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:MilliG
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearAccelerationUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mG"^^xsd:string ;
+  qudt:code "2105"^^xsd:string ;
+  qudt:conversionMultiplier 9.80665E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Milligravity}' is a C.G.S System unit for  'Linear Acceleration' expressed as $mG$."^^xsd:string ;
+  qudt:designator "U-150-2105"^^xsd:string ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+  qudt:symbol "mG"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Milligravity"^^xsd:string ;
+  skos:prefLabel "milligravity"^^xsd:string ;
+.
+unit:MilliM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "mm"^^xsd:string ;
+  qudt:code "1093"^^xsd:string ;
+  qudt:conversionMultiplier "0.001"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1093"^^xsd:string ;
+  qudt:symbol "m^{-3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Millimeter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Millimetre> ;
+  skos:prefLabel "Millimeter"^^xsd:string ;
+  skos:prefLabel "millimeter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Millimetre?oldid=493032457> ;
+.
+unit:MilliM3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "mm^{3}"^^xsd:string ;
+  qudt:code "0453"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A metric measure of volume or capacity equal to a cube 1 millimeter on each edge"^^xsd:string ;
+  qudt:designator "U-150-0453"^^xsd:string ;
+  qudt:symbol "m^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Millimeter"^^xsd:string ;
+  skos:prefLabel "cubic-millimeter"^^xsd:string ;
+.
+unit:MilliSEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "ms"^^xsd:string ;
+  qudt:code "1616"^^xsd:string ;
+  qudt:conversionMultiplier "0.001"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Millisecond}' is an Imperial unit for  'Time' expressed as $ms$."^^xsd:string ;
+  qudt:designator "U-150-1616"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "ms"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Millisecond"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Millisecond> ;
+  skos:prefLabel "millisecond"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Millisecond?oldid=495102042> ;
+.
+unit:MilliSecond
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "millisecond"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:MinuteSidereal
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "minutesidereal"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:MinuteTime
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "minutetime"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:NMI
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "nmi"^^xsd:string ;
+  qudt:code "1145"^^xsd:string ;
+  qudt:conversionMultiplier "1852.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of distance used primarily at sea and in aviation. The nautical mile is defined to be the average distance on the Earth's surface represented by one minute of latitude.  In 1929 an international conference in Monaco redefined the nautical mile to be exactly 1852 meters or 6076.115 49 feet, a distance known as the international nautical mile. The international nautical mile equals about 1.1508 statute miles. There are usually 3 nautical miles in a league. The unit is designed to equal 1/60 degree, although actual degrees of latitude vary from about 59.7 to 60.3 nautical miles. (Note: using data from the Geodetic Reference System 1980, the \"true\" length of a nautical mile would be 1852.216 meters.)"^^xsd:string ;
+  qudt:designator "U-150-1145"^^xsd:string ;
+  qudt:literal "nautical mile"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "n mile"^^xsd:string ;
+  qudt:uneceCommonCode "NMI"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Nautical Mile"^^xsd:string ;
+  skos:prefLabel "nautical-mile"^^xsd:string ;
+.
+unit:NMI-PER-HR
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "nmi/hr"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The knot is a unit of speed equal to one nautical mile (1.852 km) per hour, approximately 1.151 mph. The abbreviation kn is preferred by the International Hydrographic Organization (IHO), which includes every major seafaring nation; but the abbreviations kt (singular) and kts (plural) are also widely used conflicting with the SI symbol for kilotonne which is also \"kt\". The knot is a non-SI unit accepted for use with the International System of Units (SI). Worldwide, the knot is used in meteorology, and in maritime and air navigation-for example, a vessel travelling at 1 knot along a meridian travels one minute of geographic latitude in one hour. "^^xsd:string ;
+  qudt:exactMatch unit:KNOT ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "nmi/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Nautical Mile per Hour"^^xsd:string ;
+  skos:prefLabel "nautical-mile-per-hour"^^xsd:string ;
+.
+unit:NMI-PER-MIN
+  rdf:type qudt:LinearVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "nmi/min"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description """The SI derived unit for speed is the meter/second.
+1 meter/second is equal to 0.0323974082073 nautical mile per minute. """^^xsd:string ;
+  qudt:quantityKind quantity:LinearVelocity ;
+  qudt:symbol "nmi/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Nautical Mile per Minute"^^xsd:string ;
+  skos:prefLabel "nautical-mile-per-minute"^^xsd:string ;
+.
+unit:NP
+  rdf:type qudt:DimensionlessUnit ;
+  rdf:type qudt:LogarithmicUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Np"^^xsd:string ;
+  qudt:code "0506"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The neper is a logarithmic unit for ratios of measurements of physical field and power quantities, such as gain and loss of electronic signals. It has the unit symbol Np. The unit's name is derived from the name of John Napier, the inventor of logarithms. As is the case for the decibel and bel, the neper is not a unit in the International System of Units (SI), but it is accepted for use alongside the SI. Like the decibel, the neper is a unit in a logarithmic scale. While the bel uses the decadic (base-10) logarithm to compute ratios, the neper uses the natural logarithm, based on Euler's number. [Wikipedia]"^^xsd:string ;
+  qudt:designator "U-150-0506"^^xsd:string ;
+  qudt:symbol "dB"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Neper"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Decibel> ;
+  skos:prefLabel "neper"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Decibel?oldid=495380648> ;
+.
+unit:OZ
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "oz"^^xsd:string ;
+  qudt:code "1290"^^xsd:string ;
+  qudt:conversionMultiplier 2.84130625E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Imperial Ounce}' is an Imperial unit for  'Liquid Volume' expressed as $oz$."^^xsd:string ;
+  qudt:designator "U-150-1290"^^xsd:string ;
+  qudt:quantityKind quantity:LiquidVolume ;
+  qudt:symbol "oz"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Imperial Ounce"^^xsd:string ;
+  skos:prefLabel "imperial-ounce"^^xsd:string ;
+.
+unit:PARSEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "parsec"^^xsd:string ;
+  qudt:conversionMultiplier 3.085678E16 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The parsec (parallax of one arcsecond; symbol: pc) is a unit of length, equal to just under 31 trillion ($31 \\times 10^{12}$) kilometres (about 19 trillion miles), 206265 AU, or about 3.26 light-years. The parsec measurement unit is used in astronomy. It is defined as the length of the adjacent side of an imaginary right triangle in space. The two dimensions that specify this triangle are the parallax angle (defined as 1 arcsecond) and the opposite side (defined as 1 astronomical unit (AU), the distance from the Earth to the Sun). Given these two measurements, along with the rules of trigonometry, the length of the adjacent side (the parsec) can be found. [Wikipedia]"^^xsd:string ;
+  qudt:literal "parsec"^^xsd:string ;
+  qudt:symbol "pc"^^xsd:string ;
+  qudt:uneceCommonCode "C63"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Parsec"^^xsd:string ;
+.
+unit:PER-HR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m^{-1}"^^xsd:string ;
+  qudt:code "0875"^^xsd:string ;
+  qudt:conversionMultiplier 3.6e2 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A reciprocal unit of time for \\text{reciprocal hour} or \\textit{inverse hour}."^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "h^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Per Hour"^^xsd:string ;
+  skos:prefLabel "inverse-hour"^^xsd:string ;
+.
+unit:PER-M
+  rdf:type qudt:SpaceAndTimeUnit ;
+  qudt:abbreviation "/m"^^xsd:string ;
+  qudt:code "1091"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Per Meter Unit is a a demominator unit with dimensions $/m$."^^xsd:string ;
+  qudt:designator "U-150-1091"^^xsd:string ;
+  qudt:quantityKind quantity:InverseLength ;
+  qudt:symbol "m^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Per Meter Unit"^^xsd:string ;
+  skos:prefLabel "per-meter"^^xsd:string ;
+.
+unit:PER-M3
+  rdf:type qudt:SpaceAndTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "/m^3"^^xsd:string ;
+  qudt:code "1091"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Per Cubic Meter} is a demominator unit with dimensions $/m^3$."^^xsd:string ;
+  qudt:designator "U-150-1096"^^xsd:string ;
+  qudt:quantityKind quantity:InverseVolume ;
+  qudt:symbol "m^{-3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Per Cubic Meter"^^xsd:string ;
+  skos:prefLabel "per-cubic-meter"^^xsd:string ;
+.
+unit:PER-MIN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m^{-1}"^^xsd:string ;
+  qudt:code "0875"^^xsd:string ;
+  qudt:conversionMultiplier "60.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A reciprocal unit of time for \\text{reciprocal minute} or \\textit{inverse minute}."^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "m^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Per Minute"^^xsd:string ;
+  skos:prefLabel "inverse-minute"^^xsd:string ;
+.
+unit:PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:FrequencyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "sec^{-1}}"^^xsd:string ;
+  qudt:code "0875"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A reciprical unit of time for \\text{reciprocal second} or \\textit{inverse second}. The \\textit{Per Second} is a unit of rate."^^xsd:string ;
+  qudt:designator "U150-0875"^^xsd:string ;
+  qudt:exactMatch unit:HZ ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "s^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Per Second"^^xsd:string ;
+.
+unit:PINT
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "pint"^^xsd:string ;
+  qudt:code "1365"^^xsd:string ;
+  qudt:conversionMultiplier 5.6826125E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Imperial Pint}' is an Imperial unit for  'Volume' expressed as $pint$."^^xsd:string ;
+  qudt:designator "U-150-1365"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "pi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Imperial Pint"^^xsd:string ;
+  skos:prefLabel "imperial-pint"^^xsd:string ;
+.
+unit:PT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "pt"^^xsd:string ;
+  qudt:code "1380"^^xsd:string ;
+  qudt:conversionMultiplier 2.54E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In typography, a point is the smallest unit of measure, being a subdivision of the larger pica. It is commonly abbreviated as pt. The point has long been the usual unit for measuring font size and leading and other minute items on a printed page."^^xsd:string ;
+  qudt:designator "U-150-1380"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "pt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Point"^^xsd:string ;
+  skos:prefLabel "point"^^xsd:string ;
+.
+unit:Peck
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "pk"^^xsd:string ;
+  qudt:code "1335"^^xsd:string ;
+  qudt:conversionMultiplier "0.00880976754"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A peck is an imperial and U.S. customary unit of dry volume, equivalent to 2 gallons or 8 dry quarts or 16 dry pints. Two pecks make a kenning (obsolete), and four pecks make a bushel. In Scotland, the peck was used as a dry measure until the introduction of imperial units as a result of the Weights and Measures Act of 1824. The peck was equal to about 9 litres (in the case of certain crops, such as wheat, peas, beans and meal) and about 13 litres (in the case of barley, oats and malt). A firlot was equal to 4 pecks and the peck was equal to 4 lippies or forpets. "^^xsd:string ;
+  qudt:designator "U-150-1335"^^xsd:string ;
+  qudt:quantityKind quantity:DryVolume ;
+  qudt:symbol "pk"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Peck"^^xsd:string ;
+  skos:prefLabel "us-peck"^^xsd:string ;
+.
+unit:Pica
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "Pm"^^xsd:string ;
+  qudt:code "1360"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A pica is a typographic unit of measure corresponding to 1/72 of its respective foot, and therefore to 1/6 of an inch. The pica contains 12 point units of measure. Notably, Adobe PostScript promoted the pica unit of measure that is the standard in contemporary printing, as in home computers and printers. Usually, pica measurements are represented with an upper-case 'P' with an upper-right-to-lower-left virgule (slash) starting in the upper right portion of the 'P' and ending at the lower left of the upright portion of the 'P'; essentially drawing a virgule (/) through a 'P'.  Note that these definitions are different from a typewriter's pica setting, which denotes a type size of ten characters per horizontal inch."^^xsd:string ;
+  qudt:designator "U-150-1360"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "Pm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Pica"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pica> ;
+  skos:prefLabel "pica"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pica?oldid=458102937> ;
+.
+unit:PlanckArea
+  rdf:type qudt:AreaUnit ;
+  qudt:abbreviation "planckarea"^^xsd:string ;
+  qudt:conversionMultiplier 2.61223E-70 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Area ;
+  rdfs:label "Planck Area"^^xsd:string ;
+  skos:prefLabel "planck-area"^^xsd:string ;
+.
+unit:PlanckFrequency
+  rdf:type qudt:FrequencyUnit ;
+  qudt:abbreviation "planckfrequency"^^xsd:string ;
+  qudt:conversionMultiplier 1.85487E43 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Frequency ;
+  rdfs:label "Planck Frequency"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_angular_frequency> ;
+  skos:prefLabel "planck-frequency"^^xsd:string ;
+.
+unit:PlanckLength
+  rdf:type qudt:LengthUnit ;
+  qudt:abbreviation "plancklength"^^xsd:string ;
+  qudt:conversionMultiplier 1.616252E-35 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In physics, the Planck length, denoted $\\ell_P$, is a unit of length, equal to $1.616199(97)×10 metres$. It is a base unit in the system of Planck units. The Planck length can be defined from three fundamental physical constants: the speed of light in a vacuum, Planck's constant, and the gravitational constant. "^^xsd:string ;
+  qudt:latexDefinition "$\\ell_P = \\sqrt{\\frac{ \\hbar G}{c^3}} \\approx 1.616199(97)) \\times 10^{-35} m$, where $c$ is the speed of light in a vacuum, $\\hbar$ is the reduced Planck's constant, and $G$ is the gravitational constant. The two digits enclosed by parentheses are the estimated standard error associated with the reported numerical value."^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "l_P"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Planck Length"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_length> ;
+  skos:prefLabel "planck-length"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_length?oldid=495093067> ;
+.
+unit:PlanckTime
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "plancktime"^^xsd:string ;
+  qudt:conversionMultiplier 5.39124E-44 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In physics, the Planck time, denoted by tP, is the unit of time in the system of natural units known as Planck units. It is the time required for light to travel, in a vacuum, a distance of 1 Planck length. The unit is named after Max Planck, who was the first to propose it."^^xsd:string ;
+  qudt:latexDefinition "$t_p \\equiv  \\sqrt{\\frac{\\hbar G}{c^5}} \\approx 5.39106(32) \\times 10^{-44} s$, where  $c$ is the speed of light in a vacuum, $\\hbar$ is the reduced Planck's constant (defined as $\\hbar = \\frac{h}{2 \\pi}$), and $G$ is the gravitational constant. The two digits between parentheses denote the standard error of the estimated value."^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "t_P"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Planck Time"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_time> ;
+  skos:prefLabel "planck-time"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_time?oldid=495362103> ;
+.
+unit:PlanckVolume
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "planckvolume"^^xsd:string ;
+  qudt:conversionMultiplier 4.22419E-105 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Volume ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/planck> ;
+  rdfs:label "Planck Volume"^^xsd:string ;
+  skos:prefLabel "planck-volume"^^xsd:string ;
+.
+unit:RAD
+  rdf:type qudt:AngleUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rad"^^xsd:string ;
+  qudt:baseUnitDimensions "m.m^{-1}"^^xsd:string ;
+  qudt:code "1555"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The radian is the standard unit of angular measure, used in many areas of mathematics. It describes the plane angle subtended by a circular arc as the length of the arc divided by the radius of the arc. In the absence of any symbol radians are assumed, and when degrees are meant the symbol $^{\\ circ}$ is used. "^^xsd:string ;
+  qudt:designator "U-150-1555"^^xsd:string ;
+  qudt:guidance "<http://physics.nist.gov/Pubs/SP811/sec07.html#7.10>"^^xsd:string ;
+  qudt:literal "radian"^^xsd:string ;
+  qudt:longDescription "The radian is the standard unit of angular measure, used in many areas of mathematics. It describes the plane angle subtended by a circular arc as the length of the arc divided by the radius of the arc. The unit was formerly a SI supplementary unit, but this category was abolished in 1995 and the radian is now considered a SI derived unit. The SI unit of solid angle measurement is the steradian.  The radian is represented by the symbol \"rad\" or, more rarely, by the superscript c (for \"circular measure\"). For example, an angle of 1.2 radians would be written as \"1.2 rad\" or \"1.2c\" (the second symbol is often mistaken for a degree: \"1.2u00b0\"). As the ratio of two lengths, the radian is a \"pure number\" that needs no unit symbol, and in mathematical writing the symbol \"rad\" is almost always omitted. In the absence of any symbol radians are assumed, and when degrees are meant the symbol u00b0 is used. [Wikipedia]"^^xsd:string ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  qudt:symbol "rad"^^xsd:string ;
+  qudt:uneceCommonCode "C81"^^xsd:string ;
+  rdfs:comment "The radian and steradian are special names for the number one that may be used to convey information about the quantity concerned. In practice the symbols rad and sr are used where appropriate, but the symbol for the derived unit one is generally omitted in specifying the values of dimensionless quantities."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Radian"^^xsd:string ;
+  owl:sameAs unit:ArcMIN ;
+  skos:exactMatch <http://dbpedia.org/resource/Radian> ;
+  skos:prefLabel "radian"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Radian?oldid=492309312> ;
+.
+unit:RAD-PER-HR
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rad/h"^^xsd:string ;
+  qudt:conversionMultiplier "3600.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Radian per Hour}' is a C.G.S System unit for  'Angular Velocity' expressed as $rad/h$."^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  qudt:symbol "rad/h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Radian per Hour"^^xsd:string ;
+  skos:prefLabel "radian-per-hour"^^xsd:string ;
+.
+unit:RAD-PER-MIN
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rad/m"^^xsd:string ;
+  qudt:conversionMultiplier "60.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Radian Per Minute (rad/min) is a unit in the category of Angular velocity. It is also known as radians per minute, radian/minute. Radian Per Minute (rad/min) has a dimension of aT-1 where T is time. It can be converted to the corresponding standard SI unit rad/s by multiplying its value by a factor of 0.0166666666667. "^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  qudt:symbol "rad/m"^^xsd:string ;
+  rdfs:label "Radian per Minute"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Radian_per_second> ;
+  skos:prefLabel "Radian per Minute"^^xsd:string ;
+.
+unit:RAD-PER-SEC
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rad/s"^^xsd:string ;
+  qudt:code "1560"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Radian per Second} is the SI unit of rotational speed (angular velocity), and, also the unit of angular frequency. The radian per second is defined as the change in the orientation of an object, in radians, every second."^^xsd:string ;
+  qudt:designator "U-150-1560"^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  qudt:symbol "rad/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Radian per Second"^^xsd:string ;
+  skos:prefLabel "radian-per-second"^^xsd:string ;
+.
+unit:RAD-PER-SEC2
+  rdf:type qudt:AngularAccelerationUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rad/s2"^^xsd:string ;
+  qudt:code "1565"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Angular acceleration is the rate of change of angular velocity. In SI units, it is measured in radians per second squared ($rad/s^2$), and is usually denoted by the Greek letter $\\alpha$."^^xsd:string ;
+  qudt:designator "U-150-1565"^^xsd:string ;
+  qudt:quantityKind quantity:AngularAcceleration ;
+  qudt:symbol "rad/s^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Radian per Second Squared"^^xsd:string ;
+  skos:prefLabel "radian-per-second-squared"^^xsd:string ;
+.
+unit:REV
+  rdf:type qudt:PlaneAngleUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rev"^^xsd:string ;
+  qudt:code "1575"^^xsd:string ;
+  qudt:conversionMultiplier "6.28318531"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Revolution}' is a unit for  'Plane Angle' expressed as $rev$."^^xsd:string ;
+  qudt:designator "U-150-1575"^^xsd:string ;
+  qudt:quantityKind quantity:PlaneAngle ;
+  qudt:symbol "rev"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Revolution"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Revolution> ;
+  skos:prefLabel "revolution"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Revolution?oldid=494110330> ;
+.
+unit:REV-PER-HR
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rev/h"^^xsd:string ;
+  qudt:conversionMultiplier "0.00174532925"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Revolution per Hour}' is a unit for  'Angular Velocity' expressed as $rev/h$."^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  qudt:symbol "rev/h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Revolution per Hour"^^xsd:string ;
+  skos:prefLabel "revolution-per-hour"^^xsd:string ;
+.
+unit:REV-PER-MIN
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rev/min"^^xsd:string ;
+  qudt:code "1580"^^xsd:string ;
+  qudt:conversionMultiplier "0.104719755"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Revolution per Minute}' is a unit for  'Angular Velocity' expressed as $rev/min$."^^xsd:string ;
+  qudt:designator "U-150-1580"^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  qudt:symbol "rev/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Revolution per Minute"^^xsd:string ;
+  skos:prefLabel "revolution-per-minute"^^xsd:string ;
+.
+unit:REV-PER-SEC
+  rdf:type qudt:AngularVelocityUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rev/s"^^xsd:string ;
+  qudt:code "1585"^^xsd:string ;
+  qudt:conversionMultiplier "6.28318531"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Revolution per Second}' is a unit for  'Angular Velocity' expressed as $rev/s$."^^xsd:string ;
+  qudt:designator "U-150-1585"^^xsd:string ;
+  qudt:quantityKind quantity:AngularVelocity ;
+  qudt:symbol "rev/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Revolution per Second"^^xsd:string ;
+  skos:prefLabel "revolution-per-second"^^xsd:string ;
+.
+unit:ROD
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rd"^^xsd:string ;
+  qudt:code "1590"^^xsd:string ;
+  qudt:conversionMultiplier "5.029210"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of distance equal to 5.5 yards (16 feet 6 inches)."^^xsd:string ;
+  qudt:designator "U-150-1590"^^xsd:string ;
+  qudt:literal "rod"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "rd"^^xsd:string ;
+  qudt:uneceCommonCode "F49"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Rod"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Rod> ;
+  skos:prefLabel "rod"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Rod?oldid=492590086> ;
+.
+unit:RT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "RT"^^xsd:string ;
+  qudt:code "1835"^^xsd:string ;
+  qudt:conversionMultiplier "2.8316846592"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The register ton is a unit of volume used for the cargo capacity of a ship, defined as 100 cubic feet (roughly 2.83 cubic metres)."^^xsd:string ;
+  qudt:designator "U-150-1835"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "RT"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Register Ton"^^xsd:string ;
+  skos:prefLabel "register-ton"^^xsd:string ;
+.
+unit:S-FT2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "s-ft^2"^^xsd:string ;
+  qudt:code "1605"^^xsd:string ;
+  qudt:conversionMultiplier "0.09290304"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Second Square Foot}' is an Imperial unit for  'Area Time' expressed as $s-ft^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1605"^^xsd:string ;
+  qudt:quantityKind quantity:AreaTime ;
+  qudt:symbol "s-ft^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Second Square Foot"^^xsd:string ;
+  skos:prefLabel "second-square-foot"^^xsd:string ;
+.
+unit:S2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:TimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "s^2"^^xsd:string ;
+  qudt:code "1620"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Second Squared}' is a unit for  'Time Squared' expressed as $s^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1620"^^xsd:string ;
+  qudt:quantityKind quantity:TimeSquared ;
+  qudt:symbol "s^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "second squared"^^xsd:string ;
+  skos:prefLabel "second squared"^^xsd:string ;
+.
+unit:SECOND
+  rdf:type qudt:BaseUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:TimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "s"^^xsd:string ;
+  qudt:code "1615"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Second} (symbol: $s$) is the base unit of time in the International System of Units (SI) and is also a unit of time in other systems of measurement."^^xsd:string ;
+  qudt:designator "U-000-1615"^^xsd:string ;
+  qudt:isBaseUnitOfSystem qudt:SOU_SI ;
+  qudt:longDescription """Between the years1000 (when al-Biruni used seconds) and 1960 the second was defined as $1/86,400$ of a mean solar day (that definition still applies in some astronomical and legal contexts). Between 1960 and 1967, it was defined in terms of the period of the Earth's orbit around the Sun in 1900, but it is now defined more precisely in atomic terms.  
+
+Under the International System of Units (via the International Committee for Weights and Measures, or CIPM), since 1967 the second has been defined as the duration of \\num{9,192,631,770} periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom.In 1997 CIPM added that the periods would be defined for a caesium atom at rest, and approaching the theoretical temperature of absolute zero, and in 1999, it included corrections from ambient radiation."""^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Second"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Second> ;
+  skos:prefLabel "second"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Second?oldid=495241006> ;
+.
+unit:SHAKE
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Sh"^^xsd:string ;
+  qudt:code "1625"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-8 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A shake is an informal unit of time equal to 10 nanoseconds, or 10 seconds. It has applications in nuclear physics, helping to conveniently express the timing of various events in a nuclear explosion. The typical time required for one step in the chain reaction (i.e. the typical time for each neutron to cause a fission event which releases more neutrons) is of order 1 shake, and the chain reaction is typically complete by 50 to 100 shakes. "^^xsd:string ;
+  qudt:designator "U-150-1625"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "Sh"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Shake"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Shake> ;
+  skos:prefLabel "shake"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Shake?oldid=494796779> ;
+.
+unit:STERADIAN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SolidAngleUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "sr"^^xsd:string ;
+  qudt:code "1775"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The steradian (symbol: sr) is the SI unit of solid angle. It is used to describe two-dimensional angular spans in three-dimensional space, analogous to the way in which the radian describes angles in a plane."^^xsd:string ;
+  qudt:designator "U-150-1775"^^xsd:string ;
+  qudt:quantityKind quantity:SolidAngle ;
+  qudt:symbol "sr"^^xsd:string ;
+  qudt:uneceCommonCode "D27"^^xsd:string ;
+  rdfs:comment "The radian and steradian are special names for the number one that may be used to convey information about the quantity concerned. In practice the symbols rad and sr are used where appropriate, but the symbol for the derived unit one is generally omitted in specifying the values of dimensionless quantities."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Steradian"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Steradian> ;
+  skos:prefLabel "Steradian"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Steradian?oldid=494317847> ;
+.
+unit:STERE
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "st"^^xsd:string ;
+  qudt:code "1780"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The stere is a unit of volume in the original metric system equal to one cubic metre.  The stere is typically used for measuring large quantities of firewood or other cut wood, while the cubic meter is used for uncut wood. It is not part of the modern metric system (SI). In Dutch there's also a kuub, short for kubieke meter which is similar but different."^^xsd:string ;
+  qudt:designator "U-150-1780"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "st"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Stere"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/St%C3%A8re> ;
+  skos:prefLabel "stere"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stère?oldid=393570287> ;
+.
+unit:SiderealDay
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "d"^^xsd:string ;
+  qudt:code "0495"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The length of time which passes between a given fixed star in the sky crossing a given projected meridian (line of longitude). The sidereal day is $23 h 56 m 4.1 s$, slightly shorter than the solar day because the Earth 's orbital motion about the Sun  means the Earth  has to rotate slightly more than one turn with respect to the \"fixed\" stars in order to reach the same Earth-Sun orientation. Another way of thinking about the difference is that it amounts to $1/365.2425^{th}$ of a day per day, since even if the Earth  did not spin on its axis at all, the Sun  would appear to make one rotation around the Earth  as the Earth  completed a single orbit (which takes one year)."^^xsd:string ;
+  qudt:designator "U-150-0495"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "d"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Sidereal Day"^^xsd:string ;
+  skos:prefLabel "sideral-day"^^xsd:string ;
+  skos:related unit:SiderealMinute ;
+  skos:related unit:SiderealYear ;
+  prov:wasDerivedFrom <http://en.wikipedia.org/wiki/Sidereal_time> ;
+  prov:wasDerivedFrom <http://scienceworld.wolfram.com/astronomy/SiderealDay.html> ;
+.
+unit:SiderealHour
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "hr"^^xsd:string ;
+  qudt:code "0835"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Sidereal time is a time-keeping system astronomers use to keep track of the direction to point their telescopes to view a given star in the night sky. A mean sidereal day is about 23 h 56 m 4.1 s in length. However, due to variations in the rotation rate of the Earth, the rate of an ideal sidereal clock deviates from any simple multiple of a civil clock. In practice, the difference is kept track of by the difference UTC-UT1, which is measured by radio telescopes and kept on file and available to the public at the IERS and at the United States Naval Observatory. A Sidereal Hour is $1/24^{th}$ of a Sidereal Day."^^xsd:string ;
+  qudt:designator "U-150-0835"^^xsd:string ;
+  qudt:isScalingOf unit:SiderealDay ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Sidereal Hour"^^xsd:string ;
+  skos:prefLabel "sidereal-hour"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sidereal_time> ;
+.
+unit:SiderealMinute
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "min"^^xsd:string ;
+  qudt:code "1200"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Sidereal time is a time-keeping system astronomers use to keep track of the direction to point their telescopes to view a given star in the night sky. A mean sidereal day is about $23 h 56 m 4.1 s$ in length. However, due to variations in the rotation rate of the Earth, the rate of an ideal sidereal clock deviates from any simple multiple of a civil clock. In practice, the difference is kept track of by the difference UTC-UT1, which is measured by radio telescopes and kept on file and available to the public at the IERS and at the United States Naval Observatory. A Sidereal Minute is $1/60^{th}$ of a Sidereal Hour, which is $1/24^{th}$ of a Sidereal Day."^^xsd:string ;
+  qudt:designator "U-150-1200"^^xsd:string ;
+  qudt:isScalingOf unit:SiderealHour ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Sidereal Minute"^^xsd:string ;
+  skos:prefLabel "sideral-minute"^^xsd:string ;
+  skos:related unit:SiderealDay ;
+  skos:related unit:SiderealYear ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Sidereal_time> ;
+.
+unit:SiderealYear
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "yr"^^xsd:string ;
+  qudt:code "1985"^^xsd:string ;
+  qudt:conversionMultiplier "31558149.7632"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A sidereal year is the time taken for Sun to return to the same position with respect to the stars of the celestial sphere."^^xsd:string ;
+  qudt:designator "U-150-1985"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "yr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Sidereal Year"^^xsd:string ;
+  rdfs:seeAlso unit:SiderealDay ;
+  skos:prefLabel "sidereal-year"^^xsd:string ;
+  skos:related unit:SiderealDay ;
+  skos:related unit:SiderealMinute ;
+.
+unit:SynodicMonth
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "synodicmonth"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of time corresponding approximately to one cycle of the moon's phases, or about 30 days or 4 weeks and calculated as 29.53059 days."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Synodic month"^^xsd:string ;
+  owl:sameAs unit:MO ;
+  prov:wasInfluencedBy <http://www.thefreedictionary.com/Synodal+month> ;
+.
+unit:TBSP
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "tbsp"^^xsd:string ;
+  qudt:code "1795"^^xsd:string ;
+  qudt:conversionMultiplier 1.47867656E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In the US and parts of Canada, a tablespoon is the largest type of spoon used for eating from a bowl. In the UK and most Commonwealth countries, a tablespoon is a type of large spoon usually used for serving. In countries where a tablespoon is a serving spoon, the nearest equivalent to the US tablespoon is either the dessert spoon or the soup spoon. A tablespoonful, nominally the capacity of one tablespoon, is commonly used as a measure of volume in cooking. It is abbreviated as T, tb, tbs, tbsp, tblsp, or tblspn. The capacity of ordinary tablespoons is not regulated by law and is subject to considerable variation. In most countries one level tablespoon is approximately 15 mL; in Australia it is 20 mL."^^xsd:string ;
+  qudt:designator "U-150-1795"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "tbsp"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Tablespoon"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tablespoon> ;
+  skos:prefLabel "tablespoon"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Tablespoon?oldid=494615208> ;
+.
+unit:TSP
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "tsp"^^xsd:string ;
+  qudt:code "1800"^^xsd:string ;
+  qudt:conversionMultiplier 4.92892187E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A teaspoon is a unit of volume. In the United States one teaspoon as a unit of culinary measure is $1/3$ tablespoon , that is, $\\approx 4.93 mL$; it is exactly $1/6 U.S. fl. oz$, $1/48 \\; cup$, and $1/768 \\; U.S. liquid gallon$ (see United States customary units for relative volumes of these other measures) and approximately $1/3 cubic inch$. For nutritional labeling on food packages in the U.S., the teaspoon is defined as precisely $5 mL$."^^xsd:string ;
+  qudt:designator "U-150-1800"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "tsp"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Teaspoon"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Teaspoon> ;
+  skos:prefLabel "teaspoon"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Teaspoon?oldid=490940468> ;
+.
+unit:TropicalYear
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "yr"^^xsd:string ;
+  qudt:code "1990"^^xsd:string ;
+  qudt:conversionMultiplier 3.1556925216e7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A tropical year (also known as a solar year), for general purposes, is the length of time that the Sun takes to return to the same position in the cycle of seasons, as seen from Earth; for example, the time from vernal equinox to vernal equinox, or from summer solstice to summer solstice. Because of the precession of the equinoxes, the seasonal cycle does not remain exactly synchronised with the position of the Earth in its orbit around the Sun. As a consequence, the tropical year is about 20 minutes shorter than the time it takes Earth to complete one full orbit around the Sun as measured with respect to the fixed stars. Since antiquity, astronomers have progressively refined the definition of the tropical year, and currently define it as the time required for the mean Sun's tropical longitude (longitudinal position along the ecliptic relative to its position at the vernal equinox) to increase by 360 degrees (that is, to complete one full seasonal circuit)."^^xsd:string ;
+  qudt:designator "U-150-1990"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "a_{t}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Tropical Year"^^xsd:string ;
+  skos:prefLabel "tropical-year"^^xsd:string ;
+.
+unit:US_DRY_GAL
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "dry_gal"^^xsd:string ;
+  qudt:conversionMultiplier 4.40488377E-2 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Dry Gallon US}' is a C.G.S System unit for  'Dry Volume' expressed as $dry_gal$."^^xsd:string ;
+  qudt:quantityKind quantity:DryVolume ;
+  qudt:symbol "dry_gal"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Dry Gallon US"^^xsd:string ;
+  skos:prefLabel "dry-gallon-us"^^xsd:string ;
+.
+unit:US_DRY_PINT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "dry_pt"^^xsd:string ;
+  qudt:code "1370"^^xsd:string ;
+  qudt:conversionMultiplier 5.50610471E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Dry Pint}' is a C.G.S System unit for  'Dry Volume' expressed as $dry_pt$."^^xsd:string ;
+  qudt:designator "U-150-1370"^^xsd:string ;
+  qudt:quantityKind quantity:DryVolume ;
+  qudt:symbol "dry_pt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Dry Pint"^^xsd:string ;
+  skos:prefLabel "us-dry-pint"^^xsd:string ;
+.
+unit:US_DRY_QT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "dry_qt"^^xsd:string ;
+  qudt:code "1540"^^xsd:string ;
+  qudt:conversionMultiplier "0.00110122094"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{US Dry Quart}' is a C.G.S System unit for  'Dry Volume' expressed as $dry_qt$."^^xsd:string ;
+  qudt:designator "U-150-1540"^^xsd:string ;
+  qudt:quantityKind quantity:DryVolume ;
+  qudt:symbol "dry_qt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "US Dry Quart"^^xsd:string ;
+  skos:prefLabel "us-dry-quart"^^xsd:string ;
+.
+unit:WK
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "wk"^^xsd:string ;
+  qudt:code "0490"^^xsd:string ;
+  qudt:conversionMultiplier "604800.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Mean solar day"^^xsd:string ;
+  qudt:designator "U-150-0490"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "wk"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Week"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Week> ;
+  skos:prefLabel "week"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Week?oldid=493867029> ;
+.
+unit:YARD
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "yd"^^xsd:string ;
+  qudt:code "1975"^^xsd:string ;
+  qudt:conversionMultiplier "0.9144"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A yard is a unit of length in several different systems including United States customary units, Imperial units and the former English units. It is equal to 3 feet or 36 inches. Under an agreement in 1959 between Australia, Canada, New Zealand, South Africa, the United Kingdom and the United States, the yard (known as the \"international yard\" in the United States) was legally defined to be exactly 0.9144 metres."^^xsd:string ;
+  qudt:designator "U-150-1975"^^xsd:string ;
+  qudt:quantityKind quantity:Length ;
+  qudt:symbol "yd"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Yard"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Yard> ;
+  skos:prefLabel "yard"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Yard?oldid=492334628> ;
+.
+unit:YD2
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "sqyd"^^xsd:string ;
+  qudt:code "1735"^^xsd:string ;
+  qudt:conversionMultiplier 0.83612736e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The square yard is an imperial/US customary unit of area, formerly used in most of the English-speaking world but now generally replaced by the square metre outside of the U.S. , Canada and the U.K. It is defined as the area of a square with sides of one yard in length. (Gaj in Hindi)."^^xsd:string ;
+  qudt:designator "U-150-1735"^^xsd:string ;
+  qudt:quantityKind quantity:Area ;
+  qudt:symbol "yd^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Square Yard"^^xsd:string ;
+  skos:prefLabel "square-yard"^^xsd:string ;
+.
+unit:YD3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:US-CustomaryUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "yd^{3}"^^xsd:string ;
+  qudt:code "0465"^^xsd:string ;
+  qudt:conversionMultiplier 0.764554857984e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A cubic yard is an Imperial / U.S. customary unit of volume, used in the United States, Canada, and the UK. It is defined as the volume of a cube with sides of 1 yard in length."^^xsd:string ;
+  qudt:designator "U-150-0465"^^xsd:string ;
+  qudt:quantityKind quantity:Volume ;
+  qudt:symbol "yd^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Yard"^^xsd:string ;
+  skos:prefLabel "cubic-yard"^^xsd:string ;
+.
+unit:YD3-PER-MIN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "yd^{3}/min"^^xsd:string ;
+  qudt:code "0470"^^xsd:string ;
+  qudt:conversionMultiplier 0.0127425809664e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Cubic Yard per Minute}' is an Imperial unit for  'Volume Per Unit Time' expressed as $yd^{3}/min$."^^xsd:string ;
+  qudt:designator "U-150-0470"^^xsd:string ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+  qudt:symbol "yd^{3}/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Cubic Yard per Minute"^^xsd:string ;
+  skos:prefLabel "cubic-yard-per-minute"^^xsd:string ;
+.
+unit:YR
+  rdf:type qudt:TimeUnit ;
+  qudt:abbreviation "yr"^^xsd:string ;
+  qudt:code "1980"^^xsd:string ;
+  qudt:conversionMultiplier "31536000"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A year is any of the various periods equated with one passage of Earth about the Sun, and hence of roughly 365 days. The familiar calendar has a mixture of 365- and 366-day years, reflecting the fact that the time for one complete passage takes about 365¼ days; the precise value for this figure depends on the manner of defining the year."^^xsd:string ;
+  qudt:designator "U-150-1980"^^xsd:string ;
+  qudt:quantityKind quantity:Time ;
+  qudt:symbol "yr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Year"^^xsd:string ;
+  skos:prefLabel "year"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-1533?rskey=b94Fd6> ;
+.
+unit:Year365Day
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "year365day"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:YearTropical
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "yeartropical"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Time ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.
+unit:PER-SEC-M2
+  rdf:type qudt:SpaceAndTimeUnit ;
+  qudt:abbreviation "per-sec-m^2"^^xsd:string ;
+  qudt:code "1091"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Per Second Meter Squared Unit} is a demominator unit with dimensions $/sec-m$^2$."^^xsd:string ;
+  qudt:designator "U-150-1091"^^xsd:string ;
+  qudt:quantityKind quantity:InverseLength ;
+  qudt:symbol "m^{-2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Per Second Meter Squared Unit"^^xsd:string ;
+  skos:prefLabel "per-second-meter-squared"^^xsd:string ;
+.
+unit:PER-SEC-M2-SR
+  rdf:type qudt:SpaceAndTimeUnit ;
+  qudt:abbreviation "/sec-m^2-sr"^^xsd:string ;
+  qudt:code "1091"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Per Second Meter Squared Steradian Unit is a a demominator unit with dimensions $/sec-m^2-sr$."^^xsd:string ;
+  qudt:designator "U-150-1091"^^xsd:string ;
+  qudt:quantityKind quantity:InverseLength ;
+  qudt:symbol "s^{-1}m^{-2}sr^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Per Second Meter Squared Steradian Unit"^^xsd:string ;
+  skos:prefLabel "per-second-meter-squared-steradian"^^xsd:string ;
+.
+unit:PER-SEC-SR
+  rdf:type qudt:SpaceAndTimeUnit ;
+  qudt:abbreviation "/sec-sr"^^xsd:string ;
+  qudt:code "1091"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Per Second Steradian Unit is a a demominator unit with dimensions $/sec-sr$."^^xsd:string ;
+  qudt:designator "U-150-1091"^^xsd:string ;
+  qudt:quantityKind quantity:InverseLength ;
+  qudt:symbol "s^{-1}sr^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Per Second Steradian Unit"^^xsd:string ;
+  skos:prefLabel "per-second-steradian"^^xsd:string ;
+.

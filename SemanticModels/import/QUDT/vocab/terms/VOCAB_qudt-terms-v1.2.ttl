@@ -1,0 +1,2418 @@
+# baseURI: http://qudt.org/1.2/vocab/terms
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+# imports: http://www.w3.org/2004/02/skos/core
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix nia: <https://nia.nasa.gov/schema/nia#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/terms>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 13:34:19 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity> ;
+.
+qudt:TERM_ACS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Attitude Control System"^^xsd:string ;
+  skos:prefLabel "ACS"^^xsd:string ;
+.
+qudt:TERM_ADP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Acceptance Data Package"^^xsd:string ;
+  skos:prefLabel "ADP"^^xsd:string ;
+.
+qudt:TERM_AEC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "AFT Exit Cone"^^xsd:string ;
+  skos:prefLabel "AEC"^^xsd:string ;
+.
+qudt:TERM_AFSS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Auto Flight Safety System"^^xsd:string ;
+  skos:prefLabel "AFSS"^^xsd:string ;
+.
+qudt:TERM_AGSM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Advanced Ground Systems Maintenance"^^xsd:string ;
+  skos:prefLabel "AGSM"^^xsd:string ;
+.
+qudt:TERM_AIT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Analysis & Integration Team"^^xsd:string ;
+  skos:prefLabel "AIT"^^xsd:string ;
+.
+qudt:TERM_AM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Ascent Module"^^xsd:string ;
+  skos:prefLabel "AM"^^xsd:string ;
+.
+qudt:TERM_ARC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Architecture Refinement Cycles"^^xsd:string ;
+  skos:prefLabel "ARC"^^xsd:string ;
+.
+qudt:TERM_ARCH
+  rdf:type qudt:Term ;
+  skos:definition "Architecture"^^xsd:string ;
+  skos:prefLabel "ARCH" ;
+.
+qudt:TERM_ARD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Architecture Requirements Document"^^xsd:string ;
+  skos:prefLabel "ARD"^^xsd:string ;
+.
+qudt:TERM_ARF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Assembly and Refurbishment Facility"^^xsd:string ;
+  skos:prefLabel "ARF"^^xsd:string ;
+.
+qudt:TERM_ASCII
+  rdf:type qudt:Acronym ;
+  skos:definition "American Standard Code for Information Interchange"^^xsd:string ;
+  skos:prefLabel "ASCII"^^xsd:string ;
+.
+qudt:TERM_ASF
+  rdf:type qudt:Term ;
+  skos:definition "Application Services Framework"^^xsd:string ;
+  skos:prefLabel "ASF" ;
+.
+qudt:TERM_ASTM
+  rdf:type qudt:Acronym ;
+  skos:definition "American Society for Testing and Materials"^^xsd:string ;
+  skos:prefLabel "ASTM"^^xsd:string ;
+.
+qudt:TERM_ATE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Automatic Test Equipment"^^xsd:string ;
+  skos:prefLabel "ATE"^^xsd:string ;
+.
+qudt:TERM_ATP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Acceptance Test Procedures"^^xsd:string ;
+  skos:prefLabel "ATP"^^xsd:string ;
+.
+qudt:TERM_BASE-QUANTITY
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Base Quantity"^^xsd:string ;
+  skos:definition "A \\textit{Base Quantity} is a quantity in a conventionally chosen subset\\footnote{The subset mentioned in the definition is termed the \"set of base quantities\" of a given system of quantities}, where no subset quantity can be expressed in terms of the others."^^xsd:string ;
+  skos:prefLabel "Base Quantity"^^xsd:string ;
+.
+qudt:TERM_BASE-UNIT
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Base Unit"^^xsd:string ;
+  skos:definition "A measurement unit that is adopted by convention for a base quantity. In each coherent system of units, there is only one base unit for each base quantity.  A base unit may also serve for a derived quantity of the same quantity dimension. For number of entities, the number one, symbol 1, can be regarded as a base unit in any system of units. In the SI, the metre is the base unit of length. In the CGS systems, the centimetre is the base unit of length. As an example, rainfall, when defined as areic volume (volume per area), has the metre as a coherent derived unit in the SI."^^xsd:string ;
+  skos:prefLabel "Base Unit"^^xsd:string ;
+.
+qudt:TERM_BDA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Blast Danger Area"^^xsd:string ;
+  skos:prefLabel "BDA"^^xsd:string ;
+.
+qudt:TERM_BEO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Beyond Earth Orbit"^^xsd:string ;
+  skos:prefLabel "BEO"^^xsd:string ;
+.
+qudt:TERM_BIPM
+  rdf:type qudt:Acronym ;
+  qudt:abbreviation "BIPM"^^xsd:string ;
+  qudt:acronym "BIPM"^^xsd:string ;
+  qudt:url "http://www.bipm.org/en/home/"^^xsd:anyURI ;
+  rdfs:label "BIPM"^^xsd:string ;
+  skos:definition "\\textit{BIPM} stands for \\textit{Bureau Internationale Pour Metrologie}. \\footnote{\\href{http://www.bipm.org/en/bipm/}{BIPM} was set up by the Metre Convention and has its headquarters near Paris, France. It is financed jointly by its Member States and operates under the exclusive supervision of the \\hyperlink{qudt:TERM_CIPM}{CIPM}. Its mandate is to provide the basis for a single, coherent system of measurements throughout the world, traceable to the International System of Units (SI). This task takes many forms, from direct dissemination of units (as in the case of mass and time) to coordination through international comparisons of national measurement standards (as in electricity and ionizing radiation).}"^^xsd:string ;
+  skos:prefLabel "BIPM"^^xsd:string ;
+.
+qudt:TERM_C3R
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Command, Control, Communications, and Range"^^xsd:string ;
+  skos:prefLabel "C3R"^^xsd:string ;
+.
+qudt:TERM_CAD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Computer-Aided Design"^^xsd:string ;
+  skos:prefLabel "CAD"^^xsd:string ;
+.
+qudt:TERM_CAGE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Commercial and Government Entity"^^xsd:string ;
+  skos:prefLabel "CAGE"^^xsd:string ;
+.
+qudt:TERM_CAM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Cost Account Manager"^^xsd:string ;
+  skos:prefLabel "CAM"^^xsd:string ;
+.
+qudt:TERM_CAPPS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Checkout, Assembly and Payload Processing Services"^^xsd:string ;
+  skos:prefLabel "CAPPS"^^xsd:string ;
+.
+qudt:TERM_CC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Command and Control"^^xsd:string ;
+  skos:prefLabel "C&C"^^xsd:string ;
+.
+qudt:TERM_CCAFS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Cape Canaveral Air Force Station"^^xsd:string ;
+  skos:prefLabel "CCAFS"^^xsd:string ;
+.
+qudt:TERM_CCCE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Command, Control and Communications Element"^^xsd:string ;
+  skos:prefLabel "CCCE"^^xsd:string ;
+.
+qudt:TERM_CDR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Critical Design Review"^^xsd:string ;
+  skos:prefLabel "CDR"^^xsd:string ;
+.
+qudt:TERM_CE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Chief Engineer"^^xsd:string ;
+  skos:prefLabel "CE"^^xsd:string ;
+.
+qudt:TERM_CECB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Chief Engineer's Control Board"^^xsd:string ;
+  skos:prefLabel "CECB"^^xsd:string ;
+.
+qudt:TERM_CEDR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Critical Element Design Review"^^xsd:string ;
+  skos:prefLabel "CEDR"^^xsd:string ;
+.
+qudt:TERM_CGPM
+  rdf:type qudt:Acronym ;
+  rdfs:label "CGPM"^^xsd:string ;
+  skos:definition "Conférence Générale des Poids et Mesures. \\footnote{\\href{http://www.bipm.org/en/convention/cgpm/}{CGPM} is made up of delegates of the governments of the Member States and observers from the Associates of the CGPM. The General Conference receives the report of the International Committee for Weights and Measures (CIPM) on work accomplished; it discusses and examines the arrangements required to ensure the propagation and improvement of the International System of Units (SI); it endorses the results of new fundamental metrological determinations and various scientific resolutions of international scope; and it decides all major issues concerning the organization and development of the BIPM, including the notation of the \\hyperlink{qudt:TERM_BIPM}{BIPM}.}"^^xsd:string ;
+  skos:prefLabel "CGPM"^^xsd:string ;
+.
+qudt:TERM_CGS
+  rdf:type qudt:Acronym ;
+  skos:definition "\\textit{CGS}, or more correctly \\textit{C.G.S.}, stands for the \\textit{centimetre-gram-second} system of unts.  See \\href{http://en.wikipedia.org/wiki/Centimetre–gram–second_system_of_units}{Wikipedia CGS}. See also \\hyperlink{qudt:TERM_MKS}{MKS}."^^xsd:string ;
+  skos:prefLabel "C.G.S."^^xsd:string ;
+.
+qudt:TERM_CIL
+  rdf:type qudt:Acronym ;
+  skos:definition "Critical Items List"^^xsd:string ;
+  skos:prefLabel "CIL"^^xsd:string ;
+.
+qudt:TERM_CIPM
+  rdf:type qudt:Acronym ;
+  rdfs:label "CIPM"^^xsd:string ;
+  skos:definition "Comité international des poids et mesures"^^xsd:string ;
+  skos:prefLabel "CIPM"^^xsd:string ;
+.
+qudt:TERM_CM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Configuration Management"^^xsd:string ;
+  skos:definition "Configuration Manager"^^xsd:string ;
+  skos:definition "Corrective Maintenance"^^xsd:string ;
+  skos:definition "Crew Module"^^xsd:string ;
+  skos:prefLabel "CM"^^xsd:string ;
+.
+qudt:TERM_CMM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Critical Math Model"^^xsd:string ;
+  skos:prefLabel "CMM"^^xsd:string ;
+.
+qudt:TERM_CMS
+  rdf:type qudt:Term ;
+  skos:definition "Common Services"^^xsd:string ;
+  skos:prefLabel "CMS" ;
+.
+qudt:TERM_CMS-OS
+  rdf:type qudt:Term ;
+  skos:definition "Common Services Operating System"^^xsd:string ;
+  skos:prefLabel "CMS-OS" ;
+.
+qudt:TERM_COF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Construction of Facilities"^^xsd:string ;
+  skos:prefLabel "COF"^^xsd:string ;
+.
+qudt:TERM_COHERENT-DERIVED-UNIT
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Coherent Derived Unit"^^xsd:string ;
+  skos:definition "A derived unit that, for a given system of quantities and for a chosen set of base units, is a product of powers of base units with no other proportionality factor than one. Coherence can be determined only with respect to a particular system of quantities and a given set of base units. A derived unit can be coherent with respect to one system of quantities but not to another. The coherent derived unit for every derived quantity of dimension one in a given system of units is the number one, symbol 1. The name and symbol of the measurement unit one are generally not indicated. For example, if the metre, the second, and the mole are base units, the metre per second is the coherent derived unit of velocity when velocity is defined by the quantity equation $\\nu = dr/dt$, and the mole per cubic metre is the coherent derived unit of amount-of-substance concentration when amount-of-substance concentration is defined by the quantity equation $c = n/V$."^^xsd:string ;
+  skos:prefLabel "Coherent Derived Unit"^^xsd:string ;
+.
+qudt:TERM_COHERENT-SYSTEM-OF-UNITS
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Coherent System of Units"^^xsd:string ;
+  skos:definition "A system of units, based on a given system of quantities, in which the measurement unit for each derived quantity is a coherent derived unit. A system of units can be coherent only with respect to a system of quantities and the adopted base units. For a coherent system of units, numerical value equations have the same form, including numerical factors, as the corresponding quantity equations."^^xsd:string ;
+  skos:prefLabel "Coherent System of Units"^^xsd:string ;
+.
+qudt:TERM_COORDINATE-SYSTEM-ASTRONOMY
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Coordinate System (Astronomy)"^^xsd:string ;
+  skos:definition """In astronomy, a celestial coordinate system is a system for specifying positions of celestial objects: satellites, planets, stars, galaxies, and so on. 
+Coordinate systems can specify a position in 3-dimensional space, or merely the direction of the object on the celestial sphere, if its distance is not known or not important."""^^xsd:string ;
+  skos:prefLabel "Coordinate System (Astronomy)"^^xsd:string ;
+.
+qudt:TERM_COORDINATE-SYSTEM-GEOMETRY
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Coordinate System (Geometry)"^^xsd:string ;
+  skos:definition "A coordinate system is a system which uses one or more numbers, or coordinates, to uniquely determine the position of a point or other geometric element on a manifold such as Euclidean space. The order of the coordinates is significant and they are sometimes identified by their position in an ordered tuple and sometimes by a letter, as in \\emph{the x-coordinate}. "^^xsd:string ;
+  skos:prefLabel "Coordinate System (Geometry)"^^xsd:string ;
+.
+qudt:TERM_COORDINATE-SYSTEM-MATH
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Coordinate System (Elementary Math)"^^xsd:string ;
+  skos:definition "In elementary mathematics the coordinates are taken to be real numbers, but may be complex numbers or elements of a more abstract system such as a commutative ring. The use of a coordinate system allows problems in geometry to be translated into problems about numbers and vice versa; this is the basis of analytic geometry. "^^xsd:string ;
+  skos:prefLabel "Coordinate System (Elementary Math)"^^xsd:string ;
+.
+qudt:TERM_COTS
+  rdf:type qudt:Acronym ;
+  skos:definition "Commercial off the Shelf"^^xsd:string ;
+  skos:prefLabel "COTS"^^xsd:string ;
+.
+qudt:TERM_CPS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Cryogenic Propulsion Stage"^^xsd:string ;
+  skos:prefLabel "CPS"^^xsd:string ;
+.
+qudt:TERM_CR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Change Request"^^xsd:string ;
+  skos:prefLabel "CR"^^xsd:string ;
+.
+qudt:TERM_CRF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Canister Rotation Facility"^^xsd:string ;
+  skos:prefLabel "CRF"^^xsd:string ;
+.
+qudt:TERM_CS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Core Stage"^^xsd:string ;
+  skos:prefLabel "CS"^^xsd:string ;
+.
+qudt:TERM_CSA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Configuration Status Accounting"^^xsd:string ;
+  skos:prefLabel "CSA"^^xsd:string ;
+.
+qudt:TERM_CSI
+  rdf:type qudt:Acronym ;
+  skos:definition "Cross-Program System Integration"^^xsd:string ;
+  skos:prefLabel "CSI"^^xsd:string ;
+.
+qudt:TERM_CSO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Chief Safety & Mission Assurance Officer"^^xsd:string ;
+  skos:prefLabel "CSO"^^xsd:string ;
+.
+qudt:TERM_CT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Crawler Transporter"^^xsd:string ;
+  skos:prefLabel "CT"^^xsd:string ;
+.
+qudt:TERM_CTE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Crawler Transporter Element"^^xsd:string ;
+  skos:prefLabel "CTE"^^xsd:string ;
+.
+qudt:TERM_CUU
+  rdf:type qudt:Acronym ;
+  skos:definition "Constants, Units, and Uncertainty"^^xsd:string ;
+  skos:prefLabel "CUU"^^xsd:string ;
+.
+qudt:TERM_CWC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Collaborative Work Commitment"^^xsd:string ;
+  skos:prefLabel "CWC"^^xsd:string ;
+.
+qudt:TERM_CoFR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Certification of Flight Readiness"^^xsd:string ;
+  skos:prefLabel "CoFR"^^xsd:string ;
+.
+qudt:TERM_ConOps
+  rdf:type qudt:Abbreviation ;
+  skos:definition "Concept of Operations"^^xsd:string ;
+  skos:prefLabel "ConOps"^^xsd:string ;
+.
+qudt:TERM_CxP
+  rdf:type qudt:Acronym ;
+  skos:definition "Constellation Program"^^xsd:string ;
+  skos:prefLabel "CxP"^^xsd:string ;
+.
+qudt:TERM_DAC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Design Analysis Cycle"^^xsd:string ;
+  skos:prefLabel "DAC"^^xsd:string ;
+.
+qudt:TERM_DCR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Design Certification Review"^^xsd:string ;
+  skos:prefLabel "DCR"^^xsd:string ;
+.
+qudt:TERM_DDMS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Design and Data Management System"^^xsd:string ;
+  skos:prefLabel "DDMS"^^xsd:string ;
+.
+qudt:TERM_DDTE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Design Development Test & Evaluation"^^xsd:string ;
+  skos:prefLabel "DDT&E"^^xsd:string ;
+.
+qudt:TERM_DED
+  rdf:type qudt:Acronym ;
+  skos:definition "Data Element Definition"^^xsd:string ;
+  skos:prefLabel "DED"^^xsd:string ;
+.
+qudt:TERM_DERIVED-QUANTITY
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Derived Quantity"^^xsd:string ;
+  skos:definition """For a given quantity, a \\textit{derived quantity} is one where the short term \\emph{unit} is often combined with the quantity name, such as \\emph{mass unit} or \\emph{unit of mass}. This type of quantity, in a system of quantities, is defined in terms of the base quantities of that system.
+For example: in a system of quantities having the base quantities length and mass, mass density is a derived quantity defined as the quotient of mass and volume (length to the third power)."""^^xsd:string ;
+  skos:prefLabel "Derived Quantity"^^xsd:string ;
+.
+qudt:TERM_DGA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Designated Governing Authority"^^xsd:string ;
+  skos:prefLabel "DGA"^^xsd:string ;
+.
+qudt:TERM_DIMENSION
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Dimension"^^xsd:string ;
+  skos:definition """A dimension is a relationship between a quantity system, a quantity kind of that system, and one or more dimension vectors.
+There is one dimension vector for each of the system's base quantity kinds.  The vector's magnitude determines the exponent of the base dimension for the referenced quantity kind. The dimension of a physical quantity is the combination of the basic physical dimensions (usually mass, length, time, electric charge, and temperature) which describe it."""^^xsd:string ;
+  skos:prefLabel "Dimension"^^xsd:string ;
+.
+qudt:TERM_DIMENSION-SYMBOL
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Dimension Symbol"^^xsd:string ;
+  skos:definition "A single character representing a dimension. The characters are $L \\, M \\, T \\, I \\, \\theta \\, N \\, J $."^^xsd:string ;
+  skos:prefLabel "Dimension Symbol"^^xsd:string ;
+.
+qudt:TERM_DIMENSION-VECTOR
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Dimension Vector"^^xsd:string ;
+  skos:definition "The dimension of a quantity Q is denoted by a vector as follows: $dim Q = L^{\\alpha} \\, M^{\\beta} \\, T^{\\gamma} \\, I ^{\\delta} \\, \\theta ^{\\epsilon} \\, N^{\\eta} \\, J ^{\\nu}$ where the exponents, named dimensional exponents ($\\alpha, \\, \\beta, \\, \\gamma, \\, \\delta, \\, \\epsilon, \\, \\eta, \\, \\nu $), are positive, negative, or zero."^^xsd:string ;
+  skos:prefLabel "Dimension Vector"^^xsd:string ;
+.
+qudt:TERM_DIMENSIONAL-ANALYSIS
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Dimensional Analysis"^^xsd:string ;
+  skos:definition "In Science and Engineering, dimensional analysis is a tool to find or check relations among physical quantities by using their dimensions."^^xsd:string ;
+  skos:prefLabel "Dimensional Analysis"^^xsd:string ;
+.
+qudt:TERM_DIMENSIONLESS-QUANTITY
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Dimensionless Quantity"^^xsd:string ;
+  skos:definition "A quantity of dimension one (or dimensionless quantity is commonly used and is kept here for historical reasons. It stems from the fact that all exponents are zero in the symbolic representation of the dimension for such quantities. The term \\emph{quantity of dimension one} reflects the convention in which the symbolic representation of the dimension for such quantities is the symbol 1 (see ISO 31-0:1992, 2.2.6). It  is a quantity for which all the exponents of the factors corresponding to the base quantities in its quantity dimension are zero."^^xsd:string ;
+  skos:prefLabel "Dimensionless Quantity"^^xsd:string ;
+.
+qudt:TERM_DIS
+  rdf:type qudt:Acronym ;
+  skos:definition "Draft International Standard"^^xsd:string ;
+  skos:prefLabel "DIS"^^xsd:string ;
+.
+qudt:TERM_DLE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Discipline Lead Engineer"^^xsd:string ;
+  skos:prefLabel "DLE"^^xsd:string ;
+.
+qudt:TERM_DM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Data Management"^^xsd:string ;
+  skos:definition "Descent Module"^^xsd:string ;
+  skos:prefLabel "DM"^^xsd:string ;
+.
+qudt:TERM_DMSMS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Diminishing Manufacturing Sources and Material Shortages"^^xsd:string ;
+  skos:prefLabel "DMSMS"^^xsd:string ;
+.
+qudt:TERM_DR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Data Requirement"^^xsd:string ;
+  skos:prefLabel "DR"^^xsd:string ;
+.
+qudt:TERM_DRD
+  rdf:type qudt:Acronym ;
+  skos:definition "Data Requirement Description"^^xsd:string ;
+  skos:prefLabel "DRD"^^xsd:string ;
+.
+qudt:TERM_DRL
+  rdf:type qudt:Acronym ;
+  skos:definition "Data Requirements List"^^xsd:string ;
+  skos:prefLabel "DRL"^^xsd:string ;
+.
+qudt:TERM_DRM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Design Reference Mission"^^xsd:string ;
+  skos:prefLabel "DRM"^^xsd:string ;
+.
+qudt:TERM_DSF
+  rdf:type qudt:Term ;
+  skos:definition "Display Services Framework"^^xsd:string ;
+  skos:prefLabel "DSF" ;
+.
+qudt:TERM_DSH
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Deep Space Habitat"^^xsd:string ;
+  skos:prefLabel "DSH"^^xsd:string ;
+.
+qudt:TERM_DoD
+  rdf:type qudt:Acronym ;
+  skos:definition "Department of Defense"^^xsd:string ;
+  skos:prefLabel "DoD"^^xsd:string ;
+.
+qudt:TERM_E2E-CC
+  rdf:type qudt:Acronym ;
+  skos:definition "End-to-End Command and Control"^^xsd:string ;
+  skos:prefLabel "E2E-CC"^^xsd:string ;
+.
+qudt:TERM_ECE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Element Chief Engineer"^^xsd:string ;
+  skos:prefLabel "ECE"^^xsd:string ;
+.
+qudt:TERM_ECSO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Element Chief Safety & Mission Assurance Officer"^^xsd:string ;
+  skos:prefLabel "ECSO"^^xsd:string ;
+.
+qudt:TERM_EDF
+  rdf:type qudt:Term ;
+  skos:definition "EIC Development Framework"^^xsd:string ;
+  skos:prefLabel "EDF" ;
+.
+qudt:TERM_EDLE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Element Discipline Lead Engineer"^^xsd:string ;
+  skos:prefLabel "EDLE"^^xsd:string ;
+.
+qudt:TERM_EE12
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "MSFC's Configuration and Data Office"^^xsd:string ;
+  skos:prefLabel "EE12"^^xsd:string ;
+.
+qudt:TERM_EGCS
+  rdf:type qudt:Term ;
+  skos:definition "EIC Ground Control System"^^xsd:string ;
+  skos:prefLabel "EGCS" ;
+.
+qudt:TERM_EHSC
+  rdf:type qudt:Term ;
+  skos:definition "EIC Health, Status & Config"^^xsd:string ;
+  skos:prefLabel "EHSC" ;
+.
+qudt:TERM_EIC
+  rdf:type qudt:Term ;
+  skos:definition "End-Item Control"^^xsd:string ;
+  skos:prefLabel "EIC" ;
+.
+qudt:TERM_EIT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Element Integration Team"^^xsd:string ;
+  skos:prefLabel "EIT"^^xsd:string ;
+.
+qudt:TERM_ELSE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Element Lead Systems Engineer"^^xsd:string ;
+  skos:prefLabel "ELSE"^^xsd:string ;
+.
+qudt:TERM_EMEPM
+  rdf:type qudt:Acronym ;
+  skos:definition "Earth Mean Equator and Prime Meridian\\footnote{EMEPM is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "EMEPM"^^xsd:string ;
+.
+qudt:TERM_EMROT
+  rdf:type qudt:Acronym ;
+  skos:definition "Earth-Moon Rotating\\footnote{EMROT is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "EMROT"^^xsd:string ;
+.
+qudt:TERM_EMU
+  rdf:type qudt:Acronym ;
+  skos:definition "Electomagnetic Unit"^^xsd:string ;
+  skos:prefLabel "EMU"^^xsd:string ;
+.
+qudt:TERM_EOM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Element Operations Manager"^^xsd:string ;
+  skos:prefLabel "EOM"^^xsd:string ;
+.
+qudt:TERM_EP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Engineering Panel"^^xsd:string ;
+  skos:prefLabel "EP"^^xsd:string ;
+.
+qudt:TERM_EPF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Eastern Processing Facility"^^xsd:string ;
+  skos:prefLabel "EPF"^^xsd:string ;
+.
+qudt:TERM_EPM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Element Project Manager"^^xsd:string ;
+  skos:prefLabel "EPM"^^xsd:string ;
+.
+qudt:TERM_ERIC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Exploration Requirements for Institutional Capabilities"^^xsd:string ;
+  skos:prefLabel "ERIC"^^xsd:string ;
+.
+qudt:TERM_ESC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Engineering Support Contract"^^xsd:string ;
+  skos:prefLabel "ESC"^^xsd:string ;
+.
+qudt:TERM_ESD
+  rdf:type qudt:Acronym ;
+  skos:definition "Explorations Systems Development"^^xsd:string ;
+  skos:prefLabel "ESD"^^xsd:string ;
+.
+qudt:TERM_ESMD
+  rdf:type qudt:Acronym ;
+  skos:definition "Exploration Systems Mission Directorate"^^xsd:string ;
+  skos:prefLabel "ESMD"^^xsd:string ;
+.
+qudt:TERM_ESU
+  rdf:type qudt:Acronym ;
+  skos:definition "Electrostatic Unit"^^xsd:string ;
+  skos:prefLabel "ESU"^^xsd:string ;
+.
+qudt:TERM_ET01
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "MSFC Test Laboratory"^^xsd:string ;
+  skos:prefLabel "ET01"^^xsd:string ;
+.
+qudt:TERM_ETEPMBF
+  rdf:type qudt:Acronym ;
+  skos:definition "Earth True Equator and Prime Meridian Body-Fixed. \\footnote{ETEPMBF is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "ETEPMBF"^^xsd:string ;
+.
+qudt:TERM_ETEPME
+  rdf:type qudt:Acronym ;
+  skos:definition "Earth True Equator and Prime Meridian of Epoch\\footnote{ETEPME is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "ETEPME"^^xsd:string ;
+.
+qudt:TERM_ETI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Element Technical Integrator"^^xsd:string ;
+  skos:prefLabel "ETI"^^xsd:string ;
+.
+qudt:TERM_EV70
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Systems Engineering & Integration Division"^^xsd:string ;
+  skos:prefLabel "EV70"^^xsd:string ;
+.
+qudt:TERM_FEIT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Flight Element Integration Test"^^xsd:string ;
+  skos:prefLabel "FEIT"^^xsd:string ;
+.
+qudt:TERM_FFA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Functional Failure Analysis"^^xsd:string ;
+  skos:prefLabel "FFA"^^xsd:string ;
+.
+qudt:TERM_FMB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Facility Management Board"^^xsd:string ;
+  skos:prefLabel "FMB"^^xsd:string ;
+.
+qudt:TERM_FMEA
+  rdf:type qudt:Acronym ;
+  skos:definition "Failure Modes and Effects Analysis"^^xsd:string ;
+  skos:prefLabel "FMEA"^^xsd:string ;
+.
+qudt:TERM_FOM
+  rdf:type qudt:Acronym ;
+  skos:definition "Figure of Merit"^^xsd:string ;
+  skos:prefLabel "FOM"^^xsd:string ;
+.
+qudt:TERM_FRAME-OF-REFERENCE
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Frame of Reference"^^xsd:string ;
+  skos:definition "A property of a phenomenon, body, or substance, where the property has a magnitude that can be expressed as a number and a reference."^^xsd:string ;
+  skos:prefLabel "Frame of Reference"^^xsd:string ;
+.
+qudt:TERM_FSE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Facility Systems and Equipment"^^xsd:string ;
+  skos:prefLabel "FS&E"^^xsd:string ;
+.
+qudt:TERM_FSOI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Flight Systems & Operations Integration"^^xsd:string ;
+  skos:prefLabel "FS&OI"^^xsd:string ;
+.
+qudt:TERM_FTS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Flight Termination System"^^xsd:string ;
+  skos:prefLabel "FTS"^^xsd:string ;
+.
+qudt:TERM_FWD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Forward"^^xsd:string ;
+  skos:prefLabel "FWD"^^xsd:string ;
+.
+qudt:TERM_GEIT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Ground Element Integration Test"^^xsd:string ;
+  skos:prefLabel "GEIT"^^xsd:string ;
+.
+qudt:TERM_GFAC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Ground Facilities"^^xsd:string ;
+  skos:prefLabel "GFAC"^^xsd:string ;
+.
+qudt:TERM_GFE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Government Furnished Equipment"^^xsd:string ;
+  skos:prefLabel "GFE"^^xsd:string ;
+.
+qudt:TERM_GFM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Government Furnished Material"^^xsd:string ;
+  skos:prefLabel "GFM"^^xsd:string ;
+.
+qudt:TERM_GHe
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Gaseous Helium"^^xsd:string ;
+  skos:prefLabel "GHe"^^xsd:string ;
+.
+qudt:TERM_GIDEP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Government-Industry Data Exchange Program"^^xsd:string ;
+  skos:prefLabel "GIDEP"^^xsd:string ;
+.
+qudt:TERM_GN2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Gaseous Nitrogen"^^xsd:string ;
+  skos:prefLabel "GN2"^^xsd:string ;
+.
+qudt:TERM_GO2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Gaseous Oxygen"^^xsd:string ;
+  skos:prefLabel "GO2"^^xsd:string ;
+.
+qudt:TERM_GOPD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Ground Operations Planning Document"^^xsd:string ;
+  skos:prefLabel "GOPD"^^xsd:string ;
+.
+qudt:TERM_GP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Ground Processing"^^xsd:string ;
+  skos:prefLabel "GP"^^xsd:string ;
+.
+qudt:TERM_GS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Ground Systems"^^xsd:string ;
+  skos:prefLabel "GS"^^xsd:string ;
+.
+qudt:TERM_GSDO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Ground Systems Development & Operations Program"^^xsd:string ;
+  skos:prefLabel "GSDO"^^xsd:string ;
+.
+qudt:TERM_GSE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Ground Support Equipment"^^xsd:string ;
+  skos:prefLabel "GSE"^^xsd:string ;
+.
+qudt:TERM_GWS
+  rdf:type qudt:Term ;
+  skos:definition "Gateway Services and Framework"^^xsd:string ;
+  skos:prefLabel "GWS" ;
+.
+qudt:TERM_HAZMAT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Hazardous Material"^^xsd:string ;
+  skos:prefLabel "HAZMAT"^^xsd:string ;
+.
+qudt:TERM_HDBK
+  rdf:type qudt:Abbreviation ;
+  skos:definition "Handbook"^^xsd:string ;
+  skos:prefLabel "HDBK"^^xsd:string ;
+.
+qudt:TERM_HEC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Human Exploration Capability"^^xsd:string ;
+  skos:prefLabel "HEC"^^xsd:string ;
+.
+qudt:TERM_HEO_1
+  rdf:type qudt:Acronym ;
+  skos:definition "High Earth Orbit"^^xsd:string ;
+  skos:prefLabel "HEO"^^xsd:string ;
+.
+qudt:TERM_HEO_2
+  rdf:type qudt:Acronym ;
+  skos:definition "Human Exploration & Operations"^^xsd:string ;
+  skos:prefLabel "HEO"^^xsd:string ;
+.
+qudt:TERM_HIF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Horizontal Integration Facility"^^xsd:string ;
+  skos:prefLabel "HIF"^^xsd:string ;
+.
+qudt:TERM_HLO
+  rdf:type qudt:Acronym ;
+  skos:definition "High Lunar Orbit"^^xsd:string ;
+  skos:prefLabel "HLO"^^xsd:string ;
+.
+qudt:TERM_HMF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Hypergolic Maintenance Facility"^^xsd:string ;
+  skos:prefLabel "HMF"^^xsd:string ;
+.
+qudt:TERM_HQ
+  rdf:type qudt:Acronym ;
+  skos:definition "Headquarters"^^xsd:string ;
+  skos:prefLabel "HQ"^^xsd:string ;
+.
+qudt:TERM_HTLT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Horizontal Takeoff Horizontal Landing"^^xsd:string ;
+  skos:prefLabel "HTLT"^^xsd:string ;
+.
+qudt:TERM_HVAC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Heating, Ventilation, and Air Conditioning"^^xsd:string ;
+  skos:prefLabel "HVAC"^^xsd:string ;
+.
+qudt:TERM_IAS
+  rdf:type qudt:Term ;
+  skos:definition "Information Architecture"^^xsd:string ;
+  skos:prefLabel "IAS" ;
+.
+qudt:TERM_IAU
+  rdf:type qudt:Acronym ;
+  skos:definition "International Astronomical Union"^^xsd:string ;
+  skos:prefLabel "IAU"^^xsd:string ;
+.
+qudt:TERM_ICCA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "IPT Critical Capability Assessment"^^xsd:string ;
+  skos:prefLabel "ICCA"^^xsd:string ;
+.
+qudt:TERM_ICD
+  rdf:type qudt:Acronym ;
+  skos:definition "Interface Control Document"^^xsd:string ;
+  skos:prefLabel "ICD"^^xsd:string ;
+.
+qudt:TERM_ICE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Integrated Collaborative Environment"^^xsd:string ;
+  skos:prefLabel "ICE"^^xsd:string ;
+.
+qudt:TERM_ICM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Information & Configuration Management"^^xsd:string ;
+  skos:prefLabel "ICM"^^xsd:string ;
+.
+qudt:TERM_ICRF
+  rdf:type qudt:Acronym ;
+  skos:definition "International Celestial Reference Frame\\footnote{A coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "ICRF"^^xsd:string ;
+.
+qudt:TERM_IDD
+  rdf:type qudt:Acronym ;
+  skos:definition "Interface Data Document"^^xsd:string ;
+  skos:prefLabel "IDD"^^xsd:string ;
+.
+qudt:TERM_IDIQ
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Indefinite Deliverable Indefinite Quantity"^^xsd:string ;
+  skos:prefLabel "IDIQ"^^xsd:string ;
+.
+qudt:TERM_IEC
+  rdf:type qudt:Acronym ;
+  skos:definition "International Electrotechnical Commission"^^xsd:string ;
+  skos:prefLabel "IEC"^^xsd:string ;
+.
+qudt:TERM_IEE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Infrastructure and Environmental Element"^^xsd:string ;
+  skos:prefLabel "IEE"^^xsd:string ;
+.
+qudt:TERM_IFC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Initiator Firing Circuit"^^xsd:string ;
+  skos:prefLabel "IFC"^^xsd:string ;
+.
+qudt:TERM_ILF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Integrated Logistics Forum"^^xsd:string ;
+  skos:prefLabel "ILF"^^xsd:string ;
+.
+qudt:TERM_ILS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Integrated Logistics Support"^^xsd:string ;
+  skos:prefLabel "ILS"^^xsd:string ;
+.
+qudt:TERM_ILSP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Integrated Logistics Support Plan"^^xsd:string ;
+  skos:prefLabel "ILSP"^^xsd:string ;
+.
+qudt:TERM_IPCA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "IPT Preliminary Capability Assessment"^^xsd:string ;
+  skos:prefLabel "IPCA"^^xsd:string ;
+.
+qudt:TERM_IPT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Integrated Product Team"^^xsd:string ;
+  skos:prefLabel "IPT"^^xsd:string ;
+.
+qudt:TERM_IRD
+  rdf:type qudt:Acronym ;
+  skos:definition "Interface Requirements Document"^^xsd:string ;
+  skos:prefLabel "IRD"^^xsd:string ;
+.
+qudt:TERM_IRMA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Integrated Risk Management Application"^^xsd:string ;
+  skos:prefLabel "IRMA"^^xsd:string ;
+.
+qudt:TERM_IS
+  rdf:type qudt:Acronym ;
+  skos:definition "Information Systems"^^xsd:string ;
+  skos:prefLabel "IS"^^xsd:string ;
+.
+qudt:TERM_ISC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Institutional Services Contract"^^xsd:string ;
+  skos:prefLabel "ISC"^^xsd:string ;
+.
+qudt:TERM_ISO
+  rdf:type qudt:Acronym ;
+  skos:definition "International Organization for Standardization"^^xsd:string ;
+  skos:prefLabel "ISO"^^xsd:string ;
+.
+qudt:TERM_ISO2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Information Systems Office"^^xsd:string ;
+  skos:prefLabel "ISO"^^xsd:string ;
+.
+qudt:TERM_ISP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Interim Support Plan"^^xsd:string ;
+  skos:prefLabel "ISP"^^xsd:string ;
+.
+qudt:TERM_ISPE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Integrated Spacecraft and Payload Element"^^xsd:string ;
+  skos:prefLabel "ISPE"^^xsd:string ;
+.
+qudt:TERM_ISQ
+  rdf:type qudt:Acronym ;
+  rdfs:label "ISQ"^^xsd:string ;
+  skos:definition "\\textit{ISQ} stands for \\textit{International System of Quantities}. This system of quantities is published in the ISO 80000 and IEC 80000 series Quantities and units. ISQ is based on the seven base quantities: length , mass, time, electric current, thermodynamic temperature, amount of substance, and luminous intensity."^^xsd:string ;
+  skos:prefLabel "ISQ"^^xsd:string ;
+.
+qudt:TERM_ISS
+  rdf:type qudt:Acronym ;
+  skos:definition "International Space Station"^^xsd:string ;
+  skos:prefLabel "ISS"^^xsd:string ;
+.
+qudt:TERM_ITRF
+  rdf:type qudt:Acronym ;
+  skos:definition "International Terrestrial Reference Frame \\footnote{ITRF is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "ITRF"^^xsd:string ;
+.
+qudt:TERM_IUPAC
+  rdf:type qudt:Acronym ;
+  skos:definition "International Union of Pure and Applied Chemistry"^^xsd:string ;
+  skos:prefLabel "IUPAC"^^xsd:string ;
+.
+qudt:TERM_IUPAP
+  rdf:type qudt:Acronym ;
+  skos:definition "International Union of Pure and Applied Physics"^^xsd:string ;
+  skos:prefLabel "IUPAP"^^xsd:string ;
+.
+qudt:TERM_JARSS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Joint Advanced Range Safety System"^^xsd:string ;
+  skos:prefLabel "JARSS"^^xsd:string ;
+.
+qudt:TERM_JPCB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Joint Program Control Board"^^xsd:string ;
+  skos:prefLabel "JPCB"^^xsd:string ;
+.
+qudt:TERM_JSC
+  rdf:type qudt:Acronym ;
+  skos:definition "Johnson Space Center"^^xsd:string ;
+  skos:prefLabel "JSC"^^xsd:string ;
+.
+qudt:TERM_KITS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Kennedy Integrated Transmission System"^^xsd:string ;
+  skos:prefLabel "KITS"^^xsd:string ;
+.
+qudt:TERM_KNET
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "KSC Network"^^xsd:string ;
+  skos:prefLabel "KNET"^^xsd:string ;
+.
+qudt:TERM_KS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Kick Stage"^^xsd:string ;
+  skos:prefLabel "KS"^^xsd:string ;
+.
+qudt:TERM_KSC
+  rdf:type qudt:Acronym ;
+  skos:definition "Kennedy Space Center"^^xsd:string ;
+  skos:prefLabel "KSC"^^xsd:string ;
+.
+qudt:TERM_LAS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Launch Abort System"^^xsd:string ;
+  skos:prefLabel "LAS"^^xsd:string ;
+.
+qudt:TERM_LCC_1
+  rdf:type qudt:Acronym ;
+  skos:definition "Launch Control Center"^^xsd:string ;
+  skos:prefLabel "LCC"^^xsd:string ;
+.
+qudt:TERM_LCC_2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Life Cycle Cost"^^xsd:string ;
+  skos:prefLabel "LCC"^^xsd:string ;
+.
+qudt:TERM_LEFT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Launch Equipment Test Facility"^^xsd:string ;
+  skos:prefLabel "LEFT"^^xsd:string ;
+.
+qudt:TERM_LEO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Low Earth Orbit"^^xsd:string ;
+  skos:prefLabel "LEO"^^xsd:string ;
+.
+qudt:TERM_LES
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Launch Equipment Shop"^^xsd:string ;
+  skos:prefLabel "LES"^^xsd:string ;
+.
+qudt:TERM_LH2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Liquid Hydrogen"^^xsd:string ;
+  skos:prefLabel "LH2"^^xsd:string ;
+.
+qudt:TERM_LLO
+  rdf:type qudt:Acronym ;
+  skos:definition "Low Lunar Orbit"^^xsd:string ;
+  skos:prefLabel "LLO"^^xsd:string ;
+.
+qudt:TERM_LMEBF
+  rdf:type qudt:Acronym ;
+  skos:definition "Lunar Mean Earth Body - Fixed\\footnote{LMEBF is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "LMEBF"^^xsd:string ;
+.
+qudt:TERM_LMI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Logistics Management Information"^^xsd:string ;
+  skos:prefLabel "LMI"^^xsd:string ;
+.
+qudt:TERM_LO2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Liquid Oxygen"^^xsd:string ;
+  skos:prefLabel "LO2"^^xsd:string ;
+.
+qudt:TERM_LOLI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Limited Operations Life Items"^^xsd:string ;
+  skos:prefLabel "LOLI"^^xsd:string ;
+.
+qudt:TERM_LORA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Level or Repair Analysis"^^xsd:string ;
+  skos:prefLabel "LORA"^^xsd:string ;
+.
+qudt:TERM_LPABF
+  rdf:type qudt:Acronym ;
+  skos:definition "Lunar Principal Axis Body - Fixed\\footnote{LBABF is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "LBABF"^^xsd:string ;
+.
+qudt:TERM_LPAE
+  rdf:type qudt:Acronym ;
+  skos:definition "Lunar Principal Axis of Epoch\\footnote{LPAE is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "LPAE"^^xsd:string ;
+.
+qudt:TERM_LPE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Launch Pad Element"^^xsd:string ;
+  skos:prefLabel "LPE"^^xsd:string ;
+.
+qudt:TERM_LRB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Liquid Rocket Booster"^^xsd:string ;
+  skos:prefLabel "LRB"^^xsd:string ;
+.
+qudt:TERM_LRU
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Line Replaceable Unit"^^xsd:string ;
+  skos:prefLabel "LRU"^^xsd:string ;
+.
+qudt:TERM_LSA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Logistics Support Analysis"^^xsd:string ;
+  skos:prefLabel "LSA"^^xsd:string ;
+.
+qudt:TERM_LSAP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Logistics Support Analysis Plan"^^xsd:string ;
+  skos:prefLabel "LSAP"^^xsd:string ;
+.
+qudt:TERM_LSAR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Logistics Support Analysis Record"^^xsd:string ;
+  skos:prefLabel "LSAR"^^xsd:string ;
+.
+qudt:TERM_LSE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Lead System Engineer"^^xsd:string ;
+  skos:prefLabel "LSE"^^xsd:string ;
+.
+qudt:TERM_LSMI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Logistics Support Management Information"^^xsd:string ;
+  skos:prefLabel "LSMI"^^xsd:string ;
+.
+qudt:TERM_LV
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Launch Vehicle"^^xsd:string ;
+  skos:prefLabel "LV"^^xsd:string ;
+.
+qudt:TERM_LVC
+  rdf:type qudt:Acronym ;
+  skos:definition "Local Vertical Curvillinear\\footnote{LVC is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "LVC"^^xsd:string ;
+.
+qudt:TERM_LVLH
+  rdf:type qudt:Acronym ;
+  skos:definition "Local Vertical Local Horizontal\\footnote{LVLH is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "LVLH"^^xsd:string ;
+.
+qudt:TERM_LVOPE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Launch Vehicle Offline Processing Element"^^xsd:string ;
+  skos:prefLabel "LVOPE"^^xsd:string ;
+.
+qudt:TERM_MCR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Mission Concept Review"^^xsd:string ;
+  skos:prefLabel "MCR"^^xsd:string ;
+.
+qudt:TERM_MDL
+  rdf:type qudt:Term ;
+  skos:definition "Models"^^xsd:string ;
+  skos:prefLabel "MDL" ;
+.
+qudt:TERM_MEIT
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Multi-Element Integration Test"^^xsd:string ;
+  skos:prefLabel "MEIT"^^xsd:string ;
+.
+qudt:TERM_MEKM
+  rdf:type qudt:Acronym ;
+  skos:definition "MSFC Engineering Knowledge Management"^^xsd:string ;
+  skos:prefLabel "ME KM"^^xsd:string ;
+.
+qudt:TERM_MFC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Mission Focused Center"^^xsd:string ;
+  skos:prefLabel "MFC"^^xsd:string ;
+.
+qudt:TERM_MFL
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Master Facilities List"^^xsd:string ;
+  skos:prefLabel "MFL"^^xsd:string ;
+.
+qudt:TERM_MIDL
+  rdf:type qudt:Acronym ;
+  qudt:url "http://midl.msfc.nasa.gov/"^^xsd:anyURI ;
+  skos:definition "Marshall Integrated Document Library"^^xsd:string ;
+  skos:prefLabel "MIDL"^^xsd:string ;
+.
+qudt:TERM_MKS
+  rdf:type qudt:Acronym ;
+  skos:definition "MKS, or more correctly \\textit{M.K.S.}, stands for the \\textit{metre-kilogram-second} system of unts"^^xsd:string ;
+  skos:prefLabel "M.K.S."^^xsd:string ;
+.
+qudt:TERM_ML
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Mobile Launcher"^^xsd:string ;
+  skos:prefLabel "ML"^^xsd:string ;
+.
+qudt:TERM_MLE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Mobile Launcher Element"^^xsd:string ;
+  skos:prefLabel "MLE"^^xsd:string ;
+.
+qudt:TERM_MLP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Mobile Launcher Platform"^^xsd:string ;
+  skos:prefLabel "MLP"^^xsd:string ;
+.
+qudt:TERM_MMEIAUE
+  rdf:type qudt:Acronym ;
+  skos:definition "Mars Mean Equator and IAU Node of Epoch \\footnote{MMEIAUE is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "MMEIAUE"^^xsd:string ;
+.
+qudt:TERM_MMEPMBF
+  rdf:type qudt:Acronym ;
+  skos:definition "Mars Mean Equator and Prime Meridian Body - Fixed \\footnote{MMEPMBF is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "MMEPMBF"^^xsd:string ;
+.
+qudt:TERM_MPCV
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Multi-Purpose Crew Vehicle"^^xsd:string ;
+  skos:prefLabel "MPCV"^^xsd:string ;
+.
+qudt:TERM_MPPF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Multipurpose Payload Processing Facility"^^xsd:string ;
+  skos:prefLabel "MPPF"^^xsd:string ;
+.
+qudt:TERM_MPR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Marshall Procedural Requirement"^^xsd:string ;
+  skos:prefLabel "MPR"^^xsd:string ;
+.
+qudt:TERM_MSC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Material Service Center"^^xsd:string ;
+  skos:prefLabel "MSC"^^xsd:string ;
+.
+qudt:TERM_MSDS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Material Safety Data Sheet"^^xsd:string ;
+  skos:prefLabel "MSDS"^^xsd:string ;
+.
+qudt:TERM_MSFC
+  rdf:type qudt:Acronym ;
+  skos:definition "Marshall Space Flight Center"^^xsd:string ;
+  skos:prefLabel "MSFC"^^xsd:string ;
+.
+qudt:TERM_MSL
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Master Subsystems List"^^xsd:string ;
+  skos:prefLabel "MSL"^^xsd:string ;
+.
+qudt:TERM_MTBF
+  rdf:type qudt:Acronym ;
+  skos:definition "Mean Time Between Failure"^^xsd:string ;
+  skos:prefLabel "MTBF"^^xsd:string ;
+.
+qudt:TERM_MTO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Maintenance Task Outline"^^xsd:string ;
+  skos:prefLabel "MTO"^^xsd:string ;
+.
+qudt:TERM_MTTR
+  rdf:type qudt:Acronym ;
+  skos:definition "Mean Time To Repair"^^xsd:string ;
+  skos:prefLabel "MTTR"^^xsd:string ;
+.
+qudt:TERM_MVVP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Master Verification & Validation Plan"^^xsd:string ;
+  skos:prefLabel "MVVP"^^xsd:string ;
+.
+qudt:TERM_MWI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Marshall Work Instruction"^^xsd:string ;
+  skos:prefLabel "MWI"^^xsd:string ;
+.
+qudt:TERM_NAS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Naval Air Station"^^xsd:string ;
+  skos:prefLabel "NAS"^^xsd:string ;
+.
+qudt:TERM_NASA
+  rdf:type qudt:Acronym ;
+  skos:definition "National Aeronautics and Space Administration"^^xsd:string ;
+  skos:prefLabel "NASA"^^xsd:string ;
+.
+qudt:TERM_NE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "NASA Engineering"^^xsd:string ;
+  skos:prefLabel "NE"^^xsd:string ;
+.
+qudt:TERM_NEA
+  rdf:type qudt:Acronym ;
+  skos:definition "Near Earth Asteroid"^^xsd:string ;
+  skos:prefLabel "NEA"^^xsd:string ;
+.
+qudt:TERM_NEDS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Nozzle Extension Deployment System"^^xsd:string ;
+  skos:prefLabel "NEDS"^^xsd:string ;
+.
+qudt:TERM_NGO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Needs, Goals, & Objectives"^^xsd:string ;
+  skos:prefLabel "NGO"^^xsd:string ;
+.
+qudt:TERM_NHPA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "National Historic Preservation Act"^^xsd:string ;
+  skos:prefLabel "NHPA"^^xsd:string ;
+.
+qudt:TERM_NID
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "NASA Interim Directive"^^xsd:string ;
+  skos:prefLabel "NID"^^xsd:string ;
+.
+qudt:TERM_NIST
+  rdf:type qudt:Acronym ;
+  qudt:abbreviation "NIST"^^xsd:string ;
+  qudt:url "http://www.nist.gov"^^xsd:anyURI ;
+  rdfs:label "NIST"^^xsd:string ;
+  skos:definition "National Institute of Standards and Technology"^^xsd:string ;
+  skos:prefLabel "NIST"^^xsd:string ;
+.
+qudt:TERM_NODIS
+  rdf:type qudt:Acronym ;
+  qudt:url "http://nodis3.gsfc.nasa.gov/"^^xsd:anyURI ;
+  skos:definition "NASA Online Directives Information System"^^xsd:string ;
+  skos:prefLabel "NODIS"^^xsd:string ;
+.
+qudt:TERM_NP
+  rdf:type qudt:Acronym ;
+  skos:definition "New Proposal"^^xsd:string ;
+  skos:prefLabel "NP"^^xsd:string ;
+.
+qudt:TERM_NPR
+  rdf:type qudt:Acronym ;
+  skos:definition "NASA Procedural Requirements"^^xsd:string ;
+  skos:prefLabel "NPR"^^xsd:string ;
+.
+qudt:TERM_NSCKN
+  rdf:type qudt:Acronym ;
+  skos:definition "NASA Safety Center Knowledge Now"^^xsd:string ;
+  skos:prefLabel "NSCKN"^^xsd:string ;
+.
+qudt:TERM_OC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operations and Checkout"^^xsd:string ;
+  skos:prefLabel "O&C"^^xsd:string ;
+.
+qudt:TERM_OCD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Concept of Operations Document"^^xsd:string ;
+  skos:prefLabel "OCD"^^xsd:string ;
+.
+qudt:TERM_OEM
+  rdf:type qudt:Acronym ;
+  skos:definition "Original Equipment Manufacturer"^^xsd:string ;
+  skos:prefLabel "OEM"^^xsd:string ;
+.
+qudt:TERM_OIS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operational Intercommunication Systems"^^xsd:string ;
+  skos:prefLabel "OIS"^^xsd:string ;
+.
+qudt:TERM_OM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operations & Maintenance"^^xsd:string ;
+  skos:prefLabel "O&M"^^xsd:string ;
+.
+qudt:TERM_OM-DWMU
+  rdf:type qudt:Acronym ;
+  qudt:description "Oxford Mobile Dictionary of Weights, Measures and Units"^^xsd:string ;
+  qudt:url "http://www.oxfordreference.com/pages/Subjects_and_Titles__s23t135"^^xsd:anyURI ;
+  rdfs:label "OM-DWMU"^^xsd:string ;
+  skos:definition "Oxford Mobile Dictionary of Weights, Measures and Units. See \\href{http://www.oxfordreference.com/pages/Subjects_and_Titles__s23t135}{}www.oxfordreference.com."^^xsd:string ;
+  skos:prefLabel "OM-DWMU"^^xsd:string ;
+.
+qudt:TERM_OMB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Office of Management and Budget"^^xsd:string ;
+  skos:prefLabel "OMB"^^xsd:string ;
+.
+qudt:TERM_OMRSD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:prefLabel "OMRSD"^^xsd:string ;
+.
+qudt:TERM_OMS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operations Management System"^^xsd:string ;
+  skos:prefLabel "OMS"^^xsd:string ;
+.
+qudt:TERM_ONTOLOGY
+  rdf:type qudt:GlossaryTerm ;
+  qudt:longDescription """An ontology is a model of concepts and their properties that formalizes a subject area or domain of interest by characterizing the relationships and attributes that distinguish concepts and how they relate to one another. 
+
+At the most informal level, information and its uses can be described in plain English languages.
+But such representation is open to misinterpretation and cannot be processed accurately by computers.
+More formal specification of information uses conventions for representing syntax and semantics (meaning).
+It is common practice to attempt to do this with classification schemes such as taxonomies.
+
+In addition to the predefined hierarchical relationships in taxonomies, ontologies make it possible to name and use any custom relationship necessary to describe data and connect it to its contexts of use.
+Although the term \\nemp{Ontology}, with its origins in philosophy, has a lofty sound, it has been co-opted by the information and data modeling communities to simply mean a model of how concepts have properties and relationships to one another."""^^xsd:string ;
+  rdfs:label "Ontology"^^xsd:string ;
+  skos:definition "An ontology is a model of concepts and their properties that formalizes a subject area or domain of interest by characterizing the relationships and attributes that distinguish concepts and how they relate to one another. At the most informal level, information and its uses can be described in plain English languages."^^xsd:string ;
+  skos:prefLabel "Ontology"^^xsd:string ;
+.
+qudt:TERM_OPF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Orbiter Processing Facilities"^^xsd:string ;
+  skos:prefLabel "OPF"^^xsd:string ;
+.
+qudt:TERM_OPI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Offline Processing & Infrastructure"^^xsd:string ;
+  skos:prefLabel "OPI"^^xsd:string ;
+.
+qudt:TERM_OPOE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Orion Production Operations Element"^^xsd:string ;
+  skos:prefLabel "OPOE"^^xsd:string ;
+.
+qudt:TERM_OPR
+  rdf:type qudt:Acronym ;
+  skos:definition "Office of Primary Responsibility"^^xsd:string ;
+  skos:prefLabel "OPR"^^xsd:string ;
+.
+qudt:TERM_ORD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operational Readiness Date"^^xsd:string ;
+  skos:prefLabel "ORD"^^xsd:string ;
+.
+qudt:TERM_ORR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operational Readiness Review"^^xsd:string ;
+  skos:prefLabel "ORR"^^xsd:string ;
+.
+qudt:TERM_ORT
+  rdf:type qudt:Term ;
+  skos:definition "Operational Readiness Test"^^xsd:string ;
+  skos:prefLabel "ORT" ;
+.
+qudt:TERM_OSC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operations Support Contract"^^xsd:string ;
+  skos:prefLabel "OSC"^^xsd:string ;
+.
+qudt:TERM_OSD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operational Surveillance and Distribution"^^xsd:string ;
+  skos:prefLabel "OSD"^^xsd:string ;
+.
+qudt:TERM_OSE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operations Support Element"^^xsd:string ;
+  skos:prefLabel "OSE"^^xsd:string ;
+.
+qudt:TERM_OTS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Off-the-Shelf"^^xsd:string ;
+  skos:prefLabel "OTS"^^xsd:string ;
+.
+qudt:TERM_OTV
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Operational Television System"^^xsd:string ;
+  skos:prefLabel "OTV"^^xsd:string ;
+.
+qudt:TERM_OWL
+  rdf:type qudt:Acronym ;
+  rdfs:label "OWL"^^xsd:string ;
+  skos:definition "\\textit{OWL} stands for \\textit{Ontology Web Language} and is a W3C standard for representing information models with precise semantics. See \\href{http://www.w3.org/2004/OWL/}{W3C OWL}."^^xsd:string ;
+  skos:prefLabel "OWL"^^xsd:string ;
+.
+qudt:TERM_PBS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Product Breakdown Structure"^^xsd:string ;
+  skos:prefLabel "PBS"^^xsd:string ;
+.
+qudt:TERM_PCB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Program Control Board"^^xsd:string ;
+  skos:prefLabel "PCB"^^xsd:string ;
+.
+qudt:TERM_PCC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Processing Control Center"^^xsd:string ;
+  skos:prefLabel "PCC"^^xsd:string ;
+.
+qudt:TERM_PDF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Program Development Framework"^^xsd:string ;
+  skos:prefLabel "PDF"^^xsd:string ;
+.
+qudt:TERM_PDR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Preliminary Design Review"^^xsd:string ;
+  skos:prefLabel "PDR"^^xsd:string ;
+.
+qudt:TERM_PEDR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Preliminary Element Design Review"^^xsd:string ;
+  skos:prefLabel "PEDR"^^xsd:string ;
+.
+qudt:TERM_PEPC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Portable Equipment, Payloads, and Cargo"^^xsd:string ;
+  skos:prefLabel "PEPC"^^xsd:string ;
+.
+qudt:TERM_PHSF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Payload Hazardous Servicing Facility"^^xsd:string ;
+  skos:prefLabel "PHSF"^^xsd:string ;
+.
+qudt:TERM_PHST
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Packaging, Handling, Storage and Transportation"^^xsd:string ;
+  skos:prefLabel "PHS&T"^^xsd:string ;
+.
+qudt:TERM_PI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Program Integration"^^xsd:string ;
+  skos:prefLabel "PI"^^xsd:string ;
+.
+qudt:TERM_PIC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Pyrotechnic Initiator Circuit"^^xsd:string ;
+  skos:prefLabel "PIC"^^xsd:string ;
+.
+qudt:TERM_PLC
+  rdf:type qudt:Acronym ;
+  skos:definition "Programmable Logic Controller"^^xsd:string ;
+  skos:prefLabel "PLC"^^xsd:string ;
+.
+qudt:TERM_PM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Preventive Maintenance"^^xsd:string ;
+  skos:definition "Program Manager"^^xsd:string ;
+  skos:definition "Project Management"^^xsd:string ;
+  skos:prefLabel "PM"^^xsd:string ;
+.
+qudt:TERM_POC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Point of Contact"^^xsd:string ;
+  skos:prefLabel "POC"^^xsd:string ;
+.
+qudt:TERM_POL
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Paints, Oils & Lubricants"^^xsd:string ;
+  skos:prefLabel "POL"^^xsd:string ;
+.
+qudt:TERM_PPBE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Programming, Planning, Budgeting and Execution"^^xsd:string ;
+  skos:prefLabel "PPBE"^^xsd:string ;
+.
+qudt:TERM_PPC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Program Planning & Control"^^xsd:string ;
+  skos:prefLabel "PP&C"^^xsd:string ;
+.
+qudt:TERM_PPF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Payload Processing Facility"^^xsd:string ;
+  skos:prefLabel "PPF"^^xsd:string ;
+.
+qudt:TERM_PPL
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Provisioning Parts List"^^xsd:string ;
+  skos:prefLabel "PPL"^^xsd:string ;
+.
+qudt:TERM_PRA
+  rdf:type qudt:Acronym ;
+  skos:definition "Probabilistic Risk Analysis"^^xsd:string ;
+  skos:prefLabel "PRA"^^xsd:string ;
+.
+qudt:TERM_PRB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Program Review Board"^^xsd:string ;
+  skos:prefLabel "PRB"^^xsd:string ;
+.
+qudt:TERM_PRF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Parachute Refurbishment Facility"^^xsd:string ;
+  skos:prefLabel "PRF"^^xsd:string ;
+.
+qudt:TERM_PSET
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Program Specific Engineering Test"^^xsd:string ;
+  skos:prefLabel "PSET"^^xsd:string ;
+.
+qudt:TERM_PSI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Programmatic & Strategic Integration"^^xsd:string ;
+  skos:prefLabel "PSI"^^xsd:string ;
+.
+qudt:TERM_PTI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Program Technical Integrator"^^xsd:string ;
+  skos:prefLabel "PTI"^^xsd:string ;
+.
+qudt:TERM_PWS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Performance Work Statement"^^xsd:string ;
+  skos:prefLabel "PWS"^^xsd:string ;
+.
+qudt:TERM_QAQC
+  rdf:type qudt:Acronym ;
+  rdfs:label "QA/QC"^^xsd:string ;
+  skos:definition "Quality Assurance/Quality Control"^^xsd:string ;
+  skos:prefLabel "QA/QC"^^xsd:string ;
+.
+qudt:TERM_QUANTILE
+  rdf:type qudt:GlossaryTerm ;
+  qudt:description "A \\textit{quantile} is a subset of adjacent-valued members of a set of observed values for a statistic. If the members of the total set are ordered by increasing size, the set can be divided progressively, beginning at the smallest and ending at the largest, into two or more subsets of equal or nearly equal counts of members. For a statistical variable that can take any value within some overall range, hence representable by a continuous graph, the division can be into precisely equal subsets, by dividing the graph into equal sub-intervals.The first quartile of a list is the number that has three quarters of the numbers in the list below it; the fourth quartile is the number that has three quarters of the numbers above it; the second quartile is the same as the median. Source(s): \\href{http://studios.handmark.com/oxmutils/entry_def.php?dict=WMU&edition=1&lexid=e1152&dn=osx-iPhone}{Oxford University Press}."^^xsd:string ;
+  rdfs:label "Quantile"^^xsd:string ;
+  skos:prefLabel "Quantile"^^xsd:string ;
+.
+qudt:TERM_QUANTITY-DIMENSION
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Quantity Dimension"^^xsd:string ;
+  skos:definition "A quantity dimension is an expression of the dependence of a quantity on the base quantities of a system of quantities as a product of powers of factors corresponding to the base quantities, omitting any numerical factor. For examplem, in the ISQ, the quantity dimension of force is denoted by $dim \\; F = LMT^{–2}$.  In the same system of quantities, $dim \\, \\rho B = ML^{–3}$ is the quantity dimension of mass concentration of component $B$, and $ML^{–3}$ is also the quantity dimension of mass density, $\\rho$, (volumic mass). "^^xsd:string ;
+  skos:prefLabel "Quantity Dimension"^^xsd:string ;
+.
+qudt:TERM_QUANTITY-KIND
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Quantity Kind"^^xsd:string ;
+  skos:definition "A kind of quantity or quantity kind is an aspect common to mutually comparable quantities. For example, the quantities diameter, circumference, and wavelength are generally considered to be quantities of the same kind, namely of the kind of quantity called length.  As a second example, the quantities heat, kinetic energy, and potential energy are generally considered to be quantities of the same kind, namely of the kind of quantity called energy."^^xsd:string ;
+  skos:prefLabel "Quantity Kind"^^xsd:string ;
+.
+qudt:TERM_QUANTITY-VALUE
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Quantity Value"^^xsd:string ;
+  skos:definition "A quantity value expresses the numerical value of a quantity with respect to a chosen unit of measure.  For example, the value of Planck's constant in Joule-Seconds ($J \\cdot s$) is approximately $6.62606896e^{-34}$, whereas the value in Erg-Seconds ($erg \\cdot s$) is approximately $6.62606896e^{-27}$."^^xsd:string ;
+  skos:prefLabel "Quantity Value"^^xsd:string ;
+.
+qudt:TERM_QUARTILE
+  rdf:type qudt:GlossaryTerm ;
+  qudt:description "A \\textit{quartile} is a parition in a scheme that has a division into four bands or groups. If the scheme has ten divisions it is a \\textit{decile}, if there are 100 it is a \\textit{percentile}. In each case the usual ordinals can be used to indicate the specific one of the four, ten else 100, graduating conventionally from the smallest values of the statistic to the largest. Thus a member in the third quartile is larger than at least half the members and smaller than at least a quarter of the members; a member in the third decile is larger than at least 20 percent of the members and smaller than at least 70 percent of the members; a member in the third percentile is larger than at least 2 percent of the members and smaller than at least 97 percent of the members. The demarcation between the second and third quartile, the fifth and sixth decile and the 50th and 51st percentiles, is the median."^^xsd:string ;
+  rdfs:label "Quartile"^^xsd:string ;
+  skos:broader qudt:TERM_QUANTILE ;
+  skos:prefLabel "Quartile"^^xsd:string ;
+  prov:wasInfluencedBy <http://studios.handmark.com/oxmutils/entry_def.php?dict=WMU&edition=1&lexid=e1152&dn=osx-iPhone> ;
+.
+qudt:TERM_QUDT
+  rdf:type qudt:Acronym ;
+  qudt:abbreviation "QUDT"^^xsd:string ;
+  qudt:acronym "QUDT"^^xsd:string ;
+  rdfs:label "QUDT"^^xsd:string ;
+  skos:definition "Quantities, Units, Dimensions and Data Types"^^xsd:string ;
+  skos:prefLabel "QUDT"^^xsd:string ;
+.
+qudt:TERM_RAC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Requirements Analysis Cycle"^^xsd:string ;
+  skos:prefLabel "RAC"^^xsd:string ;
+.
+qudt:TERM_RAM
+  rdf:type qudt:Acronym ;
+  skos:definition "Reliability, Availability, Maintainability"^^xsd:string ;
+  skos:prefLabel "RAM"^^xsd:string ;
+.
+qudt:TERM_RCM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Reliability Centered Maintenance"^^xsd:string ;
+  skos:prefLabel "RCM"^^xsd:string ;
+.
+qudt:TERM_RFA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Request for Action"^^xsd:string ;
+  skos:prefLabel "RFA"^^xsd:string ;
+.
+qudt:TERM_RID
+  rdf:type qudt:Acronym ;
+  skos:definition "Review Item Discrepancy, MSFC Form 3739 or equivalent"^^xsd:string ;
+  skos:prefLabel "RID"^^xsd:string ;
+.
+qudt:TERM_RM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Risk Manager"^^xsd:string ;
+  skos:prefLabel "RM"^^xsd:string ;
+.
+qudt:TERM_RMA
+  rdf:type qudt:Acronym ;
+  skos:definition "Reliability, Maintainability, and Availability"^^xsd:string ;
+  skos:prefLabel "RM&A"^^xsd:string ;
+.
+qudt:TERM_RMP
+  rdf:type qudt:Acronym ;
+  skos:definition "Risk Management Plan"^^xsd:string ;
+  skos:prefLabel "RMP"^^xsd:string ;
+.
+qudt:TERM_RND
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Required Need Date"^^xsd:string ;
+  skos:prefLabel "RND"^^xsd:string ;
+.
+qudt:TERM_RPS
+  rdf:type qudt:Term ;
+  skos:definition "Record Playback Subsystem"^^xsd:string ;
+  skos:prefLabel "RPS" ;
+.
+qudt:TERM_RPSF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "The RPSF, Rotation, Processing, and Surge Facility, is a facility used to build up the booster aft assembly (aft skirt, aft segment, core stage attach ring, struts, and nozzle extension) and receive, inspect, and rotate booster segments."^^xsd:string ;
+  skos:prefLabel "RPSF"^^xsd:string ;
+.
+qudt:TERM_RR
+  rdf:type qudt:Term ;
+  skos:definition "Processed Data Record and Retrieval"^^xsd:string ;
+  skos:prefLabel "RR" ;
+.
+qudt:TERM_RRAP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "RMA Requirements Allocation Plan"^^xsd:string ;
+  skos:prefLabel "RRAP"^^xsd:string ;
+.
+qudt:TERM_RSPL
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Recommended Spare Parts List"^^xsd:string ;
+  skos:prefLabel "RSPL"^^xsd:string ;
+.
+qudt:TERM_SA1
+  rdf:type qudt:Acronym ;
+  skos:definition "Safe and Arm"^^xsd:string ;
+  skos:prefLabel "S&A"^^xsd:string ;
+.
+qudt:TERM_SA2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Spacecraft Adapter"^^xsd:string ;
+  skos:prefLabel "SA"^^xsd:string ;
+.
+qudt:TERM_SA3
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Supportability Analysis"^^xsd:string ;
+  skos:prefLabel "SA"^^xsd:string ;
+.
+qudt:TERM_SAA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "System Assurance Analysis"^^xsd:string ;
+  skos:prefLabel "SAA"^^xsd:string ;
+.
+qudt:TERM_SAPP
+  rdf:type qudt:Term ;
+  skos:definition "System Applications"^^xsd:string ;
+  skos:prefLabel "SAPP" ;
+.
+qudt:TERM_SAR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "System Acceptance Review"^^xsd:string ;
+  skos:prefLabel "SAR"^^xsd:string ;
+.
+qudt:TERM_SBLD
+  rdf:type qudt:Term ;
+  skos:definition "System Build"^^xsd:string ;
+  skos:prefLabel "SBLD" ;
+.
+qudt:TERM_SBU
+  rdf:type qudt:Acronym ;
+  skos:definition "Sensitive But Unclassified"^^xsd:string ;
+  skos:prefLabel "SBU"^^xsd:string ;
+.
+qudt:TERM_SCCS
+  rdf:type qudt:Acronym ;
+  skos:definition "Spaceport Command and Control System"^^xsd:string ;
+  skos:prefLabel "SCCS"^^xsd:string ;
+.
+qudt:TERM_SCVE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Small Class Vehicle Element"^^xsd:string ;
+  skos:prefLabel "SCVE"^^xsd:string ;
+.
+qudt:TERM_SDR1
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "System Definition Review"^^xsd:string ;
+  skos:prefLabel "SDR 1"^^xsd:string ;
+.
+qudt:TERM_SDR2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "System Design Review"^^xsd:string ;
+  skos:prefLabel "SDR 2"^^xsd:string ;
+.
+qudt:TERM_SEB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Source Evaluation Board"^^xsd:string ;
+  skos:prefLabel "SEB"^^xsd:string ;
+.
+qudt:TERM_SECS
+  rdf:type qudt:Term ;
+  skos:definition "Security"^^xsd:string ;
+  skos:prefLabel "SECS" ;
+.
+qudt:TERM_SEI
+  rdf:type qudt:Acronym ;
+  skos:definition "Systems Engineering and Integration"^^xsd:string ;
+  skos:prefLabel "SE&I"^^xsd:string ;
+.
+qudt:TERM_SEMP
+  rdf:type qudt:Acronym ;
+  skos:definition "System Engineering Management Plan"^^xsd:string ;
+  skos:prefLabel "SEMP"^^xsd:string ;
+.
+qudt:TERM_SEP
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Solar Electric Propulsion"^^xsd:string ;
+  skos:prefLabel "SEP"^^xsd:string ;
+.
+qudt:TERM_SEROT
+  rdf:type qudt:Acronym ;
+  skos:definition "Sun-Earth Rotating\\footnote{SEROT is a coordinate system frame of reference.}"^^xsd:string ;
+  skos:prefLabel "SEROT"^^xsd:string ;
+.
+qudt:TERM_SEV
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Space Exploration Vehicle"^^xsd:string ;
+  skos:prefLabel "SEV"^^xsd:string ;
+.
+qudt:TERM_SHPO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "State Historic Preservation Office"^^xsd:string ;
+  skos:prefLabel "SHPO"^^xsd:string ;
+.
+qudt:TERM_SI
+  rdf:type qudt:Acronym ;
+  skos:definition "International System of Units SI is a system of units, based on the International System of Quantities, their names and symbols, including a series of prefixes and their names and symbols, together with rules for their use, adopted by the General Conference on Weights and Measures (CGPM). See \\href{http://www.bipm.org/en/si/}{BIPM SI}, \\href{http://en.wikipedia.org/wiki/International_System_of_Units}{Wikipedia SI}, \\href{http://www.nist.gov/pml/pubs/sp811/index.cfm}{NIST Guidance on SI}."^^xsd:string ;
+  skos:prefLabel "SI"^^xsd:string ;
+.
+qudt:TERM_SII
+  rdf:type qudt:Acronym ;
+  skos:definition "Standardization, Interchangeability, and Interoperability"^^xsd:string ;
+  skos:prefLabel "SI&I"^^xsd:string ;
+.
+qudt:TERM_SIM
+  rdf:type qudt:Term ;
+  skos:definition "Simulation"^^xsd:string ;
+  skos:prefLabel "SIM" ;
+.
+qudt:TERM_SKOS
+  rdf:type qudt:Acronym ;
+  skos:definition "\\textit{SKOS} stands for \\textit{Simple Knowledge Organization System}, and is a W3C standard information model for representing terminolgies. See \\href{http://www.w3.org/2004/02/skos/}{W3C SKOS}."^^xsd:string ;
+  skos:prefLabel "SKOS"^^xsd:string ;
+.
+qudt:TERM_SLF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Shuttle Landing Facility"^^xsd:string ;
+  skos:prefLabel "SLF"^^xsd:string ;
+.
+qudt:TERM_SLS
+  rdf:type qudt:Acronym ;
+  skos:definition "Space Launch System"^^xsd:string ;
+  skos:prefLabel "SLS"^^xsd:string ;
+.
+qudt:TERM_SLSP
+  rdf:type qudt:Acronym ;
+  skos:definition "Space Launch System (SLS) Program"^^xsd:string ;
+  skos:prefLabel "SLSP"^^xsd:string ;
+.
+qudt:TERM_SM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Service Module"^^xsd:string ;
+  skos:prefLabel "SM"^^xsd:string ;
+.
+qudt:TERM_SMA
+  rdf:type qudt:Acronym ;
+  skos:definition "Safety and Mission Assurance"^^xsd:string ;
+  skos:prefLabel "S&MA"^^xsd:string ;
+.
+qudt:TERM_SMC
+  rdf:type qudt:Term ;
+  skos:definition "System Management Console"^^xsd:string ;
+  skos:prefLabel "SMC" ;
+.
+qudt:TERM_SME
+  rdf:type qudt:Acronym ;
+  skos:definition "Subject Matter Expert"^^xsd:string ;
+  skos:prefLabel "SME"^^xsd:string ;
+.
+qudt:TERM_SMR
+  rdf:type qudt:Acronym ;
+  skos:definition "Source, Maintenance, and Recoverability"^^xsd:string ;
+  skos:prefLabel "SMR"^^xsd:string ;
+.
+qudt:TERM_SOMD
+  rdf:type qudt:Acronym ;
+  skos:definition "Space Operations Mission Directorate"^^xsd:string ;
+  skos:prefLabel "SOMD"^^xsd:string ;
+.
+qudt:TERM_SOPE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Spacecraft Offline Processing Element"^^xsd:string ;
+  skos:prefLabel "SOPE"^^xsd:string ;
+.
+qudt:TERM_SOW
+  rdf:type qudt:Acronym ;
+  skos:definition "Statement of Work"^^xsd:string ;
+  skos:prefLabel "SOW"^^xsd:string ;
+.
+qudt:TERM_SP
+  rdf:type qudt:Acronym ;
+  skos:definition "Special Publication"^^xsd:string ;
+  skos:prefLabel "SP"^^xsd:string ;
+.
+qudt:TERM_SPE
+  rdf:type qudt:Acronym ;
+  skos:definition "Spacecraft Processing Element"^^xsd:string ;
+  skos:prefLabel "SPE"^^xsd:string ;
+.
+qudt:TERM_SPETE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Special Purpose Electronic Test Equipment"^^xsd:string ;
+  skos:prefLabel "SPETE"^^xsd:string ;
+.
+qudt:TERM_SPOC
+  rdf:type qudt:Acronym ;
+  skos:definition "Space Program Operations Contract"^^xsd:string ;
+  skos:prefLabel "SPOC"^^xsd:string ;
+.
+qudt:TERM_SPTE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Special Purpose Test Equipment"^^xsd:string ;
+  skos:prefLabel "SPTE"^^xsd:string ;
+.
+qudt:TERM_SRAD
+  rdf:type qudt:Abbreviation ;
+  skos:definition "SLS Red Book and Associated Documentation"^^xsd:string ;
+  skos:prefLabel "SRAD"^^xsd:string ;
+.
+qudt:TERM_SRB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Solid Rocket Booster"^^xsd:string ;
+  skos:prefLabel "SRB"^^xsd:string ;
+.
+qudt:TERM_SRPE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Solid Rocket Processing Element"^^xsd:string ;
+  skos:prefLabel "SRPE"^^xsd:string ;
+.
+qudt:TERM_SRQA
+  rdf:type qudt:Acronym ;
+  skos:definition "Safety, Reliability and Quality Assurance"^^xsd:string ;
+  skos:prefLabel "SR&QA"^^xsd:string ;
+.
+qudt:TERM_SRR
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "System Requirements Review"^^xsd:string ;
+  skos:prefLabel "SRR"^^xsd:string ;
+.
+qudt:TERM_SRRE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Spacecraft Recovery & Retrieval Element"^^xsd:string ;
+  skos:prefLabel "SRRE"^^xsd:string ;
+.
+qudt:TERM_SRU
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Shop Replaceable Unit"^^xsd:string ;
+  skos:prefLabel "SRU"^^xsd:string ;
+.
+qudt:TERM_SSP
+  rdf:type qudt:Acronym ;
+  skos:definition "Space Shuttle Program"^^xsd:string ;
+  skos:prefLabel "SSP"^^xsd:string ;
+.
+qudt:TERM_SSPF
+  rdf:type qudt:Acronym ;
+  skos:definition "Space Station Processing Facility"^^xsd:string ;
+  skos:prefLabel "SSPF"^^xsd:string ;
+.
+qudt:TERM_STE1
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Special Test Equipment"^^xsd:string ;
+  skos:prefLabel "STE"^^xsd:string ;
+.
+qudt:TERM_STE2
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Support and Test Equipment"^^xsd:string ;
+  skos:prefLabel "S&TE"^^xsd:string ;
+.
+qudt:TERM_SUNAMCO
+  rdf:type qudt:Acronym ;
+  skos:definition "Commission on Symbols, Units, Nomenclature, Atomic Masses and Fundamental Constants"^^xsd:string ;
+  skos:prefLabel "SUNAMCO"^^xsd:string ;
+.
+qudt:TERM_SYSTEM-OF-QUANTITIES
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "System of Quantities"^^xsd:string ;
+  skos:definition "A system of quantities is a set of quantities together with a set of non-contradictory equations relating those quantities. Ordinal quantities, such as Rockwell C hardness, are usually not considered to be part of a system of quantities because they are related to other quantities through empirical relations only."^^xsd:string ;
+  skos:prefLabel "System of Quantities"^^xsd:string ;
+.
+qudt:TERM_SYSTEM-OF-UNITS
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "System of Units"^^xsd:string ;
+  skos:definition "A set of base units and derived units, together with their multiples and submultiples, defined in accordance with given rules, for a given system of quantities."^^xsd:string ;
+  skos:prefLabel "System of Units"^^xsd:string ;
+.
+qudt:TERM_TA
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Training Analysis"^^xsd:string ;
+  skos:prefLabel "TA"^^xsd:string ;
+.
+qudt:TERM_TBD
+  rdf:type qudt:Acronym ;
+  skos:definition "To Be Determined"^^xsd:string ;
+  skos:prefLabel "TBD"^^xsd:string ;
+.
+qudt:TERM_TBR
+  rdf:type qudt:Acronym ;
+  skos:definition "To Be Resolved"^^xsd:string ;
+  skos:prefLabel "TBR"^^xsd:string ;
+.
+qudt:TERM_TDB
+  rdf:type qudt:Acronym ;
+  skos:definition "Barycentric Dynamic Time"^^xsd:string ;
+  skos:prefLabel "TDB"^^xsd:string ;
+.
+qudt:TERM_TDD
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Technical Data Documentation"^^xsd:string ;
+  skos:prefLabel "TDD"^^xsd:string ;
+.
+qudt:TERM_TE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Test and Evaluation"^^xsd:string ;
+  skos:definition "Transporter Erector"^^xsd:string ;
+  skos:prefLabel "T&E"^^xsd:string ;
+  skos:prefLabel "TE"^^xsd:string ;
+.
+qudt:TERM_TEI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Trans Earth Injection"^^xsd:string ;
+  skos:prefLabel "TEI"^^xsd:string ;
+.
+qudt:TERM_TIG
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Technical Integration Group"^^xsd:string ;
+  skos:prefLabel "TIG"^^xsd:string ;
+.
+qudt:TERM_TOSC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Testing & Operations Support Contract"^^xsd:string ;
+  skos:prefLabel "RAC"^^xsd:string ;
+  skos:prefLabel "TOSC"^^xsd:string ;
+.
+qudt:TERM_TPM
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Technical Performance Measure"^^xsd:string ;
+  skos:prefLabel "TPM"^^xsd:string ;
+.
+qudt:TERM_TPS
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Thermal Protection System"^^xsd:string ;
+  skos:prefLabel "TPS"^^xsd:string ;
+.
+qudt:TERM_TPSF
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Thermal Protection Systems Facility"^^xsd:string ;
+  skos:prefLabel "TPSF"^^xsd:string ;
+.
+qudt:TERM_TRL
+  rdf:type qudt:Acronym ;
+  skos:definition "Technology Readiness Level"^^xsd:string ;
+  skos:prefLabel "TRL"^^xsd:string ;
+.
+qudt:TERM_TST
+  rdf:type qudt:Term ;
+  skos:definition "Test Tools for System Test"^^xsd:string ;
+  skos:prefLabel "TST" ;
+.
+qudt:TERM_TWG
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Transition Working Group"^^xsd:string ;
+  skos:prefLabel "TWG"^^xsd:string ;
+.
+qudt:TERM_UCUM
+  rdf:type qudt:Acronym ;
+  skos:definition "Unified Code for Units of Measure \\footnote{UCUM is an XML-based approach to units of measure.  See the \\hre{http://unitsofmeasure.org}{UCUM web page}. }"^^xsd:string ;
+  skos:prefLabel "UCUM"^^xsd:string ;
+.
+qudt:TERM_UNCEFACT
+  rdf:type qudt:Acronym ;
+  rdfs:label "UN/CEFACT"^^xsd:string ;
+  skos:definition "United Nations Centre for Trade Facilitation and Electronic Business"^^xsd:string ;
+  skos:prefLabel "UN/CEFACT"^^xsd:string ;
+.
+qudt:TERM_UNECE
+  rdf:type qudt:Acronym ;
+  rdfs:label "UNECE"^^xsd:string ;
+  skos:definition "United Nations Economic Commission for Europe.  \\footnote{UNECE has standardized codes for international trade. See \\href{http://www.unece.org/cefact/codesfortrade/codes_index.html}{UNECE Codes}.}"^^xsd:string ;
+  skos:prefLabel "UNECE"^^xsd:string ;
+.
+qudt:TERM_UNIT-OF_MEASURE
+  rdf:type qudt:GlossaryTerm ;
+  rdfs:label "Unit of Measure"^^xsd:string ;
+  skos:definition "A unit (or unit of measure) is a real scalar quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the two quantities as a number."^^xsd:string ;
+  skos:prefLabel "Unit of Measure"^^xsd:string ;
+.
+qudt:TERM_URI
+  rdf:type qudt:Acronym ;
+  skos:definition "Universal Resource Identifier \\footnote{FOr more on URIs see \\href{http://www.ietf.org/rfc/rfc3986.txt}{RFC 3986} and \\href{http://www.w3.org/Addressing/}{W3C Addressing}.}"^^xsd:string ;
+  skos:prefLabel "URI"^^xsd:string ;
+.
+qudt:TERM_VAB
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Vehicle Assembly Building"^^xsd:string ;
+  skos:prefLabel "VAB"^^xsd:string ;
+.
+qudt:TERM_VAC
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Verification Analysis Cycle"^^xsd:string ;
+  skos:prefLabel "VAC"^^xsd:string ;
+.
+qudt:TERM_VI
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Vehicle Integration"^^xsd:string ;
+  skos:prefLabel "VI"^^xsd:string ;
+.
+qudt:TERM_VIE
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Vertical Integration Element"^^xsd:string ;
+  skos:prefLabel "VIE"^^xsd:string ;
+.
+qudt:TERM_VIL
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Vehicle Integration & Launch"^^xsd:string ;
+  skos:prefLabel "VIL"^^xsd:string ;
+.
+qudt:TERM_VIM
+  rdf:type qudt:Acronym ;
+  rdfs:label "VIM"^^xsd:string ;
+  skos:definition "International Vocabulary of Metrology \\footnote{VIM is the \\textit{International Vocabulary of Metrology} and can be found at \\href{http://www.bipm.org/en/publications/guides/vim.html}{BIPM VIM}.}"^^xsd:string ;
+  skos:prefLabel "VIM"^^xsd:string ;
+.
+qudt:TERM_VIO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Vertical Integration Office"^^xsd:string ;
+  skos:prefLabel "VIO"^^xsd:string ;
+.
+qudt:TERM_VTVL
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Vertical Takeoff Vertical Landing"^^xsd:string ;
+  skos:prefLabel "VTVL"^^xsd:string ;
+.
+qudt:TERM_VV
+  rdf:type qudt:Acronym ;
+  skos:definition "Verification & Validation"^^xsd:string ;
+  skos:prefLabel "V&V"^^xsd:string ;
+.
+qudt:TERM_W3C
+  rdf:type qudt:Acronym ;
+  rdfs:label "W3C"^^xsd:string ;
+  skos:definition "World Wide Web Consortium"^^xsd:string ;
+  skos:prefLabel "W3C"^^xsd:string ;
+.
+qudt:TERM_WBS
+  rdf:type qudt:Acronym ;
+  skos:definition "Work Breakdown Structure"^^xsd:string ;
+  skos:prefLabel "WBS"^^xsd:string ;
+.
+qudt:TERM_WILCO
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Will Complete"^^xsd:string ;
+  skos:definition "Will Comply"^^xsd:string ;
+  skos:prefLabel "WILCO"^^xsd:string ;
+.
+qudt:TERM_XML
+  rdf:type qudt:Acronym ;
+  rdfs:label "XML"^^xsd:string ;
+  skos:definition "eXtensible Markup Language \\footnote{XML is a W3C standard for representing message srtuctures. See \\href{http://www.w3.org/XML/}{W3C XML}.}"^^xsd:string ;
+  skos:prefLabel "XML"^^xsd:string ;
+.
+qudt:TERM_Xe
+  rdf:type qudt:Acronym ;
+  qudt:outOfScope "true"^^xsd:boolean ;
+  skos:definition "Xenon"^^xsd:string ;
+  skos:prefLabel "Xe"^^xsd:string ;
+.

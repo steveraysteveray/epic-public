@@ -1,0 +1,53 @@
+# baseURI: http://siemens.com/collections/kps/bridges/integrations
+# imports: http://siemens.com/schemas/kps/bridges/ifc2ssffonm
+# imports: http://siemens.com/schemas/kps/bridges/ifc2qudt
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: http://siemens.com/schemas/kps/bridges/ifc2saref
+# imports: http://siemens.com/schemas/kps/bridges/saref2ssffonm
+# imports: http://siemens.com/schemas/kps/bridges/saref2qudt
+# imports: http://siemens.com/schemas/kps/bridges/saref2ssn
+# prefix: integrations
+
+@prefix bldg: <http://siemens.com/schemas/kps/epic-building#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix ifc2qudt: <http://siemens.com/schemas/kps/bridges/ifc2qudt#> .
+@prefix ifc2ssffonm: <http://siemens.com/schemas/kps/bridges/ifc2ssffonm#> .
+@prefix ifc2ssn: <http://siemens.com/schemas/kps/bridges/ifc2ssn#> .
+@prefix integrations: <http://siemens.com/collections/kps/bridges/integrations#> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref2qudt: <http://siemens.com/schemas/kps/bridges/saref2qudt#> .
+@prefix saref2ssffonm: <http://siemens.com/schemas/kps/bridges/saref2ssffonm#> .
+@prefix saref2ssn: <http://siemens.com/schemas/kps/bridges/saref2ssn#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/collections/kps/bridges/integrations>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The EPIC 'bridge integrations collection' ontology aggregates bridge ontologies for the EPIC project."^^xsd:string ;
+  dc:subject "bridge integrations collection"^^xsd:string ;
+  dc:title "The EPIC bridge integrations collection"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology is to as a single access point to the EPIC bridge ontologies."^^xsd:string ;
+  vaem:namespace "http://siemens.com/collections/kps/bridges/integrations#"^^xsd:string ;
+  vaem:namespacePrefix "integrations"^^xsd:string ;
+  vaem:url "http://siemens.com/collections/kps/bridges/integrations"^^xsd:anyURI ;
+  rdfs:label "integrations"^^xsd:string ;
+  owl:versionInfo "$Id: COLLECTION_bridge_integrations-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/ifc2ssffonm> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/ifc2qudt> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/ifc2saref> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/ifc2ssn> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/saref2ssffonm> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/saref2qudt> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/saref2ssn> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

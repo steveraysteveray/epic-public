@@ -1,0 +1,2431 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/electromagnetism
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/unit/electromagnetism>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Hodges"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Electomagnetism Units of Measure"^^xsd:string ;
+  dc:title "QUDT Electromagnetism Units Vocabulary (without dimensions) Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Electromagnetism Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Electromagnetism"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used Electromagnetism units."^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/unit/electromagnetism> ;
+.
+unit:A
+  rdf:type qudt:ElectricCurrentUnit ;
+  qudt:abbreviation "a"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-50"^^xsd:string ;
+  rdfs:label "Ampere"^^xsd:string ;
+  owl:sameAs unit:AMPERE ;
+.
+unit:A-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "A-hr"^^xsd:string ;
+  qudt:code "0055"^^xsd:string ;
+  qudt:conversionMultiplier 3600.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A practical unit of electric charge equal to the charge flowing in one hour through a conductor passing one ampere. An ampere-hour or amp-hour (symbol $Ah, AHr, A \\cdot h, A h$) is a unit of electric charge, with sub-units milliampere-hour ($mAh$) and milliampere second ($mAs$). One ampere-hour is equal to 3600 coulombs (ampere-seconds), the electric charge transferred by a steady current of one ampere for one hour. The ampere-hour is frequently used in measurements of electrochemical systems such as electroplating and electrical batteries. The commonly seen milliampere-hour ($mAh or mA \\cdot h$) is one-thousandth of an ampere-hour (3.6 coulombs)."^^xsd:string ;
+  qudt:identifier "U150-55"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "AHr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere Hour"^^xsd:string ;
+  skos:prefLabel "ampere-hour"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ampere-hour> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-86> ;
+.
+unit:A-PER-Deg
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  qudt:abbreviation "A/deg"^^xsd:string ;
+  qudt:code "2280"^^xsd:string ;
+  qudt:conversionMultiplier "57.2957795"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A measure used to express how a current is subject to temperature. Originally used in Wien's Law to describe phenomena related to filaments. One use today is to express how a current generator derates with temperature."^^xsd:string ;
+  qudt:identifier "U150-2280"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrentPerAngle ;
+  qudt:symbol "A/deg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere per Degree"^^xsd:string ;
+  skos:prefLabel "ampere-per-degree"^^xsd:string ;
+  prov:wasInfluencedBy <http://books.google.com/books?id=zkErAAAAYAAJ&pg=PA60&lpg=PA60&dq=%22ampere+per+degree%22> ;
+.
+unit:A-PER-J
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  qudt:abbreviation "A/J"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The inverse measure of $joule-per-ampere$ or $weber$. The measure for the reciprical of magnetic flux."^^xsd:string ;
+  qudt:symbol "A J^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere per Joule"^^xsd:string ;
+  skos:prefLabel "ampere-per-joule"^^xsd:string ;
+.
+unit:A-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MagneticFieldStrengthUnit ;
+  qudt:abbreviation "A/m"^^xsd:string ;
+  qudt:code "0060"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of magnetic field strength. One ampere per meter is equal to $\\pi/250$ oersteds ($12.566 371 millioersteds$) in CGS units."^^xsd:string ;
+  qudt:identifier "U150-60"^^xsd:string ;
+  qudt:longDescription "AmperePerMeter is the SI unit of magnetic field strength. One ampere per meter is equal to $\\pi/250$ oersteds (12.566 371 millioersteds) in CGS units. The ampere per meter is also the SI unit of \"magnetization\" in the sense of magnetic dipole moment per unit volume; in this context $1 A/m = 0.001 emu per cubic centimeter$."^^xsd:string ;
+  qudt:symbol "A/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere per Meter"^^xsd:string ;
+  skos:prefLabel "ampere-per-meter"^^xsd:string ;
+.
+unit:A-PER-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricCurrentDensityUnit ;
+  qudt:abbreviation "A/m^2"^^xsd:string ;
+  qudt:code "0065"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Ampere Per Square Meter is a unit in the category of Electric current density. This unit is commonly used in the SI unit system."^^xsd:string ;
+  qudt:identifier "U150-65"^^xsd:string ;
+  qudt:longDescription "Ampere Per Square Meter  is a unit in the category of Electric current density. It is also known as ampere/square meter, ampere/square metre, ampere per square metre, amperes per square meter, amperes per square metre. This unit is commonly used in the SI unit system."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+  qudt:symbol "A/m^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere per Square Meter"^^xsd:string ;
+  skos:prefLabel "ampere-per-square-meter"^^xsd:string ;
+.
+unit:A-PER-RAD
+  rdf:type qudt:CurrentPerAngleUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "a-per-rad"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A derived unit for measuring the amount of current per unit measure of angle, expressed in ampere per radian."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrentPerAngle ;
+  qudt:symbol "A/rad"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere per Radian"^^xsd:string ;
+  skos:prefLabel "ampere-per-radian"^^xsd:string ;
+.
+unit:A-t-PER-IN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MagneticFieldStrengthUnit ;
+  qudt:abbreviation "At/in"^^xsd:string ;
+  qudt:code "0075"^^xsd:string ;
+  qudt:conversionMultiplier "39.3700787"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The 'ampere-turn-per-inch' is a measure of magnetic field intensity and is eual to 12.5664 Oersted."^^xsd:string ;
+  qudt:identifier "U150-75"^^xsd:string ;
+  qudt:quantityKind quantity:MagneticFieldStrength ;
+  qudt:symbol "At/in"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere Turn per Inch"^^xsd:string ;
+  skos:prefLabel "ampere-turn-per-inch"^^xsd:string ;
+.
+unit:A-t-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MagneticFieldStrengthUnit ;
+  qudt:abbreviation "At/m"^^xsd:string ;
+  qudt:code "0080"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of magnetic field strength. One ampere per meter is equal to $\\pi/250$ oersteds (12.566 371 millioersteds) in CGS units. The ampere per meter is also the SI unit of 'magnetization'."^^xsd:string ;
+  qudt:identifier "U150-80"^^xsd:string ;
+  qudt:longDescription "The SI unit of magnetic field strength. One ampere per meter is equal to $\\pi/250$ oersteds (12.566 371 millioersteds) in CGS units. The ampere per meter is also the SI unit of \"magnetization\" in the sense of magnetic dipole moment per unit volume; in this context $1 A/m = 0.001 emu per cubic centimeter$."^^xsd:string ;
+  qudt:symbol "At/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere Turn per Meter"^^xsd:string ;
+  skos:prefLabel "ampere-turn-per-meter"^^xsd:string ;
+.
+unit:AMPERE
+  rdf:type qudt:BaseUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricCurrentUnit ;
+  qudt:abbreviation "amp"^^xsd:string ;
+  qudt:code "0050"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{ampere}, often shortened to \\textit{amp}, is the SI unit of electric current and is one of the seven SI base units.  Note that SI supports only the use of symbols and deprecates the use of any abbreviations for units."^^xsd:string ;
+  qudt:identifier "U150-50"^^xsd:string ;
+  qudt:latexDefinition "$\\text{A}\\ \\equiv\\ \\text{amp (or ampere)}\\ \\equiv\\ \\frac{\\text{C}}{\\text{s}}\\ \\equiv\\ \\frac{\\text{coulomb}}{\\text{second}}\\ \\equiv\\ \\frac{\\text{J}}{\\text{Wb}}\\ \\equiv\\ \\frac{\\text{joule}}{\\text{weber}}$"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+  qudt:symbol "A"^^xsd:string ;
+  qudt:symbolToken "A"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "ampere"^^xsd:string ;
+  owl:sameAs unit:A ;
+  skos:altLabel "amp"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Ampere> ;
+  skos:prefLabel "ampere"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ampere?oldid=494026699> ;
+.
+unit:AT
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MagnetomotiveForceUnit ;
+  qudt:abbreviation "AT"^^xsd:string ;
+  qudt:code "0070"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The ampere-turn was the MKS unit of magnetomotive force (MMF), represented by a direct current of one ampere flowing in a single-turn loop in a vacuum. \"Turns\" refers to the winding number of an electrical conductor comprising an inductor. The ampere-turn was replaced by the SI unit, ampere."^^xsd:string ;
+  qudt:identifier "U150-70"^^xsd:string ;
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+  qudt:symbol "At"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere Turn"^^xsd:string ;
+  skos:prefLabel "ampere-turn"^^xsd:string ;
+.
+unit:AbA
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricCurrentUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abA"^^xsd:string ;
+  qudt:code "0005"^^xsd:string ;
+  qudt:conversionMultiplier "10"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Abampere} (aA), also called the biot after Jean-Baptiste Biot, is the basic electromagnetic unit of electric current in the emu-cgs system of units (electromagnetic cgs). One abampere is equal to ten amperes in the SI system of units. An abampere is the constant current that produces, when maintained in two parallel conductors of negligible circular section and of infinite length placed 1 centimetre apart, a force of 2 dynes per centimetre between the two conductors."^^xsd:string ;
+  qudt:identifier "U150-50P01"^^xsd:string ;
+  qudt:isScalingOf unit:AMPERE ;
+  qudt:latexDefinition "1 abA = 10 A"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+  qudt:symbol "abA"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abampere"^^xsd:string ;
+  rdfs:seeAlso unit:AMPERE ;
+  owl:sameAs unit:BIOT ;
+  skos:altLabel "biot"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Abampere> ;
+  skos:prefLabel "abampere"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Abampere?oldid=489318583> ;
+  prov:wasInfluencedBy <http://wordinfo.info/results/abampere> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-13?rskey=i2kRRz> ;
+.
+unit:AbA-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagneticMomentUnit ;
+  qudt:abbreviation "aAcm2"^^xsd:string ;
+  qudt:code "0025"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Abampere centimeter squared} is the unit of magnetic moment in the electromagnetic centimeter-gram-second system."^^xsd:string ;
+  qudt:identifier "U150-25"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricConductivity ;
+  qudt:symbol "aAcm^2"^^xsd:string ;
+  vaem:todo "Determine type for magnetic moment"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ampere centimeter"^^xsd:string ;
+  skos:prefLabel "ampere-centimeter"^^xsd:string ;
+  prov:wasInfluencedBy <http://wordinfo.info/unit/4266> ;
+.
+unit:AbA-PER-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricCurrentDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "aba-per-cm2"^^xsd:string ;
+  qudt:code "0006"^^xsd:string ;
+  qudt:conversionMultiplier "100000"^^xsd:double ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:description "Abampere Per Square Centimeter (aA/cm2) is a unit in the category of Electric current density. It is also known as abamperes per square centimeter, abampere/square centimeter, abampere/square centimetre, abamperes per square centimetre, abampere per square centimetre. This unit is commonly used in the cgs unit system. Abampere Per Square Centimeter (aA/cm2) has a dimension of $L^{-2}I where L is length, and I is electric current. It can be converted to the corresponding standard SI unit $A/m^{2}$ by multiplying its value by a factor of 100000."^^xsd:string ;
+  qudt:identifier "U150-6"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+  qudt:symbol "abA/cm^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abampere per Square Centimeter"^^xsd:string ;
+  skos:prefLabel "abampere-per-square-centimeter"^^xsd:string ;
+  prov:wasInfluencedBy <http://wordinfo.info/results/abampere> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--electric_current_density--abampere_per_square_centimeter.cfm> ;
+.
+unit:AbC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abC"^^xsd:string ;
+  qudt:code "0010"^^xsd:string ;
+  qudt:conversionMultiplier "10.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{abcoulomb} (abC or aC) or electromagnetic unit of charge (emu of charge) is the basic physical unit of electric charge in the cgs-emu system of units. One abcoulomb is equal to ten coulombs."^^xsd:string ;
+  qudt:identifier "U150-10P1"^^xsd:string ;
+  qudt:latexDefinition "$1 abC = 10 C$"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "abC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abcoulomb"^^xsd:string ;
+  rdfs:seeAlso unit:COULOMB ;
+  skos:exactMatch <http://dbpedia.org/resource/Abcoulomb> ;
+  skos:prefLabel "abcoulomb"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-9?rskey=KHjyOu> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Abcoulomb?oldid=477198635> ;
+.
+unit:AbC-PER-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricChargeAreaDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abc-per-cm2"^^xsd:string ;
+  qudt:code "0011"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description """Abcoulomb Per Square Centimeter is a unit in the category of Electric charge surface density. It is also known as abcoulombs per square centimeter, abcoulomb per square centimetre, abcoulombs per square centimetre, abcoulomb/square centimeter,abcoulomb/square centimetre. This unit is commonly used in the cgs unit system. 
+
+Abcoulomb Per Square Centimeter (abcoulomb/cm2) has a dimension of $L_2TI$.  where L is length, T is time, and I is electric current. It can be converted to the corresponding standard SI unit $C/m^2$ by multiplying its value by a factor of 100,000."""^^xsd:string ;
+  qudt:identifier "U150-11"^^xsd:string ;
+  qudt:latexDefinition "abcoulomb/cm^2"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargePerArea ;
+  qudt:symbol "abC/cm^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abcoulomb per Square Centimeter"^^xsd:string ;
+  skos:prefLabel "abcoulomb-per-square-centimeter"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--electric_charge_surface_density--abcoulomb_per_square_centimeter.cfm> ;
+.
+unit:AbF
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:CapacitanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abF"^^xsd:string ;
+  qudt:code "0015"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An abfarad is an obsolete electromagnetic (CGS) unit of capacitance equal to $10^{9}$ farads (1,000,000,000 F or 1 GF). The absolute farad of the e.m.u. system, for a steady current identically abC/abV, and identically reciprocal abdaraf. 1 abF = 1 GF."^^xsd:string ;
+  qudt:identifier "U150-15"^^xsd:string ;
+  qudt:quantityKind quantity:Capacitance ;
+  qudt:symbol "abF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abfarad"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Abfarad> ;
+  skos:prefLabel "abfarad"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Abfarad?oldid=407124018> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-13> ;
+.
+unit:AbF-PER-CM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PermittivityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abf-per-cm"^^xsd:string ;
+  qudt:code "0016"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E11 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The absolute dielectric constant of free space is defined as the ratio of displacement to the electric field intensity. The unit of measure is the abfarad per centimeter, a derived CGS unit."^^xsd:string ;
+  qudt:identifier "U150-16"^^xsd:string ;
+  qudt:quantityKind quantity:Permittivity ;
+  qudt:symbol "abF/cm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abfarad per Centimeter"^^xsd:string ;
+  skos:prefLabel "abfarad-per-centimeter"^^xsd:string ;
+.
+unit:AbH
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:InductanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abH"^^xsd:string ;
+  qudt:belongsToSystemOfQuantities qudt:SOU_CGS-EMU ;
+  qudt:code "0020"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Abhenry is the centimeter-gram-second electromagnetic unit of inductance, equal to one billionth of a henry."^^xsd:string ;
+  qudt:identifier "U150-20"^^xsd:string ;
+  qudt:quantityKind quantity:Inductance ;
+  qudt:symbol "abH"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abhenry"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Abhenry> ;
+  skos:prefLabel "abhenry"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Abhenry?oldid=477198643> ;
+.
+unit:AbOHM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ResistanceUnit ;
+  qudt:abbreviation "abOhm"^^xsd:string ;
+  qudt:code "0030"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{abohm} is the basic unit of electrical resistance in the emu-cgs system of units. One abohm is equal to $10^{-9} ohms$ in the SI system of units; one abohm is a nanoohm."^^xsd:string ;
+  qudt:identifier "U150-1270N9"^^xsd:string ;
+  qudt:quantityKind quantity:Resistance ;
+  qudt:symbol "abOhm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abohm"^^xsd:string ;
+  rdfs:seeAlso unit:OHM ;
+  skos:exactMatch <http://dbpedia.org/resource/Abohm> ;
+  skos:prefLabel "abohm"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Abohm?oldid=480725336> ;
+.
+unit:AbS
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ConductanceUnit ;
+  qudt:abbreviation "aS"^^xsd:string ;
+  qudt:code "0025"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The CGS electromagnetic unit of conductance; one absiemen is the conductance at which a potential of one abvolt forces a current of one abampere; equal to $10^{9}$ siemens. One siemen is the conductance at which a potential of one volt forces a current of one ampere and named for Karl Wilhem Siemens."^^xsd:string ;
+  qudt:identifier "U150-25"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricConductivity ;
+  qudt:symbol "aS"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Absiemen"^^xsd:string ;
+  skos:prefLabel "absiemen"^^xsd:string ;
+  prov:wasInfluencedBy <http://wordinfo.info/unit/4266> ;
+.
+unit:AbT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagneticFieldStrengthUnit ;
+  rdf:type qudt:MagneticFluxDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abt"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The unit of magnetic induction in the cgs system, $10^{-4} tesla. Also known as the gauss."^^xsd:string ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+  qudt:quantityKind quantity:MagneticFieldStrength ;
+  qudt:quantityKind quantity:MagneticFluxDensity ;
+  qudt:symbol "abT"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abtesla"^^xsd:string ;
+  skos:exactMatch unit:GAUSS ;
+  skos:prefLabel "abtesla"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.diracdelta.co.uk/science/source/g/a/gauss/source.html> ;
+.
+unit:AbV
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyPerElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abV"^^xsd:string ;
+  qudt:code "0035"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-8 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of electrical potential equal to one hundred millionth of a volt ($10^{-8} volts), used in the centimeter-gram-second (CGS) system of units. One abV is the potential difference that exists between two points when the work done to transfer one abcoulomb of charge between them equals 1 erg. 1 abV = 10 nV."^^xsd:string ;
+  qudt:identifier "U150-35"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+  qudt:symbol "abV"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abvolt"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Abvolt> ;
+  skos:prefLabel "abvolt"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Abvolt?oldid=477198646> ;
+  prov:wasInfluencedBy <http://www.lexic.us/definition-of/abvolt> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-27> ;
+.
+unit:AbV-PER-CM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricFieldStrengthUnit ;
+  rdf:type qudt:ElectricFluxUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abV cm"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In the electromagnetic centimeter-gram-second system of units, 'abvolt per centimeter' is the unit of electric field strength."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricFieldStrength ;
+  qudt:quantityKind quantity:ElectricFlux ;
+  qudt:symbol "abV cm"^^xsd:string ;
+  qudt:symbol "abV/cm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abvolt per centimeter"^^xsd:string ;
+  rdfs:seeAlso unit:StatV-PER-CM ;
+  skos:prefLabel "abvolt-per-centimeter"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.endmemo.com/convert/electric%20field%20strength.php> ;
+.
+unit:AbV-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagneticFluxUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "abv-sec"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-8 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The magnetic flux whose expenditure in 1 second produces 1 abvolt per turn of a linked circuit. Technically defined in a three-dimensional system, it corresponds in the four-dimensional electromagnetic sector of the SI system to 10 nWb, and is an impractically small unit. In use for some years, the name was agreed by the International Electrotechnical Committee in 1930, along with a corresponding practical unit, the pramaxwell (or pro-maxwell) = $10^{8}$ maxwell."^^xsd:string ;
+  qudt:quantityKind quantity:MagneticFlux ;
+  qudt:symbol "abV-s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Abvolt Second"^^xsd:string ;
+  skos:prefLabel "abvolt-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-820> ;
+.
+unit:AttoC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "attoc"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-18 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An AttoColomb is $10^{-18} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Atto ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "aC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "AttoCoulomb"^^xsd:string ;
+  skos:prefLabel "attocoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:BIOT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricCurrentUnit ;
+  qudt:abbreviation "Bi"^^xsd:string ;
+  qudt:code "0130"^^xsd:string ;
+  qudt:conversionMultiplier 3.335641E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Biot} is another name for the abampere (aA), which is the basic electromagnetic unit of electric current in the emu-cgs (centimeter-gram-second) system of units. It is called after a French physicist, astronomer, and mathematician Jean-Baptiste Biot. One abampere is equal to ten amperes in the SI system of units. One abampere is the current, which produces a force of 2 dyne/cm between two infinitively long parallel wires that are 1 cm apart."^^xsd:string ;
+  qudt:identifier "U150-130"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+  qudt:symbol "Bi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Biot"^^xsd:string ;
+  owl:sameAs unit:AbA ;
+  skos:exactMatch <http://dbpedia.org/resource/Biot> ;
+  skos:prefLabel "biot"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Biot?oldid=443318821> ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/current/10-4/> ;
+.
+unit:C-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricDipoleMomentUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "C m"^^xsd:string ;
+  qudt:code "0405"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Coulomb Meter (C-m) is a unit in the category of Electric dipole moment. It is also known as atomic unit, u.a., au, ua. This unit is commonly used in the SI unit system. Coulomb Meter (C-m) has a dimension of LTI where L is length, T is time, and I is electric current. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:identifier "U150-405"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricDipoleMoment ;
+  qudt:symbol "C m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Coulomb Meter"^^xsd:string ;
+  skos:prefLabel "coulomb-meter"^^xsd:string ;
+.
+unit:C-M2
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "C m^{2}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Coulomb Square Meter (C-m2) is a unit in the category of Electric quadrupole moment. This unit is commonly used in the SI unit system. Coulomb Square Meter (C-m2) has a dimension of L2TI where L is length, T is time, and I is electric current. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricQuadrupoleMoment ;
+  qudt:symbol "C m^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Coulomb Square Meter"^^xsd:string ;
+  skos:prefLabel "coulomb-square-meter"^^xsd:string ;
+.
+unit:C-M2-PER-V
+  rdf:type qudt:ElectrochemistryUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "C m^{2} v^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Coulomb Square Meter (C-m2-per-volt) is a unit in the category of Electric polarizability."^^xsd:string ;
+  qudt:symbol "C m^{2} v^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/physical-chemistry-and-molecular-physics> ;
+  rdfs:label "Coulomb Square Meter Per Volt"^^xsd:string ;
+  skos:prefLabel "coulomb-square-meter-per-volt"^^xsd:string ;
+.
+unit:C-PER-KG
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ExposureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "C/kg"^^xsd:string ;
+  qudt:code "0415"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Coulomb Per Kilogram (C/kg) is the unit in the category of Exposure. It is also known as coulombs per kilogram, coulomb/kilogram. This unit is commonly used in the SI unit system. Coulomb Per Kilogram (C/kg) has a dimension of M-1TI where M is mass, T is time, and I is electric current. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:identifier "U150-415"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+  qudt:symbol "C kg^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Coulomb per Kilogram"^^xsd:string ;
+  skos:prefLabel "coulomb-per-kilogram"^^xsd:string ;
+.
+unit:C-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeLineDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "C/m"^^xsd:string ;
+  qudt:code "2050"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Coulomb per Meter}' is a unit for  'Electric Charge Line Density' expressed as $C/m$."^^xsd:string ;
+  qudt:identifier "U150-2050"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargeLineDensity ;
+  qudt:symbol "C/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Coulomb per Meter"^^xsd:string ;
+  skos:prefLabel "coulomb-per-meter"^^xsd:string ;
+.
+unit:C-PER-M2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricChargeAreaDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "C/m^{2}"^^xsd:string ;
+  qudt:code "0420"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Coulomb Per Square Meter ($C/m^2$) is a unit in the category of Electric charge surface density. It is also known as coulombs per square meter, coulomb per square metre, coulombs per square metre, coulomb/square meter, coulomb/square metre. This unit is commonly used in the SI unit system. Coulomb Per Square Meter (C/m2) has a dimension of $L^{-2}TI$ where L is length, T is time, and I is electric current. This unit is the standard SI unit in this category. "^^xsd:string ;
+  qudt:identifier "U150-420"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargePerArea ;
+  qudt:symbol "C m^{-2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Coulomb per Square Meter"^^xsd:string ;
+  skos:prefLabel "coulomb-per-square-meter"^^xsd:string ;
+.
+unit:C-PER-M3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeVolumeDensityUnit ;
+  qudt:abbreviation "C/m^{3}"^^xsd:string ;
+  qudt:code "0410"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Coulomb Per Cubic Meter ($C/m^{3}$) is a unit in the category of Electric charge density. Coulomb Per Cubic Meter (C/m3) has a dimension of L-3TI where L is length, T is time, and I is electric current. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:identifier "U150-410"^^xsd:string ;
+  qudt:longDescription "Coulomb Per Cubic Meter ($C/m^{3}$) is a unit in the category of Electric charge density. It is also known as coulomb per cubic metre, coulombs per cubic meter, coulombs per cubic metre, coulomb/cubic meter, coulomb/cubic metre. This unit is commonly used in the SI unit system. Coulomb Per Cubic Meter has a dimension of $L^{-3}TI$ where $L$ is length, $T$ is time, and $I$ is electric current. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargeVolumeDensity ;
+  qudt:symbol "C m^{-3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Coulomb per Cubic Meter"^^xsd:string ;
+  skos:prefLabel "coulomb-per-cubic-meter"^^xsd:string ;
+.
+unit:C-PER-MOL
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectrochemistryUnit ;
+  qudt:abbreviation "c-per-mol"^^xsd:string ;
+  qudt:code "0911"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Coulomb Per Mol} (C/mol) is a unit in the category of Molar electric charge. It is also known as coulombs/mol. Coulomb Per Mol (C/mol) has a dimension of TN-1I where T is time, N is amount of substance, and I is electric current. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:identifier "U030-911"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_NASA ;
+  qudt:isUnitOfSystem qudt:SOU_SI ;
+  qudt:quantityKind quantity:ElectricChargePerAmountOfSubstance ;
+  qudt:symbol "C mol^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Coulomb per Mole"^^xsd:string ;
+  skos:prefLabel "coulomb-per-mole"^^xsd:string ;
+.
+unit:C2-M-PER-J
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "C^{2} m^{2} J^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Coulomb Meter per Joule}' is a unit for  'Polarizability' expressed as $C^{2} m^{2} J^{-1}$."^^xsd:string ;
+  qudt:quantityKind quantity:Polarizability ;
+  qudt:symbol "C^{2} m^{2} J^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Square Coulomb Meter per Joule"^^xsd:string ;
+  skos:prefLabel "square-coulomb-meter-per-joule"^^xsd:string ;
+.
+unit:C3-M-PER-J2
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "C^{3} m^{3} J^{-2}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Cubic Coulomb Meter per Square Joule}' is a unit for  'Cubic Electric Dipole Moment Per Square Energy' expressed as $C^{3} m^{3} J^{-2}$."^^xsd:string ;
+  qudt:quantityKind quantity:CubicElectricDipoleMomentPerSquareEnergy ;
+  qudt:symbol "C^{3} m^{3} J^{-2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Cubic Coulomb Meter per Square Joule"^^xsd:string ;
+  skos:prefLabel "cubic-coulomb-meter-per-square-joule"^^xsd:string ;
+.
+unit:CANDELA
+  rdf:type qudt:BaseUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LuminousIntensityUnit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "cd"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:isUnitOfSystem qudt:SOU_SI ;
+  qudt:quantityKind quantity:LuminousIntensity ;
+  qudt:symbol "cd"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Candela"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Candela> ;
+  skos:prefLabel "candela"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.simetric.co.uk/siderived.htm> ;
+.
+unit:CD-PER-IN2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LuminanceUnit ;
+  qudt:abbreviation "cd/in^{2}"^^xsd:string ;
+  qudt:code "0340"^^xsd:string ;
+  qudt:conversionMultiplier 1550.0031000062002e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Candela per Square Inch}' is a C.G.S System unit for  'Luminance' expressed as $cd/in^{2}$."^^xsd:string ;
+  qudt:identifier "U150-340"^^xsd:string ;
+  qudt:quantityKind quantity:Luminance ;
+  qudt:symbol "cd/in^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Candela per Square Inch"^^xsd:string ;
+  skos:prefLabel "candela-per-square-inch"^^xsd:string ;
+.
+unit:CD-PER-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LuminanceUnit ;
+  qudt:abbreviation "cd/m^2"^^xsd:string ;
+  qudt:code "0345"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The candela per square metre ($cd/m^{2}$) is the derived SI unit of luminance. The unit is based on the candela, the SI unit of luminous intensity, and the square metre, the SI unit of area."^^xsd:string ;
+  qudt:identifier "U150-345"^^xsd:string ;
+  qudt:longDescription "The candela per square metre ($cd/m^2$) is the derived SI unit of luminance. The unit is based on the candela, the SI unit of luminous intensity, and the square metre, the SI unit of area. Nit (nt) is a deprecated non-SI name also used for this unit ($1 nit = 1 cd/m^2$). As a measure of light emitted per unit area, this unit is frequently used to specify the brightness of a display device. Most consumer desktop liquid crystal displays have luminances of 200 to 300 $cd/m^2$; the sRGB spec for monitors targets 80 cd/m2. HDTVs range from 450 to about 1000 cd/m2. Typically, calibrated monitors should have a brightness of $120 cd/m^2$. $Nit$ is believed to come from the Latin word nitere, to shine."^^xsd:string ;
+  qudt:quantityKind quantity:Luminance ;
+  qudt:symbol "cd/m^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Candela per Square Meter"^^xsd:string ;
+  skos:prefLabel "candela-per-square-meter"^^xsd:string ;
+.
+unit:COULOMB
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "C"^^xsd:string ;
+  qudt:baseUnitDimensions "s.A"^^xsd:string ;
+  qudt:code "0400"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of electric charge. One coulomb is the amount of charge accumulated in one second by a current of one ampere."^^xsd:string ;
+  qudt:identifier "U150-400"^^xsd:string ;
+  qudt:longDescription "The SI unit of electric charge. One coulomb is the amount of charge accumulated in one second by a current of one ampere. Electricity is actually a flow of charged particles, such as electrons, protons, or ions. The charge on one of these particles is a whole-number multiple of the charge e on a single electron, and one coulomb represents a charge of approximately 6.241 506 x 1018 e. The coulomb is named for a French physicist, Charles-Augustin de Coulomb (1736-1806), who was the first to measure accurately the forces exerted between electric charges."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "C"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Coulomb"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Coulomb> ;
+  skos:prefLabel "coulomb"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Coulomb?oldid=491815163> ;
+.
+unit:Candlepower
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LuminousIntensityUnit ;
+  qudt:abbreviation "cp"^^xsd:string ;
+  qudt:code "0355"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Candlepower} (abbreviated as cp) is a now-obsolete unit which was used to express levels of light intensity in terms of the light emitted by a candle of specific size and constituents. In modern usage Candlepower equates directly to the unit known as the candela."^^xsd:string ;
+  qudt:identifier "U150-355"^^xsd:string ;
+  qudt:quantityKind quantity:LuminousIntensity ;
+  qudt:symbol "cd"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Candlepower"^^xsd:string ;
+  rdfs:seeAlso unit:CANDELA ;
+  skos:exactMatch <http://dbpedia.org/resource/Candlepower> ;
+  skos:prefLabel "candlepower"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Candlepower?oldid=491140098> ;
+.
+unit:CentiC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "cC"^^xsd:string ;
+  qudt:conversionMultiplier "0.01"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A CentiCoulomb is $10^{-2} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Centi ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "dC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "CentiCoulomb"^^xsd:string ;
+  skos:prefLabel "centicoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:Debye
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricDipoleMomentUnit ;
+  qudt:abbreviation "D"^^xsd:string ;
+  qudt:code "0500"^^xsd:string ;
+  qudt:conversionMultiplier 3.33564E-30 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Debye}' is a C.G.S System unit for  'Electric Dipole Moment' expressed as $D$."^^xsd:string ;
+  qudt:identifier "U150-500"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricDipoleMoment ;
+  qudt:symbol "D"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Debye"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Debye> ;
+  skos:prefLabel "debye"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Debye?oldid=492149112> ;
+.
+unit:DecaC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "daC"^^xsd:string ;
+  qudt:conversionMultiplier "10.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A DecaCoulomb is $10 C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Deca ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "daC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "DecaCoulomb"^^xsd:string ;
+  skos:prefLabel "decacoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:DeciC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "C"^^xsd:string ;
+  qudt:conversionMultiplier "0.1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A DeciCoulomb is $10^{-1} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Deci ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "dC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "DeciCoulomb"^^xsd:string ;
+  skos:prefLabel "decicoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:EV-PER-T
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "eV T^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-19 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Electron Volt per Tesla}' is a C.G.S System unit for  'Magnetic Dipole Moment' expressed as $eV T^{-1}$."^^xsd:string ;
+  qudt:quantityKind quantity:MagneticDipoleMoment ;
+  qudt:symbol "eV T^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Electron Volt per Tesla"^^xsd:string ;
+  skos:prefLabel "electron-volt-per-tesla"^^xsd:string ;
+.
+unit:ElementaryCharge
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "elementarycharge"^^xsd:string ;
+  qudt:conversionMultiplier "16.02176565"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Elementary Charge}, usually denoted as $e$, is the electric charge carried by a single proton, or equivalently, the negation (opposite) of the electric charge carried by a single electron. This elementary charge is a fundamental physical constant. To avoid confusion over its sign, e is sometimes called the elementary positive charge. This charge has a measured value of approximately $1.602176565(35) \\times 10 coulombs$. In the cgs system, $e$ is $4.80320425(10) \\times 10 statcoulombs$."^^xsd:string ;
+  qudt:symbol "e"^^xsd:string ;
+  rdfs:label "Elementary Charge"^^xsd:string ;
+.
+unit:ExaC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "exac"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e18 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An ExaCoulomb is $10^{18} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Exa ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "EC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "ExaCoulomb"^^xsd:string ;
+  skos:prefLabel "exacoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:F-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PermittivityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "F/m"^^xsd:string ;
+  qudt:code "0605"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Farad Per Meter ($F/m$) is a unit in the category of Electric permittivity. It is also known as $farad/meter$."^^xsd:string ;
+  qudt:identifier "U150-605"^^xsd:string ;
+  qudt:longDescription "Farad Per Meter ($F/m$) is a unit in the category of Electric permittivity. It is also known as farad/meter. This unit is commonly used in the SI unit system. Farad Per Meter has a dimension of M-1L-3T4I2 where M is mass, L is length, T is time, and I is electric current. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:quantityKind quantity:Permittivity ;
+  qudt:symbol "F m^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Farad per Meter"^^xsd:string ;
+  skos:prefLabel "farad-per-meter"^^xsd:string ;
+.
+unit:FARAD
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:CapacitanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "F"^^xsd:string ;
+  qudt:baseUnitDimensions "m^{-2}.kg^{-1}.s^4.A^2"^^xsd:string ;
+  qudt:code "0595"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Farad} is the SI unit of electric capacitance. One farad is defined as the ability to store one coulomb of charge per volt of potential difference between the two conductors. This is a natural definition, but the unit it defines is very large. In practical circuits, capacitance is often measured in microfarads, nanofarads, or sometimes even in picofarads (10-12 farad, or trillionths of a farad)."^^xsd:string ;
+  qudt:identifier "U150-595"^^xsd:string ;
+  qudt:longDescription "The SI unit of electric capacitance. Very early in the study of electricity scientists discovered that a pair of conductors separated by an insulator can store a much larger charge than an isolated conductor can store. The better the insulator, the larger the charge that the conductors can hold. This property of a circuit is called capacitance, and it is measured in farads. One farad is defined as the ability to store one coulomb of charge per volt of potential difference between the two conductors. This is a natural definition, but the unit it defines is very large. In practical circuits, capacitance is often measured in microfarads, nanofarads, or sometimes even in picofarads (10-12 farad, or trillionths of a farad). The unit is named for the British physicist Michael Faraday (1791-1867), who was known for his work in electricity and electrochemistry."^^xsd:string ;
+  qudt:quantityKind quantity:Capacitance ;
+  qudt:siUnitsExpression "C/V"^^xsd:string ;
+  qudt:symbol "F"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Farad"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Farad> ;
+  skos:prefLabel "farad"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Farad?oldid=493070876> ;
+.
+unit:FARADAY
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "F"^^xsd:string ;
+  qudt:code "0600"^^xsd:string ;
+  qudt:conversionMultiplier "96485.3399"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Faraday}' is a C.G.S System unit for  'Electric Charge' expressed as $F$."^^xsd:string ;
+  qudt:identifier "U150-600"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "F"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Faraday"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Faraday_constant> ;
+  skos:prefLabel "faraday"^^xsd:string ;
+.
+unit:FC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:IlluminanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "fc"^^xsd:string ;
+  qudt:code "0630"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Candle}' is a C.G.S System unit for  'Luminous Flux Per Area' expressed as $fc$."^^xsd:string ;
+  qudt:identifier "U150-630"^^xsd:string ;
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+  qudt:symbol "fc"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Foot Candle"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Foot-candle> ;
+  skos:prefLabel "foot-candle"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Foot-candle?oldid=475579268> ;
+.
+unit:FR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Fr"^^xsd:string ;
+  qudt:code "0700"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Franklin}' is a C.G.S System unit for  'Electric Charge' expressed as $Fr$."^^xsd:string ;
+  qudt:exactMatch unit:StatC ;
+  qudt:identifier "U150-700"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "Fr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Franklin"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Franklin> ;
+  skos:prefLabel "franklin"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Franklin?oldid=495090654> ;
+.
+unit:FT-L
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LuminanceUnit ;
+  qudt:abbreviation "ft-L"^^xsd:string ;
+  qudt:code "0635"^^xsd:string ;
+  qudt:conversionMultiplier "3.4262591"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-635"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:Luminance ;
+  qudt:symbol "ft-L"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Foot Lambert"^^xsd:string ;
+  skos:prefLabel "foot-lambert"^^xsd:string ;
+.
+unit:FemtoC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "femtoc"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-15 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A FemtoCoulomb is $10^{-15} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Femto ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "fC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "FemtoCoulomb"^^xsd:string ;
+  skos:prefLabel "femtocoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:GAUSS
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagneticFluxDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "G"^^xsd:string ;
+  qudt:code "0735"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The gauss, abbreviated as $G$, is the cgs unit of measurement of a magnetic field $B$, which is also known as the \"magnetic flux density\" or the \"magnetic induction\".  One gauss is defined as one maxwell per square centimeter; it equals $10^{-4} tesla$ (or $100 \\micro T$). The Gauss is identical to maxwells per square centimetre; technically defined in a three-dimensional system, it corresponds in the SI, with its extra base unit the ampere. The gauss is quite small by earthly standards, 1 Gs being only about four times Earth's flux density, but it is subdivided, with $1 gauss = 105 gamma$. This unit of magnetic induction is also known as the abtesla."^^xsd:string ;
+  qudt:identifier "U150-735"^^xsd:string ;
+  qudt:quantityKind quantity:MagneticFluxDensity ;
+  qudt:symbol "Gs"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Gauss"^^xsd:string ;
+  rdfs:seeAlso unit:AbT ;
+  skos:exactMatch <http://dbpedia.org/resource/Gauss_%28unit%29> ;
+  skos:exactMatch unit:AbT ;
+  skos:prefLabel "gauss"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gauss_(unit)> ;
+  prov:wasInfluencedBy <http://www.diracdelta.co.uk/science/source/g/a/gauss/source.html> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-526?rskey=HAbfz2> ;
+.
+unit:GI
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagnetomotiveForceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Gi"^^xsd:string ;
+  qudt:code "0740"^^xsd:string ;
+  qudt:conversionMultiplier "0.795774715"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The fundamental unit of magnetomotive force ($mmf$) in electromagnetic units is called a Gilbert. It is the $mmf$ which will produce a magnetic field strength of one Gauss (Maxwell per Square Centimeter) in a path one centimeter long."^^xsd:string ;
+  qudt:identifier "U150-740"^^xsd:string ;
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+  qudt:symbol "Gi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Gilbert"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gilbert> ;
+  skos:prefLabel "gilbert"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gilbert?oldid=492755037> ;
+.
+unit:Gamma
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagneticFluxDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "gamma"^^xsd:string ;
+  qudt:code "0730"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Gamma}' is a C.G.S System unit for  'Magnetic Field' expressed as $gamma$."^^xsd:string ;
+  qudt:identifier "U150-730"^^xsd:string ;
+  qudt:quantityKind quantity:MagneticFluxDensity ;
+  qudt:symbol "gamma"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Gamma"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gamma> ;
+  skos:prefLabel "gamma"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gamma?oldid=494680973> ;
+.
+unit:GigaC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "gigac"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e09 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:hasDecimalMultiplier unit:Giga ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "GC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "GigaCoulomb"^^xsd:string ;
+  skos:prefLabel "gigacoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:GigaEV
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "GeV"^^xsd:string ;
+  qudt:code "2422"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-2422"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "GeV"^^xsd:string ;
+  rdfs:label "Giga Electron Volt"^^xsd:string ;
+  skos:prefLabel "giga-electron-volt"^^xsd:string ;
+.
+unit:H-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:InductanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "H/m"^^xsd:string ;
+  qudt:code "0790"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Henry per Metre} is  the ISO and SI unit for \\textit{Permeabiliy}."^^xsd:string ;
+  qudt:identifier "U150-790"^^xsd:string ;
+  qudt:quantityKind quantity:Inductance ;
+  qudt:symbol "H/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Henry per Metre"^^xsd:string ;
+  skos:prefLabel "Henry per Metre"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Henry?oldid=491435978> ;
+.
+unit:HENRY
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:InductanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "H"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2.kg.s^{-2}.A^{-2}"^^xsd:string ;
+  qudt:code "0790"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of electric inductance. The henry is a large unit; inductances in practical circuits are measured in millihenrys (mH) or microhenrys ($\\micro H$). "^^xsd:string ;
+  qudt:identifier "U150-790"^^xsd:string ;
+  qudt:latexDefinition "$\\text{H} \\; \\equiv \\; \\text{henry}\\; \\equiv\\; \\frac{\\text{Wb}}{\\text{A}}\\; \\equiv\\; \\frac{\\text{weber}}{\\text{amp}}\\; \\equiv\\ \\frac{\\text{V}\\cdot\\text{s}}{\\text{A}}\\; \\equiv\\; \\frac{\\text{volt} \\cdot \\text{second}}{\\text{amp}}\\; \\equiv\\ \\Omega\\cdot\\text{s}\\; \\equiv\\; \\text{ohm.second}$"^^xsd:string ;
+  qudt:longDescription """The SI unit of electric inductance. A changing magnetic field induces an electric current in a loop of wire (or in a coil of many loops) located in the field. Although the induced voltage depends only on the rate at which the magnetic flux changes, measured in webers per second, the amount of the current depends also on the physical properties of the coil. A coil with an inductance of one henry requires a flux of one weber for each ampere of induced current. 
+
+If, on the other hand, it is the current which changes, then the induced field will generate a potential difference within the coil: if the inductance is one henry a current change of one ampere per second generates a potential difference of one volt. The henry is a large unit; inductances in practical circuits are measured in millihenrys (mH) or microhenrys (u03bc H). The unit is named for the American physicist Joseph Henry (1797-1878), one of several scientists who discovered independently how magnetic fields can be used to generate alternating currents."""^^xsd:string ;
+  qudt:quantityKind quantity:Inductance ;
+  qudt:siUnitsExpression "Wb/A"^^xsd:string ;
+  qudt:symbol "H"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Henry"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Henry> ;
+  skos:prefLabel "Henry"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Henry?oldid=491435978> ;
+.
+unit:HZ-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PermeabilityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "H/m"^^xsd:string ;
+  qudt:code "0795"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The henry per meter (symbolized H/m) is the unit of magnetic permeability in the International System of Units ( SI ). Reduced to base units in SI, 1 H/m is the equivalent of one kilogram meter per second squared per ampere squared (kg times m times s -2 times A -2 )."^^xsd:string ;
+  qudt:identifier "U150-795"^^xsd:string ;
+  qudt:quantityKind quantity:Permeability ;
+  qudt:symbol "H/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Henry per Meter"^^xsd:string ;
+  skos:prefLabel "henry-per-meter"^^xsd:string ;
+.
+unit:HZ-PER-T
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Hz T^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Hertz per Tesla}' is a unit for  'Electric Charge Per Mass' expressed as $Hz T^{-1}$."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+  qudt:symbol "Hz T^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Hertz per Tesla"^^xsd:string ;
+  skos:prefLabel "hertz-per-tesla"^^xsd:string ;
+.
+unit:HZ-PER-V
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Hz V^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In the Hertz per Volt standard the frequency of the note is directly related to the voltage. A pitch of a note goes up one octave when its frequency doubles, meaning that the voltage will have to double for every octave rise. Depending on the footage (octave) selected, nominally one volt gives 1000Hz, two volts 2000Hz and so on. In terms of notes, bottom C would be 0.25 volts, the next C up would be 0.5 volts, then 1V, 2V, 4V, 8V for the following octaves. This system was used mainly by Yamaha and Korg."^^xsd:string ;
+  qudt:quantityKind quantity:InverseMagneticFlux ;
+  qudt:symbol "Hz V^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Hertz per Volt"^^xsd:string ;
+  skos:prefLabel "hertz-per-volt"^^xsd:string ;
+.
+unit:HectoC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "hC"^^xsd:string ;
+  qudt:conversionMultiplier "100.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{HectoCoulomb}' is a unit for  'Electric Charge' expressed as $hC$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Hecto ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "hC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "HectoCoulomb"^^xsd:string ;
+  skos:prefLabel "hectocoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:J-PER-T
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "j-per-t"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The magnetic moment of a magnet is a quantity that determines the force that the magnet can exert on electric currents and the torque that a magnetic field will exert on it. A loop of electric current, a bar magnet, an electron, a molecule, and a planet all have magnetic moments."^^xsd:string ;
+  qudt:longDescription "The magnetic moment of a magnet is a quantity that determines the force that the magnet can exert on electric currents and the torque that a magnetic field will exert on it. A loop of electric current, a bar magnet, an electron, a molecule, and a planet all have magnetic moments. The unit for magnetic moment is not a base unit in the International System of Units (SI) and it can be represented in more than one way. For example, in the current loop definition, the area is measured in square meters and I is measured in amperes, so the magnetic moment is measured in ampere-square meters (A m2). In the equation for torque on a moment, the torque is measured in joules and the magnetic field in tesla, so the moment is measured in Joules per Tesla (J u00b7T-1). These two representations are equivalent: 1 A u00b7m2 = 1 J u00b7T-1. "^^xsd:string ;
+  qudt:quantityKind quantity:MagneticDipoleMoment ;
+  qudt:symbol "J T^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Joule per Tesla"^^xsd:string ;
+  skos:prefLabel "joule-per-tesla"^^xsd:string ;
+.
+unit:J-PER-T2
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J T^{-2}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A measure of the diamagnetic energy, for a Bohr-radius spread around a magnetic axis, per square Tesla."^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerSquareMagneticFluxDensity ;
+  qudt:symbol "J T^{-2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Joule per Square Tesla"^^xsd:string ;
+  skos:prefLabel "joule-per-square-tesla"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.eng.fsu.edu/~dommelen/quantum/style_a/elecmagfld.html> ;
+.
+unit:KiloC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "kiloc"^^xsd:string ;
+  qudt:conversionMultiplier "1000.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:hasDecimalMultiplier unit:Kilo ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "kC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "KiloCoulomb"^^xsd:string ;
+  skos:prefLabel "kilocoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:KiloEV
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "keV"^^xsd:string ;
+  qudt:code "2420"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-16 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-2420"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "keV"^^xsd:string ;
+  rdfs:label "Kilo Electron Volt"^^xsd:string ;
+  skos:prefLabel "kilo-electron-volt"^^xsd:string ;
+.
+unit:KiloEV-PER-MicroM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearEnergyTransferUnit ;
+  qudt:abbreviation "keV/microM"^^xsd:string ;
+  qudt:code "2370"^^xsd:string ;
+  qudt:conversionMultiplier 1.60217653E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-2370"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:LinearEnergyTransfer ;
+  qudt:symbol "keV/m^{-6}"^^xsd:string ;
+  rdfs:label "Kilo Electron Volt per Micrometer"^^xsd:string ;
+  skos:prefLabel "kilo-electron-volt-per-micrometer"^^xsd:string ;
+.
+unit:LA
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LuminanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "la"^^xsd:string ;
+  qudt:code "1055"^^xsd:string ;
+  qudt:conversionMultiplier "3183.09886"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The lambert (symbol $L$, $la$ or $Lb$) is a non-SI unit of luminance. A related unit of luminance, the foot-lambert, is used in the lighting, cinema and flight simulation industries. The SI unit is the candela per square metre ($cd/m^2$)."^^xsd:string ;
+  qudt:identifier "U150-1055"^^xsd:string ;
+  qudt:isDerivedCoherentUnitOfSystem qudt:SOU_CGS-MECHANICS ;
+  qudt:quantityKind quantity:Luminance ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Lambert"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Lambert> ;
+  skos:prefLabel "lambert"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Lambert?oldid=494078267> ;
+.
+unit:LM
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LuminousFluxUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lm"^^xsd:string ;
+  qudt:baseUnitDimensions "Cd"^^xsd:string ;
+  qudt:code "1075"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit for measuring the flux of light being produced by a light source or received by a surface. The intensity of a light source is measured in candelas. One lumen represents the total flux of light emitted, equal to the intensity in candelas multiplied by the solid angle in steradians (1/(4u00b7pi) of a sphere) into which the light is emitted. Thus the total flux of a one-candela light, if the light is emitted uniformly in all directions, is 4u00b7pi lumens. \"Lumen\" is a Latin word for light."^^xsd:string ;
+  qudt:identifier "U150-1075"^^xsd:string ;
+  qudt:quantityKind quantity:LuminousFlux ;
+  qudt:siUnitsExpression "cd.sr"^^xsd:string ;
+  qudt:symbol "lm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Lumen"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Lumen> ;
+  skos:prefLabel "Lumen"^^xsd:string ;
+  skos:prefLabel "lumen"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Lumen?oldid=492885414> ;
+.
+unit:LM-PER-W
+  rdf:type qudt:LuminousEfficacyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lm-per-w"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:description "A measurement of luminous efficacy, which is the light output in lumens using one watt of electricity."^^xsd:string ;
+  qudt:quantityKind quantity:LuminousEfficacy ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Lumen per Watt"^^xsd:string ;
+  skos:prefLabel "lumen-per-watt"^^xsd:string ;
+.
+unit:LM-SEC
+  rdf:type qudt:LuminousEnergyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lm s"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In photometry, the lumen second is the SI derived unit of luminous energy. It is based on the lumen, the SI unit of luminous flux, and the second, the SI base unit of time.  The lumen second is sometimes called the talbot (symbol T).  An older name for the lumen second was the lumberg."^^xsd:string ;
+  qudt:quantityKind quantity:LuminousEnergy ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Lumen Second"^^xsd:string ;
+  skos:prefLabel "lumen-second"^^xsd:string ;
+.
+unit:Lux
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:IlluminanceUnit ;
+  qudt:abbreviation "lx"^^xsd:string ;
+  qudt:baseUnitDimensions "m^{-2}.cd"^^xsd:string ;
+  qudt:code "1080"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit for measuring the illumination (illuminance) of a surface. One lux is defined as an illumination of one lumen per square meter or 0.0001 phot. In considering the various light units, it's useful to think about light originating at a point and shining upon a surface. The intensity of the light source is measured in candelas; the total light flux in transit is measured in lumens (1 lumen = 1 candelau00b7steradian); and the amount of light received per unit of surface area is measured in lux (1 lux = 1 lumen/square meter). One lux is equal to approximately 0.09290 foot candle."^^xsd:string ;
+  qudt:identifier "U150-1080"^^xsd:string ;
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+  qudt:siUnitsExpression "lm/m^2"^^xsd:string ;
+  qudt:symbol "lx"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Lux"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Lux> ;
+  skos:prefLabel "Lux"^^xsd:string ;
+  skos:prefLabel "lux"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Lux?oldid=494700274> ;
+.
+unit:M-PER-F
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m-per-f"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:InversePermittivity ;
+  qudt:symbol "m/F"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Meter per Farad"^^xsd:string ;
+  skos:prefLabel "meter-per-farad"^^xsd:string ;
+.
+unit:MHO
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ConductanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mho"^^xsd:string ;
+  qudt:code "1120"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Mho} is a C.G.S System unit for  'Electric Conductivity' expressed as $mho$."^^xsd:string ;
+  qudt:exactMatch unit:SIEMENS ;
+  qudt:identifier "U150-1760"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricConductivity ;
+  qudt:symbol "\\mho"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Mho"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Siemens_%28unit%29> ;
+  skos:prefLabel "mho"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.simetric.co.uk/siderived.htm> ;
+.
+unit:MX
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagneticFluxUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Mx"^^xsd:string ;
+  qudt:code "1085"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-8 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Maxwell}' is a C.G.S System unit for  'Magnetic Flux' expressed as $Mx$."^^xsd:string ;
+  qudt:identifier "U150-1085"^^xsd:string ;
+  qudt:quantityKind quantity:MagneticFlux ;
+  qudt:symbol "Mx"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Maxwell"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Maxwell> ;
+  skos:prefLabel "maxwell"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Maxwell?oldid=478391976> ;
+.
+unit:MeV
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "MeV"^^xsd:string ;
+  qudt:code "2421"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-13 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-2421"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "MeV"^^xsd:string ;
+  rdfs:label "Mega Electron Volt"^^xsd:string ;
+  skos:prefLabel "mega-electron-volt"^^xsd:string ;
+.
+unit:MeV-PER-CM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearEnergyTransferUnit ;
+  qudt:abbreviation "MeV/cm"^^xsd:string ;
+  qudt:code "2371"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-11 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-2371"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:LinearEnergyTransfer ;
+  qudt:symbol "MeV/cm"^^xsd:string ;
+  rdfs:label "Mega Electron Volt per Centimeter"^^xsd:string ;
+  skos:prefLabel "mega-electron-volt-per-centimeter"^^xsd:string ;
+.
+unit:MeV-PER-c
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LinearMomentumUnit ;
+  qudt:abbreviation "MeV/c"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:LinearMomentum ;
+  qudt:symbol "MeV/c"^^xsd:string ;
+  rdfs:label "Mega Electron Volt per Speed of Light"^^xsd:string ;
+  skos:prefLabel "mega-electron-volt-per-speed-of-light"^^xsd:string ;
+.
+unit:MegaC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "megac"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e06 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A MegaCoulomb is $10^{6} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Mega ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "MC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "MegaCoulomb"^^xsd:string ;
+  skos:prefLabel "megacoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:MegaEV-FemtoM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MechanicsUnit ;
+  qudt:abbreviation "MeV fm"^^xsd:string ;
+  qudt:conversionMultiplier 1.60217653E-28 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:LengthEnergy ;
+  qudt:symbol "MeV fm"^^xsd:string ;
+  rdfs:label "Mega Electron Volt Femtometer"^^xsd:string ;
+  skos:prefLabel "mega-electron-volt-femtometer"^^xsd:string ;
+.
+unit:MegaHZ-PER-T
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "MHz T^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Mega Hertz per Tesla}' is a C.G.S System unit for  'Electric Charge Per Mass' expressed as $MHz T^{-1}$."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+  qudt:symbol "MHz T^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Mega Hertz per Tesla"^^xsd:string ;
+  skos:prefLabel "mega-hertz-per-tesla"^^xsd:string ;
+.
+unit:MicroA
+  rdf:type qudt:ElectricCurrentUnit ;
+  qudt:abbreviation "microA"^^xsd:string ;
+  qudt:conversionMultiplier 1.03e-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-50N6"^^xsd:string ;
+  qudt:isScalingOf unit:A ;
+  qudt:symbol "\\mu A"^^xsd:string ;
+  rdfs:label "MicroAmpere"^^xsd:string ;
+  owl:sameAs unit:AMPERE ;
+.
+unit:MicroC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "microc"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-06 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A MicroCoulomb is $10^{-6} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Micro ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "\\micro C"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "MicroCoulomb"^^xsd:string ;
+  skos:prefLabel "microcoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:MicroF
+  rdf:type qudt:CapacitanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "microF"^^xsd:string ;
+  qudt:code "2655"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{microfarad} (symbolized $\\mu F$) is a unit of capacitance, equivalent to 0.000001 (10 to the -6th power) farad. The microfarad is a moderate unit of capacitance. In utility alternating-current (AC) and audio-frequency (AF) circuits, capacitors with values on the order of $1 \\mu F$ or more are common. At radio frequencies (RF), a smaller unit, the picofarad (pF), is often used."^^xsd:string ;
+  qudt:identifier "U150-595N6"^^xsd:string ;
+  qudt:quantityKind quantity:Capacitance ;
+  qudt:symbol "microF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Microfarad"^^xsd:string ;
+  rdfs:seeAlso unit:FARAD ;
+  rdfs:seeAlso unit:PicoF ;
+  skos:closeMatch <http://dbpedia.org/resource/Farad> ;
+  skos:prefLabel "Microfarad"^^xsd:string ;
+.
+unit:MicroH
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:InductanceUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "microH"^^xsd:string ;
+  qudt:code "2675"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI derived unit for inductance is the henry. 1 henry is equal to 1000000 microhenry. "^^xsd:string ;
+  qudt:identifier "U150-790N6"^^xsd:string ;
+  qudt:quantityKind quantity:Inductance ;
+  qudt:symbol "microH"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Microhenry"^^xsd:string ;
+  rdfs:seeAlso unit:HENRY ;
+  skos:closeMatch <http://dbpedia.org/resource/Henry_%28unit%29> ;
+  skos:prefLabel "Microhenry"^^xsd:string ;
+.
+unit:MilliA
+  rdf:type qudt:ElectricCurrentUnit ;
+  qudt:abbreviation "mA"^^xsd:string ;
+  qudt:conversionMultiplier 1.03e-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:identifier "U150-50N3"^^xsd:string ;
+  qudt:isScalingOf unit:A ;
+  rdfs:label "MilliAmpere"^^xsd:string ;
+  owl:sameAs unit:AMPERE ;
+.
+unit:MilliC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "C"^^xsd:string ;
+  qudt:conversionMultiplier "0.001"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A MilliCoulomb is $10^{-3} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Milli ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "mC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "MilliCoulomb"^^xsd:string ;
+  skos:prefLabel "millicoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:MilliH
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:InductanceUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "milliH"^^xsd:string ;
+  qudt:code "2670"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of inductance equal to one thousandth of a henry. "^^xsd:string ;
+  qudt:identifier "U150-790N3"^^xsd:string ;
+  qudt:quantityKind quantity:Inductance ;
+  qudt:symbol "milliH"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Millihenry"^^xsd:string ;
+  rdfs:seeAlso unit:HENRY ;
+  skos:closeMatch <http://dbpedia.org/resource/Henry_%28unit%29> ;
+  skos:prefLabel "millihenry"^^xsd:string ;
+.
+unit:N-PER-C
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ForcePerElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "N/C"^^xsd:string ;
+  qudt:code "1235"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Newton Per Coulomb ( N/C) is a unit in the category of Electric field strength. It is also known as newtons/coulomb. Newton Per Coulomb ( N/C) has a dimension of MLT-3I-1 where M is mass, L is length, T is time, and I is electric current. It essentially the same as the corresponding standard SI unit V/m."^^xsd:string ;
+  qudt:identifier "U150-1235"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerElectricCharge ;
+  qudt:symbol "N/C"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Newton per Coulomb"^^xsd:string ;
+  skos:prefLabel "newton-per-coulomb"^^xsd:string ;
+.
+unit:NanoC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "nanoc"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-09 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A NanoCoulomb is $10^{-9} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Nano ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "nC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "NanoCoulomb"^^xsd:string ;
+  skos:prefLabel "nanocoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:NanoF
+  rdf:type qudt:CapacitanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "nF"^^xsd:string ;
+  qudt:code "2660"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A common metric unit of electric capacitance equal to $10^{-9} farad$. This unit was previously called the $millimicrofarad$."^^xsd:string ;
+  qudt:identifier "U150-595N9"^^xsd:string ;
+  qudt:quantityKind quantity:Capacitance ;
+  qudt:symbol "nF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Nanofarad"^^xsd:string ;
+  rdfs:seeAlso unit:FARAD ;
+  skos:exactMatch <http://dbpedia.org/resource/Farad> ;
+  skos:prefLabel "Nanofarad"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Farad?oldid=493070876> ;
+.
+unit:OE-CM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MagnetomotiveForceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Oe-cm"^^xsd:string ;
+  qudt:code "1265"^^xsd:string ;
+  qudt:conversionMultiplier "0.795774715"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Oersted Centimeter}' is a C.G.S System unit for  'Magnetomotive Force' expressed as $Oe-cm$."^^xsd:string ;
+  qudt:identifier "U150-1265"^^xsd:string ;
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+  qudt:symbol "Oe-cm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Oersted Centimeter"^^xsd:string ;
+  skos:prefLabel "oersted-centimeter"^^xsd:string ;
+.
+unit:OERSTED
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagneticFieldStrengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Oe"^^xsd:string ;
+  qudt:code "1260"^^xsd:string ;
+  qudt:conversionMultiplier "79.5774715"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Oersted (abbreviated as Oe) is the unit of magnetizing field (also known as H-field, magnetic field strength or intensity) in the CGS system of units."^^xsd:string ;
+  qudt:identifier "U150-1260"^^xsd:string ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+  qudt:quantityKind quantity:MagneticFieldStrength ;
+  qudt:symbol "Oe"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Oersted"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Oersted> ;
+  skos:prefLabel "oersted"^^xsd:string ;
+  prov:wasDerivedFrom unit:GAUSS ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Oersted?oldid=491396460> ;
+.
+unit:OHM
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ResistanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Ohm"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2.kg.s^{-3}.A^{-2}"^^xsd:string ;
+  qudt:code "1270"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The ohm is the SI derived unit of electrical resistance, named after German physicist Georg Simon Ohm.  {@us}"^^xsd:string ;
+  qudt:identifier "U150-1270"^^xsd:string ;
+  qudt:latexDefinition "\\Omega\\ \\equiv\\ \\text{ohm}\\ \\equiv\\ \\frac{\\text{V}}{\\text{A}}\\ \\equiv\\ \\frac{\\text{volt}}{\\text{amp}}\\ \\equiv\\ \\frac{\\text{W}}{\\text {A}^{2}}\\ \\equiv\\ \\frac{\\text{watt}}{\\text{amp}^{2}}\\ \\equiv\\ \\frac{\\text{H}}{\\text {s}}\\ \\equiv\\ \\frac{\\text{henry}}{\\text{second}}"^^xsd:string ;
+  qudt:quantityKind quantity:Resistance ;
+  qudt:siUnitsExpression "V/A"^^xsd:string ;
+  qudt:symbol "\\ohm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Ohm"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Ohm> ;
+  skos:prefLabel "ohm"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ohm?oldid=494685555> ;
+.
+unit:PER-T-M
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Per Tesla Meter Unit is a a demominator unit with dimensions $/m .\\cdot T$."^^xsd:string ;
+  qudt:quantityKind quantity:MagneticReluctivity ;
+  qudt:symbol "m^{-1} \\cdot T^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Per Tesla Meter"^^xsd:string ;
+  skos:prefLabel "per-tesla-meter"^^xsd:string ;
+.
+unit:PER-T-SEC
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  qudt:abbreviation "/s . T"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Per Tesla Second Unit is a a demominator unit with dimensions $/s . T$."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+  qudt:symbol "s^{-1} T^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Per Tesla Second Unit"^^xsd:string ;
+  skos:prefLabel "per-tesla-second-unit"^^xsd:string ;
+.
+unit:PetaC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "petac"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e15 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A PetaCoulomb is $10^{15} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Peta ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "PC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "PetaCoulomb"^^xsd:string ;
+  skos:prefLabel "petacoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:Phot
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:IlluminanceUnit ;
+  qudt:abbreviation "ph"^^xsd:string ;
+  qudt:code "1355"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A phot (ph) is a photometric unit of illuminance, or luminous flux through an area. It is not an SI unit, but rather is associated with the older centimetre gram second system of units.  Metric dimensions: $illuminance = luminous intensity \\times solid angle / length$."^^xsd:string ;
+  qudt:identifier "U150-1355"^^xsd:string ;
+  qudt:isDerivedCoherentUnitOfSystem qudt:SOU_CGS-MECHANICS ;
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+  qudt:symbol "ph"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Phot"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Phot> ;
+  skos:prefLabel "phot"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Phot?oldid=477198725> ;
+.
+unit:PicoC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "picoc"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A PicoCoulomb is $10^{-12} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Pico ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "pC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "PicoCoulomb"^^xsd:string ;
+  skos:prefLabel "picocoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:PicoF
+  rdf:type qudt:CapacitanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "pF"^^xsd:string ;
+  qudt:code "2665"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{PicoF} is a common unit of electric capacitance equal to $10^{-12} farad$. This unit was formerly called the micromicrofarad."^^xsd:string ;
+  qudt:identifier "U150-595N12"^^xsd:string ;
+  qudt:quantityKind quantity:Capacitance ;
+  qudt:symbol "pF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Picofarad"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Farad> ;
+  skos:prefLabel "Picofarad"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Farad?oldid=493070876> ;
+.
+unit:QuarticCoulombMeterPerCubicEnergy
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  qudt:abbreviation "C^4m^4/J^3"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "1"^^xsd:double ;
+  qudt:description "'\\textit{Quartic Coulomb Meter per Cubic Energy}' is a unit for  'Quartic Electric Dipole Moment Per Cubic Energy' expressed as $C^{4} m^{4} J^{-3}$."^^xsd:string ;
+  qudt:quantityKind quantity:QuarticElectricDipoleMomentPerCubicEnergy ;
+  qudt:symbol "C^{4} m^{4} J^{-3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Quartic Coulomb Meter per Cubic Energy"^^xsd:string ;
+  skos:prefLabel "quartic-coulomb-meter-per-cubic-energy"^^xsd:string ;
+.
+unit:RelativePermeability
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PermeabilityUnit ;
+  qudt:abbreviation "relativepermeability"^^xsd:string ;
+  qudt:conversionMultiplier 1.25663706E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In multiphase flow in porous media, the relative permeability of a phase is a dimensionless measure of the effective permeability of that phase. It is the ratio of the effective permeability of that phase to the absolute permeability. It can be viewed as an adaptation of Darcy's law to multiphase flow. For two-phase flow in porous media given steady-state conditions, we can write where is the flux, is the pressure drop, is the viscosity."^^xsd:string ;
+  qudt:quantityKind quantity:Permeability ;
+  qudt:symbol "\\mu r"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Relative Permeability"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Relative_permeability> ;
+  skos:prefLabel "relative-permeability"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Relative_permeability?oldid=491120528> ;
+.
+unit:RelativePermittivity
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PermittivityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "relativepermittivity"^^xsd:string ;
+  qudt:conversionMultiplier 8.854187817E-12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The relative permittivity of a material under given conditions reflects the extent to which it concentrates electrostatic lines of flux. In technical terms, it is the ratio of the amount of electrical energy stored in a material by an applied voltage, relative to that stored in a vacuum. Likewise, it is also the ratio of the capacitance of a capacitor using that material as a dielectric, compared to a similar capacitor that has a vacuum as its dielectric. Relative permittivity is a dimensionless number that is in general complex. The imaginary portion of the permittivity corresponds to a phase shift of the polarization P relative to E and leads to the attenuation of electromagnetic waves passing through the medium. "^^xsd:string ;
+  qudt:latexDefinition "$\\epsilon_r(w) = \\frac{\\epsilon(w)}{\\epsilon_O}$\\\\where $\\epsilon_r(w)$ is the complex frequency-dependent absolute permittivity of the material, and $\\epsilon_O$ is the vacuum permittivity."^^xsd:string ;
+  qudt:quantityKind quantity:Permittivity ;
+  qudt:symbol "\\epsilon r"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Relative Permittivity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Relative_static_permittivity> ;
+  skos:prefLabel "relative-permittivity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Relative_permittivity?oldid=489664437> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Relative_static_permittivity?oldid=334224492> ;
+.
+unit:SIEMENS
+  rdf:type qudt:ConductanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "S"^^xsd:string ;
+  qudt:baseUnitDimensions "m^{-2}.kg^{-1}.s^3.A^2"^^xsd:string ;
+  qudt:code "1630"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Siemens} is the SI unit of electric conductance, susceptance, and admittance. The most important property of a conductor is the amount of current it will carry when a voltage is applied. Current flow is opposed by resistance in all circuits, and by also by reactance and impedance in alternating current circuits. Conductance, susceptance, and admittance are the inverses of resistance, reactance, and impedance, respectively. To measure these properties, the siemens is the reciprocal of the ohm. In other words, the conductance, susceptance, or admittance, in siemens, is simply 1 divided by the resistance, reactance or impedance, respectively, in ohms. The unit is named for the German electrical engineer Werner von Siemens (1816-1892). "^^xsd:string ;
+  qudt:identifier "U150-1630"^^xsd:string ;
+  qudt:latexDefinition "S\\text{ or }\\mho\\ \\equiv\\ \\text{siemens}\\ \\equiv\\ \\frac{\\text{A}}{\\text{V}}\\ \\equiv\\ \\frac{\\text{amp}}{\\text{volt}}\\ \\equiv\\ \\frac{\\text{F}}{\\text {s}}\\ \\equiv\\ \\frac{\\text{farad}}{\\text{second}}"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricConductivity ;
+  qudt:siUnitsExpression "A/V"^^xsd:string ;
+  qudt:symbol "S"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Siemens"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Siemens> ;
+  skos:prefLabel "Siemens"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Siemens?oldid=495514486> ;
+  prov:wasInfluencedBy <http://www.simetric.co.uk/siderived.htm> ;
+.
+unit:STILB
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LuminanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "sb"^^xsd:string ;
+  qudt:code "1785"^^xsd:string ;
+  qudt:conversionMultiplier 10000.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The stilb (sb) is the CGS unit of luminance for objects that are not self-luminous. It is equal to one candela per square centimeter or 10 nits (candelas per square meter). The name was coined by the French physicist A. Blondel around 1920. It comes from the Greek word stilbein meaning 'to glitter'. It was in common use in Europe up to World War I. In North America self-explanatory terms such as candle per square inch and candle per square meter were more common. The unit has since largely been replaced by the SI unit: candela per square meter."^^xsd:string ;
+  qudt:identifier "U150-1785"^^xsd:string ;
+  qudt:quantityKind quantity:Luminance ;
+  qudt:symbol "sb"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Stilb"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Stilb> ;
+  skos:prefLabel "stilb"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stilb?oldid=375748497> ;
+.
+unit:StatA
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricCurrentUnit ;
+  qudt:abbreviation "statA"^^xsd:string ;
+  qudt:code "1740"^^xsd:string ;
+  qudt:conversionMultiplier 3.335641E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Statampere} (statA) is a unit in the category of Electric current. It is also known as statamperes. This unit is commonly used in the cgs unit system. Statampere (statA) has a dimension of I where I is electric current. It can be converted to the corresponding standard SI unit A by multiplying its value by a factor of 3.355641E-010."^^xsd:string ;
+  qudt:identifier "U150-1740"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+  qudt:symbol "statA"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statampere"^^xsd:string ;
+  skos:prefLabel "statampere"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--electric_current--statampere.cfm> ;
+.
+unit:StatA-PER-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricCurrentDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statA / cm^{2}"^^xsd:string ;
+  qudt:conversionMultiplier 3.335641E-6 ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:description "The Statampere per Square Centimeter is a unit of electric current density in the c.g.s. system of units."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+  qudt:symbol "statA / cm^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statampere per Square Centimeter"^^xsd:string ;
+  skos:prefLabel "statampere-per-square-centimeter"^^xsd:string ;
+.
+unit:StatC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statC"^^xsd:string ;
+  qudt:code "1745"^^xsd:string ;
+  qudt:conversionMultiplier 3.33564E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The statcoulomb ($statC$) or franklin ($Fr$) or electrostatic unit of charge ($esu$) is the physical unit for electrical charge used in the centimetre-gram-second system of units (cgs) and Gaussian units. It is a derived unit given by $1 statC = 1 g cm s = 1 erg cm$. The SI system of units uses the coulomb (C) instead. The conversion between C and statC is different in different contexts. The number 2997924580 is 10 times the value of the speed of light expressed in meters/second, and the conversions are exact except where indicated. The coulomb is an extremely large charge rarely encountered in electrostatics, while the statcoulomb is closer to everyday charges. "^^xsd:string ;
+  qudt:identifier "U150-1745"^^xsd:string ;
+  qudt:latexDefinition """$1 C \\leftrightarrow 2997924580 statC \\approx 3.00 \\times 10 statC,\\\\
+1 \\hspace{0.3pc} statC \\leftrightarrow \\hspace{0.3pc} \\approx 3.34 \\times 10 C,\\\\*
+1 C \\leftrightarrow 4 \\pi \\times 2997924580 statC \\approx 3.77 \\times 10 statC,\\\\*
+1 \\hspace{0.3pc} statC \\leftrightarrow \\hspace{0.2pc} \\approx 2.6 \\times 10 C,\\\\*
+1 C/m \\leftrightarrow 4 \\pi \\times 2997924580 \\times 10 statC/cm \\approx 3.77 \\times 10 statC/cm,\\\\*
+1 \\hspace{0.3pc} statC/cm \\leftrightarrow \\hspace{0.3pc} \\approx 2.65 \\times 10 C/m$"""^^xsd:string ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "statC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statcoulomb"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Statcoulomb> ;
+  skos:prefLabel "statcoulomb"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Statcoulomb?oldid=492664360> ;
+.
+unit:StatC-PER-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectricChargeAreaDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statc-per-cm2"^^xsd:string ;
+  qudt:conversionMultiplier 3.33564E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Statcoulomb per Square Centimeter is a unit of measure for electric flux density and electric polarization. One Statcoulomb per Square Centimeter is $2.15 10^9  coulomb per square inch$."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargePerArea ;
+  qudt:symbol "statC/cm^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statcoulomb per Square Centimeter"^^xsd:string ;
+  skos:prefLabel "statcoulomb-per-square-centimeter"^^xsd:string ;
+.
+unit:StatC-PER-MOL
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ElectrochemistryUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statC/mol"^^xsd:string ;
+  qudt:conversionMultiplier 3.33564E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Statcoulomb per Mole} is a unit of measure for the electical charge associated with one mole of a substance. The mole is a unit of measurement used in chemistry to express amounts of a chemical substance, defined as an amount of a substance that contains as many elementary entities (e.g., atoms, molecules, ions, electrons) as there are atoms in 12 grams of pure carbon-12 (12C), the isotope of carbon with atomic weight 12."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricChargePerAmountOfSubstance ;
+  qudt:symbol "statC/mol"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statcoulomb per Mole"^^xsd:string ;
+  skos:prefLabel "statcoulomb-per-mole"^^xsd:string ;
+.
+unit:StatF
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:CapacitanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statF"^^xsd:string ;
+  qudt:code "1750"^^xsd:string ;
+  qudt:conversionMultiplier 1.113E-12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Statfarad (statF) is a unit in the category of Electric capacitance. It is also known as statfarads. This unit is commonly used in the cgs unit system. Statfarad (statF) has a dimension of $M^{-1}L^{-2}T^4I^2$ where M is mass, L is length, T is time, and I is electric current. It can be converted to the corresponding standard SI unit F by multiplying its value by a factor of 1.11265E-012."^^xsd:string ;
+  qudt:identifier "U150-1750"^^xsd:string ;
+  qudt:quantityKind quantity:Capacitance ;
+  qudt:symbol "statF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statfarad"^^xsd:string ;
+  skos:prefLabel "statfarad"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--electric_capacitance--statfarad.cfm> ;
+.
+unit:StatH
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:InductanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statH"^^xsd:string ;
+  qudt:code "1755"^^xsd:string ;
+  qudt:conversionMultiplier 8.9876E11 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Stathenry} (statH) is a unit in the category of Electric inductance. It is also known as stathenries. This unit is commonly used in the cgs unit system. Stathenry (statH) has a dimension of $ML^2T^{-2}I^{-2}$ where M is mass, L is length, T is time, and I is electric current. It can be converted to the corresponding standard SI unit H by multiplying its value by a factor of $8.987552 \\times 10^{11}$ ."^^xsd:string ;
+  qudt:identifier "U150-1755"^^xsd:string ;
+  qudt:quantityKind quantity:Inductance ;
+  qudt:symbol "statH"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Stathenry"^^xsd:string ;
+  skos:prefLabel "stathenry"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--electric_inductance--stathenry.cfm> ;
+.
+unit:StatH-PER-CM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PermeabilityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "stath-per-cm"^^xsd:string ;
+  qudt:conversionMultiplier 8.9876E13 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The Stathenry per Centimeter is a unit of measure for the absolute permeability of free space."^^xsd:string ;
+  qudt:quantityKind quantity:Permeability ;
+  qudt:symbol "statH/cm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Stathenry per Centimeter"^^xsd:string ;
+  skos:prefLabel "stathenry-per-centimeter"^^xsd:string ;
+.
+unit:StatMHO
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ConductanceUnit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "statS"^^xsd:string ;
+  qudt:code "1760"^^xsd:string ;
+  qudt:conversionMultiplier 1.1126e-12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{StatMHO} is the unit of conductance, admittance, and susceptance in the C.G.S e.s.u system of units. One $statmho$ is the conductance between two points in a conductor when a constant potential difference of $1 \\; statvolt$ applied between the points produces in the conductor a current of $1 \\; statampere$, the conductor not being the source of any electromotive force, approximately $1.1126 \\times 10^{-12} mho$."^^xsd:string ;
+  qudt:identifier "U150-1760N12"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricConductivity ;
+  qudt:symbol "stat\\mho"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statmho"^^xsd:string ;
+  rdfs:seeAlso unit:MHO ;
+  rdfs:seeAlso unit:StatS ;
+  owl:sameAs unit:StatS ;
+  skos:prefLabel "statmho"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.sizes.com/units/statmho.htm> ;
+.
+unit:StatOHM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ResistanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statOhm"^^xsd:string ;
+  qudt:code "1765"^^xsd:string ;
+  qudt:conversionMultiplier 8.9876E11 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{StatOHM} is the unit of resistance, reactance, and impedance in the electrostatic C.G.S system of units, equal to the resistance between two points of a conductor when a constant potential difference of 1 statvolt between these points produces a current of 1 statampere; it is equal to approximately $8.9876 \\times 10^{11} ohms$. The statohm is an extremely large unit of resistance. In fact, an object with a resistance of 1 stat W would make an excellent insulator or dielectric . In practical applications, the ohm, the kilohm (k W ) and the megohm (M W or M) are most often used to quantify resistance."^^xsd:string ;
+  qudt:identifier "U150-1270P11"^^xsd:string ;
+  qudt:quantityKind quantity:Resistance ;
+  qudt:symbol "stat\\Omega"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statohm"^^xsd:string ;
+  rdfs:seeAlso unit:OHM ;
+  skos:prefLabel "statohm"^^xsd:string ;
+  prov:wasInfluencedBy <http://whatis.techtarget.com/definition/statohm-stat-W> ;
+.
+unit:StatS
+  rdf:type qudt:ConductanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "S"^^xsd:string ;
+  qudt:conversionMultiplier 1.1126500561e-12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The unit of conductance, admittance, and susceptance in the centimeter-gram-second electrostatic system of units."^^xsd:string ;
+  qudt:quantityKind quantity:ElectricConductivity ;
+  qudt:symbol "statS"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statsiemens"^^xsd:string ;
+  owl:sameAs unit:StatMHO ;
+  skos:altLabel "statmho"^^xsd:string ;
+  skos:prefLabel "statsiemens"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.knowledgedoor.com/2/units_and_constants_handbook/statsiemens.html> ;
+  prov:wasInfluencedBy <http://www.sizes.com/units/statmho.htm> ;
+  prov:wasInfluencedBy <http://www3.wolframalpha.com/input/?i=statsiemens> ;
+.
+unit:StatV
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyPerElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statV"^^xsd:string ;
+  qudt:code "1770"^^xsd:string ;
+  qudt:conversionMultiplier "299.792458"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{statvolt} is a unit of voltage and electrical potential used in the cgs system of units. The conversion to the SI system is $1 statvolt = 299.792458 volts$. The conversion factor 299.792458 is simply the numerical value of the speed of light in m/s divided by 106. The statvolt is also defined in the cgs system as $1 erg / esu$. It is a useful unit for electromagnetism because one statvolt per centimetre is equal in magnitude to one gauss. Thus, for example, an electric field of one statvolt/cm has the same energy density as a magnetic field of one gauss. Likewise, a plane wave propagating in a vacuum has perpendicular electric and magnetic fields such that for every gauss of magnetic field intensity there is one statvolt/cm of electric field intensity. The abvolt is another option for a unit of voltage in the cgs system."^^xsd:string ;
+  qudt:identifier "U150-1770"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+  qudt:symbol "statV"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statvolt"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Statvolt> ;
+  skos:prefLabel "statvolt"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Statvolt> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Statvolt?oldid=491769750> ;
+.
+unit:StatV-PER-CM
+  rdf:type qudt:ElectricFieldStrengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statv-per-cm"^^xsd:string ;
+  qudt:conversionMultiplier 2.99792458E4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description """One statvolt per centimetre is equal in magnitude to one gauss. For example, an electric field of one statvolt/cm has the same energy density as a magnetic field of one gauss. Likewise, a plane wave propagating in a vacuum has perpendicular electric and magnetic fields such that for every gauss of magnetic field intensity there is one statvolt/cm of electric field intensity.
+The abvolt is another option for a unit of voltage in the cgs system."""^^xsd:string ;
+  qudt:quantityKind quantity:ElectricFieldStrength ;
+  qudt:symbol "statV/cm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Statvolt per Centimeter"^^xsd:string ;
+  rdfs:seeAlso unit:AbV-PER-CM ;
+  skos:prefLabel "statvolt-per-centimeter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Statvolt> ;
+.
+unit:TESLA
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MagneticFluxDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "T"^^xsd:string ;
+  qudt:baseUnitDimensions "kg.s^{-2}.A^{-1}"^^xsd:string ;
+  qudt:code "1805"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of flux density (or field intensity) for magnetic fields (also called the magnetic induction)."^^xsd:string ;
+  qudt:identifier "U150-1805"^^xsd:string ;
+  qudt:latexDefinition "$T =  V\\ s \\ m^{-2} = N\\ A^{-1} m^{-1} = Wb m^{-1} = kg \\  C^{-1} s^{-1} A^{-1} = kg \\ s^{-2} A^{-1} = N \\ s \\ C^{-1}m^{-1}$\\newline where A = ampere, C=coulomb, m = meter, N = newton, s = second, T = tesla, Wb = weber"^^xsd:string ;
+  qudt:longDescription "The intensity of a magnetic field can be measured by placing a current-carrying conductor in the field. The magnetic field exerts a force on the conductor, a force which depends on the amount of the current and on the length of the conductor. One tesla is defined as the field intensity generating one newton of force per ampere of current per meter of conductor. Equivalently, one tesla represents a magnetic flux density of one weber per square meter of area. A field of one tesla is quite strong: the strongest fields available in laboratories are about 20 teslas, and the Earth's magnetic flux density, at its surface, is about 50 microteslas. The tesla, defined in 1958, honors the Serbian-American electrical engineer Nikola Tesla (1856-1943), whose work in electromagnetic induction led to the first practical generators and motors using alternating current."^^xsd:string ;
+  qudt:quantityKind quantity:MagneticFluxDensity ;
+  qudt:siUnitsExpression "Wb/m^2"^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Tesla"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tesla> ;
+  skos:prefLabel "tesla"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Tesla?oldid=481198244> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Tesla_(unit)> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-1406?rskey=AzXBLd> ;
+.
+unit:TeraC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "terac"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A TeraCoulomb is $10^{12} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Tera ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "TC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "TeraCoulomb"^^xsd:string ;
+  skos:prefLabel "teracoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:UnitPole
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MagneticFluxUnit ;
+  qudt:abbreviation "U/nWb"^^xsd:string ;
+  qudt:code "1900"^^xsd:string ;
+  qudt:conversionMultiplier 1.256637E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A magnetic pole is a unit pole if it exerts a force of one dyne on another pole of equal strength at a distance of 1 cm. The strength of any given pole in cgs units is therefore numerically equal to the force in dynes which it exerts on a unit pole 1 cm away."^^xsd:string ;
+  qudt:identifier "U150-1900"^^xsd:string ;
+  qudt:quantityKind quantity:MagneticFlux ;
+  qudt:symbol "U/nWb"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Unit Pole"^^xsd:string ;
+  skos:prefLabel "unit-pole"^^xsd:string ;
+.
+unit:V-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricFieldStrengthUnit ;
+  rdf:type qudt:ElectricFluxUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "V/m"^^xsd:string ;
+  qudt:code "1910"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Volt Per Meter (V/m) is a unit in the category of Electric field strength. It is also known as volts per meter, volt/meter, volt/metre, volt per metre, volts per metre. This unit is commonly used in the SI unit system. Volt Per Meter (V/m) has a dimension of $MLT^{-3}I^{-1}$ where M is mass, L is length, T is time, and I is electric current. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:identifier "U150-1910"^^xsd:string ;
+  qudt:quantityKind quantity:ElectricFieldStrength ;
+  qudt:symbol "V m^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Volt per Meter"^^xsd:string ;
+  skos:prefLabel "volt-per-meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--electric_field_strength--volt_per_meter.cfm> ;
+.
+unit:V-PER-M2
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "V m^{-2}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The divergence at a particular point in a vector field is (roughly) how much the vector field 'spreads out' from that point. Operationally, we take the partial derivative of each of the field with respect to each of its space variables and add all the derivatives together to get the divergence. Electric field (V/m) differentiated with respect to distance (m) yields $V/(m^2)$."^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerAreaElectricCharge ;
+  qudt:symbol "V m^{-2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Volt per Square Meter"^^xsd:string ;
+  skos:prefLabel "volt-per-square-meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.funtrivia.com/en/subtopics/Physical-Quantities-310909.html> ;
+.
+unit:V-PER-SEC
+  rdf:type qudt:PowerPerElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "V / sec"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'Volt per Second' is a unit of magnetic flux equaling one weber. This is the flux passing through a conducting loop and reduced to zero at a uniform rate in one second inducing an electric potential of one volt in the loop. "^^xsd:string ;
+  qudt:quantityKind quantity:PowerPerElectricCharge ;
+  qudt:symbol "V / sec"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Volt per second"^^xsd:string ;
+  skos:prefLabel "volt-per-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-1512> ;
+  prov:wasInfluencedBy <http://www.thefreedictionary.com/Webers> ;
+.
+unit:VOLT
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyPerElectricChargeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "V"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2.kg.s^{-3}.A"^^xsd:string ;
+  qudt:code "1905"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of electric potential. Separating electric charges creates potential energy, which can be measured in energy units such as joules. Electric potential is defined as the amount of potential energy present per unit of charge. Electric potential is measured in volts, with one volt representing a potential of one joule per coulomb of charge. The name of the unit honors the Italian scientist Count Alessandro Volta (1745-1827), the inventor of the first battery.  The volt also may be expressed with a variety of other units. For example, a volt is also equal to one watt per ampere (W/A) and one joule per ampere per second (J/A/s)."^^xsd:string ;
+  qudt:identifier "U150-1905"^^xsd:string ;
+  qudt:latexDefinition "\\text{V}\\ \\equiv\\ \\text{volt}\\ \\equiv\\ \\frac{\\text{J}}{\\text{C}}\\ \\equiv\\ \\frac{\\text{joule}}{\\text{coulomb}}\\ \\equiv\\ \\frac{\\text{W.s}}{\\text{C}}\\ \\equiv\\ \\frac{\\text{watt.second}}{\\text{coulomb}}\\ \\equiv\\ \\frac{\\text{W}}{\\text{A}}\\ \\equiv\\ \\frac{\\text{watt}}{\\text{amp}}"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+  qudt:siUnitsExpression "W/A"^^xsd:string ;
+  qudt:symbol "V"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Volt"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Volt> ;
+  skos:prefLabel "volt"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Volt?oldid=494812083> ;
+.
+unit:W-PER-M2-SR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:RadianceUnit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "W/(m^2.sr)"^^xsd:string ;
+  qudt:baseUnitDimensions "ML^{-4}T^{-3}"^^xsd:string ;
+  qudt:code "1960"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Watt Per Square Meter Per Steradian} ($W/m^2-sr$) is a unit of Radiance commonly used in the SI unit system. It has a dimension of $ML^{-4}T^{-3}$ where M is mass, L is length, and T is time. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:identifier "U150-1960"^^xsd:string ;
+  qudt:quantityKind quantity:Radiance ;
+  qudt:symbol "W/(m^2.sr)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Watt per Square Meter Steradian"^^xsd:string ;
+  skos:prefLabel "watt-per-square-meter-steradian"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--radiance--watt_per_square_meter_per_steradian.cfm> ;
+.
+unit:W-PER-SR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:RadiantIntensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "W sr^{-1}"^^xsd:string ;
+  qudt:code "1965"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:description "Watt Per Steradian (W/sr) is the unit in the category of Radiant intensity. It is also known as watts per steradian. This unit is commonly used in the SI unit system. Watt Per Steradian (W/sr) has a dimension of ML-2T-3 where M is mass, L is length, and T is time. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:identifier "U150-1965"^^xsd:string ;
+  qudt:quantityKind quantity:RadiantIntensity ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Watt per Steradian"^^xsd:string ;
+  skos:prefLabel "watt-per-steradian"^^xsd:string ;
+.
+unit:WEBER
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MagneticFluxUnit ;
+  qudt:abbreviation "Wb"^^xsd:string ;
+  qudt:baseUnitDimensions "kg.s^2.A^{-1}"^^xsd:string ;
+  qudt:code "1970"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of magnetic flux. \"Flux\" is the rate (per unit of time) at which something crosses a surface perpendicular to the flow. The weber is a large unit, equal to $10^{8}$ maxwells, and practical fluxes are usually fractions of one weber. The weber is the magnetic flux which, linking a circuit of one turn, would produce in it an electromotive force of 1 volt if it were reduced to zero at a uniform rate in 1 second. In SI base units, the dimensions of the weber are $(kg \\cdot m^2)/(s^2 \\cdot A)$. The weber is commonly expressed in terms of other derived units as the Tesla-square meter ($T \\cdot m^2$), volt-seconds ($V \\cdot s$), or joules per ampere ($J/A$)."^^xsd:string ;
+  qudt:identifier "U150-1970"^^xsd:string ;
+  qudt:quantityKind quantity:MagneticFlux ;
+  qudt:siUnitsExpression "V.s"^^xsd:string ;
+  qudt:symbol "Wb"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "Weber"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Weber> ;
+  skos:prefLabel "weber"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Weber?oldid=491210387> ;
+.
+unit:Wb-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "wb-m"^^xsd:string ;
+  qudt:baseUnitDimensions "m^3 \\cdot kg \\cdot s^{-2} \\cdot A^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:MagneticDipoleMoment ;
+  qudt:symbol "WbM"^^xsd:string ;
+  rdfs:label "Weber Meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.simetric.co.uk/siderived.htm> ;
+.
+unit:YoctoC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "yoctoc"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-24 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A YoctoCoulomb is $10^{-24} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Yocto ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "yC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "YoctoCoulomb"^^xsd:string ;
+  skos:prefLabel "yoctocoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:YottaC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "yottac"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e24 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A YottaCoulomb is $10^{24} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Yotta ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "YC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "YottaCoulomb"^^xsd:string ;
+  skos:prefLabel "yottacoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:ZeptoC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "zeptoc"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-21 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A ZeptoCoulomb is $10^{-21} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Zepto ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "zC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "ZeptoCoulomb"^^xsd:string ;
+  skos:prefLabel "zeptocoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+unit:ZettaC
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ElectricChargeUnit ;
+  qudt:abbreviation "zettac"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e21 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A ZettaCoulomb is $10^{21} C$."^^xsd:string ;
+  qudt:hasDecimalMultiplier unit:Zetta ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:COULOMB ;
+  qudt:quantityKind quantity:ElectricCharge ;
+  qudt:symbol "ZC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/electromagnetism> ;
+  rdfs:label "ZettaCoulomb"^^xsd:string ;
+  skos:prefLabel "zettacoulomb"^^xsd:string ;
+  prov:wasDerivedFrom unit:COULOMB ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.

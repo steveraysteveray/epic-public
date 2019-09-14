@@ -1,0 +1,127 @@
+# baseURI: http://siemens.com/vocab/types/ssf_datatype
+# imports: http://siemens.com/schemas/ssf_datatype
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://siemens.com/schemas/ssf_datatype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sc: <http://data.nasa.gov/core/schema/sc#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.
+dtype:Detected
+  rdf:type dtype:DetectionType ;
+  qudt:literal "1" ;
+  rdfs:label "Detected" ;
+  skos:prefLabel "Detected" ;
+.
+dtype:High
+  rdf:type dtype:FourPositionType ;
+  rdf:type dtype:TwoPositionType ;
+  qudt:literal "3" ;
+  rdfs:label "High" ;
+  skos:prefLabel "High" ;
+.
+dtype:Low
+  rdf:type dtype:FourPositionType ;
+  rdf:type dtype:TwoPositionType ;
+  qudt:literal "1" ;
+  rdfs:label "Low" ;
+  skos:prefLabel "Low" ;
+.
+dtype:Medium
+  rdf:type dtype:FourPositionType ;
+  rdf:type dtype:TwoPositionType ;
+  qudt:literal "2" ;
+  rdfs:label "Medium" ;
+  skos:prefLabel "Medium" ;
+.
+dtype:Negative
+  rdf:type dtype:ThreePositionType ;
+  qudt:literal "-1" ;
+  rdfs:label "Negative" ;
+  skos:prefLabel "Negative" ;
+.
+dtype:Neutral
+  rdf:type dtype:ThreePositionType ;
+  qudt:literal "0" ;
+  rdfs:label "Neutral" ;
+  skos:prefLabel "Neutral" ;
+.
+dtype:NotDetected
+  rdf:type dtype:DetectionType ;
+  qudt:literal "0" ;
+  rdfs:label "NotDetected" ;
+  skos:prefLabel "NotDetected" ;
+.
+dtype:Off
+  rdf:type dtype:FourPositionType ;
+  rdf:type dtype:TwoPositionType ;
+  qudt:literal "-1" ;
+  qudt:literal "0" ;
+  rdfs:label "Off" ;
+  skos:prefLabel "Off" ;
+.
+dtype:On
+  rdf:type dtype:TwoPositionType ;
+  qudt:literal "1" ;
+  rdfs:label "On" ;
+  skos:prefLabel "On" ;
+.
+dtype:Positive
+  rdf:type dtype:ThreePositionType ;
+  qudt:literal "1" ;
+  rdfs:label "Positive" ;
+  skos:prefLabel "Positive" ;
+.
+<http://siemens.com/vocab/types/ssf_datatype>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The SSF 'Type' ontology extends 'DTYPE' with further classes and properties for the specification of data types." ;
+  dc:subject "Datatypes" ;
+  dc:title "The SSF Type Vocabulary" ;
+  vaem:hasCatalogEntry voag:SSF-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This vocabulary is to be used by other ontologies that need to reference SSF type definitions." ;
+  vaem:namespacePrefix "type" ;
+  vaem:specificity "1"^^xsd:int ;
+  rdfs:label "Type" ;
+  owl:imports <http://siemens.com/schemas/ssf_datatype> ;
+  owl:versionInfo "$Id: $" ;
+.

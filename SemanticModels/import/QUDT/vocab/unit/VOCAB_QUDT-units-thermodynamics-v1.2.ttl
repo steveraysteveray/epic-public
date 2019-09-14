@@ -1,0 +1,1819 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/thermodynamics
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/unit/thermodynamics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Hodges"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Thermodynamics Units of Measure"^^xsd:string ;
+  dc:title "QUDT Thermodynamics Units Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Thermodynamics Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Thermodynamics"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used Thermodynamics units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate:  $"^^vaem:dateUnion ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/unit/thermodynamics> ;
+.
+unit:BTU-FT
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalEnergyLengthUnit ;
+  qudt:abbreviation "Btu-ft"^^xsd:string ;
+  qudt:code "0160"^^xsd:string ;
+  qudt:conversionMultiplier "321.581024"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU Foot}' is an Imperial unit for  'Thermal Energy Length' expressed as $Btu-ft$."^^xsd:string ;
+  qudt:designator "U-150-0160"^^xsd:string ;
+  qudt:isDerivedUnitOfSystem qudt:SOU_IMPERIAL ;
+  qudt:quantityKind quantity:ThermalEnergyLength ;
+  qudt:symbol "Btu-ft"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU Foot"^^xsd:string ;
+  skos:prefLabel "btu-foot"^^xsd:string ;
+.
+unit:BTU-IN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalEnergyLengthUnit ;
+  qudt:abbreviation "Btu-in"^^xsd:string ;
+  qudt:code "0170"^^xsd:string ;
+  qudt:conversionMultiplier "26.7984187"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU Inch}' is an Imperial unit for  'Thermal Energy Length' expressed as $Btu-in$."^^xsd:string ;
+  qudt:designator "U-150-0170"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalEnergyLength ;
+  qudt:symbol "Btu-in"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU Inch"^^xsd:string ;
+  skos:prefLabel "btu-inch"^^xsd:string ;
+.
+unit:BTU-PER-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatCapacityAndEntropyUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "btu-per-degF"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Degree Fahrenheit}' is an Imperial unit for  'Heat Capacity' expressed as $Btu/degF$."^^xsd:string ;
+  qudt:designator "U150-0191"^^xsd:string ;
+  qudt:quantityKind quantity:HeatCapacity ;
+  qudt:symbol "BTU/DegF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU per Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "btu-per-degree-rankine"^^xsd:string ;
+.
+unit:BTU-PER-DegR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatCapacityAndEntropyUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "btu-per-degR"^^xsd:string ;
+  qudt:code "0190"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Degree Rankine}' is an Imperial unit for  'Heat Capacity' expressed as $Btu/degR$."^^xsd:string ;
+  qudt:designator "U-150-0190"^^xsd:string ;
+  qudt:quantityKind quantity:HeatCapacity ;
+  qudt:symbol "BTU/DegR"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU per Degree Rankine"^^xsd:string ;
+  skos:prefLabel "btu-per-degree-rankine"^^xsd:string ;
+.
+unit:BTU-PER-FT2
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:BTU-PER-FT2-HR-DegF
+  rdf:type qudt:CoefficientOfHeatTransferUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "Btu/(hr-ft^{2}-degF)"^^xsd:string ;
+  qudt:code "0205"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Square Foot Hour Degree Fahrenheit}' is an Imperial unit for  'Coefficient Of Heat Transfer' expressed as $Btu/(hr-ft^{2}-degF)$."^^xsd:string ;
+  qudt:designator "U-150-0205"^^xsd:string ;
+  qudt:quantityKind quantity:CoefficientOfHeatTransfer ;
+  qudt:symbol "Btu/(hr-ft^{2}-degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU per Square Foot Hour Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "btu-per-square-foot-hour-degree-fahrenheit"^^xsd:string ;
+.
+unit:BTU-PER-FT2-SEC-DegF
+  rdf:type qudt:CoefficientOfHeatTransferUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "Btu/(ft^{2}-s-degF)"^^xsd:string ;
+  qudt:code "0245"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Square Foot Second Degree Fahrenheit}' is an Imperial unit for  'Coefficient Of Heat Transfer' expressed as $Btu/(ft^{2}-s-degF)$."^^xsd:string ;
+  qudt:designator "U-150-0245"^^xsd:string ;
+  qudt:quantityKind quantity:CoefficientOfHeatTransfer ;
+  qudt:symbol "Btu/(ft^2.s.degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU per Square Foot Second Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "btu-per-square-foot-second-degree-fahrenheit"^^xsd:string ;
+.
+unit:BTU-PER-HR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatFlowRateUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "Btu/hr"^^xsd:string ;
+  qudt:code "0195"^^xsd:string ;
+  qudt:conversionMultiplier "0.29307107"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The British thermal unit (BTU or Btu) is a traditional unit of energy equal to about 1 055.05585 joules. It is approximately the amount of energy needed to heat 1 pound (0.454 kg) of water from $39 \\,^{\\circ}{\\rm F}$ ($3.9 \\,^{\\circ}{\\rm C}$) to $40 \\,^{\\circ}{\\rm F}$ ($4.4 \\,^{\\circ}{\\rm C}$). The unit is most often used in the power, steam generation, heating and air conditioning industries. In scientific contexts the BTU has largely been replaced by the SI unit of energy, the joule, though it may be used as a measure of agricultural energy production (BTU/kg).  [Wikipedia]"^^xsd:string ;
+  qudt:designator "U-150-0195"^^xsd:string ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "Btu/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU per Hour"^^xsd:string ;
+  skos:prefLabel "btu-per-hour"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.simetric.co.uk/sibtu.htm> ;
+.
+unit:BTU-PER-HR-FT2
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:BTU-PER-LB-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:SpecificHeatCapacityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Btu/(lb-degF)"^^xsd:string ;
+  qudt:code "0215"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "British Thermal Unit (therm.) Per Pound Per Fahrenheit Degree (Btu (therm.)/lb- degF) is a unit in the category of Specific heat. This unit is commonly used in the UK unit system. British Thermal Unit (therm.) Per Pound Per Fahrenheit Degree (Btu (therm.)/lb-degF) has a dimension of $L2T^{-2}Q^{-1}$ where $L$ is length, $T$ is time, and $Q$ is temperature. It can be converted to the corresponding standard SI unit J/kg-K by multiplying its value by a factor of 4183.99895."^^xsd:string ;
+  qudt:designator "U-150-0215"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+  qudt:symbol "Btu/(lb-degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU per Pound Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "btu-per-pound-degree-fahrenheit"^^xsd:string ;
+.
+unit:BTU-PER-LB-DegR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpecificHeatCapacityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Btu/(lb-degR)"^^xsd:string ;
+  qudt:code "0220"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Pound Degree Rankine}' is a C.G.S System unit for  'Specific Heat Capacity' expressed as $Btu/(lb-degR)$."^^xsd:string ;
+  qudt:designator "U-150-0220"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+  qudt:symbol "Btu/(lb-degR)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU per Pound Degree Rankine"^^xsd:string ;
+  skos:prefLabel "btu-per-pound-degree-rankine"^^xsd:string ;
+.
+unit:BTU-PER-LB-MOL
+  qudt:quantityKind quantity:EnergyAndWorkPerMassAmountOfSubstance ;
+.
+unit:BTU-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatFlowRateUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "Btu/s"^^xsd:string ;
+  qudt:code "0235"^^xsd:string ;
+  qudt:conversionMultiplier "1055.05585262"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Second}' is an Imperial unit for  'Heat Flow Rate' expressed as $Btu/s$."^^xsd:string ;
+  qudt:designator "U-150-0235"^^xsd:string ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "Btu/hr"^^xsd:string ;
+  qudt:symbol "Btu/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU per Second"^^xsd:string ;
+  skos:prefLabel "btu-per-second"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.simetric.co.uk/sibtu.htm> ;
+.
+unit:BTU-PER-SEC-FT2
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:BTU_IT
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  qudt:abbreviation "BtuIT"^^xsd:string ;
+  qudt:code "0145"^^xsd:string ;
+  qudt:conversionMultiplier "1055.05585262"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{British Thermal Unit} (BTU or Btu) is a traditional unit of energy equal to about $1.0550558526 kilojoule$. It is approximately the amount of energy needed to heat 1 pound (0.454 kg) of water from $39 \\,^{\\circ}{\\rm F}$ ($39 \\,^{\\circ}{\\rm C}$) to $40 \\,^{\\circ}{\\rm F}$ ($4.4 \\,^{\\circ}{\\rm C}$). The unit is most often used in the power, steam generation, heating and air conditioning industries. In scientific contexts the BTU has largely been replaced by the SI unit of energy, the $joule$, though it may be used as a measure of agricultural energy production (BTU/kg). It is still used unofficially in metric English-speaking countries (such as Canada), and remains the standard unit of classification for air conditioning units manufactured and sold in many non-English-speaking metric countries."^^xsd:string ;
+  qudt:designator "U150-0145"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+  qudt:symbol "Btu_{it}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "British Thermal Unit (International Definition)"^^xsd:string ;
+  skos:prefLabel "british-thermal-unit-it"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/British_thermal_unit> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=31890> ;
+  prov:wasInfluencedBy <http://www.knowledgedoor.com/2/units_and_constants_handbook/british-thermal-unit_group.html> ;
+.
+unit:BTU_IT-FT-PER-FT2-HR-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "Btu(IT) ft/(hr ft^2 degF)"^^xsd:string ;
+  qudt:conversionMultiplier "1.730734666"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU_{IT} Foot per Square Foot Hour Degree Fahrenheit}' is an Imperial unit for  'Thermal Conductivity' expressed as $Btu_{it} \\cdot ft/(hr \\cdot ft^2  \\cdot degF)$."^^xsd:string ;
+  qudt:designator "U-150-0165"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "Btu(IT)-ft/(hr-ft^2-degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU (IT) Foot per Square Foot Hour Degree Fahrenheit"^^xsd:string ;
+  rdfs:seeAlso unit:BTU_TH-FT-PER-FT2-HR-DegF ;
+  skos:prefLabel "Btu(IT)-foot-per-square-foot-hour-degree-fahrenheit"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_conductivity> ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/thermal-conductivity/c/> ;
+.
+unit:BTU_IT-IN-PER-FT2-HR-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "Btu(it)-in-per-hr-ft2-degF"^^xsd:string ;
+  qudt:code "0175"^^xsd:string ;
+  qudt:conversionMultiplier "0.144227889"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{BTU_{th} Inch per Square Foot Hour Degree Fahrenheit} is an Imperial unit for  'Thermal Conductivity' expressed as $Btu_{it}-in/(hr-ft^{2}-degF)$. An International British thermal unit inch per second per square foot per degree Fahrenheit is a unit of thermal conductivity in the US Customary Units and British Imperial Units. $1 Btu_{it} \\cdot in/(hr \\cdot ft^{2}  \\cdot degF)$ shows that one thermochemical BTU of heat per one hour moves through one square foot of material, which is one foot thick due to a temperature difference of one degree Fahrenheit."^^xsd:string ;
+  qudt:designator "U-150-0175"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "Btu_{it} \\cdot in/(hr \\cdot ft^{2}  \\cdot degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU (IT) Inch per Square Foot Hour Degree Fahrenheit"^^xsd:string ;
+  rdfs:seeAlso unit:BTU_TH-IN-PER-FT2-HR-DegF ;
+  skos:prefLabel "btu(th)-inch-per-square-foot-hour-degree-fahrenheit"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/thermal-conductivity/c/> ;
+.
+unit:BTU_IT-IN-PER-FT2-SEC-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "Btu(it)-in-per-s-ft2-degF"^^xsd:string ;
+  qudt:conversionMultiplier "519.220399911"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU_{IT} Inch per Square Foot Second Degree Fahrenheit}' is an Imperial unit for  'Thermal Conductivity' expressed as $Btu_{it}-in/(ft^{2}-s-degF)$."^^xsd:string ;
+  qudt:designator "U-150-0180"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "Btu_{it}-in/(ft^{2}-s-degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU (IT) Inch per Square Foot Second Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "btu(it)-inch-per-square-foot-second-degree-fahrenheit"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/thermal-conductivity/c/> ;
+.
+unit:BTU_IT-PER-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatCapacityAndEntropyUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "Btu/degF"^^xsd:string ;
+  qudt:code "0185"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "British Thermal Unit (IT) Per Fahrenheit Degree ($Btu (IT)/^\\circ F$) is a measure of heat capacity. It can be converted to the corresponding standard SI unit J/K by multiplying its value by a factor of 1899.10534."^^xsd:string ;
+  qudt:designator "U-150-0185"^^xsd:string ;
+  qudt:quantityKind quantity:HeatCapacity ;
+  qudt:symbol "BTU_{IT}/^\\circ F"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU (IT) per Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "btu-it-per-degree-fahrenheit"^^xsd:string ;
+.
+unit:BTU_IT-PER-LB
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:SpecificEnergyUnit ;
+  rdf:type qudt:ThermalHeatCapacityUnit ;
+  qudt:abbreviation "Btu/lb"^^xsd:string ;
+  qudt:code "0210"^^xsd:string ;
+  qudt:conversionMultiplier 2.326E+03 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The amount of energy generated by a pound of substance is measured in British thermal units (IT) per pound. $1 Btu_{IT}/lb$ is equivalent to 2.326E+03 joule per kilogram (J/kg)."^^xsd:string ;
+  qudt:designator "U-150-0210"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificEnergy ;
+  qudt:symbol "Btu_{IT}/lb"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU-IT-PER-lb"^^xsd:string ;
+  skos:prefLabel "btu-per-pound"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--energy_density--british_thermal_unit_it_per_cubic_foot.cfm> ;
+.
+unit:BTU_TH
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "btu_th"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:BTU_TH-FT-PER-FT2-HR-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "Btu(IT) ft/(hr ft^2 degF)"^^xsd:string ;
+  qudt:conversionMultiplier "1.729577206"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU_{TH} Foot per Square Foot Hour Degree Fahrenheit}' is an Imperial unit for  'Thermal Conductivity' expressed as $Btu_{th} \\cdot ft/(hr \\cdot ft^2 \\cdot degF)$."^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "Btu(TH)-ft/(hr-ft^2-degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU (TH) Foot per Square Foot Hour Degree Fahrenheit"^^xsd:string ;
+  rdfs:seeAlso unit:BTU_IT-FT-PER-FT2-HR-DegF ;
+  skos:prefLabel "Btu(th)-foot-per-square-foot-hour-degree-fahrenheit"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_conductivity> ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/thermal-conductivity/c/> ;
+.
+unit:BTU_TH-IN-PER-FT2-HR-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "Btu(th)-in-per-hr-ft2-degF"^^xsd:string ;
+  qudt:code "0175"^^xsd:string ;
+  qudt:conversionMultiplier "0.144131434"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{BTU_{th} Inch per Square Foot Hour Degree Fahrenheit} is an Imperial unit for  'Thermal Conductivity' expressed as $Btu-in/(hr-ft^{2}-degF)$. A thermochemical British thermal unit inch per second per square foot per degree Fahrenheit is a unit of thermal conductivity in the US Customary Units and British Imperial Units. $1 Btu_{th} \\cdot in/(hr \\cdot ft^{2}  \\cdot degF)$ shows that one thermochemical BTU of heat per one hour moves through one square foot of material, which is one foot thick due to a temperature difference of one degree Fahrenheit."^^xsd:string ;
+  qudt:designator "U-150-0175"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "Btu_{th} \\cdot in/(hr \\cdot ft^{2}  \\cdot degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU (TH) Inch per Square Foot Hour Degree Fahrenheit"^^xsd:string ;
+  rdfs:seeAlso unit:BTU_IT-IN-PER-FT2-HR-DegF ;
+  skos:prefLabel "btu(th)-inch-per-square-foot-hour-degree-fahrenheit"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/thermal-conductivity/c/> ;
+.
+unit:BTU_TH-IN-PER-FT2-SEC-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "Btu(it)-in-per-s-ft2-degF"^^xsd:string ;
+  qudt:conversionMultiplier "519.220399911"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU_{TH} Inch per Square Foot Second Degree Fahrenheit}' is an Imperial unit for  'Thermal Conductivity' expressed as $Btu_{th}-in/(ft^{2}-s-degF)$."^^xsd:string ;
+  qudt:designator "U-150-0180"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "Btu_{th}-in/(ft^{2}-s-degF)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "BTU (TH) Inch per Square Foot Second Degree Fahrenheit"^^xsd:string ;
+  rdfs:seeAlso unit:BTU_IT-IN-PER-FT2-SEC-DegF ;
+  skos:prefLabel "btu(th)-inch-per-square-foot-second-degree-fahrenheit"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/thermal-conductivity/c/> ;
+.
+unit:BTU_TH-PER-LB
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalHeatCapacityUnit ;
+  qudt:abbreviation "btu_th-per-lb"^^xsd:string ;
+  qudt:conversionMultiplier 2.324443861E+03 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "British Thermal Unit (therm.) Per Pound Mass (Btu (TH)/lbm) is a unit in the category of Thermal heat capacity. It is also known as Btu per pound, Btu/pound, Btu/lb. This unit is commonly used in the UK unit system. British Thermal Unit (therm.) Per Pound Mass (Btu (therm.)/lbm) has a dimension of L2T-2 where L is length, and T is time. It can be converted to the corresponding standard SI unit J/kg by multiplying its value by a factor of 2324.443861."^^xsd:string ;
+  qudt:symbol "Btu_{TH}/lb"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "British Thermal Unit (TH) Per Pound"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--thermal_heat_capacity--british_thermal_unit_therm_per_pound_mass.cfm> ;
+.
+unit:CAL
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  qudt:abbreviation "cal"^^xsd:string ;
+  qudt:code "0265"^^xsd:string ;
+  qudt:conversionMultiplier "4184"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Nutritional Calorie}' is a C.G.S System unit for  'Thermal Energy' expressed as $cal$."^^xsd:string ;
+  qudt:designator "U-150-0265"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+  qudt:symbol "Cal"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Nutritional Calorie"^^xsd:string ;
+  skos:prefLabel "nutritional-calorie"^^xsd:string ;
+.
+unit:CAL_IT-PER-G
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalHeatCapacityUnit ;
+  qudt:abbreviation "cal_it-per-g"^^xsd:string ;
+  qudt:conversionMultiplier 4.1868E+03 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Calories produced per gram of substance."^^xsd:string ;
+  qudt:symbol "cal_{IT}/g"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "calorieIT per gram (calIT/g)"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--thermal_heat_capacity--british_thermal_unit_therm_per_pound_mass.cfm> ;
+.
+unit:CAL_TH-PER-G
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  rdf:type qudt:ThermalHeatCapacityUnit ;
+  qudt:abbreviation "cal"^^xsd:string ;
+  qudt:code "0330"^^xsd:string ;
+  qudt:conversionMultiplier 4.184E+03 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Thermochemical Calorie. Calories produced per gram of substance."^^xsd:string ;
+  qudt:designator "U-150-0330"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+  qudt:symbol "cal_{TH}/g"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "calorieTH per gram (calTH/g)"^^xsd:string ;
+  skos:prefLabel "thermochemical-calorie"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--thermal_heat_capacity--british_thermal_unit_therm_per_pound_mass.cfm> ;
+.
+unit:CM-SEC-DegC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LengthTemperatureTimeUnit ;
+  qudt:abbreviation "cm-s-degC"^^xsd:string ;
+  qudt:code "2030"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Centimeter Second Degree Celsius}' is a C.G.S System unit for  'Length Temperature Time' expressed as $cm-s-degC$."^^xsd:string ;
+  qudt:designator "U-150-2030"^^xsd:string ;
+  qudt:quantityKind quantity:LengthTemperatureTime ;
+  qudt:symbol "cm-s-degC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Centimeter Second Degree Celsius"^^xsd:string ;
+  skos:prefLabel "centimeter-second-degree-celsius"^^xsd:string ;
+.
+unit:Clo
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ThermalInsulanceUnit ;
+  qudt:abbreviation "clo"^^xsd:string ;
+  qudt:code "0390"^^xsd:string ;
+  qudt:conversionMultiplier "0.155"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Clo}' is a C.G.S System unit for  'Thermal Insulance' expressed as $clo$."^^xsd:string ;
+  qudt:designator "U-150-0390"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalInsulance ;
+  qudt:symbol "clo"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Clo"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Thermal_conductivity> ;
+  skos:prefLabel "clo"^^xsd:string ;
+.
+unit:DegC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:TemperatureUnit ;
+  qudt:abbreviation "degC"^^xsd:string ;
+  qudt:baseUnitDimensions "K"^^xsd:string ;
+  qudt:code "0515"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "273.15"^^xsd:double ;
+  qudt:description "Celsius, also known as centigrade, is a scale and unit of measurement for temperature. It can refer to a specific temperature on the Celsius scale as well as a unit to indicate a temperature interval, a difference between two temperatures or an uncertainty. This definition fixes the magnitude of both the degree Celsius and the kelvin as precisely 1 part in 273.16 (approximately 0.00366) of the difference between absolute zero and the triple point of water. Thus, it sets the magnitude of one degree Celsius and that of one kelvin as exactly the same. Additionally, it establishes the difference between the two scales' null points as being precisely $273.15\\,^{\\circ}{\\rm C}$."^^xsd:string ;
+  qudt:designator "U-150-0520"^^xsd:string ;
+  qudt:guidance <http://physics.nist.gov/Pubs/SP811/sec04.html#4.2.1.1> ;
+  qudt:guidance <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.8> ;
+  qudt:latexDefinition "\\,^{\\circ}{\\rm C}"^^xsd:string ;
+  qudt:quantityKind quantity:CelciusTemperature ;
+  qudt:symbol "\\,^{\\circ}{\\rm C}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Celsius"^^xsd:string ;
+  skos:altLabel "degree-centigrade"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Celsius> ;
+  skos:exactMatch <http://dbpedia.org/resource/Celsius> ;
+  skos:prefLabel "degree-celsius"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Celsius?oldid=494152178> ;
+.
+unit:DegC-CM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LengthTemperatureUnit ;
+  qudt:abbreviation "cm-degC"^^xsd:string ;
+  qudt:code "2008"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Celsius Centimeter}' is a C.G.S System unit for  'Length Temperature' expressed as $cm-degC$."^^xsd:string ;
+  qudt:designator "U-150-2008"^^xsd:string ;
+  qudt:quantityKind quantity:LengthTemperature ;
+  qudt:symbol "cm-degC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Celsius Centimeter"^^xsd:string ;
+  skos:prefLabel "degree-celsius-centimeter"^^xsd:string ;
+.
+unit:DegC-PER-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degC / hr"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Celsius per Hour}' is a C.G.S System unit for  'Temperature Per Time' expressed as $degC / hr$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "degC / hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Celsius per Hour"^^xsd:string ;
+  skos:prefLabel "degree-celsius-per-hour"^^xsd:string ;
+.
+unit:DegC-PER-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degC / m"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Celsius per Minute}' is a C.G.S System unit for  'Temperature Per Time' expressed as $degC / m$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "degC / m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Celsius per Minute"^^xsd:string ;
+  skos:prefLabel "degree-celsius-per-minute"^^xsd:string ;
+.
+unit:DegC-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degC / s"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Celsius per Second}' is a C.G.S System unit for  'Temperature Per Time' expressed as $degC / s$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "degC / s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Celsius per Second"^^xsd:string ;
+  skos:prefLabel "degree-celsius-per-second"^^xsd:string ;
+.
+unit:DegF
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:TemperatureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degF"^^xsd:string ;
+  qudt:code "0525"^^xsd:string ;
+  qudt:conversionMultiplier 0.5555555555555555556E0 ;
+  qudt:conversionOffset 255.37037037037037037E0 ;
+  qudt:description "'\\textit{Degree Fahrenheit}' is an Imperial unit for  'Thermodynamic Temperature' expressed as $degF$."^^xsd:string ;
+  qudt:designator "U-150-0525"^^xsd:string ;
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+  qudt:symbol "degF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "degree-fahrenheit"^^xsd:string ;
+.
+unit:DegF-HR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalResistivityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degF-hr"^^xsd:string ;
+  qudt:code "0530"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Fahrenheit Hour}' is an Imperial unit for  'Thermal Resistivity' expressed as $degF-hr$."^^xsd:string ;
+  qudt:designator "U-150-0530"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalResistivity ;
+  qudt:symbol "degF-hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Fahrenheit Hour"^^xsd:string ;
+  skos:prefLabel "degree-fahrenheit-hour"^^xsd:string ;
+.
+unit:DegF-PER-BTU
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalResistanceUnit ;
+  qudt:abbreviation "degF-hr/Btu"^^xsd:string ;
+  qudt:code "0535"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Fahrenheit Hour per BTU}' is an Imperial unit for  'Thermal Resistance' expressed as $degF-hr/Btu$."^^xsd:string ;
+  qudt:designator "U-150-0535"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalResistance ;
+  qudt:symbol "degF-hr/Btu"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Fahrenheit Hour per BTU"^^xsd:string ;
+  skos:prefLabel "degree-fahrenheit-hour-per-btu"^^xsd:string ;
+.
+unit:DegF-PER-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degF / h"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Fahrenheit per Hour}' is a C.G.S System unit for  'Temperature Per Time' expressed as $degF / h$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "degF / h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Fahrenheit per Hour"^^xsd:string ;
+  skos:prefLabel "degree-fahrenheit-per-hour"^^xsd:string ;
+.
+unit:DegF-PER-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degF / m"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Fahrenheit per Minute}' is a C.G.S System unit for  'Temperature Per Time' expressed as $degF / m$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "^\\circ F / m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Fahrenheit per Minute"^^xsd:string ;
+  skos:prefLabel "degree-fahrenheit-per-minute"^^xsd:string ;
+.
+unit:DegF-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degF / s"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Degree Fahrenheit per Second}' is a C.G.S System unit for  'Temperature Per Time' expressed as $degF / s$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "degF / s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Fahrenheit per Second"^^xsd:string ;
+  skos:prefLabel "degree-fahrenheit-per-second"^^xsd:string ;
+.
+unit:DegR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperatureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degR"^^xsd:string ;
+  qudt:code "0545"^^xsd:string ;
+  qudt:conversionMultiplier 0.5555555555555555556E0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Rankine is a thermodynamic (absolute) temperature scale. The symbol for degrees Rankine is $^\\circ R$ (or $^\\circ Ra$ if necessary to distinguish it from the Rømer and Réaumur scales). Zero on both the Kelvin and Rankine scales is absolute zero, but the Rankine degree is defined as equal to one degree Fahrenheit, rather than the one degree Celsius used by the Kelvin scale. A temperature of $-459.67 ^\\circ F$ is exactly equal to $0 ^\\circ R$."^^xsd:string ;
+  qudt:designator "U-150-0545"^^xsd:string ;
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+  qudt:symbol "degR"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Rankine"^^xsd:string ;
+  skos:prefLabel "degree-rankine"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Rankine_scale> ;
+.
+unit:DegR-PER-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degR / h"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A rate of change of temperature measured in degree Rankine in periods of one hour."^^xsd:string ;
+  qudt:isScalingOf unit:DegR-PER-MIN ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "degR / h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Rankine per Hour"^^xsd:string ;
+  skos:prefLabel "degree-rankine-per-hour"^^xsd:string ;
+.
+unit:DegR-PER-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degR / m"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A rate of change of temperature measured in degree Rankine in periods of one minute"^^xsd:string ;
+  qudt:isScalingOf unit:DegR-PER-SEC ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "degR / m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Rankine per Minute"^^xsd:string ;
+  skos:prefLabel "degree-rankine-per-minute"^^xsd:string ;
+.
+unit:DegR-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degR / s"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A rate of change of temperature measured in degree Rankine in periods of one second."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "degR / s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Degree Rankine per Second"^^xsd:string ;
+  skos:prefLabel "degree-rankine-per-second"^^xsd:string ;
+.
+unit:EV-PER-K
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:HeatCapacityAndEntropyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ev/K"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-19 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Electron Volt per Kelvin}' is a C.G.S System unit for  'Heat Capacity' expressed as $ev/K$."^^xsd:string ;
+  qudt:quantityKind quantity:HeatCapacity ;
+  qudt:symbol "eV K^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Electron Volt per Kelvin"^^xsd:string ;
+  skos:prefLabel "electron-volt-per-kelvin"^^xsd:string ;
+.
+unit:FT2-DegF
+  rdf:type qudt:AreaTemperatureUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft^{2}-degF"^^xsd:string ;
+  qudt:code "1675"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Foot Degree Fahrenheit}' is an Imperial unit for  'Area Temperature' expressed as $ft^{2}-degF$."^^xsd:string ;
+  qudt:designator "U-150-1675"^^xsd:string ;
+  qudt:quantityKind quantity:AreaTemperature ;
+  qudt:symbol "ft^{2}-degF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Foot Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "square-foot-degree-fahrenheit"^^xsd:string ;
+.
+unit:FT2-HR-DegF
+  rdf:type qudt:AreaTimeTemperatureUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft^{2}-hr-degF"^^xsd:string ;
+  qudt:code "0845"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Foot Hour Degree Fahrenheit}' is an Imperial unit for  'Area Time Temperature' expressed as $ft^{2}-hr-degF$."^^xsd:string ;
+  qudt:designator "U-150-0845"^^xsd:string ;
+  qudt:quantityKind quantity:AreaTimeTemperature ;
+  qudt:symbol "ft^{2}-hr-degF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Foot Hour Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "square-foot-hour-degree-fahrenheit"^^xsd:string ;
+.
+unit:FT2-HR-DegF-PER-BTU
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalInsulanceUnit ;
+  qudt:abbreviation "sqft-hr-degF/btu"^^xsd:string ;
+  qudt:code "0540"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Foot Hour Degree Fahrenheit per BTU}' is an Imperial unit for  'Thermal Insulance' expressed as $(degF-hr-ft^{2})/Btu$."^^xsd:string ;
+  qudt:designator "U-150-0540"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalInsulance ;
+  qudt:symbol "(degF-hr-ft^{2})/Btu"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Foot Hour Degree Fahrenheit per BTU"^^xsd:string ;
+  skos:prefLabel "square-foot-hour-degree-fahrenheit-per-btu"^^xsd:string ;
+.
+unit:FT2-PER-BTU-IN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalResistivityUnit ;
+  qudt:abbreviation "ft2-per-btu-in"^^xsd:string ;
+  qudt:code "1680"^^xsd:string ;
+  qudt:conversionMultiplier "0.00346673589"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1680"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalResistivity ;
+  qudt:symbol "ft^{2}/(Btu-in)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Foot per BTU Inch"^^xsd:string ;
+  skos:prefLabel "square-foot-per-btu-inch"^^xsd:string ;
+.
+unit:FT2-PER-HR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:KinematicViscosityUnit ;
+  rdf:type qudt:ThermalDiffusivityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft^{2}/hr"^^xsd:string ;
+  qudt:code "1690"^^xsd:string ;
+  qudt:conversionMultiplier 2.58064E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Square Foot per Hour} is an Imperial unit for \\textit{Kinematic Viscosity} and  \\textit{Thermal Diffusivity} expressed as $ft^{2}/hr$."^^xsd:string ;
+  qudt:designator "U-150-1690"^^xsd:string ;
+  qudt:quantityKind quantity:KinematicViscosity ;
+  qudt:quantityKind quantity:ThermalDiffusivity ;
+  qudt:symbol "ft^{2}/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Foot per Hour"^^xsd:string ;
+  skos:prefLabel "square-foot-per-hour"^^xsd:string ;
+.
+unit:FT2-SEC-DegF
+  rdf:type qudt:AreaTimeTemperatureUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft^{2}-s-degF"^^xsd:string ;
+  qudt:code "1610"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Foot Second Degree Fahrenheit}' is an Imperial unit for  'Area Time Temperature' expressed as $ft^{2}-s-degF$."^^xsd:string ;
+  qudt:designator "U-150-1610"^^xsd:string ;
+  qudt:quantityKind quantity:AreaTimeTemperature ;
+  qudt:symbol "ft^{2}-s-degF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Foot Second Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "square-foot-second-degree-fahrenheit"^^xsd:string ;
+.
+unit:G-PER-DegC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassTemperatureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "g-degC"^^xsd:string ;
+  qudt:code "2020"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Gram Degree Celsius}' is a C.G.S System unit for  'Mass Temperature' expressed as $g-degC$."^^xsd:string ;
+  qudt:designator "U-150-2020"^^xsd:string ;
+  qudt:quantityKind quantity:MassTemperature ;
+  qudt:symbol "g-degC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Gram Degree Celsius"^^xsd:string ;
+  skos:prefLabel "gram-degree-celsius"^^xsd:string ;
+.
+unit:HZ-PER-K
+  rdf:type qudt:ThermodynamicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Hz K^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Hertz per Kelvin}' is a unit for  'Inverse Time Temperature' expressed as $Hz K^{-1}$."^^xsd:string ;
+  qudt:quantityKind quantity:InverseTimeTemperature ;
+  qudt:symbol "Hz K^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Hertz per Kelvin"^^xsd:string ;
+  skos:prefLabel "hertz-per-kelvin"^^xsd:string ;
+.
+unit:J-M-PER-MOL
+  rdf:type qudt:ChemistryUnit ;
+  qudt:abbreviation "J m mol^{-1}"^^xsd:string ;
+  qudt:code "0913"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Joule Meter per Mole}' is a unit for  'Length Molar Energy' expressed as $J m mol^{-1}$."^^xsd:string ;
+  qudt:designator "U-030-0913"^^xsd:string ;
+  qudt:quantityKind quantity:LengthMolarEnergy ;
+  qudt:symbol "J m mol^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule Meter per Mole"^^xsd:string ;
+  skos:prefLabel "joule-meter-per-mole"^^xsd:string ;
+.
+unit:J-PER-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatCapacityAndEntropyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J/K"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Joule Per Kelvin (J/K) is a unit in the category of Entropy. It is also known as joules per kelvin, joule/kelvin. This unit is commonly used in the SI unit system. Joule Per Kelvin (J/K) has a dimension of $ML^{2}T^{-2}Q^{-1}$ where $M$ is mass, L is length, T is time, and Q is temperature. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:quantityKind quantity:HeatCapacity ;
+  qudt:symbol "J K^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Kelvin"^^xsd:string ;
+  skos:prefLabel "joule-per-kelvin"^^xsd:string ;
+.
+unit:J-PER-KG
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpecificEnergyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J/kg"^^xsd:string ;
+  qudt:baseUnitDimensions "L2T^{-2}"^^xsd:string ;
+  qudt:code "0900"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Joule Per Kilogram} ($J/kg$) is a unit in the category of Thermal heat capacity. It is also known as \\textit{joule/kilogram}, \\textit{joules per kilogram}. This unit is commonly used in the SI unit system. The unit has a dimension of $L2T^{-2}$ where $L$ is length, and $T$ is time. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:designator "U-150-0900"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificEnergy ;
+  qudt:symbol "J/kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Kilogram"^^xsd:string ;
+  skos:prefLabel "joule-per-kilogram"^^xsd:string ;
+.
+unit:J-PER-KG-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpecificHeatCapacityUnit ;
+  qudt:abbreviation "J-per-kgK"^^xsd:string ;
+  qudt:code "0905"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Specific heat capacity - The heat required to raise unit mass of a substance by unit temperature interval under specified conditions, such as constant pressure: usually measured in joules per kelvin per kilogram. Symbol $c_p$ (for constant pressure) Also called specific heat."^^xsd:string ;
+  qudt:designator "U-150-0905"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+  qudt:symbol "J/(kg \\cdot K)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Kilogram Kelvin"^^xsd:string ;
+  skos:prefLabel "joule-per-kilogram-kelvin"^^xsd:string ;
+.
+unit:J-PER-KG-K-M3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpecificHeatVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "j-per-kg-k-m3"^^xsd:string ;
+  qudt:code "2032"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-2032"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificHeatCapacityAtConstantVolume ;
+  qudt:symbol "J/(kg-K-m^3)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Kilogram Kelvin Cubic Meter"^^xsd:string ;
+  skos:prefLabel "joule-per-kilogram-kelvin-cubic-meter"^^xsd:string ;
+.
+unit:J-PER-KG-K-PA
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpecificHeatPressureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "j-per-kg-k-pa"^^xsd:string ;
+  qudt:code "2034"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-2034"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificHeatCapacityAtConstantPressure ;
+  qudt:symbol "J/(km.K.Pa)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Kilogram Kelvin per Pascal"^^xsd:string ;
+  skos:prefLabel "joule-per-kilogram-kelvin-pascal"^^xsd:string ;
+.
+unit:J-PER-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyPerAreaUnit ;
+  qudt:abbreviation "J/m^{2}"^^xsd:string ;
+  qudt:code "0920"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-0920"^^xsd:string ;
+  qudt:symbol "J/m^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Square Meter"^^xsd:string ;
+  skos:prefLabel "joule-per-square-meter"^^xsd:string ;
+.
+unit:J-PER-M3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyDensityUnit ;
+  qudt:abbreviation "j-per-m3"^^xsd:string ;
+  qudt:code "0890"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Joule Per Cubic Meter} ($J/m^{3}$) is a unit in the category of Energy density. It is also known as joules per cubic meter, joule per cubic metre, joules per cubic metre, joule/cubic meter, joule/cubic metre. This unit is commonly used in the SI unit system.  It has a dimension of $ML^{-1}T^{-2}$ where M is mass, L is length, and T is time. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:designator "U-150-0890"^^xsd:string ;
+  qudt:symbol "J/m^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Cubic Meter"^^xsd:string ;
+  skos:prefLabel "joule-per-cubic-meter"^^xsd:string ;
+.
+unit:J-PER-M3-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyDensityUnit ;
+  qudt:abbreviation "J/(m^{3} K)"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Joule per Cubic Meter Kelvin}' is a unit for  'Volumetric Heat Capacity' expressed as $J/(m^{3} K)$."^^xsd:string ;
+  qudt:symbol "J/(m^{3} K)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Cubic Meter Kelvin"^^xsd:string ;
+  skos:prefLabel "joule-per-cubic-meter-kelvin"^^xsd:string ;
+.
+unit:J-PER-MOL-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MolarHeatCapacityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J/(mol-K)"^^xsd:string ;
+  qudt:code "0915"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "t of one mole of substance, under standard conditions (not standard temperature and pressure STP). the standard molar entropy is usually given the symbol S u00b0, and has units of joules per mole kelvin (J mol-1 K-1). Unlike standard enthalpies of formation, the value of S u00b0 is an absolute. That is, an element in its standard state has a nonzero value of S u00b0 at room temperature."^^xsd:string ;
+  qudt:designator "U-150-0915"^^xsd:string ;
+  qudt:quantityKind quantity:MolarHeatCapacity ;
+  qudt:symbol "J mol^{-1} K^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule per Mole Kelvin"^^xsd:string ;
+  skos:prefLabel "joule-per-mole-kelvin"^^xsd:string ;
+.
+unit:J-SEC
+  rdf:type qudt:AngularMomentumUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "J s"^^xsd:string ;
+  qudt:code "2036"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The joule-second is a unit equal to a joule multiplied by a second, used to measure action or angular momentum. The joule-second is the unit used for Planck's constant."^^xsd:string ;
+  qudt:designator "U-150-2036"^^xsd:string ;
+  qudt:symbol "J s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule Second"^^xsd:string ;
+  skos:prefLabel "joule-second"^^xsd:string ;
+.
+unit:J-SEC-PER-MOL
+  rdf:type qudt:MechanicsUnit ;
+  qudt:abbreviation "J s mol^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Joule Second per Mole}' is a unit for  'Molar Angular Momentum' expressed as $J s mol^{-1}$."^^xsd:string ;
+  qudt:quantityKind quantity:MolarAngularMomentum ;
+  qudt:symbol "J s mol^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule Second per Mole"^^xsd:string ;
+  skos:prefLabel "joule-second-per-mole"^^xsd:string ;
+.
+unit:JOULE
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  qudt:abbreviation "J"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2.kg.s^{-2}"^^xsd:string ;
+  qudt:code "0885"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of work or energy, defined to be the work done by a force of one newton acting to move an object through a distance of one meter in the direction in which the force is applied. Equivalently, since kinetic energy is one half the mass times the square of the velocity, one joule is the kinetic energy of a mass of two kilograms moving at a velocity of $1 m/s$."^^xsd:string ;
+  qudt:designator "U-150-0885"^^xsd:string ;
+  qudt:exactMatch unit:N-M ;
+  qudt:latexDefinition "$\\text{J}\\ \\equiv\\ \\text{joule}\\ \\equiv\\ \\text{CV}\\ \\equiv\\ \\text{coulomb.volt}\\ \\equiv\\ \\frac{\\text{eV}}{1.602\\ 10^{-19}}\\ \\equiv\\ \\frac{\\text{electron.volt}}{1.602\\ 10^{-19}}$"^^xsd:string ;
+  qudt:longDescription "The SI unit of work or energy, defined to be the work done by a force of one newton acting to move an object through a distance of one meter in the direction in which the force is applied. Equivalently, since kinetic energy is one half the mass times the square of the velocity, one joule is the kinetic energy of a mass of two kilograms moving at a velocity of 1 m/s. This is the same as 107 ergs in the CGS system, or approximately 0.737 562 foot-pound in the traditional English system. In other energy units, one joule equals about 9.478 170 x 10-4 Btu, 0.238 846 (small) calories, or 2.777 778 x 10-4 watt hour. The joule is named for the British physicist James Prescott Joule (1818-1889), who demonstrated the equivalence of mechanical and thermal energy in a famous experiment in 1843. "^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "J"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Joule"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Joule> ;
+  skos:prefLabel "joule"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Joule?oldid=494340406> ;
+.
+unit:K-PER-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "K / h"^^xsd:string ;
+  qudt:conversionMultiplier "3600.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kelvin per Hour}' is a C.G.S System unit for  'Temperature Per Time' expressed as $K / h$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "K / h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kelvin per Hour"^^xsd:string ;
+  skos:prefLabel "kelvin-per-hour"^^xsd:string ;
+.
+unit:K-PER-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "K / m"^^xsd:string ;
+  qudt:conversionMultiplier "60.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kelvin per Minute}' is a C.G.S System unit for  'Temperature Per Time' expressed as $K / m$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "K / m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kelvin per Minute"^^xsd:string ;
+  skos:prefLabel "kelvin-per-minute"^^xsd:string ;
+.
+unit:K-PER-SEC
+  rdf:type qudt:TemperaturePerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "K / s"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kelvin per Second}' is a unit for  'Temperature Per Time' expressed as $K / s$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerTime ;
+  qudt:symbol "K / s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kelvin per Second"^^xsd:string ;
+  skos:prefLabel "kelvin-per-second"^^xsd:string ;
+.
+unit:K-PER-T
+  rdf:type qudt:ThermodynamicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "K T^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kelvin per Tesla}' is a unit for  'Temperature Per Magnetic Flux Density' expressed as $K T^{-1}$."^^xsd:string ;
+  qudt:quantityKind quantity:TemperaturePerMagneticFluxDensity ;
+  qudt:symbol "K T^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kelvin per Tesla"^^xsd:string ;
+  skos:prefLabel "kelvin-per-tesla"^^xsd:string ;
+.
+unit:K-PER-W
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThermalResistanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "K/W"^^xsd:string ;
+  qudt:code "0945"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description """Thermal resistance is a heat property and a measure of a temperature difference by which an object or material resists a heat flow (heat per time unit or thermal resistance). Thermal resistance is the reciprocal thermal conductance.
+Absolute thermal resistance is the temperature difference across a structure when a unit of heat energy flows through it in unit time. It is the reciprocal of thermal conductance. The SI units of thermal resistance are kelvins per watt or the equivalent degrees Celsius per watt (the two are the same since as intervals 1 K = 1 u00b0C)."""^^xsd:string ;
+  qudt:designator "U-150-0945"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalResistance ;
+  qudt:symbol "K/W"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kelvin per Watt"^^xsd:string ;
+  skos:prefLabel "kelvin-per-watt"^^xsd:string ;
+.
+unit:KELVIN
+  rdf:type qudt:BaseUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:TemperatureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "K"^^xsd:string ;
+  qudt:code "0930"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI base unit of temperature, previously called the degree Kelvin (u00b0K). One kelvin represents the same temperature difference as one degree Celsius."^^xsd:string ;
+  qudt:designator "U-000-0930"^^xsd:string ;
+  qudt:longDescription "The SI base unit of temperature, previously called the degree Kelvin (u00b0K). One kelvin represents the same temperature difference as one degree Celsius. In 1967 the General Conference on Weights and Measures defined the temperature of the triple point of water (the temperature at which water exists simultaneously in the gaseous, liquid, and solid states) to be exactly 273.16 kelvins. Since this temperature is also equal to 0.01 u00b0C, the temperature in kelvins is always equal to 273.15 plus the temperature in degrees Celsius. The kelvin equals exactly 1.8 degrees Fahrenheit. The unit is named for the British mathematician and physicist William Thomson (1824-1907), later known as Lord Kelvin after he was named Baron Kelvin of Largs."^^xsd:string ;
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+  qudt:symbol "K"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kelvin"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kelvin> ;
+  skos:prefLabel "kelvin"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kelvin?oldid=495075694> ;
+.
+unit:KG-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassTemperatureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg-K"^^xsd:string ;
+  qudt:code "0990"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilogram Kelvin}' is a unit for  'Mass Temperature' expressed as $kg-K$."^^xsd:string ;
+  qudt:designator "U-150-0990"^^xsd:string ;
+  qudt:quantityKind quantity:MassTemperature ;
+  qudt:symbol "kg-K"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kilogram Kelvin"^^xsd:string ;
+  skos:prefLabel "kilogram-kelvin"^^xsd:string ;
+.
+unit:KW
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatFlowRateUnit ;
+  rdf:type qudt:PowerUnit ;
+  qudt:abbreviation "kW"^^xsd:string ;
+  qudt:code "1030"^^xsd:string ;
+  qudt:conversionMultiplier 1000.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The kilowatt is a derived unit of power in the International System of Units (SI),  The unit, defined as 1,000 joule per second, measures the rate of energy conversion or transfer."^^xsd:string ;
+  qudt:designator "U150-1030"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "kW"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kilowatt"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Watt> ;
+  skos:prefLabel "kilowatt"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Watt?oldid=494906356> ;
+.
+unit:KiloCAL
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kcal"^^xsd:string ;
+  qudt:code "0965"^^xsd:string ;
+  qudt:conversionMultiplier "4184"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Kilocalorie} is a C.G.S System unit for \\textit{Energy And Work} expressed as $kcal$."^^xsd:string ;
+  qudt:designator "U150-0965"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+  qudt:symbol "kcal"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kilocalorie"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Calorie> ;
+  skos:prefLabel "kilocalorie"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Calorie?oldid=494307622> ;
+.
+unit:KiloCAL-PER-CM2-DegC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "cal/(cm-s-degC)"^^xsd:string ;
+  qudt:code "0270"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Calorie per Centimeter Second Degree Celsius}' is a C.G.S System unit for  'Thermal Conductivity' expressed as $cal/(cm-s-degC)$."^^xsd:string ;
+  qudt:designator "U-150-0270"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "cal/(cm-s-degC)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Calorie per Centimeter Second Degree Celsius"^^xsd:string ;
+  skos:prefLabel "calorie-per-centimeter-second-degree-celsius"^^xsd:string ;
+.
+unit:KiloCAL-PER-GM-DegC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpecificHeatCapacityUnit ;
+  qudt:abbreviation "kcal/(gm-degC)"^^xsd:string ;
+  qudt:code "0280"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Calorie per Gram Degree Celsius}' is a C.G.S System unit for  'Specific Heat Capacity' expressed as $kcal/(gm-degC)$."^^xsd:string ;
+  qudt:designator "U-150-0280"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+  qudt:symbol "kcal/(gm-degC)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Calorie per Gram Degree Celsius"^^xsd:string ;
+  skos:prefLabel "calorie-per-gram-degree-celsius"^^xsd:string ;
+.
+unit:KiloCAL-PER-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatFlowRateUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kcal/min"^^xsd:string ;
+  qudt:code "0290"^^xsd:string ;
+  qudt:conversionMultiplier "69.7333333"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Kilocalorie per Minute} is a C.G.S System unit for  \\textit{Heat Flow Rate} and \\textit{Power} expressed as $kcal/min$."^^xsd:string ;
+  qudt:designator "U-150-0290"^^xsd:string ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "kcal/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kilocalorie Per Minute"^^xsd:string ;
+  skos:prefLabel "kilocalorie-per-minute"^^xsd:string ;
+.
+unit:KiloCAL-PER-MOL-DegC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MolarHeatCapacityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kcal/(mol-degC)"^^xsd:string ;
+  qudt:code "0300"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilocalorie per Mole Degree Celsius}' is a C.G.S System unit for  'Molar Heat Capacity' expressed as $kcal/(mol-degC)$."^^xsd:string ;
+  qudt:designator "U-150-0300"^^xsd:string ;
+  qudt:quantityKind quantity:MolarHeatCapacity ;
+  qudt:symbol "kcal/(mol-degC)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kilocalorie per Mole Degree Celsius"^^xsd:string ;
+  skos:prefLabel "kilocalorie-per-mole-degree-celsius"^^xsd:string ;
+.
+unit:KiloCAL-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatFlowRateUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kcal/s"^^xsd:string ;
+  qudt:code "0305"^^xsd:string ;
+  qudt:conversionMultiplier "4184"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Kilocalorie per Second} is a C.G.S System unit for  \\textit{Heat Flow Rate} and \\textit{Power} expressed as $kcal/s$."^^xsd:string ;
+  qudt:designator "U150-0305"^^xsd:string ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "kcal/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Kilocalorie Per Second"^^xsd:string ;
+  skos:prefLabel "kilocalorie-per-second"^^xsd:string ;
+.
+unit:LB-DegF
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassTemperatureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb-degF"^^xsd:string ;
+  qudt:code "1405"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Degree Fahrenheit}' is an Imperial unit for  'Mass Temperature' expressed as $lb-degF$."^^xsd:string ;
+  qudt:designator "U-150-1405"^^xsd:string ;
+  qudt:quantityKind quantity:MassTemperature ;
+  qudt:symbol "lb-degF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Pound Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "pound-degree-fahrenheit"^^xsd:string ;
+.
+unit:LB-DegR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassTemperatureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb-degR"^^xsd:string ;
+  qudt:code "1410"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Degree Rankine}' is an Imperial unit for  'Mass Temperature' expressed as $lb-degR$."^^xsd:string ;
+  qudt:designator "U-150-1410"^^xsd:string ;
+  qudt:quantityKind quantity:MassTemperature ;
+  qudt:symbol "lb-degR"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Pound Degree Rankine"^^xsd:string ;
+  skos:prefLabel "pound-degree-rankine"^^xsd:string ;
+.
+unit:LB-MOL-DegF
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassAmountOfSubstanceTemperatureUnit ;
+  rdf:type qudt:ThermodynamicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb-mol-degF"^^xsd:string ;
+  qudt:code "1470"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Mole Degree Fahrenheit}' is a C.G.S System unit for  'Mass Amount Of Substance Temperature' expressed as $lb-mol-degF$."^^xsd:string ;
+  qudt:designator "U-030-1470"^^xsd:string ;
+  qudt:designator "U-150-1470"^^xsd:string ;
+  qudt:quantityKind quantity:MassAmountOfSubstanceTemperature ;
+  qudt:symbol "lb-mol-degF"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Pound Mole Degree Fahrenheit"^^xsd:string ;
+  skos:prefLabel "pound-mole-degree-fahrenheit"^^xsd:string ;
+.
+unit:M-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LengthTemperatureUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m K"^^xsd:string ;
+  qudt:code "1095"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Meter Kelvin}' is a unit for  'Length Temperature' expressed as $m K$."^^xsd:string ;
+  qudt:designator "U-150-1095"^^xsd:string ;
+  qudt:quantityKind quantity:LengthTemperature ;
+  qudt:symbol "m K"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Meter Kelvin"^^xsd:string ;
+  skos:prefLabel "meter-kelvin"^^xsd:string ;
+.
+unit:M-K-PER-W
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThermalResistivityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "K-m/W"^^xsd:string ;
+  qudt:code "0940"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Meter Kelvin per Watt}' is a unit for  'Thermal Resistivity' expressed as $K-m/W$."^^xsd:string ;
+  qudt:designator "U-150-0940"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalResistivity ;
+  qudt:symbol "K-m/W"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Meter Kelvin per Watt"^^xsd:string ;
+  skos:prefLabel "meter-kelvin-per-watt"^^xsd:string ;
+.
+unit:M-PER-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearThermalExpansionUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m-per-k"^^xsd:string ;
+  qudt:code "2044"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-2044"^^xsd:string ;
+  qudt:quantityKind quantity:LinearThermalExpansion ;
+  qudt:symbol "m/K"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Meter per Kelvin"^^xsd:string ;
+  skos:prefLabel "meter-per-kelvin"^^xsd:string ;
+.
+unit:M2-K
+  rdf:type qudt:AreaTemperatureUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpaceAndTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m^{2}-K"^^xsd:string ;
+  qudt:code "1710"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Meter Kelvin}' is a unit for  'Area Temperature' expressed as $m^{2}-K$."^^xsd:string ;
+  qudt:designator "U-150-1710"^^xsd:string ;
+  qudt:quantityKind quantity:AreaTemperature ;
+  qudt:symbol "m^{2}-K"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Meter Kelvin"^^xsd:string ;
+  skos:prefLabel "square-meter-kelvin"^^xsd:string ;
+.
+unit:M2-K-PER-W
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThermalInsulanceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "(K^{2})m/W"^^xsd:string ;
+  qudt:code "0955"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Meter Kelvin per Watt}' is a unit for  'Thermal Insulance' expressed as $(K^{2})m/W$."^^xsd:string ;
+  qudt:designator "U-150-0955"^^xsd:string ;
+  qudt:designator "U-150-1710"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalInsulance ;
+  qudt:symbol "(K^{2})m/W"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Meter Kelvin per Watt"^^xsd:string ;
+  skos:prefLabel "square-meter-kelvin-per-watt"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+.
+unit:M2-PER-K
+  rdf:type qudt:AreaThermalExpansionUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m2-per-k"^^xsd:string ;
+  qudt:code "2048"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-2048"^^xsd:string ;
+  qudt:quantityKind quantity:AreaThermalExpansion ;
+  qudt:symbol "m^2/K"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Meter per Kelvin"^^xsd:string ;
+  skos:prefLabel "square-meter-per-kelvin"^^xsd:string ;
+.
+unit:M2-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:KinematicViscosityUnit ;
+  rdf:type qudt:ThermalDiffusivityUnit ;
+  qudt:abbreviation "m^{2} s^{-1}"^^xsd:string ;
+  qudt:code "1720"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Metres squared per second is the SI derived unit of angular momentum, defined by distance or displacement in metres multiplied by distance again in metres and divided by time in seconds. The unit is written in symbols as m2/s or m2u00b7s-1 or m2s-1. It may be better understood when phrased as \"metres per second times metres\", i.e. the momentum of an object with respect to a position."^^xsd:string ;
+  qudt:designator "U-150-1720"^^xsd:string ;
+  qudt:quantityKind quantity:AreaPerTime ;
+  qudt:symbol "m^2 s^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Square Meter per Second"^^xsd:string ;
+  skos:prefLabel "square-meter-per-second"^^xsd:string ;
+.
+unit:M3-PER-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  rdf:type qudt:VolumeThermalExpansionUnit ;
+  qudt:abbreviation "m3-per-k"^^xsd:string ;
+  qudt:code "2060"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-2060"^^xsd:string ;
+  qudt:quantityKind quantity:VolumeThermalExpansion ;
+  qudt:symbol "m^{3}/K"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Cubic Meter per Kelvin"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-kelvin"^^xsd:string ;
+.
+unit:MOL-DegC
+  rdf:type qudt:AmountOfSubstanceTemperatureUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThermodynamicsUnit ;
+  qudt:abbreviation "mol-degC"^^xsd:string ;
+  qudt:code "2004"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Mole Degree Celsius}' is a C.G.S System unit for  'Temperature Amount Of Substance' expressed as $mol-degC$."^^xsd:string ;
+  qudt:designator "U-150-2004"^^xsd:string ;
+  qudt:quantityKind quantity:TemperatureAmountOfSubstance ;
+  qudt:symbol "mol-degC"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Mole Degree Celsius"^^xsd:string ;
+  skos:prefLabel "mole-degree-celsius"^^xsd:string ;
+.
+unit:MegaHZ-PER-K
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ThermodynamicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "MHz K^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Mega Hertz per Kelvin}' is a C.G.S System unit for  'Inverse Time Temperature' expressed as $MHz K^{-1}$."^^xsd:string ;
+  qudt:quantityKind quantity:InverseTimeTemperature ;
+  qudt:symbol "MHz K^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Mega Hertz per Kelvin"^^xsd:string ;
+  skos:prefLabel "mega-hertz-per-kelvin"^^xsd:string ;
+.
+unit:MilliDegC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:TemperatureUnit ;
+  qudt:abbreviation "degC"^^xsd:string ;
+  qudt:baseUnitDimensions "K"^^xsd:string ;
+  qudt:conversionMultiplier 1E-03 ;
+  qudt:conversionOffset "273.15"^^xsd:double ;
+  qudt:description "Milldegree Celsius is a scaled unit of measurement for temperature."^^xsd:string ;
+  qudt:guidance <http://physics.nist.gov/Pubs/SP811/sec04.html#4.2.1.1> ;
+  qudt:guidance <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.8> ;
+  qudt:isScalingOf unit:DegC ;
+  qudt:latexDefinition "millieDegree Celsius"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Millidegree Celsius"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Celsius> ;
+  skos:prefLabel "millidegree-celsius"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Celsius?oldid=494152178> ;
+.
+unit:PA-PER-K
+  rdf:type qudt:ThermodynamicsUnit ;
+  qudt:abbreviation "pascal-per-kelvin"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:PressureCoefficient ;
+  qudt:symbol "Pa/K"^^xsd:string ;
+  qudt:symbolToken "Pa/K"^^xsd:token ;
+  rdfs:label "Pascal per Kelvin"^^xsd:string ;
+  skos:prefLabel "pascal-per-kelvin"^^xsd:string ;
+.
+unit:PER-K
+  rdf:type qudt:ThermodynamicsUnit ;
+  qudt:abbreviation "/K"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Per Kelvin Unit is a demominator unit with dimensions $/k$."^^xsd:string ;
+  qudt:quantityKind quantity:InverseTemperature ;
+  qudt:symbol "m^{-1} K^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Per Meter Kelvin Unit"^^xsd:string ;
+  skos:prefLabel "per-kelvin-unit"^^xsd:string ;
+.
+unit:PER-M-K
+  rdf:type qudt:ThermodynamicsUnit ;
+  qudt:abbreviation "/m.k"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Per Meter Kelvin Unit is a demominator unit with dimensions $/m.k$."^^xsd:string ;
+  qudt:quantityKind quantity:InverseLengthTemperature ;
+  qudt:symbol "m^{-1} K^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Per Meter Kelvin Unit"^^xsd:string ;
+  skos:prefLabel "per-meter-kelvin-unit"^^xsd:string ;
+.
+unit:PER-PA
+  rdf:type qudt:ThermodynamicsUnit ;
+  qudt:abbreviation "per-pascal"^^xsd:string ;
+  qudt:quantityKind quantity:IsothermalCompressibility ;
+  qudt:symbol "1/Pa"^^xsd:string ;
+  qudt:symbolToken "1/Pa"^^xsd:token ;
+  rdfs:label "Per Pascal"^^xsd:string ;
+  skos:prefLabel "Per Pascal"^^xsd:string ;
+.
+unit:PlanckTemperature
+  rdf:type qudt:TemperatureUnit ;
+  qudt:abbreviation "plancktemperature"^^xsd:string ;
+  qudt:conversionMultiplier 1.416785E32 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Planck temperature, denoted by TP, is the unit of temperature in the system of natural units known as Planck units. It serves as the defining unit of the Planck temperature scale. In this scale the magnitude of the Planck temperature is equal to 1, while that of absolute zero is 0. Other temperatures can be converted to Planck temperature units. For example, $0^\\circ C = 273.15K = 1.9279 \\times 10TP$."^^xsd:string ;
+  qudt:latexDefinition "$T_p = \\frac{ m_pc^3}{k} = \\sqrt{\\frac{\\hbar c^5}{Gk^2}} = 1.416833(85) \\times 10^{32} K$, where  $c$ is the speed of light in a vacuum, $\\hbar$ is the reduced Planck's constant (defined as $\\hbar = \\frac{h}{2 \\pi}$),  $k$ is the Boltzmann constant and $G$ is the gravitational constant. The two digits between parentheses denote the standard error of the estimated value."^^xsd:string ;
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+  qudt:symbol "heta_P"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Planck Temperature"^^xsd:string ;
+  skos:prefLabel "planck-temperature"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_temperature> ;
+.
+unit:SquareFootHourDegreeFahrenheitPerBtu
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "squarefoothourdegreefahrenheitperbtu"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ThermalInsulance ;
+.
+unit:SquareFootPerBtuInch
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "squarefootperbtuinch"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ThermalResistivity ;
+.
+unit:ThCalorie
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  qudt:abbreviation "cal"^^xsd:string ;
+  qudt:code "0330"^^xsd:string ;
+  qudt:conversionMultiplier "4.184"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The energy needed to increase the temperature of a given mass of water by $1 ^\\circ C$ at atmospheric pressure depends on the starting temperature and is difficult to measure precisely. Accordingly, there have been several definitions of the calorie. The two perhaps most popular definitions used in older literature are the $15 ^\\circ C$ calorie and the thermochemical calorie."^^xsd:string ;
+  qudt:designator "U-150-0155"^^xsd:string ;
+  qudt:designator "U-150-0330"^^xsd:string ;
+  qudt:latexDefinition """$1 \\; cal_{th} = 4.184 J$ 
+
+$\\approx 0.003964 BTU$
+
+$\\approx 1.163 \\times 10^{-6} kWh$
+
+$\\approx 2.611 \\times 10^{19} eV$"""^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+  qudt:symbol "cal_{th}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Thermochemical Calorie"^^xsd:string ;
+  skos:prefLabel "thermochemical-calorie"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Calorie> ;
+.
+unit:Therm
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  qudt:abbreviation "therm (EC)"^^xsd:string ;
+  qudt:code "1820"^^xsd:string ;
+  qudt:conversionMultiplier "105506000"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description """The therm (symbol thm) is a non-SI unit of heat energy equal to 100,000 British thermal units (BTU). It is approximately the energy equivalent of burning 100 cubic feet (often referred to as 1 CCF) of natural gas. The therm is equal to about 105.5 megajoules, 25,200 kilocalories or 29.3 kilowatt-hours. One therm can also be provided by about 96.7 cubic feet (2.74 m3) of natural gas. The therm sometimes has been confused with the thermie. The names of both units come from the Greek word for heat.
+
+A thermie (th) is a metric unit of heat energy, part of the meter-tonne-second system sometimes used by European engineers. The thermie is equal to the amount of energy required to raise the temperature of 1 tonne of water by  \\SI{1}{\\degreeCelsius}. The thermie is equivalent to 1,000 kilocalories, 4.1868 megajoules or 3968.3 BTU."""^^xsd:string ;
+  qudt:designator "U-150-1820"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+  qudt:symbol "thm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Therm"^^xsd:string ;
+  skos:prefLabel "therm-ec"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Therm> ;
+.
+unit:ThermUS
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  qudt:abbreviation "therm (US)"^^xsd:string ;
+  qudt:code "1830"^^xsd:string ;
+  qudt:conversionMultiplier "105480400"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Therm} (symbol thm) is a non-SI unit of heat energy. It was defined in the United States in 1968 as the energy equivalent of burning 100 cubic feet of natural gas at standard temperature and pressure. In the US gas industry its SI equivalent is defined as exactly $100,000 BTU59^\\circ F$ or $105.4804 megajoules$. Public utilities in the U.S. use the therm unit for measuring customer usage of gas and calculating the monthly bills."^^xsd:string ;
+  qudt:designator "U150-1830"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+  qudt:symbol "thm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Therm US"^^xsd:string ;
+  skos:prefLabel "therm-us"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.convertunits.com/info/therm%2B%5BU.S.%5D> ;
+.
+unit:TonOfRefrigeration
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:HeatFlowRateUnit ;
+  qudt:abbreviation "t/fg"^^xsd:string ;
+  qudt:code "1870"^^xsd:string ;
+  qudt:conversionMultiplier "3517"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "12000 btu per hour"^^xsd:string ;
+  qudt:designator "U-150-1870"^^xsd:string ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "t/fg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Ton of Refrigeration"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Ton_of_refrigeration> ;
+  skos:prefLabel "ton-of-refrigeration"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ton_of_refrigeration?oldid=494342824> ;
+.
+unit:W-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThermodynamicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Wm^{2}"^^xsd:string ;
+  qudt:code "1950"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Watt Meter Squared} is a unit of irradiance defined as the power received per area. This is a unit in the category of Energy flux. It is also known as watts per square meter, watt per square metre, watts per square metre, watt/square meter, watt/square metre. This unit is commonly used in the SI unit system."^^xsd:string ;
+  qudt:designator "U-150-1950"^^xsd:string ;
+  qudt:quantityKind quantity:Irradiance ;
+  qudt:quantityKind quantity:PowerArea ;
+  qudt:symbol "W m^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Watt Meter Squared"^^xsd:string ;
+  skos:prefLabel "watt-meter-squared"^^xsd:string ;
+.
+unit:W-PER-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "w-per-K"^^xsd:string ;
+  qudt:code "1930"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Watt Per Meter Per Kelvin ($W/mxK$) is a unit in the category of Thermal Conductivity."^^xsd:string ;
+  qudt:designator "U-150-1930"^^xsd:string ;
+  qudt:longDescription "Watt Per Kelvin ($W/K$) is a unit in the category of Thermal conductivity."^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "W/K"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Watt per Kelvin"^^xsd:string ;
+  skos:prefLabel "watt-per-meter-kelvin"^^xsd:string ;
+.
+unit:W-PER-M-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThermodynamicsUnit ;
+  qudt:abbreviation "W-per-MK"^^xsd:string ;
+  qudt:code "1950"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1950"^^xsd:string ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  qudt:symbol "W \\cdot m^{-1} \\cdot K^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Watt per Meter Kelvin"^^xsd:string ;
+  skos:prefLabel "watt-per-square-meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_conductivity> ;
+.
+unit:W-PER-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:ThermodynamicsUnit ;
+  qudt:abbreviation "W/m^2"^^xsd:string ;
+  qudt:code "1950"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1950"^^xsd:string ;
+  qudt:quantityKind quantity:Irradiance ;
+  qudt:quantityKind quantity:PowerArea ;
+  qudt:symbol "W/m^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Watt per Square Meter"^^xsd:string ;
+  skos:prefLabel "watt-per-square-meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--energy_flux--watt_per_square_meter.cfm> ;
+.
+unit:W-PER-M2-K
+  rdf:type qudt:CoefficientOfHeatTransferUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "W/(m^{2}-K)"^^xsd:string ;
+  qudt:code "1955"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Watt Per Square Meter Per Kelvin (W/m2-K) is a unit in the category of Thermal heat transfer coefficient. It is also known as watt/square meter-kelvin. This unit is commonly used in the SI unit system. Watt Per Square Meter Per Kelvin (W/m2-K) has a dimension of MT-1Q-1 where M is mass, T is time, and Q is temperature. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:designator "U-150-1955"^^xsd:string ;
+  qudt:quantityKind quantity:CoefficientOfHeatTransfer ;
+  qudt:symbol "W/(m^{2}-K)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Watt per Square Meter Kelvin"^^xsd:string ;
+  skos:prefLabel "watt-per-square-meter-kelvin"^^xsd:string ;
+.
+unit:W-PER-M2-SR
+  rdf:type qudt:RadianceUnit ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:PowerAreaPerSolidAngle ;
+  rdfs:label "Watt per Square Meter Steradian"^^xsd:string ;
+  prov:wasInfluencedBy <http://asd-www.larc.nasa.gov/Instrument/ceres_units.html> ;
+.
+unit:WATT
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:HeatFlowRateUnit ;
+  qudt:abbreviation "W"^^xsd:string ;
+  qudt:code "1920"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of power. Power is the rate at which work is done, or (equivalently) the rate at which energy is expended. One watt is equal to a power rate of one joule of work per second of time. This unit is used both in mechanics and in electricity, so it links the mechanical and electrical units to one another. In mechanical terms, one watt equals about 0.001 341 02 horsepower (hp) or 0.737 562 foot-pound per second (lbf/s). In electrical terms, one watt is the power produced by a current of one ampere flowing through an electric potential of one volt. The name of the unit honors James Watt (1736-1819), the British engineer whose improvements to the steam engine are often credited with igniting the Industrial Revolution."^^xsd:string ;
+  qudt:designator "U-150-1920"^^xsd:string ;
+  qudt:latexDefinition "\\text{W}\\ \\equiv\\ \\text{watt}\\ \\equiv\\ \\frac{\\text{J}}{\\text{s}}\\ \\equiv\\ \\frac{\\text{joule}}{\\text{second}}\\ \\equiv\\ \\frac{\\text{N.m}}{\\text{s}}\\ \\equiv\\ \\frac{\\text{newton.metre}}{\\text{second}}\\ \\equiv\\ \\text{V.A}\\ \\equiv\\ \\text{volt.amp}\\ \\equiv\\ \\Omega\\text{.A}^{2}\\ \\equiv\\ \\text{ohm.amp}^{2}"^^xsd:string ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "W"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "Watt"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Watt> ;
+  skos:prefLabel "watt"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Watt?oldid=494906356> ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.

@@ -1,0 +1,1582 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/atomic-and-nuclear-physics
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://qudt.org/1.2/vocab/unit/base
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/atomic-and-nuclear-physics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "QUDT Atomic and Nuclear Physics Quantity Kinds Vocabulary"^^xsd:string ;
+  dc:title "QUDT Atomic and Nuclear Physics Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "TBD"^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-18 22:12:56 -0700 (Thu, 18 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/chemistry"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:hasGovernance ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/isq/quantity/atomic-and-nuclear-physics> ;
+.
+quantity:AbsorbedDose
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:GRAY ;
+  qudt:latexDefinition "$D = \\frac{d\\bar{\\varepsilon}}{dm}$, where $d\\bar{\\varepsilon}$ is the mean energy imparted by ionizing radiation to an element of irradiated matter with the mass $dm$."^^xsd:string ;
+  qudt:symbol "D"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Absorbed_dose> ;
+.
+quantity:AbsorbedDoseRate
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:GY-PER-SEC ;
+  qudt:latexDefinition "$\\dot{D} = \\frac{dD}{dt}$, where $dD$ is the increment of absorbed dose during time interval with duration $dt$."^^xsd:string ;
+  qudt:symbol "\\dot{D}"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.answers.com/topic/absorbed-dose-rate> ;
+.
+quantity:Action
+  rdf:type qudt:QuantumMechanicsQuantityKind ;
+  qudt:abbreviation "S"^^xsd:string ;
+  qudt:symbol "S"^^xsd:string ;
+  rdfs:label "Action"^^xsd:string ;
+  skos:prefLabel "Action"^^xsd:string ;
+.
+quantity:Activity
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:BQ ;
+  qudt:applicableUnit unit:Curie ;
+  qudt:description "\\textit{Activity} is the number of decays per unit time of a radioactive sample, the term used to characterise the number of nuclei which disintegrate in a radioactive substance per unit time. Activity is usually measured in Becquerels ($Bq$), where 1 $Bq$ is 1 disintegration per second, in honor of the scientist Henri Becquerel."^^xsd:string ;
+  qudt:latexDefinition """$A = Z + N$, where $Z$ is the atomic number and $N$ is the neutron number.
+
+Variation $dN$ of spontaneous number of nuclei $N$ in a particular energy state, in a sample of radionuclide, due to spontaneous nuclear transitions from this state during an infinitesimal time interval, divided by its duration $dt$, thus $A = -\\frac{dN}{dt}$."""^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Activity"^^xsd:string ;
+  skos:broader quantity:StochasticProcess ;
+  skos:exactMatch <http://dbpedia.org/resource/Radioactive_decay> ;
+  skos:prefLabel "Activity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_number> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Radioactive_decay> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Radioactive_decay#Radioactive_decay_rates> ;
+.
+quantity:ActivityConcentration
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:BQ-PER-M3 ;
+  qudt:description "The \\textit{Activity Concentration}, also known as volume activity, and activity density, is ."^^xsd:string ;
+  qudt:latexDefinition "$c_A = \\frac{A}{V}$, where $A$ is the activity of a sample and $V$ is its volume."^^xsd:string ;
+  qudt:symbol "c_A"^^xsd:string ;
+  rdfs:label "Activity Concentration"^^xsd:string ;
+  skos:prefLabel "Activity Concentration"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.euronuclear.org/info/encyclopedia/activityconcentration.htm> ;
+.
+quantity:AlphaDisintegrationEnergy
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "The \\textit{Alpha Disintegration Energy} is the sum of the kinetic energy of the $\\alpha-particle$ produced in the disintegration process and the recoil energy of the product atom in the reference frame in which the emitting nucleus is at rest before its disintegration."^^xsd:string ;
+  qudt:symbol "Q_a"^^xsd:string ;
+  rdfs:label "Alpha Disintegration Energy"^^xsd:string ;
+  skos:prefLabel "Alpha Disintegration Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:AngularCross-Section
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2-PER-SR ;
+  qudt:description "\\textit{Angular Cross-section} is the cross-section for ejecting or scattering a particle into an elementary cone, divided by the solid angle $d\\Omega$ of that cone."^^xsd:string ;
+  qudt:latexDefinition "$\\sigma = \\int \\sigma_\\Omega d\\Omega$"^^xsd:string ;
+  qudt:symbol "\\sigma_\\Omega"^^xsd:string ;
+  rdfs:label "Angular Cross-section"^^xsd:string ;
+  skos:broader quantity:Cross-Section ;
+  skos:closeMatch quantity:SpectralCross-Section ;
+  skos:prefLabel "Angular Cross-section"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cross_section_(physics)> ;
+.
+quantity:AngularMomentum
+  qudt:applicableUnit unit:J-SEC ;
+  qudt:latexDefinition "$L = I\\omega$, where $I$ is the moment of inertia, and $\\omega$ is the angular velocity."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Angular_momentum> ;
+.
+quantity:AtomicAttenuationCoefficient
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "\\textit{Atomic Attenuation Coefficient} is a measurement of how strongly a chemical species or substance absorbs or scatters light at a given wavelength, per the number of atoms in the substance."^^xsd:string ;
+  qudt:latexDefinition "$\\mu_a = -\\frac{\\mu}{n}$, where $\\mu$ is the linear attenuation coefficient and $n$ is the number density of the atoms in the substance."^^xsd:string ;
+  qudt:symbol "\\mu_a"^^xsd:string ;
+  rdfs:label "Atomic Attenuation Coefficient"^^xsd:string ;
+  skos:closeMatch quantity:MolarAttenuationCoefficient ;
+  skos:prefLabel "Atomic Attenuation Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Attenuation_coefficient> ;
+.
+quantity:AtomicCharge
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:Z ;
+  qudt:description "The electric charge of an ion, equal to the number of electrons the atom has gained or lost in its ionization multiplied by the charge on one electron."^^xsd:string ;
+  rdfs:label "Atomic Charge"^^xsd:string ;
+  skos:prefLabel "Atomic Charge"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.answers.com/topic/atomic-charge> ;
+.
+quantity:AtomicMass
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG ;
+  qudt:description "The \\textit{Atomic Mass} is the mass of a specific isotope, most often expressed in unified atomic mass units."^^xsd:string ;
+  qudt:symbol "m_a"^^xsd:string ;
+  rdfs:label "Atomic Mass"^^xsd:string ;
+  skos:prefLabel "Atomic Mass"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Atomic_mass> ;
+.
+quantity:AtomicMassConstant
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:KG ;
+  qudt:description "The \\textit{Atomic Mass Constant} is one twelfth of the mass of an unbound atom of carbon-12 at rest and in its ground state."^^xsd:string ;
+  qudt:symbol "m_u"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Atomic_mass_constant> ;
+.
+quantity:AtomicNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:symbol "Z"^^xsd:string ;
+  rdfs:label "Atomic Number"^^xsd:string ;
+  prov:wasInformedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31895> ;
+.
+quantity:AverageEnergyLossPerElementaryChargeProduced
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Average Energy Loss per Elementary Charge Produced} is also referred to as average energy loss per ion pair formed."^^xsd:string ;
+  qudt:latexDefinition "$W_i = \\frac{E_k}{N_i}$, where $E_k$ is the initial kinetic energy of an ionizing charged particle and $N_i$ is the total ionization produced by that particle."^^xsd:string ;
+  qudt:symbol "W_i"^^xsd:string ;
+  rdfs:label "Average Energy Loss per Elementary Charge Produced"^^xsd:string ;
+  skos:prefLabel "Average Energy Loss per Elementary Charge Produced"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:AverageLogarithmicEnergyDecrement
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Average Logarithmic Energy Decrement} is a measure of the amount of energy a neutron loses upon colliding with various nuclei. It is the average value of the increase in lethargy in elastic collisions between neutrons and nuclei whose kinetic energy is negligible compared with that of the neutrons."^^xsd:string ;
+  qudt:symbol "\\xi"^^xsd:string ;
+  rdfs:label "Average Logarithmic Energy Decrement"^^xsd:string ;
+  skos:prefLabel "Average Logarithmic Energy Decrement"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://everything2.com/title/Average+logarithmic+energy+decrement+per+collision> ;
+.
+quantity:BetaDisintegrationEnergy
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Beta Disintegration Energy} is the  energy released by a beta particle radioactive decay. It is the sum of the maximum beta-particle kinetic energy and the recoil energy of the atom produced in the reference frame in which the emitting nucleus is at rest before its disintegration."^^xsd:string ;
+  qudt:symbol "Q_\\beta"^^xsd:string ;
+  rdfs:label "Beta Disintegration Energy"^^xsd:string ;
+  skos:prefLabel "Beta Disintegration Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Decay_energy> ;
+.
+quantity:BindingFraction
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Binding Fraction} is the ratio of the binding energy of a nucleus to the atomic mass number."^^xsd:string ;
+  qudt:latexDefinition "$b = \\frac{B_r}{A}$, where $B_r$ is the relative mass defect and $A$ is the nucleon number."^^xsd:string ;
+  qudt:symbol "b"^^xsd:string ;
+  rdfs:label "Binding Fraction"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/binding+fraction> ;
+.
+quantity:BohrMagneton
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:J-PER-T ;
+  qudt:description "The \\textit{Bohr Magneton} is a physical constant and the natural unit for expressing an electron magnetic dipole moment."^^xsd:string ;
+  qudt:latexDefinition "$\\mu_B = \\frac{e\\hbar}{2m_e}$, where $e$ is the elementary charge, $\\hbar$ is the Planck constant, and $m_e$ is the rest mass of electron."^^xsd:string ;
+  qudt:symbol "\\mu_B"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bohr_magneton> ;
+.
+quantity:BohrRadius
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Bohr Radius} is a physical constant, approximately equal to the most probable distance between the proton and electron in a hydrogen atom in its ground state. It is named after Niels Bohr, due to its role in the Bohr model of an atom. The precise definition of the Bohr radius is: where: is the permittivity of free space is the reduced Planck's constant is the electron rest mass is the elementary charge is the speed of light in vacuum is the fine structure constant."^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_SI ;
+  qudt:latexDefinition "$a_0 = \\frac{4\\pi \\varepsilon_0 \\hbar^2}{m_ee^2}$, where $\\varepsilon_0$ is the electric constant, $\\hbar$ is the reduced Planck constant, $m_e$  is the rest mass of electron, and $e$ is the elementary charge."^^xsd:string ;
+  qudt:quantityValue quantity:Value_BohrRadius ;
+  qudt:symbol "a_0"^^xsd:string ;
+  rdfs:label "Bohr Radius"^^xsd:string ;
+  skos:prefLabel "Bohr Radius"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bohr_radius> ;
+  prov:wasInformedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31895> ;
+.
+quantity:ChargeNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:symbol "c"^^xsd:string ;
+.
+quantity:ComptonWavelength
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "The \\textit{Compton Wavelength}  is a quantum mechanical property of a particle. It was introduced by Arthur Compton in his explanation of the scattering of photons by electrons (a process known as Compton scattering). The Compton wavelength of a particle is equivalent to the wavelength of a photon whose energy is the same as the rest-mass energy of the particle."^^xsd:string ;
+  qudt:latexDefinition "$\\lambda_C = \\frac{h}{mc_0}$, where $h$ is the Planck constant, $m$ is the rest mass of a particle, and $c_0$ is the speed of light in vacuum."^^xsd:string ;
+  qudt:symbol "\\lambda_C"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Compton_wavelength> ;
+.
+quantity:Cross-Section
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "\\textit{Cross-section} is used to express the likelihood of interaction between particles. For a specified target particle and for a specified reaction or process produced by incident charged or uncharged particles of specified type and energy, it is the mean number of such reactions or processes divided by the incident-particle fluence."^^xsd:string ;
+  qudt:symbol "\\sigma"^^xsd:string ;
+  rdfs:label "Cross-section"^^xsd:string ;
+  skos:prefLabel "Cross-section"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cross_section_(physics)> ;
+.
+quantity:CyclotronAngularFrequency
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:RAD-PER-SEC ;
+  qudt:description "The \\textit{Cyclotron Angular Frequency} describes angular momentum vector precession about the external field axis with an angular frequency."^^xsd:string ;
+  qudt:latexDefinition "$\\omega_c = \\frac{\\left | q \\right |}{m}B$, where $q$ is the electric charge, $m$ is its mass, and $B$ is the magnetic flux density."^^xsd:string ;
+  qudt:symbol "\\omega_c"^^xsd:string ;
+  rdfs:label "Larmor Angular Frequency"^^xsd:string ;
+  skos:broader quantity:AngularFrequency ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electron_cyclotron_resonance> ;
+.
+quantity:DecayConstant
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:description "The \\textit{Decay Constant} is the proportionality between the size of a population of radioactive atoms and the rate at which the population decreases because of radioactive decay."^^xsd:string ;
+  qudt:latexDefinition "Relative variation $\\frac{dN}{N}$ of the number $N$ of atoms or nuclei in a system, due to spontaneous emission from these atoms or nuclei during an infinitesimal time interval, divided by its duration $dt$, thus $\\lambda = -\\frac{1}{N}\\frac{dN}{dt}$."^^xsd:string ;
+  qudt:symbol "\\lambda"^^xsd:string ;
+  rdfs:label "Decay Constant"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Exponential_decay> ;
+  prov:wasInfluencedBy <http://www.britannica.com/EBchecked/topic/154945/decay-constant> ;
+.
+quantity:DiffusionArea
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "\\textit{Diffusion Area} in an infinite homogenous medium, is one-sixth of the mean square distance between the point where a neutron enters a specified class and the point where it leaves that class."^^xsd:string ;
+  qudt:symbol "L^2"^^xsd:string ;
+  rdfs:label "Diffusion Area"^^xsd:string ;
+  skos:prefLabel "Diffusion Area"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/diffusion+area> ;
+.
+quantity:DiffusionCoefficientForFluenceRate
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "m"^^xsd:string ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "The \\textit{Diffusion Coefficient for Fluence Rate} is a proportionality constant between the ."^^xsd:string ;
+  qudt:latexDefinition "$D_\\varphi = -\\frac{J_x}{\\frac{\\partial d\\varphi}{\\partial dx}}$, where $J_x$ is the $x-component$ of the particle current and $\\varphi$ is the particle fluence rate."^^xsd:string ;
+  qudt:symbol "D_\\varphi"^^xsd:string ;
+  rdfs:label "Diffusion Coefficient for Fluence Rate"^^xsd:string ;
+  skos:prefLabel "Diffusion Coefficient for Fluence Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_diffusivity> ;
+.
+quantity:DiffusionLength
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Diffusion Length} is the average distance traveled by a particle, or a thermal neutron in a nuclear reactor, from the point at which it is formed to the point at which it is absorbed."^^xsd:string ;
+  qudt:latexDefinition "$L = \\sqrt{L^2}$, where $L^2$ is the diffusion area."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:label "Diffusion Length"^^xsd:string ;
+  skos:prefLabel "Diffusion Length"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/diffusion+length> ;
+.
+quantity:DoseEquivalent
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:SIEVERT ;
+  qudt:description "\\textit{Dose Equivalent} (former), or \\textit{Equivalent Absorbed Radiation Dose}, usually shortened to \\textit{Equivalent Dose}, is a computed average measure of the radiation absorbed by a fixed mass of biological tissue, that attempts to account for the different biological damage potential of different types of ionizing radiation. The equivalent dose to a tissue is found by multiplying the absorbed dose, in gray, by a dimensionless \"quality factor\" $Q$, dependent upon radiation type, and by another dimensionless factor $N$, dependent on all other pertinent factors. N depends upon the part of the body irradiated, the time and volume over which the dose was spread, even the species of the subject."^^xsd:string ;
+  qudt:latexDefinition "At the point of interest in tissue, $H = DQ$, where $D$ is the absorbed dose and $Q$ is the quality factor at that point."^^xsd:string ;
+  qudt:symbol "H"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Equivalent_dose> ;
+.
+quantity:DoseEquivalentQualityFactor
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Dose Equivalent Quality Factor} is a factor in the caculation and measurement of dose equivalent, by which the absorbed dose is to be weighted in order to account for different biological effectiveness of radiations, for radiation protection purposes."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  rdfs:label "Dose Equivalent Quality Factor"^^xsd:string ;
+  skos:prefLabel "Dose Equivalent Quality Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Equivalent_dose> ;
+.
+quantity:EffectiveMultiplicationFactor
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Effective Multiplication Factor} is the multiplication factor for a finite medium."^^xsd:string ;
+  qudt:symbol "k_{eff}"^^xsd:string ;
+  rdfs:label "Effective Multiplication Factor"^^xsd:string ;
+  skos:broader quantity:MultiplicationFactor ;
+  skos:closeMatch quantity:InfiniteMultiplicationFactor ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nuclear_chain_reaction#Effective_neutron_multiplication_factor> ;
+.
+quantity:ElectronGyromagneticRatio
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:A-M2-PER-J-SEC ;
+  qudt:description "The \\textit{Electron Gyromagnetic Ratio} An isolated electron has an angular momentum and a magnetic moment resulting from its spin. While an electron's spin is sometimes visualized as a literal rotation about an axis, it is in fact a fundamentally different, quantum-mechanical phenomenon with no true analogue in classical physics. Consequently, there is no reason to expect the above classical relation to hold."^^xsd:string ;
+  qudt:latexDefinition "$\\mu = \\gamma_e J$, where $\\mu$ is the magnetic dipole moment, and $J$ is the total angular momentum."^^xsd:string ;
+  qudt:symbol "\\gamma_e"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gyromagnetic_ratio#Gyromagnetic_ratio_for_an_isolated_electron> ;
+.
+quantity:ElectronRadius
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Electron Radius}, also known as the Lorentz radius or the Thomson scattering length, is based on a classical (i.e., non-quantum) relativistic model of the electron."^^xsd:string ;
+  qudt:latexDefinition "$r_e = \\frac{e^2}{4\\pi m_e c_0^2}$, where $e$ is the elementary charge, $\\varepsilon_0$ is the electric constant, item $m_e$ is the rest mass of electrons, and $c_0$ is the speed of light in vacuum."^^xsd:string ;
+  qudt:symbol "r_e"^^xsd:string ;
+  rdfs:label "Electron Radius"^^xsd:string ;
+  skos:prefLabel "Electron Radius"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Classical_electron_radius> ;
+.
+quantity:ElementaryCharge
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  skos:exactMatch quantity:AtomicUnitOfCharge ;
+.
+quantity:EnergyFluence
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-PER-M2 ;
+  qudt:description "\\textit{Energy Fluence} can be used to describe the energy delivered per unit area"^^xsd:string ;
+  qudt:latexDefinition "$\\Psi = \\frac{dR}{dA}$, where $dR$ describes the sum of radiant energies, exclusive of rest energy, of all particles incident on a small spherical domain, and $dA$ describes the cross-sectional area of that domain."^^xsd:string ;
+  qudt:symbol "\\Psi"^^xsd:string ;
+  rdfs:label "Energy Fluence"^^xsd:string ;
+  skos:prefLabel "Energy Fluence"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fluence> ;
+.
+quantity:EnergyFluenceRate
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:description "\\textit{Energy Fluence Rate} can be used to describe the energy fluence delivered per unit time."^^xsd:string ;
+  qudt:latexDefinition "$\\Psi = \\frac{d\\Psi}{dt}$, where $d\\Psi$ is the increment of the energy fluence during an infinitesimal time interval with duration $dt$."^^xsd:string ;
+  qudt:symbol "\\Psi"^^xsd:string ;
+  rdfs:label "Energy Fluence Rate"^^xsd:string ;
+  skos:prefLabel "Energy Fluence Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fluence> ;
+.
+quantity:EnergyImparted
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "The \\textit{Energy Imparted}, is a physical quantity associated with the energy delivered to a particular volume of matter by all the directly and indirectly ionizing particles (i.e. charged and uncharged) entering that volume."^^xsd:string ;
+  qudt:latexDefinition "For ionizing radiation in the matter in a given 3D domain, $\\varepsilon = \\sum_i \\varepsilon_i$, where the energy deposit, $\\varepsilon_i$ is the energy deposited in a single interaction $i$, and is given by $\\varspsilon_i = \\varepsilon_{in} - \\varepsilon_{out} + Q$, where $\\varepsilon_{in}$ is the energy of the incident ionizing particle, excluding rest energy, $\\varepsilon_{out}$ is the sum of the energies of all ionizing particles leaving the interaction, excluding rest energy, and $Q$ is the change in the rest energies of the nucleus and of all particles involved in the interaction."^^xsd:string ;
+  qudt:symbol "\\varepsilon"^^xsd:string ;
+  rdfs:label "Energy Imparted"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.answers.com/topic/energy-imparted> ;
+.
+quantity:Exposure
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:C-PER-KG ;
+  qudt:latexDefinition "For X-or gamma radiation, $X = \\frac{dQ}{dm}$, where $dQ$ is the absolute value of the mean total electric charge of the ions of the same sign produced in dry air when all the electrons and positrons liberated or created by photons in an element of air are completely stopped in air, and $dm$ is the mass of that element."^^xsd:string ;
+  qudt:symbol "X"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://hps.org/publicinformation/ate/faqs/gammaandexposure.html> ;
+.
+quantity:ExposureRate
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:C-PER-KG-SEC ;
+  qudt:description "\\textit{Exposure Rate} expresses the rate of charge production per unit mass of air and is commonly expressed in roentgens per hour (R/h) or milliroentgens per hour (mR/h)."^^xsd:string ;
+  qudt:latexDefinition "$\\dot{X} = \\frac{dX}{dt}$, where $X$ is the increment of exposure during time interval with duration $t$."^^xsd:string ;
+  qudt:symbol "\\dot{X}"^^xsd:string ;
+  rdfs:label "Exposure Rate"^^xsd:string ;
+  skos:broader quantity:Kerma ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://hps.org/publicinformation/ate/faqs/gammaandexposure.html> ;
+.
+quantity:FastFissionFactor
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Fast Fission Factor} in an infinite medium, is the ratio of the mean number of neutrons produced by fission due to neutrons of all energies to the mean number of neutrons produced by fissions due to thermal neutrons only."^^xsd:string ;
+  qudt:symbol "\\varphi"^^xsd:string ;
+  rdfs:label "Fast Fission Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Four_factor_formula> ;
+.
+quantity:FineStructureConstant
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Fine-structure Constant}  is a fundamental physical constant, namely the coupling constant characterizing the strength of the electromagnetic interaction."^^xsd:string ;
+  qudt:latexDefinition "$a = \\frac{e^2}{4\\pi\\varepsilon_0\\hbar c_0}$, where $e$ is the elementary charge, $\\varepsilon_0$ is the electric constant, item $\\hbar$ is the reduced Planck constant, and $c_0$ is the speed of light in vacuum."^^xsd:string ;
+  qudt:symbol "a"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fine-structure_constant> ;
+.
+quantity:GFactorOfNucleus
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{g-Factor of Nucleus} is associated with the spin and magnetic moments of protons, neutrons, and many nuclei."^^xsd:string ;
+  qudt:latexDefinition "$g = \\frac{\\mu}{I\\mu_B}$, where $\\mu$ is the magnitude of magnetic dipole moment, $I$ is the nuclear angular momentum quantum number, and $\\mu_B$ is the Bohr magneton."^^xsd:string ;
+  qudt:symbol "g"^^xsd:string ;
+  rdfs:label "g-Factor of Nucleus"^^xsd:string ;
+  skos:prefLabel "g-Factor of Nucleus"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Landé_g-factor> ;
+.
+quantity:GyromagneticRatio
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  qudt:applicableUnit unit:A-M2-PER-J-SEC ;
+  qudt:description "\\textit{Gyromagnetic Ratio}, also sometimes known as the magnetogyric ratio in other disciplines, of a particle or system is the ratio of its magnetic dipole moment to its angular momentum, and it is often denoted by the symbol, $\\gamma$. Its SI units are radian per second per tesla ($rad s^{-1} \\cdot T^{1}$) or, equivalently, coulomb per kilogram ($C \\cdot kg^{-1}$)."^^xsd:string ;
+  qudt:latexDefinition "$\\mu = \\gamma J$, where $\\mu$ is the magnetic dipole moment, and $J$ is the total angular momentum."^^xsd:string ;
+  qudt:quantityValue quantity:Value_ElectronGyromagneticRatio ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  voag:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Gyromagnetic Ratio"^^xsd:string ;
+  skos:broader quantity:ElectricChargePerMass ;
+  skos:closeMatch <http://dbpedia.org/resource/Gyromagnetic_ratio> ;
+  skos:exactMatch <http://dbpedia.org/resource/Gyromagnetic_ratio> ;
+  skos:prefLabel "Gyromagnetic Ratio"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gyromagnetic_ratio> ;
+.
+quantity:Half-Life
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "The \\textit{Half-Life} is the average duration required for the decay of one half of the atoms or nuclei."^^xsd:string ;
+  qudt:symbol "T_{1/2}"^^xsd:string ;
+  rdfs:label "Half-life"^^xsd:string ;
+  skos:prefLabel "Half-life"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Half-life> ;
+.
+quantity:Half-ValueThickness
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "The \\textit{Half-Value Thickness} is the thickness of the material at which the intensity of radiation entering it is reduced by one half."^^xsd:string ;
+  qudt:symbol "d_{1/2}"^^xsd:string ;
+  rdfs:label "Half-Value Thickness"^^xsd:string ;
+  skos:prefLabel "Half-Value Thickness"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Half-value_layer> ;
+.
+quantity:HartreeEnergy
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  qudt:abbreviation "E_H"^^xsd:string ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:conversionMultiplier 4.35974394E-18 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Hartree Energy} is the atomic unit of energy, named after the British physicist Douglas Hartree."^^xsd:string ;
+  qudt:designator "U-150-1822"^^xsd:string ;
+  qudt:latexDefinition "$E_H= \\frac{e^2}{4\\pi \\varepsilon_0 a_0 }$, where $e$ is the elementary charge, $\\varepsilon_0$ is the electric constant, and $a_0$ is the Bohr radius."^^xsd:string ;
+  qudt:quantityValue quantity:Value_HartreeEnergy ;
+  qudt:symbol "E_h"^^xsd:string ;
+  voag:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Hartree Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hartree> ;
+  skos:prefLabel "Hartree Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hartree?oldid=489318053> ;
+.
+quantity:HyperfineStructureQuantumNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Hyperfine Structure Quantum Number} is a quantum number of an atom describing inclination of the nuclear spin with respect to a quantization axis given by the magnetic field produced by the orbital electrons."^^xsd:string ;
+  qudt:symbol "F"^^xsd:string ;
+  rdfs:label "Hyperfine Structure Quantum Number"^^xsd:string ;
+  skos:broader quantity:QuantumNumber ;
+  skos:prefLabel "Hyperfine Structure Quantum Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hyperfine_structure> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_number> ;
+.
+quantity:InfiniteMultiplicationFactor
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Infinite Multiplication Factor} is the multiplication factor for an infinite medium or for an infinite repeating lattice."^^xsd:string ;
+  qudt:symbol "k_\\infty"^^xsd:string ;
+  rdfs:label "Infinite Multiplication Factor"^^xsd:string ;
+  skos:broader quantity:MultiplicationFactor ;
+  skos:closeMatch quantity:EffectiveMultiplicationFactor ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Four_factor_formula> ;
+.
+quantity:InternalConversionFactor
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{InternalConversionFactor} describes the rate of internal conversion. It is the ratio of the number of internal conversion electrons to the number of gamma quanta emitted by the radioactive atom in a given transition."^^xsd:string ;
+  qudt:symbol "a"^^xsd:string ;
+  rdfs:label "InternalConversionFactor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Internal_conversion_coefficient> ;
+.
+quantity:IonDensity
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "\\textit{Ion Density} is the number of ions per unit volume. Also known as ion concentration."^^xsd:string ;
+  qudt:latexDefinition """$n^+ = \\frac{N^+}{V}$, $n^- = \\frac{N^-}{V}$
+
+where $N^+$ and $N^-$ are the number of positive and negative ions, respectively, in a 3D domain with volume $V$."""^^xsd:string ;
+  qudt:symbol "N, n^+, n^-"^^xsd:string ;
+  rdfs:label "Ion Density"^^xsd:string ;
+  skos:prefLabel "Ion Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.answers.com/topic/ion-density> ;
+.
+quantity:Kerma
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:GRAY ;
+  qudt:description "\\textit{Kerma} is the sum of the initial kinetic energies of all the charged particles liberated by uncharged ionizing radiation (i.e., indirectly ionizing radiation such as photons and neutrons) in a sample of matter, divided by the mass of the sample."^^xsd:string ;
+  qudt:latexDefinition "For indirectly ionizing (uncharged) particles, $K= \\frac{dE_{tr}}{dm}$, where $dE_{tr}$ is the mean sum of the initial kinetic energies of all the charged ionizing particles liberated by uncharged ionizing particles in an element of matter, and $dm$ is the mass of that element."^^xsd:string ;
+  qudt:symbol "K"^^xsd:string ;
+  rdfs:label "Kerma"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kerma_(physics)> ;
+.
+quantity:KermaRate
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:GY-PER-SEC ;
+  qudt:description "\\textit{Kerma Rate} is the kerma per unit time."^^xsd:string ;
+  qudt:latexDefinition "$\\dot{K} = \\frac{dK}{dt}$, where $K$ is the increment of kerma during time interval with duration $t$."^^xsd:string ;
+  qudt:symbol "\\dot{K}"^^xsd:string ;
+  rdfs:label "Kerma Rate"^^xsd:string ;
+  skos:broader quantity:Kerma ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Half-value_layer> ;
+.
+quantity:LandeGFactor
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Lande g-Factor} is a particular example of a g-factor, namely for an electron with both spin and orbital angular momenta. It is named after Alfred Landé, who first described it in 1921."^^xsd:string ;
+  qudt:latexDefinition "$g = \\frac{\\mu}{J\\mu_B}$, where $\\mu$ is the magnitude of magnetic dipole moment, $J$ is the total angular momentum quantum number, and $\\mu_B$ is the Bohr magneton."^^xsd:string ;
+  qudt:symbol "g"^^xsd:string ;
+  rdfs:label "Lande g-Factor"^^xsd:string ;
+  skos:prefLabel "Lande g-Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/G-factor_(physics)> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Landé_g-factor> ;
+.
+quantity:LarmorAngularFrequency
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:RAD-PER-SEC ;
+  qudt:description "The \\textit{Larmor Frequency} describes angular momentum vector precession about the external field axis with an angular frequency."^^xsd:string ;
+  qudt:latexDefinition "$\\omega_L = \\frac{e}{2m_e}B$, where $e$ is the elementary charge, $m_e$ is the rest mass of electron, and $B$ is the magnetic flux density."^^xsd:string ;
+  qudt:symbol "\\omega_L"^^xsd:string ;
+  rdfs:label "Larmor Angular Frequency"^^xsd:string ;
+  skos:broader quantity:AngularFrequency ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Larmor_precession#Larmor_frequency> ;
+.
+quantity:Lethargy
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Lethargy} is a dimensionless logarithm of the ratio of the energy of source neutrons to the energy of neutrons after a collision."^^xsd:string ;
+  qudt:latexDefinition "$u = \\ln(\\frac{E_0}{E})$, where $E_0$ is a reference energy."^^xsd:string ;
+  qudt:symbol "u"^^xsd:string ;
+  rdfs:label "Lethargy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.scribd.com/doc/51548050/149/Lethargy> ;
+.
+quantity:LevelWidth
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "The \\textit{Level Width} is the uncertainty in the energy of a quantum-mechanical system having discrete energy levels in a state that is not strictly stationary. The system may be an atom, a molecule, or an atomic nucleus."^^xsd:string ;
+  qudt:latexDefinition "$\\Gamma = \\frac{\\hbar}{\\tau}$, where $\\hbar$ is the reduced Planck constant and $\\tau$ is the mean lifetime."^^xsd:string ;
+  qudt:symbol "\\Gamma"^^xsd:string ;
+  rdfs:label "Level Width"^^xsd:string ;
+  skos:prefLabel "Level Width"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/Level+Width> ;
+.
+quantity:LinearAttenuationCoefficient
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{Linear Attenuation Coefficient}, also called the attenuation coefficient,  narrow beam attenuation coefficient, or absorption coefficient, is a quantity that characterizes how easily a material or medium can be penetrated by a beam of light, sound, particles, or other energy or matter."^^xsd:string ;
+  qudt:latexDefinition """$\\mu = -\\frac{1}{J}\\frac{dJ}{dx}$, where $J$ is the magnitude of the current rate of a beam of particles parallel to the $x-direction$.
+
+Or:
+
+$\\mu(\\lambda) = \\frac{1}{\\Phi_\\lambda(\\lambda)}\\frac{d\\Phi_\\lambda(\\lambda)}{dl}$, where $\\frac{d\\Phi}{\\Phi}$ is the relative decrease in the spectral radiant flux $\\Phi$ of a collimated beam of electromagnetic radiation corresponding to the wavelength $\\lambda$ during traversal of an infinitesimal layer of a medium and $dl$ is the length traversed."""^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Linear Attenuation Coefficient"^^xsd:string ;
+  skos:prefLabel "Linear Attenuation Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Attenuation_coefficient> ;
+.
+quantity:LinearEnergyTransfer
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-PER-M ;
+  qudt:applicableUnit unit:KiloEV-PER-MicroM ;
+  qudt:applicableUnit unit:MeV-PER-CM ;
+  qudt:description "\\textit{Linear Energy Transfer}  (LET) is the linear density of energy lost by a charged ionizing particle travelling through matter.Typically, this measure is used to quantify the effects of ionizing radiation on biological specimens or electronic devices."^^xsd:string ;
+  qudt:latexDefinition "For ionizing charged particles, $L_\\Delta = \\frac{dE_\\Delta}{dl}$, where $dE_\\Delta$ is the mean energy lost in elctronic collisions locally to matter along a small path through the matter, minus the sum of the kinetic energies of all the electrons released with kinetic energies in excess of $\\Delta$, and $dl$ is the length of that path."^^xsd:string ;
+  qudt:symbol "L_\\Delta"^^xsd:string ;
+  qudt:symbol "L_\\bigtriangleup"^^xsd:string ;
+  rdfs:label "Linear Energy Transfer"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Linear_energy_transfer> ;
+  skos:prefLabel "Linear Energy Transfer"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Linear_energy_transfer> ;
+.
+quantity:LinearIonization
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{Linear Ionization}  is a description of how the ionization of an atom or molecule takes place. For example, an ion with a +2 charge can be created only from an ion with a +1 charge or a +3 charge. That is, the numerical charge of an atom or molecule must change sequentially, always moving from one number to an adjacent, or sequential, number. Using sequential ionization definition."^^xsd:string ;
+  qudt:latexDefinition "$N_{il} = \\frac{1}{e}\\frac{dQ}{dl}$, where $e$ is the elementary charge and $dQ$ is the average total charge of all positive ions produced over an infinitesimal element of the path with length $dl$ by an ionizing charged particle."^^xsd:string ;
+  qudt:symbol "N_{il}"^^xsd:string ;
+  rdfs:label "Linear Ionization"^^xsd:string ;
+  skos:prefLabel "Linear Ionization"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ionization#Classical_ionization> ;
+.
+quantity:MacroscopicCross-Section
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{Macroscopic Cross-section} is the sum of the cross-sections for a reaction or process of a specified type over all atoms or other entities in a given 3D domain, divided by the volume of that domain."^^xsd:string ;
+  qudt:latexDefinition "$\\sum = n_1\\sigma_1 + \\cdots + n_j\\sigma_j +$, where $n_j$ is the number density and $\\sigma_j$ the cross-section for entities of type $j$."^^xsd:string ;
+  qudt:symbol "\\sum"^^xsd:string ;
+  rdfs:label "Macroscopic Cross-section"^^xsd:string ;
+  skos:broader quantity:Cross-Section ;
+  skos:prefLabel "Macroscopic Cross-section"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cross_section_(physics)> ;
+.
+quantity:MacroscopicTotalCross-Section
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{Macroscopic Total Cross-section} is the total cross-sections for all atoms or other entities in a given 3D domain, divided by the volume of that domain."^^xsd:string ;
+  qudt:symbol "\\sum_{tot}, \\sum_T"^^xsd:string ;
+  rdfs:label "Macroscopic Total Cross-section"^^xsd:string ;
+  skos:broader quantity:Cross-Section ;
+  skos:prefLabel "Macroscopic Total Cross-section"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cross_section_(physics)> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nuclear_cross_section> ;
+.
+quantity:MagneticDipoleMoment
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:A-M2 ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:MagneticQuantumNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Magnetic Quantum Number} describes the specific orbital (or \"cloud\") within that subshell, and yields the projection of the orbital angular momentum along a specified axis."^^xsd:string ;
+  qudt:symbol "m"^^xsd:string ;
+  rdfs:label "Magnetic Quantum Number"^^xsd:string ;
+  skos:broader quantity:QuantumNumber ;
+  skos:closeMatch quantity:OrbitalAngularMomentumQuantumNumber ;
+  skos:closeMatch quantity:PrincipalQuantumNumber ;
+  skos:closeMatch quantity:SpinQuantumNumber ;
+  skos:prefLabel "Magnetic Quantum Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_number> ;
+.
+quantity:MassAttenuationCoefficient
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2-PER-KG ;
+  qudt:description "\\textit{Mass Attenuation Coefficient} is a measurement of how strongly a chemical species or substance absorbs or scatters light at a given wavelength, per unit mass."^^xsd:string ;
+  qudt:latexDefinition "$\\mu_m = \\frac{\\mu}{\\rho}$, where $\\mu$ is the linear attenuation coefficient and $\\rho$ is the mass density of the medium."^^xsd:string ;
+  qudt:symbol "\\mu_m"^^xsd:string ;
+  rdfs:label "Mass Attenuation Coefficient"^^xsd:string ;
+  skos:prefLabel "Mass Attenuation Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_attenuation_coefficient> ;
+.
+quantity:MassDefect
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG ;
+  qudt:description "The \\textit{Mass Defect}, also termed mass deficit, or mass packing fraction, describes mass change (decrease) in bound systems, particularly atomic nuclei."^^xsd:string ;
+  qudt:latexDefinition "$B = Zm(^{1}\\textrm{H}) + Nm_n - m_a$, where $Z$ is the proton number of the atom, $m(^{1}\\textrm{H})$ is atomic mass of $^{1}\\textrm{H}$, $N$ is the neutron number, $m_n$ is the rest mass of the neutron, and $m_a$ is the rest mass of the atom."^^xsd:string ;
+  qudt:symbol "B"^^xsd:string ;
+  rdfs:label "Mass Defect"^^xsd:string ;
+  skos:prefLabel "Mass Defect"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Binding_energy> ;
+.
+quantity:MassEnergyTransferCoefficient
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2-PER-KG ;
+  qudt:description "\\textit{Mass Energy Transfer Coefficient} is that fraction of the mass attenuation coefficient which contributes to the production of kinetic energy in charged particles."^^xsd:string ;
+  qudt:latexDefinition "$\\frac{\\mu_{tr}}{\\rho} = -\\frac{1}{\\rho}\\frac{1}{R}\\frac{dR_{tr}}{dl}$, where $dR_{tr}$ is the mean energy that is transferred to kinetic energy of charged particles by interactions of the incident radiation $R$ in traversing a distance $dl$ in the material of density $\\rho$."^^xsd:string ;
+  qudt:symbol "\\frac{\\mu_{tr}}{\\rho}"^^xsd:string ;
+  rdfs:label "Mass Energy Transfer Coefficient"^^xsd:string ;
+  skos:closeMatch quantity:MassAttenuationCoefficient ;
+  skos:prefLabel "Mass Energy Transfer Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/PhysRefData/XrayMassCoef/chap3.html> ;
+.
+quantity:MassExcess
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG ;
+  qudt:description "The \\textit{Mass Excess} of a nuclide is the difference between its actual mass and its mass number in atomic mass units. It is one of the predominant methods for tabulating nuclear mass."^^xsd:string ;
+  qudt:latexDefinition "$\\Delta = m_a - Am_u$, where $m_a$ is the rest mass of the atom, $A$ is its nucleon number, and $m_u$ is the unified atomic mass constant."^^xsd:string ;
+  qudt:symbol "\\Delta"^^xsd:string ;
+  rdfs:label "Mass Excess"^^xsd:string ;
+  skos:prefLabel "Mass Excess"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_excess> ;
+.
+quantity:MassNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Mass Number} (A), also called atomic mass number or nucleon number, is the total number of protons and neutrons (together known as nucleons) in an atomic nucleus. Nuclides with the same value of $A$ are called isobars."^^xsd:string ;
+  qudt:latexDefinition "$A = Z + N$, where $Z$ is the atomic number and $N$ is the neutron number."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Mass Number"^^xsd:string ;
+  skos:prefLabel "Mass Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_number> ;
+.
+quantity:MaximumBeta-ParticleEnergy
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Maximum Beta-Particle Energy} is the maximum energy of the energy spectrum in a beta-particle disintegration process."^^xsd:string ;
+  qudt:symbol "E_\\beta"^^xsd:string ;
+  rdfs:label "Maximum Beta-Particle Energy"^^xsd:string ;
+  skos:prefLabel "Maximum Beta-Particle Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:MeanEnergyImparted
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "The \\textit{Mean Energy Imparted}, is the average energy imparted to irradiated matter."^^xsd:string ;
+  qudt:latexDefinition "To the matter in a given domain, $\\bar{\\varepsilon} = R_{in} - R_{out} + \\sum Q$, where $R_{in}$ is the radiant energy of all those charged and uncharged ionizing particles that enter the domain, $R_{out}$ is the radiant energy of all those charged and uncharged ionizing particles that leave the domain, and $\\sum Q$ is the sum of all changes of the rest energy of nuclei and elementary particles that occur in that domain."^^xsd:string ;
+  qudt:symbol "\\bar{\\varepsilon}"^^xsd:string ;
+  rdfs:label "Mean Energy Imparted"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.answers.com/topic/energy-imparted> ;
+.
+quantity:MeanFreePath
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:MeanLifetime
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "The \\textit{Mean Lifetime} is the average length of time that an element remains in the set of discrete elements in a decaying quantity, $N(t)$."^^xsd:string ;
+  qudt:latexDefinition "$\\tau = \\frac{1}{\\lambda}$, where $\\lambda$ is the decay constant."^^xsd:string ;
+  qudt:symbol "\\tau"^^xsd:string ;
+  rdfs:label "Mean Lifetime"^^xsd:string ;
+  skos:prefLabel "Mean Lifetime"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Exponential_decay> ;
+.
+quantity:MeanLinearRange
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Mean Linear Range} is, in a given material, for specified charged particles of a specified energy, the average displacement of the particles before they stop. That is, the mean totl rectified path length travelled by a particle in the course of slowing down to rest (or to some suitable cut-off energy) in a given substance under specified conditions averaged over a group of particles having the same initial energy."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  rdfs:label "Mean Linear Range"^^xsd:string ;
+  skos:prefLabel "Mean Linear Range"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://goldbook.iupac.org/M03782.html> ;
+.
+quantity:MeanMassRange
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG-PER-M2 ;
+  qudt:description "\\textit{Mean Mass Range} is the mean linear range multiplied by the mass density of the material."^^xsd:string ;
+  qudt:latexDefinition "$R_\\rho = R\\rho$, where $R$ is the mean linear range and $\\rho$ is the mass density of the sample."^^xsd:string ;
+  qudt:symbol "R_\\rho"^^xsd:string ;
+  rdfs:label "Mean Mass Range"^^xsd:string ;
+  skos:prefLabel "Mean Mass Range"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://goldbook.iupac.org/M03783.html> ;
+.
+quantity:MigrationArea
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "\\textit{Migration Area} is the sum of the slowing-down area from fission energy to thermal energy and the diffusion area for thermal neutrons."^^xsd:string ;
+  qudt:symbol "M^2"^^xsd:string ;
+  rdfs:label "Migration Area"^^xsd:string ;
+  skos:prefLabel "Migration Area"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/migration+area> ;
+.
+quantity:MigrationLength
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Migration Length} is the square root of the migration area."^^xsd:string ;
+  qudt:latexDefinition "$M = \\sqrt{M^2}$, where $M^2$ is the migration area."^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Migration Length"^^xsd:string ;
+  skos:prefLabel "Migration Length"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/migration+area> ;
+.
+quantity:Mobility
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2-PER-V-SEC ;
+  qudt:description "\\textit{Mobility} characterizes how quickly a particle can move through a metal or semiconductor, when pulled by an electric field. The average drift speed imparted to a charged particle in a medium by an electric field, divided by the electric field strength."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Mobility"^^xsd:string ;
+  skos:prefLabel "Mobility"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electron_mobility> ;
+.
+quantity:MolarAttenuationCoefficient
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2-PER-MOL ;
+  qudt:description "\\textit{Molar Attenuation Coefficient} is a measurement of how strongly a chemical species or substance absorbs or scatters light at a given wavelength, per amount of substance."^^xsd:string ;
+  qudt:latexDefinition "$\\mu_c = -\\frac{\\mu}{c}$, where $\\mu$ is the linear attenuation coefficient and $c$ is the amount-of-substance concentration."^^xsd:string ;
+  qudt:symbol "\\mu_c"^^xsd:string ;
+  rdfs:label "Molar Attenuation Coefficient"^^xsd:string ;
+  skos:closeMatch quantity:MassAttenuationCoefficient ;
+  skos:prefLabel "Molar Attenuation Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_attenuation_coefficient> ;
+.
+quantity:MultiplicationFactor
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Multiplication Factor} is the ratio of the total number of fission or fission-dependent neutrons produced in a time interval to the total number of neutrons lost by absorption and leakage during the same interval."^^xsd:string ;
+  qudt:symbol "k"^^xsd:string ;
+  rdfs:label "Multiplication Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Neutron_multiplication_factor> ;
+.
+quantity:NeutronDiffusionCoefficient
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "m^2 sec^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:M2-PER-SEC ;
+  qudt:description "The \\textit{Diffusion Coefficient} is "^^xsd:string ;
+  qudt:latexDefinition "$D_n = -\\frac{J_x}{\\frac{\\partial dn}{\\partial dx}}$, where $J_x$ is the $x-component$ of the particle current and $n$ is the particle number density."^^xsd:string ;
+  qudt:symbol "D"^^xsd:string ;
+  rdfs:label "Diffusion Coefficient"^^xsd:string ;
+  skos:prefLabel "Diffusion Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/Diffusion+of+Neutrons> ;
+.
+quantity:NeutronNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Neutron Number}, symbol $N$, is the number of neutrons in a nuclide. Nuclides with the same value of $N$ but different values of $Z$ are called isotones. $N - Z$ is called the neutron excess number."^^xsd:string ;
+  qudt:symbol "N"^^xsd:string ;
+  rdfs:label "Neutron Number"^^xsd:string ;
+  skos:prefLabel "Neutron Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Neutron_number> ;
+  prov:wasInformedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31895> ;
+.
+quantity:NeutronYieldPerAbsorption
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Neutron Yield per Absorption} is the average number of fission neutrons, both prompt and delayed, emitted per neutron absorbed in a fissionable nuclide or in a nuclear fuel, as specified."^^xsd:string ;
+  qudt:symbol "\\eta"^^xsd:string ;
+  rdfs:label "Neutron Yield per Absorption"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fission_product_yield> ;
+.
+quantity:NeutronYieldPerFission
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Neutron Yield per Fission} is the average number of fission neutrons, both prompt and delayed, emitted per fission event."^^xsd:string ;
+  qudt:symbol "\\nu"^^xsd:string ;
+  rdfs:label "Neutron Yield per Fission"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fission_product_yield> ;
+.
+quantity:Non-LeakageProbability
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Non-Leakage Probability} is the probability that a neutron will not escape from the reactor during the slowing-down process or while it diffuses as a thermal neutron"^^xsd:string ;
+  qudt:symbol "\\Lambda"^^xsd:string ;
+  rdfs:label "Non-Leakage Probability"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Six_factor_formula> ;
+.
+quantity:NuclearMagneton
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:J-PER-T ;
+  qudt:description "The \\textit{Nuclear Magneton} is the natural unit for expressing magnetic dipole moments of heavy particles such as nucleons and atomic nuclei."^^xsd:string ;
+  qudt:latexDefinition "$\\mu_N = \\frac{e\\hbar}{2m_p}$, where $e$ is the elementary charge, $\\hbar$ is the Planck constant, and $m_p$ is the rest mass of proton."^^xsd:string ;
+  qudt:symbol "\\mu_N"^^xsd:string ;
+  skos:related quantity:BohrMagneton ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nuclear_magneton> ;
+.
+quantity:NuclearQuadrupoleMoment
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "\\textit{Nuclear Quadrupole Moment} is a quantity that characterizes the deviation from spherical symmetry of the electrical charge distribution in an atomic nucleus."^^xsd:string ;
+  qudt:latexDefinition "$Q = (\\frac{1}{e}) \\int (3z^2 - r^2)\\rho(x, y, z)dV$, in the quantum state with the nuclear spin in the field direction $(z)$, where $\\rho(x, y, z)$ is the nuclear electric charge density, $e$ is the elementary charge, $r^2 = x^2 + y^2 + z^2$, and $dV$ is the volume element $dx$ $dy$ $dz$."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  rdfs:label "Nuclear Quadrupole Moment"^^xsd:string ;
+  skos:prefLabel "Nuclear Quadrupole Moment"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nuclear_quadrupole_resonance> ;
+.
+quantity:NuclearRadius
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Nuclear Radius} is the conventional radius of sphere in which the nuclear matter is included"^^xsd:string ;
+  qudt:latexDefinition "This quantity is not exactly defined. It is given approximately for nuclei in their ground state only by $R = r_0 A^{\\frac{1}{3}}$, where $r_0 \\approx 1.2 x 10^{-15} m$ and $A$ is the nucleon number."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  rdfs:label "Nuclear Radius"^^xsd:string ;
+  skos:prefLabel "Nuclear Radius"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Atomic_nucleus> ;
+.
+quantity:NuclearSpinQuantumNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Spin Quantum Number}  describes the spin (intrinsic angular momentum) of the electron within that orbital, and gives the projection of the spin angular momentum S along the specified axis"^^xsd:string ;
+  qudt:latexDefinition "$I^2 = \\hbar^2 I(I + 1)$, where $\\hbar$ is the Planck constant."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  rdfs:label "Spin Quantum Number"^^xsd:string ;
+  skos:broader quantity:SpinQuantumNumber ;
+  skos:prefLabel "Spin Quantum Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_number> ;
+.
+quantity:NucleonNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:description "Number of nuceons in an atomic nucleus.A = Z+N. Nuclides with the same value of A are called isobars."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Nucleon number"^^xsd:string ;
+  skos:altLabel "mass-number"^^xsd:string ;
+  skos:prefLabel "nucleon-number"^^xsd:string ;
+  prov:wasInformedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31895> ;
+.
+quantity:OrbitalAngularMomentumQuantumNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Principal Quantum Number} describes the electron shell, or energy level, of an atom. The value of $n$ ranges from 1 to the shell containing the outermost electron of that atom."^^xsd:string ;
+  qudt:latexDefinition "$l^2 = \\hbar^2 l(l + 1), l = 0, 1, ..., n - 1$, where $l_i$ refers to a specific particle $i$."^^xsd:string ;
+  qudt:symbol "l"^^xsd:string ;
+  rdfs:label "Orbital Angular Momentum Quantum Number"^^xsd:string ;
+  skos:broader quantity:QuantumNumber ;
+  skos:closeMatch quantity:MagneticQuantumNumber ;
+  skos:closeMatch quantity:PrincipalQuantumNumber ;
+  skos:closeMatch quantity:SpinQuantumNumber ;
+  skos:prefLabel "Orbital Angular Momentum Quantum Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_number> ;
+.
+quantity:PackingFraction
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Packing Fraction} is the fraction of volume in a crystal structure that is occupied by atoms."^^xsd:string ;
+  qudt:latexDefinition "$f = \\frac{\\Delta_r}{A}$, where $\\Delta_r$ is the relative mass excess and $A$ is the nucleon number."^^xsd:string ;
+  qudt:symbol "f"^^xsd:string ;
+  rdfs:label "Packing Fraction"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Atomic_packing_factor> ;
+.
+quantity:ParticleCurrent
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M2-SEC ;
+  qudt:description "\\textit{Particle Current} can be used to describe the net number of particles passing through a surface in an infinitesimal time interval."^^xsd:string ;
+  qudt:latexDefinition "$\\int J \\cdot e_n dA = \\frac{dN}{dt}$, where $e_ndA$ is the vector surface element, $N$ is the net number of particles passing over a surface, and $dt$ describes the time interval."^^xsd:string ;
+  qudt:symbol "J, S"^^xsd:string ;
+  rdfs:label "Particle Current"^^xsd:string ;
+  skos:prefLabel "Particle Current"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:ParticleFluence
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M2 ;
+  qudt:description "\\textit{Particle Fluence} is the total number of particles that intersect a unit area in a specific time interval of interest, and has units of m–2 (number of particles per meter squared)."^^xsd:string ;
+  qudt:latexDefinition "$\\Phi = \\frac{dN}{dA}$, where $dN$ describes the number of particles incident on a small spherical domain at a given point in space, and $dA$ describes the cross-sectional area of that domain."^^xsd:string ;
+  qudt:symbol "\\Phi"^^xsd:string ;
+  rdfs:label "Particle Fluence"^^xsd:string ;
+  skos:prefLabel "Particle Fluence"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fluence> ;
+.
+quantity:ParticleFluenceRate
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M2-SEC ;
+  qudt:description "\\textit{Particle Fluence Rate} can be defined as the total number of particles (typically Gamma Ray Photons ) crossing over a sphere of unit cross section which surrounds a Point Source of Ionising Radiation."^^xsd:string ;
+  qudt:latexDefinition "$\\theta = \\frac{d\\Phi}{dt}$, where $d\\Phi$ is the increment of the particle fluence during an infinitesimal time interval with duration $dt$."^^xsd:string ;
+  qudt:symbol "\\theta"^^xsd:string ;
+  rdfs:label "Particle Fluence Rate"^^xsd:string ;
+  skos:prefLabel "Particle Fluence Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.encyclo.co.uk/define/Fluence%20Rate> ;
+.
+quantity:ParticleNumberDensity
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "The \\textit{Particle Number Density} is obtained by dividing the particle number of a system by its volume."^^xsd:string ;
+  qudt:latexDefinition "$n = \\frac{N}{V}$, where $N$ is the number of particles in the 3D domain with the volume $V$."^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Particle Number Density"^^xsd:string ;
+  skos:prefLabel "Particle Number Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Particle_number#Particle_number_density> ;
+.
+quantity:ParticleSourceDensity
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M3-SEC ;
+  qudt:description "\\textit{Particle Source Density} is the rate of production of particles in a 3D domain divided by the volume of that element."^^xsd:string ;
+  qudt:symbol "S"^^xsd:string ;
+  rdfs:label "Particle Source Density"^^xsd:string ;
+  skos:prefLabel "Particle Source Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:PlanckConstant
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  qudt:applicableUnit unit:J-SEC ;
+  qudt:description "The \\textit{Planck Constant} is a physical constant that is the quantum of action in quantum mechanics. The Planck constant was first described as the proportionality constant between the energy ($E$) of a photon and the frequency ($\\nu$) of its associated electromagnetic wave."^^xsd:string ;
+  qudt:latexDefinition "$E = h\\nu = \\frac{hc}{\\lambda}$, where $E$ is energy, $\\nu$ is frequency, $\\lambda$ is wavelength, and $c$ is the speed of light."^^xsd:string ;
+  qudt:quantityValue quantity:Value_PlanckConstant ;
+  qudt:symbol "h"^^xsd:string ;
+  voag:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Planck Constant"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Planck_constant> ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_constant> ;
+.
+quantity:PrincipalQuantumNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Principal Quantum Number} describes the electron shell, or energy level, of an atom. The value of $n$ ranges from 1 to the shell containing the outermost electron of that atom."^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Principal Quantum Number"^^xsd:string ;
+  skos:broader quantity:QuantumNumber ;
+  skos:closeMatch quantity:MagneticQuantumNumber ;
+  skos:closeMatch quantity:OrbitalAngularMomentumQuantumNumber ;
+  skos:closeMatch quantity:SpinQuantumNumber ;
+  skos:prefLabel "Principal Quantum Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_number> ;
+.
+quantity:QuantumNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Quantum Number} describes values of conserved quantities in the dynamics of the quantum system. Perhaps the most peculiar aspect of quantum mechanics is the quantization of observable quantities, since quantum numbers are discrete sets of integers or half-integers."^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Quantum Number"^^xsd:string ;
+  skos:prefLabel "Quantum Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_number> ;
+.
+quantity:RadiantEnergy
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "In radiometry,\\textit{Radiant Energy} is the energy of electromagnetic waves. The quantity of radiant energy may be calculated by integrating radiant flux (or power) with respect to time.  In nuclear physics, \\textit{Radiant Energy} is energy, excluding rest energy, of the particles that are emitted, transferred, or received."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  rdfs:label "Radiant Energy"^^xsd:string ;
+  skos:prefLabel "Radiant Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Radiant_energy> ;
+.
+quantity:ReactionEnergy
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Reaction Energy} in a nuclear reaction, is the sum of the kinetic energies and photon energies of the reaction products minus the sum of the kinetic and photon energies of the reactants."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  rdfs:label "Reaction Energy"^^xsd:string ;
+  skos:prefLabel "Reaction Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nuclear_reaction> ;
+.
+quantity:Reactivity
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Reactivity} characterizes the deflection of reactor from the critical state."^^xsd:string ;
+  qudt:latexDefinition "$\\rho = \\frac{k_{eff} - 1}{k_{eff}}$, where $k_{eff}$ is the effective multiplication factor."^^xsd:string ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  rdfs:label "Reactivity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nuclear_chain_reaction> ;
+.
+quantity:ReactorTimeConstant
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "The \\textit{Reactor Time Constant}, also called the reactor period, is the time during which the neutron flux density in a reactor changes by the factor e = 2.718 (e: basis of natural logarithms), when the neutron flux density increases or decreases exponentially."^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  rdfs:label "Reactor Time Constant"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.euronuclear.org/info/encyclopedia/r/reactor-time-constant.htm> ;
+.
+quantity:RecombinationCoefficient
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M3-PER-SEC ;
+  qudt:description "The \\textit{Recombination Coefficient} is the rate of recombination of positive ions with electrons or negative ions in a gas, per unit volume, divided by the product of the number of positive ions per unit volume and the number of electrons or negative ions per unit volume."^^xsd:string ;
+  qudt:latexDefinition "$-\\frac{dn^+}{dt} = -\\frac{dn^-}{dt} = an^+n^-$, where $n^+$ and $n^-$ are the ion number densities of positive and negative ions, respectively, recombined during an infinitesimal time interval with duration $dt$."^^xsd:string ;
+  qudt:symbol "a"^^xsd:string ;
+  rdfs:label "Recombination Coefficient"^^xsd:string ;
+  skos:prefLabel "Recombination Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/recombination+coefficient> ;
+.
+quantity:ReducedPlanckConstant
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  qudt:applicableUnit unit:J-SEC ;
+  qudt:description "The \\textit{Reduced Planck Constant}, or Dirac Constant, is used in applications where frequency is expressed in terms of radians per second (\\emph{angular frequency}) instead of cycles per second. In such cases a factor of $2\\pi$ is absorbed into the constant."^^xsd:string ;
+  qudt:latexDefinition "$\\hbar = \\frac{h}{2\\pi}$, where $h$ is the Planck constant."^^xsd:string ;
+  qudt:quantityValue quantity:Value_PlanckConstantOver2Pi ;
+  qudt:symbol "\\hbar"^^xsd:string ;
+  voag:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Reduced Planck Constant"^^xsd:string ;
+  skos:broader quantity:PlanckConstant ;
+  skos:closeMatch <http://dbpedia.org/resource/Planck_constant> ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_constant> ;
+.
+quantity:RelativeMassDefect
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Relative Mass Defect} is the mass defect between the monoisotopic mass of an element and the mass of its A + 1 or its A + 2 isotopic cluster."^^xsd:string ;
+  qudt:latexDefinition "$B_r = \\frac{B}{m_u}$, where $B$ is the mass defect and $m_u$ is the unified atomic mass constant."^^xsd:string ;
+  qudt:symbol "B_r"^^xsd:string ;
+  rdfs:label "Relative Mass Defect"^^xsd:string ;
+  skos:broader quantity:MassDefect ;
+  skos:prefLabel "Relative Mass Defect"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Binding_energy> ;
+.
+quantity:RelativeMassExcess
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Relative Mass Excess} is the mass excess between the monoisotopic mass of an element and the mass of its A + 1 or its A + 2 isotopic cluster (extrapolated from relative mass defect)."^^xsd:string ;
+  qudt:latexDefinition "$\\Delta_r = \\frac{\\Delta}{m_u}$, where $\\Delta$ is the mass excess and $m_u$ is the unified atomic mass constant."^^xsd:string ;
+  qudt:symbol "\\Delta_r"^^xsd:string ;
+  rdfs:label "Relative Mass Excess"^^xsd:string ;
+  skos:prefLabel "Relative Mass Excess"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_excess> ;
+.
+quantity:ResonanceEnergy
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Resonance Energy} in a nuclear reaction, is the kinetic energy of an incident particle, in the reference frame of the target, corresponding to a resonance in a nuclear reaction."^^xsd:string ;
+  qudt:symbol "E_r, E_{res}"^^xsd:string ;
+  rdfs:label "Resonance Energy"^^xsd:string ;
+  skos:prefLabel "Resonance Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Nuclear_reaction_analysis> ;
+.
+quantity:ResonanceEscapeProbability
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Resonance Escape Probability} is the fraction of fission neutrons that manage to slow down from fission to thermal energies without being absorbed. In an infinite medium, the probability that a neutron slowing down will traverse all or some specified portion of the range of resonance energies without being absorbed."^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  rdfs:label "Resonance Escape Probability"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Four_factor_formula> ;
+.
+quantity:RestEnergy
+      qudt:latexDefinition
+              "For a particle, $E_0 = m_0 c_0^2$, where $m_0$ is the rest mass of that particle, and $c_0$ is the speed of light in vacuum."^^xsd:string ;
+      rdf:type      qudt:QuantityKind , qudt:AtomicPhysicsQuantityKind ;
+      prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+      prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Invariant_mass#Rest_energy> ;
+      prov:wasInformedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31895> ;
+      qudt:applicableUnit unit:JOULE ;
+      qudt:description "\\textit{Rest Energy} is the energy equivalent of the rest mass of a body, equal to the rest mass multiplied by the speed of light squared."^^xsd:string ;
+      qudt:symbol "E_0"^^xsd:string ;
+      rdfs:label "Rest Energy"^^xsd:string ;
+      skos:prefLabel "Rest Energy"^^xsd:string ;
+.
+quantity:RestMass
+      a       qudt:QuantityKind , qudt:AtomicPhysicsQuantityKind ;
+      prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+      prov:wasInfluencedBy   <http://en.wikipedia.org/wiki/Invariant_mass> ;
+      prov:wasInformedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31895> ;
+      qudt:applicableUnit unit:KG ;
+      qudt:description "The \\textit{Rest Mass}, the invariant mass, intrinsic mass, proper mass, or (in the case of bound systems or objects observed in their center of momentum frame) simply mass, is a characteristic of the total energy and momentum of an object or a system of objects that is the same in all frames of reference related by Lorentz transformations. The mass of a particle type X (electron, proton or neutron) when that particle is at rest. For an electron: $m_e = 9,109 382 15(45) 10^{-31} kg$, for a proton: $m_p = 1,672 621 637(83) 10^{-27} kg$, for a neutron: $m_n = 1,674 927 211(84) 10^{-27} kg$. Rest mass is often denoted $m_0$."^^xsd:string ;
+      qudt:symbol "m_X"^^xsd:string ;
+      rdfs:label "Rest Mass"^^xsd:string ;
+      skos:altLabel "Proper Mass"^^xsd:string ;
+      skos:prefLabel "Rest Mass"^^xsd:string ;
+.
+
+quantity:RydbergConstant
+      a       qudt:AtomicPhysicsQuantityKind ;
+      prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+      prov:wasInfluencedBy  <http://en.wikipedia.org/wiki/Rydberg_constant> ;
+      prov:wasInformedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31895> ;
+      qudt:applicableUnit unit:PER-M ;
+      qudt:conversionMultiplier   1.0973731568527e07 ;
+      qudt:conversionOffset  "0.0"^^xsd:double ;
+      qudt:description "The \\textif{Rydberg Constant}, named after the Swedish physicist Johannes Rydberg, is a physical constant relating to atomic spectra, in the science of spectroscopy."^^xsd:string ;
+      qudt:latexDefinition
+              "$R_\\infty = \\frac{e^2}{8\\pi \\varepsilon_0 a_0 h c_0 }$, where $e$ is the elementary charge, $\\varepsilon_0$ is the electric constant, $a_0$is the Bohr radius, $\\h$ is the Planck constant, and $c_0$ is the speed of light in vacuum."^^xsd:string ;
+      qudt:longDescription
+              "The Rydberg constant, symbol R, named after the Swedish physicist Johannes Rydberg, is a physical constant relating to atomic spectra, in the science of spectroscopy. The constant first arose as an empirical fitting parameter in the Rydberg formula for the hydrogen spectral series, but Niels Bohr later showed that its value could be calculated from more fundamental constants, explaining the relationship via his 'Bohr model'. The quantity $R_y = R_\\infty \\cdot hc_0$ is called \\textit{Rydberg Energy}."^^xsd:string ;
+      qudt:symbol "R_\\infty"^^xsd:string ;
+      rdfs:label "Rydberg constant"^^xsd:string ;
+      skos:exactMatch <http://dbpedia.org/resource/Rydberg_constant> ;
+.
+
+quantity:SecondMomentOfArea
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "The second moment of area is a property of a physical object that can be used to predict its resistance to bending and deflection. The deflection of an object under load depends not only on the load, but also on the geometry of the object's cross-section."^^xsd:string ;
+  rdfs:label "Second Moment of Area"^^xsd:string ;
+  skos:prefLabel "Second Moment of Area"^^xsd:string ;
+.
+quantity:Slowing-DownArea
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "\\textit{Slowing-Down Area} in an infinite homogenous medium, is one-sixth of the mean square distance between the neutron source and the point where a neutron reaches a given energy."^^xsd:string ;
+  qudt:symbol "L_s^2"^^xsd:string ;
+  rdfs:label "Slowing-Down Area"^^xsd:string ;
+  skos:prefLabel "Slowing-Down Area"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:Slowing-DownDensity
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-M3-SEC ;
+  qudt:description "\\textit{Slowing-Down Density} is a measure of the rate at which neutrons lose energy in a nuclear reactor through collisions; equal to the number of neutrons that fall below a given energy per unit volume per unit time."^^xsd:string ;
+  qudt:latexDefinition "$q = -\\frac{dn}{dt}$, where $n$ is the number density and $dt$ is the duration."^^xsd:string ;
+  qudt:symbol "q"^^xsd:string ;
+  rdfs:label "Slowing-Down Density"^^xsd:string ;
+  skos:prefLabel "Slowing-Down Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/slowing-down+density> ;
+.
+quantity:Slowing-DownLength
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Slowing-Down Length} is the average straight-line distance that a fast neutron will travel between its introduction into the slowing-downmedium (moderator) and thermalization."^^xsd:string ;
+  qudt:symbol "L_s"^^xsd:string ;
+  rdfs:label "Slowing-Down Length"^^xsd:string ;
+  skos:prefLabel "Slowing-Down Length"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://nuclearpowertraining.tpub.com/h1013v2/css/h1013v2_32.htm> ;
+.
+quantity:SpecificActivity
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:BQ-PER-KG ;
+  qudt:description "The \\textit{Specific Activity} is the number of decays per unit time of a radioactive sample. The SI unit of radioactive activity is the becquerel (Bq), in honor of the scientist Henri Becquerel."^^xsd:string ;
+  qudt:latexDefinition "$a = \\frac{A}{m}$, where $A$ is the activity of a sample and $m$ is its mass."^^xsd:string ;
+  qudt:symbol "a"^^xsd:string ;
+  rdfs:label "Specific Activity"^^xsd:string ;
+  skos:broader quantity:Activity ;
+  skos:prefLabel "Specific Activity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Specific_activity> ;
+.
+quantity:SpecificEnergyImparted
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:GRAY ;
+  qudt:description "The \\textit{Specific Energy Imparted}, is the energy imparted to an element of irradiated matter divided by the mass, dm, of that element."^^xsd:string ;
+  qudt:latexDefinition "For ionizing radiation, $z = \\frac{\\varepsilon}{m}$, where $\\varepsilon$ is the energy imparted to irradiated matter and $m$ is the mass of that matter."^^xsd:string ;
+  qudt:symbol "z"^^xsd:string ;
+  rdfs:label "Specific Energy Imparted"^^xsd:string ;
+  skos:broader quantity:EnergyImparted ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.answers.com/topic/energy-imparted> ;
+.
+quantity:SpectralAngularCross-Section
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2-PER-J ;
+  qudt:description "\\textit{Spectral Angular Cross-section} is the cross-section for ejecting or scattering a particle into an elementary cone with energy $E$ in an energy interval, divided by the solid angle $d\\Omega$ of that cone and the range $dE$ of that interval."^^xsd:string ;
+  qudt:latexDefinition "$\\sigma = \\int \\int \\sigma_{\\Omega,E} d\\Omega dE$"^^xsd:string ;
+  qudt:symbol "\\sigma_{\\Omega, E}"^^xsd:string ;
+  rdfs:label "Spectral Angular Cross-section"^^xsd:string ;
+  skos:broader quantity:Cross-Section ;
+  skos:closeMatch quantity:AngularCross-Section ;
+  skos:closeMatch quantity:SpectralCross-Section ;
+  skos:prefLabel "Spectral Angular Cross-section"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cross_section_(physics)> ;
+.
+quantity:SpectralCross-Section
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2-PER-J ;
+  qudt:description "\\textit{Spectral Cross-section} is the cross-section for a process in which the energy of the ejected or scattered particle is in an interval of energy, divided by the range $dE$ of this interval."^^xsd:string ;
+  qudt:latexDefinition "$\\sigma = \\int \\sigma_E dE$"^^xsd:string ;
+  qudt:symbol "\\sigma_E"^^xsd:string ;
+  rdfs:label "Spectral Cross-section"^^xsd:string ;
+  skos:broader quantity:Cross-Section ;
+  skos:closeMatch quantity:AngularCross-Section ;
+  skos:prefLabel "Spectral Cross-section"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cross_section_(physics)> ;
+.
+quantity:Spin
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG-M2-PER-SEC ;
+  qudt:description "In quantum mechanics and particle physics \\textit{Spin} is an intrinsic form of angular momentum carried by elementary particles, composite particles (hadrons), and atomic nuclei."^^xsd:string ;
+  qudt:symbol "s"^^xsd:string ;
+  rdfs:label "Spin"^^xsd:string ;
+  skos:prefLabel "Spin"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Spin_(physics)> ;
+.
+quantity:SpinQuantumNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Spin Quantum Number}  describes the spin (intrinsic angular momentum) of the electron within that orbital, and gives the projection of the spin angular momentum S along the specified axis"^^xsd:string ;
+  qudt:latexDefinition "$s^2 = \\hbar^2 s(s + 1)$, where $s$ is the spin quantum number and $\\hbar$ is the Planck constant."^^xsd:string ;
+  qudt:symbol "s"^^xsd:string ;
+  rdfs:label "Spin Quantum Number"^^xsd:string ;
+  skos:broader quantity:QuantumNumber ;
+  skos:closeMatch quantity:MagneticQuantumNumber ;
+  skos:closeMatch quantity:OrbitalAngularMomentumQuantumNumber ;
+  skos:closeMatch quantity:PrincipalQuantumNumber ;
+  skos:prefLabel "Spin Quantum Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_number> ;
+.
+quantity:SurfaceActivityDensity
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:BQ-PER-M2 ;
+  qudt:description "The \\textit{Surface Activity Density} is undefined."^^xsd:string ;
+  qudt:latexDefinition "$a_s = \\frac{A}{S}$, where $S$ is the total area of the surface of a sample and $A$ is its activity."^^xsd:string ;
+  qudt:symbol "a_s"^^xsd:string ;
+  rdfs:label "Surface Activity Density"^^xsd:string ;
+  skos:prefLabel "Surface Activity Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+quantity:ThermalUtilizationFactor
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Thermal Utilization Factor} in an infinite medium, is the ratio of the number of thermal absorbed in a fissionable nuclide or in a nuclear fuel, as specified, to the total number of thermal neutrons absorbed."^^xsd:string ;
+  qudt:symbol "f"^^xsd:string ;
+  rdfs:label "Thermal Utilization Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Four_factor_formula> ;
+.
+quantity:TotalAngularMomentum
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-SEC ;
+  qudt:description "\\textit{Total Angular Momentum} combines both the spin and orbital angular momentum of all particles and fields. In atomic and nuclear physics, orbital angular momentum is usually denoted by $l$ or $L$ instead of $\\Lambda$. The magnitude of $J$ is quantized so that $J^2 = \\hbar^2 j(j + 1)$, where $j$ is the total angular momentum quantum number."^^xsd:string ;
+  qudt:symbol "J"^^xsd:string ;
+  rdfs:label "Total Angular Momentum"^^xsd:string ;
+  skos:broader quantity:AngularMomentum ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Angular_momentum#Spin.2C_orbital.2C_and_total_angular_momentum> ;
+.
+quantity:TotalAngularMomentumQuantumNumber
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Total Angular Quantum Number} describes the magnitude of total angular momentum $J$, where $j$ refers to a specific particle and $J$ is used for the whole system."^^xsd:string ;
+  qudt:symbol "j"^^xsd:string ;
+  rdfs:label "Total Angular Momentum Quantum Number"^^xsd:string ;
+  skos:broader quantity:QuantumNumber ;
+  skos:closeMatch quantity:MagneticQuantumNumber ;
+  skos:closeMatch quantity:PrincipalQuantumNumber ;
+  skos:closeMatch quantity:SpinQuantumNumber ;
+  skos:prefLabel "Total Angular Momentum Quantum Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quantum_number> ;
+.
+quantity:TotalAtomicStoppingPower
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-M2 ;
+  qudt:description "The \\textit{Total Atomic Stopping Power} for an ionizing particle passing through an element, is the particle's energy loss per atom within a unit area normal to the particle's path; equal to the linear energy transfer (energy loss per unit path length) divided by the number of atoms per unit volume."^^xsd:string ;
+  qudt:latexDefinition "$S_a = \\frac{S}{n}$, where $S$ is the total linear stopping power and $n$ is the number density of the atoms in the substance."^^xsd:string ;
+  qudt:symbol "S_a"^^xsd:string ;
+  rdfs:label "Total Atomic Stopping Power"^^xsd:string ;
+  skos:prefLabel "Total Atomic Stopping Power"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://www.answers.com/topic/atomic-stopping-power> ;
+.
+quantity:TotalCross-Section
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "\\textit{Total Cross-section} is related to the absorbance of the light intensity through Beer-Lambert's law. It is the sum of all cross-sections corresponding to the various reactions or processes between an incident particle of specified type and energy and a target particle."^^xsd:string ;
+  qudt:symbol "\\sigma_{tot}, \\sigma_T"^^xsd:string ;
+  rdfs:label "Total Cross-section"^^xsd:string ;
+  skos:broader quantity:Cross-Section ;
+  skos:prefLabel "Total Cross-section"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cross_section_(physics)> ;
+.
+quantity:TotalIonization
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Total Ionization} by a particle, total mean charge, divided by the elementary charge, $e$, of all positive ions produced by an ionizing charged particle along its entire path and along the paths of any secondary charged particles."^^xsd:string ;
+  qudt:latexDefinition "$N = \\int N_i dl$."^^xsd:string ;
+  qudt:symbol "N_i"^^xsd:string ;
+  rdfs:label "Total Ionization"^^xsd:string ;
+  skos:prefLabel "Total Ionization"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ionization#Classical_ionization> ;
+.
+quantity:TotalLinearStoppingPower
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-PER-M ;
+  qudt:description "The \\textit{Total Linear Stopping Power} is defined as the average energy loss of the particle per unit path length."^^xsd:string ;
+  qudt:latexDefinition "$S = -\\frac{dE}{dx}$, where $-dE$ is the energy decrement in the $x-direction$ along an elementary path with the length $dx$."^^xsd:string ;
+  qudt:symbol "S"^^xsd:string ;
+  rdfs:label "Total Linear Stopping Power"^^xsd:string ;
+  skos:prefLabel "Total Linear Stopping Power"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stopping_power_(particle_radiation)> ;
+.
+quantity:TotalMassStoppingPower
+  rdf:type qudt:AtomicPhysicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-M2-PER-KG ;
+  qudt:description "If a substance is compared in gaseous and solid form, then the linear stopping powers of the two states are very different just because of the different density. One therefore often divides S(E) by the density of the material to obtain the \\textit{Mass Stopping Power}. The mass stopping power then depends only very little on the density of the material."^^xsd:string ;
+  qudt:latexDefinition "$S_m = \\frac{S}{\\rho}$, where $S$ is the total linear stopping power and $\\rho$ is the mass density of the sample."^^xsd:string ;
+  qudt:symbol "S_m"^^xsd:string ;
+  rdfs:label "Total Mass Stopping Power"^^xsd:string ;
+  skos:prefLabel "Total Mass Stopping Power"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stopping_power_(particle_radiation)> ;
+.
+<http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Vocabulary Catalog Entry v1.2"^^xsd:string ;
+.

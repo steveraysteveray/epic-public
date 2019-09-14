@@ -1,0 +1,72 @@
+# baseURI: http://siemens.com/schemas/kps/oadr_tweaks
+# imports: http://openadr.org/oadr-2.0b/2012/07
+# prefix: oadr_tweaks
+
+@prefix oadr_tweaks: <http://siemens.com/schemas/kps/oadr_tweaks#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://docs.oasis-open.org/ns/energyinterop/201110#EiEventSignalType>
+  vaem:comment """Updated EiEventSignalType with property p2012-07:currencyPerKWhRef (defined in http://siemens.com/schemas/kps/oadr_tweaks aka this file). Initially, only the energyinterop:itemBaseRef property was defined. Although both properties refer to any instance of type p2011-06:ItemBase, the SemanticXML functionality requires an explicit sxml annotation of currencyPerKWhRef to be present on the constructed XML message which is produced by mapping the EPIC instances back to OpenADR instances and then, using SemanticXML construct XML from RDF. Therefore, the mapping file http://siemens.com/mapping/epic2oadr has also been updated to reflect these changes (see class fsgim-einterop:EiEventSignalType). 
+""" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+      owl:onProperty <http://openadr.org/oadr-2.0b/2012/07#currencyPerKWhRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://openadr.org/oadr-2.0b/2012/07#currencyPerKWhRef> ;
+    ] ;
+.
+<http://docs.oasis-open.org/ns/energyinterop/201110#IntervalType>
+  vaem:comment """Updated <http://docs.oasis-open.org/ns/energyinterop/201110#IntervalType> class definition with  property <http://docs.oasis-open.org/ns/energyinterop/201110#signalPayloadRef> or alt. energyinterop:signalPayloadBaseRef (defined in http://siemens.com/schemas/kps/oadr_tweaks aka this file). Initially, only the energyinterop:streamPayloadBaseRef property was defined, referring to an instance of  icalendar-stream:StreamPayloadBase. This property explicitly refers to an instance of  energyinterop:signalPayload (also defined in this file). Although energyinterop:signalPayload is a subclassOf icalendar-stream:StreamPayloadBase, the SemanticXML functionality requires an explicit sxml annotation of signalPayload to be present for the constructed XML message - which is produced by mapping the EPIC instances back to OpenADR instances - to include the correct XML namespace and elements (i.e. <energyinterop:signalPayload> instead of the originally generated <energyinterop:streamPayload>).This change is also in accordance with the OpenADR Conformance Rules regarding the OadrDistributeEvent. For more information, please refer to OpenADR 2.0b Profile Specification (llink : https://drive.google.com/open?id=0ByHEprcY_BsMeUJtWlJDRUQtNW8) Section 11.2.2 EiEvent – Additional 2.0b Conformance Rules (pg. 78) Rule 100. Therefore, the mapping file http://siemens.com/mapping/epic2oadr has also been updated to reflect these changes (see class fsgim-einterop:IntervalDataContainer). 
+""" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://docs.oasis-open.org/ns/energyinterop/201110#SignalPayload> ;
+      owl:onProperty <http://docs.oasis-open.org/ns/energyinterop/201110#signalPayloadRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://docs.oasis-open.org/ns/energyinterop/201110#signalPayloadRef> ;
+    ] ;
+.
+<http://docs.oasis-open.org/ns/energyinterop/201110#SignalPayloadType>
+  vaem:comment """Updated <http://docs.oasis-open.org/ns/energyinterop/201110#SignalPayloadType> class definition with  property <http://docs.oasis-open.org/ns/energyinterop/201110#payloadFloatRef > or alt. energyinterop:payloadFloatRef (defined in original energyinterop schema). Initially, only the energyinterop:payloadBaseRef property was defined, referring to an instance of  energyinterop:PayloadBase (left for backwards compatibility) . This property explicitly refers to an instance of  energyinterop:PayloadFloat. Although energyinterop:PayloadFloat is a subclassOf energyinterop:PayloadBase, the SemanticXML functionality requires an explicit sxml annotation of PayloadFloat to be present for the constructed XML message - which is produced by mapping the EPIC instances back to OpenADR instances - to include the correct XML namespace and elements (i.e. <energyinterop:payloadFloat> instead of the originally generated <energyinterop:payloadBase>).This change is also in accordance with the OpenADR Conformance Rules regarding the OadrDistributeEvent. For more information, please refer to OpenADR 2.0b Profile Specification (llink : https://drive.google.com/open?id=0ByHEprcY_BsMeUJtWlJDRUQtNW8) Section 11.2.2 EiEvent – Additional 2.0b Conformance Rules (pg. 78) Rule 100. Therefore, the mapping file http://siemens.com/mapping/epic2oadr has also been updated to reflect these changes (see class fsgim-einterop:IntervalDataContainer). 
+""" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://docs.oasis-open.org/ns/energyinterop/201110#PayloadFloat> ;
+      owl:onProperty <http://docs.oasis-open.org/ns/energyinterop/201110#payloadFloatRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://docs.oasis-open.org/ns/energyinterop/201110#payloadFloatRef> ;
+    ] ;
+.
+<http://docs.oasis-open.org/ns/energyinterop/201110#signalPayloadRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#signalPayload" ;
+  vaem:comment """This property was explicitly defined to update the http://docs.oasis-open.org/ns/energyinterop/201110#IntervalType class definition which initially had only the property streamPayloadBaseRef (left for backwards compatibility). The purpose of adding this property was to have an explicit sxml:tag annotation so that the constructed XML message contains the correct XML namespace and elements definitions regarding the signalPayload, i.e. <energyinterop:signalPayload> whereas oadr schema initially generated <energyinterop:streamPayload>.   For more information, please refer to OpenADR 2.0b Profile Specification (llink : https://drive.google.com/open?id=0ByHEprcY_BsMeUJtWlJDRUQtNW8) Section 11.2.2 EiEvent – Additional 2.0b Conformance Rules (pg. 78) Rule 100. Therefore, the mapping file http://siemens.com/mapping/epic2oadr has also been updated to reflect these changes (see class fsgim-einterop:IntervalDataContainer). 
+""" ;
+  rdfs:label "signal Payload Ref" ;
+.
+<http://openadr.org/oadr-2.0b/2012/07#currencyPerKWhRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#currencyPerKWh" ;
+  vaem:comment "This property was explicitly defined to update the <http://docs.oasis-open.org/ns/energyinterop/201110#EiEventSignalType> class definition which initially had only the property itemBaseRef (left for backwards compatibility). The purpose of adding this property was to have an explicit sxml:tag annotation so that the constructed XML message contains the correct XML namespace and elements definitions regarding the currencyPerKWhRef, i.e. <oadr:currencyPerKWh> whereas oadr schema initially generated <energyinterop:itemBase> which differs from the sample given by EPRI and might cause errors when parsed by third-party sources. Therefore, the mapping file http://siemens.com/mapping/epic2oadr has also been updated to reflect these changes (see class fsgim-einterop:EiEventSignalType). " ;
+  rdfs:label "currencyPerKWh Ref" ;
+.
+<http://siemens.com/schemas/kps/oadr_tweaks>
+  rdf:type owl:Ontology ;
+  owl:imports <http://openadr.org/oadr-2.0b/2012/07> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

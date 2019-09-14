@@ -1,0 +1,200 @@
+# baseURI: null
+
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms: <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference: <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual: <http://topbraid.org/visual#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[
+  rdf:type visual:Graph ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/schemas/kps/cim-tariff#A01Tariff> ;
+      visual:height "53"^^xsd:int ;
+      visual:width "169"^^xsd:int ;
+      visual:x "887"^^xsd:int ;
+      visual:y "449"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/schemas/kps/cim-tariff#PGEA01SummerProfile> ;
+      visual:height "53"^^xsd:int ;
+      visual:width "249"^^xsd:int ;
+      visual:x "386"^^xsd:int ;
+      visual:y "826"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/schemas/kps/cim-tariff#PGEA01WinterProfile> ;
+      visual:height "53"^^xsd:int ;
+      visual:width "239"^^xsd:int ;
+      visual:x "911"^^xsd:int ;
+      visual:y "541"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/schemas/kps/cim-tariff#PGE_A01_PricingStructure> ;
+      visual:height "89"^^xsd:int ;
+      visual:width "238"^^xsd:int ;
+      visual:x "853"^^xsd:int ;
+      visual:y "323"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#PGEA01SummerPeriod0Consumption> ;
+      visual:height "89"^^xsd:int ;
+      visual:width "276"^^xsd:int ;
+      visual:x "25"^^xsd:int ;
+      visual:y "520"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#PGEA01SummerPeriod1Consumption> ;
+      visual:height "89"^^xsd:int ;
+      visual:width "276"^^xsd:int ;
+      visual:x "25"^^xsd:int ;
+      visual:y "631"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#PGEA01SummerPeriod2Consumption> ;
+      visual:height "89"^^xsd:int ;
+      visual:width "276"^^xsd:int ;
+      visual:x "27"^^xsd:int ;
+      visual:y "741"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#PGEA01WinterPeriod0Consumption> ;
+      visual:height "89"^^xsd:int ;
+      visual:width "266"^^xsd:int ;
+      visual:x "1426"^^xsd:int ;
+      visual:y "387"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#PGEA01WinterPeriod1Consumption> ;
+      visual:height "89"^^xsd:int ;
+      visual:width "266"^^xsd:int ;
+      visual:x "1423"^^xsd:int ;
+      visual:y "491"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialSummerWeekdayAfternoon> ;
+      visual:height "179"^^xsd:int ;
+      visual:width "287"^^xsd:int ;
+      visual:x "1654"^^xsd:int ;
+      visual:y "928"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialSummerWeekdayEarlyMorning> ;
+      visual:height "179"^^xsd:int ;
+      visual:width "304"^^xsd:int ;
+      visual:x "261"^^xsd:int ;
+      visual:y "927"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialSummerWeekdayEvening> ;
+      visual:height "179"^^xsd:int ;
+      visual:width "275"^^xsd:int ;
+      visual:x "813"^^xsd:int ;
+      visual:y "927"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialSummerWeekdayMorning> ;
+      visual:height "179"^^xsd:int ;
+      visual:width "279"^^xsd:int ;
+      visual:x "1098"^^xsd:int ;
+      visual:y "928"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialSummerWeekdayNight> ;
+      visual:height "179"^^xsd:int ;
+      visual:width "263"^^xsd:int ;
+      visual:x "1384"^^xsd:int ;
+      visual:y "928"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialSummerWeekend> ;
+      visual:height "143"^^xsd:int ;
+      visual:width "234"^^xsd:int ;
+      visual:x "572"^^xsd:int ;
+      visual:y "927"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialWinterWeekdayDay> ;
+      visual:height "179"^^xsd:int ;
+      visual:width "243"^^xsd:int ;
+      visual:x "1172"^^xsd:int ;
+      visual:y "631"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialWinterWeekdayMorning> ;
+      visual:height "179"^^xsd:int ;
+      visual:width "269"^^xsd:int ;
+      visual:x "896"^^xsd:int ;
+      visual:y "631"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialWinterWeekdayNight> ;
+      visual:height "179"^^xsd:int ;
+      visual:width "253"^^xsd:int ;
+      visual:x "1423"^^xsd:int ;
+      visual:y "629"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/cim-tariff#commercialWinterWeekend> ;
+      visual:height "143"^^xsd:int ;
+      visual:width "224"^^xsd:int ;
+      visual:x "1687"^^xsd:int ;
+      visual:y "629"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/epic/pilot-buildings#OCCElectricalService> ;
+      visual:height "53"^^xsd:int ;
+      visual:width "234"^^xsd:int ;
+      visual:x "970"^^xsd:int ;
+      visual:y "143"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/epic/pilot-buildings#OCCElectricityServiceContract> ;
+      visual:height "53"^^xsd:int ;
+      visual:width "249"^^xsd:int ;
+      visual:x "962"^^xsd:int ;
+      visual:y "233"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/epic/pilot-buildings#PGE> ;
+      visual:height "53"^^xsd:int ;
+      visual:width "208"^^xsd:int ;
+      visual:x "1170"^^xsd:int ;
+      visual:y "323"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://siemens.com/vocab/kps/epic/pilot-buildings#PilotBuilding_OrindaCommunityCenter> ;
+      visual:height "71"^^xsd:int ;
+      visual:width "298"^^xsd:int ;
+      visual:x "938"^^xsd:int ;
+      visual:y "35"^^xsd:int ;
+    ] ;
+  visual:depicts <http://siemens.com/vocab/kps/epic/pilot-buildings#PilotBuilding_OrindaCommunityCenter> ;
+  rdfs:label "Commercial tariff A01" ;
+].

@@ -1,0 +1,605 @@
+# baseURI: http://qudt.org/1.2/vocab/isq/quantity/information-science-and-technology
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/dimension
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/information-theory
+# imports: http://qudt.org/1.2/vocab/quantity/si
+# imports: http://qudt.org/1.2/vocab/unit/informatics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mc: <http://www.linkedmodel.org/owl/schema/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:author
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "author"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:date
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "date"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/isq/quantity/information-science-and-technology>
+  rdf:type owl:Ontology ;
+  dc:author "Jack Hodges"^^xsd:string ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Information Quantities"^^xsd:string ;
+  dc:title "QUDT SI Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "Space and Time"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:CurationGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-24 15:49:49 -0700 (Sun, 24 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/isq/quantity/information-science-and-technology"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/dimension> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/information-theory> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/si> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/informatics> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/si> ;
+.
+quantity:AverageInformtionRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NAT-PER-SEC ;
+  qudt:applicableUnit unit:SH-PER-SEC ;
+  qudt:description "\\textit{Average Informtion Rate} is the character mean entropy per unit of time."^^xsd:string ;
+  qudt:latexDefinition "$H^* = H' | t(X)$, where $H'$ is the character mean entropy and $t(X)$ is the mean value of the duraction of a character in the set $X$."^^xsd:string ;
+  qudt:symbol "H^*"^^xsd:string ;
+  rdfs:label "Average Informtion Rate"^^xsd:string ;
+  skos:broader quantity:InformationEntropy ;
+  skos:prefLabel "Average Informtion Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:AverageTransinformationRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:HART-PER-SEC ;
+  qudt:applicableUnit unit:NAT-PER-SEC ;
+  qudt:applicableUnit unit:SH-PER-SEC ;
+  qudt:description "\\textit{Average Transinformation Rate} is the mean transinformation content per character per unit of time."^^xsd:string ;
+  qudt:latexDefinition "$T^* = \\frac{T'}{\\sum_{i=1}^n\\sum_{j=1}^mp(x_i,y_j)t(x_i,y_j)}$, where $T'$ is character mean transinformation content and $t(x_i,y_j)$ is the mean duration of the pair of characters $(x_i,y_j)$ with joint probability $p(x_i,y_j)$."^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  rdfs:label "Average Transinformation Rate"^^xsd:string ;
+  skos:broader quantity:InformationContent ;
+  skos:prefLabel "Average Transinformation Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://www.springerreference.com/docs/html/chapterdbid/8612.html> ;
+.
+quantity:BitPeriod
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "\\textit{Bit Period} is the time it takes to send a bit."^^xsd:string ;
+  qudt:latexDefinition "$T_b = \\frac{1}{r_b}$, where $r_b$ is the bit rate when the binary digits (bits) are transmitted in series."^^xsd:string ;
+  qudt:symbol "T_b, T_{bit}"^^xsd:string ;
+  rdfs:label "Bit Period"^^xsd:string ;
+  skos:broader quantity:Period ;
+  skos:prefLabel "Bit Period"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://wiki.answers.com/Q/Difference_between_bit_rate_and_bit_period> ;
+.
+quantity:BitRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:description "\\textit{Bit Rate} is the transfer rate where the data elements are binary digits."^^xsd:string ;
+  qudt:symbol "r_b, r_{bit}"^^xsd:string ;
+  rdfs:label "Bit Rate"^^xsd:string ;
+  skos:broader quantity:InformationFlowRate ;
+  skos:exactMatch <http://dbpedia.org/resource/Data_rate> ;
+  skos:prefLabel "Bit Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bit_rate> ;
+.
+quantity:CallingRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:description "\\textit{Calling Rate} is the number of call attempts over a specified time interval divided by the duration of the interval."^^xsd:string ;
+  qudt:symbol "\\lambda"^^xsd:string ;
+  rdfs:label "Calling Rate"^^xsd:string ;
+  skos:broader quantity:InformationFlowRate ;
+  skos:exactMatch <http://dbpedia.org/resource/Data_rate> ;
+  skos:prefLabel "Calling Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:CarrierPower
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "\\textit{Carrier Power} is the power supplied to the antenna feed by a radio transmitter taken under the condition of no modulation."^^xsd:string ;
+  qudt:symbol "P_C"^^xsd:string ;
+  rdfs:label "Carrier Power"^^xsd:string ;
+  skos:prefLabel "Carrier Power"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:ChannelCapacity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Channel Capacity} is the tightest upper bound on the amount of information that can be reliably transmitted over a communications channel."^^xsd:string ;
+  qudt:latexDefinition "$C' = max T'$, where $T'$ is character mean transinformation content."^^xsd:string ;
+  qudt:symbol "C'"^^xsd:string ;
+  rdfs:label "Channel Capacity"^^xsd:string ;
+  skos:prefLabel "Channel Capacity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Channel_capacity> ;
+.
+quantity:ChannelTimeCapacity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:SH-PER-SEC ;
+  qudt:description "\\textit{Channel Time Capacity} is the channel time rate."^^xsd:string ;
+  qudt:latexDefinition "$C^* = max T^*$, where $T^*$ is average transinformation rate."^^xsd:string ;
+  qudt:symbol "C^*"^^xsd:string ;
+  rdfs:label "Channel Time Capacity"^^xsd:string ;
+  skos:prefLabel "Channel Time Capacity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:CharacterMeanEntropy
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Character Mean Entropy} is the mean entropy per character of all possible messages from a stationary source."^^xsd:string ;
+  qudt:latexDefinition "$H' = \\lim_{m \\to \\infty}{\\frac{H_m}{m}}$, where $H_m$ is the entropy of the set of all sequences of $m$ characters."^^xsd:string ;
+  qudt:symbol "H'"^^xsd:string ;
+  rdfs:label "Character Mean Entropy"^^xsd:string ;
+  skos:broader quantity:InformationEntropy ;
+  skos:prefLabel "Character Mean Entropy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://www.springerreference.com/docs/html/chapterdbid/9897.html> ;
+.
+quantity:CharacterMeanTransinformationContent
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Character Mean Transinformation Content} is the mean transinformation content per character for all possible messages from a stationary message source."^^xsd:string ;
+  qudt:latexDefinition "$T' = \\lim_{m \\to \\infty}{\\frac{T_m}{m}}$, where $T_m$ is the mean transinformation content for all pairs of input and output sequences of $m$ characters."^^xsd:string ;
+  qudt:symbol "T'"^^xsd:string ;
+  rdfs:label "Character Mean Transinformation Content"^^xsd:string ;
+  skos:broader quantity:InformationEntropy ;
+  skos:prefLabel "Character Mean Transinformation Content"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://www.springerreference.com/docs/html/chapterdbid/9898.html> ;
+.
+quantity:ClockRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:HZ ;
+  qudt:description "\\textit{Clock Rate} is the frequency at which a clock oscillates."^^xsd:string ;
+  qudt:symbol "f_{cl}"^^xsd:string ;
+  rdfs:label "Clock Rate"^^xsd:string ;
+  skos:prefLabel "Clock Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Clock_rate> ;
+.
+quantity:CompletedCallDensity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:description "\\textit{Completed Call Density} is the call density for the call attempts that result in the transmission of an answer signal."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Completed Call Density"^^xsd:string ;
+  skos:prefLabel "Completed Call Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:ConditionalEntropy
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Conditional Entropy} quantifies the amount of information needed to describe the outcome of a random variable  given that the value of another random variable  is known."^^xsd:string ;
+  qudt:latexDefinition "$H(X \\mid Y) = \\sum_{i=1}^n \\sum_{j=1}^m p(x_i,y_j)I(x_i \\mid y_j)$, where $p(x_i, y_j)$ is the joint probability of events $x_i$ and $y_j$ and $I(x_i \\mid y_j)$ is the conditional information content."^^xsd:string ;
+  qudt:symbol "H(X \\mid Y)"^^xsd:string ;
+  rdfs:label "Conditional Entropy"^^xsd:string ;
+  skos:broader quantity:InformationEntropy ;
+  skos:prefLabel "Conditional Entropy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Conditional_entropy> ;
+.
+quantity:ConditionalInformationContent
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Conditional Information Content} is the information content of event $x$ under the condition that event $y$ has occurred."^^xsd:string ;
+  qudt:latexDefinition "$I(x\\mid y) = I(x, y) - I(y)$, where $I(x, y)$ is thejoint information content and $I(y)$ is the information content of event $y$."^^xsd:string ;
+  qudt:symbol "I(x)"^^xsd:string ;
+  rdfs:label "Conditional Information Content"^^xsd:string ;
+  skos:broader quantity:InformationContent ;
+  skos:prefLabel "Conditional Information Content"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Information_content> ;
+.
+quantity:DecisionContent
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Decision Content} is the "^^xsd:string ;
+  qudt:latexDefinition "$D_a = \\log_a{n}$, where $a$ is the number of possibilities at each decision and $n$ is the number of events."^^xsd:string ;
+  qudt:symbol "D_a"^^xsd:string ;
+  rdfs:label "Decision Content"^^xsd:string ;
+  skos:prefLabel "Decision Content"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:EquivalentBinaryStorageCapacity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Equivalent Binary Storage Capacity} is minimum storage capacity of a bit-organized storage device which would contain the amount of data in the given storage device is equal to the smallest integer greater than or equal to the equivalent binary storage capacity."^^xsd:string ;
+  qudt:latexDefinition "$M_e = lb n$, where $n$ is the number of possible states of the given device."^^xsd:string ;
+  qudt:symbol "M_e"^^xsd:string ;
+  rdfs:label "Equivalent Binary Storage Capacity"^^xsd:string ;
+  skos:broader quantity:StorageCapacity ;
+  skos:prefLabel "Equivalent Binary Storage Capacity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Computer_data_storage#Capacity> ;
+.
+quantity:EquivalentBitRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:description "\\textit{Equivalent Bit Rate} is the binary digit (bit) rate equivalent to a transfer rate for specified data elements."^^xsd:string ;
+  qudt:symbol "r_e"^^xsd:string ;
+  rdfs:label "Equivalent Bit Rate"^^xsd:string ;
+  skos:broader quantity:InformationFlowRate ;
+  skos:exactMatch <http://dbpedia.org/resource/Data_rate> ;
+  skos:prefLabel "Equivalent Bit Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bit_rate> ;
+.
+quantity:Equivocation
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Equivocation} is the conditional entropy of a set $X$ emitted characters given the set of $Y received characters."^^xsd:string ;
+  qudt:symbol "H(X \\mid Y)"^^xsd:string ;
+  rdfs:label "Equivocation"^^xsd:string ;
+  skos:broader quantity:ConditionalEntropy ;
+  skos:prefLabel "Equivocation"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Entropy_(information_theory)> ;
+  prov:wasInfluencedBy <http://simple.wikipedia.org/wiki/Information_entropy> ;
+.
+quantity:ErrorProbability
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Error Probability} is the probability that a data element be incorrectly received."^^xsd:string ;
+  qudt:symbol "P"^^xsd:string ;
+  rdfs:label "Error Probability"^^xsd:string ;
+  skos:prefLabel "Error Probability"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Probability_of_error> ;
+.
+quantity:HammingDistance
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Hamming Distance} is the number of digit positions in which the corresponding digits of two words of the same length are different."^^xsd:string ;
+  qudt:symbol "d_n"^^xsd:string ;
+  rdfs:label "Hamming Distance"^^xsd:string ;
+  skos:prefLabel "Hamming Distance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hamming_distance> ;
+.
+quantity:InformationContent
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Information Content} refer to the meaning of information as opposed to the form or carrier of the information. "^^xsd:string ;
+  qudt:latexDefinition "$I(x) = \\log_{2}{\\frac{1}{p(x)}} Sh =  \\log{\\frac{1}{p(x)}} Hart = \\ln{\\frac{1}{p(x)}} nat$, where $p(x)$ is the probability of event $x$."^^xsd:string ;
+  qudt:symbol "I(x)"^^xsd:string ;
+  rdfs:label "Information Content"^^xsd:string ;
+  skos:prefLabel "Information Content"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Information_content> ;
+.
+quantity:InformationEntropy
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:latexDefinition "$H(x) = \\sum_{i=1}^n p(x_i)I(x_i)$, sor the set $X = \\left \\{ x_1, ..., x_n \\right \\}$, where $p(x_i)$ is the probability and $I(x_i)$ is the information content of event $x_i$."^^xsd:string ;
+  qudt:symbol "H"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Entropy_(information_theory)> ;
+.
+quantity:Irrelevance
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Irrelevance} is the conditional entropy of a set $Y$ of received characters given the set $X$ of emitted characters."^^xsd:string ;
+  qudt:latexDefinition "$H(Y \\mid X) = H(X \\mid Y) + H(Y) - H(X)$, where $H(X \\mid Y)$ is equivocation and $H$ is entropy."^^xsd:string ;
+  qudt:symbol "H(Y \\mid X)"^^xsd:string ;
+  rdfs:label "Irrelevance"^^xsd:string ;
+  skos:broader quantity:InformationEntropy ;
+  skos:prefLabel "Irrelevance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Conditional_entropy> ;
+.
+quantity:JointInformationContent
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Joint Information Content} is the information content that is conveyed by the occurrence of two events of definite joint probability."^^xsd:string ;
+  qudt:latexDefinition "$I(x, y) = \\log_{2}{\\frac{1}{p(x, y)}} Sh =  \\log{\\frac{1}{p(x, y)}} Hart = \\ln{\\frac{1}{p(x, y)}} nat$, where $p(x, y)$ is the probability of events $x$ and $y$."^^xsd:string ;
+  qudt:symbol "I(x)"^^xsd:string ;
+  rdfs:label "Joint Information Content"^^xsd:string ;
+  skos:broader quantity:InformationContent ;
+  skos:prefLabel "Joint Information Content"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Information_content> ;
+.
+quantity:LossProbability
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Loss Probability} is the probability of losing a call attempt."^^xsd:string ;
+  qudt:symbol "B"^^xsd:string ;
+  rdfs:label "Loss Probability"^^xsd:string ;
+  skos:prefLabel "Loss Probability"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:MaximumEntropy
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Maximum Entropy} occurs when $p(x_i) = 1/n$ for $i = 1, ..., n$. Maximum entropy is sometimes called \\emph{decision content} because the value is the same when the base is an integer, for the same number of events."^^xsd:string ;
+  qudt:symbol "H_0"^^xsd:string ;
+  rdfs:label "Maximum Entropy"^^xsd:string ;
+  skos:broader quantity:InformationEntropy ;
+  skos:closeMatch quantity:RelativeEntropy ;
+  skos:prefLabel "Maximum Entropy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Entropy_(information_theory)> ;
+  prov:wasInfluencedBy <http://simple.wikipedia.org/wiki/Information_entropy> ;
+.
+quantity:MeanQueueLength
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Mean Queue Length} is the time average of queue length."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:label "Mean Queue Length"^^xsd:string ;
+  skos:prefLabel "Mean Queue Length"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/M/M/1_queue> ;
+.
+quantity:MeanTransinformationContent
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:HARTLEY ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Mean Transinformation Content} is the average transinformation content."^^xsd:string ;
+  qudt:latexDefinition "$T(X,Y) = \\sum_{i=1}^n\\sum_{j=1}^mp(x_i,y_j)T(x_i,y_j)$ for the sets $X = \\left \\{ x_1, ..., x_n \\right \\}$ and $Y = \\left \\{ y_1, ..., y_m \\right \\}$, where $p(x_i,y_j)$ is the joint probability of events $x_i$ and $y_j$, and $T(x_i,y_j)$ is their transinformation content."^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  rdfs:label "Mean Transinformation Content"^^xsd:string ;
+  skos:broader quantity:InformationContent ;
+  skos:prefLabel "Mean Transinformation Content"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:ModulationRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:description "\\textit{Modulation Rate} is the rate at which a carrier is varied to represent the information in a digital signal. The inverse of the shortest duration of a signal element."^^xsd:string ;
+  qudt:symbol "r_m"^^xsd:string ;
+  rdfs:label "Modulation Rate"^^xsd:string ;
+  skos:broader quantity:InformationFlowRate ;
+  skos:exactMatch <http://dbpedia.org/resource/Data_rate> ;
+  skos:prefLabel "Modulation Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bit_rate> ;
+  prov:wasInfluencedBy <http://www.its.bldrdoc.gov/fs-1037/dir-023/_3373.htm> ;
+.
+quantity:PeriodOfDataElements
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "\\textit{Period of Data Elements} is the inverse of the data transfer rate."^^xsd:string ;
+  qudt:latexDefinition "$T = \\frac{1}{r}$, where $r$ is the transfer rate when the data elements are transmitted in series."^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  rdfs:label "Period of Data Elements"^^xsd:string ;
+  skos:broader quantity:Period ;
+  skos:prefLabel "Period of Data Elements"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:QuantizingDistortionPower
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "\\textit{Quantizing Distortion Power} is the distortion of a signal resulting from the process of quantizing an original signal when the values to be quantized are within the working range of the quantizer."^^xsd:string ;
+  qudt:symbol "T_Q"^^xsd:string ;
+  rdfs:label "Quantizing Distortion Power"^^xsd:string ;
+  skos:prefLabel "Quantizing Distortion Power"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:Redundancy
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Relative Redundancy} is the number of bits used to transmit a message minus the number of bits of actual information in the message. "^^xsd:string ;
+  qudt:latexDefinition "$R = H_0 - H$, where $H_0$ is maximum entropy and $H$ is entropy."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  rdfs:label "Redundancy"^^xsd:string ;
+  skos:prefLabel "Redundancy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Redundancy_(information_theory)> ;
+.
+quantity:RelativeEntropy
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Entropy} is the ratio of entropy to maximum entropy."^^xsd:string ;
+  qudt:latexDefinition "$H_r = \\frac{H}{H_0}$, where $H$ is entropy and $H_0$ is maximum entropy."^^xsd:string ;
+  qudt:symbol "H_R"^^xsd:string ;
+  rdfs:label "Relative Entropy"^^xsd:string ;
+  skos:broader quantity:InformationEntropy ;
+  skos:closeMatch quantity:MaximumEntropy ;
+  skos:prefLabel "Relative Entropy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Entropy_(information_theory)> ;
+  prov:wasInfluencedBy <http://simple.wikipedia.org/wiki/Information_entropy> ;
+.
+quantity:RelativeRedundancy
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Redundancy} the maximum possible data compression ratio."^^xsd:string ;
+  qudt:latexDefinition "$r = \\frac{R}{H_0}$, where $R$ is redundancy and $H_0$ is maximum entropy."^^xsd:string ;
+  qudt:symbol "r"^^xsd:string ;
+  rdfs:label "Relative Redundancy"^^xsd:string ;
+  skos:broader quantity:Redundancy ;
+  skos:prefLabel "Relative Redundancy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Redundancy_(information_theory)> ;
+.
+quantity:SignalEnergyPerBinaryDigit
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Signal Energy per Binary Digit} is the "^^xsd:string ;
+  qudt:latexDefinition "$E_b = P_c \\cdot T_b$, where $P_c$ is the carrier power and $T_b$ is the period of binary digits (bits)."^^xsd:string ;
+  qudt:symbol "E_b, E_{bit}"^^xsd:string ;
+  rdfs:label "Signal Energy per Binary Digit"^^xsd:string ;
+  skos:prefLabel "Signal Energy per Binary Digit"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:StorageCapacity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Storage Capacity} is the amount of data that can be contained in a storage device, expressed as a number of specified data elements."^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Storage Capacity"^^xsd:string ;
+  skos:prefLabel "Storage Capacity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Computer_data_storage#Capacity> ;
+.
+quantity:TrafficCarriedIntensity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:ERLANG ;
+  qudt:description "\\textit{Traffic Carried Intensity} is the traffic intensity of the traffic served by a particular pool of resources."^^xsd:string ;
+  qudt:symbol "Y"^^xsd:string ;
+  rdfs:label "Traffic Carried Intensity"^^xsd:string ;
+  skos:broader quantity:TrafficIntensity ;
+  skos:prefLabel "Traffic Carried Intensity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Traffic_intensity> ;
+.
+quantity:TrafficIntensity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:ERLANG ;
+  qudt:description "\\textit{Traffic Intensity} is the number of simultaneously busy resources in a particular pool of resources"^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Traffic Intensity"^^xsd:string ;
+  skos:prefLabel "Traffic Intensity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Traffic_intensity> ;
+.
+quantity:TrafficOrderedIntensity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:ERLANG ;
+  qudt:description "\\textit{Traffic Ordered Intensity} is the traffic intensity of the traffic that would have been generated by the users of a pool or resources if their use had not been limited by the size of the pool."^^xsd:string ;
+  qudt:symbol "A_0"^^xsd:string ;
+  rdfs:label "Traffic Ordered Intensity"^^xsd:string ;
+  skos:broader quantity:TrafficIntensity ;
+  skos:prefLabel "Traffic Ordered Intensity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Traffic_intensity> ;
+.
+quantity:TransferRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:description "\\textit{Transfer Rate} is the quotient of the number of specified data elements transferred in a time interval by the duration of the interval."^^xsd:string ;
+  qudt:symbol "r, \\nu"^^xsd:string ;
+  rdfs:label "Transfer Rate"^^xsd:string ;
+  skos:broader quantity:InformationFlowRate ;
+  skos:exactMatch <http://dbpedia.org/resource/Data_rate> ;
+  skos:prefLabel "Transfer Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bit_rate#Goodput_.28data_transfer_rate.29> ;
+.
+quantity:TransinformationContent
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:applicableUnit unit:SHANNON ;
+  qudt:description "\\textit{Transinformation Content} is the "^^xsd:string ;
+  qudt:latexDefinition "$T(x,y) = I(x) \\dashv I(y) - I(x,y)$, where $I(x)$ and $I(y)$ are the information contents of events $x$ and $y$, respectively, and $I(x,y)$ is their joint information content."^^xsd:string ;
+  qudt:symbol "T(x,y)"^^xsd:string ;
+  rdfs:label "Transinformation Content"^^xsd:string ;
+  skos:broader quantity:InformationContent ;
+  skos:prefLabel "Transinformation Content"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.
+quantity:WaitingProbability
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Waiting Probability} is the probability of waiting for a resource."^^xsd:string ;
+  qudt:symbol "W"^^xsd:string ;
+  rdfs:label "Waiting Probability"^^xsd:string ;
+  skos:prefLabel "Waiting Probability"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31898> ;
+.

@@ -1,0 +1,3015 @@
+# baseURI: http://docs.oasis-open.org/ns/energyinterop/201110
+# imports: http://docs.oasis-open.org/ns/emix/2011/06
+# imports: http://docs.oasis-open.org/ns/emix/2011/06/power
+# imports: http://docs.oasis-open.org/ns/energyinterop/201110/payloads
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: urn:ietf:params:xml:ns:icalendar-2.0
+# imports: urn:ietf:params:xml:ns:icalendar-2.0:stream
+# prefix: energyinterop
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix emix: <http://docs.oasis-open.org/ns/emix/2011/06#> .
+@prefix energyinterop: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix icalendar: <urn:ietf:params:xml:ns:icalendar-2.0#> .
+@prefix icalendar-stream: <urn:ietf:params:xml:ns:icalendar-2.0:stream#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix payloads: <http://docs.oasis-open.org/ns/energyinterop/201110/payloads#> .
+@prefix power: <http://docs.oasis-open.org/ns/emix/2011/06/power#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://docs.oasis-open.org/ns/energyinterop/201110>
+  rdf:type owl:Ontology ;
+  owl:imports <http://docs.oasis-open.org/ns/emix/2011/06> ;
+  owl:imports <http://docs.oasis-open.org/ns/emix/2011/06/power> ;
+  owl:imports <http://docs.oasis-open.org/ns/energyinterop/201110/payloads> ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <urn:ietf:params:xml:ns:icalendar-2.0> ;
+  owl:imports <urn:ietf:params:xml:ns:icalendar-2.0:stream> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://docs.oasis-open.org/ns/energyinterop/201110, http://docs.oasis-open.org/ns/energyinterop/201110, http://docs.oasis-open.org/ns/energyinterop/201110, http://docs.oasis-open.org/ns/energyinterop/201110, http://docs.oasis-open.org/ns/energyinterop/201110" ;
+.
+energyinterop:AccuracyDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Accuracy datatype" ;
+  rdfs:subClassOf energyinterop:AccuracyTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:AccuracyTypeDatatype ;
+    ] ;
+.
+energyinterop:AccuracyTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Number is in same units as the payload variable for an Interval. When present with Confidence, indicates the likely variability of the prediction. When present with ReadingType, indicates likely error of Reading." ;
+  rdfs:label "Accuracy type datatype" ;
+  rdfs:subClassOf xsd:float ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:float ;
+    ] ;
+.
+energyinterop:ArrayofResponses
+  rdf:type owl:Class ;
+  dc:description "Collection of Responses. When a service operation regards multiple referenceable items, each referenced item may have its own response. Always accompanied by an overall Response Type." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#ArrayofResponses" ;
+  rdfs:label "Arrayof responses" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponseType ;
+      owl:onProperty energyinterop:responseRef ;
+    ] ;
+.
+energyinterop:ConfidenceDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Confidence datatype" ;
+  rdfs:subClassOf energyinterop:ConfidenceTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:ConfidenceTypeDatatype ;
+    ] ;
+.
+energyinterop:ConfidenceTypeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Confidence type datatype" ;
+  rdfs:subClassOf xsd:unsignedInt ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:unsignedInt ;
+      owl:withRestrictions (
+          [
+            xsd:maxInclusive "100"^^xsd:unsignedInt ;
+          ]
+          [
+            xsd:minInclusive "0"^^xsd:unsignedInt ;
+          ]
+        ) ;
+    ] ;
+.
+energyinterop:CreatedDateTimeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "The dateTime the payload was created" ;
+  rdfs:label "Created date time datatype" ;
+  rdfs:subClassOf icalendar:DateTimeType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype icalendar:DateTimeType ;
+    ] ;
+.
+energyinterop:CurrentValue
+  rdf:type owl:Class ;
+  dc:description "The payloadFloat value of the event interval currently executing." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#currentValue" ;
+  rdfs:label "Current value" ;
+  rdfs:subClassOf energyinterop:CurrentValueType ;
+.
+energyinterop:CurrentValueType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#currentValueType" ;
+  rdfs:label "Current value type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Data point value for event signals or for reporting  current or historical values." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:PayloadFloat ;
+      owl:onProperty energyinterop:payloadFloatRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:payloadFloatRef ;
+    ] ;
+.
+energyinterop:ESET_active
+  rdf:type energyinterop:EventStatusEnumeratedType ;
+  dc:description "The event has been initiated and is currently active." ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "active"^^xsd:token ;
+  rdfs:label "active" ;
+.
+energyinterop:ESET_cancelled
+  rdf:type energyinterop:EventStatusEnumeratedType ;
+  dc:description "The event has been canceled." ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "cancelled"^^xsd:token ;
+  rdfs:label "cancelled" ;
+.
+energyinterop:ESET_completed
+  rdf:type energyinterop:EventStatusEnumeratedType ;
+  dc:description "The event has completed." ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "completed"^^xsd:token ;
+  rdfs:label "completed" ;
+.
+energyinterop:ESET_far
+  rdf:type energyinterop:EventStatusEnumeratedType ;
+  dc:description "Event pending in the far future. The exact definition of how far in the future this refers is dependent upon the market context, but typically means the next day." ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "far"^^xsd:token ;
+  rdfs:label "far" ;
+.
+energyinterop:ESET_near
+  rdf:type energyinterop:EventStatusEnumeratedType ;
+  dc:description "Event pending in the near future. The exact definition of how near in the future the pending event is active is dependent on the market context." ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "near"^^xsd:token ;
+  rdfs:label "near" ;
+.
+energyinterop:ESET_none
+  rdf:type energyinterop:EventStatusEnumeratedType ;
+  dc:description "No event pending" ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "none"^^xsd:token ;
+  rdfs:label "none" ;
+.
+energyinterop:EiActivePeriod
+  rdf:type owl:Class ;
+  dc:description "Time frames relevant to the overall event" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiActivePeriod" ;
+  rdfs:label "Ei active period" ;
+  rdfs:subClassOf energyinterop:EiActivePeriodType ;
+.
+energyinterop:EiActivePeriodType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiActivePeriodType" ;
+  rdfs:label "Ei active period type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom icalendar:Properties ;
+      owl:onProperty energyinterop:propertiesRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom icalendar:Components ;
+      owl:onProperty energyinterop:componentsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:componentsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:propertiesRef ;
+    ] ;
+.
+energyinterop:EiEvent
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEvent" ;
+  rdfs:label "Ei event" ;
+  rdfs:subClassOf energyinterop:EiEventType ;
+.
+energyinterop:EiEventBaseline
+  rdf:type owl:Class ;
+  dc:description "B profile" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventBaseline" ;
+  rdfs:label "Ei event baseline" ;
+  rdfs:subClassOf energyinterop:EiEventBaselineType ;
+.
+energyinterop:EiEventBaselineType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventBaselineType" ;
+  rdfs:label "Ei event baseline type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Descriptive name for baseline" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:baselineName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The duration of the  activity, data, or state" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom icalendar:Duration ;
+      owl:onProperty energyinterop:durationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The starting time for the activity, data, or state change" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom icalendar:Dtstart ;
+      owl:onProperty energyinterop:dtstartRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "This is the unit of the signal." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom emix:ItemBase ;
+      owl:onProperty energyinterop:itemBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Time intervals during which the DR event is active or report data is available" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom icalendar-stream:Intervals ;
+      owl:onProperty energyinterop:intervalsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Unique ID for a specific baseline" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:baselineID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ResourceIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:resourceID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:baselineID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:baselineName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:dtstartRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:durationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:intervalsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:itemBaseRef ;
+    ] ;
+.
+energyinterop:EiEventSignal
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventSignal" ;
+  rdfs:label "Ei event signal" ;
+  rdfs:subClassOf energyinterop:EiEventSignalType ;
+.
+energyinterop:EiEventSignalType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventSignalType" ;
+  rdfs:label "Ei event signal type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "An enumerated value describing the type of signal such as level or price" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:SignalTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:signalType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Descriptive name for signal." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:SignalNameDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType." ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty energyinterop:signalName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifies the resources associated with the logical VEN interface. For events, the values specified are the target for the event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiTarget ;
+      owl:onProperty energyinterop:eiTargetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The payloadFloat value of the event interval currently executing." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom energyinterop:CurrentValue ;
+      owl:onProperty energyinterop:currentValueRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "This is the unit of the signal." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom emix:ItemBase ;
+      owl:onProperty energyinterop:itemBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Time intervals during which the DR event is active or report data is available" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom icalendar-stream:Intervals ;
+      owl:onProperty energyinterop:intervalsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "unique Identifier for a specific event signal" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:signalID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:intervalsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:signalID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:signalName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:signalType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:currentValueRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eiTargetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:itemBaseRef ;
+    ] ;
+.
+energyinterop:EiEventSignals
+  rdf:type owl:Class ;
+  dc:description "Interval data for one or more event signals and/or baselines" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventSignals" ;
+  rdfs:label "Ei event signals" ;
+  rdfs:subClassOf energyinterop:EiEventSignalsType ;
+.
+energyinterop:EiEventSignalsType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventSignalsType" ;
+  rdfs:label "Ei event signals type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "B profile" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiEventBaseline ;
+      owl:onProperty energyinterop:eiEventBaselineRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Interval data for an event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiEventSignal ;
+      owl:onProperty energyinterop:eiEventSignalRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eiEventBaselineRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eiEventSignalRef ;
+    ] ;
+.
+energyinterop:EiEventType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventType" ;
+  rdfs:label "Ei event type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifies the resources associated with the logical VEN interface. For events, the values specified are the target for the event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiTarget ;
+      owl:onProperty energyinterop:eiTargetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Information about the event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EventDescriptor ;
+      owl:onProperty energyinterop:eventDescriptorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Interval data for one or more event signals and/or baselines" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiEventSignals ;
+      owl:onProperty energyinterop:eiEventSignalsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Time frames relevant to the overall event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiActivePeriod ;
+      owl:onProperty energyinterop:eiActivePeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eiActivePeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eiEventSignalsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eiTargetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eventDescriptorRef ;
+    ] ;
+.
+energyinterop:EiExtensionTokenTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Pattern used for extending string enumeration, where allowed." ;
+  rdfs:label "Ei extension token type datatype" ;
+  rdfs:subClassOf xsd:token ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:token ;
+      owl:withRestrictions (
+          [
+            xsd:pattern "x-\\S.*" ;
+          ]
+        ) ;
+    ] ;
+.
+energyinterop:EiOptType
+  rdf:type owl:Class ;
+  dc:description "Opts are used by the VEN to temporarily override the pre-existing agreement. For example, a VEN may opt in to events during the evening, or opt out from events during the world series." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#EiOptType" ;
+  rdfs:label "Ei opt type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A URI identifying a DR Program" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom emix:MarketContext ;
+      owl:onProperty energyinterop:marketContext ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A schedule reflecting device availability for participating in DR events" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom icalendar:Vavailability ;
+      owl:onProperty energyinterop:vavailabilityRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Enumerated value for the opt reason such as x-schedule" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:OptReasonDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType." ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty energyinterop:optReason ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for an opt interaction" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:OptIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:optID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The dateTime the payload was created" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:CreatedDateTimeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:createdDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "optIn or optOut of an event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:OptTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:optType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:VenIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:venID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:SchemaVersionTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType." ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty energyinterop:schemaVersion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:createdDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:optID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:optReason ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:optType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:venID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:marketContext ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:schemaVersion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:vavailabilityRef ;
+    ] ;
+.
+energyinterop:EiReportIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Reference ID for a report" ;
+  rdfs:label "Ei report IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:EiResponse
+  rdf:type owl:Class ;
+  dc:description "Indicate whether received payload is acceptable" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiResponse" ;
+  rdfs:label "Ei response" ;
+  rdfs:subClassOf energyinterop:EiResponseType ;
+.
+energyinterop:EiResponseType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#EiResponseType" ;
+  rdfs:label "Ei response type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A 3 digit response code" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ResponseCodeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:responseCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty energyinterop:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Narrative description of response status" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ResponseDescriptionDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:responseDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:responseCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:responseDescription ;
+    ] ;
+.
+energyinterop:EiTarget
+  rdf:type owl:Class ;
+  dc:description "Identifies the resources associated with the logical VEN interface. For events, the values specified are the target for the event" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiTarget" ;
+  rdfs:label "Ei target" ;
+  rdfs:subClassOf energyinterop:EiTargetType ;
+.
+energyinterop:EiTargetType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#EiTargetType" ;
+  rdfs:label "Ei target type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom power:AggregatedPnode ;
+      owl:onProperty energyinterop:aggregatedPnodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom power:EndDeviceAsset ;
+      owl:onProperty energyinterop:endDeviceAssetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ResourceIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:resourceID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:VenIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:venID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "12"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:PartyIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:partyID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom power:MeterAsset ;
+      owl:onProperty energyinterop:meterAssetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom power:Pnode ;
+      owl:onProperty energyinterop:pnodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom emix:ServiceArea ;
+      owl:onProperty energyinterop:serviceAreaRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom power:ServiceDeliveryPoint ;
+      owl:onProperty energyinterop:serviceDeliveryPointRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom power:ServiceLocation ;
+      owl:onProperty energyinterop:serviceLocationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom power:TransportInterface ;
+      owl:onProperty energyinterop:transportInterfaceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:GroupIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:groupID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:GroupNameDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:groupName ;
+    ] ;
+.
+energyinterop:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value" ;
+  rdfs:subClassOf dtype:EnumeratedValue ;
+.
+energyinterop:EventDescriptor
+  rdf:type owl:Class ;
+  dc:description "Information about the event" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eventDescriptor" ;
+  rdfs:label "Event descriptor" ;
+  rdfs:subClassOf energyinterop:EventDescriptorType ;
+.
+energyinterop:EventDescriptorType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eventDescriptorType" ;
+  rdfs:label "Event descriptor type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "An ID value that identifies a specific DR event instance." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:EventIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:eventID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "An indication of the event state: far, near, active, canceled, completed" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:EventStatusDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:eventStatus ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Any text" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:vtnComment ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Anything other than false indicates a test event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:testEvent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Incremented each time an event is modified." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ModificationNumberDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedInt." ;
+      owl:allValuesFrom xsd:unsignedInt ;
+      owl:onProperty energyinterop:modificationNumber ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The dateTime the payload was created" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:CreatedDateTimeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:createdDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The priority of the event in relation to other events (The lower the number higher the priority. A value of zero (0) indicates no priority, which is the lowest priority by default)." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:unsignedInt. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedInt." ;
+      owl:allValuesFrom xsd:unsignedInt ;
+      owl:onProperty energyinterop:priority ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Why an event was modified" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:modificationReason ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty energyinterop:modificationDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EventDescriptorType-eiMarketContext ;
+      owl:onProperty energyinterop:eiMarketContextRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:createdDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eiMarketContextRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eventID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eventStatus ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:modificationNumber ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:modificationDateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:modificationReason ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:priority ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:testEvent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:vtnComment ;
+    ] ;
+.
+energyinterop:EventDescriptorType-eiMarketContext
+  rdf:type owl:Class ;
+  rdfs:label "Event descriptor type-ei market context" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty emix:marketContext ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty emix:marketContext ;
+    ] ;
+.
+energyinterop:EventIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "An ID value that identifies a specific DR event instance." ;
+  rdfs:label "Event IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:EventResponses
+  rdf:type owl:Class ;
+  dc:description "optIn or optOut responses for received events" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eventResponses" ;
+  rdfs:label "Event responses" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EventResponses-eventResponse ;
+      owl:onProperty energyinterop:eventResponseRef ;
+    ] ;
+.
+energyinterop:EventResponses-eventResponse
+  rdf:type owl:Class ;
+  rdfs:label "Event responses-event response" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A 3 digit response code" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ResponseCodeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:responseCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty energyinterop:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Narrative description of response status" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ResponseDescriptionDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:responseDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "optIn or optOut of an event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:OptTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:optType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:QualifiedEventID ;
+      owl:onProperty energyinterop:qualifiedEventIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:optType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:qualifiedEventIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:responseCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:responseDescription ;
+    ] ;
+.
+energyinterop:EventStatusDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Event status datatype" ;
+  rdfs:subClassOf energyinterop:EventStatusEnumeratedType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:EventStatusEnumeratedType ;
+    ] ;
+.
+energyinterop:EventStatusEnumeratedType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#EventStatusEnumeratedType" ;
+  rdfs:label "Event status enumerated type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      energyinterop:ESET_active
+      energyinterop:ESET_cancelled
+      energyinterop:ESET_completed
+      energyinterop:ESET_far
+      energyinterop:ESET_near
+      energyinterop:ESET_none
+    ) ;
+.
+energyinterop:GroupIDDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Group IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:GroupNameDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Group name datatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:Interval
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#interval" ;
+  rdfs:label "Interval" ;
+  rdfs:subClassOf energyinterop:IntervalType ;
+.
+energyinterop:IntervalType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#IntervalType" ;
+  rdfs:label "Interval type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The duration of the  activity, data, or state" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom icalendar:Duration ;
+      owl:onProperty energyinterop:durationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The starting time for the activity, data, or state change" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom icalendar:Dtstart ;
+      owl:onProperty energyinterop:dtstartRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Used as an index to identify intervals" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom icalendar:Uid ;
+      owl:onProperty energyinterop:uidRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom icalendar-stream:StreamPayloadBase ;
+      owl:onProperty energyinterop:streamPayloadBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:dtstartRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:durationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:uidRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:streamPayloadBaseRef ;
+    ] ;
+.
+energyinterop:ModificationNumberDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Incremented each time an event is modified." ;
+  rdfs:label "Modification number datatype" ;
+  rdfs:subClassOf xsd:unsignedInt ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:unsignedInt ;
+    ] ;
+.
+energyinterop:NumDataSourcesDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Num data sources datatype" ;
+  rdfs:subClassOf xsd:unsignedInt ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:unsignedInt ;
+    ] ;
+.
+energyinterop:ORET_economic
+  rdf:type energyinterop:OptReasonEnumeratedType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "economic"^^xsd:token ;
+  rdfs:label "economic" ;
+.
+energyinterop:ORET_emergency
+  rdf:type energyinterop:OptReasonEnumeratedType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "emergency"^^xsd:token ;
+  rdfs:label "emergency" ;
+.
+energyinterop:ORET_mustRun
+  rdf:type energyinterop:OptReasonEnumeratedType ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "mustRun"^^xsd:token ;
+  rdfs:label "must run" ;
+.
+energyinterop:ORET_notParticipating
+  rdf:type energyinterop:OptReasonEnumeratedType ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "notParticipating"^^xsd:token ;
+  rdfs:label "not participating" ;
+.
+energyinterop:ORET_outageRunStatus
+  rdf:type energyinterop:OptReasonEnumeratedType ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "outageRunStatus"^^xsd:token ;
+  rdfs:label "outage run status" ;
+.
+energyinterop:ORET_overrideStatus
+  rdf:type energyinterop:OptReasonEnumeratedType ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "overrideStatus"^^xsd:token ;
+  rdfs:label "override status" ;
+.
+energyinterop:ORET_participating
+  rdf:type energyinterop:OptReasonEnumeratedType ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "participating"^^xsd:token ;
+  rdfs:label "participating" ;
+.
+energyinterop:ORET_x-schedule
+  rdf:type energyinterop:OptReasonEnumeratedType ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "x-schedule"^^xsd:token ;
+  rdfs:label "x-schedule" ;
+.
+energyinterop:OTT_optIn
+  rdf:type energyinterop:OptTypeType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "optIn"^^xsd:token ;
+  rdfs:label "opt in" ;
+.
+energyinterop:OTT_optOut
+  rdf:type energyinterop:OptTypeType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "optOut"^^xsd:token ;
+  rdfs:label "opt out" ;
+.
+energyinterop:OptIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Identifier for an opt interaction" ;
+  rdfs:label "Opt IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:OptReasonDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Enumerated value for the opt reason such as x-schedule" ;
+  rdfs:label "Opt reason datatype" ;
+  rdfs:subClassOf energyinterop:OptReasonTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:OptReasonTypeDatatype ;
+    ] ;
+.
+energyinterop:OptReasonEnumeratedDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Opt reason enumerated datatype" ;
+  rdfs:subClassOf energyinterop:OptReasonEnumeratedType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:OptReasonEnumeratedType ;
+    ] ;
+.
+energyinterop:OptReasonEnumeratedType
+  rdf:type owl:Class ;
+  dc:description "Enumerated reasons for opting." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#OptReasonEnumeratedType" ;
+  rdfs:label "Opt reason enumerated type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      energyinterop:ORET_economic
+      energyinterop:ORET_emergency
+      energyinterop:ORET_mustRun
+      energyinterop:ORET_notParticipating
+      energyinterop:ORET_outageRunStatus
+      energyinterop:ORET_overrideStatus
+      energyinterop:ORET_participating
+      energyinterop:ORET_x-schedule
+    ) ;
+.
+energyinterop:OptReasonTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Reason for opting." ;
+  rdfs:label "Opt reason type datatype" ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+energyinterop:OptTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "optIn or optOut of an event" ;
+  rdfs:label "Opt type datatype" ;
+  rdfs:subClassOf energyinterop:OptTypeType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:OptTypeType ;
+    ] ;
+.
+energyinterop:OptTypeType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#OptTypeType" ;
+  rdfs:label "Opt type type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      energyinterop:OTT_optIn
+      energyinterop:OTT_optOut
+    ) ;
+.
+energyinterop:PartyIDDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Party IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:PayloadBase
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#payloadBase" ;
+  rdfs:label "Payload base" ;
+  rdfs:subClassOf energyinterop:PayloadBaseType ;
+.
+energyinterop:PayloadBaseType
+  rdf:type owl:Class ;
+  dc:description "Base for information in signal / baseline / report payloads" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#PayloadBaseType" ;
+  rdfs:label "Payload base type" ;
+.
+energyinterop:PayloadFloat
+  rdf:type owl:Class ;
+  dc:description "Data point value for event signals or for reporting  current or historical values." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#payloadFloat" ;
+  rdfs:label "Payload float" ;
+  rdfs:subClassOf energyinterop:PayloadBase ;
+  rdfs:subClassOf energyinterop:PayloadFloatType ;
+.
+energyinterop:PayloadFloatType
+  rdf:type owl:Class ;
+  dc:description "This is the payload for signals that require a quantity." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#PayloadFloatType" ;
+  rdfs:label "Payload float type" ;
+  rdfs:subClassOf energyinterop:PayloadBaseType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:float. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:float." ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty energyinterop:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:value ;
+    ] ;
+.
+energyinterop:QualifiedEventID
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#qualifiedEventID" ;
+  rdfs:label "Qualified event ID" ;
+  rdfs:subClassOf energyinterop:QualifiedEventIDType ;
+.
+energyinterop:QualifiedEventIDType
+  rdf:type owl:Class ;
+  dc:description "Fully qualified event ID includes the eventID and the modificationNumber." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#QualifiedEventIDType" ;
+  rdfs:label "Qualified event IDType" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "An ID value that identifies a specific DR event instance." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:EventIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:eventID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Incremented each time an event is modified." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ModificationNumberDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedInt." ;
+      owl:allValuesFrom xsd:unsignedInt ;
+      owl:onProperty energyinterop:modificationNumber ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:eventID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:modificationNumber ;
+    ] ;
+.
+energyinterop:RET_availableEnergyStorage
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Capacity available for further energy storage, perhaps to get to Target Energy Storage" ;
+  dtype:order "17"^^xsd:nonNegativeInteger ;
+  dtype:value "availableEnergyStorage"^^xsd:token ;
+  rdfs:label "available energy storage" ;
+.
+energyinterop:RET_avgDemand
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Average usage over the duration indicated by the Granularity. See demand for more information." ;
+  dtype:order "10"^^xsd:nonNegativeInteger ;
+  dtype:value "avgDemand"^^xsd:token ;
+  rdfs:label "avg demand" ;
+.
+energyinterop:RET_avgUsage
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Average usage over the duration indicated by the Granularity. See usage for more information." ;
+  dtype:order "9"^^xsd:nonNegativeInteger ;
+  dtype:value "avgUsage"^^xsd:token ;
+  rdfs:label "avg usage" ;
+.
+energyinterop:RET_baseline
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Can be demand or usage, as indicated by ItemBase. Indicates what [measurement] would be if not for the event or regulation. Report is of the format Baseline." ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "baseline"^^xsd:token ;
+  rdfs:label "baseline" ;
+.
+energyinterop:RET_deltaDemand
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Change in demand as compared to the baseline. See demand for more information" ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "deltaDemand"^^xsd:token ;
+  rdfs:label "delta demand" ;
+.
+energyinterop:RET_deltaSetPoint
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Changes in setpoint from previous schedule." ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "deltaSetPoint"^^xsd:token ;
+  rdfs:label "delta set point" ;
+.
+energyinterop:RET_deltaUsage
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Change in usage as compared to the baseline. See usage for more information" ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "deltaUsage"^^xsd:token ;
+  rdfs:label "delta usage" ;
+.
+energyinterop:RET_demand
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Report indicates an amount of units (denominated in ItemBase or in the EMIX Product). Payload type is Quantity. A typical ItemBase is Real Power." ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "demand"^^xsd:token ;
+  rdfs:label "demand" ;
+.
+energyinterop:RET_deviation
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Difference between some instruction and actual state." ;
+  dtype:order "8"^^xsd:nonNegativeInteger ;
+  dtype:value "deviation"^^xsd:token ;
+  rdfs:label "deviation" ;
+.
+energyinterop:RET_downRegulationCapacityAvailable
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Down Regulation capacity available for dispatch, expressed in EMIX Real Power. Payload is always expressed as positive Quantity." ;
+  dtype:order "13"^^xsd:nonNegativeInteger ;
+  dtype:value "downRegulationCapacityAvailable"^^xsd:token ;
+  rdfs:label "down regulation capacity available" ;
+.
+energyinterop:RET_level
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Simple level from market at each Interval. Itembase is not relevant." ;
+  dtype:order "19"^^xsd:nonNegativeInteger ;
+  dtype:value "level"^^xsd:token ;
+  rdfs:label "level" ;
+.
+energyinterop:RET_operatingState
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Generalized state of a resource such as on/off, occupancy of building, etc. No ItemBase is relevant. Requires an Application Specific Payload Extension." ;
+  dtype:order "11"^^xsd:nonNegativeInteger ;
+  dtype:value "operatingState"^^xsd:token ;
+  rdfs:label "operating state" ;
+.
+energyinterop:RET_percentDemand
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Percentage of demand" ;
+  dtype:order "22"^^xsd:nonNegativeInteger ;
+  dtype:value "percentDemand"^^xsd:token ;
+  rdfs:label "percent demand" ;
+.
+energyinterop:RET_percentUsage
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Percentage of usage." ;
+  dtype:order "21"^^xsd:nonNegativeInteger ;
+  dtype:value "percentUsage"^^xsd:token ;
+  rdfs:label "percent usage" ;
+.
+energyinterop:RET_powerFactor
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Power factor for the resource." ;
+  dtype:order "20"^^xsd:nonNegativeInteger ;
+  dtype:value "powerFactor"^^xsd:token ;
+  rdfs:label "power factor" ;
+.
+energyinterop:RET_price
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Price per ItemBase at each Interval" ;
+  dtype:order "18"^^xsd:nonNegativeInteger ;
+  dtype:value "price"^^xsd:token ;
+  rdfs:label "price" ;
+.
+energyinterop:RET_reading
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Report indicates a reading, as from a meter. Readings are moments in time-changes over time can be computed from the difference between successive readings. Payload type is float" ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "reading"^^xsd:token ;
+  rdfs:label "reading" ;
+.
+energyinterop:RET_regulationSetpoint
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Regulation setpoint as instructed as part of regulation services" ;
+  dtype:order "14"^^xsd:nonNegativeInteger ;
+  dtype:value "regulationSetpoint"^^xsd:token ;
+  rdfs:label "regulation setpoint" ;
+.
+energyinterop:RET_setPoint
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Report indicates the amount (denominated in ItemBase or in the EMIX Product) currently set. May be a confirmation/return of the setpoint control value sent from the VTN. Payload type is Quantity. A typical ItemBase is Real Power." ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "setPoint"^^xsd:token ;
+  rdfs:label "set point" ;
+.
+energyinterop:RET_storedEnergy
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Stored Energy is expressed as Real Energy and Payload is expressed as a Quantity." ;
+  dtype:order "15"^^xsd:nonNegativeInteger ;
+  dtype:value "storedEnergy"^^xsd:token ;
+  rdfs:label "stored energy" ;
+.
+energyinterop:RET_targetEnergyStorage
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Target Energy is expressed as Real Energy and Payload is expressed as a Quantity." ;
+  dtype:order "16"^^xsd:nonNegativeInteger ;
+  dtype:value "targetEnergyStorage"^^xsd:token ;
+  rdfs:label "target energy storage" ;
+.
+energyinterop:RET_upRegulationCapacityAvailable
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Up Regulation capacity available for dispatch, expressed in EMIX Real Power. Payload is always expressed as positive Quantity." ;
+  dtype:order "12"^^xsd:nonNegativeInteger ;
+  dtype:value "upRegulationCapacityAvailable"^^xsd:token ;
+  rdfs:label "up regulation capacity available" ;
+.
+energyinterop:RET_usage
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Report indicates an amount of units (denominated in ItemBase or in the EMIX Product) over a period. Payload type is Quantity. A typical ItemBase is Real Energy." ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "usage"^^xsd:token ;
+  rdfs:label "usage" ;
+.
+energyinterop:RET_x-resourceStatus
+  rdf:type energyinterop:ReportEnumeratedType ;
+  dc:description "Percentage of demand" ;
+  dtype:order "23"^^xsd:nonNegativeInteger ;
+  dtype:value "x-resourceStatus"^^xsd:token ;
+  rdfs:label "x-resource status" ;
+.
+energyinterop:RIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "ReferenceID for this data point" ;
+  rdfs:label "RIDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:RNET_HISTORY_GREENBUTTON
+  rdf:type energyinterop:ReportNameEnumeratedType ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "HISTORY_GREENBUTTON"^^xsd:token ;
+  rdfs:label "HISTORY GREENBUTTON" ;
+.
+energyinterop:RNET_HISTORY_USAGE
+  rdf:type energyinterop:ReportNameEnumeratedType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "HISTORY_USAGE"^^xsd:token ;
+  rdfs:label "HISTORY USAGE" ;
+.
+energyinterop:RNET_METADATA_HISTORY_GREENBUTTON
+  rdf:type energyinterop:ReportNameEnumeratedType ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "METADATA_HISTORY_GREENBUTTON"^^xsd:token ;
+  rdfs:label "METADATA HISTORY GREENBUTTON" ;
+.
+energyinterop:RNET_METADATA_HISTORY_USAGE
+  rdf:type energyinterop:ReportNameEnumeratedType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "METADATA_HISTORY_USAGE"^^xsd:token ;
+  rdfs:label "METADATA HISTORY USAGE" ;
+.
+energyinterop:RNET_METADATA_TELEMETRY_STATUS
+  rdf:type energyinterop:ReportNameEnumeratedType ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "METADATA_TELEMETRY_STATUS"^^xsd:token ;
+  rdfs:label "METADATA TELEMETRY STATUS" ;
+.
+energyinterop:RNET_METADATA_TELEMETRY_USAGE
+  rdf:type energyinterop:ReportNameEnumeratedType ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "METADATA_TELEMETRY_USAGE"^^xsd:token ;
+  rdfs:label "METADATA TELEMETRY USAGE" ;
+.
+energyinterop:RNET_TELEMETRY_STATUS
+  rdf:type energyinterop:ReportNameEnumeratedType ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "TELEMETRY_STATUS"^^xsd:token ;
+  rdfs:label "TELEMETRY STATUS" ;
+.
+energyinterop:RNET_TELEMETRY_USAGE
+  rdf:type energyinterop:ReportNameEnumeratedType ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "TELEMETRY_USAGE"^^xsd:token ;
+  rdfs:label "TELEMETRY USAGE" ;
+.
+energyinterop:RTET_Allocated
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Meter covers several [resources] and usage is inferred through some sort of pro data computation." ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "Allocated"^^xsd:token ;
+  rdfs:label "Allocated" ;
+.
+energyinterop:RTET_Contract
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Indicates reading is pro forma, i.e., is reported at agreed upon rates" ;
+  dtype:order "9"^^xsd:nonNegativeInteger ;
+  dtype:value "Contract"^^xsd:token ;
+  rdfs:label "Contract" ;
+.
+energyinterop:RTET_Derived
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Usage is inferred through knowledge of run-time, normal operation, etc." ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "Derived"^^xsd:token ;
+  rdfs:label "Derived" ;
+.
+energyinterop:RTET_DirectRead
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Reading is read from a device that increases monotonically, and usage must be computed from pairs of start and stop readings." ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "Direct Read"^^xsd:token ;
+  rdfs:label "Direct read" ;
+.
+energyinterop:RTET_Estimated
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Used when a reading is absent in a series in which most readings are present." ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "Estimated"^^xsd:token ;
+  rdfs:label "Estimated" ;
+.
+energyinterop:RTET_Hybrid
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "If aggregated, refers to different reading types in the aggregate number." ;
+  dtype:order "8"^^xsd:nonNegativeInteger ;
+  dtype:value "Hybrid"^^xsd:token ;
+  rdfs:label "Hybrid" ;
+.
+energyinterop:RTET_Mean
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Reading is the mean value over the period indicated in Granularity" ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "Mean"^^xsd:token ;
+  rdfs:label "Mean" ;
+.
+energyinterop:RTET_Net
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Meter or [resource] prepares its own calculation of total use over time." ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "Net"^^xsd:token ;
+  rdfs:label "Net" ;
+.
+energyinterop:RTET_Peak
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Reading is Peak (highest) value over the period indicated in granularity. For some measurements, it may make more sense as the lowest value. May not be consistent with aggregate readings. Only valid for flow-rate Item Bases, i.e., Power not Energy." ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "Peak"^^xsd:token ;
+  rdfs:label "Peak" ;
+.
+energyinterop:RTET_Projected
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Indicates reading is in the future, and has not yet been measured." ;
+  dtype:order "10"^^xsd:nonNegativeInteger ;
+  dtype:value "Projected"^^xsd:token ;
+  rdfs:label "Projected" ;
+.
+energyinterop:RTET_Summed
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Several meters together provide the reading for this [resource]. This is specifically a different than aggregated, which refers to multiple [resources] in the same payload. See also Hybrid." ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "Summed"^^xsd:token ;
+  rdfs:label "Summed" ;
+.
+energyinterop:RTET_x-RMS
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Root Mean Square" ;
+  dtype:order "11"^^xsd:nonNegativeInteger ;
+  dtype:value "x-RMS"^^xsd:token ;
+  rdfs:label "x-RMS" ;
+.
+energyinterop:RTET_x-notApplicable
+  rdf:type energyinterop:ReadingTypeEnumeratedType ;
+  dc:description "Not Applicable" ;
+  dtype:order "12"^^xsd:nonNegativeInteger ;
+  dtype:value "x-notApplicable"^^xsd:token ;
+  rdfs:label "x-not applicable" ;
+.
+energyinterop:ReadingTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Metadata about the Readings, such as mean or derived" ;
+  rdfs:label "Reading type datatype" ;
+  rdfs:subClassOf energyinterop:ReadingTypeTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:ReadingTypeTypeDatatype ;
+    ] ;
+.
+energyinterop:ReadingTypeEnumeratedDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Reading type enumerated datatype" ;
+  rdfs:subClassOf energyinterop:ReadingTypeEnumeratedType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:ReadingTypeEnumeratedType ;
+    ] ;
+.
+energyinterop:ReadingTypeEnumeratedType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#ReadingTypeEnumeratedType" ;
+  rdfs:label "Reading type enumerated type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      energyinterop:RTET_Allocated
+      energyinterop:RTET_Contract
+      energyinterop:RTET_Derived
+      energyinterop:RTET_DirectRead
+      energyinterop:RTET_Estimated
+      energyinterop:RTET_Hybrid
+      energyinterop:RTET_Mean
+      energyinterop:RTET_Net
+      energyinterop:RTET_Peak
+      energyinterop:RTET_Projected
+      energyinterop:RTET_Summed
+      energyinterop:RTET_x-RMS
+      energyinterop:RTET_x-notApplicable
+    ) ;
+.
+energyinterop:ReadingTypeTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Type of Reading." ;
+  rdfs:label "Reading type type datatype" ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+energyinterop:RefIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Reference ID for a particular instance, transmittal, or artifact. Note: not the same as the native ID of the object being transmitted or shared." ;
+  rdfs:label "Ref IDDatatype" ;
+  rdfs:subClassOf energyinterop:Uid ;
+  rdfs:subClassOf energyinterop:UidTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:UidTypeDatatype ;
+    ] ;
+.
+energyinterop:RegistrationIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Identifier for Registration transaction. Not included in response to query registration unless already registered" ;
+  rdfs:label "Registration IDDatatype" ;
+  rdfs:subClassOf energyinterop:RefID ;
+  rdfs:subClassOf energyinterop:Uid ;
+  rdfs:subClassOf energyinterop:UidTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:UidTypeDatatype ;
+    ] ;
+.
+energyinterop:ReportDataSource
+  rdf:type owl:Class ;
+  dc:description "Sources for data in this report. Examples include meters or submeters. For example, if a meter is capable of providing two different types of measurements, then each measurement stream would be separately identified." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#reportDataSource" ;
+  rdfs:label "Report data source" ;
+  rdfs:subClassOf energyinterop:EiTargetType ;
+.
+energyinterop:ReportEnumeratedDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Report enumerated datatype" ;
+  rdfs:subClassOf energyinterop:ReportEnumeratedType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:ReportEnumeratedType ;
+    ] ;
+.
+energyinterop:ReportEnumeratedType
+  rdf:type owl:Class ;
+  dc:description "Enumerated report types" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#ReportEnumeratedType" ;
+  rdfs:label "Report enumerated type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      energyinterop:RET_availableEnergyStorage
+      energyinterop:RET_avgDemand
+      energyinterop:RET_avgUsage
+      energyinterop:RET_baseline
+      energyinterop:RET_deltaDemand
+      energyinterop:RET_deltaSetPoint
+      energyinterop:RET_deltaUsage
+      energyinterop:RET_demand
+      energyinterop:RET_deviation
+      energyinterop:RET_downRegulationCapacityAvailable
+      energyinterop:RET_level
+      energyinterop:RET_operatingState
+      energyinterop:RET_percentDemand
+      energyinterop:RET_percentUsage
+      energyinterop:RET_powerFactor
+      energyinterop:RET_price
+      energyinterop:RET_reading
+      energyinterop:RET_regulationSetpoint
+      energyinterop:RET_setPoint
+      energyinterop:RET_storedEnergy
+      energyinterop:RET_targetEnergyStorage
+      energyinterop:RET_upRegulationCapacityAvailable
+      energyinterop:RET_usage
+      energyinterop:RET_x-resourceStatus
+    ) ;
+.
+energyinterop:ReportNameDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Optional name for a report." ;
+  rdfs:label "Report name datatype" ;
+  rdfs:subClassOf energyinterop:ReportNameTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:ReportNameTypeDatatype ;
+    ] ;
+.
+energyinterop:ReportNameEnumeratedType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#reportNameEnumeratedType" ;
+  rdfs:label "Report name enumerated type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      energyinterop:RNET_HISTORY_GREENBUTTON
+      energyinterop:RNET_HISTORY_USAGE
+      energyinterop:RNET_METADATA_HISTORY_GREENBUTTON
+      energyinterop:RNET_METADATA_HISTORY_USAGE
+      energyinterop:RNET_METADATA_TELEMETRY_STATUS
+      energyinterop:RNET_METADATA_TELEMETRY_USAGE
+      energyinterop:RNET_TELEMETRY_STATUS
+      energyinterop:RNET_TELEMETRY_USAGE
+    ) ;
+.
+energyinterop:ReportNameTypeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Report name type datatype" ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+energyinterop:ReportPayloadType
+  rdf:type owl:Class ;
+  dc:description "Report Payload for use in Reports, snaps, and projections." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#ReportPayloadType" ;
+  rdfs:label "Report payload type" ;
+  rdfs:subClassOf icalendar-stream:StreamPayloadBaseType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Accuracy in same units as interval payload value" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:AccuracyDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:float." ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty energyinterop:accuracy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Likely variability of prediction: 0-100" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ConfidenceDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedInt." ;
+      owl:allValuesFrom xsd:unsignedInt ;
+      owl:onProperty energyinterop:confidence ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "ReferenceID for this data point" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:RIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:rID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:PayloadBase ;
+      owl:onProperty energyinterop:payloadBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:payloadBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:rID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:accuracy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:confidence ;
+    ] ;
+.
+energyinterop:ReportRequestIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Identifier for a particular report request" ;
+  rdfs:label "Report request IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:ReportSpecifier
+  rdf:type owl:Class ;
+  dc:description "Specify data points desired in a particular report instance" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#reportSpecifier" ;
+  rdfs:label "Report specifier" ;
+  rdfs:subClassOf energyinterop:ReportSpecifierType ;
+.
+energyinterop:ReportSpecifierIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Identifier for a particular Metadata report specification" ;
+  rdfs:label "Report specifier IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:ReportSpecifierType
+  rdf:type owl:Class ;
+  dc:description "Parameters that define the content of a Report Stream" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#ReportSpecifierType" ;
+  rdfs:label "Report specifier type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "How frequently the [measurement] is to be recorded." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom icalendar:Granularity ;
+      owl:onProperty energyinterop:granularityRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for a particular Metadata report specification" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ReportSpecifierIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:reportSpecifierID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Report back with the Report-To-Date for each passing of this Duration." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom icalendar:DurationPropType ;
+      owl:onProperty energyinterop:reportBackDurationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "This is the overall period of reporting." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom icalendar:WsCalendarIntervalType ;
+      owl:onProperty energyinterop:reportIntervalRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom energyinterop:SpecifierPayload ;
+      owl:onProperty energyinterop:specifierPayloadRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:granularityRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:reportBackDurationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:reportSpecifierID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:reportIntervalRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:specifierPayloadRef ;
+    ] ;
+.
+energyinterop:ReportSubject
+  rdf:type owl:Class ;
+  dc:description "Device Class target - use only endDeviceAsset." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#reportSubject" ;
+  rdfs:label "Report subject" ;
+  rdfs:subClassOf energyinterop:EiTargetType ;
+.
+energyinterop:ReportTypeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Report type datatype" ;
+  rdfs:subClassOf energyinterop:ReportTypeTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:ReportTypeTypeDatatype ;
+    ] ;
+.
+energyinterop:ReportTypeTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "An enumerated value that gives the type of report being provided." ;
+  rdfs:label "Report type type datatype" ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+energyinterop:ResourceIDDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Resource IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:ResponseCodeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "A 3 digit response code" ;
+  rdfs:label "Response code datatype" ;
+  rdfs:subClassOf energyinterop:ResponseCodeTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:ResponseCodeTypeDatatype ;
+    ] ;
+.
+energyinterop:ResponseCodeTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description """Similar to HTTP 1.1 Error Pattern, 1st digit sufficient for most error processing
+      - 1xx: Informational - Request received, continuing process
+      - 2xx: Success - The action was successfully received, understood, and accepted
+      - 3xx: Pending - Further action must be taken in order to complete the request
+      - 4xx: Requester Error - The request contains bad syntax or cannot be fulfilled
+      - 5xx: Responder Error - The responder failed to fulfill an apparently valid request
+      xx is used for defining more fine grained errors""" ;
+  rdfs:label "Response code type datatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+      owl:withRestrictions (
+          [
+            xsd:pattern "[0-9][0-9][0-9]" ;
+          ]
+        ) ;
+    ] ;
+.
+energyinterop:ResponseDescriptionDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Narrative description of response status" ;
+  rdfs:label "Response description datatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:Responses
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#responses" ;
+  rdfs:label "Responses" ;
+  rdfs:subClassOf energyinterop:ArrayofResponses ;
+.
+energyinterop:SNET_BID_ENERGY
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "This is the amount of energy from a resource that was bid into a program" ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "BID_ENERGY"^^xsd:token ;
+  rdfs:label "BID ENERGY" ;
+.
+energyinterop:SNET_BID_LOAD
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "This is the amount of load that was bid by a resource into a program" ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "BID_LOAD"^^xsd:token ;
+  rdfs:label "BID LOAD" ;
+.
+energyinterop:SNET_BID_PRICE
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "This is the price that was bid by the resource" ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "BID_PRICE"^^xsd:token ;
+  rdfs:label "BID PRICE" ;
+.
+energyinterop:SNET_CHARGE_STATE
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "State of energy storage resource" ;
+  dtype:order "8"^^xsd:nonNegativeInteger ;
+  dtype:value "CHARGE_STATE"^^xsd:token ;
+  rdfs:label "CHARGE STATE" ;
+.
+energyinterop:SNET_DEMAND_CHARGE
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "This is the demand charge" ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "DEMAND_CHARGE"^^xsd:token ;
+  rdfs:label "DEMAND CHARGE" ;
+.
+energyinterop:SNET_ELECTRICITY_PRICE
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "This is the cost of electricity" ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "ELECTRICITY_PRICE"^^xsd:token ;
+  rdfs:label "ELECTRICITY PRICE" ;
+.
+energyinterop:SNET_ENERGY_PRICE
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "This is the cost of energy" ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "ENERGY_PRICE"^^xsd:token ;
+  rdfs:label "ENERGY PRICE" ;
+.
+energyinterop:SNET_LOAD_CONTROL
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "Set load output to relative values" ;
+  dtype:order "10"^^xsd:nonNegativeInteger ;
+  dtype:value "LOAD_CONTROL"^^xsd:token ;
+  rdfs:label "LOAD CONTROL" ;
+.
+energyinterop:SNET_LOAD_DISPATCH
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "This is used to dispatch load" ;
+  dtype:order "9"^^xsd:nonNegativeInteger ;
+  dtype:value "LOAD_DISPATCH"^^xsd:token ;
+  rdfs:label "LOAD DISPATCH" ;
+.
+energyinterop:SNET_SIMPLE
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "Simple levels (OpenADR 2.0a compliant)" ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "SIMPLE"^^xsd:token ;
+  rdfs:label "SIMPLE" ;
+.
+energyinterop:SNET_simple
+  rdf:type energyinterop:SignalNameEnumeratedType ;
+  dc:description "depreciated - for backwards compatibility with A profile" ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "simple"^^xsd:token ;
+  rdfs:label "simple" ;
+.
+energyinterop:STET_delta
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Signal indicates the amount to change from what one would have used without the signal." ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "delta"^^xsd:token ;
+  rdfs:label "delta" ;
+.
+energyinterop:STET_level
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Signal indicates a program level." ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "level"^^xsd:token ;
+  rdfs:label "level" ;
+.
+energyinterop:STET_multiplier
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Signal indicates a multiplier applied to the current rate of  delivery or usage from what one would have used without the signal." ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "multiplier"^^xsd:token ;
+  rdfs:label "multiplier" ;
+.
+energyinterop:STET_price
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Signal indicates the price." ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "price"^^xsd:token ;
+  rdfs:label "price" ;
+.
+energyinterop:STET_priceMultiplier
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Signal indicates the price multiplier. Extended price is the computed price value multiplied by the number of units." ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "priceMultiplier"^^xsd:token ;
+  rdfs:label "price multiplier" ;
+.
+energyinterop:STET_priceRelative
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Signal indicates the relative price." ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "priceRelative"^^xsd:token ;
+  rdfs:label "price relative" ;
+.
+energyinterop:STET_setpoint
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Signal indicates a target amount of units." ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "setpoint"^^xsd:token ;
+  rdfs:label "setpoint" ;
+.
+energyinterop:STET_x-loadControlCapacity
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "This is an instruction for the load controller to operate at a level that is some percentage of its maximum load consumption capacity. This can be mapped to specific load controllers to do things like duty cycling. Note that 1.0 refers to 100% consumption. In the case of simple ON/OFF type devices then 0 = OFF and 1 = ON." ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "x-loadControlCapacity"^^xsd:token ;
+  rdfs:label "x-load control capacity" ;
+.
+energyinterop:STET_x-loadControlLevelOffset
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Discrete integer levels that are relative to normal operations where 0 is normal operations." ;
+  dtype:order "8"^^xsd:nonNegativeInteger ;
+  dtype:value "x-loadControlLevelOffset"^^xsd:token ;
+  rdfs:label "x-load control level offset" ;
+.
+energyinterop:STET_x-loadControlPercentOffset
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Percentage change from normal load control operations." ;
+  dtype:order "9"^^xsd:nonNegativeInteger ;
+  dtype:value "x-loadControlPercentOffset"^^xsd:token ;
+  rdfs:label "x-load control percent offset" ;
+.
+energyinterop:STET_x-loadControlSetpoint
+  rdf:type energyinterop:SignalTypeEnumeratedType ;
+  dc:description "Load controller set points." ;
+  dtype:order "10"^^xsd:nonNegativeInteger ;
+  dtype:value "x-loadControlSetpoint"^^xsd:token ;
+  rdfs:label "x-load control setpoint" ;
+.
+<http://docs.oasis-open.org/ns/energyinterop/201110#SVET_2.0a>
+  rdf:type energyinterop:SchemaVersionEnumeratedType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "2.0a"^^xsd:token ;
+  rdfs:label "2.0a" ;
+.
+<http://docs.oasis-open.org/ns/energyinterop/201110#SVET_2.0b>
+  rdf:type energyinterop:SchemaVersionEnumeratedType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "2.0b"^^xsd:token ;
+  rdfs:label "2.0b" ;
+.
+energyinterop:SchemaVersionEnumeratedType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#schemaVersionEnumeratedType" ;
+  rdfs:label "Schema version enumerated type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      <http://docs.oasis-open.org/ns/energyinterop/201110#SVET_2.0a>
+      <http://docs.oasis-open.org/ns/energyinterop/201110#SVET_2.0b>
+    ) ;
+.
+energyinterop:SchemaVersionTypeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Schema version type datatype" ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+energyinterop:SignalNameDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Signal name datatype" ;
+  rdfs:subClassOf energyinterop:SignalNameTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:SignalNameTypeDatatype ;
+    ] ;
+.
+energyinterop:SignalNameEnumeratedDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Signal name enumerated datatype" ;
+  rdfs:subClassOf energyinterop:SignalNameEnumeratedType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:SignalNameEnumeratedType ;
+    ] ;
+.
+energyinterop:SignalNameEnumeratedType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#SignalNameEnumeratedType" ;
+  rdfs:label "Signal name enumerated type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      energyinterop:SNET_BID_ENERGY
+      energyinterop:SNET_BID_LOAD
+      energyinterop:SNET_BID_PRICE
+      energyinterop:SNET_CHARGE_STATE
+      energyinterop:SNET_DEMAND_CHARGE
+      energyinterop:SNET_ELECTRICITY_PRICE
+      energyinterop:SNET_ENERGY_PRICE
+      energyinterop:SNET_LOAD_CONTROL
+      energyinterop:SNET_LOAD_DISPATCH
+      energyinterop:SNET_SIMPLE
+      energyinterop:SNET_simple
+    ) ;
+.
+energyinterop:SignalNameTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Signal name." ;
+  rdfs:label "Signal name type datatype" ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+energyinterop:SignalPayload
+  rdf:type owl:Class ;
+  dc:description "Signal values for events and baselines" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#signalPayload" ;
+  rdfs:label "Signal payload" ;
+  rdfs:subClassOf energyinterop:SignalPayloadType ;
+  rdfs:subClassOf icalendar-stream:StreamPayloadBase ;
+.
+energyinterop:SignalPayloadType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#signalPayloadType" ;
+  rdfs:label "Signal payload type" ;
+  rdfs:subClassOf icalendar-stream:StreamPayloadBaseType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:PayloadBase ;
+      owl:onProperty energyinterop:payloadBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:payloadBaseRef ;
+    ] ;
+.
+energyinterop:SignalTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "An enumerated value describing the type of signal such as level or price" ;
+  rdfs:label "Signal type datatype" ;
+  rdfs:subClassOf energyinterop:SignalTypeEnumeratedType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:SignalTypeEnumeratedType ;
+    ] ;
+.
+energyinterop:SignalTypeEnumeratedType
+  rdf:type owl:Class ;
+  dc:description "SignalTypeEnumerated lists the pre-defined types used to specify the payload types and conformance in a stream" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#SignalTypeEnumeratedType" ;
+  rdfs:label "Signal type enumerated type" ;
+  rdfs:subClassOf energyinterop:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      energyinterop:STET_delta
+      energyinterop:STET_level
+      energyinterop:STET_multiplier
+      energyinterop:STET_price
+      energyinterop:STET_priceMultiplier
+      energyinterop:STET_priceRelative
+      energyinterop:STET_setpoint
+      energyinterop:STET_x-loadControlCapacity
+      energyinterop:STET_x-loadControlLevelOffset
+      energyinterop:STET_x-loadControlPercentOffset
+      energyinterop:STET_x-loadControlSetpoint
+    ) ;
+.
+energyinterop:SpecifierPayload
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#specifierPayload" ;
+  rdfs:label "Specifier payload" ;
+  rdfs:subClassOf energyinterop:SpecifierPayloadType ;
+.
+energyinterop:SpecifierPayloadType
+  rdf:type owl:Class ;
+  dc:description "Payload for use in Report Specifiers." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#SpecifierPayloadType" ;
+  rdfs:label "Specifier payload type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Metadata about the Readings, such as mean or derived" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:ReadingTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType." ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty energyinterop:readingType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "ReferenceID for this data point" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is energyinterop-201110:RIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:rID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "What is measured or tracked in this report (Units)." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom emix:ItemBase ;
+      owl:onProperty energyinterop:itemBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:rID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:readingType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty energyinterop:itemBaseRef ;
+    ] ;
+.
+energyinterop:StatusDateTimeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Date and time this artifact references." ;
+  rdfs:label "Status date time datatype" ;
+  rdfs:subClassOf icalendar:DateTimeType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype icalendar:DateTimeType ;
+    ] ;
+.
+energyinterop:UidDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Uid datatype" ;
+  rdfs:subClassOf energyinterop:UidTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype energyinterop:UidTypeDatatype ;
+    ] ;
+.
+energyinterop:UidTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Unique Identifier" ;
+  rdfs:label "Uid type datatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:VenIDDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Ven IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:VtnID
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Vtn IDDatatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+energyinterop:X-eiNotification
+  rdf:type owl:Class ;
+  dc:description "The VEN should receive the DR event payload prior to dtstart minus this duration." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#x-eiNotification" ;
+  rdfs:label "X-ei notification" ;
+  rdfs:subClassOf icalendar:DurationPropType ;
+.
+energyinterop:X-eiRampUp
+  rdf:type owl:Class ;
+  dc:description "A duration before or after the event start time during which load shed should transit." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#x-eiRampUp" ;
+  rdfs:label "X-ei ramp up" ;
+  rdfs:subClassOf icalendar:DurationPropType ;
+.
+energyinterop:X-eiRecovery
+  rdf:type owl:Class ;
+  dc:description "A duration before or after the event end time during which load shed should transit." ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#x-eiRecovery" ;
+  rdfs:label "X-ei recovery" ;
+  rdfs:subClassOf icalendar:DurationPropType ;
+.
+energyinterop:accuracy
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#accuracy" ;
+  rdfs:label "accuracy" ;
+.
+energyinterop:aggregatedPnodeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#aggregatedPnode" ;
+  rdfs:label "aggregated pnode ref" ;
+.
+energyinterop:baselineID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#baselineID" ;
+  rdfs:label "baseline ID" ;
+.
+energyinterop:baselineName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#baselineName" ;
+  rdfs:label "baseline name" ;
+.
+energyinterop:componentsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#components" ;
+  rdfs:label "components ref" ;
+.
+energyinterop:confidence
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#confidence" ;
+  rdfs:label "confidence" ;
+.
+energyinterop:createdDateTime
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#createdDateTime" ;
+  rdfs:label "created date time" ;
+.
+energyinterop:currentValueRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#currentValue" ;
+  rdfs:label "current value ref" ;
+.
+energyinterop:dtstartRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#dtstart" ;
+  rdfs:label "dtstart ref" ;
+.
+energyinterop:durationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#duration" ;
+  rdfs:label "duration ref" ;
+.
+energyinterop:eiActivePeriodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiActivePeriod" ;
+  rdfs:label "ei active period ref" ;
+.
+energyinterop:eiEventBaselineRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventBaseline" ;
+  rdfs:label "ei event baseline ref" ;
+.
+energyinterop:eiEventSignalRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventSignal" ;
+  rdfs:label "ei event signal ref" ;
+.
+energyinterop:eiEventSignalsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiEventSignals" ;
+  rdfs:label "ei event signals ref" ;
+.
+energyinterop:eiMarketContextRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiMarketContext" ;
+  rdfs:label "ei market context ref" ;
+.
+energyinterop:eiTargetRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eiTarget" ;
+  rdfs:label "ei target ref" ;
+.
+energyinterop:endDeviceAssetRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#endDeviceAsset" ;
+  rdfs:label "end device asset ref" ;
+.
+energyinterop:eventDescriptorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eventDescriptor" ;
+  rdfs:label "event descriptor ref" ;
+.
+energyinterop:eventID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#eventID" ;
+  rdfs:label "event ID" ;
+.
+energyinterop:eventResponseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eventResponse" ;
+  rdfs:label "event response ref" ;
+.
+energyinterop:eventStatus
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#eventStatus" ;
+  rdfs:label "event status" ;
+.
+energyinterop:granularityRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#granularity" ;
+  rdfs:label "granularity ref" ;
+.
+energyinterop:groupID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#groupID" ;
+  rdfs:label "group ID" ;
+.
+energyinterop:groupName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#groupName" ;
+  rdfs:label "group name" ;
+.
+energyinterop:intervalsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#intervals" ;
+  rdfs:label "intervals ref" ;
+.
+energyinterop:itemBaseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#itemBase" ;
+  rdfs:label "item base ref" ;
+.
+energyinterop:marketContext
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "market context" ;
+.
+energyinterop:meterAssetRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#meterAsset" ;
+  rdfs:label "meter asset ref" ;
+.
+energyinterop:modificationDateTime
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#modificationDateTime" ;
+  rdfs:label "modification date time ref" ;
+.
+energyinterop:modificationNumber
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#modificationNumber" ;
+  rdfs:label "modification number" ;
+.
+energyinterop:modificationReason
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#modificationReason" ;
+  rdfs:label "modification reason" ;
+.
+energyinterop:optID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#optID" ;
+  rdfs:label "opt ID" ;
+.
+energyinterop:optReason
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#optReason" ;
+  rdfs:label "opt reason" ;
+.
+energyinterop:optType
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#optType" ;
+  rdfs:label "opt type" ;
+.
+energyinterop:partyID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#partyID" ;
+  rdfs:label "party ID" ;
+.
+energyinterop:payloadBaseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#payloadBase" ;
+  rdfs:label "payload base ref" ;
+.
+energyinterop:payloadFloatRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#payloadFloat" ;
+  rdfs:label "payload float ref" ;
+.
+energyinterop:pnodeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#pnode" ;
+  rdfs:label "pnode ref" ;
+.
+energyinterop:priority
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#priority" ;
+  rdfs:label "priority" ;
+.
+energyinterop:propertiesRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#properties" ;
+  rdfs:label "properties ref" ;
+.
+energyinterop:qualifiedEventIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#qualifiedEventID" ;
+  rdfs:label "qualified event IDRef" ;
+.
+energyinterop:rID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#rID" ;
+  rdfs:label "r ID" ;
+.
+energyinterop:readingType
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#readingType" ;
+  rdfs:label "reading type" ;
+.
+energyinterop:reportBackDurationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#reportBackDuration" ;
+  rdfs:label "report back duration ref" ;
+.
+energyinterop:reportIntervalRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#reportInterval" ;
+  rdfs:label "report interval ref" ;
+.
+energyinterop:reportSpecifierID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#reportSpecifierID" ;
+  rdfs:label "report specifier ID" ;
+.
+energyinterop:requestIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#requestID" ;
+  rdfs:label "request IDRef" ;
+.
+energyinterop:resourceID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#resourceID" ;
+  rdfs:label "resource ID" ;
+.
+energyinterop:responseCode
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#responseCode" ;
+  rdfs:label "response code" ;
+.
+energyinterop:responseDescription
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#responseDescription" ;
+  rdfs:label "response description" ;
+.
+energyinterop:responseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#response" ;
+  rdfs:label "response ref" ;
+.
+energyinterop:schemaVersion
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#schemaVersion" ;
+  rdfs:label "schema version" ;
+.
+energyinterop:serviceAreaRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#serviceArea" ;
+  rdfs:label "service area ref" ;
+.
+energyinterop:serviceDeliveryPointRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#serviceDeliveryPoint" ;
+  rdfs:label "service delivery point ref" ;
+.
+energyinterop:serviceLocationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#serviceLocation" ;
+  rdfs:label "service location ref" ;
+.
+energyinterop:signalID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#signalID" ;
+  rdfs:label "signal ID" ;
+.
+energyinterop:signalName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#signalName" ;
+  rdfs:label "signal name" ;
+.
+energyinterop:signalType
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#signalType" ;
+  rdfs:label "signal type" ;
+.
+energyinterop:specifierPayloadRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#specifierPayload" ;
+  rdfs:label "specifier payload ref" ;
+.
+energyinterop:streamPayloadBaseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#streamPayloadBase" ;
+  rdfs:label "stream payload base ref" ;
+.
+energyinterop:testEvent
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#testEvent" ;
+  rdfs:label "test event" ;
+.
+energyinterop:transportInterfaceRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#transportInterface" ;
+  rdfs:label "transport interface ref" ;
+.
+energyinterop:uidRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#uid" ;
+  rdfs:label "uid ref" ;
+.
+energyinterop:value
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#value" ;
+  rdfs:label "value" ;
+.
+energyinterop:vavailabilityRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#vavailability" ;
+  rdfs:label "vavailability ref" ;
+.
+energyinterop:venID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#venID" ;
+  rdfs:label "ven ID" ;
+.
+energyinterop:vtnComment
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#vtnComment" ;
+  rdfs:label "vtn comment" ;
+.
+energyinterop:vtnID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110#vtnID" ;
+  rdfs:label "vtn ID" ;
+.
+dc:description
+  rdfs:label "description" ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label" ;
+.
+icalendar:Dtstart
+  dc:description "The starting time for the activity, data, or state change" ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#dtstart" ;
+.
+icalendar:Properties
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#properties" ;
+.
+icalendar:Uid
+  dc:description "Used as an index to identify intervals" ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#uid" ;
+.
+icalendar-stream:Intervals
+  dc:description "Time intervals during which the DR event is active or report data is available" ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#intervals" ;
+.

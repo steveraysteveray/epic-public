@@ -1,0 +1,137 @@
+# baseURI: urn:ietf:params:xml:ns:icalendar-2.0:stream
+# imports: http://docs.oasis-open.org/ns/energyinterop/201110
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: urn:ietf:params:xml:ns:icalendar-2.0
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix energyinterop: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix icalendar: <urn:ietf:params:xml:ns:icalendar-2.0#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+icalendar:Dtstart
+  dc:description "The starting time for the activity, data, or state change"^^xsd:string ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#dtstart" ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream>
+  rdf:type owl:Ontology ;
+  owl:imports <http://docs.oasis-open.org/ns/energyinterop/201110> ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <urn:ietf:params:xml:ns:icalendar-2.0> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:ietf:params:xml:ns:icalendar-2.0:stream, urn:ietf:params:xml:ns:icalendar-2.0:stream, urn:ietf:params:xml:ns:icalendar-2.0:stream, urn:ietf:params:xml:ns:icalendar-2.0:stream, urn:ietf:params:xml:ns:icalendar-2.0:stream"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#Intervals>
+  rdf:type owl:Class ;
+  dc:description "Time intervals during which the DR event is active or report data is available"^^xsd:string ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#intervals" ;
+  rdfs:label "Intervals"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:Interval ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0:stream#intervalRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0:stream#intervalRef> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamBase>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#streamBase" ;
+  rdfs:label "Stream base"^^xsd:string ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamBaseType> ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamBaseType>
+  rdf:type owl:Class ;
+  dc:description "abstract base for communication of schedules for signals and observations"^^xsd:string ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamBaseType" ;
+  rdfs:label "Stream base type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The duration of the  activity, data, or state"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom icalendar:Duration ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0:stream#durationRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The starting time for the activity, data, or state change"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom icalendar:Dtstart ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0:stream#dtstartRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Time intervals during which the DR event is active or report data is available"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0:stream#Intervals> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0:stream#intervalsRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0:stream#dtstartRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0:stream#durationRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0:stream#intervalsRef> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamPayloadBase>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#streamPayloadBase" ;
+  rdfs:label "Stream payload base"^^xsd:string ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamPayloadBaseType> ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamPayloadBaseType>
+  rdf:type owl:Class ;
+  dc:description "Abstract class to convey a payload for a stream. When a Stream is transformed to or from a WS-Calendar Interval, the contents of the Stream Payload defined element are transformed into the contents of a WS-Calendar artifactBase."^^xsd:string ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamPayloadBaseType" ;
+  rdfs:label "Stream payload base type"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#dtstartRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#dtstart" ;
+  rdfs:label "dtstart ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#durationRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#duration" ;
+  rdfs:label "duration ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#intervalRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#interval" ;
+  rdfs:label "interval ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0:stream#intervalsRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0:stream#intervals" ;
+  rdfs:label "intervals ref"^^xsd:string ;
+.

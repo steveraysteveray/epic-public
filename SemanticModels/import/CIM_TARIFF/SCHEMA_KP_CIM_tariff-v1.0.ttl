@@ -1,0 +1,852 @@
+# baseURI: http://siemens.com/schemas/kps/cim-tariff
+# imports: http://cmu.sv.edu/fsgim
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/dimensionalunit
+# imports: http://qudt.org/1.2/vocab/unit/currency
+# imports: http://www.w3.org/ns/org
+# prefix: tariff
+
+@prefix IFC4: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://siemens.com/schemas/ssf_datatype#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tariff: <http://siemens.com/schemas/kps/cim-tariff#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/cim-tariff>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "CIM Tariff Model" ;
+  dc:subject "CIM Tariff" ;
+  dc:title "The CIM Tariff Ontology" ;
+  owl:imports <http://cmu.sv.edu/fsgim> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/dimensionalunit> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/currency> ;
+  owl:imports <http://www.w3.org/ns/org> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+tariff:AccountingUnit
+  rdf:type owl:Class ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://qudt.org/schema/qudt#CurrencyUnit> ;
+      owl:onProperty tariff:monetaryUnit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty tariff:readingType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:multiplier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:value ;
+    ] ;
+.
+tariff:Applicability
+  rdf:type owl:Class ;
+  rdfs:label "Applicability" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom tariff:PhaseWiringType ;
+      owl:onProperty tariff:phaseWiring ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom tariff:VoltageCategoryType ;
+      owl:onProperty tariff:voltageCategory ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty tariff:phaseWiring ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty tariff:voltageCategory ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:applicabilityRange ;
+    ] ;
+  skos:prefLabel "Applicability" ;
+.
+tariff:ApplicabilityRange
+  rdf:type owl:Class ;
+  rdfs:label "Applicability Range" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:history ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:maximum ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:minimum ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:readingType ;
+    ] ;
+  skos:prefLabel "Applicability Range" ;
+.
+tariff:Charge
+  rdf:type owl:Class ;
+  vaem:todo "Add a QUDT range for fixedPortion property, of a currency kind" ;
+  rdfs:label "Charge" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom tariff:AccountingUnit ;
+      owl:onProperty tariff:fixedPortion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom tariff:Charge ;
+      owl:onProperty tariff:childCharges ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom tariff:ChargeKind ;
+      owl:onProperty tariff:kind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/unit#PERCENT> ;
+      owl:onProperty tariff:variablePortion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty tariff:kind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:fixedPortion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:variablePortion ;
+    ] ;
+  skos:prefLabel "Charge" ;
+.
+tariff:ChargeKind
+  rdf:type owl:Class ;
+  rdfs:subClassOf tariff:EnumeratedValue ;
+  owl:oneOf (
+      "consumptionCharge"
+      "demandCharge"
+      "auxiliaryCharge"
+      "taxCharge"
+      "other"
+      "generationCharge"
+      "deliveryCharge"
+      "administrativeCharge"
+      "generationCredit"
+      "deliveryCredit"
+      "administrativeCredit"
+      "payment"
+      "information"
+    ) ;
+.
+tariff:ConsumptionTariffInterval
+  rdf:type owl:Class ;
+  rdfs:label "Consumption Tariff Interval" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom tariff:Charge ;
+      owl:onProperty tariff:charges ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty tariff:readingType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:cumulative ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:period ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:startValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:threshold ;
+    ] ;
+  skos:prefLabel "Consumption Tariff Interval" ;
+.
+tariff:Contract
+  rdf:type owl:Class ;
+  rdfs:label "Contract" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:applicability ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:endDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:endDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:tariffProfile ;
+    ] ;
+  owl:equivalentClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#CustomerAgreement> ;
+  skos:prefLabel "Contract" ;
+.
+tariff:Customer
+  rdf:type owl:Class ;
+  rdfs:label "Customer" ;
+  rdfs:subClassOf org:Organization ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:applicability ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:endDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:endDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:tariffProfile ;
+    ] ;
+  owl:equivalentClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#Customer> ;
+  skos:prefLabel "Customer" ;
+.
+tariff:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value" ;
+  rdfs:subClassOf <http://www.linkedmodel.org/schema/dtype#EnumeratedValue> ;
+  skos:prefLabel "Enumerated value" ;
+.
+tariff:MonthType
+  rdf:type owl:Class ;
+  rdfs:subClassOf tariff:EnumeratedValue ;
+  owl:oneOf (
+      "january"
+      "february"
+      "march"
+      "april"
+      "may"
+      "june"
+      "july"
+      "august"
+      "september"
+      "october"
+      "november"
+      "december"
+    ) ;
+.
+tariff:PhaseWiringType
+  rdf:type owl:Class ;
+  rdfs:label "Phase Wiring Type" ;
+  rdfs:subClassOf tariff:EnumeratedValue ;
+  owl:oneOf (
+      "singlePhase"
+      "threePhase"
+      "singleAndThreePhase"
+    ) ;
+  skos:prefLabel "Phase Wiring Type" ;
+.
+tariff:PricingStructure
+  rdf:type owl:Class ;
+  rdfs:label "Pricing Structure" ;
+  rdfs:subClassOf tariff:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:code ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:dailyCeilingUsage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:dailyEstimatedUsage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:dailyFloorUsage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:revenueKind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:taxExemption ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:tariffs ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:usagePointReference ;
+    ] ;
+  skos:prefLabel "Pricing Structure" ;
+.
+tariff:RdRule
+  rdf:type owl:Class ;
+  owl:oneOf (
+      "dayOfMonth"
+      "onOrAfter"
+      "firstOccurrence"
+      "secondOccurrence"
+      "thirdOccurernce"
+      "fourthOccurrence"
+      "fifthOccurrence"
+      "last"
+    ) ;
+.
+tariff:RevenueKind
+  rdf:type owl:Class ;
+  rdfs:label "Revenue Kind" ;
+  rdfs:subClassOf tariff:EnumeratedValue ;
+  owl:oneOf (
+      "residential"
+      "nonResidential"
+      "commercial"
+      "industrial"
+      "irrigation"
+      "streetLight"
+      "other"
+    ) ;
+  skos:prefLabel "Revenue Kind" ;
+.
+tariff:ServiceCategory
+  rdf:type owl:Class ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom tariff:PricingStructure ;
+      owl:onProperty tariff:pricingStructures ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom tariff:ServiceKind ;
+      owl:onProperty tariff:kind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty tariff:kind ;
+    ] ;
+.
+tariff:ServiceKind
+  rdf:type owl:Class ;
+  rdfs:subClassOf tariff:EnumeratedValue ;
+  owl:oneOf (
+      "electricity"
+      "gas"
+      "water"
+      "time"
+      "heat"
+      "refuse"
+      "sewerage"
+      "rates"
+      "tvLicence"
+      "internet"
+      "other"
+      "air"
+      "naturalGas"
+      "propane"
+      "steam"
+      "heatingFluid"
+    ) ;
+.
+tariff:Tariff
+  rdf:type owl:Class ;
+  rdfs:label "Tariff" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:applicability ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:endDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:startDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:tariffProfile ;
+    ] ;
+  skos:prefLabel "Tariff" ;
+.
+tariff:TariffProfile
+  rdf:type owl:Class ;
+  rdfs:label "Tariff Profile" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:tariffCycle ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:consumptionTariffIntervals ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:thresholdTariffIntervals ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:timeTariffIntervals ;
+    ] ;
+  owl:equivalentClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/naesb_pap10_eui---iec_cim_naesb_eui_model_20101111update_20120802#TariffProfile> ;
+  skos:prefLabel "Tariff Profile" ;
+.
+tariff:ThresholdTariffInterval
+  rdf:type owl:Class ;
+  rdfs:label "Theshold Tariff Interval" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty tariff:readingType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:operator ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:priority ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:threshold ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:thresholdReference ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:readingType ;
+    ] ;
+  skos:prefLabel "Threshold Tariff Interval" ;
+.
+tariff:TimeTariffInterval
+  rdf:type owl:Class ;
+  rdfs:label "Time Tariff Interval" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:dayOfMonth ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:hours ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:month ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:periodReference ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:priority ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:recurringDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:seconds ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tariff:dow ;
+    ] ;
+  skos:prefLabel "Time Tariff Interval" ;
+.
+tariff:UsagePointReference
+  rdf:type owl:Class ;
+  rdfs:label "Usage Point Reference" ;
+  skos:prefLabel "Usage Point Reference" ;
+.
+tariff:VoltageCategoryType
+  rdf:type owl:Class ;
+  rdfs:label "Voltage Category Type" ;
+  rdfs:subClassOf tariff:EnumeratedValue ;
+  owl:oneOf (
+      "primary"
+      "secondary"
+      "transmission"
+    ) ;
+  skos:prefLabel "Voltage Category Type" ;
+.
+tariff:WeekdayType
+  rdf:type owl:Class ;
+  rdfs:subClassOf tariff:EnumeratedValue ;
+  owl:oneOf (
+      "sunday"
+      "monday"
+      "tuesday"
+      "wednesday"
+      "thursday"
+      "friday"
+      "saturday"
+    ) ;
+.
+tariff:applicability
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tariff:Tariff ;
+  rdfs:label "applicability" ;
+  rdfs:range tariff:Applicability ;
+  skos:prefLabel "applicability" ;
+.
+tariff:applicabilityRange
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tariff:Applicability ;
+  rdfs:label "applicability" ;
+  rdfs:range tariff:ApplicabilityRange ;
+  skos:prefLabel "applicability" ;
+.
+tariff:charges
+  rdf:type owl:ObjectProperty ;
+.
+tariff:childCharges
+  rdf:type owl:ObjectProperty ;
+.
+tariff:code
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:PricingStructure ;
+  rdfs:label "code" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "code" ;
+.
+tariff:consumptionTariffIntervals
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "consumption tariff intervals" ;
+  rdfs:range tariff:ConsumptionTariffInterval ;
+.
+tariff:cumulative
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+.
+tariff:dailyCeilingUsage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:PricingStructure ;
+  rdfs:label "daily ceiling usage" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "daily ceiling usage" ;
+.
+tariff:dailyEstimatedUsage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:PricingStructure ;
+  rdfs:label "daily estimated usage" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "daily estimated usage" ;
+.
+tariff:dailyFloorUsage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:PricingStructure ;
+  rdfs:label "daily floor usage" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "daily floor usage" ;
+.
+tariff:dayOfMonth
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:TimeTariffInterval ;
+  rdfs:label "day of month" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "day of month" ;
+.
+tariff:dow
+  rdf:type owl:ObjectProperty ;
+  rdfs:range tariff:WeekdayType ;
+.
+tariff:endDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:Tariff ;
+  rdfs:label "end date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "end date" ;
+.
+tariff:fixedPortion
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tariff:Charge ;
+  rdfs:label "fixed portion" ;
+  rdfs:range <http://qudt.org/schema/qudt#CurrencyUnit> ;
+.
+tariff:history
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:ApplicabilityRange ;
+  rdfs:label "history" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "history" ;
+.
+tariff:hours
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:TimeTariffInterval ;
+  rdfs:label "hours" ;
+  rdfs:range xsd:time ;
+  skos:prefLabel "hours" ;
+.
+tariff:kind
+  rdf:type owl:ObjectProperty ;
+.
+tariff:maximum
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:ApplicabilityRange ;
+  rdfs:label "maximum" ;
+  rdfs:range xsd:float ;
+  skos:prefLabel "maximum" ;
+.
+tariff:minimum
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:ApplicabilityRange ;
+  rdfs:label "minimum" ;
+  rdfs:range xsd:float ;
+  skos:prefLabel "minimum" ;
+.
+tariff:monetaryUnit
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+tariff:month
+  rdf:type owl:ObjectProperty ;
+  rdfs:range tariff:MonthType ;
+.
+tariff:multiplier
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "" ;
+.
+tariff:operator
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+tariff:period
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:ConsumptionTariffInterval ;
+  rdfs:label "period" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "period" ;
+.
+tariff:periodReference
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:TimeTariffInterval ;
+  rdfs:label "period reference" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "period reference" ;
+.
+tariff:phaseWiring
+  rdf:type owl:ObjectProperty ;
+.
+tariff:pricingStructures
+  rdf:type owl:ObjectProperty ;
+.
+tariff:priority
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          tariff:TimeTariffInterval
+          tariff:ThresholdTariffInterval
+        ) ;
+    ] ;
+  rdfs:label "priority" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "priority" ;
+.
+tariff:readingType
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "reading type" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "reading type" ;
+.
+tariff:recurringDate
+  rdf:type owl:ObjectProperty ;
+  rdfs:range tariff:RdRule ;
+.
+tariff:revenueKind
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tariff:PricingStructure ;
+  rdfs:label "revenue kind" ;
+  rdfs:range tariff:RevenueKind ;
+  skos:prefLabel "revenue kind" ;
+.
+tariff:seconds
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:TimeTariffInterval ;
+  rdfs:label "seconds" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "seconds" ;
+.
+tariff:sequenceNumber
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "sequence number" ;
+  rdfs:range xsd:integer ;
+.
+tariff:startDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:Tariff ;
+  rdfs:label "sart date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "start date" ;
+.
+tariff:startValue
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "start value" ;
+  rdfs:range xsd:float ;
+.
+tariff:tariffCycle
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "tariff cycle" ;
+  rdfs:range xsd:string ;
+.
+tariff:tariffProfile
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tariff:Tariff ;
+  rdfs:label "tariff profile" ;
+  rdfs:range tariff:TariffProfile ;
+.
+tariff:tariffs
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tariff:PricingStructure ;
+  rdfs:label "tariffs" ;
+  rdfs:range tariff:Tariff ;
+  skos:prefLabel "tariffs" ;
+.
+tariff:taxExemption
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:PricingStructure ;
+  rdfs:label "tax examption" ;
+  rdfs:range xsd:boolean ;
+  skos:prefLabel "tax exemption" ;
+.
+tariff:threshold
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          tariff:ConsumptionTariffInterval
+          tariff:TimeTariffInterval
+        ) ;
+    ] ;
+  rdfs:label "threshold" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "threshold" ;
+.
+tariff:thresholdReference
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tariff:ThresholdTariffInterval ;
+  rdfs:label "threshold reference" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "threshold reference" ;
+.
+tariff:thresholdTariffIntervals
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "threshold tariff intervals" ;
+  rdfs:range tariff:ThresholdTariffInterval ;
+.
+tariff:timeTariffIntervals
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "time tariff intervals" ;
+  rdfs:range tariff:TimeTariffInterval ;
+.
+tariff:usagePointReference
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tariff:PricingStructure ;
+  rdfs:label "usage point reference" ;
+  rdfs:range tariff:UsagePointReference ;
+  skos:prefLabel "usage point reference" ;
+.
+tariff:value
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "" ;
+  rdfs:range xsd:float ;
+  skos:prefLabel "" ;
+.
+tariff:variablePortion
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tariff:Charge ;
+  rdfs:label "variable portion" ;
+  rdfs:range <http://qudt.org/schema/qudt#Unit> ;
+.
+tariff:voltageCategory
+  rdf:type owl:ObjectProperty ;
+.

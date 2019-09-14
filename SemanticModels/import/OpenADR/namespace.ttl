@@ -1,0 +1,139 @@
+# baseURI: http://www.w3.org/XML/1998/namespace
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: namespace
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix namespace: <http://www.w3.org/XML/1998/namespace#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+<http://www.w3.org/XML/1998/namespace>
+  rdf:type owl:Ontology ;
+  dc:description """In keeping with the XML Schema WG's standard versioning
+   policy, this schema document will persist at
+   http://www.w3.org/2001/03/xml.xsd.
+   At the date of issue it can also be found at
+   http://www.w3.org/2001/xml.xsd.
+   The schema document at that URI may however change in the future,
+   in order to remain compatible with the latest version of XML Schema
+   itself.  In other words, if the XML Schema namespace changes, the version
+   of this document at
+   http://www.w3.org/2001/xml.xsd will change
+   accordingly; the version at
+   http://www.w3.org/2001/03/xml.xsd will not change."""^^xsd:string ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://www.w3.org/XML/1998/namespace, http://www.w3.org/XML/1998/namespace, http://www.w3.org/XML/1998/namespace, http://www.w3.org/XML/1998/namespace"^^xsd:string ;
+  namespace:lang "en"^^xsd:string ;
+.
+namespace:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value"^^xsd:string ;
+  rdfs:subClassOf dtype:EnumeratedValue ;
+.
+namespace:SA_default
+  rdf:type namespace:SpecialAttrs-space ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "default"^^xsd:NCName ;
+  rdfs:label "default"^^xsd:string ;
+.
+namespace:SA_preserve
+  rdf:type namespace:SpecialAttrs-space ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "preserve"^^xsd:NCName ;
+  rdfs:label "preserve"^^xsd:string ;
+.
+namespace:SpecialAttrs
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/XML/1998/namespace#specialAttrs" ;
+  rdfs:label "Special attrs"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty namespace:base ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:language. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:language."^^xsd:string ;
+      owl:allValuesFrom xsd:language ;
+      owl:onProperty namespace:lang ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom namespace:SpecialAttrs-space ;
+      owl:onProperty namespace:spaceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty namespace:base ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty namespace:lang ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty namespace:spaceRef ;
+    ] ;
+.
+namespace:SpecialAttrs-space
+  rdf:type owl:Class ;
+  rdfs:label "Special attrs-space"^^xsd:string ;
+  rdfs:subClassOf namespace:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:NCName. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:NCName."^^xsd:string ;
+      owl:allValuesFrom xsd:NCName ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      namespace:SA_default
+      namespace:SA_preserve
+    ) ;
+.
+namespace:base
+  rdf:type owl:DatatypeProperty ;
+  dc:description """See http://www.w3.org/TR/xmlbase/ for
+                     information about this attribute."""^^xsd:string ;
+  sxml:attribute "http://www.w3.org/XML/1998/namespace#base" ;
+  rdfs:label "base"^^xsd:string ;
+.
+namespace:lang
+  rdf:type owl:AnnotationProperty ;
+  dc:description """In due course, we should install the relevant ISO 2- and 3-letter
+         codes as the enumerated possible values . . ."""^^xsd:string ;
+  sxml:attribute "http://www.w3.org/XML/1998/namespace#lang" ;
+  rdfs:label "lang"^^xsd:string ;
+.
+namespace:spaceRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/XML/1998/namespace#space" ;
+  dtype:defaultValue "preserve"^^xsd:string ;
+  rdfs:label "space ref"^^xsd:string ;
+.

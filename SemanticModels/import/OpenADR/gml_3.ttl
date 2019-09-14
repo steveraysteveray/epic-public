@@ -1,0 +1,179 @@
+# baseURI: http://www.opengis.net/gml/3.2
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: gml-3_2
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix gml-3_2: <http://www.opengis.net/gml/3.2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.opengis.net/gml/3.2>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://www.opengis.net/gml/3.2, http://www.opengis.net/gml/3.2, http://www.opengis.net/gml/3.2, http://www.opengis.net/gml/3.2, http://www.opengis.net/gml/3.2, http://www.opengis.net/gml/3.2, http://www.opengis.net/gml/3.2, http://www.opengis.net/gml/3.2"^^xsd:string ;
+.
+gml-3_2:DoubleListDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Double list datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+gml-3_2:FeatureCollection
+  rdf:type owl:Class ;
+  sxml:tag "http://www.opengis.net/gml/3.2#FeatureCollection" ;
+  rdfs:label "Feature collection"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom gml-3_2:FeatureCollection-location ;
+      owl:onProperty gml-3_2:locationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:ID. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:ID."^^xsd:string ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty gml-3_2:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty gml-3_2:locationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty gml-3_2:id ;
+    ] ;
+.
+gml-3_2:FeatureCollection-location
+  rdf:type owl:Class ;
+  rdfs:label "Feature collection-location"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom gml-3_2:FeatureCollection-location-polygon ;
+      owl:onProperty gml-3_2:polygonRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty gml-3_2:polygonRef ;
+    ] ;
+.
+gml-3_2:FeatureCollection-location-polygon
+  rdf:type owl:Class ;
+  rdfs:label "Feature collection-location-polygon"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom gml-3_2:FeatureCollection-location-polygon-exterior ;
+      owl:onProperty gml-3_2:exteriorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:ID. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:ID."^^xsd:string ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty gml-3_2:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty gml-3_2:exteriorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty gml-3_2:id ;
+    ] ;
+.
+gml-3_2:FeatureCollection-location-polygon-exterior
+  rdf:type owl:Class ;
+  rdfs:label "Feature collection-location-polygon-exterior"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom gml-3_2:FeatureCollection-location-polygon-exterior-linearRing ;
+      owl:onProperty gml-3_2:linearRingRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty gml-3_2:linearRingRef ;
+    ] ;
+.
+gml-3_2:FeatureCollection-location-polygon-exterior-linearRing
+  rdf:type owl:Class ;
+  rdfs:label "Feature collection-location-polygon-exterior-linear ring"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is gml-3_2:PosListDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty gml-3_2:posList ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty gml-3_2:posList ;
+    ] ;
+.
+gml-3_2:PosListDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Pos list datatype"^^xsd:string ;
+  rdfs:subClassOf gml-3_2:DoubleListDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype gml-3_2:DoubleListDatatype ;
+    ] ;
+.
+gml-3_2:exteriorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.opengis.net/gml/3.2#exterior" ;
+  rdfs:label "exterior ref"^^xsd:string ;
+.
+gml-3_2:id
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.opengis.net/gml/3.2#id" ;
+  rdfs:label "id"^^xsd:string ;
+.
+gml-3_2:linearRingRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.opengis.net/gml/3.2#LinearRing" ;
+  rdfs:label "linear ring ref"^^xsd:string ;
+.
+gml-3_2:locationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.opengis.net/gml/3.2#location" ;
+  rdfs:label "location ref"^^xsd:string ;
+.
+gml-3_2:polygonRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.opengis.net/gml/3.2#Polygon" ;
+  rdfs:label "polygon ref"^^xsd:string ;
+.
+gml-3_2:posList
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.opengis.net/gml/3.2#posList" ;
+  rdfs:label "pos list"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.

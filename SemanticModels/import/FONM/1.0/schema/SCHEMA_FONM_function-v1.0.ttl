@@ -1,0 +1,642 @@
+# baseURI: http://fonm.org/1.0/schema/function
+# imports: http://fonm.org/1.0/schema/intention
+# imports: http://fonm.org/1.0/schema/process
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sc: <http://data.nasa.gov/core/schema/sc#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/1.0/schema/function>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The FONM 'Function' ontology is a model of device/machine function and Machine Primitives (devices that implement a basic function). It describes the behaviors which comprise a function for use in diagnosis when a function is disabled." ;
+  dc:subject "Device/Machine Function" ;
+  dc:title "The FONM Function Ontology" ;
+  vaem:hasCatalogEntry voag:FONM-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This ontology is used to understand what devices do and relate to the behaviors that describe how they do what they do. It is used by the FONM intention model to describe when and why machines are used." ;
+  vaem:namespace "http://fonm.org/schema/fonm#" ;
+  vaem:namespacePrefix "fonm" ;
+  vaem:specificity "1"^^xsd:int ;
+  vaem:url "http://fonm.org/1.0/schema/function"^^xsd:anyURI ;
+  rdfs:label "FONM Function Ontology" ;
+  owl:imports <http://fonm.org/1.0/schema/intention> ;
+  owl:imports <http://fonm.org/1.0/schema/process> ;
+  owl:versionInfo "$Id: SCHEMA_FONM_function-v1.0.ttl 4989 2018-08-23 21:56:40Z JackHodges $" ;
+.
+fonm:BearingFunction
+  rdf:type owl:Class ;
+  rdfs:label "Bearing function" ;
+  rdfs:subClassOf fonm:WheelFunction ;
+  skos:prefLabel "Bearing function" ;
+.
+fonm:BladeFunction
+  rdf:type owl:Class ;
+  rdfs:label "Blade function" ;
+  rdfs:subClassOf fonm:InclinedPlaneFunction ;
+  skos:prefLabel "Blade function" ;
+.
+fonm:ContainmentFunction
+  rdf:type owl:Class ;
+  rdfs:label "Containment function" ;
+  rdfs:subClassOf fonm:MechFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:RestraintGoal ;
+      owl:onProperty fonm:servesPurpose ;
+    ] ;
+  skos:prefLabel "Containment function" ;
+.
+fonm:Device
+  rdf:type owl:Class ;
+  rdfs:label "Device" ;
+  rdfs:subClassOf fonm:Phys-Obj ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:prefLabel "Device" ;
+.
+fonm:Function
+  rdf:type owl:Class ;
+  rdfs:label "Function" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:initiatedBy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:terminatedBy ;
+    ] ;
+  skos:prefLabel "Function" ;
+.
+fonm:GearFunction
+  rdf:type owl:Class ;
+  rdfs:label "Gear function" ;
+  rdfs:subClassOf fonm:WheelFunction ;
+  skos:prefLabel "Gear function" ;
+.
+fonm:InclinedPlaneFunction
+  rdf:type owl:Class ;
+  rdfs:label "Inclined plane function" ;
+  rdfs:subClassOf fonm:LinearFunction ;
+  skos:prefLabel "Inclined plane function" ;
+.
+fonm:LinearFunction
+  rdf:type owl:Class ;
+  rdfs:label "Linear function" ;
+  rdfs:subClassOf fonm:MechanicalAdvantageFunction ;
+  skos:prefLabel "Linear function" ;
+.
+fonm:LinearMotionFunction
+  rdf:type owl:Class ;
+  rdfs:label "Linear motion function" ;
+  rdfs:subClassOf fonm:MotionFunction ;
+  skos:prefLabel "Linear motion function" ;
+.
+fonm:LinkageFunction
+  rdf:type owl:Class ;
+  rdfs:label "Linkage function" ;
+  rdfs:subClassOf fonm:MechFunction ;
+  skos:prefLabel "Linkage function" ;
+.
+fonm:MP_Bearing
+  rdf:type owl:Class ;
+  rdfs:label "MP Bearing" ;
+  rdfs:subClassOf fonm:MP_Wheel_Axle ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:BearingFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:BearingObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:prefLabel "MP Bearing" ;
+.
+fonm:MP_Blade
+  rdf:type owl:Class ;
+  rdfs:label "MP Blade" ;
+  rdfs:subClassOf fonm:MP_Plane ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:BladeFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:BladeObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:prefLabel "MP Blade" ;
+.
+fonm:MP_Container
+  rdf:type owl:Class ;
+  rdfs:label "MP Container" ;
+  rdfs:subClassOf fonm:MP_Linkage ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:ContainerObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:ContainmentFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  skos:prefLabel "MP Container" ;
+.
+fonm:MP_Gear
+  rdf:type owl:Class ;
+  rdfs:label "MP Gear" ;
+  rdfs:subClassOf fonm:MP_Wheel_Axle ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:GearFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:GearObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:WheelCenter ;
+      owl:onProperty fonm:hasPivot ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasAppl ;
+      owl:someValuesFrom fonm:GearTooth ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasAppl ;
+      owl:someValuesFrom fonm:WheelAxle ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasReact ;
+      owl:someValuesFrom fonm:GearTooth ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasReact ;
+      owl:someValuesFrom fonm:WheelAxle ;
+    ] ;
+  skos:prefLabel "MP Gear" ;
+.
+fonm:MP_Lever
+  rdf:type owl:Class ;
+  dc:description "MP_Lever adds a pivot region to MP_Linkage and thus supports mechanical advantage or change of direction" ;
+  rdfs:label "MP Lever" ;
+  rdfs:subClassOf fonm:MP_Linkage ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:LeverObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:MechanicalAdvantageFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasPivot ;
+    ] ;
+  skos:prefLabel "MP Lever" ;
+.
+fonm:MP_Linkage
+  rdf:type owl:Class ;
+  dc:description "The simplest Machine Primitive. Transmits force from its appl region to its react region. All solid objects can be MP_Linkage in at least one dimension and direction." ;
+  rdfs:label "MP Linkage" ;
+  rdfs:subClassOf fonm:MachinePrimitive ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:LinkageFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:LinkageObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:prefLabel "MP Linkage" ;
+.
+fonm:MP_Plane
+  rdf:type owl:Class ;
+  rdfs:label "MP Plane" ;
+  rdfs:subClassOf fonm:MP_Linkage ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:InclinedPlaneFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:PlaneObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:prefLabel "MP Plane" ;
+.
+fonm:MP_Pulley
+  rdf:type owl:Class ;
+  rdfs:label "MP Pulley" ;
+  rdfs:subClassOf fonm:MP_Wheel_Axle ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:PulleyFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:PulleyObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:prefLabel "MP Pulley" ;
+.
+fonm:MP_Screw
+  rdf:type owl:Class ;
+  rdfs:label "MP Screw" ;
+  rdfs:subClassOf fonm:MP_Plane ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:ScrewFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:ScrewObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:prefLabel "MP Screw" ;
+.
+fonm:MP_Spring
+  rdf:type owl:Class ;
+  rdfs:label "MP Spring" ;
+  rdfs:subClassOf fonm:MP_Linkage ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:SpringFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:SpringObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:prefLabel "MP Spring" ;
+.
+fonm:MP_Wheel_Axle
+  rdf:type owl:Class ;
+  dc:description "A wheel axle is a lever where the appl is bound to the the wheel axle, the pivot is bound to the wheel center, and the react is bound to the wheel edge" ;
+  rdfs:label "MP Wheel Axle" ;
+  rdfs:subClassOf fonm:MP_Lever ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:WheelCenter ;
+      owl:onProperty fonm:hasPivot ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:WheelFunction ;
+      owl:onProperty fonm:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:WheelObject ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasAppl ;
+      owl:someValuesFrom fonm:WheelAxle ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasAppl ;
+      owl:someValuesFrom fonm:WheelEdge ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasReact ;
+      owl:someValuesFrom fonm:WheelAxle ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasReact ;
+      owl:someValuesFrom fonm:WheelEdge ;
+    ] ;
+  skos:prefLabel "MP Wheel Axle" ;
+.
+fonm:MachinePrimitive
+  rdf:type owl:Class ;
+  dc:description "The root machine primitive has, minimally, a point of application of force and a point of reaction to that force. The most primitive Machine Primitive is MP_Linkage, whose purpose is to transmit force from appl to react, which are regions." ;
+  rdfs:label "Machine primitive" ;
+  rdfs:seeAlso <http://arbor-studios.com/pubs/DissTechRep-2012.pdf> ;
+  rdfs:subClassOf fonm:Device ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:ObjectPrimitive ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasAppl ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasReact ;
+    ] ;
+  skos:closeMatch <http://arbor-studios.com/pubs/DissTechRep-2012.pdf> ;
+  skos:prefLabel "Machine primitive" ;
+.
+fonm:MechFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Defines a mechanical function (function for a mechanical object/device). As a result it has the three regions of a mechanical machine: appl, pivot, and react, which represent the location where force is applied, pivoted, and reacted, respectively." ;
+  rdfs:label "Mech Function" ;
+  rdfs:subClassOf fonm:Function ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasAppl ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasPivot ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasReact ;
+    ] ;
+  skos:prefLabel "Mech Function" ;
+.
+fonm:MechanicalAdvantageFunction
+  rdf:type owl:Class ;
+  rdfs:label "Mechanical advantage function" ;
+  rdfs:subClassOf fonm:MechFunction ;
+  skos:prefLabel "Mechanical advantage function" ;
+.
+fonm:MotionFunction
+  rdf:type owl:Class ;
+  rdfs:label "Motion function" ;
+  rdfs:subClassOf fonm:MechFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:initiatedBy ;
+      owl:someValuesFrom fonm:PositionState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:servesPurpose ;
+      owl:someValuesFrom fonm:PositionGoal ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:terminatedBy ;
+      owl:someValuesFrom fonm:PositionState ;
+    ] ;
+  skos:prefLabel "Motion function" ;
+.
+fonm:MoveFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Move changes location, position, orientation of the device." ;
+  rdfs:label "Move function" ;
+  rdfs:subClassOf fonm:MechFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:PositionGoal ;
+      owl:onProperty fonm:servesPurpose ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:PositionState ;
+      owl:onProperty fonm:initiatedBy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:PositionState ;
+      owl:onProperty fonm:terminatedBy ;
+    ] ;
+  skos:prefLabel "Move function" ;
+.
+fonm:ObjectPrimitive
+  dc:description "An Object Primitive is the physical manifestation of a Machine Primitive. It is a Geometric Primtivive but I am not sure how to represent it." ;
+.
+fonm:PulleyFunction
+  rdf:type owl:Class ;
+  rdfs:comment "A pulley is one where motion and force are applied at the rim. They can be reacted at the rim or at the axle but generally at the rim using a belt." ;
+  rdfs:label "Pulley function" ;
+  rdfs:subClassOf fonm:WheelFunction ;
+  skos:prefLabel "Pulley function" ;
+.
+fonm:RotationalFunction
+  rdf:type owl:Class ;
+  rdfs:label "Rotational function" ;
+  rdfs:subClassOf fonm:MechanicalAdvantageFunction ;
+  skos:prefLabel "Rotational function" ;
+.
+fonm:RotationalMotionFunction
+  rdf:type owl:Class ;
+  rdfs:label "Rotational motion function" ;
+  rdfs:subClassOf fonm:MotionFunction ;
+  skos:prefLabel "Rotational motion function" ;
+.
+fonm:ScrewFunction
+  rdf:type owl:Class ;
+  rdfs:label "Screw function" ;
+  rdfs:subClassOf fonm:InclinedPlaneFunction ;
+  rdfs:subClassOf fonm:RotationalFunction ;
+  skos:prefLabel "Screw function" ;
+.
+fonm:ScrewObject
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:ThreadEdge ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelCenter ;
+    ] ;
+.
+fonm:SpringFunction
+  rdf:type owl:Class ;
+  rdfs:label "Spring function" ;
+  rdfs:subClassOf fonm:MechFunction ;
+  skos:prefLabel "Spring function" ;
+.
+fonm:WheelFunction
+  rdf:type owl:Class ;
+  rdfs:label "Wheel function" ;
+  rdfs:subClassOf fonm:RotationalFunction ;
+  skos:prefLabel "Wheel function" ;
+.
+fonm:WheelObject
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelAxle ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelCenter ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelEdge ;
+    ] ;
+.
+fonm:deviceFunction
+  rdf:type rdf:Property ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Device
+          fonm:MachinePrimitive
+        ) ;
+    ] ;
+  rdfs:label "device function" ;
+  rdfs:range fonm:Function ;
+.
+fonm:hasAppl
+  rdf:type rdf:Property ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Function
+          fonm:MachinePrimitive
+        ) ;
+    ] ;
+  rdfs:label "has appl" ;
+  rdfs:range fonm:Region ;
+.
+fonm:hasAxle
+  rdf:type rdf:Property ;
+  rdfs:label "has axle" ;
+  rdfs:subPropertyOf fonm:hasAppl ;
+  skos:prefLabel "has axle" ;
+.
+fonm:hasCenter
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has center" ;
+  rdfs:subPropertyOf fonm:hasPivot ;
+  skos:prefLabel "has center" ;
+.
+fonm:hasEdge
+  rdf:type rdf:Property ;
+  rdfs:label "has edge" ;
+  rdfs:subPropertyOf fonm:hasAppl ;
+  skos:prefLabel "has edge" ;
+.
+fonm:hasFunction
+  rdf:type rdf:Property ;
+  rdfs:domain fonm:Device ;
+  rdfs:label "has function" ;
+  rdfs:range fonm:Function ;
+  skos:prefLabel "has function" ;
+.
+fonm:hasPivot
+  rdf:type rdf:Property ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Function
+          fonm:MachinePrimitive
+        ) ;
+    ] ;
+  rdfs:label "has appl" ;
+  rdfs:range fonm:Region ;
+.
+fonm:hasReact
+  rdf:type rdf:Property ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Function
+          fonm:MachinePrimitive
+        ) ;
+    ] ;
+  rdfs:label "has appl" ;
+  rdfs:range fonm:Region ;
+.
+fonm:hasSurface
+  rdf:type rdf:Property ;
+  rdfs:label "has surface" ;
+  rdfs:subPropertyOf fonm:hasAppl ;
+  skos:prefLabel "has surface" ;
+.
+fonm:hasTooth
+  rdf:type rdf:Property ;
+  rdfs:label "has tooth" ;
+  rdfs:subPropertyOf fonm:hasReact ;
+  skos:prefLabel "has tooth" ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.

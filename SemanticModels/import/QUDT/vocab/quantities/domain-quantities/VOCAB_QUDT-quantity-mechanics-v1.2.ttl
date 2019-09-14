@@ -1,0 +1,973 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/mechanics
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://qudt.org/1.2/vocab/unit/base
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/mechanics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantity Kinds Vocabulary "^^xsd:string ;
+  dc:title "QUDT Mechanics Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Mechanics Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:CurationGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^vaem:dateUnion ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Mechanics Quantity Kinds"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/mechanics> ;
+.
+quantity:Action
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:LonglongDescription """An action is usually an integral over time. But for action pertaining to fields, it may be integrated over spatial variables as well. In some cases, the action is integrated along the path followed by the physical system.  If the action is represented as an integral over time, taken a the path of the system between the initial time and the final time of the development of the system. 
+
+The evolution of a physical system between two states is determined by requiring the action be minimized or, more generally, be stationary for small perturbations about the true evolution. This requirement leads to differential equations that describe the true evolution. Conversely, an action principle is a method for reformulating differential equations of motion for a physical system as an equivalent integral equation. Although several variants have been defined (see below), the most commonly used action principle is Hamilton's principle."""^^xsd:string ;
+  qudt:abbreviation "S"^^xsd:string ;
+  qudt:applicableUnit unit:J-SEC ;
+  qudt:latexDefinition "$S = \\int Ldt$, where $L$ is the Lagrange function and $t$ is time."^^xsd:string ;
+  qudt:symbol "S"^^xsd:string ;
+  rdfs:label "Action"^^xsd:string ;
+  skos:prefLabel "Action"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Action_(physics)> ;
+.
+quantity:AngularImpulse
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG-M2-PER-SEC ;
+  qudt:applicableUnit unit:N-M-SEC ;
+  qudt:description "The Angular Impulse, also known as angular momentum, is the moment of linear momentum around the point."^^xsd:string ;
+  qudt:latexDefinition "$H = \\int Mdt$, where $M$ is the moment of force and $t$ is time."^^xsd:string ;
+  qudt:symbol "H"^^xsd:string ;
+  rdfs:label "Angular Impulse"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/AngularMomentum> ;
+  skos:exactMatch quantity:AngularMomentum ;
+  skos:prefLabel "Angular Impulse"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://emweb.unl.edu/NEGAHBAN/EM373/note13/note.htm> ;
+.
+quantity:AngularMomentum
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:ERG-SEC ;
+  qudt:applicableUnit unit:EV-SEC ;
+  qudt:applicableUnit unit:FT-LBF-SEC ;
+  qudt:applicableUnit unit:J-SEC ;
+  qudt:applicableUnit unit:KG-M2-PER-SEC ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/T"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/s"^^xsd:string ;
+  qudt:description "\\textit{Angular Momentum} of an object rotating about some reference point is the measure of the extent to which the object will continue to rotate about that point unless acted upon by an external torque. In particular, if a point mass rotates about an axis, then the angular momentum with respect to a point on the axis is related to the mass of the object, the velocity and the distance of the mass to the axis. While the motion associated with linear momentum has no absolute frame of reference, the rotation associated with angular momentum is sometimes spoken of as being measured relative to the fixed stars.  \\textit{Angular Momentum}, \\textit{Moment of Momentum}, or \\textit{Rotational Momentum}, is a vector quantity that represents the product of a body's rotational inertia and rotational velocity about a particular axis."^^xsd:string ;
+  qudt:generalization quantity:Momentum ;
+  qudt:latexDefinition "$L = I\\omega$, where $I$ is the moment of inertia, and $\\omega$ is the angular velocity."^^xsd:string ;
+  rdfs:label "Angular Momentum"^^xsd:string ;
+  skos:broader quantity:Momentum ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_momentum> ;
+  skos:prefLabel "Angular Momentum"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Angular_momentum> ;
+.
+quantity:BendingMomentOfForce
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:N-M ;
+  qudt:description "A bending moment exists in a structural element when a moment is applied to the element so that the element bends. It is the component of moment of force perpendicular to the longitudinal axis of a beam or a shaft."^^xsd:string ;
+  qudt:latexDefinition "$M_b = M \\cdot e_Q$, where $M$ is the momentof force and $e_Q$ is a unit vector directed along a $Q-axis$ with respect to which the torque is considered."^^xsd:string ;
+  qudt:symbol "M_b"^^xsd:string ;
+  rdfs:label "Bending Moment of Force"^^xsd:string ;
+  skos:broader quantity:MomentOfForce ;
+  skos:exactMatch <http://dbpedia.org/resource/Torque> ;
+  skos:prefLabel "Bending Moment of Force"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bending_moment> ;
+.
+quantity:BulkModulus
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:description "The bulk modulus of a substance measures the substance's resistance to uniform compression. It is defined as the ratio of the infinitesimal pressure increase to the resulting relative decrease of the volume."^^xsd:string ;
+  qudt:latexDefinition "$K = \\frac{p}{\\vartheta}$, where $\\p$ is pressure and $\\vartheta$ is volume strain."^^xsd:string ;
+  qudt:symbol "K"^^xsd:string ;
+  rdfs:label "Bulk Modulus"^^xsd:string ;
+  skos:prefLabel "Bulk Modulus"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bulk_modulus> ;
+.
+quantity:Compressibility
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-PA ;
+  qudt:description "Compressibility is a measure of the relative volume change of a fluid or solid as a response to a pressure (or mean stress) change."^^xsd:string ;
+  qudt:latexDefinition "$\\chi = -(\\frac{\\1}{V})\\frac{dV}{d\\rho}$, where $V$ is volume and $p$ is pressure."^^xsd:string ;
+  qudt:symbol "\\chi"^^xsd:string ;
+  rdfs:label "Compressibility"^^xsd:string ;
+  skos:prefLabel "Compressibility"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Compressibility> ;
+.
+quantity:DynamicFriction
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Kinetic (or dynamic) friction occurs when two objects are moving relative to each other and rub together (like a sled on the ground)."^^xsd:string ;
+  qudt:latexDefinition "$\\mu = \\frac{F}{N}$, where $F$ is the tangential component of the contact force and $N$ is the normal component of the contact force between two sliding bodies."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Dynamic Friction"^^xsd:string ;
+  skos:broader quantity:Friction ;
+  skos:exactMatch <http://dbpedia.org/resource/Friction> ;
+  skos:prefLabel "Dynamic Friction"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Friction> ;
+.
+quantity:DynamicViscosity
+  qudt:applicableUnit unit:PA-SEC ;
+  qudt:latexDefinition "$\\tau_x_z = \\eta\\frac{dv_x}{dz}$, where $\\tau_x_z$ is shear stress in a fluid moving with a velocity gradient $\\frac{dv_x}{dz}$ perpendicular to the plane of shear. "^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+.
+quantity:Efficiency
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Efficiency is the ratio of output power to input power."^^xsd:string ;
+  qudt:latexDefinition "$\\eta = \\frac{P_o_u_t}{P_i_n}$, where $P_o_u_t$ is the output power and $P_i_n$ is the input power."^^xsd:string ;
+  qudt:symbol "\\eta"^^xsd:string ;
+  rdfs:label "Efficiency"^^xsd:string ;
+  skos:broader quantity:Strain ;
+  skos:prefLabel "Efficiency"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Deformation_(mechanics)> ;
+.
+quantity:EnergyAndWork
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:EnergyDensity
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:ERG-PER-CM3 ;
+  qudt:applicableUnit unit:J-PER-M3 ;
+  qudt:baseISOUnitDimensions "m^{-1} \\cdot kg \\cdot s^{-2}"^^xsd:string ;
+  qudt:baseImperialUnitDimensions "L^{-1} \\cdot M \\cdot T^{-2}"^^xsd:string ;
+  qudt:baseSIUnitDimensions "m^{-1} \\cdot kg \\cdot s^{-2}"^^xsd:string ;
+  qudt:baseUSCustomaryUnitDimensions "L^{-1} \\cdot M \\cdot T^{-2}"^^xsd:string ;
+  qudt:description "Energy density is defined as energy per unit volume. The SI unit for energy density is the joule per cubic meter."^^xsd:string ;
+  rdfs:label "Energy Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Energy_density> ;
+  skos:prefLabel "Energy Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Energy_density> ;
+.
+quantity:FirstMomentOfArea
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "The first moment of area is the summation of area times distance to an axis. It is a measure of the distribution of the area of a shape in relationship to an axis."^^xsd:string ;
+  rdfs:label "First Moment of Area"^^xsd:string ;
+  skos:broader quantity:Volume ;
+  skos:prefLabel "First Moment of Area"^^xsd:string ;
+.
+quantity:Force
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:DYN ;
+  qudt:applicableUnit unit:KGF ;
+  qudt:applicableUnit unit:KIP ;
+  qudt:applicableUnit unit:KiloPond ;
+  qudt:applicableUnit unit:LBF ;
+  qudt:applicableUnit unit:NEWTON ;
+  qudt:applicableUnit unit:OZF ;
+  qudt:applicableUnit unit:PDL ;
+  qudt:applicableUnit unit:PlanckForce ;
+  qudt:baseUnitDimensions "kg \\cdot m/s^2"^^xsd:string ;
+  qudt:description "\\textit{Force} is an influence that causes mass to accelerate. It may be experienced as a lift, a push, or a pull. Force is defined by Newton's Second Law as $F = m \\times a $, where $F$ is force, $m$ is mass and $a$ is acceleration. Net force is mathematically equal to the time rate of change of the momentum of the body on which it acts. Since momentum is a vector quantity (has both a magnitude and direction), force also is a vector quantity."^^xsd:string ;
+  qudt:symbol "F"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Force"^^xsd:anyURI ;
+  rdfs:label "Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Force> ;
+  skos:prefLabel "Force"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Force> ;
+.
+quantity:ForceMagnitude
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:ERG ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "The 'magnitude' of a force is its 'size' or 'strength', regardless of the direction in which it acts."^^xsd:string ;
+  qudt:symbol "U"^^xsd:string ;
+  rdfs:label "Force Magnitude"^^xsd:string ;
+  skos:prefLabel "Force Magnitude"^^xsd:string ;
+  prov:wasInfluencedBy <http://wiki.answers.com/Q/What_is_magnitude_of_force> ;
+.
+quantity:ForcePerArea
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  rdf:type qudt:PhysicsQuantityKind ;
+  qudt:applicableUnit unit:AtmosphereStandard ;
+  qudt:applicableUnit unit:AtmosphereTechnical ;
+  qudt:applicableUnit unit:BAR ;
+  qudt:applicableUnit unit:CentimeterOfWater ;
+  qudt:applicableUnit unit:DYN-PER-CM2 ;
+  qudt:applicableUnit unit:FT_H20 ;
+  qudt:applicableUnit unit:IN_AQ ;
+  qudt:applicableUnit unit:IN_HG ;
+  qudt:applicableUnit unit:KGF-PER-CM2 ;
+  qudt:applicableUnit unit:KIP-PER-IN2 ;
+  qudt:applicableUnit unit:KiloPascal ;
+  qudt:applicableUnit unit:KiloPascalAbsolute ;
+  qudt:applicableUnit unit:LBF-PER-FT2 ;
+  qudt:applicableUnit unit:LBF-PER-IN2 ;
+  qudt:applicableUnit unit:MicroTORR ;
+  qudt:applicableUnit unit:MilliBAR ;
+  qudt:applicableUnit unit:MilliM_HG ;
+  qudt:applicableUnit unit:MilliM_HGA ;
+  qudt:applicableUnit unit:MilliTorr ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:applicableUnit unit:PDL-PER-FT2 ;
+  qudt:applicableUnit unit:PlanckPressure ;
+  qudt:applicableUnit unit:Torr ;
+  qudt:baseUnitDimensions "kg/m \\cdot s^2"^^xsd:string ;
+  qudt:description "The force applied to a unit area of surface; measured in pascals (SI unit) or in dynes (cgs unit)"^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Pressure"^^xsd:anyURI ;
+  rdfs:label "Force Per Area"^^xsd:string ;
+  skos:broader quantity:Force ;
+  skos:prefLabel "Force Per Area"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.thefreedictionary.com/force+per+unit+area> ;
+.
+quantity:ForcePerAreaTime
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:LBF-PER-IN2-SEC ;
+  qudt:applicableUnit unit:PA-PER-HR ;
+  qudt:applicableUnit unit:PA-PER-MIN ;
+  qudt:applicableUnit unit:PA-PER-SEC ;
+  qudt:baseUnitDimensions "kg/m \\cdot s^3"^^xsd:string ;
+  rdfs:label "Force Per Area Time"^^xsd:string ;
+  skos:prefLabel "Force Per Area Time"^^xsd:string ;
+.
+quantity:ForcePerLength
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:LBF-PER-FT ;
+  qudt:applicableUnit unit:LBF-PER-IN ;
+  qudt:applicableUnit unit:N-PER-M ;
+  qudt:baseUnitDimensions "kg/s^2"^^xsd:string ;
+  rdfs:label "Force per Length"^^xsd:string ;
+  skos:prefLabel "Force per Unit Length"^^xsd:string ;
+.
+quantity:Friction
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:description "\\textit{Friction} is the force of two surfaces In contact, or the force of a medium acting on a moving object (that is air on an aircraft). When contacting surfaces move relative to each other, the friction between the two objects converts kinetic energy into thermal energy."^^xsd:string ;
+  qudt:generalization quantity:Force ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  qudt:url "http://wiki.answers.com/Q/What_is_the_symbol_of_friction"^^xsd:anyURI ;
+  rdfs:label "Friction"^^xsd:string ;
+  skos:broader quantity:Force ;
+  skos:exactMatch <http://dbpedia.org/resource/Friction> ;
+  skos:prefLabel "Friction"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Friction> ;
+.
+quantity:GeneralizedCoordinate
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Generalized Coordinates refers to the parameters that describe the configuration of the system relative to some reference configuration. These parameters must uniquely define the configuration of the system relative to the reference configuration."^^xsd:string ;
+  qudt:latexDefinition "$q_i$, where $q_i$ is one of the coordinates that is used to describe the position of the system under consideration, and $N$ is the lowest number of coordinates necessary to fully define the position of the system."^^xsd:string ;
+  qudt:symbol "q_i"^^xsd:string ;
+  rdfs:label "Generalized Coordinate"^^xsd:string ;
+  skos:prefLabel "Generalized Coordinate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Generalized_coordinates> ;
+.
+quantity:GeneralizedForce
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Generalized Forces find use in Lagrangian mechanics, where they play a role conjugate to generalized coordinates."^^xsd:string ;
+  qudt:latexDefinition "$\\delta A = \\sum Q_i\\delta q_i$, where $A$ is work and $q_i$ is a generalized coordinate."^^xsd:string ;
+  qudt:symbol "Q_i"^^xsd:string ;
+  rdfs:label "Generalized Force"^^xsd:string ;
+  skos:prefLabel "Generalized Force"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Generalized_forces> ;
+.
+quantity:GeneralizedMomentum
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Generalized Momentum, also known as the canonical or conjugate momentum, extends the concepts of both linear momentum and angular momentum. To distinguish it from generalized momentum, the product of mass and velocity is also referred to as mechanical, kinetic or kinematic momentum."^^xsd:string ;
+  qudt:latexDefinition "$p_i = \\frac{\\partial L}{\\partial \\dot{q_i}}$, where $L$ is the Langrange function and $\\dot{q_i}$ is a generalized velocity."^^xsd:string ;
+  qudt:symbol "p_i"^^xsd:string ;
+  rdfs:label "Generalized Force"^^xsd:string ;
+  skos:prefLabel "Generalized Force"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Momentum> ;
+.
+quantity:GeneralizedVelocity
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Generalized Velocities are the time derivatives of the generalized coordinates of the system."^^xsd:string ;
+  qudt:latexDefinition "$\\dot{q_i} = \\frac{dq_i}{dt}$, where $q_i$ is the generalized coordinate and $t$ is time."^^xsd:string ;
+  qudt:symbol "\\dot{q_i}"^^xsd:string ;
+  rdfs:label "Generalized Velocity"^^xsd:string ;
+  skos:prefLabel "Generalized Velocity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Generalized_coordinates> ;
+.
+quantity:HamiltonFunction
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "The Hamilton–Jacobi equation (HJE) is a necessary condition describing extremal geometry in generalizations of problems from the calculus of variations."^^xsd:string ;
+  qudt:latexDefinition "$H = \\sum p_i\\dot{q_i} - L$, where $p_i$ is a generalized momentum, $\\dot{q_i}$ is a generalized velocity, and $L$ is the Lagrange function."^^xsd:string ;
+  qudt:symbol "H"^^xsd:string ;
+  rdfs:label "Hamilton Function"^^xsd:string ;
+  skos:prefLabel "Hamilton Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hamilton–Jacobi_equation> ;
+.
+quantity:InternalEnergy
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:InverseEnergy
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:InverseSquareEnergy
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:KinematicViscosity
+  qudt:applicableUnit unit:M2-PER-SEC ;
+  qudt:latexDefinition "$\\nu = \\frac{\\eta}{\\rho}$, where $\\eta$ is dynamic viscosity and $\\rho$ is mass density."^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+.
+quantity:KineticEnergy
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:latexDefinition "$T = \\frac{mv^2}{2}$, where $m$ is mass and $v$ is speed."^^xsd:string ;
+  qudt:symbol "K"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kinetic_energy> ;
+.
+quantity:LagrangeFunction
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "lagrange-function"^^xsd:string ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "The Lagrange Function is a function that summarizes the dynamics of the system."^^xsd:string ;
+  qudt:latexDefinition "$L(q_i, \\dot{q_i}) = T(q_i, \\dot{q_i}) - V(q_i)$, where $T$ is kinetic energy, $V$ is potential energy, $q_i$ is a generalized coordinate, and $\\dot{q_i}$ is a generalized velocity."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  qudt:symbolToken "L"^^xsd:token ;
+  rdfs:label "Lagrange Function"^^xsd:string ;
+  skos:prefLabel "Lagrange Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Lagrangian> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=113-03-76> ;
+.
+quantity:LengthByForce
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdfs:label "Length Force"^^xsd:string ;
+  skos:prefLabel "Length Force"^^xsd:string ;
+.
+quantity:LengthEnergy
+  qudt:baseUnitDimensions "kg \\cdot m^3/s^2"^^xsd:string ;
+  rdfs:label "Length Energy"^^xsd:string ;
+  skos:prefLabel "Length Energy"^^xsd:string ;
+.
+quantity:LengthMass
+  qudt:baseUnitDimensions "kg \\cdot m"^^xsd:string ;
+  rdfs:label "Length Mass"^^xsd:string ;
+  skos:prefLabel "Length Mass"^^xsd:string ;
+.
+quantity:LinearDensity
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG-PER-M ;
+  qudt:baseUnitDimensions "kg m^{-1}"^^xsd:string ;
+  qudt:description "The Linear density, linear mass density or linear mass is a measure of mass per unit of length, and it is a characteristic of strings or other one-dimensional objects."^^xsd:string ;
+  qudt:latexDefinition "$\\rho_l = \\frac{dm}{dl}$, where $m$ is mass and $l$ is length."^^xsd:string ;
+  qudt:symbol "\\rho_l"^^xsd:string ;
+  rdfs:label "Linear Density"^^xsd:string ;
+  skos:broader quantity:Density ;
+  skos:prefLabel "Linear Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Linear_density> ;
+.
+quantity:LinearMomentum
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:KG-M-PER-SEC ;
+  qudt:applicableUnit unit:MeV-PER-c ;
+  qudt:applicableUnit unit:PlanckMomentum ;
+  qudt:baseUnitDimensions "kg \\cdot m/s"^^xsd:string ;
+  qudt:description "Linear momentum is the quantity obtained by multiplying the mass of a body by its linear velocity. The momentum of a continuous medium is given by the integral of the velocity over the mass of the medium or by the product of the total mass of the medium and the velocity of the center of gravity of the medium.The SI unit for linear momentum is meter-kilogram per second ($m-kg/s$)."^^xsd:string ;
+  qudt:generalization quantity:Momentum ;
+  qudt:latexDefinition "p = m\\upsilon"^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Momentum"^^xsd:anyURI ;
+  rdfs:label "Linear Momentum"^^xsd:string ;
+  skos:broader quantity:Momentum ;
+  skos:exactMatch <http://dbpedia.org/resource/Momentum> ;
+  skos:prefLabel "Linear Momentum"^^xsd:string ;
+.
+quantity:LinearStrain
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "A strain is a normalized measure of deformation representing the displacement between particles in the body relative to a reference length."^^xsd:string ;
+  qudt:latexDefinition "$\\xi = \\frac{\\Delta l}{l_0}$, where $\\Delta l$ is the increase in length and $l_0$ is the length in a reference state to be specified."^^xsd:string ;
+  qudt:symbol "\\xi"^^xsd:string ;
+  rdfs:label "Linear Strain"^^xsd:string ;
+  skos:broader quantity:Strain ;
+  skos:prefLabel "Linear Strain"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Deformation_(mechanics)> ;
+.
+quantity:Mass
+  qudt:applicableUnit unit:KG ;
+.
+quantity:MassDensity
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG-PER-M3 ;
+  qudt:baseUnitDimensions "kg m^{-3}"^^xsd:string ;
+  qudt:description "The mass density or density of a material is its mass per unit volume."^^xsd:string ;
+  qudt:latexDefinition "$\\rho = \\frac{dm}{dV}$, where $m$ is mass and $V$ is volume."^^xsd:string ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  rdfs:label "Mass Density"^^xsd:string ;
+  skos:exactMatch quantity:Density ;
+  skos:prefLabel "Mass Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Density> ;
+.
+quantity:MassFlowRate
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG-PER-SEC ;
+  qudt:baseUnitDimensions "kg sec^{-1}"^^xsd:string ;
+  qudt:latexDefinition "$q_m = \\frac{dm}{dt}$, where $m$ is mass and $t$ is time."^^xsd:string ;
+  qudt:symbol "q_m"^^xsd:string ;
+  rdfs:label "Mass Flow Rate"^^xsd:string ;
+  skos:broader quantity:Mass ;
+  skos:prefLabel "Mass Flow Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_flow_rate> ;
+.
+quantity:MassPerArea
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:latexDefinition "\\rho_A = \\frac {m} {A}"^^xsd:string ;
+.
+quantity:MassPerAreaTime
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:MassPerLength
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:MassPerTime
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:MechanicalEnergy
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "Mechanical Energy is the sum of potential energy and kinetic energy. It is the energy associated with the motion and position of an object."^^xsd:string ;
+  qudt:generalization quantity:EnergyAndWork ;
+  qudt:latexDefinition "$E = T + V$, where $T$ is kinetic energy and $V$ is potential energy."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  rdfs:label "Mechanical Energy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Mechanical_energy> ;
+  skos:prefLabel "Mechanical Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mechanical_energy> ;
+.
+quantity:ModulusOfElasticity
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:description "The Modulus of Elasticity is the mathematical description of an object or substance's tendency to be deformed elastically (that is, non-permanently) when a force is applied to it."^^xsd:string ;
+  qudt:latexDefinition "$E = \\frac{\\sigma}{\\varepsilon}$, where $\\sigma$ is the normal stress and $\\varepsilon$ is the linear strain."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  rdfs:label "Modulus of Elasticity"^^xsd:string ;
+  skos:prefLabel "Modulus of Elasticity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Elastic_modulus> ;
+.
+quantity:MolarAngularMomentum
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:J-SEC-PER-MOL ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/mol \\cdot s"^^xsd:string ;
+  qudt:url "http://cvika.grimoar.cz/callen/callen_21.pdf"^^xsd:anyURI ;
+  rdfs:label "Molar Angular Momentum"^^xsd:string ;
+  skos:prefLabel "Molar Angular Momentum"^^xsd:string ;
+.
+quantity:MomentOfForce
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:N-M ;
+  qudt:baseUnitDimensions "kg \\cdot m^3/s"^^xsd:string ;
+  qudt:baseUnitDimensions "n-m"^^xsd:string ;
+  qudt:description "Moment of force (often just moment) is the tendency of a force to twist or rotate an object."^^xsd:string ;
+  qudt:latexDefinition "$M = r x F$, where $r$ is the position vector and $F$ is the force."^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Moment of Force"^^xsd:string ;
+  skos:prefLabel "Moment of Force"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Moment_(physics)> ;
+.
+quantity:MomentOfInertia
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:KG-M2 ;
+  qudt:latexDefinition "$I_Q = \\int r^2_Q dm$, where $r_Q$ is the radial distance from a $Q-axis$ and $m$ is mass."^^xsd:string ;
+  rdfs:label "Moment of Inertia"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Moment_of_inertia> ;
+.
+quantity:Momentum
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:LongDescription "The momentum of a system of particles is given by the sum of the momentums of the individual particles which make up the system or by the product of the total mass of the system and the velocity of the center of gravity of the system. The momentum of a continuous medium is given by the integral of the velocity over the mass of the medium or by the product of the total mass of the medium and the velocity of the center of gravity of the medium."^^xsd:string ;
+  qudt:description "Quantity of motion.  Linear momentum is the quantity obtained by multiplying the mass of a body by its linear speed. Angular momentum is the quantity obtained by multiplying the moment of inertia of a body by its angular speed."^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Momentum"^^xsd:anyURI ;
+  rdfs:label "Momentum"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Momentum> ;
+  skos:prefLabel "Momentum"^^xsd:string ;
+.
+quantity:NormalStress
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:LBF-PER-IN2 ;
+  qudt:applicableUnit unit:N-PER-M2 ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:baseUnitDimensions "n m^{-2}"^^xsd:string ;
+  qudt:description "Normal stress is defined as the stress resulting from a force acting normal to a body surface. Normal stress can be caused by several loading methods, the most common being axial tension and compression, bending, and hoop stress."^^xsd:string ;
+  qudt:latexDefinition "$\\sigma = \\frac{dF_n}{dA}$, where $dF_n$ is the normal component of force and $dA$ is the area of the surface element."^^xsd:string ;
+  qudt:symbol "\\sigma"^^xsd:string ;
+  rdfs:label "Normal Stress"^^xsd:string ;
+  skos:broader quantity:Stress ;
+  skos:prefLabel "Normal Stress"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stress_(mechanics)> ;
+.
+quantity:PoissonRatio
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The Poisson Ratio is the negative ratio of transverse to axial strain. In fact, when a sample object is stretched (or squeezed), to an extension (or contraction) in the direction of the applied load, it corresponds a contraction (or extension) in a direction perpendicular to the applied load. The ratio between these two quantities is the Poisson's ratio."^^xsd:string ;
+  qudt:latexDefinition "$\\mu = \\frac{\\Delta \\delta}{\\Delta l}$, where $\\Delta \\delta$ is the lateral contraction and $\\Delta l$ is the elongation."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Poisson Ratio"^^xsd:string ;
+  skos:prefLabel "Poisson Ratio"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Poisson%27s_ratio> ;
+.
+quantity:PolarMomentOfInertia
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:description "The polar moment of inertia is a quantity used to predict an object's ability to resist torsion, in objects (or segments of objects) with an invariant circular cross-section and no significant warping or out-of-plane deformation. It is used to calculate the angular displacement of an object subjected to a torque. It is analogous to the area moment of inertia, which characterizes an object's ability to resist bending. "^^xsd:string ;
+  qudt:symbol "J_{zz}"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Second_moment_of_area"^^xsd:anyURI ;
+  rdfs:label "Polar moment of inertia"^^xsd:string ;
+  skos:prefLabel "Polar moment of inertia"^^xsd:string ;
+.
+quantity:PotentialEnergy
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:latexDefinition "$V = -\\int F \\cdot dr$, where $F$ is a conservative force and $R$ is a position vector."^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Potential_energy> ;
+.
+quantity:Power
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:latexDefinition "$P = F \\cdot v$, where $F$ is force and $v$ is velocity."^^xsd:string ;
+  qudt:symbol "P"^^xsd:string ;
+  qudt:symbolToken "P"^^xsd:token ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+.
+quantity:PowerArea
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:PowerAreaPerSolidAngle
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:PowerPerArea
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:PowerPerAreaAngle
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:Pressure
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:N-PER-M2 ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:latexDefinition "$p = \\frac{dF}{dA}$, where $dF$ is the force component perpendicular to the surface element of area $dA$."^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pressure> ;
+.
+quantity:RelativeMassDensity
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Relative density, or specific gravity, is the ratio of the density (mass of a unit volume) of a substance to the density of a given reference material."^^xsd:string ;
+  qudt:latexDefinition "$d = \\frac{\\rho}{\\rho_0}$, where $\\rho$ is mass density of a substance and $\\rho_0$ is the mass density of a reference substance under conditions that should be specified for both substances."^^xsd:string ;
+  qudt:symbol "d"^^xsd:string ;
+  rdfs:label "Relative Mass Density"^^xsd:string ;
+  skos:exactMatch quantity:Density ;
+  skos:prefLabel "Relative Mass Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Relative_density> ;
+.
+quantity:SecondAxialMomentOfArea
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M4 ;
+  qudt:baseUnitDimensions "m^4"^^xsd:string ;
+  qudt:description "The moment of inertia, also called mass moment of inertia, rotational inertia, polar moment of inertia of mass, or the angular mass is a property of a distribution of mass in space that measures its resistance to rotational acceleration about an axis."^^xsd:string ;
+  qudt:latexDefinition "$I_a = \\int r^2_Q dA$, where $r_Q$ is the radial distance from a $Q-axis$ and $A$ is area."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  rdfs:label "Second Axial Moment of Area"^^xsd:string ;
+  skos:prefLabel "Second Axial Moment of Area"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Second_moment_of_area> ;
+.
+quantity:SecondMomentOfArea
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "The second moment of area is a property of a physical object that can be used to predict its resistance to bending and deflection. The deflection of an object under load depends not only on the load, but also on the geometry of the object's cross-section."^^xsd:string ;
+  qudt:symbol "J"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Second_moment_of_area"^^xsd:anyURI ;
+  rdfs:label "Second Moment of Area"^^xsd:string ;
+  skos:prefLabel "Second Moment of Area"^^xsd:string ;
+.
+quantity:SecondPolarMomentOfArea
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M4 ;
+  qudt:description "The moment of inertia, also called mass moment of inertia, rotational inertia, polar moment of inertia of mass, or the angular mass is a property of a distribution of mass in space that measures its resistance to rotational acceleration about an axis."^^xsd:string ;
+  qudt:latexDefinition "$I_p = \\int r^2_Q dA$, where $r_Q$ is the radial distance from a $Q-axis$ and $A$ is area."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  rdfs:label "Second Polar Moment of Area"^^xsd:string ;
+  skos:prefLabel "Second Polar Moment of Area"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Second_moment_of_area> ;
+.
+quantity:SectionModulus
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M3 ;
+  qudt:description "The Section Modulus is a geometric property for a given cross-section used in the design of beams or flexural members."^^xsd:string ;
+  qudt:latexDefinition "$Z = \\frac{I_a}{r_Q_,_m_a_x}$, where $I_a$ is the second axial moment of area and $r_Q_,_m_a_x$ is the maximum radial distance of any point in the surface considered from the $Q-axis$ with respect to which $I_a$ is defined."^^xsd:string ;
+  qudt:symbol "Z"^^xsd:string ;
+  rdfs:label "Section Modulus"^^xsd:string ;
+  skos:prefLabel "Section Modulus"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Section_modulus> ;
+.
+quantity:ShearModulus
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:description "The Shear Modulus or modulus of rigidity, denoted by $G$, or sometimes $S$ or $\\mu$, is defined as the ratio of shear stress to the shear strain."^^xsd:string ;
+  qudt:latexDefinition "$G = \\frac{\\tau}{\\gamma}$, where $\\tau$ is the shear stress and $\\gamma$ is the shear strain."^^xsd:string ;
+  qudt:symbol "G"^^xsd:string ;
+  rdfs:label "Shear Modulus"^^xsd:string ;
+  skos:prefLabel "Shear Modulus"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Shear_modulus> ;
+.
+quantity:ShearStrain
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Shear Strain is the amount of deformation perpendicular to a given line rather than parallel to it. "^^xsd:string ;
+  qudt:latexDefinition "$\\gamma = \\frac{\\Delta x}{d}$, where $\\Delta x$ is the parallel displacement between two surfaces of a layer of thickness $d$."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  rdfs:label "Shear Strain"^^xsd:string ;
+  skos:broader quantity:Strain ;
+  skos:prefLabel "Shear Strain"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Deformation_(mechanics)> ;
+.
+quantity:ShearStress
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:LBF-PER-IN2 ;
+  qudt:applicableUnit unit:N-PER-M2 ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:baseUnitDimensions "n m^{-2}"^^xsd:string ;
+  qudt:description "Shear stress occurs when the force  occurs in shear, or perpendicular to the normal."^^xsd:string ;
+  qudt:latexDefinition "$\\tau = \\frac{dF_t}{dA}$, where $dF_t$ is the tangential component of force and $dA$ is the area of the surface element."^^xsd:string ;
+  qudt:symbol "\\tau"^^xsd:string ;
+  rdfs:label "Normal Stress"^^xsd:string ;
+  skos:broader quantity:Stress ;
+  skos:prefLabel "Normal Stress"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stress_(mechanics)> ;
+.
+quantity:SpecificEnergy
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:SpecificImpulseByMass
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdfs:label "Specific Impulse by Mass"^^xsd:string ;
+  skos:broader quantity:LinearVelocity ;
+  skos:prefLabel "Specific Impulse by Mass"^^xsd:string ;
+.
+quantity:SpecificImpulseByWeight
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdfs:label "Specific Impulse by Weight"^^xsd:string ;
+  skos:broader quantity:Time ;
+  skos:prefLabel "Specific Impulse by Weight"^^xsd:string ;
+.
+quantity:SpecificVolume
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:M3-PER-KG ;
+  qudt:description "\\textit{Specific Volume} ($\\nu$) is the volume occupied by a unit of mass of a material. It is equal to the inverse of density."^^xsd:string ;
+  qudt:latexDefinition "$sv = \\frac{1}{\\rho}$, where $\\rho$ is mass density."^^xsd:string ;
+  rdfs:label "Specific Volume"^^xsd:string ;
+  rdfs:seeAlso quantity:Density ;
+  skos:prefLabel "Specific Volume"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Specific_volume> ;
+.
+quantity:SquareEnergy
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:StandardGravitationalParameter
+  rdf:type qudt:MechanicsQuantityKind ;
+.
+quantity:StaticFriction
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Static friction is friction between two or more solid objects that are not moving relative to each other. For example, static friction can prevent an object from sliding down a sloped surface. "^^xsd:string ;
+  qudt:latexDefinition "$\\mu = \\frac{F_max}{N}$, where $F_max$ is the maximum tangential component of the contact force and $N$ is the normal component of the contact force between two bodies at relative rest."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Static Friction"^^xsd:string ;
+  skos:broader quantity:Friction ;
+  skos:exactMatch <http://dbpedia.org/resource/Friction> ;
+  skos:prefLabel "Static Friction"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Friction> ;
+.
+quantity:Strain
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "In any branch of science dealing with materials and their behaviour, strain is the geometrical expression of deformation caused by the action of stress on a physical body. Strain is calculated by first assuming a change between two body states: the beginning state and the final state. Then the difference in placement of two points in this body in those two states expresses the numerical value of strain. Strain therefore expresses itself as a change in size and/or shape. [Wikipedia]"^^xsd:string ;
+  qudt:symbol "\\epsilon"^^xsd:string ;
+  qudt:url "http://www.freestudy.co.uk/mech%20prin%20h2/stress.pdf"^^xsd:anyURI ;
+  rdfs:label "Strain"^^xsd:string ;
+  skos:broader quantity:Dimensionless ;
+  skos:exactMatch <http://dbpedia.org/resource/Strain> ;
+  skos:prefLabel "Strain"^^xsd:string ;
+.
+quantity:StrainEnergyDensity
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:Longdescription "Defined as the 'work done' for a given strain, that is the area under the stress-strain curve after a specified eation. Source(s): \\href{http://www.prepol.com/product-range/product-subpages/terminology}{www.prepol.com}"^^xsd:string ;
+  qudt:symbol "u"^^xsd:string ;
+  rdfs:label "Strain Energy Density"^^xsd:string ;
+  skos:broader quantity:EnergyDensity ;
+  skos:prefLabel "Strain Energy Density"^^xsd:string ;
+.
+quantity:Stress
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  qudt:description "Stress is a measure of the average amount of force exerted per unit area of a surface within a deformable body on which internal forces act. In other words, it is a measure of the intensity or internal distribution of the total internal forces acting within a deformable body across imaginary surfaces. These internal forces are produced between the particles in the body as a reaction to external forces applied on the body. Stress is defined as ${\\rm{Stress}} = \\frac{F}{A}$."^^xsd:string ;
+  qudt:latexDefinition "{\\rm{Stress}} = \\frac{F}{A}"^^xsd:string ;
+  qudt:symbol "\\sigma"^^xsd:string ;
+  qudt:url "http://www.freestudy.co.uk/mech%20prin%20h2/stress.pdf"^^xsd:anyURI ;
+  rdfs:label "Stress"^^xsd:string ;
+  skos:broader quantity:ForcePerArea ;
+  skos:prefLabel "Stress"^^xsd:string ;
+.
+quantity:SurfaceDensity
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG-PER-M2 ;
+  qudt:baseUnitDimensions "kg m^{-2}"^^xsd:string ;
+  qudt:description "The area density (also known as areal density, surface density, or superficial density) of a two-dimensional object is calculated as the mass per unit area."^^xsd:string ;
+  qudt:latexDefinition "$\\rho_A = \\frac{dm}{dA}$, where $m$ is mass and $A$ is area."^^xsd:string ;
+  qudt:symbol "\\rho_A"^^xsd:string ;
+  rdfs:label "Surface Density"^^xsd:string ;
+  skos:broader quantity:Density ;
+  skos:prefLabel "Surface Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Area_density> ;
+.
+quantity:SurfaceTension
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KG-PER-SEC2 ;
+  qudt:baseUnitDimensions "n m^{-1}"^^xsd:string ;
+  qudt:description "\\textit{Surface Tension} is a contractive tendency of the surface of a liquid that allows it to resist an external force."^^xsd:string ;
+  qudt:latexDefinition "$\\gamma = \\frac{dF}{dl}$, where $F$ is the force component perpendicular to a line element in a surface and $l$ is the length of the line element."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  rdfs:label "Surface Tension"^^xsd:string ;
+  skos:prefLabel "Surface Tension"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Surface_tension> ;
+.
+quantity:Tension
+  rdf:type qudt:SolidMechanicsQuantityKind ;
+  rdfs:label "Tension"^^xsd:string ;
+  skos:broader quantity:ForceMagnitude ;
+  skos:exactMatch <http://dbpedia.org/resource/Tension> ;
+  skos:prefLabel "Tension"^^xsd:string ;
+.
+quantity:ThrustToMassRatio
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:LBF-PER-LB ;
+  qudt:applicableUnit unit:N-PER-KG ;
+  qudt:baseUnitDimensions "m/s^2"^^xsd:string ;
+  rdfs:label "Thrust To Mass Ratio"^^xsd:string ;
+  skos:prefLabel "Thrust To Mass Ratio"^^xsd:string ;
+.
+quantity:Torque
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:applicableUnit unit:DYN-CM ;
+  qudt:applicableUnit unit:KGF-PER-M ;
+  qudt:applicableUnit unit:LBF-FT ;
+  qudt:applicableUnit unit:LBF-IN ;
+  qudt:applicableUnit unit:N-M ;
+  qudt:applicableUnit unit:OZF-IN ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/s^2"^^xsd:string ;
+  qudt:description "In physics, a torque ($\\tau$) is a vector that measures the tendency of a force to rotate an object about some axis. The magnitude of a torque is defined as force times its lever arm. Just as a force is a push or a pull, a torque can be thought of as a twist. The SI unit for torque is newton meters ($N m$). In U.S. customary units, it is measured in foot pounds (ft lbf) (also known as \"pounds feet\"). "^^xsd:string ;
+  qudt:latexDefinition "$\\tau = M \\cdot e_Q$, where $M$ is the momentof force and $e_Q$ is a unit vector directed along a $Q-axis$ with respect to which the torque is considered."^^xsd:string ;
+  qudt:longDescription """In physics, a torque (τ) is a vector that measures the tendency of a force to rotate an object about some axis [1]. The magnitude of a torque is defined as force times its lever arm [2]. Just as a force is a push or a pull, a torque can be thought of as a twist.
+
+The SI unit for torque is newton meters (N m). In U.S. customary units, it is measured in foot pounds (ft lbf) (also known as 'pounds feet'). 
+
+Mathematically, the torque on a particle (which has the position r in some reference frame) can be defined as the cross product:
+
+τ = r x F
+
+where
+
+r is the particle's position vector relative to the fulcrum 
+F is the force acting on the particles, 
+or, more generally, torque can be defined as the rate of change of angular momentum,
+
+τ = dL/dt
+
+where
+
+L is the angular momentum vector 
+t stands for time. See also TBD"""^^xsd:string ;
+  qudt:symbol "\\tau"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Torque"^^xsd:anyURI ;
+  rdfs:label "Torque"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Torque> ;
+  skos:exactMatch quantity:MomentOfForce ;
+  skos:prefLabel "Torque"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Torque> ;
+.
+quantity:VolumeFlowRate
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M3-PER-SEC ;
+  qudt:baseUnitDimensions "m sec^{-1}"^^xsd:string ;
+  qudt:description "Volumetric Flow Rate, (also known as volume flow rate, rate of fluid flow or volume velocity) is the volume of fluid which passes through a given surface per unit time."^^xsd:string ;
+  qudt:latexDefinition "$q_V = \\frac{dV}{dt}$, where $V$ is volume and $t$ is time."^^xsd:string ;
+  qudt:symbol "q_V"^^xsd:string ;
+  rdfs:label "Volume Flow Rate"^^xsd:string ;
+  skos:broader quantity:Volume ;
+  skos:prefLabel "Volume Flow Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Volumetric_flow_rate> ;
+.
+quantity:VolumeStrain
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Volume, or volumetric, Strain, or dilatation (the relative variation of the volume) is the trace of the tensor $\\vartheta$."^^xsd:string ;
+  qudt:latexDefinition "$\\vartheta = \\frac{\\Delta V}{V_0}$, where $\\Delta V$ is the increase in volume and $V_0$ is the volume in a reference state to be specified."^^xsd:string ;
+  qudt:symbol "\\vartheta"^^xsd:string ;
+  rdfs:label "Volume Strain"^^xsd:string ;
+  skos:broader quantity:Strain ;
+  skos:prefLabel "Volume Strain"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Deformation_(mechanics)> ;
+.
+quantity:Work
+  rdf:type qudt:MechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:applicableUnit unit:N-M ;
+  qudt:baseUnitDimensions "n m"^^xsd:string ;
+  qudt:description "A force is said to do Work when it acts on a body so that there is a displacement of the point of application, however small, in the direction of the force. "^^xsd:string ;
+  qudt:latexDefinition "$A = \\int Pdt$, where $P$ is power and $t$ is time."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Work"^^xsd:string ;
+  skos:prefLabel "Work"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Work_(physics)> ;
+.
+<http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Vocabulary Catalog Entry v1.2"^^xsd:string ;
+.

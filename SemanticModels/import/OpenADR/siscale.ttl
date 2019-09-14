@@ -1,0 +1,156 @@
+# baseURI: http://docs.oasis-open.org/ns/emix/2011/06/siscale
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: siscale
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix siscale: <http://docs.oasis-open.org/ns/emix/2011/06/siscale#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://docs.oasis-open.org/ns/emix/2011/06/siscale>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://docs.oasis-open.org/ns/emix/2011/06/siscale, http://docs.oasis-open.org/ns/emix/2011/06/siscale, http://docs.oasis-open.org/ns/emix/2011/06/siscale, http://docs.oasis-open.org/ns/emix/2011/06/siscale, http://docs.oasis-open.org/ns/emix/2011/06/siscale, http://docs.oasis-open.org/ns/emix/2011/06/siscale, http://docs.oasis-open.org/ns/emix/2011/06/siscale" ;
+.
+siscale:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value" ;
+  rdfs:subClassOf dtype:EnumeratedValue ;
+.
+siscale:SSCT_G
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Giga 10**9" ;
+  dtype:order "8"^^xsd:nonNegativeInteger ;
+  dtype:value "G" ;
+  rdfs:label "G" ;
+.
+siscale:SSCT_M
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Mega 10**6" ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "M" ;
+  rdfs:label "M" ;
+.
+siscale:SSCT_T
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Tera 10**12" ;
+  dtype:order "9"^^xsd:nonNegativeInteger ;
+  dtype:value "T" ;
+  rdfs:label "T" ;
+.
+siscale:SSCT_c
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Centi 10**-2" ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "c" ;
+  rdfs:label "c" ;
+.
+siscale:SSCT_d
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Deci 10**-1" ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "d" ;
+  rdfs:label "d" ;
+.
+siscale:SSCT_k
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Kilo 10**3" ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "k" ;
+  rdfs:label "k" ;
+.
+siscale:SSCT_m
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Milli 10**-3" ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "m" ;
+  rdfs:label "m" ;
+.
+siscale:SSCT_micro
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Micro 10**-6" ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "micro" ;
+  rdfs:label "micro" ;
+.
+siscale:SSCT_n
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Nano 10**-9" ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "n" ;
+  rdfs:label "n" ;
+.
+siscale:SSCT_none
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Native Scale" ;
+  dtype:order "10"^^xsd:nonNegativeInteger ;
+  dtype:value "none" ;
+  rdfs:label "none" ;
+.
+siscale:SSCT_p
+  rdf:type siscale:SiScaleCodeType ;
+  dc:description "Pico 10**-12" ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "p" ;
+  rdfs:label "p" ;
+.
+siscale:SiScaleCodeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Si scale code datatype" ;
+  rdfs:subClassOf siscale:SiScaleCodeType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype siscale:SiScaleCodeType ;
+    ] ;
+.
+siscale:SiScaleCodeType
+  rdf:type owl:Class ;
+  dc:description "Scale based on representations of SI scale as expressed in the unit multipliers" ;
+  dc:description "enumeration"@en ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/siscale#SiScaleCodeType" ;
+  rdfs:label "Si scale code type" ;
+  rdfs:subClassOf siscale:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      siscale:SSCT_G
+      siscale:SSCT_M
+      siscale:SSCT_T
+      siscale:SSCT_c
+      siscale:SSCT_d
+      siscale:SSCT_k
+      siscale:SSCT_m
+      siscale:SSCT_micro
+      siscale:SSCT_n
+      siscale:SSCT_none
+      siscale:SSCT_p
+    ) ;
+.
+siscale:siScaleCode
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/siscale#siScaleCode" ;
+.
+dc:description
+  rdfs:label "description" ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label" ;
+.

@@ -1,0 +1,365 @@
+# baseURI: http://epic/scripts/archiveBefore
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: ab
+
+@prefix ab: <http://epic/scripts/archiveBefore#> .
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/archiveBefore>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ab:CountNamespaces
+  a sml:BindBySelect ;
+  sm:next ab:MoveTriplesInNamespace ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:expression [
+                a sp:Count ;
+                sp:expression [
+                    sp:varName "namespace" ;
+                  ] ;
+              ] ;
+            sp:varName "nCount" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object <http://siemens.com/schemas/kps/epic#Event> ;
+                  sp:predicate rdf:type ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a afn:namespace ;
+                      sp:arg1 [
+                          sp:varName "event" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "namespace" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "activePeriodEnd" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 [
+                          a sp:SeqPath ;
+                          sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiActivePeriodRef> ;
+                          sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                        ] ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a xsd:date ;
+                      sp:arg1 [
+                          sp:varName "activePeriodEnd" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "realActivePeriodEnd" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:le ;
+                      sp:arg1 [
+                          sp:varName "realActivePeriodEnd" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "date" ;
+                        ] ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Count Namespaces to Archive" ;
+.
+ab:DeleteFromActiveGraph
+  a sml:PerformUpdate ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:deletePattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:eq ;
+                      sp:arg1 [
+                          a afn:namespace ;
+                          sp:arg1 [
+                              sp:varName "s" ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "namespace" ;
+                        ] ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Delete triples from active graph" ;
+.
+ab:LockArchiveDB
+  a sml:RequestLock ;
+  sm:next ab:CountNamespaces ;
+  sml:uri "http://siemens.com/vocab/kps/epicArchive" ;
+  rdfs:label "Lock Archive DB" ;
+.
+ab:LockInstanceDB
+  a sml:RequestLock ;
+  sm:next ab:LockArchiveDB ;
+  sml:uri "http://siemens.com/vocab/kps/epic_instances" ;
+  rdfs:label "Lock Instance DB" ;
+.
+ab:MoveSelectedTriples
+  a sml:PerformUpdate ;
+  sm:next ab:DeleteFromActiveGraph ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epicArchive> ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:eq ;
+                      sp:arg1 [
+                          a afn:namespace ;
+                          sp:arg1 [
+                              sp:varName "s" ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "namespace" ;
+                        ] ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Copy all triples in a namespace to archive" ;
+.
+ab:MoveTriplesInNamespace
+  a sml:IterateOverSelect ;
+  sm:body ab:MoveSelectedTriples ;
+  sm:next ab:UnlockInstanceDB ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "namespace" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object <http://siemens.com/schemas/kps/epic#Event> ;
+                  sp:predicate rdf:type ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "activePeriodEnd" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 [
+                          a sp:SeqPath ;
+                          sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiActivePeriodRef> ;
+                          sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                        ] ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a xsd:date ;
+                      sp:arg1 [
+                          sp:varName "activePeriodEnd" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "realActivePeriodEnd" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:le ;
+                      sp:arg1 [
+                          sp:varName "realActivePeriodEnd" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "date" ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a afn:namespace ;
+                      sp:arg1 [
+                          sp:varName "event" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "namespace" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Select Namespaces to Archive" ;
+.
+ab:UnlockArchiveDB
+  a sml:ReleaseLock ;
+  sm:next ab:archiveBefore_Return ;
+  sml:uri "http://siemens.com/vocab/kps/epicArchive" ;
+  rdfs:label "Unlock Archive DB" ;
+.
+ab:UnlockInstanceDB
+  a sml:ReleaseLock ;
+  sm:next ab:UnlockArchiveDB ;
+  sml:uri "http://siemens.com/vocab/kps/epic_instances" ;
+  rdfs:label "Unlock Instance DB" ;
+.
+ab:archiveBefore
+  a sm:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate ab:date ;
+      spl:valueType xsd:date ;
+      sm:next ab:LockInstanceDB ;
+    ] ;
+  sm:returnModule ab:archiveBefore_Return ;
+  rdfs:subClassOf sm:Functions ;
+.
+ab:archiveBefore_Return
+  a sml:ReturnText ;
+  sml:text "Archived {?nCount} namespaces" ;
+  rdfs:comment """Moves all event triples from the http://siemens.com/vocab/kps/epic_instances triple store to the http://siemens.com/vocab/kps/epicArchive triple store, for all events where the Active Period end value falls before a given date.
+
+Input argument:
+date: required argument (string) - format : YYYY-MM-DD
+
+This service is used to keep the instance triple store reasonably small for performance reasons.""" ;
+.
+ab:date
+  a rdf:Property ;
+  rdfs:label "Latest ActivePeriodEnd date to archive" ;
+  rdfs:subPropertyOf sp:arg ;
+.

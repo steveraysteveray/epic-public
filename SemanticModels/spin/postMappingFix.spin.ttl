@@ -1,0 +1,209 @@
+# baseURI: http://siemens.com/spin/postMappingFix
+# imports: http://siemens.com/functions/time-functions
+# imports: http://siemens.com/mapping/oadr2epic
+# imports: http://siemens.com/spin/epic_functions
+# imports: http://spinrdf.org/spl
+# prefix: postMappingFix
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix epic-datetime: <http://siemens.com/spin/epic-datetime#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix postMappingFix: <http://siemens.com/spin/postMappingFix#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/spin/postMappingFix>
+  a owl:Ontology ;
+  owl:imports <http://siemens.com/functions/time-functions> ;
+  owl:imports <http://siemens.com/mapping/oadr2epic> ;
+  owl:imports <http://siemens.com/spin/epic_functions> ;
+  owl:imports <http://spinrdf.org/spl> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#IntervalDataContainer>
+  spin:rule [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "dtStart" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+            sp:subject [
+                sp:varName "timeRef" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object spin:_this ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasIntervalsRef> ;
+            sp:subject [
+                sp:varName "sequence" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "sequence" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventIntervalRef> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uid" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasInstanceUid> ;
+            sp:subject spin:_this ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:cast ;
+                arg:datatype xsd:string ;
+                sp:arg1 [
+                    sp:varName "uid" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "uidString" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "timeRef" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+            sp:subject spin:_this ;
+          ]
+          [
+            a sp:NotExists ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "val" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+                  sp:subject [
+                      sp:varName "timeRef" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "activePStart" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 [
+                    a sp:SeqPath ;
+                    sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiActivePeriodRef> ;
+                    sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                  ] ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:if ;
+                sp:arg1 [
+                    a sp:eq ;
+                    sp:arg1 [
+                        sp:varName "uidString" ;
+                      ] ;
+                    sp:arg2 "0" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "activePStart" ;
+                  ] ;
+                sp:arg3 [
+                    a <http://siemens.com/spin/epic_functions#calculateDtStart> ;
+                    sp:arg1 spin:_this ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dtStart" ;
+              ] ;
+          ]
+        ) ;
+      rdfs:comment "001 - Assign dtstart value based on the UID value ." ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#UTCDateTimeInterval>
+  spin:rule [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "dtEnd" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+            sp:subject spin:_this ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NotExists ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "valEnd" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+                  sp:subject spin:_this ;
+                ]
+              ) ;
+          ]
+          [
+            sp:object [
+                sp:varName "valStart" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "duration" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDuration> ;
+            sp:subject spin:_this ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a <http://siemens.com/spin/epic_functions#timeAdd> ;
+                sp:arg1 [
+                    sp:varName "valStart" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "duration" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dtEnd" ;
+              ] ;
+          ]
+        ) ;
+      rdfs:comment "001 - Assign dtEnd value for any UTCDateTimeInterval that has a dtStart and duration" ;
+    ] ;
+.

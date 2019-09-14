@@ -1,0 +1,308 @@
+# baseURI: http://fonm.org/1.0/schema/core
+# imports: http://fonm.org/1.0/schema/function
+# imports: http://fonm.org/1.0/schema/intention
+# imports: http://www.w3.org/ns/prov
+# prefix: fonm
+
+@prefix DUL: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix core: <http://fonm.org/1.0/schema/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix nc: <https://siemens.com/schema/nc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/1.0/schema/core>
+  rdf:type owl:Ontology ;
+  dc:author "Jack Hodges" ;
+  dc:contributor "Jack Hodges" ;
+  dc:rights "The FONM Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to Siemens Corporate Technology and TopQuadrant, Inc." ;
+  dc:subject "Functional Ontology for Naive Mechanics" ;
+  dc:title "Functional Ontology for Naive Mechanics (FONM) Ontology Version 1.0" ;
+  vaem:dateCreated "2013-01-23T14:50:49"^^xsd:dateTime ;
+  vaem:description "The FONM, or 'Functional Ontology for Naive Mechanics' collection of ontologies define the base classes properties, and restrictions used for modeling physical objects, their properties, behaviors, functions, and their uses in problem-solving systems. The goal of the FONM ontology is to provide a unified model of objects for use in naive problem solving and invention. This is the root model for the FONM ontologies.\"^^xsd:string ;" ;
+  vaem:hasCatalogEntry voag:FONM-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 14:56:40 -0700 (Wed, 01 Jun 2011) $" ;
+  vaem:name "FONM" ;
+  vaem:namespace "http://fonm.org/1.0/schema/core" ;
+  vaem:namespacePrefix "fonm" ;
+  vaem:revision "1.0" ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:FONM-Attribution ;
+  vaem:usesNonImportedResource voag:FONM-SchemaCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:FONM-Attribution ;
+  rdfs:label "Functional Ontology for Naive Mechanics (FONM) - Core" ;
+  owl:imports <http://fonm.org/1.0/schema/function> ;
+  owl:imports <http://fonm.org/1.0/schema/intention> ;
+  owl:imports <http://www.w3.org/ns/prov> ;
+  owl:versionIRI <http://fonm.org/1.0/schema/core> ;
+  owl:versionInfo "$Id: SCHEMA_FONM_core-v1.0.ttl 4989 2018-08-22 21:56:40Z JackHodges $" ;
+.
+fonm:Concept
+  rdf:type owl:Class ;
+  rdfs:label "Concept" ;
+  rdfs:subClassOf DUL:Entity ;
+  rdfs:subClassOf prov:Entity ;
+  skos:prefLabel "Concept" ;
+.
+fonm:achievedBy
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:Goal ;
+  rdfs:label "achievedBy" ;
+  rdfs:range fonm:State ;
+  owl:sameAs fonm:desiredState ;
+  skos:prefLabel "achievedBy" ;
+.
+fonm:achieves
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "achieves" ;
+  rdfs:range fonm:Goal ;
+  skos:prefLabel "achieves" ;
+.
+fonm:blocks
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "blocks" ;
+  rdfs:range fonm:Goal ;
+  skos:prefLabel "blocks" ;
+.
+fonm:causes
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:Function ;
+  rdfs:domain fonm:Plan ;
+  rdfs:label "causes" ;
+  rdfs:range fonm:State ;
+  skos:prefLabel "causes" ;
+.
+fonm:degreesOfFreedom
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "degrees of freedom" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "degrees of freedom" ;
+.
+fonm:desiredState
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:Goal ;
+  rdfs:label "desiredState" ;
+  rdfs:range fonm:State ;
+  owl:sameAs fonm:achievedBy ;
+  skos:prefLabel "desiredState" ;
+.
+fonm:disabledBy
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Function
+          fonm:Process
+        ) ;
+    ] ;
+  rdfs:label "disabledBy" ;
+  rdfs:range fonm:State ;
+  skos:prefLabel "disabled by state" ;
+.
+fonm:disables
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "disables" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Action
+          fonm:Process
+          fonm:Function
+        ) ;
+    ] ;
+  skos:prefLabel "disables" ;
+.
+fonm:enabledBy
+  rdf:type owl:FunctionalProperty ;
+  rdfs:label "enabledBy" ;
+  rdfs:range fonm:State ;
+  skos:prefLabel "enabled by state" ;
+.
+fonm:enables
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "enables" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Action
+          fonm:Process
+          fonm:Function
+        ) ;
+    ] ;
+  skos:prefLabel "enables" ;
+.
+fonm:initiatedBy
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:Function ;
+  rdfs:label "initiatedBy" ;
+  rdfs:range fonm:State ;
+  skos:prefLabel "initiatedBy" ;
+.
+fonm:initiates
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "initiates" ;
+  rdfs:range fonm:Function ;
+  skos:prefLabel "initiates" ;
+.
+fonm:intends
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:Goal ;
+  rdfs:label "intends" ;
+  rdfs:range fonm:Plan ;
+  skos:prefLabel "intends" ;
+.
+fonm:motivates
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "motivates" ;
+  rdfs:range fonm:Goal ;
+  skos:prefLabel "motivates" ;
+.
+fonm:realizes
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:Plan ;
+  rdfs:label "realizes" ;
+  rdfs:range fonm:Action ;
+  skos:prefLabel "realizes" ;
+.
+fonm:resultDisables
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Process
+          fonm:Function
+          fonm:Action
+        ) ;
+    ] ;
+  rdfs:label "result disables" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Action
+          fonm:Process
+          fonm:Function
+        ) ;
+    ] ;
+  skos:prefLabel "result disables" ;
+.
+fonm:resultEnables
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Process
+          fonm:Function
+          fonm:Action
+        ) ;
+    ] ;
+  rdfs:label "result enables" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Action
+          fonm:Process
+          fonm:Function
+        ) ;
+    ] ;
+  skos:prefLabel "result enables" ;
+.
+fonm:resultsIn
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:Action ;
+  rdfs:label "results in" ;
+  rdfs:range fonm:State ;
+  skos:prefLabel "results in" ;
+.
+fonm:terminatedBy
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:Function ;
+  rdfs:label "terminatedBy" ;
+  rdfs:range fonm:State ;
+  skos:prefLabel "terminatedBy" ;
+.
+fonm:terminates
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "terminates" ;
+  rdfs:range fonm:Function ;
+  skos:prefLabel "terminates" ;
+.
+fonm:violates
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "violates" ;
+  rdfs:range fonm:Goal ;
+  skos:prefLabel "violates" ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://fonm.org/1.0/schema/process> ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://fonm.org/1.0/schema/process> ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://fonm.org/1.0/schema/process> ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://fonm.org/1.0/schema/process> ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:source
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "source" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://fonm.org/1.0/schema/process> ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://fonm.org/1.0/schema/process> ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.

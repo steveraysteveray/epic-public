@@ -1,0 +1,332 @@
+# baseURI: http://fonm.org/1.0/schema/intention
+# imports: http://fonm.org/1.0/schema/function
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix datatype: <http://fonm.org/vocab/datatype#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix nc: <https://nia.nasa.gov/schema/nc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sc: <http://data.nasa.gov/core/schema/sc#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/1.0/schema/intention>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The FONM 'Intention' ontology builds upone the function model to add context and provide for the usage of machines. It introduces all intentional models from Schank and his students: Actions, Plans, Goals, Themes and their related properties, as well as a collection of machine-specific goals that help to motivate and understand how machines are used by agents." ;
+  dc:subject "Machine Usage and Intention" ;
+  dc:title "The FONM Intention Ontology" ;
+  vaem:hasCatalogEntry voag:FONM-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This ontology provides the models to understand how machines are used in context." ;
+  vaem:namespace "http://fonm.org/schema/intention#" ;
+  vaem:namespacePrefix "fonm" ;
+  vaem:specificity "1"^^xsd:int ;
+  vaem:url "http://fonm.org/1.0/schema/intention"^^xsd:anyURI ;
+  rdfs:label "FONM Intention Ontology" ;
+  owl:imports <http://fonm.org/1.0/schema/function> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "$Id: SCHEMA_FONM_intention-v1.0.ttl 4989 2018-08-23 21:56:40Z JackHodges $" ;
+.
+fonm:Action
+  rdf:type owl:Class ;
+  rdfs:comment "An action is a canonical structure that represents something an actor can perform to produce a desired state." ;
+  rdfs:label "Action" ;
+  rdfs:subClassOf fonm:Intention ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasActor ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDirection ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRecipient ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasState ;
+    ] ;
+  skos:prefLabel "Action" ;
+.
+fonm:Atrans
+  rdf:type owl:Class ;
+  rdfs:label "Atrans" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Atrans" ;
+  nc:comment "Abstract transfer, such as buying or selling, giving and taking." ;
+.
+fonm:Attend
+  rdf:type owl:Class ;
+  rdfs:label "Attend" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Attend" ;
+  nc:comment "Perceptual input. Seeing, hearing, touching, smelling, tasting." ;
+.
+fonm:CompetitionGoal
+  rdf:type owl:Class ;
+  rdfs:comment "Is a competition a goal relationship or a type of goal? It seems like a relationship. Multiple goals compete for a resource." ;
+  rdfs:label "Competition goal" ;
+  rdfs:subClassOf fonm:Goal ;
+  skos:prefLabel "Competition goal" ;
+.
+fonm:ConflictGoal
+  rdf:type owl:Class ;
+  rdfs:comment "Is a conflict a goal relationship or a type of goal? It seems like a relationship. Multiple goals conflict over a resource." ;
+  rdfs:label "Conflict goal" ;
+  rdfs:subClassOf fonm:Goal ;
+  skos:prefLabel "Conflict goal" ;
+.
+fonm:RestraintGoal
+  rdf:type owl:Class ;
+  rdfs:label "Restraint goal" ;
+  rdfs:subClassOf fonm:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:RestraintState ;
+      owl:onProperty fonm:desiredState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Restraint ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Restraint goal" ;
+.
+fonm:Do
+  rdf:type owl:Class ;
+  rdfs:label "Do" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Do" ;
+  nc:comment "An instrumental class" ;
+.
+fonm:Expel
+  rdf:type owl:Class ;
+  rdfs:label "Expel" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Expel" ;
+  nc:comment "To remove something from inside the body. Breathing, spitting, urinating, ..." ;
+.
+fonm:Goal
+  rdf:type owl:Class ;
+  rdfs:comment "Goals define a desired state. They are motivated by a theme and are achieved by the creation/execution of a plan." ;
+  rdfs:label "Goal" ;
+  rdfs:subClassOf fonm:Intention ;
+  skos:prefLabel "Goal" ;
+.
+fonm:Grasp
+  rdf:type owl:Class ;
+  rdfs:label "Grasp" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Grasp" ;
+  nc:comment "Take physical control with the body." ;
+.
+fonm:Ingest
+  rdf:type owl:Class ;
+  rdfs:label "Ingest" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Ingest" ;
+  nc:comment "To take into the body, not just the mouth. Could be through the skin, as with an injection." ;
+.
+fonm:Intention
+  rdf:type owl:Class ;
+  rdfs:comment "Intention represents what an actor (human or otherwise) desires to bring about. It may not be what happens." ;
+  rdfs:label "Intention" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasActor ;
+    ] ;
+  skos:prefLabel "Intention" ;
+.
+fonm:Mbuild
+  rdf:type owl:Class ;
+  rdfs:label "Mbuild" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Mbuild" ;
+  nc:comment "Mental construction such as think, ponder, etc." ;
+.
+fonm:Move
+  rdf:type owl:Class ;
+  rdfs:label "Move" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Move" ;
+  nc:comment "As in movement of a body part. Swinging ones arms would be a Move." ;
+.
+fonm:Mtrans
+  rdf:type owl:Class ;
+  rdfs:label "Mtrans" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Mtrans" ;
+  nc:comment "Mental transfer, as in conveying an idea to someone." ;
+.
+fonm:Plan
+  rdf:type owl:Class ;
+  rdfs:comment "A plan describes a sequence of actions taken by an actor to achieve a goal. The actions need not be sequential but they combine to result in a defined state." ;
+  rdfs:label "Plan" ;
+  rdfs:subClassOf fonm:Intention ;
+  skos:prefLabel "Plan" ;
+.
+fonm:PositionGoal
+  rdf:type owl:Class ;
+  rdfs:label "Position goal" ;
+  rdfs:subClassOf fonm:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:PositionState ;
+      owl:onProperty fonm:desiredState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Position ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Position goal" ;
+.
+fonm:Propel
+  rdf:type owl:Class ;
+  rdfs:label "Propel" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Propel" ;
+  nc:comment "Imparting force to an object." ;
+.
+fonm:PropertyGoal
+  rdf:type owl:Class ;
+  rdfs:label "Property goal" ;
+  rdfs:subClassOf fonm:Goal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Property goal" ;
+.
+fonm:Ptrans
+  rdf:type owl:Class ;
+  rdfs:label "Ptrans" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Ptrans" ;
+  nc:comment "Physical transfer of an object from one location to another." ;
+.
+fonm:Script
+  rdf:type owl:Class ;
+  rdfs:comment "A script is a specialized form of Plan that is generalized to the point of common recognition and inference. The assumption is that once recognized all or most of the bindings apply and can lead to rapid inference of events within the script. A Script is much less variable than a Plan." ;
+  rdfs:label "Script" ;
+  rdfs:subClassOf fonm:Intention ;
+  skos:prefLabel "Script" ;
+.
+fonm:SizeGoal
+  rdf:type owl:Class ;
+  rdfs:label "Size goal" ;
+  rdfs:subClassOf fonm:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:SizeState ;
+      owl:onProperty fonm:desiredState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Size ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Size goal" ;
+.
+fonm:Speak
+  rdf:type owl:Class ;
+  rdfs:label "Speak" ;
+  rdfs:subClassOf fonm:Action ;
+  skos:prefLabel "Speak" ;
+  nc:comment "Perceptual effector class. Not just oral. Could be touch for example. Object would be a peceptual effector such as a mouth or finger." ;
+.
+fonm:SubsumptionGoal
+  rdf:type owl:Class ;
+  rdfs:comment "Is a subsumption (planning for multiple goals at once) a goal relationship or a type of goal? It seems like a relationship. Multiple goals might satisfy the same requirements." ;
+  rdfs:label "Subsumption goal" ;
+  rdfs:subClassOf fonm:Goal ;
+  skos:prefLabel "Subsumption goal" ;
+.
+fonm:hasActor
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Intention ;
+  rdfs:label "has actor" ;
+  rdfs:range prov:Person ;
+  skos:prefLabel "has actor" ;
+.
+fonm:hasRecipient
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Intention ;
+  rdfs:label "has actor" ;
+  rdfs:range prov:Person ;
+  skos:prefLabel "has actor" ;
+.
+fonm:hasType
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Concept ;
+  rdfs:label "has type" ;
+  rdfs:range prov:Person ;
+  skos:prefLabel "has type" ;
+.
+fonm:servesPurpose
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Every function serves a purpose or intent, expressed as a goal." ;
+  rdfs:domain fonm:Function ;
+  rdfs:label "servesPurpose" ;
+  rdfs:range fonm:Goal ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.

@@ -1,0 +1,121 @@
+# baseURI: http://siemens.com/schemas/ssf_datatype
+# imports: http://fonm.org/1.0/schema/core
+# imports: http://fonm.org/1.0/schema/dtype
+# imports: http://siemens.com/vocab/types/ssf_datatype
+# prefix: dtype
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://siemens.com/schemas/ssf_datatype#> .
+@prefix ext: <http://purl.obolibrary.org/obo/uberon/ext.owl#> .
+@prefix fdtype: <http://fonm.org/1.0/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xhtm: <http://www.w3.org/1999/xhtml> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/ssf_datatype>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The SSF 'Type' ontology extends 'DTYPE' with further classes and properties for the specification of data types." ;
+  dc:subject "Datatypes" ;
+  dc:title "The SSF Type Schema" ;
+  vaem:hasCatalogEntry voag:SSF-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This vocabulary is to be used by other ontologies that need to reference SSF type definitions." ;
+  vaem:namespacePrefix "dtype" ;
+  vaem:specificity "1"^^xsd:int ;
+  rdfs:label "Type" ;
+  owl:imports <http://fonm.org/1.0/schema/core> ;
+  owl:imports <http://fonm.org/1.0/schema/dtype> ;
+  owl:imports <http://siemens.com/vocab/types/ssf_datatype> ;
+  owl:versionInfo "$Id: SCHEMA_ssf_datatype-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $"^^xsd:string ;
+.
+dtype:BinaryType
+  rdf:type owl:Class ;
+  rdfs:label "Binary Type" ;
+  rdfs:subClassOf fonm:EnumeratedValue ;
+  skos:prefLabel "Binary Type" ;
+.
+dtype:DetectionType
+  rdf:type owl:Class ;
+  rdfs:label "Detection type" ;
+  rdfs:subClassOf dtype:BinaryType ;
+  owl:oneOf (
+      dtype:NotDetected
+      dtype:Detected
+    ) ;
+  skos:prefLabel "Detection type" ;
+.
+dtype:FourPositionType
+  rdf:type owl:Class ;
+  rdfs:label "Four position type" ;
+  rdfs:subClassOf dtype:PositionType ;
+  owl:oneOf (
+      dtype:Off
+      dtype:Low
+      dtype:Medium
+      dtype:High
+    ) ;
+  skos:prefLabel "Four position type" ;
+.
+dtype:PositionType
+  rdf:type owl:Class ;
+  rdfs:label "Position Type" ;
+  rdfs:subClassOf fdtype:EnumeratedValue ;
+  skos:prefLabel "Position Type" ;
+.
+dtype:SSFDatatype
+  rdf:type owl:Class ;
+  rdfs:comment "This is really just a wrapper to a datatype." ;
+  rdfs:label "SSF Datatype" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "SSF Datatype" ;
+.
+dtype:StatusType
+  rdf:type owl:Class ;
+  rdfs:label "Detection type" ;
+  rdfs:subClassOf fonm:EnumeratedValue ;
+    owl:oneOf (
+      dtype:Off
+      dtype:Offline
+      dtype:Unavailable
+      dtype:Busy
+      dtype:Available
+      dtype:Enabled
+      dtype:Condition
+      dtype:On
+	  dtype:Stopped
+	  dtype:Started
+    ) ;
+  skos:prefLabel "Detection type" ;
+.
+dtype:ThreePositionType
+  rdf:type owl:Class ;
+  rdfs:label "Three position type" ;
+  rdfs:subClassOf dtype:PositionType ;
+  owl:oneOf (
+      dtype:Negative
+      dtype:Neutral
+      dtype:Positive
+    ) ;
+  skos:prefLabel "Three position type" ;
+.
+dtype:TwoPositionType
+  rdf:type owl:Class ;
+  rdfs:label "Position type" ;
+  rdfs:subClassOf dtype:PositionType ;
+  owl:oneOf (
+      dtype:Off
+      dtype:On
+    ) ;
+  skos:prefLabel "Position type" ;
+.

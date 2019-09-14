@@ -1,0 +1,262 @@
+# baseURI: http://fonm.org/1.0/schema/dtype
+# imports: http://fonm.org/1.0/schema/core
+# imports: http://qudt.org/1.2/schema/datatype
+# imports: http://qudt.org/schema/qudt
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/ns/prov
+# prefix: dtype
+
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://fonm.org/1.0/schema/dtype#> .
+@prefix dtypedtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/1.0/schema/dtype>
+  rdf:type owl:Ontology ;
+  dc:author "Jack Hodges" ;
+  dc:contributor "Jack Hodges" ;
+  dc:rights "The FONM Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to Siemens Corporate Technology and TopQuadrant, Inc." ;
+  dc:subject "Functional Ontology for Naive Mechanics, Enumerated Types" ;
+  dc:title "Functional Ontology for Naive Mechanics (FONM) Ontology, Enumerated Types, Version 1.0" ;
+  vaem:intent "This ontology provides models for datatypes and controlled vocabularies used in the FONM ontologies." ;
+  vaem:dateCreated "2013-01-23T14:50:49"^^xsd:dateTime ;
+  vaem:description "The FONM, or 'Functional Ontology for Naive Mechanics' collection of ontologies define the base classes properties, and restrictions used for modeling physical objects, their properties, behaviors, functions, and their uses in problem-solving systems. The goal of the FONM ontology is to provide a unified model of objects for use in naive problem solving and invention.\"^^xsd:string ;" ;
+  vaem:hasCatalogEntry voag:FONM-DtypeSchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 14:56:40 -0700 (Wed, 01 Jun 2011) $" ;
+  vaem:name "FONM Dtype Ontology" ;
+  vaem:namespace "http://fonm.org/schema/dtype" ;
+  vaem:namespacePrefix "fonm" ;
+  vaem:revision "1.0" ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:FONM-Dtype-Attribution ;
+  vaem:usesNonImportedResource voag:FONM-Dtype-SchemaCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:FONM-Dtype-Attribution ;
+  rdfs:label "FONM Dtypes" ;
+  owl:imports <http://fonm.org/1.0/schema/core> ;
+  owl:imports <http://qudt.org/1.2/schema/datatype> ;
+  owl:imports <http://qudt.org/schema/qudt> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/ns/prov> ;
+  owl:versionIRI <http://fonm.org/1.0/schema/dtype> ;
+  owl:versionInfo "$Id: SCHEMA_FONM_dtype-v1.1.ttl 4989 2011-06-01 21:56:40Z JackHodges $" ;
+.
+fonm:CartesianDimensionType
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Cartesian dimension type" ;
+  rdfs:subClassOf fonm:DimensionType ;
+  skos:prefLabel "Cartesian dimension type" ;
+.
+fonm:DimensionType
+  rdf:type owl:Class ;
+  rdfs:label "Dimension Type" ;
+  rdfs:subClassOf fonm:EnumeratedValue ;
+  skos:prefLabel "Dimension Type" ;
+.
+fonm:DimvType
+  rdf:type owl:Class ;
+  rdfs:label "Dimv Type" ;
+  rdfs:subClassOf fonm:EnumeratedValue ;
+  skos:prefLabel "Dimv Type" ;
+.
+fonm:DirectionType
+  rdf:type owl:Class ;
+  rdfs:label "Direction Type" ;
+  rdfs:subClassOf fonm:EnumeratedValue ;
+  skos:prefLabel "Direction Type" ;
+.
+fonm:DiscreteStateEnumeration
+  rdf:type owl:Class ;
+  dc:description "A discrete state enumeration is a set of discrete values that characterize a boolean variable, measurement or controlled variable. Examples of discrete state enumerations are 'BooleanEnumeration' whose values are 'true' and 'false', 'OnOffEnumeration' whose values are 'on' and 'off', and 'WetDryEnumeration' whose values are 'wet' and 'dry'." ;
+  vaem:description "A discrete state enumeration is a set of discrete values that characterize a boolean variable, measurement or controlled variable. Examples of discrete state enumerations are 'BooleanEnumeration' whose values are 'true' and 'false', 'OnOffEnumeration' whose values are 'on' and 'off', and 'WetDryEnumeration' whose values are 'wet' and 'dry'." ;
+  rdfs:label "Discrete State Enumeration" ;
+  rdfs:subClassOf fonm:Enumeration ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:inverted ;
+    ] ;
+.
+fonm:EnumeratedValue
+  rdf:type owl:Class ;
+  dc:description "This class is for all enumerated and/or coded values.  For example, it contains the dimension objects that are the basis elements in some abstract vector space associated with a quantity kind system. Another use is for the base dimensions for quantity systems. Each quantity kind system that defines a base set has a corresponding ordered enumeration whose elements are the dimension objects for the base quantity kinds. The order of the dimensions in the enumeration determines the canonical order of the basis elements in the corresponding abstract vector space." ;
+  rdfs:isDefinedBy <http://fonm.org/1.0/schema/dtype> ;
+  rdfs:label "Enumerated Value" ;
+  rdfs:subClassOf qudt:Datatype ;
+  rdfs:subClassOf dtypedtype:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty qudt:literal ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:abbreviation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:description ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:order ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:symbol ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:code ;
+    ] ;
+.
+fonm:Enumeration
+  rdf:type fonm:Enumeration ;
+  rdf:type owl:Class ;
+  dc:description "An enumeration is a set of literals from which a single value is selected. Each literal can have a tag as an integer within a standard encoding appropriate to the range of integer values. Consistency of enumeration types will allow them, and the enumerated values, to be referred to unambiguously in all space systems either through symbolic name or encoding. Enumerated values are also controlled vocabularies and as such need to be standardized. Without this consistency enumeration literals can be stated differently and result in  data conflicts and misinterpretations. The tags are a set of positive whole numbers, not necessarily contiguous and having no numerical significance, each corresponding to the associated literal identifier. An order attribute can also be given on the enumeration elements. An enumeration can itself be a member of an enumeration. This allows enumerations to be enumerated in a selection. Enumerations are also subclasses of Scalar Datatype. This allows them to be used as the reference of a datatype specification." ;
+  vaem:description "An enumeration is a set of literals from which a single value is selected. Each literal can have a tag as an integer within a standard encoding appropriate to the range of integer values. Consistency of enumeration types will allow them, and the enumerated values, to be referred to unambiguously in all Constellation systems either through symbolic name or encoding. Enumerated values are also controlled vocabularies and as such need to be standardized. Without this consistency enumeration literals can be stated differently and result in  data conflicts and misinterpretations. The tags are a set of positive whole numbers, not necessarily contiguous and having no numerical significance, each corresponding to the associated literal identifier. An order attribute can also be given on the enumeration elements." ;
+  rdfs:label "Enumeration Data Type" ;
+  rdfs:label "Enumeration" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf qudt:StructuredDatatype ;
+  rdfs:subClassOf dtypedtype:Enumeration ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The number of bits allocated to the field for encoding any tags associated with elements." ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:bits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:EnumeratedValue ;
+      owl:onProperty fonm:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:EnumeratedValue ;
+      owl:onProperty qudt:default ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:EnumeratedValue ;
+      owl:onProperty qudt:defaultValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:EnumeratedValue ;
+      owl:onProperty qudt:element ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty qudt:abbreviation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:default ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:encoding ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:element ;
+    ] ;
+  skos:exactMatch <http://dbpedia.org/resource/Enumeration> ;
+  skos:prefLabel "FONM Enumeration" ;
+.
+fonm:PolarDimensionType
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Polar dimension type" ;
+  rdfs:subClassOf fonm:DimensionType ;
+  skos:prefLabel "Polar dimension type" ;
+.
+fonm:ShapeType
+  rdf:type owl:Class ;
+  rdfs:label "Shape Type" ;
+  rdfs:subClassOf fonm:EnumeratedValue ;
+  skos:prefLabel "Shape Type" ;
+.
+fonm:SizeType
+  rdf:type owl:Class ;
+  rdfs:label "Value Type" ;
+  rdfs:subClassOf fonm:EnumeratedValue ;
+  skos:prefLabel "Value Type" ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:source
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "source" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy <http://qudt.org/schema/qudt> ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.

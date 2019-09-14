@@ -1,0 +1,595 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/space-and-time
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/space-and-time>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Space and Time Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity> ;
+.
+quantity:Acceleration
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:GAL ;
+  qudt:applicableUnit unit:M-PER-SEC2 ;
+  qudt:description "Acceleration is the (instantaneous) rate of change of velocity. Acceleration may be either linear acceleration, or angular acceleration. It is a vector quantity with dimension $length/time^{2}$ for linear acceleration, or in the case of angular acceleration, with dimension $angle/time^{2}$. In SI units, linear acceleration is measured in $meters/second^{2}$ ($m \\cdot s^{-2}$) and angular acceleration is measured in $radians/second^{2}$. In physics, any increase or decrease in speed is referred to as acceleration and similarly, motion in a circle at constant speed is also an acceleration, since the direction component of the velocity is changing."^^xsd:string ;
+  rdfs:label "Acceleration"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Acceleration> ;
+  skos:prefLabel "Acceleration"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Acceleration> ;
+.
+quantity:Altitude
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:FT ;
+  qudt:applicableUnit unit:KM ;
+  qudt:applicableUnit unit:M ;
+  qudt:applicableUnit unit:NMI ;
+  qudt:description "Altitude or height is defined based on the context in which it is used (aviation, geometry, geographical survey, sport, and more). As a general definition, altitude is a distance measurement, usually in the vertical or \"up\" direction, between a reference datum and a point or object. The reference datum also often varies according to the context. [Wikipedia]"^^xsd:string ;
+  rdfs:label "Altitude"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Altitude> ;
+  skos:prefLabel "Altitude"^^xsd:string ;
+.
+quantity:Angle
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "The inclination to each other of two intersecting lines, measured by the arc of a circle intercepted between the two lines forming the angle, the center of the circle being the point of intersection.  An acute angle is less than $90^\\circ$, a right angle $90^\\circ$; an obtuse angle, more than $90^\\circ$ but less than $180^\\circ$; a straight angle, $180^\\circ$; a reflex angle, more than $180^\\circ$ but less than $360^\\circ$; a perigon, $360^\\circ$. Any angle not a multiple of $90^\\circ$ is an oblique angle. If the sum of two angles is $90^\\circ$, they are complementary angles; if $180^\\circ$, supplementary angles; if $360^\\circ$, explementary angles."^^xsd:string ;
+  rdfs:label "Angle"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:exactMatch <http://dbpedia.org/resource/Angle> ;
+  skos:prefLabel "Angle"^^xsd:string ;
+.
+quantity:AngularAcceleration
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:Deg-PER-SEC2 ;
+  qudt:applicableUnit unit:RAD-PER-SEC2 ;
+  qudt:applicableUnit unit:REV-PER-SEC2 ;
+  qudt:baseUnitDimensions "/s^2"^^xsd:string ;
+  qudt:baseUnitDimensions "U/T^2"^^xsd:string ;
+  qudt:description "Angular acceleration is the rate of change of angular velocity over time. Measurement of the change made in the rate of change of an angle that a spinning object undergoes per unit time. It is a vector quantity.  Also called Rotational acceleration. In SI units, it is measured in radians per second squared ($rad/s^2$), and is usually denoted by the Greek letter alpha."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-UT-2 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-UT-2 ;
+  rdfs:label "Angular Acceleration"^^xsd:string ;
+  skos:broader quantity:Acceleration ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_acceleration> ;
+  skos:prefLabel "Angular Acceleration"^^xsd:string ;
+.
+quantity:AngularFrequency
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "\\textit{Angular frequency}, symbol $\\omega$ (also referred to by the terms angular speed, radial frequency, circular frequency, orbital frequency, radian frequency, and pulsatance) is a scalar measure of rotation rate. Angular frequency (or angular speed) is the magnitude of the vector quantity angular velocity."^^xsd:string ;
+  qudt:symbol "\\omega"^^xsd:string ;
+  rdfs:label "Angular Frequency"^^xsd:string ;
+  skos:broader quantity:Frequency ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_frequency> ;
+  skos:prefLabel "Angular Frequency"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Angular_frequency> ;
+.
+quantity:AngularVelocity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:Deg-PER-HR ;
+  qudt:applicableUnit unit:Deg-PER-MIN ;
+  qudt:applicableUnit unit:Deg-PER-SEC ;
+  qudt:applicableUnit unit:RAD-PER-HR ;
+  qudt:applicableUnit unit:RAD-PER-MIN ;
+  qudt:applicableUnit unit:RAD-PER-SEC ;
+  qudt:applicableUnit unit:REV-PER-HR ;
+  qudt:applicableUnit unit:REV-PER-MIN ;
+  qudt:applicableUnit unit:REV-PER-SEC ;
+  qudt:baseUnitDimensions "/s"^^xsd:string ;
+  qudt:baseUnitDimensions "U/T"^^xsd:string ;
+  qudt:description "The change of angle per unit time; specifically, in celestial mechanics, the change in angle of the radius vector per unit time."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-UT-1 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-UT-1 ;
+  rdfs:label "Angular Velocity"^^xsd:string ;
+  skos:broader quantity:Velocity ;
+  skos:exactMatch <http://dbpedia.org/resource/Angular_velocity> ;
+  skos:prefLabel "Angular Velocity"^^xsd:string ;
+.
+quantity:Area
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:ACRE ;
+  qudt:applicableUnit unit:ARE ;
+  qudt:applicableUnit unit:BARN ;
+  qudt:applicableUnit unit:CM2 ;
+  qudt:applicableUnit unit:CircularMil ;
+  qudt:applicableUnit unit:FT2 ;
+  qudt:applicableUnit unit:HA ;
+  qudt:applicableUnit unit:IN2 ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:applicableUnit unit:MI2 ;
+  qudt:applicableUnit unit:PlanckArea ;
+  qudt:applicableUnit unit:YD2 ;
+  qudt:baseUnitDimensions "L^2"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2"^^xsd:string ;
+  qudt:description "Area is a quantity expressing the two-dimensional size of a defined part of a surface, typically a region bounded by a closed curve."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-L2 ;
+  qudt:hasDimension qudt:DIM_Planck-L2 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2 ;
+  rdfs:label "Area"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Area> ;
+  skos:prefLabel "Area"^^xsd:string ;
+.
+quantity:AreaAngle
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:M2-SR ;
+  qudt:baseUnitDimensions "L^2 \\cdot U"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2"^^xsd:string ;
+  rdfs:label "Area Angle"^^xsd:string ;
+  skos:prefLabel "Area Angle"^^xsd:string ;
+.
+quantity:AreaPerTime
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:M2-PER-SEC ;
+  qudt:baseImperialUnitDimensions "L^2/T"^^xsd:string ;
+  qudt:baseSIUnitDimensions "m^2/s"^^xsd:string ;
+  qudt:baseUSCustomaryUnitDimensions "L^2/T"^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-L2T-1 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2T-1 ;
+  rdfs:label "Area per Time"^^xsd:string ;
+  skos:prefLabel "Area per Time"^^xsd:string ;
+.
+quantity:AreaTime
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:CM2-MIN ;
+  qudt:applicableUnit unit:CM2-SEC ;
+  qudt:applicableUnit unit:HR-FT2 ;
+  qudt:applicableUnit unit:S-FT2 ;
+  qudt:baseUnitDimensions "L^2 \\cdot T"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2 \\cdot s"^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-L2T ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L2T ;
+  rdfs:label "Area Time"^^xsd:string ;
+  skos:prefLabel "Area Time"^^xsd:string ;
+.
+quantity:CrossSectionalArea
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Cross-sectional Area"^^xsd:string ;
+  skos:prefLabel "Cross-sectional Area"^^xsd:string ;
+.
+quantity:Curvature
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:DIOPTER ;
+  qudt:description "The canonical example of extrinsic curvature is that of a circle, which has curvature equal to the inverse of its radius everywhere. Smaller circles bend more sharply, and hence have higher curvature. The curvature of a smooth curve is defined as the curvature of its osculating circle at each point. The osculating circle of a sufficiently smooth plane curve at a given point on the curve is the circle whose center lies on the inner normal line and whose curvature is the same as that of the given curve at that point. This circle is tangent to the curve at the given point. The magnitude of curvature at points on physical curves can be measured in $diopters$ (also spelled $dioptre$) — this is the convention in optics."^^xsd:string ;
+  qudt:longDescription """The canonical example of extrinsic curvature is that of a circle, which has curvature equal to the inverse of its radius everywhere. Smaller circles bend more sharply, and hence have higher curvature. The curvature of a smooth curve is defined as the curvature of its osculating circle at each point. The osculating circle of a sufficiently smooth plane curve at a given point on the curve is the circle whose center lies on the inner normal line and whose curvature is the same as that of the given curve at that point. This circle is tangent to the curve at the given point.
+
+That is, given a point P on a smooth curve C, the curvature of C at P is defined to be 1/R where R is the radius of the osculating circle of C at P. The magnitude of curvature at points on physical curves can be measured in diopters (also spelled dioptre) — this is the convention in optics. [Wikipedia]"""^^xsd:string ;
+  rdfs:label "Curvature"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Curvature> ;
+  skos:prefLabel "Curvature"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Curvature> ;
+.
+quantity:DryVolume
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:Bushel ;
+  qudt:applicableUnit unit:CORD ;
+  qudt:applicableUnit unit:DryPintUS ;
+  qudt:applicableUnit unit:DryQuartUS ;
+  qudt:applicableUnit unit:Peck ;
+  qudt:applicableUnit unit:US_DRY_GAL ;
+  qudt:description "Dry measures are units of volume used to measure bulk commodities which are not gas or liquid. They are typically used in agriculture, agronomy, and commodity markets to measure grain, dried beans, and dried and fresh fruit; formerly also salt pork and fish. They are also used in fishing for clams, crabs, etc. and formerly for many other substances (for example coal, cement, lime) which were typically shipped and delivered in a standardized container such as a barrel.  In the original metric system, the unit of dry volume was the stere, but this is not part of the modern metric system; the liter and the cubic meter ($m^{3}$) are now used. However, the stere is still widely used for firewood."^^xsd:string ;
+  rdfs:label "Dry Volume"^^xsd:string ;
+  skos:broader quantity:Volume ;
+  skos:prefLabel "Dry Volume"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Dry_measure> ;
+.
+quantity:Frequency
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:GigaHertz ;
+  qudt:applicableUnit unit:HZ ;
+  qudt:applicableUnit unit:KiloHertz ;
+  qudt:applicableUnit unit:MegaHertz ;
+  qudt:applicableUnit unit:NUM-PER-YR ;
+  qudt:applicableUnit unit:PER-SEC ;
+  qudt:applicableUnit unit:PlanckFrequency ;
+  qudt:applicableUnit unit:SAMPLE-PER-SEC ;
+  qudt:baseUnitDimensions "/s"^^xsd:string ;
+  qudt:description "\\textit{Frequency} is the number of occurrences of a repeating event per unit time. The repetition of the events may be periodic (that is. the length of time between event repetitions is fixed) or aperiodic (i.e. the length of time between event repetitions varies). Therefore, we distinguish between periodic and aperiodic frequencies. In the SI system, periodic frequency is measured in hertz (Hz) or multiples of hertz, while aperiodic frequency is measured in becquerel (Bq).  In spectroscopy, $\\nu$ is mostly used. Light passing through different media keeps its frequency, but not its wavelength or wavenumber."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_SI-s-1 ;
+  rdfs:label "Frequency"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Frequency> ;
+  skos:prefLabel "Frequency"^^xsd:string ;
+.
+quantity:InverseLength
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:PerMeter ;
+  qudt:baseUnitDimensions "/L"^^xsd:string ;
+  qudt:baseUnitDimensions "/m"^^xsd:string ;
+  qudt:description "Reciprocal length or inverse length is a measurement used in several branches of science and mathematics. As the reciprocal of length, common units used for this measurement include the reciprocal metre or inverse metre ($m^{-1}$), the reciprocal centimetre or inverse centimetre ($cm^{-1}$), and, in optics, the dioptre."^^xsd:string ;
+  rdfs:label "Inverse Length"^^xsd:string ;
+  skos:prefLabel "Inverse Length"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Reciprocal_length> ;
+.
+quantity:InverseVolume
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:baseUnitDimensions "/L^3"^^xsd:string ;
+  qudt:baseUnitDimensions "/m^3"^^xsd:string ;
+  rdfs:label "Inverse Volume"^^xsd:string ;
+  skos:prefLabel "Inverse Volume"^^xsd:string ;
+.
+quantity:Length
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:abbreviation "length"^^xsd:string ;
+  qudt:applicableUnit unit:ANGSTROM ;
+  qudt:applicableUnit unit:AU ;
+  qudt:applicableUnit unit:BohrRadius ;
+  qudt:applicableUnit unit:CHAIN ;
+  qudt:applicableUnit unit:CM ;
+  qudt:applicableUnit unit:FATH ;
+  qudt:applicableUnit unit:FT ;
+  qudt:applicableUnit unit:FUR ;
+  qudt:applicableUnit unit:FemtoM ;
+  qudt:applicableUnit unit:Fermi ;
+  qudt:applicableUnit unit:FootUSSurvey ;
+  qudt:applicableUnit unit:IN ;
+  qudt:applicableUnit unit:KM ;
+  qudt:applicableUnit unit:LY ;
+  qudt:applicableUnit unit:M ;
+  qudt:applicableUnit unit:MI-US ;
+  qudt:applicableUnit unit:MicroInch ;
+  qudt:applicableUnit unit:MicroM ;
+  qudt:applicableUnit unit:MilLength ;
+  qudt:applicableUnit unit:MileInternational ;
+  qudt:applicableUnit unit:NMI ;
+  qudt:applicableUnit unit:PT ;
+  qudt:applicableUnit unit:Pica ;
+  qudt:applicableUnit unit:PlanckLength ;
+  qudt:applicableUnit unit:ROD ;
+  qudt:applicableUnit unit:YARD ;
+  qudt:baseUnitDimensions "L"^^xsd:string ;
+  qudt:baseUnitDimensions "m"^^xsd:string ;
+  qudt:description "In geometric measurements, length most commonly refers to the est dimension of an object. In some contexts, the term \\textit{length} is reserved for a certain dimension of an object along which the length is measured."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-L ;
+  qudt:hasDimension qudt:DIM_Planck-L ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L ;
+  qudt:symbol "l"^^xsd:string ;
+  rdfs:label "Length"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Length> ;
+  skos:prefLabel "Length"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Length> ;
+.
+quantity:LinearAcceleration
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:CM-PER-SEC2 ;
+  qudt:applicableUnit unit:FT-PER-SEC2 ;
+  qudt:applicableUnit unit:GAL ;
+  qudt:applicableUnit unit:Gravity ;
+  qudt:applicableUnit unit:IN-PER-SEC2 ;
+  qudt:applicableUnit unit:KNOT-PER-SEC ;
+  qudt:applicableUnit unit:M-PER-SEC2 ;
+  qudt:applicableUnit unit:MicroG ;
+  qudt:applicableUnit unit:MilliG ;
+  qudt:baseUnitDimensions "L/T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "m/s^2"^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-LT-2 ;
+  qudt:hasDimension qudt:DIM_Planck-LT-2 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-LT-2 ;
+  rdfs:label "Linear Acceleration"^^xsd:string ;
+  skos:broader quantity:Acceleration ;
+  skos:exactMatch <http://dbpedia.org/resource/Acceleration> ;
+  skos:prefLabel "Linear Acceleration"^^xsd:string ;
+.
+quantity:LinearVelocity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:CM-PER-SEC ;
+  qudt:applicableUnit unit:FT-PER-HR ;
+  qudt:applicableUnit unit:FT-PER-MIN ;
+  qudt:applicableUnit unit:FT-PER-SEC ;
+  qudt:applicableUnit unit:IN-PER-SEC ;
+  qudt:applicableUnit unit:KM-PER-HR ;
+  qudt:applicableUnit unit:KM-PER-SEC ;
+  qudt:applicableUnit unit:KNOT ;
+  qudt:applicableUnit unit:M-PER-HR ;
+  qudt:applicableUnit unit:M-PER-MIN ;
+  qudt:applicableUnit unit:M-PER-SEC ;
+  qudt:applicableUnit unit:MI-PER-HR ;
+  qudt:applicableUnit unit:MI-PER-MIN ;
+  qudt:applicableUnit unit:NMI-PER-HR ;
+  qudt:applicableUnit unit:NMI-PER-MIN ;
+  qudt:applicableUnit unit:VelocityOfLight ;
+  qudt:baseUnitDimensions "L/T"^^xsd:string ;
+  qudt:baseUnitDimensions "m/s"^^xsd:string ;
+  qudt:description "Linear Velocity, as the name implies deals with speed in a straight line, the units are often $km/hr$ or $m/s$ or $mph$ (miles per hour). Linear Velocity (v) = change in distance/change in time, where $v = \\bigtriangleup d/\\bigtriangleup t$"^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-LT-1 ;
+  qudt:hasDimension qudt:DIM_Planck-LT-1 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-LT-1 ;
+  qudt:symbol "v"^^xsd:string ;
+  rdfs:label "Linear Velocity"^^xsd:string ;
+  skos:broader quantity:Velocity ;
+  skos:exactMatch <http://dbpedia.org/resource/Velocity> ;
+  skos:prefLabel "Linear Velocity"^^xsd:string ;
+  prov:wasInfluencedBy <http://au.answers.yahoo.com/question/index?qid=20080319082534AAtrClv> ;
+.
+quantity:LiquidVolume
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:GallonImperial ;
+  qudt:applicableUnit unit:GallonUS ;
+  qudt:applicableUnit unit:LITER ;
+  qudt:applicableUnit unit:LiquidCupUS ;
+  qudt:applicableUnit unit:LiquidOunceUS ;
+  qudt:applicableUnit unit:LiquidPintUS ;
+  qudt:applicableUnit unit:LiquidQuartUS ;
+  qudt:applicableUnit unit:OunceImperial ;
+  qudt:description "Liquid volume is the volume of a given amount of liquid, that is, the amount of space a liquid takes up. There are a number of different units used to measure liquid volume, but most of them fall under either the metric system of measurement or the Imperial system of measurement."^^xsd:string ;
+  rdfs:label "Liquid Volume"^^xsd:string ;
+  skos:broader quantity:Volume ;
+  skos:prefLabel "Liquid Volume"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.ehow.com/facts_6371078_liquid-volume_.html> ;
+.
+quantity:MachNumber
+  rdf:type qudt:CharacteristicNumber ;
+  rdf:type qudt:PropulsionQuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "\\textit{Mach Number} is a dimensionless quantity representing the speed of an object moving through air or other fluid divided by the local speed of sound. It is commonly used to represent the speed of an object when it is traveling close to or above the speed of sound. The Mach number is commonly used both with objects traveling at high speed in a fluid, and with high-speed fluid flows inside channels such as nozzles, diffusers or wind tunnels. As it is defined as a ratio of two speeds, it is a dimensionless number."^^xsd:string ;
+  qudt:latexDefinition "$Ma = \\frac{v_o}{c_o}$, where $v_0$ is speed, and $c_o$ is speed of sound."^^xsd:string ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+  qudt:symbol "Ma"^^xsd:string ;
+  <http://www.linkedmodel.org/owl/schema/core#hasGovernance> quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Mach Number"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:closeMatch <http://dbpedia.org/resource/Mach_number> ;
+  skos:exactMatch <http://dbpedia.org/resource/Mach_number> ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Mach_number> ;
+  skos:prefLabel "Mach Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31896> ;
+.
+quantity:NumberDensity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:abbreviation "m^{-3}"^^xsd:string ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "In physics, astronomy, and chemistry, number density (symbol: n) is a kind of quantity used to describe the degree of concentration of countable objects (atoms, molecules, dust particles, galaxies, etc.) in the three-dimensional physical space."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_ISO-L-3 ;
+  qudt:latexDefinition "$n = \\frac{N}{V}$, where $N$ is the number of particles and $V$ is volume."^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Number Density"^^xsd:string ;
+  skos:broader quantity:InverseVolume ;
+  skos:exactMatch <http://dbpedia.org/resource/Number_density> ;
+  skos:prefLabel "Number Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Number_density> ;
+.
+quantity:PlaneAngle
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:ArcMIN ;
+  qudt:applicableUnit unit:ArcSEC ;
+  qudt:applicableUnit unit:Deg ;
+  qudt:applicableUnit unit:GON ;
+  qudt:applicableUnit unit:GRAD ;
+  qudt:applicableUnit unit:MilAngle ;
+  qudt:applicableUnit unit:RAD ;
+  qudt:applicableUnit unit:REV ;
+  qudt:description "An angle formed by two straight lines (in the same plane) angle - the space between two lines or planes that intersect; the inclination of one line to another; measured in degrees or radians"^^xsd:string ;
+  rdfs:label "Plane Angle"^^xsd:string ;
+  skos:broader quantity:Angle ;
+  skos:exactMatch <http://dbpedia.org/resource/Plane_angle> ;
+  skos:prefLabel "Plane Angle"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.thefreedictionary.com/plane+angle> ;
+.
+quantity:SolidAngle
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:DEG2 ;
+  qudt:applicableUnit unit:FractionalArea ;
+  qudt:applicableUnit unit:STERADIAN ;
+  qudt:description "The solid angle subtended by a surface S is defined as the surface area of a unit sphere covered by the surface S's projection onto the sphere. A solid angle is related to the surface of a sphere in the same way an ordinary angle is related to the circumference of a circle. Since the total surface area of the unit sphere is 4*pi, the measure of solid angle will always be between 0 and 4*pi."^^xsd:string ;
+  rdfs:label "Solid Angle"^^xsd:string ;
+  skos:broader quantity:Angle ;
+  skos:exactMatch <http://dbpedia.org/resource/Solid_angle> ;
+  skos:prefLabel "Solid Angle"^^xsd:string ;
+.
+quantity:SpecificVolume
+  qudt:applicableUnit unit:M3-PER-KG ;
+  rdfs:label "Specific Volume"^^xsd:string ;
+  skos:prefLabel "Specific Volume"^^xsd:string ;
+.
+quantity:Speed
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "Speed is the magnitude of velocity."^^xsd:string ;
+  rdfs:label "Speed"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Speed> ;
+  skos:prefLabel "Speed"^^xsd:string ;
+.
+quantity:StochasticProcess
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "In probability theory, a stochastic process, or sometimes random process  is a collection of random variables; this is often used to represent the evolution of some random value, or system, over time. This is the probabilistic counterpart to a deterministic process (or deterministic system)."^^xsd:string ;
+  qudt:symbol "X"^^xsd:string ;
+  rdfs:label "Stochastic Process"^^xsd:string ;
+  skos:broader quantity:Frequency ;
+  skos:exactMatch <http://dbpedia.org/resource/Stochastic_process> ;
+  skos:prefLabel "Stochastic Process"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stochastic_process> ;
+.
+quantity:Time
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:DAY ;
+  qudt:applicableUnit unit:HR ;
+  qudt:applicableUnit unit:MicroSecond ;
+  qudt:applicableUnit unit:MilliSecond ;
+  qudt:applicableUnit unit:MinuteTime ;
+  qudt:applicableUnit unit:PlanckTime ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:applicableUnit unit:SHAKE ;
+  qudt:applicableUnit unit:SiderealDay ;
+  qudt:applicableUnit unit:SiderealHour ;
+  qudt:applicableUnit unit:SiderealMinute ;
+  qudt:applicableUnit unit:SiderealYear ;
+  qudt:applicableUnit unit:TropicalYear ;
+  qudt:applicableUnit unit:YR ;
+  qudt:baseUnitDimensions "s"^^xsd:string ;
+  qudt:description "Time is a basic component of the measuring system used to sequence events, to compare the durations of events and the intervals between them, and to quantify the motions of objects."^^xsd:string ;
+  qudt:symbol "t"^^xsd:string ;
+  rdfs:label "Time"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Time> ;
+  skos:prefLabel "Time"^^xsd:string ;
+.
+quantity:TimeSquared
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:S2 ;
+  qudt:baseUnitDimensions "T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "s^2"^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-T2 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-T2 ;
+  rdfs:label "Time Squared"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Time_Squared> ;
+  skos:prefLabel "Time Squared"^^xsd:string ;
+.
+quantity:Velocity
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:description "In kinematics, velocity is the speed of an object and a specification of its direction of motion. Speed describes only how fast an object is moving, whereas velocity gives both how fast and in what direction the object is moving."^^xsd:string ;
+  qudt:symbol "v"^^xsd:string ;
+  rdfs:label "Velocity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Velocity> ;
+  skos:prefLabel "Velocity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Velocity> ;
+.
+quantity:Volume
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:AC-FT ;
+  qudt:applicableUnit unit:BARREL ;
+  qudt:applicableUnit unit:CM3 ;
+  qudt:applicableUnit unit:FBM ;
+  qudt:applicableUnit unit:FT3 ;
+  qudt:applicableUnit unit:IN3 ;
+  qudt:applicableUnit unit:M3 ;
+  qudt:applicableUnit unit:MI3 ;
+  qudt:applicableUnit unit:PintImperial ;
+  qudt:applicableUnit unit:PlanckVolume ;
+  qudt:applicableUnit unit:RT ;
+  qudt:applicableUnit unit:STERE ;
+  qudt:applicableUnit unit:TBSP ;
+  qudt:applicableUnit unit:TSP ;
+  qudt:applicableUnit unit:YD3 ;
+  qudt:baseUnitDimensions "L^3"^^xsd:string ;
+  qudt:baseUnitDimensions "m^3"^^xsd:string ;
+  qudt:description "The volume of a solid object is the three-dimensional concept of how much space it occupies, often quantified numerically. One-dimensional figures (such as lines) and two-dimensional shapes (such as squares) are assigned zero volume in the three-dimensional space."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-L3 ;
+  qudt:hasDimension qudt:DIM_Planck-L3 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L3 ;
+  rdfs:label "Volume"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Volume> ;
+  skos:prefLabel "Volume"^^xsd:string ;
+.
+quantity:VolumePerUnitTime
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:applicableUnit unit:FT3-PER-MIN ;
+  qudt:applicableUnit unit:FT3-PER-SEC ;
+  qudt:applicableUnit unit:GallonUSPerDay ;
+  qudt:applicableUnit unit:GallonUSPerMinute ;
+  qudt:applicableUnit unit:IN3-PER-MIN ;
+  qudt:applicableUnit unit:M3-PER-HR ;
+  qudt:applicableUnit unit:M3-PER-SEC ;
+  qudt:applicableUnit unit:YD3-PER-MIN ;
+  qudt:baseUnitDimensions "L^3/T"^^xsd:string ;
+  qudt:baseUnitDimensions "m^3/s"^^xsd:string ;
+  qudt:hasDimension qudt:DIM_IMPERIAL-L3T-1 ;
+  qudt:hasDimension qudt:DIM_USCUSTOMARY-L3T-1 ;
+  rdfs:label "Volume per Unit Time"^^xsd:string ;
+  skos:prefLabel "Volume per Unit Time"^^xsd:string ;
+.
+<http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Catalog Entry v1.2"^^xsd:string ;
+.

@@ -1,0 +1,163 @@
+# baseURI: http://siemens.com/schemas/san
+# imports: http://fonm.org/1.0/schema/core
+# imports: http://www.w3.org/ns/ssn/systems/
+# prefix: san
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ext: <http://purl.obolibrary.org/obo/uberon/ext.owl#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix san: <http://siemens.com/schemas/san#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xhtm: <http://www.w3.org/1999/xhtml> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/san>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "Semantic Actuator Framework" ;
+  dc:subject "SAN" ;
+  dc:title "The Siemens Semantic Actuator Framework Ontology" ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "The SAN is an actuation ontology that extends the SSN ontology to actuation."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/san#"^^xsd:string ;
+  vaem:namespacePrefix "san"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/san"^^xsd:anyURI ;
+  rdfs:label "SAN ontology"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_san-v1.0.ttl 1954 2018-08-22 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://fonm.org/1.0/schema/core> ;
+  owl:imports <http://www.w3.org/ns/ssn/systems/> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+san:ActuatingDevice
+  rdf:type owl:Class ;
+  rdfs:comment "Any device that can control a mechanism through actuation. As simple as a switch and as complex as a controller. Some affect single properties while others may control many properties." ;
+  rdfs:label "Actuating device" ;
+  rdfs:seeAlso "https://en.wikipedia.org/wiki/Actuator" ;
+  rdfs:subClassOf fonm:Device ;
+  rdfs:subClassOf san:Actuator ;
+.
+san:Actuation
+  rdf:type owl:Class ;
+  rdfs:comment "Actuation is a process that results in the control of a device, which controls the value of a phenomenon." ;
+  rdfs:label "Actuation" ;
+  rdfs:subClassOf sosa:Actuation ;
+.
+san:ActuationCapability
+  rdf:type owl:Class ;
+  rdfs:comment """Collects together actuation properties (accuracy, range, precision, etc) and the environmental conditions in which those properties hold, representing a specification of an actuator's capability in those conditions.
+
+The conditions specified here are those that affect the actuation properties, while those in OperatingRange represent the actuator's standard operating conditions, including conditions that don't affect the observations.""" ;
+  rdfs:label "Actuation Capability" ;
+  rdfs:subClassOf ssn:Property ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom san:ActuationProperty ;
+      owl:onProperty san:hasActuationProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssn:Condition ;
+      owl:onProperty ssn:inCondition ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssn:Property ;
+      owl:onProperty ssn:forProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty san:hasActuationProperty ;
+    ] ;
+.
+san:ActuationProperty
+  rdf:type owl:Class ;
+  rdfs:comment "An identifiable and observable characteristic of an actuator's actions or ability to invoke actions." ;
+  rdfs:label "Actuation  Property" ;
+  rdfs:subClassOf ssn:Property ;
+.
+san:ActuationValue
+  rdf:type owl:Class ;
+  rdfs:label "Actuation Value" ;
+  rdfs:subClassOf ssn:Property ;
+.
+san:Actuator
+  rdf:type owl:Class ;
+  rdfs:comment "An actuator can do (implements) actuation: that is, an actuator is any entity that can follow an actuation/control method and thus control a device that produces some Property of a FeatureOfInterest.  Actuators may be physical devices, computational methods, a laboratory setup with a person following a method, or any other thing that can follow an Actuation Method to control a Property. Actuators require a source of energy and a control signal." ;
+  rdfs:label "Actuator" ;
+  rdfs:seeAlso "https://en.wikipedia.org/wiki/Actuator" ;
+  rdfs:subClassOf fonm:Device ;
+  rdfs:subClassOf sosa:Actuator ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom san:ActuationCapability ;
+      owl:onProperty san:hasActuationCapability ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssn:Property ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssn:Stimulus ;
+      owl:onProperty ssn:detects ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty san:hasActuationValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty san:hasOperation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssn:implements ;
+      owl:someValuesFrom san:Actuation ;
+    ] ;
+.
+san:Operation
+  rdf:type owl:Class ;
+  rdfs:label "Operation" ;
+  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method> ;
+.
+san:hasActuationCapability
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Relation from an Actuator to an ActuationCapability describing the actuation properties of the actuator." ;
+  rdfs:label "has actuation capability" ;
+  rdfs:subPropertyOf san:hasProperty ;
+.
+san:hasActuationProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Relation from an ActuationCapability to an ActuationProperty.  For example, to an accuracy (see notes at ssn:MeasurementCapability)." ;
+  rdfs:label "has actuation property" ;
+  rdfs:subPropertyOf san:hasProperty ;
+.
+san:hasActuationValue
+  rdf:type rdf:Property ;
+  rdfs:label "has actuation value" ;
+  rdfs:range san:ActuationValue ;
+.
+san:hasOperation
+  rdf:type rdf:Property ;
+  rdfs:label "has operation" ;
+  rdfs:range san:Operation ;
+.
+san:hasProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has property" ;
+  rdfs:subPropertyOf <http://www.loa-cnr.it/ontologies/DUL.owl#hasQuality> ;
+.

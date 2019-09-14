@@ -1,0 +1,42 @@
+# baseURI: http://siemens.com/schemas/kps/fsgim2ssn
+# imports: http://siemens.com/schemas/kps/epic
+# imports: http://www.w3.org/ns/ssn/
+# prefix: fsgim2ssn
+
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix fsgim2ssn: <http://siemens.com/schemas/kps/fsgim2ssn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+epic:PowerApparentQuantity
+  rdfs:subClassOf ssn:ObservationValue ;
+.
+epic:PowerApparentQuantityKind
+  rdfs:subClassOf ssn:Property ;
+.
+epic:PowerReactiveQuantity
+  rdfs:subClassOf ssn:ObservationValue ;
+.
+epic:PowerReactiveQuantityKind
+  rdfs:subClassOf ssn:Property ;
+.
+epic:PowerRealQuantity
+  rdfs:subClassOf ssn:ObservationValue ;
+.
+epic:PowerRealQuantityKind
+  rdfs:subClassOf ssn:Property ;
+.
+epic:Quantity
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#Quantity> ;
+  rdfs:subClassOf ssn:FeatureOfInterest ;
+.
+<http://siemens.com/schemas/kps/fsgim2ssn>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports ssn: ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

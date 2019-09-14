@@ -1,0 +1,761 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/solid-state-physics
+# imports: http://qudt.org/1.2/collection/units
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://qudt.org/1.2/vocab/unit/mechanics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/quantity/solid-state-physics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Solid State Physics Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 13:34:19 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/collection/units> ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/mechanics> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/solid-state-physics> ;
+.
+quantity:AcceptorDensity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "\\textit{Acceptor Density} is the number per volume of acceptor levels."^^xsd:string ;
+  qudt:symbol "n_a"^^xsd:string ;
+  rdfs:label "Acceptor Density"^^xsd:string ;
+  skos:prefLabel "Acceptor Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:AcceptorIonizationEnergy
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Acceptor Ionization Energy} is the ionization energy of an acceptor."^^xsd:string ;
+  qudt:symbol "E_a"^^xsd:string ;
+  rdfs:label "Acceptor Ionization Energy"^^xsd:string ;
+  skos:broader quantity:IonizationEnergy ;
+  skos:closeMatch quantity:DonorIonizationEnergy ;
+  skos:prefLabel "Acceptor Ionization Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ionization_energy> ;
+.
+quantity:AngularReciprocalLatticeVector
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{Angular Reciprocal Lattice Vector} is a vector whose scalar products with all fundamental lattice vectors are integral multiples of $2\\pi$."^^xsd:string ;
+  qudt:symbol "G"^^xsd:string ;
+  rdfs:label "Angular Reciprocal Lattice Vector"^^xsd:string ;
+  skos:broader quantity:LatticeVector ;
+  skos:prefLabel "Angular Reciprocal Lattice Vector"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://www.matter.org.uk/diffraction/geometry/lattice_vectors.htm> ;
+.
+quantity:AngularWavenumber
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:RAD-PER-M ;
+  qudt:latexDefinition """$k = \\frac{2\\pi}{\\lambda}= \\frac{2\\pi\\upsilon}{\\upsilon_p}=\\frac{\\omega}{\\upsilon_p}$, where $\\upsilon$ is the frequency of the wave, $\\lambda$ is the wavelength, $\\omega = 2\\pi \\upsilon$ is the angular frequency of the wave, and $\\upsilon_p$ is the phase velocity of the wave.
+
+Alternatively:
+
+$k = \\frac{p}{\\hbar}$, where $p$ is the linear momentum of quasi free electrons in an electron gas and $\\hbar$ is the reduced Planck constant ($h$ divided by $2\\pi$); for phonons, its magnitude is $k = \\frac{2\\pi}{\\lambda}$, where $\\lambda$ is the wavelength of the lattice vibrations."""^^xsd:string ;
+  qudt:symbol "k"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Wavenumber> ;
+.
+quantity:AtomScatteringFactor
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Atom Scattering Factor} is measure of the scattering power of an isolated atom."^^xsd:string ;
+  qudt:latexDefinition "$f = \\frac{E_a}{E_e}$, where $E_a$ is the radiation amplitude scattered by the atom and $E_e$ is the radiation ampliture scattered by a single electron."^^xsd:string ;
+  qudt:symbol "f"^^xsd:string ;
+  rdfs:label "Atom Scattering Factor"^^xsd:string ;
+  skos:prefLabel "Atom Scattering Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://reference.iucr.org/dictionary/Atomic_scattering_factor> ;
+.
+quantity:BraggAngle
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:RAD ;
+  qudt:description "\\textit{Bragg Angle} describes the condition for a plane wave to be diffracted from a family of lattice planes, the angle between the wavevector of the incident plane wave, and the lattice planes."^^xsd:string ;
+  qudt:latexDefinition "$2d\\sin{\\vartheta} = n\\lambda $"^^xsd:string ;
+  qudt:symbol "\\vartheta"^^xsd:string ;
+  rdfs:label "Bragg Angle"^^xsd:string ;
+  skos:prefLabel "Bragg Angle"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://reference.iucr.org/dictionary/Bragg_angle> ;
+.
+quantity:BurgersVector
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Burgers Vector} is the vector characterizing a dislocation, i.e. the closing vector in a Burgers circuit encircling a dislocation line."^^xsd:string ;
+  qudt:symbol "b"^^xsd:string ;
+  rdfs:label "Burgers Vector"^^xsd:string ;
+  skos:prefLabel "Burgers Vector"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Burgers_vector> ;
+.
+quantity:CarrierLifetIme
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "\\textit{Carrier LifetIme} is a time constant for recombination or trapping of minority charge carriers in semiconductors."^^xsd:string ;
+  qudt:symbol "\\tau, \\tau_n, \\tau_p"^^xsd:string ;
+  rdfs:label "Carrier LifetIme"^^xsd:string ;
+  skos:prefLabel "Carrier LifetIme"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Carrier_lifetime> ;
+.
+quantity:CoherenceLength
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Coherence Length} characterizes the distance in a superconductor over which the effect of a perturbation is appreciable."^^xsd:string ;
+  qudt:symbol "\\xi"^^xsd:string ;
+  rdfs:label "Coherence Length"^^xsd:string ;
+  skos:prefLabel "Coherence Length"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Coherence_length> ;
+.
+quantity:CurieTemperature
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:KELVIN ;
+  qudt:description "\\textit{Curie Temperature} is the critical thermodynamic temperature of a ferromagnet."^^xsd:string ;
+  qudt:symbol "T_C"^^xsd:string ;
+  rdfs:label "Curie Temperature"^^xsd:string ;
+  skos:closeMatch quantity:NeelTemperature ;
+  skos:closeMatch quantity:SuperconductionTransitionTemperature ;
+  skos:prefLabel "Curie Temperature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Curie_temperature> ;
+.
+quantity:Debye-WallerFactor
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Debye-Waller Factor} (DWF), named after Peter Debye and Ivar Waller, is used in condensed matter physics to describe the attenuation of x-ray scattering or coherent neutron scattering caused by thermal motion. Also, a factor by which the intensity of a diffraction line is reduced because of the lattice vibrations."^^xsd:string ;
+  qudt:latexDefinition "$u = R - R_0$, where $R$ is the particle position vector and $R_0$ is the equilibrium position vector of a particle."^^xsd:string ;
+  qudt:symbol "D, B"^^xsd:string ;
+  rdfs:label "Debye-Waller Factor"^^xsd:string ;
+  skos:prefLabel "Debye-Waller Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Debye–Waller_factor> ;
+.
+quantity:DebyeAngularFrequency
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:RAD-PER-SEC ;
+  qudt:description "\\textit{Debye Angular Frequency} is the cut-off angular frequency in the Debye model of the vibrational spectrum of a solid."^^xsd:string ;
+  qudt:symbol "\\omega_b"^^xsd:string ;
+  rdfs:label "Debye Angular Frequency"^^xsd:string ;
+  skos:prefLabel "Debye Angular Frequency"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://lamp.tu-graz.ac.at/~hadley/ss1/phonons/table/dosdebye.html> ;
+.
+quantity:DebyeAngularWavenumber
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:RAD-PER-M ;
+  qudt:description "\\textit{Debye Angular Wavenumber} is the cut-off angular wavenumber in the Debye model of the vibrational spectrum of a solid."^^xsd:string ;
+  qudt:symbol "q_D"^^xsd:string ;
+  rdfs:label "Debye Angular Wavenumber"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:DebyeTemperature
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:KELVIN ;
+  qudt:description "\\textit{Debye Temperature} is the temperature at which the highest-frequency mode (and hence all modes) are excited."^^xsd:string ;
+  qudt:latexDefinition "$\\Theta_D = \\frac{\\hbar\\omega_D}{k}$, where $k$ is the Boltzmann constant, $\\hbar$ is the reduced Planck constant, and $\\omega_D$ is the Debye angular frequency."^^xsd:string ;
+  qudt:symbol "\\Theta_D"^^xsd:string ;
+  rdfs:label "Debye Temperature"^^xsd:string ;
+  skos:prefLabel "Debye Temperature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Debye_model> ;
+.
+quantity:DensityOfStates
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:SEC-PER-RAD-M3 ;
+  qudt:description "\\textit{Density of States} is the number of vibrational modes in an infinitesimal interval of angular frequency divided by the range of that interval and by volume."^^xsd:string ;
+  qudt:symbol "g"^^xsd:string ;
+  rdfs:label "Density of States"^^xsd:string ;
+  skos:prefLabel "Density of States"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Density_of_states> ;
+.
+quantity:DisplacementVectorOfIon
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Displacement Vector of Ion} is the ."^^xsd:string ;
+  qudt:latexDefinition "$u = R - R_0$, where $R$ is the particle position vector and $R_0$ is the equilibrium position vector of a particle."^^xsd:string ;
+  qudt:symbol "u"^^xsd:string ;
+  rdfs:label "Displacement Vector of Ion"^^xsd:string ;
+  skos:prefLabel "Displacement Vector of Ion"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Displacement> ;
+.
+quantity:DonorDensity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "\\textit{Donor Density} is the number per volume of donor levels."^^xsd:string ;
+  qudt:symbol "n_d"^^xsd:string ;
+  rdfs:label "Donor Density"^^xsd:string ;
+  skos:prefLabel "Donor Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:DonorIonizationEnergy
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Donor Ionization Energy} is the ionization energy of a donor."^^xsd:string ;
+  qudt:symbol "E_d"^^xsd:string ;
+  rdfs:label "Donor Ionization Energy"^^xsd:string ;
+  skos:broader quantity:IonizationEnergy ;
+  skos:closeMatch quantity:AcceptorIonizationEnergy ;
+  skos:prefLabel "Donor Ionization Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ionization_energy> ;
+.
+quantity:EffectiveMass
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:KG ;
+  qudt:description "\\textit{Effective Mass} is used in the motional equation for electrons in solid state bodies, depending on the wavenumber and corresponding to its velocity and energy level."^^xsd:string ;
+  qudt:latexDefinition "$m^* = \\hbar^2k(\\frac{d\\varepsilon}{dk})$, where $\\hbar$ is the reduced Planck constant, $k$ is the wavenumber, and $\\varepsilon$ is the energy of the electron."^^xsd:string ;
+  qudt:symbol "m^*"^^xsd:string ;
+  rdfs:label "Effective Mass"^^xsd:string ;
+  skos:prefLabel "Effective Mass"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Effective_mass_(solid-state_physics)> ;
+.
+quantity:ElectronAffinity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Electron Affinity} is the energy difference between an electron at rest at infinity and an electron at the lowest level of the conduction band in an insulator or semiconductor. The the amount of energy released when an electron is added to a neutral atom or molecule to form a negative ion."^^xsd:string ;
+  qudt:symbol "\\Chi"^^xsd:string ;
+  rdfs:label "Electron Affinity"^^xsd:string ;
+  skos:prefLabel "Electron Affinity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electron_affinity> ;
+.
+quantity:ElectronDensity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "\\textit{Electron Density} is the number of electrons per volume in conduction bands. It is the measure of the probability of an electron being present at a specific location."^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Electron Density"^^xsd:string ;
+  skos:prefLabel "Electron Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electron_density> ;
+.
+quantity:ElectronMeanFreePath
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Electron Mean Free Path} is the mean free path of electrons."^^xsd:string ;
+  qudt:symbol "l_e"^^xsd:string ;
+  rdfs:label "Electron Mean Free Path"^^xsd:string ;
+  skos:prefLabel "Electron Mean Free Path"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_conductivity> ;
+.
+quantity:EnergyDensityOfStates
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-J-M3 ;
+  qudt:description "\\textit{Energy Density of States} refers to electrons or other entities, e.g. phonons. It can, for example, refer to amount of substance instead of volume."^^xsd:string ;
+  qudt:latexDefinition "$\\rho(E) = n_E(E) = \\frac{dN(E)}{dE}\\frac{1}{V}$, where $N(E)$ is the total number of states with energy less than $E$, and $V$ is the volume."^^xsd:string ;
+  qudt:symbol "n_E"^^xsd:string ;
+  rdfs:label "Energy Density of States"^^xsd:string ;
+  skos:prefLabel "Energy Density of States"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Density_of_states> ;
+.
+quantity:EnergyLevel
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Energy Level} is the ionization energy for an electron at the Fermi energy in the interior of a substance."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  rdfs:label "Energy Level"^^xsd:string ;
+  skos:prefLabel "Energy Level"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:EquilibriumPositionVectorOfIon
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Equilibrium Position Vector of Ion} is the position vector of a particle in equilibrium."^^xsd:string ;
+  qudt:symbol "R_0"^^xsd:string ;
+  rdfs:label "Equilibrium Position Vector of Ion"^^xsd:string ;
+  skos:prefLabel "Equilibrium Position Vector of Ion"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Position_(vector)> ;
+.
+quantity:ExcahngeIntegral
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Excahnge Integral} is the constituent of the interaction energy between the spins of adjacent electrons in matter arising from the overlap of electron state functions."^^xsd:string ;
+  qudt:symbol "K"^^xsd:string ;
+  rdfs:label "Excahnge Integral"^^xsd:string ;
+  skos:prefLabel "Excahnge Integral"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Exchange_interaction> ;
+.
+quantity:FermiAngularWavenumber
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:RAD-PER-M ;
+  qudt:symbol "k_F"^^xsd:string ;
+  rdfs:label "Fermi Angular Wavenumber"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Heavy_fermion> ;
+.
+quantity:FermiEnergy
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Fermi Energy} in a metal is the highest occupied energy level at zero thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "E_F"^^xsd:string ;
+  rdfs:label "Fermi Energy"^^xsd:string ;
+  skos:prefLabel "Fermi Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fermi_energy> ;
+.
+quantity:FermiTemperature
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:KELVIN ;
+  qudt:description "\\textit{Fermi Temperature} is the temperature associated with the Fermi energy."^^xsd:string ;
+  qudt:latexDefinition "$T_F = \\frac{E_F}{k}$, where $E_F$ is the Fermi energy and $k$ is the Boltzmann constant."^^xsd:string ;
+  qudt:symbol "T_F"^^xsd:string ;
+  rdfs:label "Fermi Temperature"^^xsd:string ;
+  skos:prefLabel "Fermi Temperature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fermi_energy> ;
+.
+quantity:FundamentalLatticeVector
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Fundamental Lattice vector} are fundamental translation vectors for the crystal lattice."^^xsd:string ;
+  qudt:symbol "a_1, a_2, a_3"^^xsd:string ;
+  rdfs:label "Fundamental Lattice vector"^^xsd:string ;
+  skos:broader quantity:LatticeVector ;
+  skos:prefLabel "Fundamental Lattice vector"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://www.matter.org.uk/diffraction/geometry/lattice_vectors.htm> ;
+.
+quantity:FundamentalReciprocalLatticeVector
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{Fundamental Reciprocal Lattice Vector} are fundamental, or primary, translation vectors the reciprocal lattice."^^xsd:string ;
+  qudt:symbol "b_1, b_2, b_3"^^xsd:string ;
+  rdfs:label "Fundamental Reciprocal Lattice Vector"^^xsd:string ;
+  skos:broader quantity:AngularReciprocalLatticeVector ;
+  skos:prefLabel "Fundamental Reciprocal Lattice Vector"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Reciprocal_lattice> ;
+.
+quantity:GapEnergy
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Gap Energy} is the difference in energy between the lowest level of conduction band and the highest level of valence band. It is an energy range in a solid where no electron states can exist."^^xsd:string ;
+  qudt:symbol "E_g"^^xsd:string ;
+  rdfs:label "Gap Energy"^^xsd:string ;
+  skos:prefLabel "Gap Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Band_gap> ;
+.
+quantity:GruneisenParameter
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Gruneisen Parameter} named after Eduard Grüneisen, describes the effect that changing the volume of a crystal lattice has on its vibrational properties, and, as a consequence, the effect that changing temperature has on the size or dynamics of the lattice."^^xsd:string ;
+  qudt:latexDefinition "$\\gamma = \\frac{\\alpha_V}{x_T c_V\\rho}$, where $\\alpha_V$ is the cubic expansion coefficient, $x_T$ is isothermal compressibility, $c_V$ is specific heat capacity at constant volume, and $\\rho$ is mass density."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  rdfs:label "Gruneisen Parameter"^^xsd:string ;
+  skos:prefLabel "Gruneisen Parameter"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Grüneisen_parameter> ;
+.
+quantity:HallCoefficient
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M3-PER-C ;
+  qudt:description "\\textit{Hall Coefficient} is defined as the ratio of the induced electric field to the product of the current density and the applied magnetic field."^^xsd:string ;
+  qudt:latexDefinition "In an isotropic conductor, the relation between electric field strength, $E$, and electric current density, $J$ is $E = \\rho J + R_H(B X J)$, where $\\rho$ is resistivity, and $B$ is magnetic flux density."^^xsd:string ;
+  qudt:symbol "R_H, A_H"^^xsd:string ;
+  rdfs:label "Hall Coefficient"^^xsd:string ;
+  skos:prefLabel "Hall Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Hall_effect> ;
+.
+quantity:HoleDensity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "\\textit{Hole Density} is the number of holes per volume in a valence band."^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  rdfs:label "Hole Density"^^xsd:string ;
+  skos:prefLabel "Hole Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:IntinsicCarrierDensity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "\\textit{Intinsic Carrier Density} is proportional to electron and hole densities."^^xsd:string ;
+  qudt:latexDefinition "$np = n_i^2$, where $n$ is electron density and $p$ is hole density."^^xsd:string ;
+  qudt:symbol "n_i"^^xsd:string ;
+  rdfs:label "Intinsic Carrier Density"^^xsd:string ;
+  skos:prefLabel "Intinsic Carrier Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:IonizationEnergy
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Ionization Energy} is the energy difference between an electron at rest at infinity and an electron at a certain energy level. The amount of energy required to remove an electron from that atom or molecule in the gas phase."^^xsd:string ;
+  qudt:symbol "E_i"^^xsd:string ;
+  rdfs:label "Ionization Energy"^^xsd:string ;
+  skos:prefLabel "Ionization Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ionization_energy> ;
+.
+quantity:JosephsonConstant
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:PER-WB ;
+  qudt:latexDefinition "$K_J = \\frac{1}{\\Phi_0}$, where $\\Phi_0$ is the magnetic flux quantum."^^xsd:string ;
+  qudt:symbol "K_J"^^xsd:string ;
+  skos:closeMatch quantity:MagneticFluxQuantum ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Magnetic_flux_quantum> ;
+.
+quantity:Landau-GinzburgNumber
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Landau-Ginzburg Number}, also known as the Ginzburg-Landau parameter, describes the relationship between London penetration depth and coherence length."^^xsd:string ;
+  qudt:latexDefinition "At zero thermodynamic temperature $\\kappa = \\frac{\\lambda_L}{(\\varepsilon\\sqrt{2})}$, where $\\lambda_L$ is London penetration depth and $\\varepsilon$ is coherence length."^^xsd:string ;
+  qudt:symbol "\\kappa"^^xsd:string ;
+  rdfs:label "Landau-Ginzburg Number"^^xsd:string ;
+  skos:prefLabel "Landau-Ginzburg Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ginzburg–Landau_theory> ;
+.
+quantity:LatticePlaneSpacing
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Lattice Plane Spacing} is the distance between successive lattice planes."^^xsd:string ;
+  qudt:symbol "d"^^xsd:string ;
+  rdfs:label "Lattice Plane Spacing"^^xsd:string ;
+  skos:prefLabel "Lattice Plane Spacing"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://www.matter.org.uk/diffraction/geometry/lattice_vectors.htm> ;
+.
+quantity:LatticeVector
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Lattice Vector} is a translation vector that maps the crystal lattice on itself."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  rdfs:label "Lattice Vector"^^xsd:string ;
+  skos:prefLabel "Lattice Vector"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://www.matter.org.uk/diffraction/geometry/lattice_vectors.htm> ;
+.
+quantity:LondonPenetrationDepth
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{London Penetration Depth} characterizes the distance to which a magnetic field penetrates into a superconductor and becomes equal to 1/e times that of the magnetic field at the surface of the superconductor."^^xsd:string ;
+  qudt:latexDefinition "If an applied magnetic field is parallel to the plane surface of a semi-infinite superconductor, the field penetrates the superconductor according to the expression $B(x) = B(0) \\exp{(\\frac{-x}{\\lambda_L})}$, where $B$ is magnetic flux density and $x$ is the distance from the surface."^^xsd:string ;
+  qudt:symbol "\\lambda_L"^^xsd:string ;
+  rdfs:label "London Penetration Depth"^^xsd:string ;
+  skos:prefLabel "London Penetration Depth"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/London_penetration_depth> ;
+.
+quantity:Long-RangeOrderParameter
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Long-Range Order Parameter} is the fraction of atoms in an Ising ferromagnet having magnetic moments in one direction, minus the fraction having magnetic moments in the opposite direction."^^xsd:string ;
+  qudt:symbol "R, s"^^xsd:string ;
+  rdfs:label "Long-Range Order Parameter"^^xsd:string ;
+  skos:prefLabel "Long-Range Order Parameter"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:LorenzCoefficient
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:V2-PER-K2 ;
+  qudt:description "\\textit{Lorenz Coefficient} is part mof the Lorenz curve."^^xsd:string ;
+  qudt:latexDefinition "$L = \\frac{\\lambda}{\\sigma T}$, where $\\lambda$ is thermal conductivity, $\\sigma$ is electric conductivity, and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:label "Lorenz Coefficient"^^xsd:string ;
+  skos:prefLabel "Lorenz Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://www.matter.org.uk/diffraction/geometry/lattice_vectors.htm> ;
+.
+quantity:LowerCriticalMagneticFluxDensity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:TESLA ;
+  qudt:description "\\textit{Lower Critical Magnetic Flux Density} for type II superconductors, is the threshold magnetic flux density for magnetic flux entering the superconductor."^^xsd:string ;
+  qudt:symbol "B_{c1}"^^xsd:string ;
+  rdfs:label "Lower Critical Magnetic Flux Density"^^xsd:string ;
+  skos:closeMatch quantity:UpperCriticalMagneticFluxDensity ;
+  skos:prefLabel "Lower Critical Magnetic Flux Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:MadelungConstant
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Madelung Constant} is used in determining the electrostatic potential of a single ion in a crystal by approximating the ions by point charges. It is named after Erwin Madelung, a German physicist."^^xsd:string ;
+  qudt:latexDefinition "For a uni-univalent ionic crystal of specified structure, the binding energy $V_b$ per pair of ions is $V_b = \\alpha\\frac{e^2}{4\\pi \\varepsilon_0 a}$, where $e$ is the elementary charge, $\\varepsilon_0$ is the electric constant, and $a$ is the lattice constant which should be specified."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  rdfs:label "Madelung Constant"^^xsd:string ;
+  skos:prefLabel "Madelung Constant"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Madelung_constant> ;
+.
+quantity:MagneticFluxQuantum
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:WEBER ;
+  qudt:description "\\textit{Magnetic Flux Quantum} is the quantum of magnetic flux passing through a superconductor."^^xsd:string ;
+  qudt:latexDefinition "$\\Phi_0 = \\frac{h}{2e}$, where $h$ is the Planck constant and $e$ is the elementary charge."^^xsd:string ;
+  qudt:symbol "\\Phi_0"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Magnetic_flux_quantum> ;
+.
+quantity:MobilityRatio
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{MobilityRatio} describes permeability of a porous material to a given phase divided by the viscosity of that phase."^^xsd:string ;
+  qudt:latexDefinition "$b = \\frac{\\mu_n}{\\mu_p}$, where $\\mu_n$ and $\\mu_p$ are mobilities for electrons and holes, respectively."^^xsd:string ;
+  qudt:symbol "b"^^xsd:string ;
+  rdfs:label "Mobility Ratio"^^xsd:string ;
+  skos:prefLabel "Mobility Ratio"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://baervan.nmt.edu/research_groups/reservoir_sweep_improvement/pages/clean_up/mobility.html> ;
+.
+quantity:NeelTemperature
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:KELVIN ;
+  qudt:description "\\textit{Neel Temperature} is the critical thermodynamic temperature of an antiferromagnet."^^xsd:string ;
+  qudt:symbol "T_C"^^xsd:string ;
+  rdfs:label "Neel Temperature"^^xsd:string ;
+  skos:closeMatch quantity:CurieTemperature ;
+  skos:closeMatch quantity:SuperconductionTransitionTemperature ;
+  skos:prefLabel "Neel Temperature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Néel_temperature> ;
+.
+quantity:OrderOfReflection
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Order of Reflection} is $n$ in the Bragg's Law equation."^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Order of Reflection"^^xsd:string ;
+  skos:prefLabel "Order of Reflection"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://www.answers.com/topic/order-of-reflection> ;
+.
+quantity:ParticlePositionVector
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Particle Position Vector} is the position vector of a particle."^^xsd:string ;
+  qudt:symbol "r, R"^^xsd:string ;
+  rdfs:label "Particle Position Vector"^^xsd:string ;
+  skos:prefLabel "Particle Position Vector"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Position_(vector)> ;
+.
+quantity:PeltierCoefficient
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:VOLT ;
+  qudt:description "\\textit{Peltier Coefficient} represents how much heat current is carried per unit charge through a given material. It is the heat power developed at a junction, divided by the electric current flowing from substance a to substance b."^^xsd:string ;
+  qudt:symbol "\\Pi_{ab}"^^xsd:string ;
+  rdfs:label "Peltier Coefficient"^^xsd:string ;
+  skos:prefLabel "Peltier Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermoelectric_effect> ;
+.
+quantity:PhononMeanFreePath
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Phonon Mean Free Path} is the mean free path of phonons."^^xsd:string ;
+  qudt:symbol "l_{ph}"^^xsd:string ;
+  rdfs:label "Phonon Mean Free Path"^^xsd:string ;
+  skos:prefLabel "Phonon Mean Free Path"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_conductivity> ;
+.
+quantity:RelaxationTIme
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "\\textit{Relaxation TIme} is a time constant for exponential decay towards equilibrium."^^xsd:string ;
+  qudt:symbol "\\tau"^^xsd:string ;
+  rdfs:label "Relaxation TIme"^^xsd:string ;
+  skos:prefLabel "Relaxation TIme"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Relaxation_(physics)> ;
+.
+quantity:ResidualResistivity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:OHM-M ;
+  qudt:description "\\textit{Residual Resistivity} for metals, is the resistivity extrapolated to zero thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "\\rho_R"^^xsd:string ;
+  rdfs:label "Residual Resistivity"^^xsd:string ;
+  skos:prefLabel "Residual Resistivity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Residual-resistance_ratio> ;
+.
+quantity:RichardsonConstant
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:A-PER-M2-K2 ;
+  qudt:description "\\textit{Richardson Constant} is a constant used in developing thermionic emission current density for a metal."^^xsd:string ;
+  qudt:latexDefinition "The thermionic emission current, $J$, for a metal is $J = AT^2\\exp{(-\\frac{\\Phi}{kT})}$, where $T$ is thermodynamic temperature, $k$ is the Boltzmann constant, and $\\Phi$ is a work function."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Richardson Constant"^^xsd:string ;
+  skos:prefLabel "Richardson Constant"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermionic_emission> ;
+.
+quantity:SeebeckCoefficient
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:V-PER-K ;
+  qudt:description "\\textit{Seebeck Coefficient}, or thermopower, or thermoelectric power of a material is a measure of the magnitude of an induced thermoelectric voltage in response to a temperature difference across that material."^^xsd:string ;
+  qudt:latexDefinition "$S_{ab} = \\frac{dE_{ab}}{dT}$, where $E_{ab}$ is the thermosource voltage between substances a and b, $T$ is the thermodynamic temperature of the hot junction."^^xsd:string ;
+  qudt:symbol "S_{ab}"^^xsd:string ;
+  rdfs:label "Seebeck Coefficient"^^xsd:string ;
+  skos:prefLabel "Seebeck Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermopower> ;
+.
+quantity:Short-RangeOrderParameter
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Short-Range Order Parameter} is the fraction of the nearest-neighbor atom pairs in an Ising ferromagnet having magnetic moments in one direction, minus the fraction having magnetic moments in the opposite direction."^^xsd:string ;
+  qudt:symbol "r, \\sigma"^^xsd:string ;
+  rdfs:label "Short-Range Order Parameter"^^xsd:string ;
+  skos:prefLabel "Short-Range Order Parameter"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:SolidStateDiffusionLength
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Solid State Diffusion Length} is the average distance traveled by a particle, such as a minority carrier in a semiconductor "^^xsd:string ;
+  qudt:latexDefinition "$L = \\sqrt{D\\tau}$, where $D$ is the diffusion coefficient and $\\tau$ is lifetime."^^xsd:string ;
+  qudt:symbol "L, L_n, L_p"^^xsd:string ;
+  rdfs:label "Diffusion Length (Solid State Physics)"^^xsd:string ;
+  skos:prefLabel "Diffusion Length (Solid State Physics)"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://pveducation.org/pvcdrom/pn-junction/diffusion-length> ;
+.
+quantity:SourceVoltageBetweenSubstances
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:VOLT ;
+  qudt:description "\\textit{Source Voltage Between Substances} is the source voltage between substance a and b."^^xsd:string ;
+  qudt:symbol "E_{ab}"^^xsd:string ;
+  rdfs:label "Source Voltage Between Substances"^^xsd:string ;
+  skos:prefLabel "Source Voltage Between Substances"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:StructureFactor
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Structure Factor} is a mathematical description of how a material scatters incident radiation."^^xsd:string ;
+  qudt:latexDefinition "$F(h, k, l) = \\sum_{n=1}^N f_n\\exp{[2\\pi i(hx_n + ky_n +lz_n)]}$, where $f_n$ is the atomic scattering factor for atom $n$, and $x_n$, $y_n$, and $z_n$ are fractional coordinates in the unit cell; for $h$, $k$, and $l$."^^xsd:string ;
+  qudt:symbol "F(h, k, l)"^^xsd:string ;
+  rdfs:label "Structure Factor"^^xsd:string ;
+  skos:prefLabel "Structure Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Structure_factor> ;
+.
+quantity:SuperconductionTransitionTemperature
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:KELVIN ;
+  qudt:description "\\textit{Superconduction Transition Temperature} is the critical thermodynamic temperature of a superconductor."^^xsd:string ;
+  qudt:symbol "T_c"^^xsd:string ;
+  rdfs:label "Superconduction Transition Temperature"^^xsd:string ;
+  skos:closeMatch quantity:CurieTemperature ;
+  skos:closeMatch quantity:NeelTemperature ;
+  skos:prefLabel "Superconduction Transition Temperature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Superconductivity> ;
+.
+quantity:SuperconductorEnergyGap
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Superconductor Energy Gap} is the width of the forbidden energy band in a superconductor."^^xsd:string ;
+  qudt:symbol "\\Delta"^^xsd:string ;
+  rdfs:label "Superconductor Energy Gap"^^xsd:string ;
+  skos:broader quantity:GapEnergy ;
+  skos:prefLabel "Superconductor Energy Gap"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/BCS_theory> ;
+.
+quantity:ThermodynamicCriticalMagneticFluxDensity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:TESLA ;
+  qudt:description "\\textit{Thermodynamic Critical Magnetic Flux Density} is the "^^xsd:string ;
+  qudt:latexDefinition "$G_n - G_s = \\frac{1}{2}\\frac{B_c^2 \\cdot V}{\\mu_0}$, where $G_n$ and $G_s$ are the Gibbs energies at zero magnetic flux density in a normal conductor and superconductor, respectively, $\\mu_0$ is the magnetic constant, and $V$ is volume."^^xsd:string ;
+  qudt:symbol "B_c"^^xsd:string ;
+  rdfs:label "Thermodynamic Critical Magnetic Flux Density"^^xsd:string ;
+  skos:prefLabel "Thermodynamic Critical Magnetic Flux Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:ThomsonCoefficient
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:V-PER-K ;
+  qudt:description "\\textit{Thomson Coefficient} represents Thomson heat power developed, divided by the electric current and the temperature difference."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Thomson Coefficient"^^xsd:string ;
+  skos:prefLabel "Thomson Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://www.daviddarling.info/encyclopedia/T/Thomson_effect.html> ;
+.
+quantity:UpperCriticalMagneticFluxDensity
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:TESLA ;
+  qudt:description "\\textit{Upper Critical Magnetic Flux Density} for type II superconductors, is the threshold magnetic flux density for disappearance of bulk superconductivity."^^xsd:string ;
+  qudt:symbol "B_{c2}"^^xsd:string ;
+  rdfs:label "Upper Critical Magnetic Flux Density"^^xsd:string ;
+  skos:closeMatch quantity:LowerCriticalMagneticFluxDensity ;
+  skos:prefLabel "Upper Critical Magnetic Flux Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+.
+quantity:WorkFunction
+  rdf:type qudt:SolidStatePhysicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Work Function} is the energy difference between an electron at rest at infinity and an electron at a certain energy level. The minimum energy (usually measured in electronvolts) needed to remove an electron from a solid to a point immediately outside the solid surface (or energy needed to move an electron from the Fermi level into vacuum)."^^xsd:string ;
+  qudt:symbol "\\Phi"^^xsd:string ;
+  rdfs:label "Work Function"^^xsd:string ;
+  skos:prefLabel "Work Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31897> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Work_function> ;
+.
+<http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Catalog Entry v1.2"^^xsd:string ;
+.

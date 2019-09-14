@@ -1,0 +1,762 @@
+# baseURI: http://www.siemens.com/import/brick/Brick_Building
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: bb
+
+@prefix bb: <http://www.siemens.com/import/brick/Brick_Building#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.siemens.com/import/brick/Brick_Building>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://www.siemens.com/import/brick/Brick_Building" ;
+.
+bb:Building_Electrical_Meter
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Building_Electrical_Meter" ;
+  rdfs:label "Building Electrical Meter" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:Building_Information
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Building_Information" ;
+  rdfs:label "Building Information" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:resourceID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom bb:Building_Electrical_Meter ;
+      owl:onProperty bb:building_Electrical_MeterRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom bb:Weather_Temperature_Sensor ;
+      owl:onProperty bb:weather_Temperature_SensorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom bb:Weather_Relative_Humidity_Sensor ;
+      owl:onProperty bb:weather_Relative_Humidity_SensorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom bb:Weather_Rain_Sensor ;
+      owl:onProperty bb:weather_Rain_SensorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom bb:Weather_Cloud_Coverage_Sensor ;
+      owl:onProperty bb:weather_Cloud_Coverage_SensorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom bb:Weather_Cloud_Height_Sensor ;
+      owl:onProperty bb:weather_Cloud_Height_SensorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom bb:Weather_Wind_Speed_Sensor ;
+      owl:onProperty bb:weather_Wind_Speed_SensorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      owl:allValuesFrom bb:Weather_Wind_Direction_Sensor ;
+      owl:onProperty bb:weather_Wind_Direction_SensorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom bb:Occupancy_Sensor ;
+      owl:onProperty bb:occupancy_SensorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:resourceID ;
+    ] ;
+.
+bb:Occupancy_Sensor
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Occupancy_Sensor" ;
+  rdfs:label "Occupancy Sensor" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:ValueDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Value datatype" ;
+  rdfs:subClassOf xsd:float ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:float ;
+    ] ;
+.
+bb:Weather_Cloud_Coverage_Sensor
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Cloud_Coverage_Sensor" ;
+  rdfs:label "Weather Cloud Coverage Sensor" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:Weather_Cloud_Height_Sensor
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Cloud_Height_Sensor" ;
+  rdfs:label "Weather Cloud Height Sensor" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:Weather_Rain_Sensor
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Rain_Sensor" ;
+  rdfs:label "Weather Rain Sensor" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:Weather_Relative_Humidity_Sensor
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Relative_Humidity_Sensor" ;
+  rdfs:label "Weather Relative Humidity Sensor" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:Weather_Temperature_Sensor
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Temperature_Sensor" ;
+  rdfs:label "Weather Temperature Sensor" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:Weather_Wind_Direction_Sensor
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Wind_Direction_Sensor" ;
+  rdfs:label "Weather Wind Direction Sensor" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:Weather_Wind_Speed_Sensor
+  rdf:type owl:Class ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Wind_Speed_Sensor" ;
+  rdfs:label "Weather Wind Speed Sensor" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:uuid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:btag ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty bb:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:bunit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bb:uuid ;
+    ] ;
+.
+bb:btag
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.siemens.com/import/brick/Brick_Building#btag" ;
+  rdfs:label "btag" ;
+.
+bb:building_Electrical_MeterRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Building_Electrical_Meter" ;
+  rdfs:label "building Electrical Meter ref" ;
+.
+bb:bunit
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.siemens.com/import/brick/Brick_Building#bunit" ;
+  rdfs:label "bunit" ;
+.
+bb:occupancy_SensorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Occupancy_Sensor" ;
+  rdfs:label "occupancy Sensor ref" ;
+.
+bb:resourceID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.siemens.com/import/brick/Brick_Building#ResourceID" ;
+  rdfs:label "resource ID" ;
+.
+bb:timestamp
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.siemens.com/import/brick/Brick_Building#timestamp" ;
+  rdfs:label "timestamp" ;
+.
+bb:uuid
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.siemens.com/import/brick/Brick_Building#uuid" ;
+  rdfs:label "uuid" ;
+.
+bb:value
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.siemens.com/import/brick/Brick_Building#value" ;
+  rdfs:label "value" ;
+.
+bb:weather_Cloud_Coverage_SensorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Cloud_Coverage_Sensor" ;
+  rdfs:label "weather Cloud Coverage Sensor ref" ;
+.
+bb:weather_Cloud_Height_SensorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Cloud_Height_Sensor" ;
+  rdfs:label "weather Cloud Height Sensor ref" ;
+.
+bb:weather_Rain_SensorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Rain_Sensor" ;
+  rdfs:label "weather Rain Sensor ref" ;
+.
+bb:weather_Relative_Humidity_SensorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Relative_Humidity_Sensor" ;
+  rdfs:label "weather Relative Humidity Sensor ref" ;
+.
+bb:weather_Temperature_SensorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Temperature_Sensor" ;
+  rdfs:label "weather Temperature Sensor ref" ;
+.
+bb:weather_Wind_Direction_SensorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Wind_Direction_Sensor" ;
+  rdfs:label "weather Wind Direction Sensor ref" ;
+.
+bb:weather_Wind_Speed_SensorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.siemens.com/import/brick/Brick_Building#Weather_Wind_Speed_Sensor" ;
+  rdfs:label "weather Wind Speed Sensor ref" ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label" ;
+.

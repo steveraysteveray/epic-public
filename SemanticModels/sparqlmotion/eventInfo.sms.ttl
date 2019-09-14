@@ -1,0 +1,410 @@
+# baseURI: http://epic/scripts/eventInfo
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: eventInfo
+
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix eventInfo: <http://epic/scripts/eventInfo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/eventInfo>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+eventInfo:ImportRDFFromWorkspace_1
+  rdf:type sml:ImportRDFFromWorkspace ;
+  sm:next eventInfo:SerializeSPARQLResults_1 ;
+  sml:baseURI "http://siemens.com/vocab/kps/epic_instances" ;
+  sml:ignoreImports "false"^^xsd:boolean ;
+  rdfs:label "Import EPIC instances" ;
+.
+eventInfo:SerializeSPARQLResults_1
+  rdf:type sml:SerializeSPARQLResults ;
+  sm:next eventInfo:getEventInfo_Return ;
+  sm:outputVariable "result" ;
+  sml:selectQuery [
+      rdf:type sp:Select ;
+      sp:distinct "true"^^xsd:boolean ;
+      sp:orderBy (
+          [
+            rdf:type sp:Desc ;
+            sp:expression [
+                sp:varName "signalName" ;
+              ] ;
+          ]
+        ) ;
+      sp:resultVariables (
+          [
+            sp:varName "requestID" ;
+          ]
+          [
+            sp:varName "signalName" ;
+          ]
+          [
+            sp:varName "quant" ;
+          ]
+          [
+            sp:varName "eventID" ;
+          ]
+          [
+            sp:varName "modNum" ;
+          ]
+          [
+            sp:varName "resourceID" ;
+          ]
+          [
+            sp:varName "groupID" ;
+          ]
+          [
+            sp:varName "startDate" ;
+          ]
+          [
+            sp:varName "endDate" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "requestID" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+                  sp:subject [
+                      sp:varName "de" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "event" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasEiEventsRef> ;
+                  sp:subject [
+                      sp:varName "de" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:TriplePath ;
+                  sp:object [
+                      sp:varName "groupID" ;
+                    ] ;
+                  sp:path [
+                      rdf:type sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasGroupID> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Optional ;
+                  sp:elements (
+                      [
+                        rdf:type sp:TriplePath ;
+                        sp:object [
+                            sp:varName "resourceID" ;
+                          ] ;
+                        sp:path [
+                            rdf:type sp:SeqPath ;
+                            sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                            sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                          ] ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "desc" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "eventID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Bind ;
+                  sp:expression [
+                      sp:varName "eventID" ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "ev" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:TriplePath ;
+                  sp:object [
+                      sp:varName "signalName" ;
+                    ] ;
+                  sp:path [
+                      rdf:type sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalName> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:SubQuery ;
+                  sp:query [
+                      rdf:type sp:Select ;
+                      sp:groupBy (
+                          [
+                            sp:varName "ev" ;
+                          ]
+                        ) ;
+                      sp:resultVariables (
+                          [
+                            sp:varName "ev" ;
+                          ]
+                          [
+                            sp:expression [
+                                rdf:type sp:Max ;
+                                sp:expression [
+                                    sp:varName "modNum2" ;
+                                  ] ;
+                              ] ;
+                            sp:varName "modNum" ;
+                          ]
+                        ) ;
+                      sp:where (
+                          [
+                            rdf:type sp:TriplePath ;
+                            sp:object [
+                                sp:varName "modNum2" ;
+                              ] ;
+                            sp:path [
+                                rdf:type sp:SeqPath ;
+                                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+                                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+                              ] ;
+                            sp:subject [
+                                sp:varName "event" ;
+                              ] ;
+                          ]
+                          [
+                            rdf:type sp:TriplePath ;
+                            sp:object [
+                                sp:varName "ev" ;
+                              ] ;
+                            sp:path [
+                                rdf:type sp:SeqPath ;
+                                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+                                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+                              ] ;
+                            sp:subject [
+                                sp:varName "event" ;
+                              ] ;
+                          ]
+                        ) ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "modNum" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:TriplePath ;
+                  sp:object [
+                      sp:varName "intervals" ;
+                    ] ;
+                  sp:path [
+                      rdf:type sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventIntervalRef> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "targetInterval" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasIntervalsRef> ;
+                  sp:subject [
+                      sp:varName "intervals" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:TriplePath ;
+                  sp:object [
+                      sp:varName "startDate" ;
+                    ] ;
+                  sp:path [
+                      rdf:type sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "targetInterval" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:TriplePath ;
+                  sp:object [
+                      sp:varName "endDate" ;
+                    ] ;
+                  sp:path [
+                      rdf:type sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "targetInterval" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Bind ;
+                  sp:expression [
+                      rdf:type spif:cast ;
+                      arg:datatype xsd:dateTime ;
+                      sp:arg1 [
+                          sp:varName "timestamp" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "realDate" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Bind ;
+                  sp:expression [
+                      rdf:type spif:cast ;
+                      arg:datatype xsd:dateTime ;
+                      sp:arg1 [
+                          sp:varName "startDate" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "realEarly" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Bind ;
+                  sp:expression [
+                      rdf:type spif:cast ;
+                      arg:datatype xsd:dateTime ;
+                      sp:arg1 [
+                          sp:varName "endDate" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "realLate" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Filter ;
+                  sp:expression [
+                      rdf:type sp:and ;
+                      sp:arg1 [
+                          rdf:type sp:le ;
+                          sp:arg1 [
+                              sp:varName "realEarly" ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "realDate" ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          rdf:type sp:lt ;
+                          sp:arg1 [
+                              sp:varName "realDate" ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "realLate" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:TriplePath ;
+                  sp:object [
+                      sp:varName "quant" ;
+                    ] ;
+                  sp:path [
+                      rdf:type sp:SeqPath ;
+                      sp:path1 [
+                          rdf:type sp:SeqPath ;
+                          sp:path1 [
+                              rdf:type sp:SeqPath ;
+                              sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasAttachRef> ;
+                              sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPriceRef> ;
+                            ] ;
+                          sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#hasValueRef> ;
+                        ] ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#hasQuantity> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "targetInterval" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  sml:serialization sm:JSON ;
+  rdfs:label "Get Event Info" ;
+.
+eventInfo:getEventInfo
+  rdf:type sm:Function ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate eventInfo:timestamp ;
+      spl:valueType xsd:string ;
+      sm:next eventInfo:SerializeSPARQLResults_1 ;
+    ] ;
+  sm:returnModule eventInfo:getEventInfo_Return ;
+  rdfs:comment "This SPARQLMotion function retrieves the price or forecast distinguished by 'signalName' on a specific time indicated by 'timestamp'  for all resourceIDs" ;
+  rdfs:subClassOf sm:Functions ;
+.
+eventInfo:getEventInfo_Return
+  rdf:type sml:ReturnText ;
+  sml:text "{?result}" ;
+.
+eventInfo:resourceID
+  rdf:type rdf:Property ;
+  rdfs:label "The resourceID associated with a specific building" ;
+  rdfs:range xsd:string ;
+.
+eventInfo:signalName
+  rdf:type rdf:Property ;
+  rdfs:label "The type of signal (ELECTRICITY_PRICE or BID_LOAD)" ;
+  rdfs:range xsd:string ;
+.
+eventInfo:timestamp
+  rdf:type rdf:Property ;
+  rdfs:label "The timestamp to query the events for" ;
+  rdfs:range xsd:string ;
+.

@@ -1,0 +1,43 @@
+# baseURI: http://qudt.org/1.2/collection/terms
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/terms
+# imports: http://www.linkedmodel.org/1.1/owl/schema/core
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mc: <http://www.linkedmodel.org/owl/schema/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/collection/terms>
+  rdf:type owl:Ontology ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Quantities, Units, Dimensions and Types"^^xsd:string ;
+  dc:title "QUDT (Quantities, Units, Dimensions, and Types) Ontologies Version 1.1"^^xsd:string ;
+  mc:acronym "QUDT"^^xsd:string ;
+  mc:dateCreated "2011-01-31T10:00:00"^^xsd:dateTime ;
+  mc:description "QUDT (Quantities, Units, Dimensions, and Types) Ontologies and vocabularies, and generated XSD schemas and XML Vocabularies, were developed for the NASA Exploration Initiatives Ontology Models (NExIOM) project as a foundational part of a comprehensive Information Architecture for NASA’s Constellation Program.  This effort was led by TopQuadrant working with NASA Ames Research Center (ARC).  The goals of the QUDT ontologies are to provide a unified reusable model of measurable quantities, units for measuring different kinds of quantities, the numerical values of quantities in different units of measure, and the data structures and data types used to store and manipulate these objects in software."^^xsd:string ;
+  mc:hasLicenseType <http://www.linkedmodel.org/owl/schema/core#CreativeCommonsAttributionShareAlike3.0_UnitedStatesLicense> ;
+  mc:intent "QUDT is intended to provide a set of information models and vocabularies for standardizing units of measure, quantities and data types for the purpose of data interoperability and metadata management in  linked data and semantic web infrastructures. Not all applications of QUDT will require a full dimensional treatment of units. For this reason, there is a vocabulary graph for a basic treatment of units, 'QUDT Unit' , and another graph, 'QUDT Dimensional Units' , for the full treatment."^^xsd:string ;
+  mc:lastChangedDate "$LastChangedDate: 2013-03-24 02:39:48 -0700 (Sun, 24 Mar 2013) $"^^xsd:string ;
+  mc:namespace "<http://qudt.org/1.2/collection/nasa/quantities>"^^xsd:string ;
+  mc:namespacePrefix "qudt-collection"^^xsd:string ;
+  mc:ownedBy "qudt.org"^^xsd:string ;
+  mc:revisionNumber "1.2"^^xsd:string ;
+  mc:role mc:CollectionGraph ;
+  mc:specificity 1 ;
+  mc:url "http://qudt.org"^^xsd:anyURI ;
+  mc:urlForHTML "http://qudt.org/1.1/html/qudt.html"^^xsd:anyURI ;
+  mc:withAttributionTo <http://qudt.org/schema/qudt#NASA-ARC-Attribution> ;
+  mc:withAttributionTo mc:TopQuadrantAttribution ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/terms> ;
+  owl:imports <http://www.linkedmodel.org/1.1/owl/schema/core> ;
+  owl:versionIRI <http://qudt.org/1.2/collection/nasa/enums> ;
+  owl:versionInfo "$Id: COLLECTION_QUDT-TERMS-v1.2.ttl 1898 2013-03-24 09:39:48Z rhodgson $"^^xsd:string ;
+.

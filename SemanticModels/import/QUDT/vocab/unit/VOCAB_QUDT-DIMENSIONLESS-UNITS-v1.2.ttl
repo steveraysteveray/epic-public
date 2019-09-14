@@ -1,0 +1,536 @@
+# baseURI: http://qudt.org/1.2/vocab/dimensionalunit
+# imports: http://qudt.org/1.2/schema/dimension
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/dimensionalunit>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Daniel Mekonnen"^^xsd:string ;
+  dc:contributor "Irene Polikoff"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Units of Measure with Dimensional Analysis"^^xsd:string ;
+  dc:title "QUDT Dimensional Units Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2011-01-02T01:16:11"^^xsd:dateTime ;
+  vaem:description "The QUDT Dimensional Units is a vocabulary that extens the basic treatment of units with quantities and their dimensions. A quantity is the measurement of an observable property of a particular object, event, or physical system. A quantity is always associated with the context of measurement (i.e. the thing measured, the measured value, the accuracy of measurement, etc.) whereas the underlying quantity kind is independent of any particular measurement. A dimension is a relationship between a quantity system, a quantity kind of that system, and one or more dimension vectors. There is one dimension vector for each of the system's base quantity kinds. The vector's magnitude determines the exponent of the base dimension for the referenced quantity kind."^^xsd:string ;
+  vaem:hasAspectScope "Full treatment of quantities and units including support for dimensional analysis over quantities."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-DIMENSIONALUNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide the dimension vectors for all QUDT units"^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-25 21:22:57 -0700 (Mon, 25 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/dimensionalunit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-dimensionalunit"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-DIMENSIONALUNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Dimensional Units"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/dimension> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/dimensionalunit> ;
+  owl:versionInfo "$Id: VOCAB_QUDT-DIMENSIONLESS-UNITS-v1.2.ttl 1908 2013-03-26 04:22:57Z rhodgson $"^^xsd:string ;
+.
+<http://qudt.org/vocab/quantity#SystemOfQuantities_CGS-ESU>
+  qudt:unitSystem qudt:SOU_CGS-ESU ;
+.
+unit:Acre
+  qudt:uneceCommonCode "ACR"^^xsd:string ;
+.
+unit:Ampere
+  qudt:uneceCommonCode "AMP"^^xsd:string ;
+.
+unit:AmpereHour
+  qudt:uneceCommonCode "AMH"^^xsd:string ;
+.
+unit:Angstrom
+  qudt:uneceCommonCode "A11"^^xsd:string ;
+.
+unit:Are
+  qudt:uneceCommonCode "ARE"^^xsd:string ;
+.
+unit:AstronomicalUnit
+  qudt:uneceCommonCode "A12"^^xsd:string ;
+.
+unit:AtmosphereStandard
+  qudt:uneceCommonCode "ATM"^^xsd:string ;
+.
+unit:AtmosphereTechnical
+  qudt:uneceCommonCode "ATT"^^xsd:string ;
+.
+unit:AtomicMassUnit
+  qudt:quantityKind <http://qudt.org/vocab/quantity#MolecularMass> ;
+.
+unit:Barn
+  qudt:uneceCommonCode "A14"^^xsd:string ;
+.
+unit:Becquerel
+  qudt:uneceCommonCode "BQL"^^xsd:string ;
+.
+unit:Candela
+  qudt:uneceCommonCode "CDL"^^xsd:string ;
+.
+unit:Centipoise
+  qudt:uneceCommonCode "C7"^^xsd:string ;
+.
+unit:Centistokes
+  qudt:uneceCommonCode "4C"^^xsd:string ;
+.
+unit:Clo
+  qudt:uneceCommonCode "J83"^^xsd:string ;
+.
+unit:Coulomb
+  qudt:uneceCommonCode "COU"^^xsd:string ;
+.
+unit:CoulombPerKilogram
+  qudt:uneceCommonCode "CKG"^^xsd:string ;
+.
+unit:CoulombPerMole
+  qudt:uneceCommonCode "A32"^^xsd:string ;
+.
+unit:CubicFoot
+  qudt:uneceCommonCode "FTQ"^^xsd:string ;
+.
+unit:CubicFootPerMinute
+  qudt:uneceCommonCode "2L"^^xsd:string ;
+.
+unit:CubicInch
+  qudt:uneceCommonCode "INQ"^^xsd:string ;
+.
+unit:CubicInchPerMinute
+  qudt:uneceCommonCode "G57"^^xsd:string ;
+.
+unit:CubicYard
+  qudt:uneceCommonCode "YDQ"^^xsd:string ;
+.
+unit:CubicYardPerMinute
+  qudt:uneceCommonCode "M15"^^xsd:string ;
+.
+unit:Curie
+  qudt:uneceCommonCode "CUR"^^xsd:string ;
+.
+unit:Day
+  qudt:uneceCommonCode "DAY"^^xsd:string ;
+.
+unit:Decibel
+  qudt:uneceCommonCode "2N"^^xsd:string ;
+.
+unit:DegreeCelsius
+  qudt:uneceCommonCode "CEL"^^xsd:string ;
+.
+unit:DegreeCelsiusPerHour
+  qudt:uneceCommonCode "H12"^^xsd:string ;
+.
+unit:DegreeCelsiusPerMinute
+  qudt:uneceCommonCode "H13"^^xsd:string ;
+.
+unit:DegreeCelsiusPerSecond
+  qudt:uneceCommonCode "H14"^^xsd:string ;
+.
+unit:DegreeFahrenheit
+  qudt:uneceCommonCode "FAH"^^xsd:string ;
+.
+unit:DegreeFahrenheitPerHour
+  qudt:uneceCommonCode "J23"^^xsd:string ;
+.
+unit:DegreeFahrenheitPerMinute
+  qudt:uneceCommonCode "J24"^^xsd:string ;
+.
+unit:DegreeFahrenheitPerSecond
+  qudt:uneceCommonCode "J25"^^xsd:string ;
+.
+unit:DegreePerSecond
+  qudt:uneceCommonCode "E96"^^xsd:string ;
+.
+unit:DegreeRankine
+  qudt:uneceCommonCode "A48"^^xsd:string ;
+.
+unit:DegreeRankinePerHour
+  qudt:uneceCommonCode "J28"^^xsd:string ;
+.
+unit:DegreeRankinePerMinute
+  qudt:uneceCommonCode "J29"^^xsd:string ;
+.
+unit:DegreeRankinePerSecond
+  qudt:uneceCommonCode "J30"^^xsd:string ;
+.
+unit:Dyne
+  qudt:uneceCommonCode "DU"^^xsd:string ;
+.
+unit:Erg
+  qudt:uneceCommonCode "A57"^^xsd:string ;
+.
+unit:ErgPerGram
+  qudt:uneceCommonCode "A61"^^xsd:string ;
+.
+unit:ErgPerSecond
+  qudt:uneceCommonCode "A63"^^xsd:string ;
+.
+unit:Farad
+  qudt:uneceCommonCode "FAR"^^xsd:string ;
+.
+unit:Fathom
+  qudt:uneceCommonCode "AK"^^xsd:string ;
+.
+unit:Foot
+  qudt:uneceCommonCode "FOT"^^xsd:string ;
+.
+unit:FootOfWater
+  qudt:uneceCommonCode "K24"^^xsd:string ;
+.
+unit:FootPerHour
+  qudt:uneceCommonCode "K14"^^xsd:string ;
+.
+unit:FootPerMinute
+  qudt:uneceCommonCode "FR"^^xsd:string ;
+.
+unit:FootPerSecond
+  qudt:uneceCommonCode "FS"^^xsd:string ;
+.
+unit:FootPerSecondSquared
+  qudt:uneceCommonCode "A73"^^xsd:string ;
+.
+unit:Gal
+  qudt:uneceCommonCode "A76"^^xsd:string ;
+.
+unit:GallonUSPerMinute
+  qudt:uneceCommonCode "G2"^^xsd:string ;
+.
+unit:GigaHertz
+  qudt:uneceCommonCode "A86"^^xsd:string ;
+.
+unit:Gon
+  qudt:uneceCommonCode "A91"^^xsd:string ;
+.
+unit:Grade
+  qudt:uneceCommonCode "A91"^^xsd:string ;
+.
+unit:Grain
+  qudt:uneceCommonCode "GRN"^^xsd:string ;
+.
+unit:Gram
+  qudt:uneceCommonCode "GRM"^^xsd:string ;
+.
+unit:Gray
+  qudt:uneceCommonCode "A95"^^xsd:string ;
+.
+unit:GrayPerSecond
+  qudt:uneceCommonCode "A96"^^xsd:string ;
+.
+unit:Hectare
+  qudt:uneceCommonCode "HAR"^^xsd:string ;
+.
+unit:Henry
+  qudt:uneceCommonCode "81"^^xsd:string ;
+.
+unit:Hertz
+  qudt:uneceCommonCode "HTZ"^^xsd:string ;
+.
+unit:Hour
+  qudt:uneceCommonCode "HUR"^^xsd:string ;
+.
+unit:Inch
+  qudt:uneceCommonCode "INH"^^xsd:string ;
+.
+unit:InchOfMercury
+  qudt:uneceCommonCode "F79"^^xsd:string ;
+.
+unit:InchOfWater
+  qudt:uneceCommonCode "F78"^^xsd:string ;
+.
+unit:InchPerSecond
+  qudt:uneceCommonCode "IU"^^xsd:string ;
+.
+unit:InchPerSecondSquared
+  qudt:uneceCommonCode "IV"^^xsd:string ;
+.
+unit:Joule
+  qudt:uneceCommonCode "JOU"^^xsd:string ;
+.
+unit:JoulePerKelvin
+  qudt:uneceCommonCode "JE"^^xsd:string ;
+.
+unit:JoulePerKilogram
+  qudt:uneceCommonCode "J2"^^xsd:string ;
+.
+unit:JoulePerKilogramKelvin
+  qudt:uneceCommonCode "B11"^^xsd:string ;
+.
+unit:JoulePerMole
+  qudt:uneceCommonCode "B15"^^xsd:string ;
+.
+unit:JoulePerMoleKelvin
+  qudt:uneceCommonCode "B16"^^xsd:string ;
+.
+unit:JouleSecond
+  qudt:uneceCommonCode "B18"^^xsd:string ;
+.
+unit:Katal
+  qudt:uneceCommonCode "KAT"^^xsd:string ;
+.
+unit:Kelvin
+  qudt:uneceCommonCode "KEL"^^xsd:string ;
+.
+unit:KelvinPerHour
+  qudt:uneceCommonCode "F10"^^xsd:string ;
+.
+unit:KelvinPerMinute
+  qudt:uneceCommonCode "F11"^^xsd:string ;
+.
+unit:KelvinPerSecond
+  qudt:uneceCommonCode "F12"^^xsd:string ;
+.
+unit:KelvinPerWatt
+  qudt:uneceCommonCode "B21"^^xsd:string ;
+.
+unit:KiloHertz
+  qudt:uneceCommonCode "KHZ"^^xsd:string ;
+.
+unit:KiloPascal
+  qudt:uneceCommonCode "KPA"^^xsd:string ;
+.
+unit:KiloPond
+  qudt:uneceCommonCode "B51"^^xsd:string ;
+.
+unit:Kilogram
+  qudt:uneceCommonCode "KGM"^^xsd:string ;
+.
+unit:KilogramPerHour
+  qudt:uneceCommonCode "E93"^^xsd:string ;
+.
+unit:KilogramPerMole
+  qudt:uneceCommonCode "D74"^^xsd:string ;
+.
+unit:KilogramPerSecond
+  qudt:uneceCommonCode "KGS"^^xsd:string ;
+.
+unit:Kilowatt
+  qudt:uneceCommonCode "KWT"^^xsd:string ;
+.
+unit:Knot
+  qudt:uneceCommonCode "KNT"^^xsd:string ;
+.
+unit:LightYear
+  qudt:uneceCommonCode "B57"^^xsd:string ;
+.
+unit:Lumen
+  qudt:uneceCommonCode "LUM"^^xsd:string ;
+.
+unit:LumenPerWatt
+  qudt:uneceCommonCode "B61"^^xsd:string ;
+.
+unit:LumenSecond
+  qudt:uneceCommonCode "B62"^^xsd:string ;
+.
+unit:Lux
+  qudt:uneceCommonCode "LUX"^^xsd:string ;
+.
+unit:MegaHertz
+  qudt:uneceCommonCode "MHZ"^^xsd:string ;
+.
+unit:Mho
+  qudt:uneceCommonCode "NQ"^^xsd:string ;
+.
+unit:MicroFarad
+  qudt:uneceCommonCode "4O"^^xsd:string ;
+.
+unit:MicroHenry
+  qudt:uneceCommonCode "B90"^^xsd:string ;
+.
+unit:MicroSecond
+  qudt:uneceCommonCode "B98"^^xsd:string ;
+.
+unit:MilePerHour
+  qudt:uneceCommonCode "HM"^^xsd:string ;
+.
+unit:MilliHenry
+  qudt:uneceCommonCode "C14"^^xsd:string ;
+.
+unit:MilliSecond
+  qudt:uneceCommonCode "C26"^^xsd:string ;
+.
+unit:Millibar
+  qudt:uneceCommonCode "MBR"^^xsd:string ;
+.
+unit:Mole
+  qudt:uneceCommonCode "C34"^^xsd:string ;
+.
+unit:MolePerKilogram
+  qudt:uneceCommonCode "C19"^^xsd:string ;
+.
+unit:NanoFarad
+  qudt:uneceCommonCode "C41"^^xsd:string ;
+.
+unit:NauticalMile
+  qudt:uneceCommonCode "NMI"^^xsd:string ;
+.
+unit:Newton
+  qudt:uneceCommonCode "NEW"^^xsd:string ;
+.
+unit:Ohm
+  qudt:uneceCommonCode "OHM"^^xsd:string ;
+.
+unit:OuncePerSquareFoot
+  qudt:uneceCommonCode "37"^^xsd:string ;
+.
+unit:OuncePerSquareYard
+  qudt:uneceCommonCode "ON"^^xsd:string ;
+.
+unit:Parsec
+  qudt:uneceCommonCode "C63"^^xsd:string ;
+.
+unit:Pascal
+  qudt:uneceCommonCode "PAL"^^xsd:string ;
+.
+unit:PascalSecond
+  qudt:uneceCommonCode "C65"^^xsd:string ;
+.
+unit:PicoFarad
+  qudt:uneceCommonCode "4T"^^xsd:string ;
+.
+unit:Poise
+  qudt:uneceCommonCode "89"^^xsd:string ;
+.
+unit:PoundPerCubicFoot
+  qudt:uneceCommonCode "87"^^xsd:string ;
+.
+unit:PoundPerCubicInch
+  qudt:uneceCommonCode "LA"^^xsd:string ;
+.
+unit:PoundPerCubicYard
+  qudt:uneceCommonCode "K84"^^xsd:string ;
+.
+unit:PoundPerFoot
+  qudt:uneceCommonCode "P2"^^xsd:string ;
+.
+unit:PoundPerFootHour
+  qudt:uneceCommonCode "K67"^^xsd:string ;
+.
+unit:PoundPerFootSecond
+  qudt:uneceCommonCode "K68"^^xsd:string ;
+.
+unit:PoundPerHour
+  qudt:uneceCommonCode "4U"^^xsd:string ;
+.
+unit:PoundPerSquareFoot
+  qudt:uneceCommonCode "FP"^^xsd:string ;
+.
+unit:Rad
+  qudt:uneceCommonCode "C80"^^xsd:string ;
+.
+unit:Radian
+  qudt:uneceCommonCode "C81"^^xsd:string ;
+.
+unit:RadianPerMinute
+  qudt:uneceCommonCode "2A"^^xsd:string ;
+.
+unit:RadianPerSecond
+  qudt:uneceCommonCode "2A"^^xsd:string ;
+.
+unit:RadianPerSecondSquared
+  qudt:uneceCommonCode "2B"^^xsd:string ;
+.
+unit:Rem
+  qudt:uneceCommonCode "D91"^^xsd:string ;
+.
+unit:Roentgen
+  qudt:uneceCommonCode "2C"^^xsd:string ;
+.
+unit:Siemens
+  qudt:uneceCommonCode "SIE"^^xsd:string ;
+.
+unit:Sievert
+  qudt:uneceCommonCode "D13"^^xsd:string ;
+.
+unit:Slug
+  qudt:uneceCommonCode "F13"^^xsd:string ;
+.
+unit:SlugPerCubicFoot
+  qudt:uneceCommonCode "L65"^^xsd:string ;
+.
+unit:SlugPerFootSecond
+  qudt:uneceCommonCode "L64"^^xsd:string ;
+.
+unit:SlugPerSecond
+  qudt:uneceCommonCode "L68"^^xsd:string ;
+.
+unit:SquareFoot
+  qudt:uneceCommonCode "FTK"^^xsd:string ;
+.
+unit:SquareFootPerSecond
+  qudt:uneceCommonCode "S3"^^xsd:string ;
+.
+unit:SquareInch
+  qudt:uneceCommonCode "INK"^^xsd:string ;
+.
+unit:SquareMile
+  qudt:uneceCommonCode "MIK"^^xsd:string ;
+.
+unit:SquareYard
+  qudt:uneceCommonCode "YDK"^^xsd:string ;
+.
+unit:Steradian
+  qudt:uneceCommonCode "D27"^^xsd:string ;
+.
+unit:Stere
+  qudt:uneceCommonCode "G26"^^xsd:string ;
+.
+unit:Stokes
+  qudt:uneceCommonCode "91"^^xsd:string ;
+.
+unit:Tesla
+  qudt:uneceCommonCode "D33"^^xsd:string ;
+.
+unit:Torr
+  qudt:uneceCommonCode "UA"^^xsd:string ;
+.
+unit:UnifiedAtomicMassUnit
+  qudt:uneceCommonCode "D43"^^xsd:string ;
+.
+unit:Volt
+  qudt:uneceCommonCode "VLT"^^xsd:string ;
+.
+unit:VoltPerSecond
+  qudt:uneceCommonCode "H46"^^xsd:string ;
+.
+unit:Watt
+  qudt:uneceCommonCode "WTT"^^xsd:string ;
+.
+unit:WattPerSteradian
+  qudt:uneceCommonCode "D57"^^xsd:string ;
+.
+unit:Weber
+  qudt:uneceCommonCode "WEB"^^xsd:string ;
+.
+unit:Yard
+  qudt:uneceCommonCode "YRD"^^xsd:string ;
+.
+voag:QUDT-DIMENSIONALUNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+.

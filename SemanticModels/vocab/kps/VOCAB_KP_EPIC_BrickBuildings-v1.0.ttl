@@ -1,0 +1,118 @@
+# baseURI: http://siemens.com/vocab/kps/epic/building_instances
+# imports: http://siemens.com/schemas/kps/epic-building
+# imports: http://www.siemens.com/import/brick/Brick_Building
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# imports: https://w3id.org/saref
+# prefix: epicbldg
+
+@prefix A: <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#> .
+@prefix Atom: <http://www.w3.org/2005/Atom#> .
+@prefix Sample_oadrDistributeEvent_W_Baseline: <file:///demandresponse/Reference/oadr-samples/Sample_oadrDistributeEvent_W_Baseline.xml#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix b2e: <http://siemens.com/mapping/brick2epic#> .
+@prefix bb: <http://www.siemens.com/import/brick/Brick_Building#> .
+@prefix bldg: <http://siemens.com/schemas/kps/epic-building#> .
+@prefix brick2epic: <http://siemens.com/mapping/brick2epic#> .
+@prefix ccts: <urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2#> .
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix daml: <http://www.daml.org/2001/03/daml+oil#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix dsig: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix emix: <http://docs.oasis-open.org/ns/emix/2011/06#> .
+@prefix energyinterop: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix epic-datetime: <http://siemens.com/spin/epic-datetime#> .
+@prefix epic-spin: <http://siemens.com/spin/namespace_functions#> .
+@prefix epicbldg: <http://siemens.com/vocab/kps/epic/building_instances#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix gml: <http://www.opengis.net/gml/3.2#> .
+@prefix gml-3_2: <http://www.opengis.net/gml/3.2#> .
+@prefix icalendar: <urn:ietf:params:xml:ns:icalendar-2.0#> .
+@prefix icalendar-stream: <urn:ietf:params:xml:ns:icalendar-2.0:stream#> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
+@prefix namespace_functions: <http://siemens.com/spin/namespace_functions#> .
+@prefix oadr2epic: <http://siemens.com/mapping/oadr2epic#> .
+@prefix oadr_helper: <http://siemens.com/schemas/kps/oadr_helper#> .
+@prefix oadr_tweaks: <http://siemens.com/schemas/kps/oadr_tweaks#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p1: <http://example.org/file1#> .
+@prefix p2010-04-07: <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#> .
+@prefix p2011-06: <http://docs.oasis-open.org/ns/emix/2011/06#> .
+@prefix p2012-07: <http://openadr.org/oadr-2.0b/2012/07#> .
+@prefix payloads: <http://docs.oasis-open.org/ns/energyinterop/201110/payloads#> .
+@prefix pilot: <http://siemens.com/vocab/kps/epic/pilot-buildings#> .
+@prefix postMappingFix: <http://siemens.com/spin/postMappingFix#> .
+@prefix power: <http://docs.oasis-open.org/ns/emix/2011/06/power#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sample_ev: <file:///demandresponse/EPIC/Software/epic_api/sample_ev.xml#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix siscale: <http://docs.oasis-open.org/ns/emix/2011/06/siscale#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix spinmapl: <http://topbraid.org/spin/spinmapl#> .
+@prefix spinx: <http://spinrdf.org/spinx#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix tariff: <http://siemens.com/schemas/kps/cim-tariff#> .
+@prefix tf: <http://siemens.com/functions/tariff-functions#> .
+@prefix time-functions: <http://siemens.com/functions/time-functions#> .
+@prefix ui: <http://uispin.org/ui#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xhtml: <http://topbraid.org/xhtml#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xmldsig: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsi: <http://www.w3.org/2001/XMLSchema-instance#> .
+
+<http://siemens.com/vocab/kps/epic/building_instances>
+  a owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic-building> ;
+  owl:imports <http://www.siemens.com/import/brick/Brick_Building> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:imports <https://w3id.org/saref> ;
+.
+<http://siemens.com/vocab/kps/epic/building_instances#Building_Electrical_Meter_2018-11-05T19:14:52>
+  a saref:Meter ;
+  saref:IsUsedFor <http://siemens.com/vocab/kps/epic/building_instances#Power_2018-11-05T19:14:52> ;
+.
+<http://siemens.com/vocab/kps/epic/building_instances#PowerUnit_2018-11-05T19:14:52>
+  a saref:PowerUnit ;
+.
+<http://siemens.com/vocab/kps/epic/building_instances#Power_2018-11-05T19:14:52>
+  a saref:Power ;
+  saref:hasValue "3509.831306762741"^^xsd:float ;
+  saref:isMeasuredIn <http://siemens.com/vocab/kps/epic/building_instances#PowerUnit_2018-11-05T19:14:52> ;
+.
+<http://siemens.com/vocab/kps/epic/building_instances#TemperatureUnit_2018-11-05T19:14:53>
+  a saref:TemperatureUnit ;
+.
+<http://siemens.com/vocab/kps/epic/building_instances#Temperature_2018-11-05T19:14:53>
+  a saref:Temperature ;
+  saref:hasValue "60.43346007604566"^^xsd:float ;
+  saref:hasValue "60.455301574025995"^^xsd:float ;
+  saref:isMeasuredIn <http://siemens.com/vocab/kps/epic/building_instances#TemperatureUnit_2018-11-05T19:14:53> ;
+.
+<http://siemens.com/vocab/kps/epic/building_instances#Weather_Temperature_Sensor_2018-11-05T19:14:53>
+  a saref:TemperatureSensor ;
+  saref:IsUsedFor <http://siemens.com/vocab/kps/epic/building_instances#Temperature_2018-11-05T19:14:53> ;
+.
+pilot:PilotBuilding_CIEE
+  a bldg:Building ;
+  bldg:buildingDevice <http://siemens.com/vocab/kps/epic/building_instances#Building_Electrical_Meter_2018-11-05T19:14:52> ;
+  bldg:buildingDevice <http://siemens.com/vocab/kps/epic/building_instances#Weather_Temperature_Sensor_2018-11-05T19:14:53> ;
+  bldg:resourceID "CIEE" ;
+.

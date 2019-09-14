@@ -1,0 +1,88 @@
+# baseURI: http://siemens.com/schemas/kps/bridges/ifc2ssn
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: http://siemens.com/schemas/san
+# imports: http://www.buildingsmart-tech.org/ifcXML/IFC4/final
+# imports: http://www.w3.org/ns/ssn/systems/
+# prefix: ifc2ssn
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcXML/IFC4/final#> .
+@prefix ifc2ssn: <http://siemens.com/schemas/kps/bridges/ifc2ssn#> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix san: <http://siemens.com/schemas/san#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/bridges/ifc2ssn>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The IFC to SSN integration bridge ontology creates an interoperability path between the ontologies." ;
+  dc:subject "An integration bridge between the IFC and QUDT models" ;
+  dc:title "The IFC to SSN integration bridge" ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology an integration bridge between the IFC and SSN ontologies." ;
+  vaem:namespace "http://siemens.com/schemas/kps/bridges/ifc2ssn#" ;
+  vaem:namespacePrefix "ifc2ssn" ;
+  vaem:url "http://siemens.com/schemas/kps/bridges/ifc2ssn"^^xsd:anyURI ;
+  rdfs:label "IFC to SSN Integration Bridge" ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:imports <http://siemens.com/schemas/san> ;
+  owl:imports <http://www.buildingsmart-tech.org/ifcXML/IFC4/final> ;
+  owl:imports <http://www.w3.org/ns/ssn/systems/> ;
+  owl:versionInfo "$Id: SCHEMA_KP_IFC_2_SSN-v1.0.ttl 1954 2018-08-21 13:35:02Z jhodges $" ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ifc2ssn:Actuator
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcActuatorType ;
+  rdfs:subClassOf <http://www.w3.org/ns/sosa/Actuator> ;
+.
+ifc2ssn:Procedure
+  rdf:type owl:Class ;
+  vaem:comment "The IFC Procedure talks about how something is performed as does the sosa:Procedure." ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcProcedure ;
+  rdfs:subClassOf <http://www.w3.org/ns/sosa/Procedure> ;
+.
+ifc2ssn:Sensor
+  rdf:type owl:Class ;
+  rdfs:comment "if subclassed, the sensorType from IFC must match the property from ssn. So an ifc2ssn:TemperatureSensor would have sensorType = temperaturesensor and the detects property would be temperature." ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcSensorType ;
+  rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+.
+ifc2ssn:System
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcSystem ;
+  rdfs:subClassOf ssn:System ;
+.
+ifc2ssn:sensorType
+  rdf:type rdf:Property ;
+  rdfs:range ifc:IfcSensorTypeEnum ;
+.
+<http://www.w3.org/ns/sosa/ActuatableProperty>
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssn:Property ;
+.
+<http://www.w3.org/ns/sosa/Actuator>
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssn:System ;
+.
+<http://www.w3.org/ns/sosa/ObservableProperty>
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssn:Property ;
+.
+<http://www.w3.org/ns/sosa/Sampler>
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssn:System ;
+.
+<http://www.w3.org/ns/sosa/Sensor>
+  rdf:type owl:Class ;
+  rdfs:subClassOf ssn:System ;
+.

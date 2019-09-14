@@ -1,0 +1,67 @@
+# baseURI: http://siemens.com/vocab/kps/adapters/epic2brick
+# imports: http://siemens.com/schemas/kps/adapters/epic2brick
+# imports: http://siemens.com/spin/kps/bridges/mappings
+# imports: https://siemens.com/import/siemens/ucsd_ebu3b_bldg_data
+
+@prefix bldg: <http://siemens.com/schemas/kps/epic-building#> .
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://siemens.com/schemas/ssf_datatype#> .
+@prefix enumerations---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix epic2brick: <http://siemens.com/schemas/kps/adapters/epic2brick#> .
+@prefix epicbldg2brick: <http://siemens.com/schemas/kps/adapters/epicbldg2brick#> .
+@prefix fsgim-time: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
+@prefix ifc2brick: <http://siemens.com/schemas/kps/adapters/ifc2brick#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix qudt2brick: <http://siemens.com/schemas/kps/adapters/qudt2brick#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref2brick: <http://siemens.com/schemas/kps/adapters/saref2brick#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix ssf2brick: <http://siemens.com/schemas/kps/adapters/ssf2brick#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ssn2brick: <http://siemens.com/schemas/kps/adapters/ssn2brick#> .
+@prefix tag: <https://brickschema.org/schema/1.0.3/BrickTag#> .
+@prefix tariff: <http://siemens.com/schemas/kps/cim-tariff#> .
+@prefix td: <http://siemens.com/vocab/kps/cim-tariff#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tariff:ChargeKind
+  rdfs:subClassOf tariff:EnumeratedValue ;
+.
+tariff:MonthType
+  rdfs:subClassOf tariff:EnumeratedValue ;
+.
+tariff:RdRule
+  rdfs:subClassOf tariff:EnumeratedValue ;
+.
+tariff:WeekdayType
+  rdfs:subClassOf tariff:EnumeratedValue ;
+.
+<http://siemens.com/vocab/kps/adapters/epic2brick>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The EPIC to BRICK adapter vocabulary." ;
+  dc:subject "Vocabulary for the EPIC to BRICK adapter" ;
+  dc:title "The EPIC to BRICK adapter vocabulary" ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This vocabulary for testing the EPIC to BRICK adapter with data and SPIN functions." ;
+  vaem:namespace "http://siemens.com/vocab/kps/adapters/epic2brick#" ;
+  vaem:namespacePrefix "ifc2qudt" ;
+  vaem:url "http://siemens.com/vocab/kps/adapters/epic2brick"^^xsd:anyURI ;
+  rdfs:label "IFC to QUDT Integration Bridge" ;
+  owl:imports <http://siemens.com/schemas/kps/adapters/epic2brick> ;
+  owl:imports <http://siemens.com/spin/kps/bridges/mappings> ;
+  owl:imports <https://siemens.com/import/siemens/ucsd_ebu3b_bldg_data> ;
+  owl:versionInfo "$Id: VOCAB_KP_EPIC_2_BRICK-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $" ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

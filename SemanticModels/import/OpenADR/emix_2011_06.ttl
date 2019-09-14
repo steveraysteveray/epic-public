@@ -1,0 +1,80 @@
+# baseURI: http://docs.oasis-open.org/ns/emix/2011/06
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/gml/3.2
+# prefix: p2011-06
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix gml: <http://www.opengis.net/gml/3.2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p2011-06: <http://docs.oasis-open.org/ns/emix/2011/06#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://docs.oasis-open.org/ns/emix/2011/06>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/gml/3.2> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://docs.oasis-open.org/ns/emix/2011/06, http://docs.oasis-open.org/ns/emix/2011/06, http://docs.oasis-open.org/ns/emix/2011/06, http://docs.oasis-open.org/ns/emix/2011/06, http://docs.oasis-open.org/ns/emix/2011/06, http://docs.oasis-open.org/ns/emix/2011/06, http://docs.oasis-open.org/ns/emix/2011/06" ;
+.
+p2011-06:ItemBase
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06#itemBase" ;
+  rdfs:label "Item base" ;
+  rdfs:subClassOf p2011-06:ItemBaseType ;
+.
+p2011-06:ItemBaseType
+  rdf:type owl:Class ;
+  dc:description "Abstract base type for units for EMIX Product delivery, measurement, and warrants." ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType" ;
+  rdfs:label "Item base type" ;
+.
+p2011-06:ServiceArea
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06#serviceArea" ;
+  rdfs:label "Service area" ;
+  rdfs:subClassOf p2011-06:ServiceAreaType ;
+.
+p2011-06:ServiceAreaType
+  rdf:type owl:Class ;
+  dc:description "The Service Area is the geographic region that is affected by the EMIX market condition" ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06#ServiceAreaType" ;
+  rdfs:label "Service area type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom gml:FeatureCollection ;
+      owl:onProperty p2011-06:featureCollectionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2011-06:featureCollectionRef ;
+    ] ;
+.
+p2011-06:featureCollectionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06#FeatureCollection" ;
+  rdfs:label "feature collection ref" ;
+.
+p2011-06:marketContext
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06#marketContext" ;
+  rdfs:label "market context" ;
+.
+dc:description
+  rdfs:label "description" ;
+.
+gml:FeatureCollection
+  sxml:tag "http://www.opengis.net/gml/3.2#FeatureCollection" ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label" ;
+.

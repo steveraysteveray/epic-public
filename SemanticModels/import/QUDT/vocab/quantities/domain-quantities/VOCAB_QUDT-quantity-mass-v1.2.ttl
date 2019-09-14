@@ -1,0 +1,511 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/mass
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/mass>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Mass, center of gravity, moments of inertia (MOIs) and products of inertia (POIs), and coordinate system descriptions on which they are based."^^xsd:string ;
+  dc:title "QUDT Mass and Mass Properties Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary' provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Mass, center of gravity, moments of inertia (MOIs) and products of inertia (POIs), and coordinate system descriptions on which they are based."^^xsd:string ;
+  vaem:hasCatalogEntry voag:VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2 ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:CurationGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-28 00:44:17 -0700 (Thu, 28 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITY-KINDS-VocabCatalogEntry_v1.2 ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/mass> ;
+.
+quantity:CENTER-OF-GRAVITY_X
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:symbol "cg"^^xsd:string ;
+  qudt:url "http://www.grc.nasa.gov/WWW/k-12/airplane/cg.html"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Center of Gravity in the X axis"^^xsd:string ;
+.
+quantity:CENTER-OF-GRAVITY_Y
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:symbol "cg"^^xsd:string ;
+  qudt:url "http://www.grc.nasa.gov/WWW/k-12/airplane/cg.html"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Center of Gravity in the Y axis"^^xsd:string ;
+.
+quantity:CENTER-OF-GRAVITY_Z
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:symbol "cg"^^xsd:string ;
+  qudt:url "http://www.grc.nasa.gov/WWW/k-12/airplane/cg.html"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Center of Gravity in the X axis"^^xsd:string ;
+.
+quantity:CENTER-OF-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "COM"^^xsd:string ;
+  qudt:description "The point at which the distributed mass of a composite body can be acted upon by a force without inducing any rotation of the composite body."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Center_of_mass"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Center of Mass (CoM)"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:CONTRACT-END-ITEM-SPECIFICATION-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "CEI"^^xsd:string ;
+  qudt:description "Contractual mass requirement of a delivered item. Note that The term 'control mass' is sometimes utilized as a limit in lieu of CEI mass when a CEI mass does not exist. The term 'Interface Control Document Mass' is another alternative for specifying a contractual mass requirement."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Contract End Item (CEI) Specification Mass"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:CONTROL-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "The upper design gross mass limit of a system at a specified mission event against which margins are calculated after accounting for basic masses of flight hardware, MGA, and uncertainties. It may include propellants, crew, and cargo."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Control Mass"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:DELTA-V
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "The change in translational velocity including all losses for a propulsive system or module. Delta-V losses include, but are not limited to, gravity losses and steering losses."^^xsd:string ;
+  qudt:symbol "\\bigtriangleup-v"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Delta-v"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Delta-V"^^rdfs:Literal ;
+.
+quantity:DRY-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "Mass of a system without the propellants, pressurants, reserve or residual fluids, personnel and personnel provisions, and cargo."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Dry Mass"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:Density
+  rdf:type qudt:PhysicsQuantityKind ;
+  qudt:applicableUnit unit:GRAIN-PER-GAL ;
+  qudt:applicableUnit unit:KG-PER-M3 ;
+  qudt:applicableUnit unit:LB-PER-FT3 ;
+  qudt:applicableUnit unit:LB-PER-GAL ;
+  qudt:applicableUnit unit:LB-PER-IN3 ;
+  qudt:applicableUnit unit:LB-PER-M3 ;
+  qudt:applicableUnit unit:LB-PER-YD3 ;
+  qudt:applicableUnit unit:OZ-PER-GAL ;
+  qudt:applicableUnit unit:OZ-PER-IN3 ;
+  qudt:applicableUnit unit:PlanckDensity ;
+  qudt:applicableUnit unit:SLUG-PER-FT3 ;
+  qudt:applicableUnit unit:TonLongPerCubicYard ;
+  qudt:applicableUnit unit:TonShortPerCubicYard ;
+  qudt:description "The mass density or density of a material is defined as its mass per unit volume. The symbol most often used for density is $\\rho$.  Mathematically, density is defined as mass divided by volume: $\\rho = m/V$, where $\\rho$ is the density, $m$ is the mass, and $V$ is the volume. In some cases, density is also defined as its weight per unit volume, although this quantity is more properly called specific weight."^^xsd:string ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Density> ;
+  skos:prefLabel "Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Density> ;
+.
+quantity:FLIGHT-PERFORMANCE-RESERVE-PROPELLANT-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "FPR"^^xsd:string ;
+  qudt:description "A quantity of propellant, at a nominal mixture ratio, along with fuel bias that is set aside from total propellant loaded to cover for statistical variations of flight hardware characteristics and environment conditions on the day of launch. The launch vehicle is designed to accommodate the maximum FPR loading."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Flight Performance Reserve Propellant Mass"^^xsd:string ;
+  skos:broader quantity:Mass ;
+.
+quantity:FUEL-BIAS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "An additional quantity of fuel to ensure depletion of high-weight oxidizer before fuel for systems with high-oxidizer mixing ratios (e.g., 6:1). This practice allows for more efficient propellant utilization."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Fuel Bias"^^rdfs:Literal ;
+.
+quantity:GROSS-LIFT-OFF-WEIGHT
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "GLOW"^^xsd:string ;
+  qudt:description "The sum of  a rocket's inert mass and usable fluids and gases at sea level."^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Maximum_Takeoff_Weight"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Gross Lift-Off Weight"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:INERT-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "The sum of the vehicle dry mass, residual fluids and gasses, personnel and personnel provisions, and cargo."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Inert Mass"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:LengthMass
+  rdfs:label "Length Mass"^^xsd:string ;
+  skos:prefLabel "Length Mass"^^xsd:string ;
+.
+quantity:MASS-DELIVERED
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "The minimum mass a propulsive system can deliver to a specified target or location. Most mass- delivered requirements have associated Delta-V requirements, effectively specifying the path between the two points."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Mass Delivered"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:MASS-GROWTH-ALLOWANCE
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "MGA"^^xsd:string ;
+  qudt:description "A factor applied to basic mass at the lowest level of design detail available based on type and maturity of hardware according to an approved MGA depletion schedule."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Mass Growth Allowance"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:MASS-MARGIN
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "Requirement minus predicted value. Margin is used as a metric in risk management. Positive margin mitigates the risk of mass increases from requirements maturation and implementation, underestimated predicted system, or subsystem mass."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Mass Margin"^^xsd:string ;
+  skos:broader quantity:Mass ;
+.
+quantity:MASS-PROPERTY-UNCERTAINTY
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "Variation in predicted MP due to lack of definition, manufacturing variations, environment effects, or accuracy limitation of measuring devices."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Mass Property Uncertainty"^^xsd:string ;
+.
+quantity:MOMENT-OF-INERTIA_Y
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "MOI"^^xsd:string ;
+  qudt:description "The rotational inertia or resistance to change in direction or speed of rotation about a defined axis."^^xsd:string ;
+  qudt:symbol "I_{y}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Moment of Inertia in the Y axis"^^xsd:string ;
+  skos:broader quantity:MomentOfInertia ;
+.
+quantity:MOMENT-OF-INERTIA_Z
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "MOI"^^xsd:string ;
+  qudt:description "The rotational inertia or resistance to change in direction or speed of rotation about a defined axis."^^xsd:string ;
+  qudt:symbol "I_{z}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Moment of Inertia in the Z axis"^^xsd:string ;
+  skos:broader quantity:MomentOfInertia ;
+.
+quantity:Mass
+  rdf:type qudt:MassQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:Carat ;
+  qudt:applicableUnit unit:DWT ;
+  qudt:applicableUnit unit:ElectronMass ;
+  qudt:applicableUnit unit:GRAIN ;
+  qudt:applicableUnit unit:GRAM ;
+  qudt:applicableUnit unit:HundredWeightLong ;
+  qudt:applicableUnit unit:HundredWeightShort ;
+  qudt:applicableUnit unit:KG ;
+  qudt:applicableUnit unit:LBM ;
+  qudt:applicableUnit unit:LB_TROY ;
+  qudt:applicableUnit unit:MetricTon ;
+  qudt:applicableUnit unit:OZM ;
+  qudt:applicableUnit unit:OZ_TROY ;
+  qudt:applicableUnit unit:PlanckMass ;
+  qudt:applicableUnit unit:SLUG ;
+  qudt:applicableUnit unit:TON_LONG ;
+  qudt:applicableUnit unit:TON_SHORT ;
+  qudt:applicableUnit unit:TonAssay ;
+  qudt:applicableUnit unit:UnifiedAtomicMassUnit ;
+  qudt:baseUnitDimensions "M"^^xsd:string ;
+  qudt:baseUnitDimensions "kg"^^xsd:string ;
+  qudt:description "In physics, mass, more specifically inertial mass, can be defined as a quantitative measure of an object's resistance to acceleration. The SI unit of mass is the kilogram ($kg$)"^^xsd:string ;
+  qudt:symbol "m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mass> ;
+  skos:prefLabel "Mass"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass> ;
+.
+quantity:MassPerArea
+  qudt:baseUnitDimensions "kg/m^2"^^xsd:string ;
+  qudt:description "The area density (also known as areal density, surface density, or superficial density) of a two-dimensional object is calculated as the mass per unit area. The SI derived unit is: kilogram per square metre  ($kg \\cdot m^{-2}$)."^^xsd:string ;
+  qudt:symbol "\\rho_A "^^xsd:string ;
+  rdfs:label "Mass per Area"^^xsd:string ;
+  skos:prefLabel "Mass per Area"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Area_density> ;
+.
+quantity:MassPerAreaTime
+  qudt:baseUnitDimensions "kg/m^2 \\cdot s"^^xsd:string ;
+  qudt:description "In Physics and Engineering, mass flux is the rate of mass flow per unit area. The common symbols are $j$, $J$, $\\phi$, or $\\Phi$  (Greek lower or capital Phi), sometimes with subscript $m$ to indicate mass is the flowing quantity.  Its SI units are $ kg s^{-1} m^{-2}$."^^xsd:string ;
+  qudt:symbol "j_m = \\lim\\limits_{A \\rightarrow 0}\\frac{I_m}{A}"^^xsd:string ;
+  rdfs:label "Mass per Area Time"^^xsd:string ;
+  skos:prefLabel "Mass per Area Time"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_flux> ;
+.
+quantity:MassPerLength
+  qudt:baseUnitDimensions "kg/m"^^xsd:string ;
+  qudt:description "Linear density, linear mass density or linear mass is a measure of mass per unit of length, and it is a characteristic of strings or other one-dimensional objects. The SI unit of linear density is the kilogram per metre ($kg/m$)."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Mass per Length"^^xsd:string ;
+  skos:prefLabel "Mass per Length"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Linear_density> ;
+.
+quantity:MassPerTime
+  qudt:baseUnitDimensions "kg/s"^^xsd:string ;
+  rdfs:label "Mass per Time"^^xsd:string ;
+  skos:prefLabel "Mass per Time"^^xsd:string ;
+.
+quantity:MomentOfInertia
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "MOI"^^xsd:string ;
+  qudt:applicableUnit unit:KG-M2 ;
+  qudt:baseUnitDimensions "kg \\cdot m^2"^^xsd:string ;
+  qudt:description "The rotational inertia or resistance to change in direction or speed of rotation about a defined axis."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Moment of Inertia"^^xsd:string ;
+  skos:prefLabel "Moment of Inertia"^^xsd:string ;
+.
+quantity:MomentOfInertia_X
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:abbreviation "MOI-X"^^xsd:string ;
+  qudt:description "The rotational inertia or resistance to change in direction or speed of rotation about a defined axis."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Moment of Inertia in the X axis"^^xsd:string ;
+  skos:broader quantity:MomentOfInertia ;
+.
+quantity:NOMINAL-ASCENT-PROPELLANT-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "The amount of propellant mass within a stage that is available for impulse for use in nominal payload performance prediction. This mass excludes loaded propellant that has been set aside for off- nominal performance behavior (FPR and fuel bias)."^^xsd:string ;
+  qudt:url "http://elib.dlr.de/68314/1/IAF10-D2.3.1.pdf"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Nominal Ascent Propellant Mass"^^xsd:string ;
+  skos:broader quantity:Mass ;
+.
+quantity:PREDICTED-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "Sum of the basic mass and the MGA. Current prediction of the final mass based on the current requirements and design."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Predicted Mass"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:PRODUCT-OF-INERTIA
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "A measure of a body's dynamic (or coupled) imbalance resulting in a precession when rotating about an axis other than the body?s principal axis."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Product of Inertia"^^rdfs:Literal ;
+.
+quantity:PRODUCT-OF-INERTIA_X
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "A measure of a body's dynamic (or coupled) imbalance resulting in a precession when rotating about an axis other than the body?s principal axis."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Product of Inertia in the X axis"^^xsd:string ;
+  skos:broader quantity:PRODUCT-OF-INERTIA ;
+.
+quantity:PRODUCT-OF-INERTIA_Y
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "A measure of a body?s dynamic (or coupled) imbalance resulting in a precession when rotating about an axis other than the body's principal axis."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Product of Inertia in the Y axis"^^xsd:string ;
+  skos:broader quantity:PRODUCT-OF-INERTIA ;
+.
+quantity:PRODUCT-OF-INERTIA_Z
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "A measure of a body?s dynamic (or coupled) imbalance resulting in a precession when rotating about an axis other than the body's principal axis."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Product of Inertia in the Z axis"^^xsd:string ;
+  skos:broader quantity:PRODUCT-OF-INERTIA ;
+.
+quantity:RESERVE-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "A quantity of mass held by Program/project management to mitigate the risk of over-predicted performance estimates, under predicted mass estimates, and future operational and mission specific requirements (program mass reserve, manager's mass reserve, launch window reserve, performance reserve, etc.)."^^xsd:string ;
+  qudt:symbol "M_{E}"^^xsd:string ;
+  qudt:url "http://eaton.math.rpi.edu/CSUMS/Papers/EcoEnergy/koojimanconserve.pdf"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Reserve Mass"^^xsd:string ;
+  skos:broader quantity:Mass ;
+.
+quantity:SpecificImpulseByMass
+  rdfs:label "Specific Impulse by Mass"^^xsd:string ;
+  skos:broader quantity:LinearVelocity ;
+  skos:prefLabel "Specific Impulse by Mass"^^xsd:string ;
+.
+quantity:SpecificImpulseByWeight
+  rdfs:label "Specific Impulse by Weight"^^xsd:string ;
+  skos:broader quantity:SpecificImpulse ;
+  skos:prefLabel "Specific Impulse by Weight"^^xsd:string ;
+.
+quantity:TARGET-BOGIE-MASS
+  rdf:type qudt:MassPropertyQuantityKind ;
+  qudt:description "An informal mass limit established by a Project Office (at the Element Integrated Product Team (IPT) level or below) to control mass."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Target Bogie Mass"^^rdfs:Literal ;
+  skos:broader quantity:Mass ;
+.
+quantity:Weight
+  rdf:type qudt:MechanicsQuantityKind ;
+  qudt:description "The force with which a body is attracted toward an astronomical body.  Or, the product of the mass of a body and the acceleration acting on a body.  In a dynamic situation, the weight can be a multiple of that under resting conditions. Weight also varies on other planets in accordance with their gravity."^^xsd:string ;
+  qudt:symbol "bold letter W"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Weight"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/mass> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/mass> ;
+  rdfs:label "Weight"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Weight> ;
+  skos:prefLabel "Weight"^^xsd:string ;
+.
+quantity:Mass
+  qudt:applicableUnit unit:Carat ;
+  qudt:applicableUnit unit:DWT ;
+  qudt:applicableUnit unit:ElectronMass ;
+  qudt:applicableUnit unit:GRAIN ;
+  qudt:applicableUnit unit:GRAM ;
+  qudt:applicableUnit unit:HundredWeightLong ;
+  qudt:applicableUnit unit:HundredWeightShort ;
+  qudt:applicableUnit unit:KG ;
+  qudt:applicableUnit unit:LBM ;
+  qudt:applicableUnit unit:LB_TROY ;
+  qudt:applicableUnit unit:MetricTon ;
+  qudt:applicableUnit unit:OZM ;
+  qudt:applicableUnit unit:OZ_TROY ;
+  qudt:applicableUnit unit:PlanckMass ;
+  qudt:applicableUnit unit:SLUG ;
+  qudt:applicableUnit unit:TON_LONG ;
+  qudt:applicableUnit unit:TON_SHORT ;
+  qudt:applicableUnit unit:TonAssay ;
+  qudt:applicableUnit unit:UnifiedAtomicMassUnit ;
+  rdfs:label "Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mass> ;
+.
+quantity:MassPerArea
+  qudt:applicableUnit unit:KG-PER-M2 ;
+  qudt:applicableUnit unit:LB-PER-FT2 ;
+  qudt:applicableUnit unit:OZ-PER-FT2 ;
+  qudt:applicableUnit unit:OZ-PER-YD2 ;
+  qudt:applicableUnit unit:SLUG-PER-FT2 ;
+  rdfs:label "Mass per Area"^^xsd:string ;
+.
+quantity:MassPerAreaTime
+  rdfs:label "Mass per Area Time"^^xsd:string ;
+.
+quantity:MassPerLength
+  qudt:applicableUnit unit:Denier ;
+  qudt:applicableUnit unit:KG-PER-M ;
+  qudt:applicableUnit unit:LB-PER-FT ;
+  qudt:applicableUnit unit:LB-PER-IN ;
+  qudt:applicableUnit unit:SLUG-PER-FT ;
+  qudt:applicableUnit unit:TEX ;
+  rdfs:label "Mass per Length"^^xsd:string ;
+.
+quantity:MassPerTime
+  qudt:applicableUnit unit:KG-PER-HR ;
+  qudt:applicableUnit unit:KG-PER-SEC ;
+  qudt:applicableUnit unit:LB-PER-HR ;
+  qudt:applicableUnit unit:LB-PER-MIN ;
+  qudt:applicableUnit unit:SLUG-PER-SEC ;
+  qudt:applicableUnit unit:TonShortPerHour ;
+  rdfs:label "Mass per Time"^^xsd:string ;
+.
+voag:VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Vocabulary Catalog Entry v1.2"^^xsd:string ;
+.
+quantity:LengthMass
+  rdf:type qudt:PhysicsQuantityKind ;
+  qudt:applicableUnit unit:M-KG ;
+  qudt:applicableUnit unit:M-Kg ;
+  rdfs:label "Length Mass"^^xsd:string ;
+.
+

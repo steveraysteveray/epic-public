@@ -1,0 +1,223 @@
+# baseURI: http://siemens.com/spin/epic-retrieval-functions
+# imports: http://siemens.com/schemas/kps/epic-building
+# imports: http://spinrdf.org/spin
+# imports: http://spinrdf.org/spinx
+# prefix: erfunc
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix erfunc: <http://siemens.com/spin/epic-retrieval-functions#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix oadr_helper: <http://siemens.com/schemas/kps/oadr_helper#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix time-functions: <http://siemens.com/functions/time-functions#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/spin/epic-retrieval-functions>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic-building> ;
+  owl:imports <http://spinrdf.org/spin> ;
+  owl:imports <http://spinrdf.org/spinx> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+erfunc:MagicProperties
+  rdf:type spin:MagicProperty ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+erfunc:retrieveBuildingData
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:distinct "true"^^xsd:boolean ;
+      sp:orderBy (
+          [
+            sp:varName "bldg" ;
+          ]
+        ) ;
+      sp:resultVariables (
+          [
+            sp:varName "bldg" ;
+          ]
+          [
+            sp:varName "device" ;
+          ]
+          [
+            sp:varName "prop" ;
+          ]
+          [
+            sp:varName "unit" ;
+          ]
+          [
+            sp:varName "pvalue" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:TriplePath ;
+            sp:object [
+                sp:varName "item" ;
+              ] ;
+            sp:path [
+                rdf:type sp:SeqPath ;
+                sp:path1 [
+                    rdf:type sp:ModPath ;
+                    sp:modMax -2 ;
+                    sp:modMin 0 ;
+                    sp:subPath rdf:rest ;
+                  ] ;
+                sp:path2 rdf:first ;
+              ] ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "item" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic-building#resourceID> ;
+            sp:subject [
+                sp:varName "bldg" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "device" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic-building#buildingDevice> ;
+            sp:subject [
+                sp:varName "bldg" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "prop" ;
+              ] ;
+            sp:predicate <https://w3id.org/saref#IsUsedFor> ;
+            sp:subject [
+                sp:varName "device" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "pvalue" ;
+              ] ;
+            sp:predicate <https://w3id.org/saref#hasValue> ;
+            sp:subject [
+                sp:varName "prop" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "unit" ;
+              ] ;
+            sp:predicate <https://w3id.org/saref#isMeasuredIn> ;
+            sp:subject [
+                sp:varName "prop" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type afn:localname ;
+                sp:arg1 [
+                    sp:varName "bldg" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "bldgLocalName" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type fn:string-length ;
+                sp:arg1 [
+                    sp:varName "bldgLocalName" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "bldgNameLength" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type afn:localname ;
+                sp:arg1 [
+                    sp:varName "s" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "localName" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:or ;
+                sp:arg1 [
+                    rdf:type fn:contains ;
+                    sp:arg1 [
+                        sp:varName "localName" ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "bldgLocalName" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        rdf:type fn:string-length ;
+                        sp:arg1 [
+                            sp:varName "localName" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "bldgNameLength" ;
+                      ] ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdf:List ;
+      rdfs:comment "List of group ids (strings)" ;
+    ] ;
+  spin:returnType rdfs:Resource ;
+  vaem:comment """Test by loading up VOCAB_KP_EPIC_Building_Data-v1.0.ttl. The foo rdf:List should be defined there and have a single entry, \"CIEE\", in it.
+
+Run as:
+
+SELECT ?b ?d ?p ?u ?v
+WHERE {
+    ?foo rdf:type rdf:List .
+    ?foo erfunc:retrieveBuildingData (?b ?d ?p ?u ?v) .
+}
+""" ;
+  rdfs:subClassOf erfunc:MagicProperties ;
+.
+rdf:PlainLiteral
+  rdf:type spin:MagicProperty ;
+  rdfs:subClassOf rdfs:Resource ;
+.

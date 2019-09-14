@@ -1,0 +1,731 @@
+# baseURI: http://siemens.com/functions/tariff-functions
+# imports: http://siemens.com/schemas/kps/cim-tariff
+# imports: http://siemens.com/schemas/kps/epic
+# imports: http://spinrdf.org/spinx
+# prefix: tf
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinx: <http://spinrdf.org/spinx#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix tf: <http://siemens.com/functions/tariff-functions#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/functions/tariff-functions>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/cim-tariff> ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports <http://spinrdf.org/spinx> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+tf:buildBaseURI
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "baseURI" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type afn:now ;
+              ] ;
+            sp:variable [
+                sp:varName "now" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:cast ;
+                sp:arg1 [
+                    sp:varName "now" ;
+                  ] ;
+                sp:arg2 xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "nowString" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:concat ;
+                sp:arg1 "http://siemens.com/" ;
+                sp:arg2 [
+                    sp:varName "nowString" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "baseURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+  skos:prefLabel "" ;
+.
+tf:computePrice
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:limit "1"^^xsd:long ;
+      sp:orderBy (
+          [
+            rdf:type sp:Desc ;
+            sp:expression [
+                sp:varName "start" ;
+              ] ;
+          ]
+        ) ;
+      sp:resultVariables (
+          [
+            sp:varName "price" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Bind ;
+            sp:expression spin:_arg2 ;
+            sp:variable [
+                sp:varName "dow" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:time ;
+                sp:arg1 spin:_arg3 ;
+              ] ;
+            sp:variable [
+                sp:varName "time" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "interval" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/cim-tariff#timeTariffIntervals> ;
+            sp:subject [
+                sp:varName "profile" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:eq ;
+                sp:arg1 [
+                    sp:varName "profile" ;
+                  ] ;
+                sp:arg2 spin:_arg1 ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "dow" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/cim-tariff#dow> ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "start" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/cim-tariff#hours> ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ge ;
+                sp:arg1 [
+                    sp:varName "time" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "start" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "period" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/cim-tariff#periodReference> ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "cti" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/cim-tariff#consumptionTariffIntervals> ;
+            sp:subject [
+                sp:varName "profile" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "period" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/cim-tariff#period> ;
+            sp:subject [
+                sp:varName "cti" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:TriplePath ;
+            sp:object [
+                sp:varName "price" ;
+              ] ;
+            sp:path [
+                rdf:type sp:SeqPath ;
+                sp:path1 [
+                    rdf:type sp:SeqPath ;
+                    sp:path1 <http://siemens.com/schemas/kps/cim-tariff#charges> ;
+                    sp:path2 <http://siemens.com/schemas/kps/cim-tariff#fixedPortion> ;
+                  ] ;
+                sp:path2 <http://siemens.com/schemas/kps/cim-tariff#value> ;
+              ] ;
+            sp:subject [
+                sp:varName "cti" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType <http://siemens.com/schemas/kps/cim-tariff#TariffProfile> ;
+      rdfs:comment "The TariffProfile" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "The day of week (all lowercase string)" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg3 ;
+      spl:valueType xsd:time ;
+      rdfs:comment "The time for which to compute the price (xsd:time)" ;
+    ] ;
+  rdfs:comment "Given a TariffProfile instance, the day of week (string) and an xsd:time, compute the price of electricity at that time." ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+  skos:prefLabel "" ;
+.
+tf:getDow
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "dayName" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Bind ;
+            sp:expression spin:_arg1 ;
+            sp:variable [
+                sp:varName "date" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:day ;
+                sp:arg1 [
+                    sp:varName "date" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "q" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:month ;
+                sp:arg1 [
+                    sp:varName "date" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "month" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:year ;
+                sp:arg1 [
+                    sp:varName "date" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "year" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Values ;
+            sp:bindings (
+                (
+                  01
+                  13
+                )
+                (
+                  02
+                  14
+                )
+                (
+                  03
+                  3
+                )
+                (
+                  04
+                  4
+                )
+                (
+                  05
+                  5
+                )
+                (
+                  06
+                  6
+                )
+                (
+                  07
+                  7
+                )
+                (
+                  08
+                  8
+                )
+                (
+                  09
+                  9
+                )
+                (
+                  10
+                  10
+                )
+                (
+                  11
+                  11
+                )
+                (
+                  12
+                  12
+                )
+              ) ;
+            sp:varNames (
+                "month"
+                "m"
+              ) ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:gt ;
+                    sp:arg1 [
+                        sp:varName "m" ;
+                      ] ;
+                    sp:arg2 12 ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:sub ;
+                    sp:arg1 [
+                        sp:varName "year" ;
+                      ] ;
+                    sp:arg2 1 ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "year" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "y" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:integer ;
+                sp:arg1 [
+                    rdf:type sp:floor ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            sp:varName "y" ;
+                          ] ;
+                        sp:arg2 100 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "J" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:integer ;
+                sp:arg1 [
+                    rdf:type sp:floor ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            sp:varName "J" ;
+                          ] ;
+                        sp:arg2 4 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "J4" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:mod ;
+                sp:arg1 [
+                    sp:varName "y" ;
+                  ] ;
+                sp:arg2 100 ;
+              ] ;
+            sp:variable [
+                sp:varName "K" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:integer ;
+                sp:arg1 [
+                    rdf:type sp:floor ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            sp:varName "K" ;
+                          ] ;
+                        sp:arg2 4 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "K4" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:integer ;
+                sp:arg1 [
+                    rdf:type sp:floor ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            rdf:type sp:mul ;
+                            sp:arg1 13 ;
+                            sp:arg2 [
+                                rdf:type sp:add ;
+                                sp:arg1 [
+                                    sp:varName "m" ;
+                                  ] ;
+                                sp:arg2 1 ;
+                              ] ;
+                          ] ;
+                        sp:arg2 5 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "x" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:add ;
+                sp:arg1 [
+                    rdf:type sp:add ;
+                    sp:arg1 [
+                        rdf:type sp:add ;
+                        sp:arg1 [
+                            rdf:type sp:add ;
+                            sp:arg1 [
+                                rdf:type sp:add ;
+                                sp:arg1 [
+                                    sp:varName "q" ;
+                                  ] ;
+                                sp:arg2 [
+                                    sp:varName "x" ;
+                                  ] ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "K" ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "K4" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "J4" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:mul ;
+                    sp:arg1 5 ;
+                    sp:arg2 [
+                        sp:varName "J" ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "res" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:mod ;
+                sp:arg1 [
+                    sp:varName "res" ;
+                  ] ;
+                sp:arg2 7 ;
+              ] ;
+            sp:variable [
+                sp:varName "h" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Values ;
+            sp:bindings (
+                (
+                  6
+                  "friday"
+                )
+                (
+                  5
+                  "thursday"
+                )
+                (
+                  4
+                  "wednesday"
+                )
+                (
+                  3
+                  "tuesday"
+                )
+                (
+                  2
+                  "monday"
+                )
+                (
+                  1
+                  "sunday"
+                )
+                (
+                  0
+                  "saturday"
+                )
+              ) ;
+            sp:varNames (
+                "h"
+                "dayName"
+              ) ;
+          ]
+        ) ;
+      rdfs:comment """Source: https://en.wikipedia.org/wiki/Zeller%27s_congruence
+Note:  Section Implementation in software""" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "The xsd:date string" ;
+    ] ;
+  rdfs:comment "Given an xsd:date, return a string with the day of the week (all lowercase)" ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+.
+tf:getTariffProfile
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "profile" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object <http://siemens.com/schemas/kps/cim-tariff#PricingStructure> ;
+                  sp:predicate rdf:type ;
+                  sp:subject [
+                      sp:varName "pricingStructure" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tariffCode" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/cim-tariff#code> ;
+                  sp:subject [
+                      sp:varName "pricingStructure" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tariff" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/cim-tariff#tariffs> ;
+                  sp:subject [
+                      sp:varName "pricingStructure" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Filter ;
+                  sp:expression [
+                      rdf:type sp:eq ;
+                      sp:arg1 [
+                          sp:varName "tariffCode" ;
+                        ] ;
+                      sp:arg2 spin:_arg1 ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "start" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/cim-tariff#startDate> ;
+                  sp:subject [
+                      sp:varName "tariff" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "end" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/cim-tariff#endDate> ;
+                  sp:subject [
+                      sp:varName "tariff" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "profile" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/cim-tariff#tariffProfile> ;
+                  sp:subject [
+                      sp:varName "tariff" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Bind ;
+                  sp:expression [
+                      rdf:type xsd:dateTime ;
+                      sp:arg1 [
+                          sp:varName "start" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "dstart" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Bind ;
+                  sp:expression [
+                      rdf:type xsd:dateTime ;
+                      sp:arg1 [
+                          sp:varName "end" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "dend" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Bind ;
+                  sp:expression [
+                      rdf:type xsd:dateTime ;
+                      sp:arg1 spin:_arg2 ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "date" ;
+                    ] ;
+                ]
+                [
+                  rdf:type sp:Filter ;
+                  sp:expression [
+                      rdf:type sp:and ;
+                      sp:arg1 [
+                          rdf:type sp:le ;
+                          sp:arg1 [
+                              sp:varName "dstart" ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "date" ;
+                            ] ;
+                        ] ;
+                      sp:arg2 [
+                          rdf:type sp:le ;
+                          sp:arg1 [
+                              sp:varName "date" ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "dend" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/cim-tariff> ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "Tariff code (string)" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "Date for which to determine the active tariff profile (xsd:date)" ;
+    ] ;
+  rdfs:comment "Given a tariff code (string) and an xsd:date, return the active tariffProfile instance" ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+.
+sp:arg6
+  rdf:type rdf:Property ;
+  rdfs:label "arg6" ;
+  rdfs:subPropertyOf sp:arg ;
+  skos:prefLabel "" ;
+.

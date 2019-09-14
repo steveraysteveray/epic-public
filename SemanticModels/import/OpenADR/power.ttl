@@ -1,0 +1,633 @@
+# baseURI: http://docs.oasis-open.org/ns/emix/2011/06/power
+# imports: http://docs.oasis-open.org/ns/emix/2011/06
+# imports: http://docs.oasis-open.org/ns/emix/2011/06/siscale
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/gml/3.2
+# prefix: power
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix emix: <http://docs.oasis-open.org/ns/emix/2011/06#> .
+@prefix gml: <http://www.opengis.net/gml/3.2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix power: <http://docs.oasis-open.org/ns/emix/2011/06/power#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix siscale: <http://docs.oasis-open.org/ns/emix/2011/06/siscale#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://docs.oasis-open.org/ns/emix/2011/06/power>
+  rdf:type owl:Ontology ;
+  owl:imports <http://docs.oasis-open.org/ns/emix/2011/06> ;
+  owl:imports <http://docs.oasis-open.org/ns/emix/2011/06/siscale> ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/gml/3.2> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://docs.oasis-open.org/ns/emix/2011/06/power, http://docs.oasis-open.org/ns/emix/2011/06/power, http://docs.oasis-open.org/ns/emix/2011/06/power, http://docs.oasis-open.org/ns/emix/2011/06/power, http://docs.oasis-open.org/ns/emix/2011/06/power, http://docs.oasis-open.org/ns/emix/2011/06/power"^^xsd:string ;
+.
+power:AggregatedPnode
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#aggregatedPnode" ;
+  rdfs:label "Aggregated pnode"^^xsd:string ;
+  rdfs:subClassOf power:AggregatedPnodeType ;
+.
+power:AggregatedPnodeType
+  rdf:type owl:Class ;
+  dc:description "An aggregated pricing node is a specialized type of pricing node used to model items such as System Zone, Default Price Zone, Custom Price Zone, Control Area, Aggregated Generation, Aggregated Participating Load, Aggregated Non-Participating Load, Trading Hub, DCA Zone"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#AggregatedPnodeType" ;
+  rdfs:label "Aggregated pnode type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is power:NodeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:node ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:node ;
+    ] ;
+.
+power:EndDeviceAsset
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#endDeviceAsset" ;
+  rdfs:label "End device asset"^^xsd:string ;
+  rdfs:subClassOf power:EndDeviceAssetType ;
+.
+power:EndDeviceAssetType
+  rdf:type owl:Class ;
+  dc:description "The EndDeviceAssets are the physical device or devices which could be meters or other types of devices that may be of interest"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#EndDeviceAssetType" ;
+  rdfs:label "End device asset type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is power:MridDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:mrid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:mrid ;
+    ] ;
+.
+power:EnergyApparent
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#energyApparent" ;
+  rdfs:label "Energy apparent"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:EnergyApparentType ;
+  rdfs:subClassOf power:EnergyItem ;
+.
+power:EnergyApparentType
+  rdf:type owl:Class ;
+  dc:description "Apparent Energy, measured in volt-ampere hours (VAh)"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#EnergyApparentType" ;
+  rdfs:label "Energy apparent type"^^xsd:string ;
+  rdfs:subClassOf power:EnergyItemType ;
+.
+power:EnergyItem
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#energyItem" ;
+  rdfs:label "Energy item"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:EnergyItemType ;
+.
+power:EnergyItemType
+  rdf:type owl:Class ;
+  dc:description "Base for the measurement of Energy"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#EnergyItemType" ;
+  rdfs:label "Energy item type"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBaseType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCode ;
+      owl:onProperty power:siScaleCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:siScaleCodeRef ;
+    ] ;
+.
+power:EnergyReactive
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#energyReactive" ;
+  rdfs:label "Energy reactive"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:EnergyItem ;
+  rdfs:subClassOf power:EnergyReactiveType ;
+.
+power:EnergyReactiveType
+  rdf:type owl:Class ;
+  dc:description "Reactive Energy, volt-amperes reactive hours (VARh)"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#EnergyReactiveType" ;
+  rdfs:label "Energy reactive type"^^xsd:string ;
+  rdfs:subClassOf power:EnergyItemType ;
+.
+power:EnergyReal
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#energyReal" ;
+  rdfs:label "Energy real"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:EnergyItem ;
+  rdfs:subClassOf power:EnergyRealType ;
+.
+power:EnergyRealType
+  rdf:type owl:Class ;
+  dc:description "Real Energy, Watt Hours (Wh)"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#EnergyRealType" ;
+  rdfs:label "Energy real type"^^xsd:string ;
+  rdfs:subClassOf power:EnergyItemType ;
+.
+power:MeterAsset
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#meterAsset" ;
+  rdfs:label "Meter asset"^^xsd:string ;
+  rdfs:subClassOf power:MeterAssetType ;
+.
+power:MeterAssetType
+  rdf:type owl:Class ;
+  dc:description "The MeterAsset is the physical device or devices that performs the role of the meter"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#MeterAssetType" ;
+  rdfs:label "Meter asset type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is power:MridDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:mrid ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:mrid ;
+    ] ;
+.
+power:MridDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Mrid datatype"^^xsd:string ;
+  rdfs:subClassOf power:MridTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype power:MridTypeDatatype ;
+    ] ;
+.
+power:MridTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "The mRID identifies the physical device that may be a CustomerMeter or other types of EndDevices."^^xsd:string ;
+  rdfs:label "Mrid type datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+power:NodeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Node datatype"^^xsd:string ;
+  rdfs:subClassOf power:NodeTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype power:NodeTypeDatatype ;
+    ] ;
+.
+power:NodeTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "The Node is a place where something changes (often ownership) or connects on the grid. Many nodes are associated with meters, but not all are."^^xsd:string ;
+  rdfs:label "Node type datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+power:Pnode
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#pnode" ;
+  rdfs:label "Pnode"^^xsd:string ;
+  rdfs:subClassOf power:PnodeType ;
+.
+power:PnodeType
+  rdf:type owl:Class ;
+  dc:description "A pricing node is directly associated with a connectivity node.  It is a pricing location for which market participants submit their bids, offers, buy/sell CRRs, and settle."^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#PnodeType" ;
+  rdfs:label "Pnode type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is power:NodeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:node ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:node ;
+    ] ;
+.
+power:PowerApparent
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#powerApparent" ;
+  rdfs:label "Power apparent"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:PowerApparentType ;
+  rdfs:subClassOf power:PowerItem ;
+.
+power:PowerApparentType
+  rdf:type owl:Class ;
+  dc:description "Apparent Power measured in volt-amperes (VA)"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#PowerApparentType" ;
+  rdfs:label "Power apparent type"^^xsd:string ;
+  rdfs:subClassOf power:PowerItemType ;
+.
+power:PowerAttributes
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#powerAttributes" ;
+  rdfs:label "Power attributes"^^xsd:string ;
+  rdfs:subClassOf power:PowerAttributesType ;
+.
+power:PowerAttributesType
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#PowerAttributesType" ;
+  rdfs:label "Power attributes type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:decimal. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:decimal."^^xsd:string ;
+      owl:allValuesFrom xsd:decimal ;
+      owl:onProperty power:hertz ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:decimal. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:decimal."^^xsd:string ;
+      owl:allValuesFrom xsd:decimal ;
+      owl:onProperty power:voltage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:boolean. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:boolean."^^xsd:string ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty power:ac ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:ac ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:hertz ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:voltage ;
+    ] ;
+.
+power:PowerItem
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#powerItem" ;
+  rdfs:label "Power item"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:PowerItemType ;
+.
+power:PowerItemType
+  rdf:type owl:Class ;
+  dc:description "Base for the measurement of Power"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#PowerItemType" ;
+  rdfs:label "Power item type"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBaseType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCode ;
+      owl:onProperty power:siScaleCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom power:PowerAttributes ;
+      owl:onProperty power:powerAttributesRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:powerAttributesRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:siScaleCodeRef ;
+    ] ;
+.
+power:PowerReactive
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#powerReactive" ;
+  rdfs:label "Power reactive"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:PowerItem ;
+  rdfs:subClassOf power:PowerReactiveType ;
+.
+power:PowerReactiveType
+  rdf:type owl:Class ;
+  dc:description "Reactive power, measured in volt-amperes reactive (VAR)"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#PowerReactiveType" ;
+  rdfs:label "Power reactive type"^^xsd:string ;
+  rdfs:subClassOf power:PowerItemType ;
+.
+power:PowerReal
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#powerReal" ;
+  rdfs:label "Power real"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:PowerItem ;
+  rdfs:subClassOf power:PowerRealType ;
+.
+power:PowerRealType
+  rdf:type owl:Class ;
+  dc:description "Real power measured in Watts (W) or Joules/second (J/s)"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#PowerRealType" ;
+  rdfs:label "Power real type"^^xsd:string ;
+  rdfs:subClassOf power:PowerItemType ;
+.
+power:ServiceDeliveryPoint
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#serviceDeliveryPoint" ;
+  rdfs:label "Service delivery point"^^xsd:string ;
+  rdfs:subClassOf power:ServiceDeliveryPointType ;
+.
+power:ServiceDeliveryPointType
+  rdf:type owl:Class ;
+  dc:description "Logical point on the network where the ownership of the service changes hands. It is one of potentially many service points within a ServiceLocation, delivering service in accordance with a CustomerAgreement. Used at the place where a meter may be installed."^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#ServiceDeliveryPointType" ;
+  rdfs:label "Service delivery point type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is power:NodeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:node ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:node ;
+    ] ;
+.
+power:ServiceLocation
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#serviceLocation" ;
+  rdfs:label "Service location"^^xsd:string ;
+  rdfs:subClassOf power:ServiceLocationType ;
+.
+power:ServiceLocationType
+  rdf:type owl:Class ;
+  dc:description "A customer ServiceLocation has one or more ServiceDeliveryPoint(s), which in turn relate to Meters. The location may be a point or a polygon, depending on the specific circumstances. For distribution, the ServiceLocation is typically the location of the utility customer's premise."^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#ServiceLocationType" ;
+  rdfs:label "Service location type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom gml:FeatureCollection ;
+      owl:onProperty power:featureCollectionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:featureCollectionRef ;
+    ] ;
+.
+power:TransportInterface
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#transportInterface" ;
+  rdfs:label "Transport interface"^^xsd:string ;
+  rdfs:subClassOf power:TransportInterfaceType ;
+.
+power:TransportInterfaceType
+  rdf:type owl:Class ;
+  dc:description "The Transport Interface delineates the edges at either end of a transport segment."^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#TransportInterfaceType" ;
+  rdfs:label "Transport interface type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is power:NodeTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:pointOfReceipt ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is power:NodeTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:pointOfDelivery ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:pointOfDelivery ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:pointOfReceipt ;
+    ] ;
+.
+power:Voltage
+  rdf:type owl:Class ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#voltage" ;
+  rdfs:label "Voltage"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBase ;
+  rdfs:subClassOf power:VoltageType ;
+.
+power:VoltageType
+  rdf:type owl:Class ;
+  dc:description "Voltage"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#VoltageType" ;
+  rdfs:label "Voltage type"^^xsd:string ;
+  rdfs:subClassOf emix:ItemBaseType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty power:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCode ;
+      owl:onProperty power:siScaleCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty power:siScaleCodeRef ;
+    ] ;
+.
+power:ac
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#ac" ;
+  rdfs:label "ac"^^xsd:string ;
+.
+power:featureCollectionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#FeatureCollection" ;
+  rdfs:label "feature collection ref"^^xsd:string ;
+.
+power:hertz
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#hertz" ;
+  rdfs:label "hertz"^^xsd:string ;
+.
+power:itemDescription
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#itemDescription" ;
+  rdfs:label "item description"^^xsd:string ;
+.
+power:itemUnits
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#itemUnits" ;
+  rdfs:label "item units"^^xsd:string ;
+.
+power:mrid
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#mrid" ;
+  rdfs:label "mrid"^^xsd:string ;
+.
+power:node
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#node" ;
+  rdfs:label "node"^^xsd:string ;
+.
+power:pointOfDelivery
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#pointOfDelivery" ;
+  rdfs:label "point of delivery"^^xsd:string ;
+.
+power:pointOfReceipt
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#pointOfReceipt" ;
+  rdfs:label "point of receipt"^^xsd:string ;
+.
+power:powerAttributesRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#powerAttributes" ;
+  rdfs:label "power attributes ref"^^xsd:string ;
+.
+power:siScaleCodeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/emix/2011/06/power#siScaleCode" ;
+  rdfs:label "si scale code ref"^^xsd:string ;
+.
+power:voltage
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/emix/2011/06/power#voltage" ;
+  rdfs:label "voltage"^^xsd:string ;
+.
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+gml:FeatureCollection
+  sxml:tag "http://www.opengis.net/gml/3.2#FeatureCollection" ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.

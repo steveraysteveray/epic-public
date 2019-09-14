@@ -1,0 +1,984 @@
+# baseURI: http://siemens.com/mapping/epic2oadr
+# imports: http://siemens.com/schemas/kps/epic
+# imports: http://siemens.com/schemas/kps/oadr_helper
+# imports: http://siemens.com/schemas/kps/oadr_tweaks
+# imports: http://siemens.com/spin/namespace_functions
+# imports: http://siemens.com/test/postReverseMappingFix
+# imports: http://topbraid.org/schema/schema-single-range
+# imports: http://topbraid.org/spin/spinmapl
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: epic2oadr
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix epic2oadr: <http://siemens.com/mapping/epic2oadr#> .
+@prefix namespace_functions: <http://siemens.com/spin/namespace_functions#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix spinmapl: <http://topbraid.org/spin/spinmapl#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/mapping/epic2oadr>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports <http://siemens.com/schemas/kps/oadr_helper> ;
+  owl:imports <http://siemens.com/schemas/kps/oadr_tweaks> ;
+  owl:imports <http://siemens.com/spin/namespace_functions> ;
+  owl:imports <http://siemens.com/test/postReverseMappingFix> ;
+  owl:imports <http://topbraid.org/schema/schema-single-range> ;
+  owl:imports <http://topbraid.org/spin/spinmapl> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+epic2oadr:CurrentValueType-CurrentValue
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#CurrentValueType> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#CurrentValue> ;
+.
+epic2oadr:EiMarketContextType-EventDescriptorType-eiMarketContext
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#EiMarketContextType> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#EventDescriptorType-eiMarketContext> ;
+.
+epic2oadr:EmixBaseType-EiActivePeriod
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#EmixBaseType> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#EiActivePeriod> ;
+.
+epic2oadr:EmixBaseType-Properties
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#EmixBaseType> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1 ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "ical-properties" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <urn:ietf:params:xml:ns:icalendar-2.0#Properties> ;
+.
+epic2oadr:Event-EiEvent
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:Event ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent> ;
+.
+epic2oadr:EventDescriptor-EventDescriptor
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:EventDescriptor ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#EventDescriptor> ;
+.
+epic2oadr:EventSignal-EiEventSignal
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:EventSignal ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#EiEventSignal> ;
+.
+epic2oadr:EventSignal-EiEventSignals
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:EventSignal ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "signals" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#EiEventSignals> ;
+.
+epic2oadr:IntervalDataContainer-Interval
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#IntervalDataContainer> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#Interval> ;
+.
+epic2oadr:IntervalDataContainer-Uid
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#IntervalDataContainer> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_2 ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "calendar_uid" ;
+      sp:arg3 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasInstanceUid> ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <urn:ietf:params:xml:ns:icalendar-2.0#Uid> ;
+.
+epic2oadr:MeasurementMetadataType-CurrencyPerKWh
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#MeasurementMetadataType> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://openadr.org/oadr-2.0b/2012/07#CurrencyPerKWh> ;
+.
+epic2oadr:MonetaryQuantity-PayloadFloat
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#MonetaryQuantity> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#PayloadFloat> ;
+.
+epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://siemens.com/schemas/kps/oadr_helper#OadrCreatePartyRegistration> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://openadr.org/oadr-2.0b/2012/07#OadrCreatePartyRegistration> ;
+.
+epic2oadr:OadrDistributeEvent-OadrDistributeEvent
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEvent> ;
+.
+epic2oadr:OadrDistributeEvent-OadrDistributeEventType-oadrEvent
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "oadrEvent" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEventType-oadrEvent> ;
+.
+epic2oadr:OadrPayload-OadrPayload
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://siemens.com/schemas/kps/oadr_helper#OadrPayload> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://openadr.org/oadr-2.0b/2012/07#OadrPayload> ;
+.
+epic2oadr:OadrSignedObject-OadrSignedObject
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://siemens.com/schemas/kps/oadr_helper#OadrSignedObject> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://openadr.org/oadr-2.0b/2012/07#OadrSignedObject> ;
+.
+epic2oadr:PayloadPrice-SignalPayload
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:PayloadPrice ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#SignalPayload> ;
+.
+epic2oadr:Sequence-Intervals
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#Sequence> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <urn:ietf:params:xml:ns:icalendar-2.0:stream#Intervals> ;
+.
+epic2oadr:Target-EiTarget
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:Target ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <http://docs.oasis-open.org/ns/energyinterop/201110#EiTarget> ;
+.
+epic2oadr:UTCDateTimeInterval-Dtend
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#UTCDateTimeInterval> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "dtEnd" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <urn:ietf:params:xml:ns:icalendar-2.0#Dtend> ;
+.
+epic2oadr:UTCDateTimeInterval-Dtstart
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#UTCDateTimeInterval> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "dtStart" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <urn:ietf:params:xml:ns:icalendar-2.0#Dtstart> ;
+.
+epic2oadr:UTCDateTimeInterval-Duration
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#UTCDateTimeInterval> ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "duration" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass <urn:ietf:params:xml:ns:icalendar-2.0#Duration> ;
+.
+epic:Event
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:Event-EiEvent ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#EiEvent> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:Event-EiEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:EmixBaseType-EiActivePeriod ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiActivePeriodRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eiActivePeriodRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:Event-EiEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEventDescriptorRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eventDescriptorRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:Event-EiEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:EventSignal-EiEventSignals ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiEventSignalRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eiEventSignalsRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:Event-EiEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:Target-EiTarget ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiTargetRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eiTargetRef> ;
+    ] ;
+.
+epic:EventDescriptor
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#EventDescriptor> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasCreatedDateTime> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#createdDateTime> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eventID> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventStatusRef> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eventStatus> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationDateTime> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#modificationDateTime> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#modificationNumber> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationReason> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#modificationReason> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPriority> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#priority> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasTestEvent> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#testEvent> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasVtnComment> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#vtnComment> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:EventDescriptor-EventDescriptor ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:EiMarketContextType-EventDescriptorType-eiMarketContext ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiMarketContextRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eiMarketContextRef> ;
+    ] ;
+.
+epic:EventSignal
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#EiEventSignal> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignals ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#EiEventSignals> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignals ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+        ] ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eiEventSignalRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalIDRef> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#signalID> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalName> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#signalName> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalTypeRef> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#signalType> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:CurrentValueType-CurrentValue ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasCurrentValueRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#currentValueRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:MeasurementMetadataType-CurrencyPerKWh ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasItemBaseRef" ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#currencyPerKWhRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:Sequence-Intervals ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEventIntervalRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#intervalsRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:EventSignal-EiEventSignal ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:Target-EiTarget ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiTargetRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#eiTargetRef> ;
+    ] ;
+.
+epic:PayloadPrice
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:PayloadPrice-SignalPayload ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#SignalPayload> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:PayloadPrice-SignalPayload ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:MonetaryQuantity-PayloadFloat ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasPriceRef/fsgim-emix:hasValueRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#payloadFloatRef> ;
+    ] ;
+.
+epic:Target
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:Target-EiTarget ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#EiTarget> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasGroupID> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#groupID> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasGroupName> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#groupName> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPartyID> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#partyID> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#resourceID> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasVenID> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#venID> ;
+    ] ;
+.
+<http://siemens.com/schemas/kps/oadr_helper#OadrCreatePartyRegistration>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression <http://openadr.org/oadr-2.0b/2012/07#OadrCreatePartyRegistration> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrHttpPullModel> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrHttpPullModel> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrProfileName> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrProfileName> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrReportOnly> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrReportOnly> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrTransportAddress> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrTransportAddress> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrTransportName> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrTransportName> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrVenName> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrVenName> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrXmlSignature> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrXmlSignature> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#requestIDRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasVenID> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#venIDRef> ;
+    ] ;
+.
+<http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:OadrDistributeEvent-OadrDistributeEvent ;
+      spinmap:expression <http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEvent> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:OadrDistributeEvent-OadrDistributeEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:OadrDistributeEvent-OadrDistributeEventType-oadrEvent ;
+        ] ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrEventRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:OadrDistributeEvent-OadrDistributeEventType-oadrEvent ;
+      spinmap:expression <http://openadr.org/oadr-2.0b/2012/07#OadrDistributeEventType-oadrEvent> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrDistributeEvent-OadrDistributeEvent ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110/payloads#requestID> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrDistributeEvent-OadrDistributeEvent ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasVtnID> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#vtnID> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:OadrDistributeEvent-OadrDistributeEventType-oadrEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:Event-EiEvent ;
+        ] ;
+      spinmap:sourcePath "oadr_helper:hasEiEventsRef" ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#eiEventRef> ;
+    ] ;
+.
+<http://siemens.com/schemas/kps/oadr_helper#OadrPayload>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:OadrPayload-OadrPayload ;
+      spinmap:expression <http://openadr.org/oadr-2.0b/2012/07#OadrPayload> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrPayload-OadrPayload ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:OadrSignedObject-OadrSignedObject ;
+        ] ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrSignedObjectRef> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrSignedObjectRef> ;
+    ] ;
+.
+<http://siemens.com/schemas/kps/oadr_helper#OadrSignedObject>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:OadrSignedObject-OadrSignedObject ;
+      spinmap:expression <http://openadr.org/oadr-2.0b/2012/07#OadrSignedObject> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrSignedObject-OadrSignedObject ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+        ] ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrCreatePartyRegistrationRef> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrCreatePartyRegistrationRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:OadrSignedObject-OadrSignedObject ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:OadrDistributeEvent-OadrDistributeEvent ;
+        ] ;
+      spinmap:sourcePredicate1 <http://siemens.com/schemas/kps/oadr_helper#hasOadrDistributeEventRef> ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#oadrDistributeEventRef> ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#CurrentValueType>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:CurrentValueType-CurrentValue ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#CurrentValue> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:CurrentValueType-CurrentValue ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:MonetaryQuantity-PayloadFloat ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasPayloadBaseRef/fsgim-einterop:hasPriceRef/fsgim-emix:hasValueRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#payloadFloatRef> ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#EiMarketContextType>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:EiMarketContextType-EventDescriptorType-eiMarketContext ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#EventDescriptorType-eiMarketContext> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:EiMarketContextType-EventDescriptorType-eiMarketContext ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasMarketContext> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/emix/2011/06#marketContext> ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#EmixBaseType>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:EmixBaseType-EiActivePeriod ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#EiActivePeriod> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:EmixBaseType-EiActivePeriod ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:EmixBaseType-Properties ;
+        ] ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#propertiesRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:EmixBaseType-Properties ;
+      spinmap:expression <urn:ietf:params:xml:ns:icalendar-2.0#Properties> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:EmixBaseType-Properties ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:UTCDateTimeInterval-Dtstart ;
+        ] ;
+      spinmap:sourcePath "fsgim-calendar:hasTimeReferenceRef" ;
+      spinmap:targetPredicate1 <urn:ietf:params:xml:ns:icalendar-2.0#dtstartRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:EmixBaseType-Properties ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:UTCDateTimeInterval-Duration ;
+        ] ;
+      spinmap:sourcePath "fsgim-calendar:hasTimeReferenceRef" ;
+      spinmap:targetPredicate1 <urn:ietf:params:xml:ns:icalendar-2.0#durationRef> ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#MeasurementMetadataType>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:MeasurementMetadataType-CurrencyPerKWh ;
+      spinmap:expression <http://openadr.org/oadr-2.0b/2012/07#CurrencyPerKWh> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:MeasurementMetadataType-CurrencyPerKWh ;
+      spinmap:expression [
+          rdf:type spinmapl:constantResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmapl:result <http://openadr.org/oadr-2.0b/2012/07#CIDT_currencyPerKWh> ;
+        ] ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#itemDescriptionRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:MeasurementMetadataType-CurrencyPerKWh ;
+      spinmap:expression [
+          rdf:type spinmapl:constantResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmapl:result <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#ISOACCCT_USD> ;
+        ] ;
+      spinmap:targetPredicate1 <http://openadr.org/oadr-2.0b/2012/07#itemUnitsRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:MeasurementMetadataType-CurrencyPerKWh ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#hasSiScaleCodeRef> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/emix/2011/06/siscale#siScaleCode> ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#MonetaryQuantity>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:MonetaryQuantity-PayloadFloat ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#PayloadFloat> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:MonetaryQuantity-PayloadFloat ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#hasQuantity> ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#value> ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#IntervalDataContainer>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:IntervalDataContainer-Interval ;
+      spinmap:expression <http://docs.oasis-open.org/ns/energyinterop/201110#Interval> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:IntervalDataContainer-Interval ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:IntervalDataContainer-Uid ;
+        ] ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#uidRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:IntervalDataContainer-Uid ;
+      spinmap:expression <urn:ietf:params:xml:ns:icalendar-2.0#Uid> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:IntervalDataContainer-Uid ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasInstanceUid> ;
+      spinmap:targetPredicate1 <urn:ietf:params:xml:ns:icalendar-2.0#text> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:IntervalDataContainer-Interval ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:PayloadPrice-SignalPayload ;
+        ] ;
+      spinmap:sourcePath "fsgim-sequence:hasAttachRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#signalPayloadRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:IntervalDataContainer-Interval ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:UTCDateTimeInterval-Dtstart ;
+        ] ;
+      spinmap:sourcePath "fsgim-calendar:hasTimeReferenceRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#dtstartRef> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:IntervalDataContainer-Interval ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:UTCDateTimeInterval-Duration ;
+        ] ;
+      spinmap:sourcePath "fsgim-calendar:hasTimeReferenceRef" ;
+      spinmap:targetPredicate1 <http://docs.oasis-open.org/ns/energyinterop/201110#durationRef> ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#Sequence>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:Sequence-Intervals ;
+      spinmap:expression <urn:ietf:params:xml:ns:icalendar-2.0:stream#Intervals> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2oadr:Sequence-Intervals ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2oadr:IntervalDataContainer-Interval ;
+        ] ;
+      spinmap:sourcePath "fsgim-sequence:hasIntervalsRef" ;
+      spinmap:targetPredicate1 <urn:ietf:params:xml:ns:icalendar-2.0:stream#intervalRef> ;
+    ] ;
+.
+<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#UTCDateTimeInterval>
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:UTCDateTimeInterval-Dtend ;
+      spinmap:expression <urn:ietf:params:xml:ns:icalendar-2.0#Dtend> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:UTCDateTimeInterval-Dtstart ;
+      spinmap:expression <urn:ietf:params:xml:ns:icalendar-2.0#Dtstart> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2oadr:UTCDateTimeInterval-Duration ;
+      spinmap:expression <urn:ietf:params:xml:ns:icalendar-2.0#Duration> ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:UTCDateTimeInterval-Dtend ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+      spinmap:targetPredicate1 <urn:ietf:params:xml:ns:icalendar-2.0#date-time> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:UTCDateTimeInterval-Dtstart ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+      spinmap:targetPredicate1 <urn:ietf:params:xml:ns:icalendar-2.0#date-time> ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2oadr:UTCDateTimeInterval-Duration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDuration> ;
+      spinmap:targetPredicate1 <urn:ietf:params:xml:ns:icalendar-2.0#duration> ;
+    ] ;
+.

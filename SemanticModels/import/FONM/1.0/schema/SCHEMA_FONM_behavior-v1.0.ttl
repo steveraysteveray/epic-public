@@ -1,0 +1,307 @@
+# baseURI: http://fonm.org/1.0/schema/process
+# imports: http://fonm.org/1.0/schema/physobj
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://fonm.org/vocab/datatype#> .
+@prefix dtypedtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sc: <http://data.nasa.gov/core/schema/sc#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/1.0/schema/process>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The FONM 'Process' ontology builds on the FONM physobj ontology to describe the state changes which embody behavior, such as position changes describing motion. FONM processes are sequenced and aggregated to represent function and are used by the FONM function model to represent primitive functions and machines." ;
+  dc:subject "Mechanical behaviors" ;
+  dc:title "The FONM Process Ontology" ;
+  vaem:hasCatalogEntry voag:FONM-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This ontology is to model dynamic state changes as behavior." ;
+  vaem:namespace "http://fonm.org/schema/process#" ;
+  vaem:namespacePrefix "fonm" ;
+  vaem:specificity "1"^^xsd:int ;
+  vaem:url "http://fonm.org/1.0/schema/process"^^xsd:anyURI ;
+  rdfs:label "FONM Process Ontology" ;
+  owl:imports <http://fonm.org/1.0/schema/physobj> ;
+  owl:versionInfo "$Id: SCHEMA_FONM_behavior-v1.0.ttl 4989 2018-08-23 21:56:40Z JackHodges $" ;
+.
+fonm:DeformProcess
+  rdf:type owl:Class ;
+  fonm:enabledBy fonm:AForceState ;
+  fonm:enabledBy fonm:IForceState ;
+  fonm:enabledBy fonm:RestraintState ;
+  fonm:enabledBy fonm:ShapeState ;
+  fonm:enabledBy fonm:SizeState ;
+  fonm:resultsIn fonm:ShapeState ;
+  fonm:resultsIn fonm:SizeState ;
+  rdfs:comment "Deform describes a process that results in an object being deformed beyond its elastic limit, i.e., permanent deformation. In mechanics, this amounts to a change of size or shape." ;
+  rdfs:label "Deform Process" ;
+  rdfs:subClassOf fonm:Process ;
+.
+fonm:MotionProcess
+  rdf:type owl:Class ;
+  fonm:enabledBy fonm:PositionState ;
+  fonm:resultsIn fonm:PositionState ;
+  ssf:disabledBy fonm:RestraintState ;
+  rdfs:comment """The Motion process produces changes in position. does not specify the object’s path, only that the ob- ject’s position will change and what the dimension will be. Motion specializations are represented by further specifying the type of applied force, the type and location of object restraints, or other physical property values. By specializing the Motion enabling con- ditions, the process roles are specialized and path information can be described:
+
+Fall, Rotate, Swing, Roll, Spin, Linear, Slide""" ;
+  rdfs:label "Motion Process" ;
+  rdfs:subClassOf fonm:Process ;
+.
+fonm:Process
+  rdf:type owl:Class ;
+  rdfs:comment "Processes describe mechanical behavior. They are enabled by states (at least 1) and result in states (possibly 0). A process has both a 'src' and a 'dst' (source and destination) Location. To align with Function, a process can have a 'to' and 'from' if it happens to be at the beginning or ending of a Function. The physical object associated with a Process is represented by the Locations on the object where the behavior takes place. Maybe the model should be changed to make the object a first-class property of the class." ;
+  rdfs:label "Process" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:DimDir ;
+      owl:onProperty fonm:hasDimr ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Region ;
+      owl:onProperty fonm:hasDst ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Region ;
+      owl:onProperty fonm:hasSrc ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:State ;
+      owl:onProperty fonm:enabledBy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:State ;
+      owl:onProperty fonm:hasFrom ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:State ;
+      owl:onProperty fonm:hasTo ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:State ;
+      owl:onProperty fonm:resultsIn ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimr ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDst ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasFrom ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasSrc ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasTo ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasInst ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:disabledBy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:resultDisables ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:resultEnables ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:resultsIn ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:enabledBy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:resultDisables ;
+      owl:someValuesFrom fonm:Function ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:resultDisables ;
+      owl:someValuesFrom fonm:Process ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:resultEnables ;
+      owl:someValuesFrom fonm:Function ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:resultEnables ;
+      owl:someValuesFrom fonm:Process ;
+    ] ;
+  skos:prefLabel "Process" ;
+.
+fonm:RestrainProcess
+  rdf:type owl:Class ;
+  fonm:enabledBy fonm:RestraintState ;
+  fonm:resultsIn fonm:RestraintState ;
+  rdfs:comment """Restrain describes the disablement of motion. It is generally associated with contact between objects, but contact is a state and not a process, so Restrain is used to provide temporal stability to objects in contact or connection. This is because motion is disabled only for as long as contact or connection is maintained, so these states can be reasoned to be the result of a [continuous] process. The result of a Restrain process is one or more resrtricted motion degrees of freedom. That is, dimension/direction pairs. Generally there are 6 motion degrees of freedom associated with the cartesian coordinate system: length (x), width (y), height (z), about-length (roll), about-width (pitch), and about-height (yaw). These are the dimensions. The direction can be positive or negative and, if both, the entire dimension is restrained:
+
+Hang, Interfere, Contact, Contain, Connect, Support, Fit""" ;
+  rdfs:label "Restrain Process" ;
+  rdfs:subClassOf fonm:Process ;
+.
+fonm:StoreProcess
+  rdf:type owl:Class ;
+  fonm:enabledBy fonm:AForceState ;
+  fonm:enabledBy fonm:IForceState ;
+  fonm:enabledBy fonm:RestraintState ;
+  fonm:resultsIn fonm:IForceState ;
+  rdfs:comment "Store is a process that represents energy storage in an object, or elastic deformation which, when an external force is removed, is reversed. Springs employ the Store process." ;
+  rdfs:label "Store Process" ;
+  rdfs:subClassOf fonm:Process ;
+.
+fonm:TransformMagnify
+  rdf:type owl:Class ;
+  rdfs:label "Transform magnify" ;
+  rdfs:subClassOf fonm:TransformProcess ;
+  skos:prefLabel "Transform magnify" ;
+.
+fonm:TransformProcess
+  rdf:type owl:Class ;
+  fonm:enabledBy fonm:AForceState ;
+  fonm:enabledBy fonm:PositionState ;
+  fonm:enabledBy fonm:RestraintState ;
+  fonm:resultsIn fonm:AForceState ;
+  rdfs:comment """Transform is used to represent the transformation of force. It can be from linear to rotational, it can be transformed quantity (to increase or reduce), it can be to change location or direction. All of these are examples of Transform.
+
+Like Restrain, Transform always involves two objects. One object is either in motion or is forced. This object comes into contact with the other object and transmits force to it.
+
+The generic Transform process can be used to represent other force transforma- tions by specializing the object statics of the transmitting object or the perturbation pre- conditions:
+
+Transmit, Prtod, Nudge, Reverse, Translate, Magnify, Reduce""" ;
+  rdfs:label "Transform Process" ;
+  rdfs:subClassOf fonm:Process ;
+.
+fonm:TransformTransmit
+  rdf:type owl:Class ;
+  rdfs:label "Transform transmit" ;
+  rdfs:subClassOf fonm:TransformProcess ;
+  skos:prefLabel "Transform transmit" ;
+.
+fonm:hasDst
+  rdf:type rdf:Property ;
+  rdfs:domain fonm:Process ;
+  rdfs:label "has dst - a destination location, which can be a region or a phys-obj" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Region
+          fonm:Phys-Obj
+        ) ;
+    ] ;
+.
+fonm:hasFrom
+  rdf:type rdf:Property ;
+  rdfs:domain fonm:Process ;
+  rdfs:label "has from" ;
+  rdfs:range fonm:State ;
+.
+fonm:hasInst
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Process ;
+  rdfs:label "has inst" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Phys-Obj
+          fonm:Region
+        ) ;
+    ] ;
+  skos:prefLabel "has instrumental object" ;
+.
+fonm:hasSrc
+  rdf:type rdf:Property ;
+  rdfs:domain fonm:Process ;
+  rdfs:label "has src - an initial location, which can be a region or a phys-obj" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Region
+          fonm:Phys-Obj
+        ) ;
+    ] ;
+.
+fonm:hasTo
+  rdf:type rdf:Property ;
+  rdfs:domain fonm:Process ;
+  rdfs:label "has to" ;
+  rdfs:range fonm:State ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.

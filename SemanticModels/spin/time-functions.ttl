@@ -1,0 +1,2290 @@
+# baseURI: http://siemens.com/functions/time-functions
+# imports: http://siemens.com/schemas/kps/epic
+# imports: http://spinrdf.org/spinx
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# prefix: time-functions
+
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinx: <http://spinrdf.org/spinx#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix tf: <http://siemens.com/functions/tariff-functions#> .
+@prefix time-functions: <http://siemens.com/functions/time-functions#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/functions/time-functions>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports <http://spinrdf.org/spinx> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+time-functions:DurationStrToMS
+  rdf:type spin:Function ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:durationString ;
+      spl:valueType xsd:string ;
+      rdfs:comment "The durationString as described in OpenADR internal element e.g. \"PT30M\"" ;
+    ] ;
+  spin:returnType xsd:integer ;
+  spinx:javaScriptFile "durationToSeconds.js" ;
+  rdfs:subClassOf spin:Functions ;
+.
+time-functions:IsDSTinEffect
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "dst" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "tzoffset" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasTzOffset> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "start" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstStartRuleRef> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "end" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstEndRuleRef> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "dstoffsetSec" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstOffset> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:string ;
+                sp:arg1 [
+                    rdf:type spif:dateFormat ;
+                    sp:arg1 spin:_arg1 ;
+                    sp:arg2 "yyyy" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "year" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:and ;
+                sp:arg1 [
+                    rdf:type sp:ge ;
+                    sp:arg1 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 spin:_arg1 ;
+                      ] ;
+                    sp:arg2 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 [
+                            rdf:type time-functions:calculateRuleDateTime ;
+                            sp:arg1 [
+                                sp:varName "start" ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "year" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 spin:_arg1 ;
+                      ] ;
+                    sp:arg2 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 [
+                            rdf:type time-functions:calculateRuleDateTime ;
+                            sp:arg1 [
+                                sp:varName "end" ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "year" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dst" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:dateTime ;
+      rdfs:comment "Local dateTime" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "Timezone " ;
+    ] ;
+  rdfs:comment "Checks if DST is in Effect based on timezone rules" ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+  skos:prefLabel "" ;
+.
+time-functions:LocaltoUTC
+  rdf:type spin:Functions ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "UTCDateTime" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "tzoffset" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasTzOffset> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "start" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstStartRuleRef> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "end" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstEndRuleRef> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "dstoffsetSec" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstOffset> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        rdf:type xsd:int ;
+                        sp:arg1 [
+                            sp:varName "tzoffset" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 0 ;
+                  ] ;
+                sp:arg2 "-" ;
+                sp:arg3 "" ;
+              ] ;
+            sp:variable [
+                sp:varName "sign" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type fn:abs ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        sp:varName "tzoffset" ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "abOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:string ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            sp:varName "abOffset" ;
+                          ] ;
+                        sp:arg2 3600 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "hourOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:duration ;
+                sp:arg1 [
+                    rdf:type sp:concat ;
+                    sp:arg1 [
+                        sp:varName "sign" ;
+                      ] ;
+                    sp:arg2 "P0DT" ;
+                    sp:arg3 [
+                        sp:varName "hourOffset" ;
+                      ] ;
+                    sp:arg4 "H" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "tOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:string ;
+                sp:arg1 [
+                    rdf:type spif:dateFormat ;
+                    sp:arg1 spin:_arg1 ;
+                    sp:arg2 "yyyy" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "year" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:and ;
+                sp:arg1 [
+                    rdf:type sp:ge ;
+                    sp:arg1 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 spin:_arg1 ;
+                      ] ;
+                    sp:arg2 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 [
+                            rdf:type time-functions:calculateRuleDateTime ;
+                            sp:arg1 [
+                                sp:varName "start" ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "year" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 spin:_arg1 ;
+                      ] ;
+                    sp:arg2 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 [
+                            rdf:type time-functions:calculateRuleDateTime ;
+                            sp:arg1 [
+                                sp:varName "end" ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "year" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dst" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        rdf:type xsd:int ;
+                        sp:arg1 [
+                            sp:varName "dstoffsetSec" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 0 ;
+                  ] ;
+                sp:arg2 "-" ;
+                sp:arg3 "" ;
+              ] ;
+            sp:variable [
+                sp:varName "dstsign" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type fn:abs ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        sp:varName "dstoffsetSec" ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "abDstOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:string ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            sp:varName "abDstOffset" ;
+                          ] ;
+                        sp:arg2 3600 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dstOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:duration ;
+                sp:arg1 [
+                    rdf:type sp:concat ;
+                    sp:arg1 [
+                        sp:varName "dstsign" ;
+                      ] ;
+                    sp:arg2 "PT" ;
+                    sp:arg3 [
+                        sp:varName "dstOffset" ;
+                      ] ;
+                    sp:arg4 "H" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dtOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:sub ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 [
+                    sp:varName "tOffset" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "almostUTCTime" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:parseDate ;
+                sp:arg1 [
+                    sp:varName "almostUTCTime" ;
+                  ] ;
+                sp:arg2 "yyyy-MM-dd'T'HH:mm:ss" ;
+              ] ;
+            sp:variable [
+                sp:varName "result" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    sp:varName "dst" ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:sub ;
+                    sp:arg1 [
+                        sp:varName "result" ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "dtOffset" ;
+                      ] ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "result" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "UTCpartial" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:concat ;
+                sp:arg1 [
+                    rdf:type xsd:string ;
+                    sp:arg1 [
+                        sp:varName "UTCpartial" ;
+                      ] ;
+                  ] ;
+                sp:arg2 "Z" ;
+              ] ;
+            sp:variable [
+                sp:varName "UTCstring" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:dateTime ;
+                sp:arg1 [
+                    sp:varName "UTCstring" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "UTCDateTime" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:dateTime ;
+      rdfs:comment "Local dateTime" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "Timezone " ;
+    ] ;
+  rdfs:comment "Converts a local datetime to a UTC datetime, given arg1: local datetime, and arg2: Timezone (instance of http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#LocalTimeParameters)" ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+  skos:prefLabel "" ;
+.
+time-functions:UTCtoLocal
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "localDateTime" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "tzoffset" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasTzOffset> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "start" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstStartRuleRef> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "end" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstEndRuleRef> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        rdf:type xsd:int ;
+                        sp:arg1 [
+                            sp:varName "tzoffset" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 0 ;
+                  ] ;
+                sp:arg2 "-" ;
+                sp:arg3 "" ;
+              ] ;
+            sp:variable [
+                sp:varName "sign" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type fn:abs ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        sp:varName "tzoffset" ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "abOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:string ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            sp:varName "abOffset" ;
+                          ] ;
+                        sp:arg2 3600 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "hourOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:duration ;
+                sp:arg1 [
+                    rdf:type sp:concat ;
+                    sp:arg1 [
+                        sp:varName "sign" ;
+                      ] ;
+                    sp:arg2 "P0DT" ;
+                    sp:arg3 [
+                        sp:varName "hourOffset" ;
+                      ] ;
+                    sp:arg4 "H" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "tOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:add ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 [
+                    sp:varName "tOffset" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "localTime" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:parseDate ;
+                sp:arg1 [
+                    sp:varName "localTime" ;
+                  ] ;
+                sp:arg2 "yyyy-MM-dd'T'HH:mm:ss" ;
+              ] ;
+            sp:variable [
+                sp:varName "result" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:string ;
+                sp:arg1 [
+                    rdf:type spif:dateFormat ;
+                    sp:arg1 [
+                        sp:varName "localTime" ;
+                      ] ;
+                    sp:arg2 "yyyy" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "year" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:and ;
+                sp:arg1 [
+                    rdf:type sp:ge ;
+                    sp:arg1 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 [
+                            sp:varName "result" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 [
+                            rdf:type time-functions:calculateRuleDateTime ;
+                            sp:arg1 [
+                                sp:varName "start" ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "year" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 [
+                            sp:varName "result" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        rdf:type xsd:dateTime ;
+                        sp:arg1 [
+                            rdf:type time-functions:calculateRuleDateTime ;
+                            sp:arg1 [
+                                sp:varName "end" ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "year" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dst" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "dstoffsetSec" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstOffset> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:lt ;
+                    sp:arg1 [
+                        rdf:type xsd:int ;
+                        sp:arg1 [
+                            sp:varName "dstoffsetSec" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 0 ;
+                  ] ;
+                sp:arg2 "-" ;
+                sp:arg3 "" ;
+              ] ;
+            sp:variable [
+                sp:varName "dstsign" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type fn:abs ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        sp:varName "dstoffsetSec" ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "abDstOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:string ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            sp:varName "abDstOffset" ;
+                          ] ;
+                        sp:arg2 3600 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dstOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:duration ;
+                sp:arg1 [
+                    rdf:type sp:concat ;
+                    sp:arg1 [
+                        sp:varName "dstsign" ;
+                      ] ;
+                    sp:arg2 "PT" ;
+                    sp:arg3 [
+                        sp:varName "dstOffset" ;
+                      ] ;
+                    sp:arg4 "H" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dtOffset" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    sp:varName "dst" ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:add ;
+                    sp:arg1 [
+                        sp:varName "result" ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "dtOffset" ;
+                      ] ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "result" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "localDateTime" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:dateTime ;
+      rdfs:comment "UTC datetime" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "Timezone" ;
+    ] ;
+  rdfs:comment "Converts a UTC datetime to a local datetime, given arg1: UTC datetime, and arg2: Timezone (instance of http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#LocalTimeParameters)" ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+.
+time-functions:calculateIterationsCounter
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "counter" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:mul ;
+                sp:arg1 [
+                    rdf:type sp:mul ;
+                    sp:arg1 60 ;
+                    sp:arg2 60 ;
+                  ] ;
+                sp:arg2 1000 ;
+              ] ;
+            sp:variable [
+                sp:varName "oneHourDuration" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type time-functions:createDateTime ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 0 ;
+              ] ;
+            sp:variable [
+                sp:varName "start" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:parseDate ;
+                sp:arg1 [
+                    sp:varName "start" ;
+                  ] ;
+                sp:arg2 "yyyy-MM-dd'T'HH:mm:ss" ;
+              ] ;
+            sp:variable [
+                sp:varName "firstInterval" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type time-functions:createDateTime ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 [
+                    rdf:type sp:mul ;
+                    sp:arg1 23 ;
+                    sp:arg2 [
+                        sp:varName "oneHourDuration" ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "end" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:parseDate ;
+                sp:arg1 [
+                    sp:varName "end" ;
+                  ] ;
+                sp:arg2 "yyyy-MM-dd'T'HH:mm:ss" ;
+              ] ;
+            sp:variable [
+                sp:varName "lastInterval" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type time-functions:IsDSTinEffect ;
+                sp:arg1 [
+                    sp:varName "firstInterval" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "pacificTimezone" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "fDST" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type time-functions:IsDSTinEffect ;
+                sp:arg1 [
+                    sp:varName "lastInterval" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "pacificTimezone" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "lDST" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Values ;
+            sp:bindings (
+                (
+                  "true"^^xsd:boolean
+                  "true"^^xsd:boolean
+                  23
+                )
+                (
+                  "true"^^xsd:boolean
+                  "false"^^xsd:boolean
+                  24
+                )
+                (
+                  "false"^^xsd:boolean
+                  "true"^^xsd:boolean
+                  22
+                )
+                (
+                  "false"^^xsd:boolean
+                  "false"^^xsd:boolean
+                  23
+                )
+              ) ;
+            sp:varNames (
+                "fDST"
+                "lDST"
+                "counter"
+              ) ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:dateTime ;
+      rdfs:comment "Local dateTime" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "Timezone " ;
+    ] ;
+  rdfs:comment "Calculates the total number of iterations needed to generate a schedule with the first interval starting at 00:00 and the last interval starting at 23:00, given arg1: date as a string, and arg2: Timezone (instance of http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#LocalTimeParameters) so that the local time will begin at 00:00:00 (midnight)." ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+  skos:prefLabel "" ;
+.
+time-functions:calculateRuleDateTime
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "localDateTime" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "month" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasMonthRef> ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:eq ;
+                    sp:arg1 [
+                        sp:varName "month" ;
+                      ] ;
+                    sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_January> ;
+                  ] ;
+                sp:arg2 "01" ;
+                sp:arg3 [
+                    rdf:type sp:if ;
+                    sp:arg1 [
+                        rdf:type sp:eq ;
+                        sp:arg1 [
+                            sp:varName "month" ;
+                          ] ;
+                        sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_February> ;
+                      ] ;
+                    sp:arg2 "02" ;
+                    sp:arg3 [
+                        rdf:type sp:if ;
+                        sp:arg1 [
+                            rdf:type sp:eq ;
+                            sp:arg1 [
+                                sp:varName "month" ;
+                              ] ;
+                            sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_March> ;
+                          ] ;
+                        sp:arg2 "03" ;
+                        sp:arg3 [
+                            rdf:type sp:if ;
+                            sp:arg1 [
+                                rdf:type sp:eq ;
+                                sp:arg1 [
+                                    sp:varName "month" ;
+                                  ] ;
+                                sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_April> ;
+                              ] ;
+                            sp:arg2 "04" ;
+                            sp:arg3 [
+                                rdf:type sp:if ;
+                                sp:arg1 [
+                                    rdf:type sp:eq ;
+                                    sp:arg1 [
+                                        sp:varName "month" ;
+                                      ] ;
+                                    sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_May> ;
+                                  ] ;
+                                sp:arg2 "05" ;
+                                sp:arg3 [
+                                    rdf:type sp:if ;
+                                    sp:arg1 [
+                                        rdf:type sp:eq ;
+                                        sp:arg1 [
+                                            sp:varName "month" ;
+                                          ] ;
+                                        sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_June> ;
+                                      ] ;
+                                    sp:arg2 "06" ;
+                                    sp:arg3 [
+                                        rdf:type sp:if ;
+                                        sp:arg1 [
+                                            rdf:type sp:eq ;
+                                            sp:arg1 [
+                                                sp:varName "month" ;
+                                              ] ;
+                                            sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_July> ;
+                                          ] ;
+                                        sp:arg2 "07" ;
+                                        sp:arg3 [
+                                            rdf:type sp:if ;
+                                            sp:arg1 [
+                                                rdf:type sp:eq ;
+                                                sp:arg1 [
+                                                    sp:varName "month" ;
+                                                  ] ;
+                                                sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_August> ;
+                                              ] ;
+                                            sp:arg2 "08" ;
+                                            sp:arg3 [
+                                                rdf:type sp:if ;
+                                                sp:arg1 [
+                                                    rdf:type sp:eq ;
+                                                    sp:arg1 [
+                                                        sp:varName "month" ;
+                                                      ] ;
+                                                    sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_September> ;
+                                                  ] ;
+                                                sp:arg2 "09" ;
+                                                sp:arg3 [
+                                                    rdf:type sp:if ;
+                                                    sp:arg1 [
+                                                        rdf:type sp:eq ;
+                                                        sp:arg1 [
+                                                            sp:varName "month" ;
+                                                          ] ;
+                                                        sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_October> ;
+                                                      ] ;
+                                                    sp:arg2 "10" ;
+                                                    sp:arg3 [
+                                                        rdf:type sp:if ;
+                                                        sp:arg1 [
+                                                            rdf:type sp:eq ;
+                                                            sp:arg1 [
+                                                                sp:varName "month" ;
+                                                              ] ;
+                                                            sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_November> ;
+                                                          ] ;
+                                                        sp:arg2 "11" ;
+                                                        sp:arg3 [
+                                                            rdf:type sp:if ;
+                                                            sp:arg1 [
+                                                                rdf:type sp:eq ;
+                                                                sp:arg1 [
+                                                                    sp:varName "month" ;
+                                                                  ] ;
+                                                                sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#MT_December> ;
+                                                              ] ;
+                                                            sp:arg2 "12" ;
+                                                            sp:arg3 "" ;
+                                                          ] ;
+                                                      ] ;
+                                                  ] ;
+                                              ] ;
+                                          ] ;
+                                      ] ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "monthString" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "occ" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasRuleRef> ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:eq ;
+                    sp:arg1 [
+                        sp:varName "occ" ;
+                      ] ;
+                    sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#DR_FirstOccurance> ;
+                  ] ;
+                sp:arg2 0 ;
+                sp:arg3 [
+                    rdf:type sp:if ;
+                    sp:arg1 [
+                        rdf:type sp:eq ;
+                        sp:arg1 [
+                            sp:varName "occ" ;
+                          ] ;
+                        sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#DR_SecondOccurence> ;
+                      ] ;
+                    sp:arg2 1 ;
+                    sp:arg3 [
+                        rdf:type sp:if ;
+                        sp:arg1 [
+                            rdf:type sp:eq ;
+                            sp:arg1 [
+                                sp:varName "occ" ;
+                              ] ;
+                            sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#DR_ThirdOccurence> ;
+                          ] ;
+                        sp:arg2 2 ;
+                        sp:arg3 [
+                            rdf:type sp:if ;
+                            sp:arg1 [
+                                rdf:type sp:eq ;
+                                sp:arg1 [
+                                    sp:varName "occ" ;
+                                  ] ;
+                                sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#DR_FourthOccurrence> ;
+                              ] ;
+                            sp:arg2 3 ;
+                            sp:arg3 [
+                                rdf:type sp:if ;
+                                sp:arg1 [
+                                    rdf:type sp:eq ;
+                                    sp:arg1 [
+                                        sp:varName "occ" ;
+                                      ] ;
+                                    sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#DR_FifthOccurrence> ;
+                                  ] ;
+                                sp:arg2 4 ;
+                                sp:arg3 "" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "occCount" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "dow" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDowRef> ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:eq ;
+                    sp:arg1 [
+                        sp:varName "dow" ;
+                      ] ;
+                    sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#WT_Sunday> ;
+                  ] ;
+                sp:arg2 "sunday" ;
+                sp:arg3 [
+                    rdf:type sp:if ;
+                    sp:arg1 [
+                        rdf:type sp:eq ;
+                        sp:arg1 [
+                            sp:varName "dow" ;
+                          ] ;
+                        sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#WT_Monday> ;
+                      ] ;
+                    sp:arg2 "monday" ;
+                    sp:arg3 [
+                        rdf:type sp:if ;
+                        sp:arg1 [
+                            rdf:type sp:eq ;
+                            sp:arg1 [
+                                sp:varName "dow" ;
+                              ] ;
+                            sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#WT_Tuesday> ;
+                          ] ;
+                        sp:arg2 "tuesday" ;
+                        sp:arg3 [
+                            rdf:type sp:if ;
+                            sp:arg1 [
+                                rdf:type sp:eq ;
+                                sp:arg1 [
+                                    sp:varName "dow" ;
+                                  ] ;
+                                sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#WT_Wednesday> ;
+                              ] ;
+                            sp:arg2 "wednesday" ;
+                            sp:arg3 [
+                                rdf:type sp:if ;
+                                sp:arg1 [
+                                    rdf:type sp:eq ;
+                                    sp:arg1 [
+                                        sp:varName "dow" ;
+                                      ] ;
+                                    sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#WT_Thursday> ;
+                                  ] ;
+                                sp:arg2 "thursday" ;
+                                sp:arg3 [
+                                    rdf:type sp:if ;
+                                    sp:arg1 [
+                                        rdf:type sp:eq ;
+                                        sp:arg1 [
+                                            sp:varName "dow" ;
+                                          ] ;
+                                        sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#WT_Friday> ;
+                                      ] ;
+                                    sp:arg2 "friday" ;
+                                    sp:arg3 [
+                                        rdf:type sp:if ;
+                                        sp:arg1 [
+                                            rdf:type sp:eq ;
+                                            sp:arg1 [
+                                                sp:varName "dow" ;
+                                              ] ;
+                                            sp:arg2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#WT_Saturday> ;
+                                          ] ;
+                                        sp:arg2 "saturday" ;
+                                        sp:arg3 "" ;
+                                      ] ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dowCount" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:duration ;
+                sp:arg1 "P1D" ;
+              ] ;
+            sp:variable [
+                sp:varName "inc" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:duration ;
+                sp:arg1 "P7D" ;
+              ] ;
+            sp:variable [
+                sp:varName "addWeek" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:date ;
+                sp:arg1 [
+                    rdf:type sp:concat ;
+                    sp:arg1 spin:_arg2 ;
+                    sp:arg2 "-" ;
+                    sp:arg3 [
+                        sp:varName "monthString" ;
+                      ] ;
+                    sp:arg4 "-01" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "targetDate" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type tf:getDow ;
+                sp:arg1 [
+                    sp:varName "targetDate" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "startDay" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:eq ;
+                    sp:arg1 [
+                        sp:varName "startDay" ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "dowCount" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "targetDate" ;
+                  ] ;
+                sp:arg3 [
+                    rdf:type sp:if ;
+                    sp:arg1 [
+                        rdf:type sp:eq ;
+                        sp:arg1 [
+                            rdf:type tf:getDow ;
+                            sp:arg1 [
+                                rdf:type sp:add ;
+                                sp:arg1 [
+                                    sp:varName "targetDate" ;
+                                  ] ;
+                                sp:arg2 [
+                                    sp:varName "inc" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "dowCount" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        rdf:type sp:add ;
+                        sp:arg1 [
+                            sp:varName "targetDate" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "inc" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 [
+                        rdf:type sp:if ;
+                        sp:arg1 [
+                            rdf:type sp:eq ;
+                            sp:arg1 [
+                                rdf:type tf:getDow ;
+                                sp:arg1 [
+                                    rdf:type sp:add ;
+                                    sp:arg1 [
+                                        rdf:type sp:add ;
+                                        sp:arg1 [
+                                            sp:varName "targetDate" ;
+                                          ] ;
+                                        sp:arg2 [
+                                            sp:varName "inc" ;
+                                          ] ;
+                                      ] ;
+                                    sp:arg2 [
+                                        sp:varName "inc" ;
+                                      ] ;
+                                  ] ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "dowCount" ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            rdf:type sp:add ;
+                            sp:arg1 [
+                                rdf:type sp:add ;
+                                sp:arg1 [
+                                    sp:varName "targetDate" ;
+                                  ] ;
+                                sp:arg2 [
+                                    sp:varName "inc" ;
+                                  ] ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "inc" ;
+                              ] ;
+                          ] ;
+                        sp:arg3 [
+                            rdf:type sp:if ;
+                            sp:arg1 [
+                                rdf:type sp:eq ;
+                                sp:arg1 [
+                                    rdf:type tf:getDow ;
+                                    sp:arg1 [
+                                        rdf:type sp:add ;
+                                        sp:arg1 [
+                                            rdf:type sp:add ;
+                                            sp:arg1 [
+                                                rdf:type sp:add ;
+                                                sp:arg1 [
+                                                    sp:varName "targetDate" ;
+                                                  ] ;
+                                                sp:arg2 [
+                                                    sp:varName "inc" ;
+                                                  ] ;
+                                              ] ;
+                                            sp:arg2 [
+                                                sp:varName "inc" ;
+                                              ] ;
+                                          ] ;
+                                        sp:arg2 [
+                                            sp:varName "inc" ;
+                                          ] ;
+                                      ] ;
+                                  ] ;
+                                sp:arg2 [
+                                    sp:varName "dowCount" ;
+                                  ] ;
+                              ] ;
+                            sp:arg2 [
+                                rdf:type sp:add ;
+                                sp:arg1 [
+                                    rdf:type sp:add ;
+                                    sp:arg1 [
+                                        rdf:type sp:add ;
+                                        sp:arg1 [
+                                            sp:varName "targetDate" ;
+                                          ] ;
+                                        sp:arg2 [
+                                            sp:varName "inc" ;
+                                          ] ;
+                                      ] ;
+                                    sp:arg2 [
+                                        sp:varName "inc" ;
+                                      ] ;
+                                  ] ;
+                                sp:arg2 [
+                                    sp:varName "inc" ;
+                                  ] ;
+                              ] ;
+                            sp:arg3 [
+                                rdf:type sp:if ;
+                                sp:arg1 [
+                                    rdf:type sp:eq ;
+                                    sp:arg1 [
+                                        rdf:type tf:getDow ;
+                                        sp:arg1 [
+                                            rdf:type sp:add ;
+                                            sp:arg1 [
+                                                rdf:type sp:add ;
+                                                sp:arg1 [
+                                                    rdf:type sp:add ;
+                                                    sp:arg1 [
+                                                        rdf:type sp:add ;
+                                                        sp:arg1 [
+                                                            sp:varName "targetDate" ;
+                                                          ] ;
+                                                        sp:arg2 [
+                                                            sp:varName "inc" ;
+                                                          ] ;
+                                                      ] ;
+                                                    sp:arg2 [
+                                                        sp:varName "inc" ;
+                                                      ] ;
+                                                  ] ;
+                                                sp:arg2 [
+                                                    sp:varName "inc" ;
+                                                  ] ;
+                                              ] ;
+                                            sp:arg2 [
+                                                sp:varName "inc" ;
+                                              ] ;
+                                          ] ;
+                                      ] ;
+                                    sp:arg2 [
+                                        sp:varName "dowCount" ;
+                                      ] ;
+                                  ] ;
+                                sp:arg2 [
+                                    rdf:type sp:add ;
+                                    sp:arg1 [
+                                        rdf:type sp:add ;
+                                        sp:arg1 [
+                                            rdf:type sp:add ;
+                                            sp:arg1 [
+                                                rdf:type sp:add ;
+                                                sp:arg1 [
+                                                    sp:varName "targetDate" ;
+                                                  ] ;
+                                                sp:arg2 [
+                                                    sp:varName "inc" ;
+                                                  ] ;
+                                              ] ;
+                                            sp:arg2 [
+                                                sp:varName "inc" ;
+                                              ] ;
+                                          ] ;
+                                        sp:arg2 [
+                                            sp:varName "inc" ;
+                                          ] ;
+                                      ] ;
+                                    sp:arg2 [
+                                        sp:varName "inc" ;
+                                      ] ;
+                                  ] ;
+                                sp:arg3 [
+                                    rdf:type sp:if ;
+                                    sp:arg1 [
+                                        rdf:type sp:eq ;
+                                        sp:arg1 [
+                                            rdf:type tf:getDow ;
+                                            sp:arg1 [
+                                                rdf:type sp:add ;
+                                                sp:arg1 [
+                                                    rdf:type sp:add ;
+                                                    sp:arg1 [
+                                                        rdf:type sp:add ;
+                                                        sp:arg1 [
+                                                            rdf:type sp:add ;
+                                                            sp:arg1 [
+                                                                rdf:type sp:add ;
+                                                                sp:arg1 [
+                                                                    sp:varName "targetDate" ;
+                                                                  ] ;
+                                                                sp:arg2 [
+                                                                    sp:varName "inc" ;
+                                                                  ] ;
+                                                              ] ;
+                                                            sp:arg2 [
+                                                                sp:varName "inc" ;
+                                                              ] ;
+                                                          ] ;
+                                                        sp:arg2 [
+                                                            sp:varName "inc" ;
+                                                          ] ;
+                                                      ] ;
+                                                    sp:arg2 [
+                                                        sp:varName "inc" ;
+                                                      ] ;
+                                                  ] ;
+                                                sp:arg2 [
+                                                    sp:varName "inc" ;
+                                                  ] ;
+                                              ] ;
+                                          ] ;
+                                        sp:arg2 [
+                                            sp:varName "dowCount" ;
+                                          ] ;
+                                      ] ;
+                                    sp:arg2 [
+                                        rdf:type sp:add ;
+                                        sp:arg1 [
+                                            rdf:type sp:add ;
+                                            sp:arg1 [
+                                                rdf:type sp:add ;
+                                                sp:arg1 [
+                                                    rdf:type sp:add ;
+                                                    sp:arg1 [
+                                                        rdf:type sp:add ;
+                                                        sp:arg1 [
+                                                            sp:varName "targetDate" ;
+                                                          ] ;
+                                                        sp:arg2 [
+                                                            sp:varName "inc" ;
+                                                          ] ;
+                                                      ] ;
+                                                    sp:arg2 [
+                                                        sp:varName "inc" ;
+                                                      ] ;
+                                                  ] ;
+                                                sp:arg2 [
+                                                    sp:varName "inc" ;
+                                                  ] ;
+                                              ] ;
+                                            sp:arg2 [
+                                                sp:varName "inc" ;
+                                              ] ;
+                                          ] ;
+                                        sp:arg2 [
+                                            sp:varName "inc" ;
+                                          ] ;
+                                      ] ;
+                                    sp:arg3 [
+                                        rdf:type sp:if ;
+                                        sp:arg1 [
+                                            rdf:type sp:eq ;
+                                            sp:arg1 [
+                                                rdf:type tf:getDow ;
+                                                sp:arg1 [
+                                                    rdf:type sp:add ;
+                                                    sp:arg1 [
+                                                        rdf:type sp:add ;
+                                                        sp:arg1 [
+                                                            rdf:type sp:add ;
+                                                            sp:arg1 [
+                                                                rdf:type sp:add ;
+                                                                sp:arg1 [
+                                                                    rdf:type sp:add ;
+                                                                    sp:arg1 [
+                                                                        rdf:type sp:add ;
+                                                                        sp:arg1 [
+                                                                            sp:varName "targetDate" ;
+                                                                          ] ;
+                                                                        sp:arg2 [
+                                                                            sp:varName "inc" ;
+                                                                          ] ;
+                                                                      ] ;
+                                                                    sp:arg2 [
+                                                                        sp:varName "inc" ;
+                                                                      ] ;
+                                                                  ] ;
+                                                                sp:arg2 [
+                                                                    sp:varName "inc" ;
+                                                                  ] ;
+                                                              ] ;
+                                                            sp:arg2 [
+                                                                sp:varName "inc" ;
+                                                              ] ;
+                                                          ] ;
+                                                        sp:arg2 [
+                                                            sp:varName "inc" ;
+                                                          ] ;
+                                                      ] ;
+                                                    sp:arg2 [
+                                                        sp:varName "inc" ;
+                                                      ] ;
+                                                  ] ;
+                                              ] ;
+                                            sp:arg2 [
+                                                sp:varName "dowCount" ;
+                                              ] ;
+                                          ] ;
+                                        sp:arg2 [
+                                            rdf:type sp:add ;
+                                            sp:arg1 [
+                                                rdf:type sp:add ;
+                                                sp:arg1 [
+                                                    rdf:type sp:add ;
+                                                    sp:arg1 [
+                                                        rdf:type sp:add ;
+                                                        sp:arg1 [
+                                                            rdf:type sp:add ;
+                                                            sp:arg1 [
+                                                                rdf:type sp:add ;
+                                                                sp:arg1 [
+                                                                    sp:varName "targetDate" ;
+                                                                  ] ;
+                                                                sp:arg2 [
+                                                                    sp:varName "inc" ;
+                                                                  ] ;
+                                                              ] ;
+                                                            sp:arg2 [
+                                                                sp:varName "inc" ;
+                                                              ] ;
+                                                          ] ;
+                                                        sp:arg2 [
+                                                            sp:varName "inc" ;
+                                                          ] ;
+                                                      ] ;
+                                                    sp:arg2 [
+                                                        sp:varName "inc" ;
+                                                      ] ;
+                                                  ] ;
+                                                sp:arg2 [
+                                                    sp:varName "inc" ;
+                                                  ] ;
+                                              ] ;
+                                            sp:arg2 [
+                                                sp:varName "inc" ;
+                                              ] ;
+                                          ] ;
+                                        sp:arg3 "" ;
+                                      ] ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "result" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    rdf:type sp:eq ;
+                    sp:arg1 [
+                        sp:varName "occCount" ;
+                      ] ;
+                    sp:arg2 0 ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "result" ;
+                  ] ;
+                sp:arg3 [
+                    rdf:type sp:if ;
+                    sp:arg1 [
+                        rdf:type sp:eq ;
+                        sp:arg1 [
+                            sp:varName "occCount" ;
+                          ] ;
+                        sp:arg2 1 ;
+                      ] ;
+                    sp:arg2 [
+                        rdf:type sp:add ;
+                        sp:arg1 [
+                            sp:varName "result" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "addWeek" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 [
+                        rdf:type sp:if ;
+                        sp:arg1 [
+                            rdf:type sp:eq ;
+                            sp:arg1 [
+                                sp:varName "occCount" ;
+                              ] ;
+                            sp:arg2 2 ;
+                          ] ;
+                        sp:arg2 [
+                            rdf:type sp:add ;
+                            sp:arg1 [
+                                rdf:type sp:add ;
+                                sp:arg1 [
+                                    sp:varName "result" ;
+                                  ] ;
+                                sp:arg2 [
+                                    sp:varName "addWeek" ;
+                                  ] ;
+                              ] ;
+                            sp:arg2 [
+                                sp:varName "addWeek" ;
+                              ] ;
+                          ] ;
+                        sp:arg3 [
+                            rdf:type sp:if ;
+                            sp:arg1 [
+                                rdf:type sp:eq ;
+                                sp:arg1 [
+                                    sp:varName "occCount" ;
+                                  ] ;
+                                sp:arg2 3 ;
+                              ] ;
+                            sp:arg2 [
+                                rdf:type sp:add ;
+                                sp:arg1 [
+                                    rdf:type sp:add ;
+                                    sp:arg1 [
+                                        rdf:type sp:add ;
+                                        sp:arg1 [
+                                            sp:varName "result" ;
+                                          ] ;
+                                        sp:arg2 [
+                                            sp:varName "addWeek" ;
+                                          ] ;
+                                      ] ;
+                                    sp:arg2 [
+                                        sp:varName "addWeek" ;
+                                      ] ;
+                                  ] ;
+                                sp:arg2 [
+                                    sp:varName "addWeek" ;
+                                  ] ;
+                              ] ;
+                            sp:arg3 [
+                                rdf:type sp:if ;
+                                sp:arg1 [
+                                    rdf:type sp:eq ;
+                                    sp:arg1 [
+                                        sp:varName "occCount" ;
+                                      ] ;
+                                    sp:arg2 4 ;
+                                  ] ;
+                                sp:arg2 [
+                                    rdf:type sp:add ;
+                                    sp:arg1 [
+                                        rdf:type sp:add ;
+                                        sp:arg1 [
+                                            rdf:type sp:add ;
+                                            sp:arg1 [
+                                                rdf:type sp:add ;
+                                                sp:arg1 [
+                                                    sp:varName "result" ;
+                                                  ] ;
+                                                sp:arg2 [
+                                                    sp:varName "addWeek" ;
+                                                  ] ;
+                                              ] ;
+                                            sp:arg2 [
+                                                sp:varName "addWeek" ;
+                                              ] ;
+                                          ] ;
+                                        sp:arg2 [
+                                            sp:varName "addWeek" ;
+                                          ] ;
+                                      ] ;
+                                    sp:arg2 [
+                                        sp:varName "addWeek" ;
+                                      ] ;
+                                  ] ;
+                                sp:arg3 "" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "finalDate" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "hour" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasHours> ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:duration ;
+                sp:arg1 [
+                    rdf:type sp:concat ;
+                    sp:arg1 "PT" ;
+                    sp:arg2 [
+                        rdf:type xsd:string ;
+                        sp:arg1 [
+                            sp:varName "hour" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 "H" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "finalHour" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:add ;
+                sp:arg1 [
+                    rdf:type xsd:dateTime ;
+                    sp:arg1 [
+                        sp:varName "finalDate" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "finalHour" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "localDateTime" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "DstTransitionRule instance" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg2 ;
+      spl:valueType xsd:string ;
+      rdfs:comment "Year (string)" ;
+    ] ;
+  vaem:todo "Need to loop through the month and find the right dow." ;
+  rdfs:comment "Given an instance of DstTransitionRule (?arg1), calculate the xsd:dateTime the rule takes effect in a given year (?arg2) (string)" ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+  skos:prefLabel "" ;
+.
+time-functions:calculateUTCOffset
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "offset" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "tzoffset" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasTzOffset> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "start" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstStartRuleRef> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "end" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstEndRuleRef> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "dstoffsetSec" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDstOffset> ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:int ;
+                sp:arg1 [
+                    sp:varName "tzoffset" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "tzOffsetInt" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:int ;
+                sp:arg1 [
+                    sp:varName "dstoffsetSec" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dstoffsetInt" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type time-functions:IsDSTinEffect ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 [
+                    sp:varName "pacificTimezone" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dstInEffect" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:if ;
+                sp:arg1 [
+                    sp:varName "dstInEffect" ;
+                  ] ;
+                sp:arg2 1 ;
+                sp:arg3 0 ;
+              ] ;
+            sp:variable [
+                sp:varName "dtCorrection" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type fn:abs ;
+                sp:arg1 [
+                    rdf:type xsd:int ;
+                    sp:arg1 [
+                        rdf:type sp:divide ;
+                        sp:arg1 [
+                            rdf:type sp:add ;
+                            sp:arg1 [
+                                sp:varName "tzOffsetInt" ;
+                              ] ;
+                            sp:arg2 [
+                                rdf:type sp:mul ;
+                                sp:arg1 [
+                                    sp:varName "dtCorrection" ;
+                                  ] ;
+                                sp:arg2 [
+                                    sp:varName "dstoffsetInt" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                        sp:arg2 3600 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "offset" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:dateTime ;
+      rdfs:comment "Local dateTime" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "Timezone " ;
+    ] ;
+  rdfs:comment "Calculates the UTC datetime offset, given arg1: local datetime, and arg2: Timezone (instance of http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#LocalTimeParameters) so that the local time will begin at 00:00:00 (midnight)." ;
+  rdfs:label "" ;
+  rdfs:subClassOf spin:Functions ;
+  skos:prefLabel "" ;
+.
+time-functions:createDateTime
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "result" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:concat ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 "T00:00:00Z" ;
+              ] ;
+            sp:variable [
+                sp:varName "initStr" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:dateTime ;
+                sp:arg1 [
+                    sp:varName "initStr" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "initDateTime" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:timeMillis ;
+                sp:arg1 [
+                    sp:varName "initDateTime" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "start" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:add ;
+                sp:arg1 [
+                    sp:varName "start" ;
+                  ] ;
+                sp:arg2 spin:_arg2 ;
+              ] ;
+            sp:variable [
+                sp:varName "end" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type time-functions:msToDate ;
+                arg:ms [
+                    sp:varName "end" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "result" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:defaultValue "0"^^xsd:long ;
+      spl:optional "true"^^xsd:boolean ;
+      spl:predicate sp:arg2 ;
+      spl:valueType xsd:long ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:time ;
+    ] ;
+  rdfs:label "Given a date string as ?arg1, and a duration in milliseconds as ?arg2, it returns a xsd:dateTime starting from \"yyyy-MM-dd'T'00:00:00.000Z' plus the duration given." ;
+  rdfs:subClassOf spin:Functions ;
+.
+time-functions:msToDate
+  rdf:type spin:Function ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate arg:ms ;
+      spl:valueType xsd:integer ;
+      rdfs:comment "The milliseconds as a number." ;
+    ] ;
+  spin:returnType xsd:dateTime ;
+  spinx:javaScriptCode "return new Date(parseInt(arg1)).toISOString();" ;
+  rdfs:label "ms to date" ;
+  rdfs:subClassOf spin:Functions ;
+.
+time-functions:parseTime
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "parsedTime" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:parseDate ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 "yyyy-MM-dd'T'HH:mm:ss" ;
+              ] ;
+            sp:variable [
+                sp:varName "time" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:hours ;
+                sp:arg1 [
+                    sp:varName "time" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "hours" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:minutes ;
+                sp:arg1 [
+                    sp:varName "time" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "minutes" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:seconds ;
+                sp:arg1 [
+                    sp:varName "time" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "secs" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:concat ;
+                sp:arg1 [
+                    rdf:type xsd:string ;
+                    sp:arg1 [
+                        sp:varName "hours" ;
+                      ] ;
+                  ] ;
+                sp:arg2 ":" ;
+                sp:arg3 [
+                    rdf:type xsd:string ;
+                    sp:arg1 [
+                        sp:varName "minutes" ;
+                      ] ;
+                  ] ;
+                sp:arg4 ":" ;
+                sp:arg5 [
+                    rdf:type xsd:string ;
+                    sp:arg1 [
+                        sp:varName "secs" ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "timeString" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type xsd:time ;
+                sp:arg1 [
+                    sp:varName "timeString" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "parsedTime" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:dateTime ;
+    ] ;
+  spin:returnType xsd:time ;
+  rdfs:label "Given a xsd:dateTime in the format \"yyyy-MM-dd'T'HH:mm:ss.sssZ\" returns only the time part, as \"HH:mm:ss.sss\"" ;
+  rdfs:subClassOf spin:Functions ;
+.
+time-functions:time-functions_IsDSTinEffect-subClassOf-rdfs_Resource
+  rdf:type rdf:Statement ;
+  rdf:object rdfs:Resource ;
+  rdf:predicate rdfs:subClassOf ;
+  rdfs:label "Checks if DST is in Effect based on timezone rules" ;
+.
+arg:ms
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+sp:durationString
+  rdf:type rdf:Property ;
+  rdfs:range xsd:string ;
+  rdfs:seeAlso "" ;
+  rdfs:subPropertyOf sp:arg ;
+.

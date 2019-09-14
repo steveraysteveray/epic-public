@@ -1,0 +1,31 @@
+# baseURI: http://cmu.sv.edu/fsgim
+# imports: http://sgt.6/tweaks
+# prefix: fsgim
+
+@prefix fsgim: <http://cmu.sv.edu/fsgim#> .
+@prefix fsgim-calendar: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#> .
+@prefix fsgim-device: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/device---device_and_model_components#> .
+@prefix fsgim-einterop: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#> .
+@prefix fsgim-em: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_manager_component---device_and_model_components#> .
+@prefix fsgim-emix: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#> .
+@prefix fsgim-energy: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_measurements---measurements#> .
+@prefix fsgim-generator: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/generator_component---device_and_model_components#> .
+@prefix fsgim-load: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/load_component---device_and_model_components#> .
+@prefix fsgim-meter: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/meter_component---device_and_model_components#> .
+@prefix fsgim-other: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim-power: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#> .
+@prefix fsgim-primitive: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim-router: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energyrouter---energy_manager_component#> .
+@prefix fsgim-sequence: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#> .
+@prefix fsgim-time: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://cmu.sv.edu/fsgim>
+  rdf:type owl:Ontology ;
+  rdfs:comment "This file simply defines a few new prefixes for easier reference by the importing ontologies." ;
+  owl:imports <http://sgt.6/tweaks> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

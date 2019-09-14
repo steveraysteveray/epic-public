@@ -1,0 +1,221 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/imperial
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/unit/electromagnetism
+# imports: http://qudt.org/1.2/vocab/unit/mechanics
+# imports: http://qudt.org/1.2/vocab/unit/space-and-time
+# imports: http://qudt.org/1.2/vocab/unit/thermodynamics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/unit/imperial>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Daniel Mekonnen"^^xsd:string ;
+  dc:contributor "Irene Polikoff"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Units of Measure"^^xsd:string ;
+  dc:title "QUDT Imperial System of Units"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used Imperial units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-25 21:22:57 -0700 (Mon, 25 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/electromagnetism> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/mechanics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/space-and-time> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/thermodynamics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:versionIRI <http://qudt.org/1.1/vocab/unit> ;
+  owl:versionInfo "$Id: VOCAB_QUDT-SOU-IMPERIAL-v1.2.ttl 1908 2013-03-26 04:22:57Z rhodgson $"^^xsd:string ;
+.
+qudt:SOU_IMPERIAL
+  rdf:type qudt:SystemOfUnits ;
+  qudt:abbreviation "Imperial"^^xsd:string ;
+  qudt:description "A system of units formerly widely used in the UK and the rest of the English-speaking world. It includes the pound (lb), quarter (qt), hundredweight (cwt), and ton (ton); the foot (ft), yard (yd), and mile (mi); and the gallon (gal), British thermal unit (btu), etc. These units have been largely replaced by metric units, although Imperial units persist in some contexts. In January 2000 an EU regulation outlawing the sale of goods in Imperial measures was adopted into British law; an exception was made for the sale of beer and milk in pints. "^^xsd:string ;
+  qudt:hasDefinedUnit unit:AC-FT ;
+  qudt:hasDefinedUnit unit:ACRE ;
+  qudt:hasDefinedUnit unit:BTU-FT ;
+  qudt:hasDefinedUnit unit:BTU-IN ;
+  qudt:hasDefinedUnit unit:BTU-PER-FT2 ;
+  qudt:hasDefinedUnit unit:BTU-PER-FT2-HR-DegF ;
+  qudt:hasDefinedUnit unit:BTU-PER-FT2-SEC-DegF ;
+  qudt:hasDefinedUnit unit:BTU-PER-HR ;
+  qudt:hasDefinedUnit unit:BTU-PER-HR-FT2 ;
+  qudt:hasDefinedUnit unit:BTU-PER-LB-DegF ;
+  qudt:hasDefinedUnit unit:BTU-PER-MOL-DegF ;
+  qudt:hasDefinedUnit unit:BTU-PER-SEC ;
+  qudt:hasDefinedUnit unit:BTU-PER-SEC-FT2 ;
+  qudt:hasDefinedUnit unit:BTU_IT ;
+  qudt:hasDefinedUnit unit:BTU_IT-PER-DegF ;
+  qudt:hasDefinedUnit unit:BTU_IT-PER-LB ;
+  qudt:hasDefinedUnit unit:BTU_TH-FT-PER-FT2-HR-DegF ;
+  qudt:hasDefinedUnit unit:BTU_TH-IN-PER-FT2-HR-DegF ;
+  qudt:hasDefinedUnit unit:BTU_TH-IN-PER-FT2-SEC-DegF ;
+  qudt:hasDefinedUnit unit:CHAIN ;
+  qudt:hasDefinedUnit unit:Deg-PER-HR ;
+  qudt:hasDefinedUnit unit:Deg-PER-MIN ;
+  qudt:hasDefinedUnit unit:Deg-PER-SEC ;
+  qudt:hasDefinedUnit unit:Deg-PER-SEC2 ;
+  qudt:hasDefinedUnit unit:DegF ;
+  qudt:hasDefinedUnit unit:DegF-HR ;
+  qudt:hasDefinedUnit unit:DegF-PER-BTU ;
+  qudt:hasDefinedUnit unit:FBM ;
+  qudt:hasDefinedUnit unit:FT ;
+  qudt:hasDefinedUnit unit:FT-LBF ;
+  qudt:hasDefinedUnit unit:FT-LBF-PER-FT2 ;
+  qudt:hasDefinedUnit unit:FT-LBF-PER-FT2-SEC ;
+  qudt:hasDefinedUnit unit:FT-LBF-PER-HR ;
+  qudt:hasDefinedUnit unit:FT-LBF-PER-MIN ;
+  qudt:hasDefinedUnit unit:FT-LBF-PER-SEC ;
+  qudt:hasDefinedUnit unit:FT-PDL ;
+  qudt:hasDefinedUnit unit:FT-PER-HR ;
+  qudt:hasDefinedUnit unit:FT-PER-MIN ;
+  qudt:hasDefinedUnit unit:FT-PER-SEC ;
+  qudt:hasDefinedUnit unit:FT-PER-SEC2 ;
+  qudt:hasDefinedUnit unit:FT2 ;
+  qudt:hasDefinedUnit unit:FT2-DegF ;
+  qudt:hasDefinedUnit unit:FT2-HR-DegF ;
+  qudt:hasDefinedUnit unit:FT2-HR-DegF-PER-BTU ;
+  qudt:hasDefinedUnit unit:FT2-PER-BTU-IN ;
+  qudt:hasDefinedUnit unit:FT2-PER-HR ;
+  qudt:hasDefinedUnit unit:FT2-PER-SEC ;
+  qudt:hasDefinedUnit unit:FT2-SEC-DegF ;
+  qudt:hasDefinedUnit unit:FT3 ;
+  qudt:hasDefinedUnit unit:FT3-PER-MIN ;
+  qudt:hasDefinedUnit unit:FT3-PER-SEC ;
+  qudt:hasDefinedUnit unit:FUR ;
+  qudt:hasDefinedUnit unit:GAL_IMP ;
+  qudt:hasDefinedUnit unit:GRAIN ;
+  qudt:hasDefinedUnit unit:GRAIN-PER-GAL ;
+  qudt:hasDefinedUnit unit:HP ;
+  qudt:hasDefinedUnit unit:HR-FT2 ;
+  qudt:hasDefinedUnit unit:IN ;
+  qudt:hasDefinedUnit unit:IN-PER-SEC ;
+  qudt:hasDefinedUnit unit:IN-PER-SEC2 ;
+  qudt:hasDefinedUnit unit:IN2 ;
+  qudt:hasDefinedUnit unit:IN3 ;
+  qudt:hasDefinedUnit unit:IN3-PER-MIN ;
+  qudt:hasDefinedUnit unit:LB-DegF ;
+  qudt:hasDefinedUnit unit:LB-DegR ;
+  qudt:hasDefinedUnit unit:LB-PER-FT ;
+  qudt:hasDefinedUnit unit:LB-PER-FT-HR ;
+  qudt:hasDefinedUnit unit:LB-PER-FT-SEC ;
+  qudt:hasDefinedUnit unit:LB-PER-FT2 ;
+  qudt:hasDefinedUnit unit:LB-PER-FT3 ;
+  qudt:hasDefinedUnit unit:LB-PER-GAL ;
+  qudt:hasDefinedUnit unit:LB-PER-HR ;
+  qudt:hasDefinedUnit unit:LB-PER-IN ;
+  qudt:hasDefinedUnit unit:LB-PER-IN3 ;
+  qudt:hasDefinedUnit unit:LB-PER-MIN ;
+  qudt:hasDefinedUnit unit:LB-PER-YD3 ;
+  qudt:hasDefinedUnit unit:LBF ;
+  qudt:hasDefinedUnit unit:LBF-FT ;
+  qudt:hasDefinedUnit unit:LBF-IN ;
+  qudt:hasDefinedUnit unit:LBF-PER-FT ;
+  qudt:hasDefinedUnit unit:LBF-PER-FT2 ;
+  qudt:hasDefinedUnit unit:LBF-PER-IN ;
+  qudt:hasDefinedUnit unit:LBF-PER-IN2 ;
+  qudt:hasDefinedUnit unit:LBF-PER-LB ;
+  qudt:hasDefinedUnit unit:LBF-SEC-PER-FT2 ;
+  qudt:hasDefinedUnit unit:LBF-SEC-PER-IN2 ;
+  qudt:hasDefinedUnit unit:LBM ;
+  qudt:hasDefinedUnit unit:MI-PER-HR ;
+  qudt:hasDefinedUnit unit:MI-PER-MIN ;
+  qudt:hasDefinedUnit unit:MI2 ;
+  qudt:hasDefinedUnit unit:MI3 ;
+  qudt:hasDefinedUnit unit:MI_INT ;
+  qudt:hasDefinedUnit unit:MicroIN ;
+  qudt:hasDefinedUnit unit:MilliSEC ;
+  qudt:hasDefinedUnit unit:OZ ;
+  qudt:hasDefinedUnit unit:OZ-PER-FT2 ;
+  qudt:hasDefinedUnit unit:OZ-PER-GAL ;
+  qudt:hasDefinedUnit unit:OZ-PER-IN3 ;
+  qudt:hasDefinedUnit unit:OZ-PER-YD2 ;
+  qudt:hasDefinedUnit unit:OZF ;
+  qudt:hasDefinedUnit unit:OZF-IN ;
+  qudt:hasDefinedUnit unit:OZM ;
+  qudt:hasDefinedUnit unit:PDL ;
+  qudt:hasDefinedUnit unit:PDL-PER-FT2 ;
+  qudt:hasDefinedUnit unit:PINT ;
+  qudt:hasDefinedUnit unit:ROD ;
+  qudt:hasDefinedUnit unit:S2-FT ;
+  qudt:hasDefinedUnit unit:SLUG ;
+  qudt:hasDefinedUnit unit:SLUG-PER-FT ;
+  qudt:hasDefinedUnit unit:SLUG-PER-FT2 ;
+  qudt:hasDefinedUnit unit:SLUG-PER-FT3 ;
+  qudt:hasDefinedUnit unit:SLUG-PER-SEC ;
+  qudt:hasDefinedUnit unit:TBSP ;
+  qudt:hasDefinedUnit unit:TON-PER-YD3 ;
+  qudt:hasDefinedUnit unit:TON_LONG ;
+  qudt:hasDefinedUnit unit:TON_SHORT-PER-HR ;
+  qudt:hasDefinedUnit unit:TSP ;
+  qudt:hasDefinedUnit unit:YARD ;
+  qudt:hasDefinedUnit unit:YD2 ;
+  qudt:hasDefinedUnit unit:YD3 ;
+  qudt:hasDefinedUnit unit:YD3-PER-MIN ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/imperial> ;
+  rdfs:label "Imperial System of Units"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Imperial_units> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199234899.001.0001/acref-9780199234899-e-3147> ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.

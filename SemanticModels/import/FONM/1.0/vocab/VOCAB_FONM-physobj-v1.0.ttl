@@ -1,0 +1,1120 @@
+# baseURI: http://fonm.org/1.0/vocab/physobj
+# imports: http://fonm.org/1.0/schema/physobj
+# imports: http://fonm.org/1.0/vocab/dtype
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://fonm.org/1.0/vocab/datatype#> .
+@prefix dtypedtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix nc: <https://siemens.com/schema/nc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/1.0/vocab/physobj>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The FONM 'Physobj' vocabulary provides controlled vocabularies for physical objects, most specifically for discrete dimensions, directions, and values." ;
+  dc:subject "Physobj vocabulary" ;
+  dc:title "The FONM Physobj Vocabulary" ;
+  vaem:hasCatalogEntry voag:FONM-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This vocabulary is used by the FONM physical object ontology to represent dimensions, directions, and values (e.g., locations)." ;
+  vaem:namespace "http://fonm.org/1.0/vocab/physobj#" ;
+  vaem:namespacePrefix "fonm" ;
+  vaem:specificity "1"^^xsd:int ;
+  vaem:url "http://fonm.org/1.0/vocab/physobj"^^xsd:anyURI ;
+  rdfs:label "FONM physobj vocabulary" ;
+  owl:imports <http://fonm.org/1.0/schema/physobj> ;
+  owl:imports <http://fonm.org/1.0/vocab/dtype> ;
+  owl:versionIRI <http://fonm.org/1.0/vocab/physobj> ;
+  owl:versionInfo "$Id: VOCAB_FONM_physobj-v1.0.ttl 4989 2018-08-23 21:56:40Z JackHodges $" ;
+.
+fonm:AD-FL
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongDepth ;
+  fonm:hasPosition dtype:FarLeft ;
+  rdfs:label "ALONG-DEPTH FAR-LEFT" ;
+  skos:prefLabel "ALONG-DEPTH FAR-LEFT" ;
+.
+fonm:AD-FR
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongDepth ;
+  fonm:hasPosition dtype:FarRight ;
+  rdfs:label "ALONG-DEPTH FAR-RIGHT" ;
+  skos:prefLabel "ALONG-DEPTH FAR-RIGHT" ;
+.
+fonm:AD-MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongDepth ;
+  fonm:hasPosition dtype:Middle ;
+  rdfs:label "ALONG-DEPTH MIDDLE" ;
+  skos:prefLabel "ALONG-DEPTH MIDDLE" ;
+.
+fonm:AL-1S3MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongLength ;
+  fonm:hasPosition dtype:Left ;
+  rdfs:label "ALONG-LENGTH 1/3 MIDDLE" ;
+  skos:prefLabel "ALONG-LENGTH 1/3 MIDDLE" ;
+.
+fonm:AL-FL
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongLength ;
+  fonm:hasPosition dtype:FarLeft ;
+  rdfs:label "ALONG-LENGTH FAR-LEFT" ;
+  skos:prefLabel "ALONG-LENGTH FAR-LEFT" ;
+.
+fonm:AL-FR
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongLength ;
+  fonm:hasPosition dtype:FarRight ;
+  rdfs:label "ALONG-LENGTH FAR-RIGHT" ;
+  skos:prefLabel "ALONG-LENGTH FAR-RIGHT" ;
+.
+fonm:AL-L
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongLength ;
+  fonm:hasPosition dtype:Left ;
+  rdfs:label "ALONG-LENGTH LEFT" ;
+  skos:prefLabel "ALONG-LENGTH LEFT" ;
+.
+fonm:AL-MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongLength ;
+  fonm:hasPosition dtype:Middle ;
+  rdfs:label "ALONG-LENGTH MIDDLE" ;
+  skos:prefLabel "ALONG-LENGTH MIDDLE" ;
+.
+fonm:AL-R
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongLength ;
+  fonm:hasPosition dtype:Right ;
+  rdfs:label "ALONG-LENGTH RIGHT" ;
+  skos:prefLabel "ALONG-LENGTH RIGHT" ;
+.
+fonm:AR-FL
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongRadius ;
+  fonm:hasPosition dtype:FarLeft ;
+  rdfs:label "ALONG-RADIUS FAR-LEFT" ;
+  skos:prefLabel "ALONG-RADIUS FAR-LEFT" ;
+.
+fonm:AR-FR
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongRadius ;
+  fonm:hasPosition dtype:FarRight ;
+  rdfs:label "ALONG-RADIUS FAR-RIGHT" ;
+  skos:prefLabel "ALONG-RADIUS FAR-RIGHT" ;
+.
+fonm:AR-MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongRadius ;
+  fonm:hasPosition dtype:Middle ;
+  rdfs:label "ALONG-RADIUS MIDDLE" ;
+  skos:prefLabel "ALONG-RADIUS MIDDLE" ;
+.
+fonm:AW-FL
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongWidth ;
+  fonm:hasPosition dtype:FarLeft ;
+  rdfs:label "ALONG-WIDTH FAR-LEFT" ;
+  skos:prefLabel "ALONG-WIDTH FAR-LEFT" ;
+.
+fonm:AW-FR
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongWidth ;
+  fonm:hasPosition dtype:FarRight ;
+  rdfs:label "ALONG-WIDTH FAR-RIGHT" ;
+  skos:prefLabel "ALONG-WIDTH FAR-RIGHT" ;
+.
+fonm:AW-MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension dtype:AlongWidth ;
+  fonm:hasPosition dtype:Middle ;
+  rdfs:label "ALONG-WIDTH MIDDLE" ;
+  skos:prefLabel "ALONG-WIDTH MIDDLE" ;
+.
+fonm:BlockBALFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Block Bottom Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Bottom Along-Length Far-Left Edge" ;
+.
+fonm:BlockBALFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Block Bottom Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Bottom Along-Length Far-Right Edge" ;
+.
+fonm:BlockBAWFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Block Bottom Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Bottom Along-Length Far-Left Edge" ;
+.
+fonm:BlockBAWFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Block Bottom Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Bottom Along-Length Far-Right Edge" ;
+.
+fonm:BlockBKADFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Block Back Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Block Back Along-Depth Far-Left Edge" ;
+.
+fonm:BlockBKADFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Block Back Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Block Back Along-Depth Far-Right Edge" ;
+.
+fonm:BlockBKALFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Block Back Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Back Along-Length Far-Left Edge" ;
+.
+fonm:BlockBKALFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Block Back Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Back Along-Length Far-Right Edge" ;
+.
+fonm:BlockBKBEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:BlockBKADFREdgeLoc ;
+  rdfs:label "Block Back Bottom Edge" ;
+  skos:prefLabel "Block Back Bottom Edge" ;
+.
+fonm:BlockBKTEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBKADFREdgeLoc ;
+  fonm:hasLocation fonm:BlockTALFREdgeLoc ;
+  rdfs:label "Block Back Top Edge" ;
+  skos:prefLabel "Block Back Top Edge" ;
+.
+fonm:BlockBackAWFR
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:BlockBackFRLoc ;
+  rdfs:label "Block Back Along-Width Far-Right" ;
+  skos:prefLabel "Block Back Along-Width Far-Right" ;
+.
+fonm:BlockBackFRLoc
+  rdf:type fonm:BlockFaceLocation ;
+  fonm:hasDimv dtype:AW-FR ;
+  rdfs:label "Block Back FR Location" ;
+  skos:prefLabel "Block Back FR Location" ;
+.
+fonm:BlockBottomADFR
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:BlockBottomFRLoc ;
+  rdfs:label "Block Bottom Along-Depth Far-Right" ;
+  skos:prefLabel "Block Bottom Along-Depth Far-Right" ;
+.
+fonm:BlockBottomFRLoc
+  rdf:type fonm:BlockFaceLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  rdfs:label "Block Bottom FR Location" ;
+  skos:prefLabel "Block Bottom FR Location" ;
+.
+fonm:BlockCG
+  rdf:type fonm:BlockLocations ;
+  fonm:hasDimv dtype:AD-MID ;
+  fonm:hasDimv dtype:AL-MID ;
+  fonm:hasDimv dtype:AW-MID ;
+  rdfs:label "Block CG" ;
+  skos:prefLabel "Block CG" ;
+.
+fonm:BlockE1ADFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Block End1 Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Block End1 Along-Depth Far-Left Edge" ;
+.
+fonm:BlockE1ADFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Block End1 Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Block End1 Along-Depth Far-Right Edge" ;
+.
+fonm:BlockE1AWFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AW-FL ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Block End1 Along-Width Far-Left Edge" ;
+  skos:prefLabel "Block End1 Along-Width Far-Left Edge" ;
+.
+fonm:BlockE1AWFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AW-FR ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Block End1 Along-Width Far-Right Edge" ;
+  skos:prefLabel "Block End1 Along-Width Far-Right Edge" ;
+.
+fonm:BlockE1BBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End1 Bottom Back Corner" ;
+  skos:prefLabel "Block End1 Bottom Back Corner" ;
+.
+fonm:BlockE1BEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:BlockE1AWFREdgeLoc ;
+  rdfs:label "Block End1 Bottom Edge" ;
+  skos:prefLabel "Block End1 Bottom Edge" ;
+.
+fonm:BlockE1BFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End1 Bottom Front Corner" ;
+  skos:prefLabel "Block End1 Bottom Front Corner" ;
+.
+fonm:BlockE1BKEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE1AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockFALFREdgeLoc ;
+  rdfs:label "Block End1 Back Edge" ;
+  skos:prefLabel "Block End1 Back Edge" ;
+.
+fonm:BlockE1FEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE1AWFLEdgeLoc ;
+  fonm:hasLocation fonm:BlockFALFREdgeLoc ;
+  rdfs:label "Block End1 Front Edge" ;
+  skos:prefLabel "Block End1 Front Edge" ;
+.
+fonm:BlockE1TBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End1 Top Back Corner" ;
+  skos:prefLabel "Block End1 Top Back Corner" ;
+.
+fonm:BlockE1TEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE1AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockTALFREdgeLoc ;
+  rdfs:label "Block End1 Top Edge" ;
+  skos:prefLabel "Block End1 Top Edge" ;
+.
+fonm:BlockE1TFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End1 Top Front Corner" ;
+  skos:prefLabel "Block End1 Top Front Corner" ;
+.
+fonm:BlockE2ADFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  fonm:hasRef fonm:BlockEndALFR ;
+  rdfs:label "Block End2 Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Block End2 Along-Depth Far-Left Edge" ;
+.
+fonm:BlockE2ADFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  fonm:hasRef fonm:BlockEndALFR ;
+  rdfs:label "Block End2 Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Block End2 Along-Depth Far-Right Edge" ;
+.
+fonm:BlockE2AWFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AW-FL ;
+  fonm:hasRef fonm:BlockEndALFR ;
+  rdfs:label "Block End2 Along-Width Far-Left Edge" ;
+  skos:prefLabel "Block End2 Along-Width Far-Left Edge" ;
+.
+fonm:BlockE2AWFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AW-FR ;
+  fonm:hasRef fonm:BlockEndALFR ;
+  rdfs:label "Block End2 Along-Width Far-Right Edge" ;
+  skos:prefLabel "Block End2 Along-Width Far-Right Edge" ;
+.
+fonm:BlockE2BBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End2 Bottom Back Corner" ;
+  skos:prefLabel "Block End2 Bottom Back Corner" ;
+.
+fonm:BlockE2BEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:BlockE2AWFREdgeLoc ;
+  rdfs:label "Block End2 Bottom Edge" ;
+  skos:prefLabel "Block End2 Bottom Edge" ;
+.
+fonm:BlockE2BFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End2 Bottom Back Corner" ;
+  skos:prefLabel "Block End2 Bottom Back Corner" ;
+.
+fonm:BlockE2BKEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE2AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockFALFREdgeLoc ;
+  rdfs:label "Block End2 Back Edge" ;
+  skos:prefLabel "Block End2 Back Edge" ;
+.
+fonm:BlockE2FEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE2AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockFALFREdgeLoc ;
+  rdfs:label "Block End2 Top Edge" ;
+  skos:prefLabel "Block End2 Top Edge" ;
+.
+fonm:BlockE2TBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End2 Top Back Corner" ;
+  skos:prefLabel "Block End2 Top Back Corner" ;
+.
+fonm:BlockE2TEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE2AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockTALFREdgeLoc ;
+  rdfs:label "Block End2 Top Edge" ;
+  skos:prefLabel "Block End2 Top Edge" ;
+.
+fonm:BlockE2TFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End2 Top Back Corner" ;
+  skos:prefLabel "Block End2 Top Back Corner" ;
+.
+fonm:BlockEndALFL
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:BlockEndFLLoc ;
+  rdfs:label "Block End Along-Length Far-Left" ;
+  skos:prefLabel "Block End Along-Length Far-Left" ;
+.
+fonm:BlockEndALFR
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:BlockEndFRLoc ;
+  rdfs:label "Block End Along-Length Far-Right" ;
+  skos:prefLabel "Block End Along-Length Far-Right" ;
+.
+fonm:BlockEndFLLoc
+  rdf:type fonm:BlockEndLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  rdfs:label "Block end FL Location" ;
+  skos:prefLabel "Block end FL Location" ;
+.
+fonm:BlockEndFRLoc
+  rdf:type fonm:BlockEndLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  rdfs:label "Block end FR Location" ;
+  skos:prefLabel "Block end FR Location" ;
+.
+fonm:BlockFADFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Block Front Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Block Front Along-Depth Far-Left Edge" ;
+.
+fonm:BlockFADFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Block Front Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Block Front Along-Depth Far-Right Edge" ;
+.
+fonm:BlockFALFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Block Front Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Front Along-Length Far-Left Edge" ;
+.
+fonm:BlockFALFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Block Front Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Front Along-Length Far-Right Edge" ;
+.
+fonm:BlockFBEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:BlockFADFREdgeLoc ;
+  rdfs:label "Block Front Bottom Edge" ;
+  skos:prefLabel "Block Front Bottom Edge" ;
+.
+fonm:BlockFTEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockFADFREdgeLoc ;
+  fonm:hasLocation fonm:BlockTALFREdgeLoc ;
+  rdfs:label "Block Front Top Edge" ;
+  skos:prefLabel "Block Front Top Edge" ;
+.
+fonm:BlockFrontAWFL
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:BlockFrontFLLoc ;
+  rdfs:label "Block Front Along-Width Far-Left" ;
+  skos:prefLabel "Block Front Along-Width Far-Left" ;
+.
+fonm:BlockFrontFLLoc
+  rdf:type fonm:BlockFaceLocation ;
+  fonm:hasDimv dtype:AW-FL ;
+  rdfs:label "Block Front FL Location" ;
+  skos:prefLabel "Block Front FL Location" ;
+.
+fonm:BlockTALFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Block Top Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Top Along-Length Far-Left Edge" ;
+.
+fonm:BlockTALFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Block Top Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Top Along-Length Far-Right Edge" ;
+.
+fonm:BlockTAWFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AW-FL ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Block Top Along-Width Far-Left Edge" ;
+  skos:prefLabel "Block Top Along-Width Far-Left Edge" ;
+.
+fonm:BlockTAWFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv dtype:AW-FR ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Block Top Along-Width Far-Right Edge" ;
+  skos:prefLabel "Block Top Along-Width Far-Right Edge" ;
+.
+fonm:BlockTopADFL
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:BlockTopFLLoc ;
+  rdfs:label "Block Top Along-Depth Far-Left" ;
+  skos:prefLabel "Block Top Along-Depth Far-Left" ;
+.
+fonm:BlockTopFLLoc
+  rdf:type fonm:BlockFaceLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  rdfs:label "Block Top FL Location" ;
+  skos:prefLabel "Block Top FL Location" ;
+.
+fonm:CircularPlateThickness
+  rdf:type fonm:Size ;
+  fonm:hasDimension fonm:AlongLength ;
+  rdfs:label "Circular Plate Thickness" ;
+  skos:prefLabel "Circular Plate Thickness" ;
+.
+fonm:CircularPlateWidth
+  rdf:type fonm:Size ;
+  fonm:greaterThan fonm:CircularPlateThickness ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Circular Plate Width" ;
+  skos:prefLabel "Circular Plate Width" ;
+.
+fonm:CircularShape
+  rdf:type fonm:ShapeState ;
+  fonm:hasPVal fonm:Circular ;
+  fonm:hasProp fonm:Shape ;
+  rdfs:label "Circular shape" ;
+  skos:prefLabel "Circular shape" ;
+.
+fonm:ConeCG
+  rdf:type fonm:ConeLocations ;
+  fonm:hasDimv dtype:AL-1S3MID ;
+  fonm:hasDimv dtype:AR-MID ;
+  rdfs:label "Cone CG" ;
+  skos:prefLabel "Cone CG" ;
+.
+fonm:ConePoint
+  rdf:type fonm:Point ;
+  fonm:hasLocation fonm:ConePointLocation ;
+  rdfs:label "Cone point" ;
+  skos:prefLabel "Cone point" ;
+.
+fonm:ConePointLocation
+  rdf:type fonm:ConeLocations ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasDimv dtype:AR-MID ;
+  rdfs:label "Cone point location" ;
+  skos:prefLabel "Cone point location" ;
+.
+fonm:ConePointSize
+  rdf:type fonm:Size ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasQuantValue fonm:MuchLessThanNominal ;
+  rdfs:label "Cone point" ;
+  skos:prefLabel "Cone point" ;
+.
+fonm:CylinderCG
+  rdf:type fonm:CylinderLocations ;
+  fonm:hasDimv dtype:AL-MID ;
+  fonm:hasDimv dtype:AR-MID ;
+  rdfs:label "Cylinder CG" ;
+  skos:prefLabel "Cylinder CG" ;
+.
+fonm:CylinderCenter
+  rdf:type fonm:Center ;
+  fonm:hasLocation vaem:CylinderCenterLoc ;
+  rdfs:label "Cylinder center" ;
+  skos:prefLabel "Cylinder center" ;
+.
+fonm:CylinderCenterLoc
+  rdf:type fonm:CylinderCenterLocation ;
+  fonm:hasDimv dtype:AR-MID ;
+  rdfs:label "Cylinder center loc" ;
+  skos:prefLabel "Cylinder center loc" ;
+.
+fonm:CylinderEndALFL
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:CylinderEndFLLoc ;
+  rdfs:label "Cylinder End Along-Length Far-Left" ;
+  skos:prefLabel "Cylinder End Along-Length Far-Left" ;
+.
+fonm:CylinderEndALFR
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:CylinderEndFRLoc ;
+  rdfs:label "Cylinder End Along-Length Far-Right" ;
+  skos:prefLabel "Cylinder End Along-Length Far-Right" ;
+.
+fonm:CylinderEndFLLoc
+  rdf:type fonm:CylinderEndLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  rdfs:label "Cylinder end FL Location" ;
+  skos:prefLabel "Cylinder end FL Location" ;
+.
+fonm:CylinderEndFRLoc
+  rdf:type fonm:CylinderEndLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  rdfs:label "Cylinder end FR Location" ;
+  skos:prefLabel "Cylinder end FR Location" ;
+.
+fonm:CylinderLength
+  rdf:type fonm:Size ;
+  fonm:greaterThan fonm:CylinderThickness ;
+  fonm:hasDimension fonm:AlongLength ;
+  rdfs:label "Cylinder length" ;
+  skos:prefLabel "Cylinder length" ;
+.
+fonm:CylinderRadius
+  rdf:type fonm:Size ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasQuant qudt:Cylinder_Radius-Quant ;
+  rdfs:label "Cylinder radius" ;
+  skos:prefLabel "Cylinder radius" ;
+.
+fonm:CylinderSurfaceFL
+  rdf:type fonm:Surface ;
+  fonm:hasLocation fonm:CylinderSurfaceFLLoc ;
+  rdfs:label "Cylinder Surface FL" ;
+  skos:prefLabel "Cylinder Surface FL" ;
+.
+fonm:CylinderSurfaceFLLoc
+  rdf:type fonm:CylinderSurfaceLocation ;
+  fonm:hasDimv dtype:AR-FL ;
+  rdfs:label "Cylinder Surface FL Location" ;
+  skos:prefLabel "Cylinder Surface FL Location" ;
+.
+fonm:CylinderSurfaceFR
+  rdf:type fonm:Surface ;
+  fonm:hasLocation fonm:CylinderSurfaceFRLoc ;
+  rdfs:label "Cylinder Surface FR" ;
+  skos:prefLabel "Cylinder Surface FR" ;
+.
+fonm:CylinderSurfaceFRLoc
+  rdf:type fonm:CylinderSurfaceLocation ;
+  fonm:hasDimv dtype:AR-FR ;
+  rdfs:label "Cylinder Surface FR Location" ;
+  skos:prefLabel "Cylinder Surface FR Location" ;
+.
+fonm:CylinderSurfaceRLoc
+  rdf:type fonm:CylinderSurfaceLocation ;
+  fonm:hasDimv dtype:AL-R ;
+  rdfs:label "Cylinder Surface R Location" ;
+  skos:prefLabel "Cylinder Surface R Location" ;
+.
+fonm:CylinderThickness
+  rdf:type fonm:Size ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasQuant qudt:Cylinder_Thickness-Quant ;
+  rdfs:label "Cylinder thickness" ;
+  skos:prefLabel "Cylinder thickness" ;
+.
+fonm:DimABD
+  rdf:type fonm:DimCoaxial ;
+  fonm:hasDimension dtype:AboutDepth ;
+  rdfs:label "Dim ABOUT_DEPTH" ;
+.
+fonm:DimABL
+  rdf:type fonm:DimCoaxial ;
+  fonm:hasDimension dtype:AboutLength ;
+  rdfs:label "Dim ABOUT_LENGTH" ;
+.
+fonm:DimABR
+  rdf:type fonm:DimCoaxial ;
+  fonm:hasDimension dtype:AboutRadius ;
+  rdfs:label "Dim ABOUT_RADIUS" ;
+.
+fonm:DimABW
+  rdf:type fonm:DimCoaxial ;
+  fonm:hasDimension dtype:AboutWidth ;
+  rdfs:label "Dim ABOUT_WIDTH" ;
+.
+fonm:DimALD
+  rdf:type fonm:DimColinear ;
+  fonm:hasDimension dtype:AlongDepth ;
+  rdfs:label "Dim ALONG_DEPTH" ;
+.
+fonm:DimALL
+  rdf:type fonm:DimColinear ;
+  fonm:hasDimension dtype:AboutLength ;
+  rdfs:label "Dim ALONG_LENGTH" ;
+.
+fonm:DimALLALD
+  rdf:type fonm:DimCoplanar ;
+  fonm:hasDimension dtype:AlongDepth ;
+  fonm:hasDimension dtype:AlongLength ;
+  rdfs:label "Dim ALONG_LENGTH and ALONG_DEPTH" ;
+.
+fonm:DimALLALW
+  rdf:type fonm:DimCoplanar ;
+  fonm:hasDimension dtype:AlongLength ;
+  fonm:hasDimension dtype:AlongWidth ;
+  rdfs:label "Dim ALONG_LENGTH and ALONG_WIDTH" ;
+.
+fonm:DimALLALWALD
+  rdf:type fonm:DimCoincident ;
+  fonm:hasDimension dtype:AlongDepth ;
+  fonm:hasDimension dtype:AlongLength ;
+  fonm:hasDimension dtype:AlongWidth ;
+  rdfs:label "Dim ALONG_LENGTH ALONG_WIDTH ALONG_DEPTH" ;
+.
+fonm:DimALR
+  rdf:type fonm:DimColinear ;
+  fonm:hasDimension dtype:AlongRadius ;
+  rdfs:label "Dim ALONG_RADIUS" ;
+.
+fonm:DimALW
+  rdf:type fonm:DimColinear ;
+  fonm:hasDimension dtype:AlongWidth ;
+  rdfs:label "Dim ALONG_WIDTH" ;
+.
+fonm:DimALWALD
+  rdf:type fonm:DimCoplanar ;
+  fonm:hasDimension dtype:AlongDepth ;
+  fonm:hasDimension dtype:AlongWidth ;
+  rdfs:label "Dim ALONG_WIDTH and ALONG_DEPTH" ;
+.
+fonm:LinkageEndALFL
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Linakge End Along-Length Far-Left" ;
+  skos:prefLabel "Linkage End Along-Length Far-Left" ;
+.
+fonm:LinkageEndALFR
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Linakge End Along-Length Far-Right" ;
+  skos:prefLabel "Linkage End Along-Length Far-Right" ;
+.
+fonm:LinkageEndFLLoc
+  rdf:type fonm:LinkageEndLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  rdfs:label "Linkage end FL Location" ;
+  skos:prefLabel "Linkage end FL Location" ;
+.
+fonm:LinkageEndFRLoc
+  rdf:type fonm:LinkageEndLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  rdfs:label "Linkage end FR Location" ;
+  skos:prefLabel "Linkage end FR Location" ;
+.
+fonm:LinkageStiffness
+  rdf:type fonm:StiffnessState ;
+  rdfs:label "Linkage stiffness" ;
+  skos:prefLabel "Linkage stiffness" ;
+.
+fonm:NominalLinkageStiffness
+  rdf:type fonm:Quant ;
+  fonm:hasQVal dtype:GreaterThanNominal ;
+  qudt:baseUnitDimensions "unit:LBF-PER-IN" ;
+  rdfs:label "Nominal linkage stiffness" ;
+  skos:prefLabel "Nominal linkage stiffness" ;
+.
+fonm:QuadrilateralShape
+  rdf:type fonm:ShapeState ;
+  fonm:hasPVal dtype:Quadrilateral ;
+  fonm:hasProp fonm:Shape ;
+  rdfs:label "Quadrilateral Shape" ;
+  skos:prefLabel "Quadrilateral Shape" ;
+.
+fonm:SphereCG
+  rdf:type fonm:SphereLocations ;
+  fonm:hasDimv dtype:AR-MID ;
+  rdfs:label "Sphere CG" ;
+  skos:prefLabel "Sphere CG" ;
+.
+fonm:SphereCenter
+  rdf:type fonm:Center ;
+  fonm:hasLocation vaem:SphereCenterLoc ;
+  rdfs:label "Sphere center" ;
+  skos:prefLabel "Sphere center" ;
+.
+fonm:SphereCenterLoc
+  rdf:type fonm:SphereCenterLocation ;
+  fonm:hasDimv dtype:AR-MID ;
+  rdfs:label "Sphere center loc" ;
+  skos:prefLabel "Sphere center loc" ;
+.
+fonm:SphereSurfaceFL
+  rdf:type fonm:Surface ;
+  fonm:hasLocation fonm:SphereSurfaceFLLoc ;
+  rdfs:label "Sphere Surface FL" ;
+  skos:prefLabel "Sphere Surface FL" ;
+.
+fonm:SphereSurfaceFLLoc
+  rdf:type fonm:SphereSurfaceLocation ;
+  fonm:hasDimv dtype:AR-FL ;
+  rdfs:label "Sphere Surface FL Location" ;
+  skos:prefLabel "Sphere Surface FL Location" ;
+.
+fonm:SphereSurfaceFR
+  rdf:type fonm:Surface ;
+  fonm:hasLocation fonm:SphereSurfaceFRLoc ;
+  rdfs:label "Sphere Surface FR" ;
+  skos:prefLabel "Sphere Surface FR" ;
+.
+fonm:SphereSurfaceFRLoc
+  rdf:type fonm:SphereSurfaceLocation ;
+  fonm:hasDimv dtype:AR-FR ;
+  rdfs:label "Sphere Surface FR Location" ;
+  skos:prefLabel "Sphere Surface FR Location" ;
+.
+fonm:WedgeBALFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Wedge Bottom Along-Length Far-Left Edge" ;
+  skos:prefLabel "Wedge Bottom Along-Length Far-Left Edge" ;
+.
+fonm:WedgeBALFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Wedge Bottom Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Bottom Along-Length Far-Right Edge" ;
+.
+fonm:WedgeBAWFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Wedge Bottom Along-Length Far-Left Edge" ;
+  skos:prefLabel "Wedge Bottom Along-Length Far-Left Edge" ;
+.
+fonm:WedgeBAWFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Wedge Bottom Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Bottom Along-Length Far-Right Edge" ;
+.
+fonm:WedgeBKADFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Wedge Back Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Wedge Back Along-Depth Far-Left Edge" ;
+.
+fonm:WedgeBKADFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Wedge Back Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Wedge Back Along-Depth Far-Right Edge" ;
+.
+fonm:WedgeBKALFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Wedge Back Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Back Along-Length Far-Right Edge" ;
+.
+fonm:WedgeBKBEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeBALFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeBKADFREdgeLoc ;
+  rdfs:label "Wedge Back Bottom Edge" ;
+  skos:prefLabel "Wedge Back Bottom Edge" ;
+.
+fonm:WedgeBKTEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeBKADFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeTALFREdgeLoc ;
+  rdfs:label "Wedge Back Top Edge" ;
+  skos:prefLabel "Wedge Back Top Edge" ;
+.
+fonm:WedgeBackAWFR
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:WedgeBackFRLoc ;
+  rdfs:label "Wedge Back Along-Width Far-Right" ;
+  skos:prefLabel "Wedge Back Along-Width Far-Right" ;
+.
+fonm:WedgeBackFRLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv dtype:AW-FR ;
+  rdfs:label "Wedge Back Along-Width Far-Right Location" ;
+  skos:prefLabel "Wedge Back Along-Width Far-Right Location" ;
+.
+fonm:WedgeBottomADFR
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:WedgeBottomFRLoc ;
+  rdfs:label "Wedge Bottom Along-Depth Far-Right" ;
+  skos:prefLabel "Wedge Bottom Along-Depth Far-Right" ;
+.
+fonm:WedgeBottomFRLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  rdfs:label "Wedge Bottom Along-Depth Far-Right Location" ;
+  skos:prefLabel "Wedge Bottom Along-Depth Far-Right Location" ;
+.
+fonm:WedgeCG
+  rdf:type fonm:WedgeLocations ;
+  fonm:hasDimv dtype:AD-MID ;
+  fonm:hasDimv dtype:AL-1S3MID ;
+  fonm:hasDimv dtype:AW-MID ;
+  rdfs:label "Wedge CG" ;
+  skos:prefLabel "Wedge CG" ;
+.
+fonm:WedgeEADFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Wedge End Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Wedge End Along-Depth Far-Left Edge" ;
+.
+fonm:WedgeEADFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Wedge End Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Wedge End Along-Depth Far-Right Edge" ;
+.
+fonm:WedgeEAWFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AW-FL ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Wedge End Along-Width Far-Left Edge" ;
+  skos:prefLabel "Wedge End Along-Width Far-Left Edge" ;
+.
+fonm:WedgeEAWFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AW-FR ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Wedge End Along-Width Far-Right Edge" ;
+  skos:prefLabel "Wedge End Along-Width Far-Right Edge" ;
+.
+fonm:WedgeEBBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge End Bottom Back Corner" ;
+  skos:prefLabel "Wedge End Bottom Back Corner" ;
+.
+fonm:WedgeEBEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeBALFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeEAWFREdgeLoc ;
+  rdfs:label "Wedge End Bottom Edge" ;
+  skos:prefLabel "Wedge End Bottom Edge" ;
+.
+fonm:WedgeEBFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge End Bottom Back Corner" ;
+  skos:prefLabel "Wedge End Bottom Back Corner" ;
+.
+fonm:WedgeEBKEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeEAWFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeFALFREdgeLoc ;
+  rdfs:label "Wedge End Back Edge" ;
+  skos:prefLabel "Wedge End Back Edge" ;
+.
+fonm:WedgeEFEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeEAWFLEdgeLoc ;
+  fonm:hasLocation fonm:WedgeFALFREdgeLoc ;
+  rdfs:label "Wedge End Front Edge" ;
+  skos:prefLabel "Wedge End Front Edge" ;
+.
+fonm:WedgeETBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge End Top Back Corner" ;
+  skos:prefLabel "Wedge End Top Back Corner" ;
+.
+fonm:WedgeETEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeEAWFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeTALFREdgeLoc ;
+  rdfs:label "Wedge End Top Edge" ;
+  skos:prefLabel "Wedge End Top Edge" ;
+.
+fonm:WedgeETFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge End Top Back Corner" ;
+  skos:prefLabel "Wedge End Top Back Corner" ;
+.
+fonm:WedgeEdgeALFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Wedge Edge Along-Length Far-Left Edge" ;
+  skos:prefLabel "Wedge Edge Along-Length Far-Left Edge" ;
+.
+fonm:WedgeEdgeBEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeTAWFREdgeLoc ;
+  rdfs:label "Wedge Edge Edge" ;
+  skos:prefLabel "Wedge Edge Edge" ;
+.
+fonm:WedgeEdgeFRLoc
+  rdf:type fonm:WedgeLocations ;
+  fonm:hasDimv dtype:AL-FR ;
+  rdfs:label "Wedge Edge FR Location" ;
+  skos:prefLabel "Wedge Edge FR Location" ;
+.
+fonm:WedgeEndALFR
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:WedgeEndFRLoc ;
+  rdfs:label "Wedge End Along-Length Far-Right" ;
+  skos:prefLabel "Wedge End Along-Length Far-Right" ;
+.
+fonm:WedgeEndFRLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  rdfs:label "Wedge End Along-Length Far-Right Location" ;
+  skos:prefLabel "Wedge End Along-Length Far-Right Location" ;
+.
+fonm:WedgeFADFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Wedge Front Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Wedge Front Along-Depth Far-Left Edge" ;
+.
+fonm:WedgeFADFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AD-FR ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Wedge Front Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Wedge Front Along-Depth Far-Right Edge" ;
+.
+fonm:WedgeFALFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Wedge Front Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Front Along-Length Far-Right Edge" ;
+.
+fonm:WedgeFBEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeBALFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeFADFREdgeLoc ;
+  rdfs:label "Wedge Front Bottom Edge" ;
+  skos:prefLabel "Wedge Front Bottom Edge" ;
+.
+fonm:WedgeFTEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeFADFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeTALFREdgeLoc ;
+  rdfs:label "Wedge Front Top Edge" ;
+  skos:prefLabel "Wedge Front Top Edge" ;
+.
+fonm:WedgeFrontAWFL
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:WedgeFrontFLLoc ;
+  rdfs:label "Wedge Front Along-Width Far-Left" ;
+  skos:prefLabel "Wedge Front Along-Width Far-Left" ;
+.
+fonm:WedgeFrontFLLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv dtype:AW-FL ;
+  rdfs:label "Wedge Front Along-Width Far-Left Location" ;
+  skos:prefLabel "Wedge Front Along-Width Far-Left Location" ;
+.
+fonm:WedgeTALFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FL ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Wedge Top Along-Length Far-Left Edge" ;
+  skos:prefLabel "Wedge Top Along-Length Far-Left Edge" ;
+.
+fonm:WedgeTALFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AL-FR ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Wedge Top Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Top Along-Length Far-Right Edge" ;
+.
+fonm:WedgeTAWFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AW-FL ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Wedge Top Along-Width Far-Left Edge" ;
+  skos:prefLabel "Wedge Top Along-Width Far-Left Edge" ;
+.
+fonm:WedgeTAWFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv dtype:AW-FR ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Wedge Top Along-Width Far-Right Edge" ;
+  skos:prefLabel "Wedge Top Along-Width Far-Right Edge" ;
+.
+fonm:WedgeTBBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge Top Bottom Back Corner" ;
+  skos:prefLabel "Wedge Top Bottom Back Corner" ;
+.
+fonm:WedgeTBFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge Top Bottom Front Corner" ;
+  skos:prefLabel "Wedge Top Bottom Front Corner" ;
+.
+fonm:WedgeTopADFL
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:WedgeTopFLLoc ;
+  rdfs:label "Wedge Top Along-Depth Far-Left" ;
+  skos:prefLabel "Wedge Top Along-Depth Far-Left" ;
+.
+fonm:WedgeTopFLLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv dtype:AD-FL ;
+  rdfs:label "Wedge Top Along-Depth Far-Left Location" ;
+  skos:prefLabel "Wedge Top Along-Depth Far-Left Location" ;
+.
+qudt:Cylinder_Radius-Quant
+  rdf:type fonm:Quant ;
+  fonm:hasQuantValue fonm:FarRight ;
+  rdfs:label "Cylinder Radius Quant" ;
+  skos:prefLabel "Cylinder Radius Quant" ;
+.
+qudt:Cylinder_Thickness-Quant
+  rdf:type fonm:Quant ;
+  rdfs:label "Cylinder Thickness Quant" ;
+  skos:prefLabel "Cylinder Thickness Quant" ;
+.

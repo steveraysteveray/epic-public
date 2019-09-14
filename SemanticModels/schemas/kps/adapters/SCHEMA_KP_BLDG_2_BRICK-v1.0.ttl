@@ -1,0 +1,38 @@
+# baseURI: http://siemens.com/schemas/kps/adapters/epicbldg2brick
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: http://siemens.com/schemas/kps/epic-building
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# prefix: epicbldg2brick
+
+@prefix bldg: <http://siemens.com/schemas/kps/epic-building#> .
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix epicbldg2brick: <http://siemens.com/schemas/kps/adapters/epicbldg2brick#> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn2brick: <http://siemens.com/schemas/kps/adapters/ssn2brick#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/adapters/epicbldg2brick>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:imports <http://siemens.com/schemas/kps/epic-building> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+epicbldg2brick:Building
+  rdf:type owl:Class ;
+  rdfs:label "Building" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf bldg:Building ;
+  rdfs:subClassOf brick:Building ;
+.
+rdf:PlainLiteral
+  rdf:type owl:Class ;
+  rdfs:label "Plain literal" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf rdfs:Resource ;
+.

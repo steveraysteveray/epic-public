@@ -1,0 +1,292 @@
+# baseURI: http://epic/scripts/tableTry
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tb
+# prefix: tableTry
+
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix spr: <http://spinrdf.org/spr#> .
+@prefix tableTry: <http://epic/scripts/tableTry#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/tableTry>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tb> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+tableTry:BindBySelect_1
+  a sml:BindBySelect ;
+  sm:next tableTry:tableTry_Return ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:expression [
+                a sp:Max ;
+                sp:expression [
+                    sp:varName "value" ;
+                  ] ;
+              ] ;
+            sp:varName "result" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "table" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object 1 ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2" ;
+              ] ;
+            sp:predicate spr:colCells ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Bind a variable" ;
+.
+tableTry:CreateSPINResultSet_1
+  a sml:CreateSPINResultSet ;
+  sm:next tableTry:BindBySelect_1 ;
+  sm:outputVariable "table" ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:groupBy (
+          [
+            sp:varName "uID" ;
+          ]
+        ) ;
+      sp:orderBy (
+          [
+            a xsd:integer ;
+            sp:arg1 [
+                sp:varName "uID" ;
+              ] ;
+          ]
+        ) ;
+      sp:resultVariables (
+          [
+            sp:varName "uID" ;
+          ]
+          [
+            sp:expression [
+                a sp:Sum ;
+                sp:expression [
+                    sp:varName "demand" ;
+                  ] ;
+              ] ;
+            sp:varName "total" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate efunc:relevantBuildings ;
+            sp:subject "test1" ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getLargestModNum ;
+                sp:arg1 "test1" ;
+                sp:arg2 "BID_LOAD" ;
+                sp:arg3 [
+                    sp:varName "resourceID" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "modNum" ;
+              ] ;
+          ]
+          [
+            sp:object "test1" ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "modNum" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?3" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object "BID_LOAD" ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?4" ;
+              ] ;
+            sp:predicate efunc:getQuantitySet ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?5" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "demand" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Create a table variable" ;
+.
+tableTry:ImportRDFFromWorkspace_1
+  a sml:ImportRDFFromWorkspace ;
+  sm:next tableTry:CreateSPINResultSet_1 ;
+  sml:baseURI "http://siemens.com/vocab/kps/epic_instances" ;
+  sml:ignoreImports true ;
+  rdfs:label "Import instance DB" ;
+.
+tableTry:tableTry
+  a sm:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      sm:next tableTry:ImportRDFFromWorkspace_1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  sm:returnModule tableTry:tableTry_Return ;
+  rdfs:subClassOf sm:Functions ;
+.
+tableTry:tableTry_Return
+  a sml:ReturnText ;
+  sml:text "{?result}" ;
+.

@@ -1,0 +1,316 @@
+# baseURI: http://epic/scripts/selectMaxDemand
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tb
+# prefix: smd
+
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix smd: <http://epic/scripts/selectMaxDemand#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/selectMaxDemand>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tb> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+smd:ImportBuildingsDB
+  a sml:ImportRDFFromWorkspace ;
+  sm:next smd:getDemandForecasts ;
+  sml:baseURI "http://siemens.com/vocab/kps/epic/pilot-buildings" ;
+  sml:ignoreImports true ;
+  rdfs:label "Import buildings db" ;
+.
+smd:calculateMaxDemand
+  a sml:BindBySelect ;
+  sm:next smd:selectMaxDemand_Return ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:expression [
+                a sp:Max ;
+                sp:expression [
+                    sp:varName "value" ;
+                  ] ;
+              ] ;
+            sp:varName "maxDemand" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "table" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object 1 ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2" ;
+              ] ;
+            sp:predicate <http://spinrdf.org/spr#colCells> ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Calculate maximum demand" ;
+.
+smd:eventID
+  a rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+smd:getDemandForecasts
+  a sml:CreateSPINResultSet ;
+  sm:next smd:calculateMaxDemand ;
+  sm:outputVariable "table" ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:groupBy (
+          [
+            sp:varName "uID" ;
+          ]
+        ) ;
+      sp:orderBy (
+          [
+            a xsd:integer ;
+            sp:arg1 [
+                sp:varName "uID" ;
+              ] ;
+          ]
+        ) ;
+      sp:resultVariables (
+          [
+            sp:varName "uID" ;
+          ]
+          [
+            sp:expression [
+                a sp:Sum ;
+                sp:expression [
+                    sp:varName "demand" ;
+                  ] ;
+              ] ;
+            sp:varName "total" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate efunc:relevantBuildings ;
+            sp:subject [
+                sp:varName "eventID" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getLargestModNum ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+                sp:arg2 "BID_LOAD" ;
+                sp:arg3 [
+                    sp:varName "resourceID" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "modNum" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "modNum" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?3" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object "BID_LOAD" ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?4" ;
+              ] ;
+            sp:predicate efunc:getQuantitySet ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?5" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "demand" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Get demand forecasts" ;
+.
+smd:importDB
+  a sml:ImportRDFFromWorkspace ;
+  sm:next smd:getDemandForecasts ;
+  sml:baseURI "http://siemens.com/vocab/kps/epic_instances" ;
+  sml:ignoreImports true ;
+  rdfs:label "Import Instance DB" ;
+.
+smd:selectMaxDemand
+  a sm:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional false ;
+      spl:predicate smd:eventID ;
+      spl:valueType xsd:string ;
+      sm:next smd:getDemandForecasts ;
+      rdfs:comment "EventID (string)" ;
+    ] ;
+  sm:returnModule smd:selectMaxDemand_Return ;
+  rdfs:subClassOf sm:Functions ;
+.
+smd:selectMaxDemand_Return
+  a sml:ReturnText ;
+  sml:text "{?maxDemand}" ;
+  rdfs:comment """This service returns the maximum total demand of all buildings associated with an Event (identified by eventID) during any of the intervals, according to the latest (maximum modificationNumber) demand forecasts from the associated buildings.
+If no forecast data is found, an empty string is returned.
+If only some of the buildings return a forecast, only those values are summed.
+
+Input argument: eventID (string)
+Return value: maximum total demand value (real number expressed as a string).""" ;
+.

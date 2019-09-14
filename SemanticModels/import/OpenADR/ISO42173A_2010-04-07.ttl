@@ -1,0 +1,1536 @@
+# baseURI: urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: p2010-04-07
+
+@prefix ccts: <urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p2010-04-07: <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+<urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07, urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07"^^xsd:string ;
+.
+p2010-04-07:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value"^^xsd:string ;
+  rdfs:subClassOf dtype:EnumeratedValue ;
+.
+p2010-04-07:ISO3AlphaCurrencyCodeContentType
+  rdf:type owl:Class ;
+  sxml:tag "urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#ISO3AlphaCurrencyCodeContentType" ;
+  rdfs:label "ISO3Alpha currency code content type"^^xsd:string ;
+  rdfs:subClassOf p2010-04-07:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token."^^xsd:string ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      p2010-04-07:ISO3AlphaCurrencyCodeContentType_ISOACCCT_MAD
+      p2010-04-07:ISO3AlphaCurrencyCodeContentType_ISOACCCT_XPF
+      p2010-04-07:ISO3AlphaCurrencyCodeContentType_ISOACCCT_XPF_0
+      p2010-04-07:ISOACCCT_AED
+      p2010-04-07:ISOACCCT_AFN
+      p2010-04-07:ISOACCCT_ALL
+      p2010-04-07:ISOACCCT_AMD
+      p2010-04-07:ISOACCCT_ANG
+      p2010-04-07:ISOACCCT_AOA
+      p2010-04-07:ISOACCCT_ARS
+      p2010-04-07:ISOACCCT_AUD
+      p2010-04-07:ISOACCCT_AWG
+      p2010-04-07:ISOACCCT_AZN
+      p2010-04-07:ISOACCCT_BAM
+      p2010-04-07:ISOACCCT_BBD
+      p2010-04-07:ISOACCCT_BDT
+      p2010-04-07:ISOACCCT_BGN
+      p2010-04-07:ISOACCCT_BHD
+      p2010-04-07:ISOACCCT_BIF
+      p2010-04-07:ISOACCCT_BMD
+      p2010-04-07:ISOACCCT_BND
+      p2010-04-07:ISOACCCT_BOB
+      p2010-04-07:ISOACCCT_BOV
+      p2010-04-07:ISOACCCT_BRL
+      p2010-04-07:ISOACCCT_BSD
+      p2010-04-07:ISOACCCT_BTN
+      p2010-04-07:ISOACCCT_BWP
+      p2010-04-07:ISOACCCT_BYR
+      p2010-04-07:ISOACCCT_BZD
+      p2010-04-07:ISOACCCT_CAD
+      p2010-04-07:ISOACCCT_CDF
+      p2010-04-07:ISOACCCT_CHE
+      p2010-04-07:ISOACCCT_CHF
+      p2010-04-07:ISOACCCT_CHW
+      p2010-04-07:ISOACCCT_CLF
+      p2010-04-07:ISOACCCT_CLP
+      p2010-04-07:ISOACCCT_CNY
+      p2010-04-07:ISOACCCT_COP
+      p2010-04-07:ISOACCCT_COU
+      p2010-04-07:ISOACCCT_CRC
+      p2010-04-07:ISOACCCT_CUC
+      p2010-04-07:ISOACCCT_CUP
+      p2010-04-07:ISOACCCT_CVE
+      p2010-04-07:ISOACCCT_CZK
+      p2010-04-07:ISOACCCT_DJF
+      p2010-04-07:ISOACCCT_DKK
+      p2010-04-07:ISOACCCT_DOP
+      p2010-04-07:ISOACCCT_DZD
+      p2010-04-07:ISOACCCT_EEK
+      p2010-04-07:ISOACCCT_EGP
+      p2010-04-07:ISOACCCT_ERN
+      p2010-04-07:ISOACCCT_ETB
+      p2010-04-07:ISOACCCT_EUR
+      p2010-04-07:ISOACCCT_FJD
+      p2010-04-07:ISOACCCT_FKP
+      p2010-04-07:ISOACCCT_GBP
+      p2010-04-07:ISOACCCT_GEL
+      p2010-04-07:ISOACCCT_GHS
+      p2010-04-07:ISOACCCT_GIP
+      p2010-04-07:ISOACCCT_GMD
+      p2010-04-07:ISOACCCT_GNF
+      p2010-04-07:ISOACCCT_GTQ
+      p2010-04-07:ISOACCCT_GWP
+      p2010-04-07:ISOACCCT_GYD
+      p2010-04-07:ISOACCCT_HKD
+      p2010-04-07:ISOACCCT_HNL
+      p2010-04-07:ISOACCCT_HRK
+      p2010-04-07:ISOACCCT_HTG
+      p2010-04-07:ISOACCCT_HUF
+      p2010-04-07:ISOACCCT_IDR
+      p2010-04-07:ISOACCCT_ILS
+      p2010-04-07:ISOACCCT_INR
+      p2010-04-07:ISOACCCT_IQD
+      p2010-04-07:ISOACCCT_IRR
+      p2010-04-07:ISOACCCT_ISK
+      p2010-04-07:ISOACCCT_JMD
+      p2010-04-07:ISOACCCT_JOD
+      p2010-04-07:ISOACCCT_JPY
+      p2010-04-07:ISOACCCT_KES
+      p2010-04-07:ISOACCCT_KGS
+      p2010-04-07:ISOACCCT_KHR
+      p2010-04-07:ISOACCCT_KMF
+      p2010-04-07:ISOACCCT_KPW
+      p2010-04-07:ISOACCCT_KRW
+      p2010-04-07:ISOACCCT_KWD
+      p2010-04-07:ISOACCCT_KYD
+      p2010-04-07:ISOACCCT_KZT
+      p2010-04-07:ISOACCCT_LAK
+      p2010-04-07:ISOACCCT_LBP
+      p2010-04-07:ISOACCCT_LKR
+      p2010-04-07:ISOACCCT_LRD
+      p2010-04-07:ISOACCCT_LSL
+      p2010-04-07:ISOACCCT_LTL
+      p2010-04-07:ISOACCCT_LVL
+      p2010-04-07:ISOACCCT_LYD
+      p2010-04-07:ISOACCCT_MAD
+      p2010-04-07:ISOACCCT_MDL
+      p2010-04-07:ISOACCCT_MGA
+      p2010-04-07:ISOACCCT_MKD
+      p2010-04-07:ISOACCCT_MMK
+      p2010-04-07:ISOACCCT_MNT
+      p2010-04-07:ISOACCCT_MOP
+      p2010-04-07:ISOACCCT_MRO
+      p2010-04-07:ISOACCCT_MUR
+      p2010-04-07:ISOACCCT_MVR
+      p2010-04-07:ISOACCCT_MWK
+      p2010-04-07:ISOACCCT_MXN
+      p2010-04-07:ISOACCCT_MXV
+      p2010-04-07:ISOACCCT_MYR
+      p2010-04-07:ISOACCCT_MZN
+      p2010-04-07:ISOACCCT_NAD
+      p2010-04-07:ISOACCCT_NGN
+      p2010-04-07:ISOACCCT_NIO
+      p2010-04-07:ISOACCCT_NOK
+      p2010-04-07:ISOACCCT_NPR
+      p2010-04-07:ISOACCCT_NZD
+      p2010-04-07:ISOACCCT_OMR
+      p2010-04-07:ISOACCCT_PAB
+      p2010-04-07:ISOACCCT_PEN
+      p2010-04-07:ISOACCCT_PGK
+      p2010-04-07:ISOACCCT_PHP
+      p2010-04-07:ISOACCCT_PKR
+      p2010-04-07:ISOACCCT_PLN
+      p2010-04-07:ISOACCCT_PYG
+      p2010-04-07:ISOACCCT_QAR
+      p2010-04-07:ISOACCCT_RON
+      p2010-04-07:ISOACCCT_RSD
+      p2010-04-07:ISOACCCT_RUB
+      p2010-04-07:ISOACCCT_RWF
+      p2010-04-07:ISOACCCT_SAR
+      p2010-04-07:ISOACCCT_SBD
+      p2010-04-07:ISOACCCT_SCR
+      p2010-04-07:ISOACCCT_SDG
+      p2010-04-07:ISOACCCT_SEK
+      p2010-04-07:ISOACCCT_SGD
+      p2010-04-07:ISOACCCT_SHP
+      p2010-04-07:ISOACCCT_SLL
+      p2010-04-07:ISOACCCT_SOS
+      p2010-04-07:ISOACCCT_SRD
+      p2010-04-07:ISOACCCT_STD
+      p2010-04-07:ISOACCCT_SVC
+      p2010-04-07:ISOACCCT_SYP
+      p2010-04-07:ISOACCCT_SZL
+      p2010-04-07:ISOACCCT_THB
+      p2010-04-07:ISOACCCT_TJS
+      p2010-04-07:ISOACCCT_TMT
+      p2010-04-07:ISOACCCT_TND
+      p2010-04-07:ISOACCCT_TOP
+      p2010-04-07:ISOACCCT_TRY
+      p2010-04-07:ISOACCCT_TTD
+      p2010-04-07:ISOACCCT_TWD
+      p2010-04-07:ISOACCCT_TZS
+      p2010-04-07:ISOACCCT_UAH
+      p2010-04-07:ISOACCCT_UGX
+      p2010-04-07:ISOACCCT_USD
+      p2010-04-07:ISOACCCT_USN
+      p2010-04-07:ISOACCCT_USS
+      p2010-04-07:ISOACCCT_UYI
+      p2010-04-07:ISOACCCT_UYU
+      p2010-04-07:ISOACCCT_UZS
+      p2010-04-07:ISOACCCT_VEF
+      p2010-04-07:ISOACCCT_VND
+      p2010-04-07:ISOACCCT_VUV
+      p2010-04-07:ISOACCCT_WST
+      p2010-04-07:ISOACCCT_XAF
+      p2010-04-07:ISOACCCT_XAG
+      p2010-04-07:ISOACCCT_XAU
+      p2010-04-07:ISOACCCT_XBA
+      p2010-04-07:ISOACCCT_XBB
+      p2010-04-07:ISOACCCT_XBC
+      p2010-04-07:ISOACCCT_XBD
+      p2010-04-07:ISOACCCT_XCD
+      p2010-04-07:ISOACCCT_XDR
+      p2010-04-07:ISOACCCT_XFU
+      p2010-04-07:ISOACCCT_XOF
+      p2010-04-07:ISOACCCT_XPD
+      p2010-04-07:ISOACCCT_XPF
+      p2010-04-07:ISOACCCT_XPT
+      p2010-04-07:ISOACCCT_XTS
+      p2010-04-07:ISOACCCT_XXX
+      p2010-04-07:ISOACCCT_YER
+      p2010-04-07:ISOACCCT_ZAR
+      p2010-04-07:ISOACCCT_ZMK
+      p2010-04-07:ISOACCCT_ZWL
+    ) ;
+.
+p2010-04-07:ISO3AlphaCurrencyCodeContentType_ISOACCCT_MAD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "93"^^xsd:nonNegativeInteger ;
+  dtype:value "MAD"^^xsd:token ;
+  rdfs:label "ISO3Alpha currency code content type ISOACCCT MAD"^^xsd:string ;
+  ccts:name "Moroccan Dirham"^^xsd:string ;
+.
+p2010-04-07:ISO3AlphaCurrencyCodeContentType_ISOACCCT_XPF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "175"^^xsd:nonNegativeInteger ;
+  dtype:value "XPF"^^xsd:token ;
+  rdfs:label "ISO3Alpha currency code content type ISOACCCT XPF"^^xsd:string ;
+  ccts:name "CFP Franc"^^xsd:string ;
+.
+p2010-04-07:ISO3AlphaCurrencyCodeContentType_ISOACCCT_XPF_0
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "176"^^xsd:nonNegativeInteger ;
+  dtype:value "XPF"^^xsd:token ;
+  rdfs:label "ISO3Alpha currency code content type ISOACCCT XPF 0"^^xsd:string ;
+  ccts:name "CFP Franc"^^xsd:string ;
+.
+p2010-04-07:ISO3AlphaCurrencyCodeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "ISO3Alpha currency code datatype"^^xsd:string ;
+  rdfs:subClassOf p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+    ] ;
+.
+p2010-04-07:ISOACCCT_AED
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "AED"^^xsd:token ;
+  rdfs:label "AED"^^xsd:string ;
+  ccts:name "UAE Dirham"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_AFN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "AFN"^^xsd:token ;
+  rdfs:label "AFN"^^xsd:string ;
+  ccts:name "Afghani"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ALL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "ALL"^^xsd:token ;
+  rdfs:label "ALL"^^xsd:string ;
+  ccts:name "Lek"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_AMD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "AMD"^^xsd:token ;
+  rdfs:label "AMD"^^xsd:string ;
+  ccts:name "Armenian Dram"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ANG
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "ANG"^^xsd:token ;
+  rdfs:label "ANG"^^xsd:string ;
+  ccts:name "Netherlands Antillian Guilder"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_AOA
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "AOA"^^xsd:token ;
+  rdfs:label "AOA"^^xsd:string ;
+  ccts:name "Kwanza"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ARS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "ARS"^^xsd:token ;
+  rdfs:label "ARS"^^xsd:string ;
+  ccts:name "Argentine Peso"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_AUD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "AUD"^^xsd:token ;
+  rdfs:label "AUD"^^xsd:string ;
+  ccts:name "Australian Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_AWG
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "8"^^xsd:nonNegativeInteger ;
+  dtype:value "AWG"^^xsd:token ;
+  rdfs:label "AWG"^^xsd:string ;
+  ccts:name "Aruban Guilder"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_AZN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "9"^^xsd:nonNegativeInteger ;
+  dtype:value "AZN"^^xsd:token ;
+  rdfs:label "AZN"^^xsd:string ;
+  ccts:name "Azerbaijanian Manat"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BAM
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "10"^^xsd:nonNegativeInteger ;
+  dtype:value "BAM"^^xsd:token ;
+  rdfs:label "BAM"^^xsd:string ;
+  ccts:name "Convertible Marks"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BBD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "11"^^xsd:nonNegativeInteger ;
+  dtype:value "BBD"^^xsd:token ;
+  rdfs:label "BBD"^^xsd:string ;
+  ccts:name "Barbados Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BDT
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "12"^^xsd:nonNegativeInteger ;
+  dtype:value "BDT"^^xsd:token ;
+  rdfs:label "BDT"^^xsd:string ;
+  ccts:name "Taka"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BGN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "13"^^xsd:nonNegativeInteger ;
+  dtype:value "BGN"^^xsd:token ;
+  rdfs:label "BGN"^^xsd:string ;
+  ccts:name "Bulgarian Lev"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BHD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "14"^^xsd:nonNegativeInteger ;
+  dtype:value "BHD"^^xsd:token ;
+  rdfs:label "BHD"^^xsd:string ;
+  ccts:name "Bahraini Dinar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BIF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "15"^^xsd:nonNegativeInteger ;
+  dtype:value "BIF"^^xsd:token ;
+  rdfs:label "BIF"^^xsd:string ;
+  ccts:name "Burundi Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BMD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "16"^^xsd:nonNegativeInteger ;
+  dtype:value "BMD"^^xsd:token ;
+  rdfs:label "BMD"^^xsd:string ;
+  ccts:name "Bermudian Dollar (customarily known as Bermuda Dollar)"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BND
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "17"^^xsd:nonNegativeInteger ;
+  dtype:value "BND"^^xsd:token ;
+  rdfs:label "BND"^^xsd:string ;
+  ccts:name "Brunei Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BOB
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "18"^^xsd:nonNegativeInteger ;
+  dtype:value "BOB"^^xsd:token ;
+  rdfs:label "BOB"^^xsd:string ;
+  ccts:name "Boliviano"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BOV
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "19"^^xsd:nonNegativeInteger ;
+  dtype:value "BOV"^^xsd:token ;
+  rdfs:label "BOV"^^xsd:string ;
+  ccts:name "Mvdol"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BRL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "20"^^xsd:nonNegativeInteger ;
+  dtype:value "BRL"^^xsd:token ;
+  rdfs:label "BRL"^^xsd:string ;
+  ccts:name "Brazilian Real"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BSD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "21"^^xsd:nonNegativeInteger ;
+  dtype:value "BSD"^^xsd:token ;
+  rdfs:label "BSD"^^xsd:string ;
+  ccts:name "Bahamian Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BTN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "22"^^xsd:nonNegativeInteger ;
+  dtype:value "BTN"^^xsd:token ;
+  rdfs:label "BTN"^^xsd:string ;
+  ccts:name "Ngultrum"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BWP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "23"^^xsd:nonNegativeInteger ;
+  dtype:value "BWP"^^xsd:token ;
+  rdfs:label "BWP"^^xsd:string ;
+  ccts:name "Pula"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BYR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "24"^^xsd:nonNegativeInteger ;
+  dtype:value "BYR"^^xsd:token ;
+  rdfs:label "BYR"^^xsd:string ;
+  ccts:name "Belarussian Ruble"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_BZD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "25"^^xsd:nonNegativeInteger ;
+  dtype:value "BZD"^^xsd:token ;
+  rdfs:label "BZD"^^xsd:string ;
+  ccts:name "Belize Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CAD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "26"^^xsd:nonNegativeInteger ;
+  dtype:value "CAD"^^xsd:token ;
+  rdfs:label "CAD"^^xsd:string ;
+  ccts:name "Canadian Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CDF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "27"^^xsd:nonNegativeInteger ;
+  dtype:value "CDF"^^xsd:token ;
+  rdfs:label "CDF"^^xsd:string ;
+  ccts:name "Congolese Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CHE
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "28"^^xsd:nonNegativeInteger ;
+  dtype:value "CHE"^^xsd:token ;
+  rdfs:label "CHE"^^xsd:string ;
+  ccts:name "WIR Euro"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CHF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "29"^^xsd:nonNegativeInteger ;
+  dtype:value "CHF"^^xsd:token ;
+  rdfs:label "CHF"^^xsd:string ;
+  ccts:name "Swiss Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CHW
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "30"^^xsd:nonNegativeInteger ;
+  dtype:value "CHW"^^xsd:token ;
+  rdfs:label "CHW"^^xsd:string ;
+  ccts:name "WIR Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CLF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "31"^^xsd:nonNegativeInteger ;
+  dtype:value "CLF"^^xsd:token ;
+  rdfs:label "CLF"^^xsd:string ;
+  ccts:name "Unidades de fomento"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CLP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "32"^^xsd:nonNegativeInteger ;
+  dtype:value "CLP"^^xsd:token ;
+  rdfs:label "CLP"^^xsd:string ;
+  ccts:name "Chilean Peso"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CNY
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "33"^^xsd:nonNegativeInteger ;
+  dtype:value "CNY"^^xsd:token ;
+  rdfs:label "CNY"^^xsd:string ;
+  ccts:name "Yuan Renminbi"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_COP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "34"^^xsd:nonNegativeInteger ;
+  dtype:value "COP"^^xsd:token ;
+  rdfs:label "COP"^^xsd:string ;
+  ccts:name "Colombian Peso"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_COU
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "35"^^xsd:nonNegativeInteger ;
+  dtype:value "COU"^^xsd:token ;
+  rdfs:label "COU"^^xsd:string ;
+  ccts:name "Unidad de Valor Real"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CRC
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "36"^^xsd:nonNegativeInteger ;
+  dtype:value "CRC"^^xsd:token ;
+  rdfs:label "CRC"^^xsd:string ;
+  ccts:name "Costa Rican Colon"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CUC
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "37"^^xsd:nonNegativeInteger ;
+  dtype:value "CUC"^^xsd:token ;
+  rdfs:label "CUC"^^xsd:string ;
+  ccts:name "Peso Convertible"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CUP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "38"^^xsd:nonNegativeInteger ;
+  dtype:value "CUP"^^xsd:token ;
+  rdfs:label "CUP"^^xsd:string ;
+  ccts:name "Cuban Peso"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CVE
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "39"^^xsd:nonNegativeInteger ;
+  dtype:value "CVE"^^xsd:token ;
+  rdfs:label "CVE"^^xsd:string ;
+  ccts:name "Cape Verde Escudo"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_CZK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "40"^^xsd:nonNegativeInteger ;
+  dtype:value "CZK"^^xsd:token ;
+  rdfs:label "CZK"^^xsd:string ;
+  ccts:name "Czech Koruna"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_DJF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "41"^^xsd:nonNegativeInteger ;
+  dtype:value "DJF"^^xsd:token ;
+  rdfs:label "DJF"^^xsd:string ;
+  ccts:name "Djibouti Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_DKK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "42"^^xsd:nonNegativeInteger ;
+  dtype:value "DKK"^^xsd:token ;
+  rdfs:label "DKK"^^xsd:string ;
+  ccts:name "Danish Krone"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_DOP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "43"^^xsd:nonNegativeInteger ;
+  dtype:value "DOP"^^xsd:token ;
+  rdfs:label "DOP"^^xsd:string ;
+  ccts:name "Dominican Peso"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_DZD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "44"^^xsd:nonNegativeInteger ;
+  dtype:value "DZD"^^xsd:token ;
+  rdfs:label "DZD"^^xsd:string ;
+  ccts:name "Algerian Dinar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_EEK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "45"^^xsd:nonNegativeInteger ;
+  dtype:value "EEK"^^xsd:token ;
+  rdfs:label "EEK"^^xsd:string ;
+  ccts:name "Kroon"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_EGP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "46"^^xsd:nonNegativeInteger ;
+  dtype:value "EGP"^^xsd:token ;
+  rdfs:label "EGP"^^xsd:string ;
+  ccts:name "Egyptian Pound"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ERN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "47"^^xsd:nonNegativeInteger ;
+  dtype:value "ERN"^^xsd:token ;
+  rdfs:label "ERN"^^xsd:string ;
+  ccts:name "Nakfa"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ETB
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "48"^^xsd:nonNegativeInteger ;
+  dtype:value "ETB"^^xsd:token ;
+  rdfs:label "ETB"^^xsd:string ;
+  ccts:name "Ethiopian Birr"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_EUR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "49"^^xsd:nonNegativeInteger ;
+  dtype:value "EUR"^^xsd:token ;
+  rdfs:label "EUR"^^xsd:string ;
+  ccts:name "Euro"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_FJD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "50"^^xsd:nonNegativeInteger ;
+  dtype:value "FJD"^^xsd:token ;
+  rdfs:label "FJD"^^xsd:string ;
+  ccts:name "Fiji Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_FKP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "51"^^xsd:nonNegativeInteger ;
+  dtype:value "FKP"^^xsd:token ;
+  rdfs:label "FKP"^^xsd:string ;
+  ccts:name "Falkland Islands Pound"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GBP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "52"^^xsd:nonNegativeInteger ;
+  dtype:value "GBP"^^xsd:token ;
+  rdfs:label "GBP"^^xsd:string ;
+  ccts:name "Pound Sterling"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GEL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "53"^^xsd:nonNegativeInteger ;
+  dtype:value "GEL"^^xsd:token ;
+  rdfs:label "GEL"^^xsd:string ;
+  ccts:name "Lari"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GHS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "54"^^xsd:nonNegativeInteger ;
+  dtype:value "GHS"^^xsd:token ;
+  rdfs:label "GHS"^^xsd:string ;
+  ccts:name "Cedi"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GIP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "55"^^xsd:nonNegativeInteger ;
+  dtype:value "GIP"^^xsd:token ;
+  rdfs:label "GIP"^^xsd:string ;
+  ccts:name "Gibraltar Pound"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GMD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "56"^^xsd:nonNegativeInteger ;
+  dtype:value "GMD"^^xsd:token ;
+  rdfs:label "GMD"^^xsd:string ;
+  ccts:name "Dalasi"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GNF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "57"^^xsd:nonNegativeInteger ;
+  dtype:value "GNF"^^xsd:token ;
+  rdfs:label "GNF"^^xsd:string ;
+  ccts:name "Guinea Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GTQ
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "58"^^xsd:nonNegativeInteger ;
+  dtype:value "GTQ"^^xsd:token ;
+  rdfs:label "GTQ"^^xsd:string ;
+  ccts:name "Quetzal"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GWP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "59"^^xsd:nonNegativeInteger ;
+  dtype:value "GWP"^^xsd:token ;
+  rdfs:label "GWP"^^xsd:string ;
+  ccts:name "Guinea-Bissau Peso"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_GYD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "60"^^xsd:nonNegativeInteger ;
+  dtype:value "GYD"^^xsd:token ;
+  rdfs:label "GYD"^^xsd:string ;
+  ccts:name "Guyana Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_HKD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "61"^^xsd:nonNegativeInteger ;
+  dtype:value "HKD"^^xsd:token ;
+  rdfs:label "HKD"^^xsd:string ;
+  ccts:name "Hong Kong Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_HNL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "62"^^xsd:nonNegativeInteger ;
+  dtype:value "HNL"^^xsd:token ;
+  rdfs:label "HNL"^^xsd:string ;
+  ccts:name "Lempira"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_HRK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "63"^^xsd:nonNegativeInteger ;
+  dtype:value "HRK"^^xsd:token ;
+  rdfs:label "HRK"^^xsd:string ;
+  ccts:name "Croatian Kuna"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_HTG
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "64"^^xsd:nonNegativeInteger ;
+  dtype:value "HTG"^^xsd:token ;
+  rdfs:label "HTG"^^xsd:string ;
+  ccts:name "Gourde"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_HUF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "65"^^xsd:nonNegativeInteger ;
+  dtype:value "HUF"^^xsd:token ;
+  rdfs:label "HUF"^^xsd:string ;
+  ccts:name "Forint"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_IDR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "66"^^xsd:nonNegativeInteger ;
+  dtype:value "IDR"^^xsd:token ;
+  rdfs:label "IDR"^^xsd:string ;
+  ccts:name "Rupiah"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ILS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "67"^^xsd:nonNegativeInteger ;
+  dtype:value "ILS"^^xsd:token ;
+  rdfs:label "ILS"^^xsd:string ;
+  ccts:name "New Israeli Sheqel"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_INR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "68"^^xsd:nonNegativeInteger ;
+  dtype:value "INR"^^xsd:token ;
+  rdfs:label "INR"^^xsd:string ;
+  ccts:name "Indian Rupee"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_IQD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "69"^^xsd:nonNegativeInteger ;
+  dtype:value "IQD"^^xsd:token ;
+  rdfs:label "IQD"^^xsd:string ;
+  ccts:name "Iraqi Dinar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_IRR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "70"^^xsd:nonNegativeInteger ;
+  dtype:value "IRR"^^xsd:token ;
+  rdfs:label "IRR"^^xsd:string ;
+  ccts:name "Iranian Rial"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ISK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "71"^^xsd:nonNegativeInteger ;
+  dtype:value "ISK"^^xsd:token ;
+  rdfs:label "ISK"^^xsd:string ;
+  ccts:name "Iceland Krona"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_JMD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "72"^^xsd:nonNegativeInteger ;
+  dtype:value "JMD"^^xsd:token ;
+  rdfs:label "JMD"^^xsd:string ;
+  ccts:name "Jamaican Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_JOD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "73"^^xsd:nonNegativeInteger ;
+  dtype:value "JOD"^^xsd:token ;
+  rdfs:label "JOD"^^xsd:string ;
+  ccts:name "Jordanian Dinar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_JPY
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "74"^^xsd:nonNegativeInteger ;
+  dtype:value "JPY"^^xsd:token ;
+  rdfs:label "JPY"^^xsd:string ;
+  ccts:name "Yen"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KES
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "75"^^xsd:nonNegativeInteger ;
+  dtype:value "KES"^^xsd:token ;
+  rdfs:label "KES"^^xsd:string ;
+  ccts:name "Kenyan Shilling"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KGS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "76"^^xsd:nonNegativeInteger ;
+  dtype:value "KGS"^^xsd:token ;
+  rdfs:label "KGS"^^xsd:string ;
+  ccts:name "Som"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KHR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "77"^^xsd:nonNegativeInteger ;
+  dtype:value "KHR"^^xsd:token ;
+  rdfs:label "KHR"^^xsd:string ;
+  ccts:name "Riel"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KMF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "78"^^xsd:nonNegativeInteger ;
+  dtype:value "KMF"^^xsd:token ;
+  rdfs:label "KMF"^^xsd:string ;
+  ccts:name "Comoro Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KPW
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "79"^^xsd:nonNegativeInteger ;
+  dtype:value "KPW"^^xsd:token ;
+  rdfs:label "KPW"^^xsd:string ;
+  ccts:name "North Korean Won"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KRW
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "80"^^xsd:nonNegativeInteger ;
+  dtype:value "KRW"^^xsd:token ;
+  rdfs:label "KRW"^^xsd:string ;
+  ccts:name "Won"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KWD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "81"^^xsd:nonNegativeInteger ;
+  dtype:value "KWD"^^xsd:token ;
+  rdfs:label "KWD"^^xsd:string ;
+  ccts:name "Kuwaiti Dinar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KYD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "82"^^xsd:nonNegativeInteger ;
+  dtype:value "KYD"^^xsd:token ;
+  rdfs:label "KYD"^^xsd:string ;
+  ccts:name "Cayman Islands Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_KZT
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "83"^^xsd:nonNegativeInteger ;
+  dtype:value "KZT"^^xsd:token ;
+  rdfs:label "KZT"^^xsd:string ;
+  ccts:name "Tenge"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_LAK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "84"^^xsd:nonNegativeInteger ;
+  dtype:value "LAK"^^xsd:token ;
+  rdfs:label "LAK"^^xsd:string ;
+  ccts:name "Kip"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_LBP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "85"^^xsd:nonNegativeInteger ;
+  dtype:value "LBP"^^xsd:token ;
+  rdfs:label "LBP"^^xsd:string ;
+  ccts:name "Lebanese Pound"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_LKR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "86"^^xsd:nonNegativeInteger ;
+  dtype:value "LKR"^^xsd:token ;
+  rdfs:label "LKR"^^xsd:string ;
+  ccts:name "Sri Lanka Rupee"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_LRD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "87"^^xsd:nonNegativeInteger ;
+  dtype:value "LRD"^^xsd:token ;
+  rdfs:label "LRD"^^xsd:string ;
+  ccts:name "Liberian Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_LSL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "88"^^xsd:nonNegativeInteger ;
+  dtype:value "LSL"^^xsd:token ;
+  rdfs:label "LSL"^^xsd:string ;
+  ccts:name "Loti"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_LTL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "89"^^xsd:nonNegativeInteger ;
+  dtype:value "LTL"^^xsd:token ;
+  rdfs:label "LTL"^^xsd:string ;
+  ccts:name "Lithuanian Litas"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_LVL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "90"^^xsd:nonNegativeInteger ;
+  dtype:value "LVL"^^xsd:token ;
+  rdfs:label "LVL"^^xsd:string ;
+  ccts:name "Latvian Lats"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_LYD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "91"^^xsd:nonNegativeInteger ;
+  dtype:value "LYD"^^xsd:token ;
+  rdfs:label "LYD"^^xsd:string ;
+  ccts:name "Libyan Dinar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MAD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "92"^^xsd:nonNegativeInteger ;
+  dtype:value "MAD"^^xsd:token ;
+  rdfs:label "MAD"^^xsd:string ;
+  ccts:name "Moroccan Dirham"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MDL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "94"^^xsd:nonNegativeInteger ;
+  dtype:value "MDL"^^xsd:token ;
+  rdfs:label "MDL"^^xsd:string ;
+  ccts:name "Moldovan Leu"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MGA
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "95"^^xsd:nonNegativeInteger ;
+  dtype:value "MGA"^^xsd:token ;
+  rdfs:label "MGA"^^xsd:string ;
+  ccts:name "Malagasy Ariary"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MKD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "96"^^xsd:nonNegativeInteger ;
+  dtype:value "MKD"^^xsd:token ;
+  rdfs:label "MKD"^^xsd:string ;
+  ccts:name "Denar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MMK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "97"^^xsd:nonNegativeInteger ;
+  dtype:value "MMK"^^xsd:token ;
+  rdfs:label "MMK"^^xsd:string ;
+  ccts:name "Kyat"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MNT
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "98"^^xsd:nonNegativeInteger ;
+  dtype:value "MNT"^^xsd:token ;
+  rdfs:label "MNT"^^xsd:string ;
+  ccts:name "Tugrik"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MOP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "99"^^xsd:nonNegativeInteger ;
+  dtype:value "MOP"^^xsd:token ;
+  rdfs:label "MOP"^^xsd:string ;
+  ccts:name "Pataca"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MRO
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "100"^^xsd:nonNegativeInteger ;
+  dtype:value "MRO"^^xsd:token ;
+  rdfs:label "MRO"^^xsd:string ;
+  ccts:name "Ouguiya"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MUR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "101"^^xsd:nonNegativeInteger ;
+  dtype:value "MUR"^^xsd:token ;
+  rdfs:label "MUR"^^xsd:string ;
+  ccts:name "Mauritius Rupee"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MVR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "102"^^xsd:nonNegativeInteger ;
+  dtype:value "MVR"^^xsd:token ;
+  rdfs:label "MVR"^^xsd:string ;
+  ccts:name "Rufiyaa"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MWK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "103"^^xsd:nonNegativeInteger ;
+  dtype:value "MWK"^^xsd:token ;
+  rdfs:label "MWK"^^xsd:string ;
+  ccts:name "Kwacha"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MXN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "104"^^xsd:nonNegativeInteger ;
+  dtype:value "MXN"^^xsd:token ;
+  rdfs:label "MXN"^^xsd:string ;
+  ccts:name "Mexican Peso"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MXV
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "105"^^xsd:nonNegativeInteger ;
+  dtype:value "MXV"^^xsd:token ;
+  rdfs:label "MXV"^^xsd:string ;
+  ccts:name "Mexican Unidad de Inversion (UDI)"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MYR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "106"^^xsd:nonNegativeInteger ;
+  dtype:value "MYR"^^xsd:token ;
+  rdfs:label "MYR"^^xsd:string ;
+  ccts:name "Malaysian Ringgit"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_MZN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "107"^^xsd:nonNegativeInteger ;
+  dtype:value "MZN"^^xsd:token ;
+  rdfs:label "MZN"^^xsd:string ;
+  ccts:name "Metical"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_NAD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "108"^^xsd:nonNegativeInteger ;
+  dtype:value "NAD"^^xsd:token ;
+  rdfs:label "NAD"^^xsd:string ;
+  ccts:name "Namibia Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_NGN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "109"^^xsd:nonNegativeInteger ;
+  dtype:value "NGN"^^xsd:token ;
+  rdfs:label "NGN"^^xsd:string ;
+  ccts:name "Naira"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_NIO
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "110"^^xsd:nonNegativeInteger ;
+  dtype:value "NIO"^^xsd:token ;
+  rdfs:label "NIO"^^xsd:string ;
+  ccts:name "Cordoba Oro"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_NOK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "111"^^xsd:nonNegativeInteger ;
+  dtype:value "NOK"^^xsd:token ;
+  rdfs:label "NOK"^^xsd:string ;
+  ccts:name "Norwegian Krone"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_NPR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "112"^^xsd:nonNegativeInteger ;
+  dtype:value "NPR"^^xsd:token ;
+  rdfs:label "NPR"^^xsd:string ;
+  ccts:name "Nepalese Rupee"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_NZD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "113"^^xsd:nonNegativeInteger ;
+  dtype:value "NZD"^^xsd:token ;
+  rdfs:label "NZD"^^xsd:string ;
+  ccts:name "New Zealand Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_OMR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "114"^^xsd:nonNegativeInteger ;
+  dtype:value "OMR"^^xsd:token ;
+  rdfs:label "OMR"^^xsd:string ;
+  ccts:name "Rial Omani"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_PAB
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "115"^^xsd:nonNegativeInteger ;
+  dtype:value "PAB"^^xsd:token ;
+  rdfs:label "PAB"^^xsd:string ;
+  ccts:name "Balboa"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_PEN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "116"^^xsd:nonNegativeInteger ;
+  dtype:value "PEN"^^xsd:token ;
+  rdfs:label "PEN"^^xsd:string ;
+  ccts:name "Nuevo Sol"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_PGK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "117"^^xsd:nonNegativeInteger ;
+  dtype:value "PGK"^^xsd:token ;
+  rdfs:label "PGK"^^xsd:string ;
+  ccts:name "Kina"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_PHP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "118"^^xsd:nonNegativeInteger ;
+  dtype:value "PHP"^^xsd:token ;
+  rdfs:label "PHP"^^xsd:string ;
+  ccts:name "Philippine Peso"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_PKR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "119"^^xsd:nonNegativeInteger ;
+  dtype:value "PKR"^^xsd:token ;
+  rdfs:label "PKR"^^xsd:string ;
+  ccts:name "Pakistan Rupee"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_PLN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "120"^^xsd:nonNegativeInteger ;
+  dtype:value "PLN"^^xsd:token ;
+  rdfs:label "PLN"^^xsd:string ;
+  ccts:name "Zloty"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_PYG
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "121"^^xsd:nonNegativeInteger ;
+  dtype:value "PYG"^^xsd:token ;
+  rdfs:label "PYG"^^xsd:string ;
+  ccts:name "Guarani"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_QAR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "122"^^xsd:nonNegativeInteger ;
+  dtype:value "QAR"^^xsd:token ;
+  rdfs:label "QAR"^^xsd:string ;
+  ccts:name "Qatari Rial"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_RON
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "123"^^xsd:nonNegativeInteger ;
+  dtype:value "RON"^^xsd:token ;
+  rdfs:label "RON"^^xsd:string ;
+  ccts:name "New Leu"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_RSD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "124"^^xsd:nonNegativeInteger ;
+  dtype:value "RSD"^^xsd:token ;
+  rdfs:label "RSD"^^xsd:string ;
+  ccts:name "Serbian Dinar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_RUB
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "125"^^xsd:nonNegativeInteger ;
+  dtype:value "RUB"^^xsd:token ;
+  rdfs:label "RUB"^^xsd:string ;
+  ccts:name "Russian Ruble"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_RWF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "126"^^xsd:nonNegativeInteger ;
+  dtype:value "RWF"^^xsd:token ;
+  rdfs:label "RWF"^^xsd:string ;
+  ccts:name "Rwanda Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SAR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "127"^^xsd:nonNegativeInteger ;
+  dtype:value "SAR"^^xsd:token ;
+  rdfs:label "SAR"^^xsd:string ;
+  ccts:name "Saudi Riyal"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SBD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "128"^^xsd:nonNegativeInteger ;
+  dtype:value "SBD"^^xsd:token ;
+  rdfs:label "SBD"^^xsd:string ;
+  ccts:name "Solomon Islands Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SCR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "129"^^xsd:nonNegativeInteger ;
+  dtype:value "SCR"^^xsd:token ;
+  rdfs:label "SCR"^^xsd:string ;
+  ccts:name "Seychelles Rupee"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SDG
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "130"^^xsd:nonNegativeInteger ;
+  dtype:value "SDG"^^xsd:token ;
+  rdfs:label "SDG"^^xsd:string ;
+  ccts:name "Sudanese Pound"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SEK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "131"^^xsd:nonNegativeInteger ;
+  dtype:value "SEK"^^xsd:token ;
+  rdfs:label "SEK"^^xsd:string ;
+  ccts:name "Swedish Krona"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SGD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "132"^^xsd:nonNegativeInteger ;
+  dtype:value "SGD"^^xsd:token ;
+  rdfs:label "SGD"^^xsd:string ;
+  ccts:name "Singapore Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SHP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "133"^^xsd:nonNegativeInteger ;
+  dtype:value "SHP"^^xsd:token ;
+  rdfs:label "SHP"^^xsd:string ;
+  ccts:name "Saint Helena Pound"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SLL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "134"^^xsd:nonNegativeInteger ;
+  dtype:value "SLL"^^xsd:token ;
+  rdfs:label "SLL"^^xsd:string ;
+  ccts:name "Leone"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SOS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "135"^^xsd:nonNegativeInteger ;
+  dtype:value "SOS"^^xsd:token ;
+  rdfs:label "SOS"^^xsd:string ;
+  ccts:name "Somali Shilling"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SRD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "136"^^xsd:nonNegativeInteger ;
+  dtype:value "SRD"^^xsd:token ;
+  rdfs:label "SRD"^^xsd:string ;
+  ccts:name "Surinam Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_STD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "137"^^xsd:nonNegativeInteger ;
+  dtype:value "STD"^^xsd:token ;
+  rdfs:label "STD"^^xsd:string ;
+  ccts:name "Dobra"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SVC
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "138"^^xsd:nonNegativeInteger ;
+  dtype:value "SVC"^^xsd:token ;
+  rdfs:label "SVC"^^xsd:string ;
+  ccts:name "El Salvador Colon"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SYP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "139"^^xsd:nonNegativeInteger ;
+  dtype:value "SYP"^^xsd:token ;
+  rdfs:label "SYP"^^xsd:string ;
+  ccts:name "Syrian Pound"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_SZL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "140"^^xsd:nonNegativeInteger ;
+  dtype:value "SZL"^^xsd:token ;
+  rdfs:label "SZL"^^xsd:string ;
+  ccts:name "Lilangeni"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_THB
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "141"^^xsd:nonNegativeInteger ;
+  dtype:value "THB"^^xsd:token ;
+  rdfs:label "THB"^^xsd:string ;
+  ccts:name "Baht"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_TJS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "142"^^xsd:nonNegativeInteger ;
+  dtype:value "TJS"^^xsd:token ;
+  rdfs:label "TJS"^^xsd:string ;
+  ccts:name "Somoni"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_TMT
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "143"^^xsd:nonNegativeInteger ;
+  dtype:value "TMT"^^xsd:token ;
+  rdfs:label "TMT"^^xsd:string ;
+  ccts:name "Manat"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_TND
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "144"^^xsd:nonNegativeInteger ;
+  dtype:value "TND"^^xsd:token ;
+  rdfs:label "TND"^^xsd:string ;
+  ccts:name "Tunisian Dinar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_TOP
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "145"^^xsd:nonNegativeInteger ;
+  dtype:value "TOP"^^xsd:token ;
+  rdfs:label "TOP"^^xsd:string ;
+  ccts:name "Pa'anga"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_TRY
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "146"^^xsd:nonNegativeInteger ;
+  dtype:value "TRY"^^xsd:token ;
+  rdfs:label "TRY"^^xsd:string ;
+  ccts:name "Turkish Lira"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_TTD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "147"^^xsd:nonNegativeInteger ;
+  dtype:value "TTD"^^xsd:token ;
+  rdfs:label "TTD"^^xsd:string ;
+  ccts:name "Trinidad and Tobago Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_TWD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "148"^^xsd:nonNegativeInteger ;
+  dtype:value "TWD"^^xsd:token ;
+  rdfs:label "TWD"^^xsd:string ;
+  ccts:name "New Taiwan Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_TZS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "149"^^xsd:nonNegativeInteger ;
+  dtype:value "TZS"^^xsd:token ;
+  rdfs:label "TZS"^^xsd:string ;
+  ccts:name "Tanzanian Shilling"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_UAH
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "150"^^xsd:nonNegativeInteger ;
+  dtype:value "UAH"^^xsd:token ;
+  rdfs:label "UAH"^^xsd:string ;
+  ccts:name "Hryvnia"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_UGX
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "151"^^xsd:nonNegativeInteger ;
+  dtype:value "UGX"^^xsd:token ;
+  rdfs:label "UGX"^^xsd:string ;
+  ccts:name "Uganda Shilling"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_USD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "152"^^xsd:nonNegativeInteger ;
+  dtype:value "USD"^^xsd:token ;
+  rdfs:label "USD"^^xsd:string ;
+  ccts:name "US Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_USN
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "153"^^xsd:nonNegativeInteger ;
+  dtype:value "USN"^^xsd:token ;
+  rdfs:label "USN"^^xsd:string ;
+  ccts:name "US Dollar (Next day)"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_USS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "154"^^xsd:nonNegativeInteger ;
+  dtype:value "USS"^^xsd:token ;
+  rdfs:label "USS"^^xsd:string ;
+  ccts:name "US Dollar (Same day)"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_UYI
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "155"^^xsd:nonNegativeInteger ;
+  dtype:value "UYI"^^xsd:token ;
+  rdfs:label "UYI"^^xsd:string ;
+  ccts:name "Uruguay Peso en Unidades Indexadas"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_UYU
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "156"^^xsd:nonNegativeInteger ;
+  dtype:value "UYU"^^xsd:token ;
+  rdfs:label "UYU"^^xsd:string ;
+  ccts:name "Peso Uruguayo"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_UZS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "157"^^xsd:nonNegativeInteger ;
+  dtype:value "UZS"^^xsd:token ;
+  rdfs:label "UZS"^^xsd:string ;
+  ccts:name "Uzbekistan Sum"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_VEF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "158"^^xsd:nonNegativeInteger ;
+  dtype:value "VEF"^^xsd:token ;
+  rdfs:label "VEF"^^xsd:string ;
+  ccts:name "Bolivar Fuerte"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_VND
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "159"^^xsd:nonNegativeInteger ;
+  dtype:value "VND"^^xsd:token ;
+  rdfs:label "VND"^^xsd:string ;
+  ccts:name "Dong"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_VUV
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "160"^^xsd:nonNegativeInteger ;
+  dtype:value "VUV"^^xsd:token ;
+  rdfs:label "VUV"^^xsd:string ;
+  ccts:name "Vatu"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_WST
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "161"^^xsd:nonNegativeInteger ;
+  dtype:value "WST"^^xsd:token ;
+  rdfs:label "WST"^^xsd:string ;
+  ccts:name "Tala"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XAF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "162"^^xsd:nonNegativeInteger ;
+  dtype:value "XAF"^^xsd:token ;
+  rdfs:label "XAF"^^xsd:string ;
+  ccts:name "CFA Franc BEAC"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XAG
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "163"^^xsd:nonNegativeInteger ;
+  dtype:value "XAG"^^xsd:token ;
+  rdfs:label "XAG"^^xsd:string ;
+  ccts:name "Silver"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XAU
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "164"^^xsd:nonNegativeInteger ;
+  dtype:value "XAU"^^xsd:token ;
+  rdfs:label "XAU"^^xsd:string ;
+  ccts:name "Gold"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XBA
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "165"^^xsd:nonNegativeInteger ;
+  dtype:value "XBA"^^xsd:token ;
+  rdfs:label "XBA"^^xsd:string ;
+  ccts:name "Bond Markets Units European Composite Unit (EURCO)"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XBB
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "166"^^xsd:nonNegativeInteger ;
+  dtype:value "XBB"^^xsd:token ;
+  rdfs:label "XBB"^^xsd:string ;
+  ccts:name "European Monetary Unit (E.M.U.-6)"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XBC
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "167"^^xsd:nonNegativeInteger ;
+  dtype:value "XBC"^^xsd:token ;
+  rdfs:label "XBC"^^xsd:string ;
+  ccts:name "European Unit of Account 9(E.U.A.-9)"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XBD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "168"^^xsd:nonNegativeInteger ;
+  dtype:value "XBD"^^xsd:token ;
+  rdfs:label "XBD"^^xsd:string ;
+  ccts:name "European Unit of Account 17(E.U.A.-17)"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XCD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "169"^^xsd:nonNegativeInteger ;
+  dtype:value "XCD"^^xsd:token ;
+  rdfs:label "XCD"^^xsd:string ;
+  ccts:name "East Caribbean Dollar"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XDR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "170"^^xsd:nonNegativeInteger ;
+  dtype:value "XDR"^^xsd:token ;
+  rdfs:label "XDR"^^xsd:string ;
+  ccts:name "SDR"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XFU
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "171"^^xsd:nonNegativeInteger ;
+  dtype:value "XFU"^^xsd:token ;
+  rdfs:label "XFU"^^xsd:string ;
+  ccts:name "UIC-Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XOF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "172"^^xsd:nonNegativeInteger ;
+  dtype:value "XOF"^^xsd:token ;
+  rdfs:label "XOF"^^xsd:string ;
+  ccts:name "CFA Franc BCEAO †"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XPD
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "173"^^xsd:nonNegativeInteger ;
+  dtype:value "XPD"^^xsd:token ;
+  rdfs:label "XPD"^^xsd:string ;
+  ccts:name "Palladium"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XPF
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "174"^^xsd:nonNegativeInteger ;
+  dtype:value "XPF"^^xsd:token ;
+  rdfs:label "XPF"^^xsd:string ;
+  ccts:name "CFP Franc"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XPT
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "177"^^xsd:nonNegativeInteger ;
+  dtype:value "XPT"^^xsd:token ;
+  rdfs:label "XPT"^^xsd:string ;
+  ccts:name "Platinum"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XTS
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "178"^^xsd:nonNegativeInteger ;
+  dtype:value "XTS"^^xsd:token ;
+  rdfs:label "XTS"^^xsd:string ;
+  ccts:name "Codes specifically reserved for testing purposes"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_XXX
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "179"^^xsd:nonNegativeInteger ;
+  dtype:value "XXX"^^xsd:token ;
+  rdfs:label "XXX"^^xsd:string ;
+  ccts:name "The codes assigned for transactions where no currency is involved are:"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_YER
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "180"^^xsd:nonNegativeInteger ;
+  dtype:value "YER"^^xsd:token ;
+  rdfs:label "YER"^^xsd:string ;
+  ccts:name "Yemeni Rial"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ZAR
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "181"^^xsd:nonNegativeInteger ;
+  dtype:value "ZAR"^^xsd:token ;
+  rdfs:label "ZAR"^^xsd:string ;
+  ccts:name "Rand"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ZMK
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "182"^^xsd:nonNegativeInteger ;
+  dtype:value "ZMK"^^xsd:token ;
+  rdfs:label "ZMK"^^xsd:string ;
+  ccts:name "Zambian Kwacha"^^xsd:string ;
+.
+p2010-04-07:ISOACCCT_ZWL
+  rdf:type p2010-04-07:ISO3AlphaCurrencyCodeContentType ;
+  dtype:order "183"^^xsd:nonNegativeInteger ;
+  dtype:value "ZWL"^^xsd:token ;
+  rdfs:label "ZWL"^^xsd:string ;
+  ccts:name "Zimbabwe Dollar"^^xsd:string ;
+.
+ccts:name
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "name"^^xsd:string ;
+.

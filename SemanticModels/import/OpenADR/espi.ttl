@@ -1,0 +1,2250 @@
+# baseURI: http://naesb.org/espi
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: espi
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix espi: <http://naesb.org/espi#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://naesb.org/espi>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://naesb.org/espi, http://naesb.org/espi"^^xsd:string ;
+.
+espi:AccumulationKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Code indicating how value is accumulated over time for Readings of ReadingType. The list of valid values per the standard are defined in AccumulationBehaviorType."^^xsd:string ;
+  rdfs:label "Accumulation kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:AuthorizationStatusDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Authorization status datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:BatchItemInfo
+  rdf:type owl:Class ;
+  dc:description "Includes elements that make it possible to include multiple transactions in a single (batch) request."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#BatchItemInfo" ;
+  rdfs:label "Batch item info"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "An identifier for this object that is only unique within the containing collection."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:HexBinary16Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:hexBinary."^^xsd:string ;
+      owl:allValuesFrom xsd:hexBinary ;
+      owl:onProperty espi:name ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicates the reason for the indicated status code."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:String256Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty espi:statusReason ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicates the status code of the associated transaction."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:StatusCodeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:statusCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Specifies the operation requested of this item."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:CRUDOperationDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:operation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:name ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:operation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:statusCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:statusReason ;
+    ] ;
+.
+espi:CRUDOperationDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Specifies the operation requrested of this item"^^xsd:string ;
+  rdfs:label "CRUDOperation datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:CommodityKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Code for commodity classification of Readings of ReadingType. The valid values per the standard are defined in CommodityType."^^xsd:string ;
+  rdfs:label "Commodity kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:CurrencyDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Code for the currency for costs associated with this ReadingType.  The valid values per the standard are defined in CurrencyCode."^^xsd:string ;
+  rdfs:label "Currency datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:DataCustodianApplicationStatusDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Data custodian application status datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:DataQualifierKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Code describing a salient attribute of Readings of ReadingType. Valid values per the standard are defined in DataQualifierType."^^xsd:string ;
+  rdfs:label "Data qualifier kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:DateTimeInterval
+  rdf:type owl:Class ;
+  dc:description "Interval of date and time. End is not included because it can be derived from the start and the duration."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#DateTimeInterval" ;
+  rdfs:label "Date time interval"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[correction] Date and time that this interval started."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:TimeTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:start ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[correction] Duration of the interval, in seconds."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:UInt32Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedInt."^^xsd:string ;
+      owl:allValuesFrom xsd:unsignedInt ;
+      owl:onProperty espi:duration ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:duration ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:start ;
+    ] ;
+.
+espi:DstRuleTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description """[extension] Bit map encoded rule from which is calculated the start or end time, within the current year, to which daylight savings time offset must be applied. 
+
+The rule encoding:
+Bits  0 - 11: seconds 0 - 3599
+Bits 12 - 16: hours 0 - 23
+Bits 17 - 19: day of the week 0 = not applicable, 1 - 7 (Monday = 1)
+Bits:20 - 24: day of the month 0 = not applicable, 1 - 31
+Bits: 25 - 27: operator  (detailed below)
+Bits: 28 - 31: month 1 - 12
+
+Rule value of 0xFFFFFFFF means rule processing/DST correction is disabled.
+
+The operators:
+
+0: DST starts/ends on the Day of the Month
+1: DST starts/ends on the Day of the Week that is on or after the Day of the Month
+2: DST starts/ends on the first occurrence of the Day of the Week in a month
+3: DST starts/ends on the second occurrence of the Day of the Week in a month
+4: DST starts/ends on the third occurrence of the Day of the Week in a month
+5: DST starts/ends on the forth occurrence of the Day of the Week in a month
+6: DST starts/ends on the fifth occurrence of the Day of the Week in a month
+7: DST starts/ends on the last occurrence of the Day of the Week in a month
+
+An example: DST starts on third Friday in March at 1:45 AM.  The rule...
+Seconds: 2700
+Hours: 1
+Day of Week: 5
+Day of Month: 0
+Operator: 4
+Month: 3"""^^xsd:string ;
+  rdfs:label "Dst rule type datatype"^^xsd:string ;
+  rdfs:subClassOf espi:HexBinary32Datatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype espi:HexBinary32Datatype ;
+    ] ;
+.
+espi:ESPIServiceStatusDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "ESPIService status datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:ElectricPowerQualitySummary
+  rdf:type owl:Class ;
+  dc:description "A summary of power quality events. This information represents a summary of power quality information typically required by customer facility energy management systems. It is not intended to satisfy the detailed requirements of power quality monitoring. All values are as defined by measurementProtocol during the period. The standards typically also give ranges of allowed values; the information attributes are the raw measurements, not the \"yes/no\" determination by the various standards. See referenced standards for definition, measurement protocol and period."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#ElectricPowerQualitySummary" ;
+  rdfs:label "Electric power quality summary"^^xsd:string ;
+  rdfs:subClassOf espi:IdentifiedObject ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A count of Long Interruption events (as defined by measurementProtocol) during the summary interval period."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:longInterruptions ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A count of Rapid Voltage Change events during the summary interval period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:rapidVoltageChanges ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A count of Short Interruption events during the summary interval period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:shortInterruptions ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A count of Supply Voltage Dip events during the summary interval period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:supplyVoltageDips ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A count of Supply Voltage Imbalance events during the summary interval period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:supplyVoltageImbalance ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A count of Supply Voltage Variations during the summary interval period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "12"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:supplyVoltageVariations ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A count of Temporary Overvoltage events (as defined by measurementProtocol) during the summary interval period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "13"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:tempOvervoltage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A measurement of long term Rapid Voltage Change in hundredths of a Volt. flickerPlt is derived from 2 hours of Pst values (12 values combined in cubic relationship)."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:flickerPlt ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A measurement of the Harmonic Voltage during the period. For DC, distortion is with respect to a signal of zero Hz."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:harmonicVoltage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A measurement of the Mains [Signaling] Voltage during the summary interval period in uV."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:mainsVoltage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A measurement of the power frequency during the summary interval period in uHz."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:powerFrequency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A reference to the source standard used as the measurement protocol definition. Examples are: 0 = \"IEEE1519-2009\" 1 = \"EN50160\""^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:UInt8Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedByte."^^xsd:string ;
+      owl:allValuesFrom xsd:unsignedByte ;
+      owl:onProperty espi:measurementProtocol ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Interval of summary period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom espi:DateTimeInterval ;
+      owl:onProperty espi:summaryIntervalRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "flickerPst is a value measured over 10 minutes that characterizes the likelihood that the voltage fluctuations would result in perceptible light flicker. A value of 1.0 is designed to represent the level that 50% of people would perceive flicker in a 60 watt incandescent bulb. The value reported is represented as an integer in hundredths."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:flickerPst ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:summaryIntervalRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:flickerPlt ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:flickerPst ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:harmonicVoltage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:longInterruptions ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:mainsVoltage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:measurementProtocol ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:powerFrequency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:rapidVoltageChanges ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:shortInterruptions ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:supplyVoltageDips ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:supplyVoltageImbalance ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:supplyVoltageVariations ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:tempOvervoltage ;
+    ] ;
+.
+espi:ElectricPowerUsageSummary
+  rdf:type owl:Class ;
+  dc:description "Summary of usage for a billing period"^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#ElectricPowerUsageSummary" ;
+  rdfs:label "Electric power usage summary"^^xsd:string ;
+  rdfs:subClassOf espi:IdentifiedObject ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Additional charges from the last billing period, in hundred-thousandths of the currency specified in the ReadingType for this reading. (e.g., 840 = USD, US dollar)."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:costAdditionalLastPeriod ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Date/Time status of this UsageSummary"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "18"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:TimeTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:statusTimeStamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indication of the quality of the summary readings"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "15"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:QualityOfReadingDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:qualityOfReading ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Net consumption for the current day (delivered - received)"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:currentDayNetConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Net consumption for the previous day"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "13"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:previousDayNetConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Overall energy consumption for the current day"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:currentDayOverallConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Peak demand recorded for the current period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:peakDemandRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The ISO 4217 code indicating the currency applicable to the bill amounts in the summary. See list at http://tiny.cc/4217"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:CurrencyDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:currency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The amount of energy consumed on the previous day one year ago interpreted as same day of week same week of year (see ISO 8601)."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "12"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:previousDayLastYearOverallConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The amount of energy consumed one year ago interpreted as same day of week same week of year (see ISO 8601)."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:currentDayLastYearNetConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The amount of the bill for the previous billing period , in hundred-thousandths of the currency specified in the ReadingType for this reading (e.g., 840 = USD, US dollar)."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:billLastPeriod ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The bill amount related to the billing period as of the date received, in hundred-thousandths of the currency specified in the ReadingType for this reading. (e.g., 840 = USD, US dollar)."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:billToDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The billing period to which the included measurements apply"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom espi:DateTimeInterval ;
+      owl:onProperty espi:billingPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The current ratchet demand value for the ratchet demand period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "16"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:ratchetDemandRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The period over which the ratchet demand applies"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "17"^^xsd:int ;
+      owl:allValuesFrom espi:DateTimeInterval ;
+      owl:onProperty espi:ratchetDemandPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The total consumption for the billing period"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:currentBillingPeriodOverAllConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The total consumption for the previous day"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "14"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:previousDayOverallConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[extension] Additional charges from the last billing period which in total add up to costAdditionalLastPeriod"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom espi:LineItem ;
+      owl:onProperty espi:costAdditionalDetailLastPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[extension] The amount of energy consumed in the last billing period."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom espi:SummaryMeasurement ;
+      owl:onProperty espi:overallConsumptionLastPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:statusTimeStamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:billLastPeriod ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:billToDate ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:billingPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:costAdditionalLastPeriod ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:currency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:currentBillingPeriodOverAllConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:currentDayLastYearNetConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:currentDayNetConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:currentDayOverallConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:overallConsumptionLastPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:peakDemandRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:previousDayLastYearOverallConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:previousDayNetConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:previousDayOverallConsumptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:qualityOfReading ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:ratchetDemandPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:ratchetDemandRef ;
+    ] ;
+.
+espi:FlowDirectionKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Direction associated with current related Readings. valid values per the standard are defined in FlowDirectionType."^^xsd:string ;
+  rdfs:label "Flow direction kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:HexBinary128Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "A 128-bit field encoded as a hex string (32 characters / 16 octets)"^^xsd:string ;
+  rdfs:label "Hex binary128Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:hexBinary ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:hexBinary ;
+      owl:withRestrictions (
+          [
+            xsd:maxLength "16"^^xsd:hexBinary ;
+          ]
+        ) ;
+    ] ;
+.
+espi:HexBinary16Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "A 16-bit field encoded as a hex string (4 characters / 2 octets)"^^xsd:string ;
+  rdfs:label "Hex binary16Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:hexBinary ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:hexBinary ;
+      owl:withRestrictions (
+          [
+            xsd:maxLength "2"^^xsd:hexBinary ;
+          ]
+        ) ;
+    ] ;
+.
+espi:HexBinary32Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "A 32-bit field encoded as a hex string (8 characters / 4 octets)"^^xsd:string ;
+  rdfs:label "Hex binary32Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:hexBinary ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:hexBinary ;
+      owl:withRestrictions (
+          [
+            xsd:maxLength "4"^^xsd:hexBinary ;
+          ]
+        ) ;
+    ] ;
+.
+espi:HexBinary8Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "An 8-bit field encoded as a hex string (2 characters / 1 octets)"^^xsd:string ;
+  rdfs:label "Hex binary8Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:hexBinary ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:hexBinary ;
+      owl:withRestrictions (
+          [
+            xsd:maxLength "1"^^xsd:hexBinary ;
+          ]
+        ) ;
+    ] ;
+.
+espi:IdentifiedObject
+  rdf:type owl:Class ;
+  dc:description "This is a root class to provide common naming attributes for all classes needing naming attributes"^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#IdentifiedObject" ;
+  rdfs:label "Identified object"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom espi:BatchItemInfo ;
+      owl:onProperty espi:batchItemInfoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:batchItemInfoRef ;
+    ] ;
+.
+espi:Int16Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Signed integer, max inclusive (2^16-1), restriction of xs:short"^^xsd:string ;
+  rdfs:label "Int16Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:short ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:short ;
+    ] ;
+.
+espi:Int48Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Signed integer, max inclusive -140737488355327 to +140737488355327 (2^47-1), restriction of xs:long"^^xsd:string ;
+  rdfs:label "Int48Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:long ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:long ;
+      owl:withRestrictions (
+          [
+            xsd:maxInclusive "140737488355328"^^xsd:long ;
+          ]
+          [
+            xsd:minInclusive "-140737488355328"^^xsd:long ;
+          ]
+        ) ;
+    ] ;
+.
+espi:IntervalBlock
+  rdf:type owl:Class ;
+  dc:description "Time sequence of Readings of the same ReadingType."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#IntervalBlock" ;
+  rdfs:label "Interval block"^^xsd:string ;
+  rdfs:subClassOf espi:IdentifiedObject ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Specifies the time period during which the contained readings were taken."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom espi:DateTimeInterval ;
+      owl:onProperty espi:intervalRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom espi:IntervalReading ;
+      owl:onProperty espi:intervalReadingRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:intervalRef ;
+    ] ;
+.
+espi:IntervalReading
+  rdf:type owl:Class ;
+  dc:description "Specific value measured by a meter or other asset. Each Reading is associated with a specific ReadingType."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#IntervalReading" ;
+  rdfs:label "Interval reading"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The date time and duration of a reading. If not specified, readings for each \"intervalLength\" in ReadingType are present."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom espi:DateTimeInterval ;
+      owl:onProperty espi:timePeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[correction] Specifies a cost associated with this reading, in hundred-thousandths of the currency specified in the ReadingType for this reading. (e.g., 840 = USD, US dollar)"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:cost ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[correction] Value in units specified by ReadingType"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom espi:ReadingQuality ;
+      owl:onProperty espi:readingQualityRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:cost ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:timePeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:value ;
+    ] ;
+.
+espi:LineItem
+  rdf:type owl:Class ;
+  dc:description "[extension] Line item of detail for additional cost"^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#LineItem" ;
+  rdfs:label "Line item"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:amount ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:rounding ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:TimeTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:dateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:String256Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty espi:note ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:amount ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:dateTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:note ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:rounding ;
+    ] ;
+.
+espi:LocalTimeParameters
+  rdf:type owl:Class ;
+  sxml:tag "http://naesb.org/espi#LocalTimeParameters" ;
+  rdfs:label "Local time parameters"^^xsd:string ;
+  rdfs:subClassOf espi:TimeConfiguration ;
+.
+espi:MeasurementKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Name of physical measurement"^^xsd:string ;
+  rdfs:label "Measurement kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:MeterReading
+  rdf:type owl:Class ;
+  dc:description "Set of values obtained from the meter."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#MeterReading" ;
+  rdfs:label "Meter reading"^^xsd:string ;
+  rdfs:subClassOf espi:IdentifiedObject ;
+.
+espi:Object
+  rdf:type owl:Class ;
+  dc:description "Superclass of all object classes to allow extensions."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#Object" ;
+  rdfs:label "Object"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Contains an extension."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom owl:Thing ;
+      owl:onProperty espi:extensionRef ;
+    ] ;
+.
+espi:PhaseCodeKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Enumeration of phase identifiers. Allows designation of phases for both transmission and distribution equipment, circuits and loads.Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. Phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N."^^xsd:string ;
+  rdfs:label "Phase code kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:QualityOfReadingDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "List of codes indicating the quality of the reading"^^xsd:string ;
+  rdfs:label "Quality of reading datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:RationalNumber
+  rdf:type owl:Class ;
+  dc:description "[extension] Rational number = 'numerator' / 'denominator'."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#RationalNumber" ;
+  rdfs:label "Rational number"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:integer. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:integer."^^xsd:string ;
+      owl:allValuesFrom xsd:integer ;
+      owl:onProperty espi:numerator ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom owl:Thing ;
+      owl:onProperty espi:denominatorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:denominatorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:numerator ;
+    ] ;
+.
+espi:ReadingInterharmonic
+  rdf:type owl:Class ;
+  dc:description "[extension] Interharmonics are represented as a rational number 'numerator' / 'denominator', and harmonics are represented using the same mechanism and identified by 'denominator'=1."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#ReadingInterharmonic" ;
+  rdfs:label "Reading interharmonic"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:integer. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:integer."^^xsd:string ;
+      owl:allValuesFrom xsd:integer ;
+      owl:onProperty espi:numerator ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom owl:Thing ;
+      owl:onProperty espi:denominatorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:denominatorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:numerator ;
+    ] ;
+.
+espi:ReadingQuality
+  rdf:type owl:Class ;
+  dc:description "Quality of a specific reading value or interval reading value. Note that more than one Quality may be applicable to a given Reading. Typically not used unless problems or unusual conditions occur (i.e., quality for each Reading is assumed to be 'Good' (valid) unless stated otherwise in associated ReadingQuality)."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#ReadingQuality" ;
+  rdfs:label "Reading quality"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Quality, to be specified if different than ReadingType.defaultQuality. The specific format is specified per the standard is defined in QualityOfReading."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:QualityOfReadingDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:quality ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:quality ;
+    ] ;
+.
+espi:ReadingType
+  rdf:type owl:Class ;
+  dc:description "Characteristics associated with all Readings included in a MeterReading."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#ReadingType" ;
+  rdfs:label "Reading type"^^xsd:string ;
+  rdfs:subClassOf espi:IdentifiedObject ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code describing a salient attribute of Readings of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:DataQualifierKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:dataQualifier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code for commodity classification of Readings of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:CommodityKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:commodity ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code for consumption tier associated with a Reading of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int16Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:short."^^xsd:string ;
+      owl:allValuesFrom xsd:short ;
+      owl:onProperty espi:consumptionTier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code for general classification of a Reading of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:MeasurementKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:kind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code for phase information associated with Readings of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:PhaseCodeKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:phase ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code for the TOU type of Readings of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "12"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int16Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:short."^^xsd:string ;
+      owl:allValuesFrom xsd:short ;
+      owl:onProperty espi:tou ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code for the base unit of measure for Readings of ReadingType.  Used in combination with the powerOfTenMultiplier to specify the actual unit of measure"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "13"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:UnitSymbolKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:uom ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code for the currency for costs associated with this ReadingType.  The valid values per the standard are defined in CurrencyCode."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:CurrencyDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:currency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code for the power of ten multiplier which, when used in combination with the uom, specifies the actual unit of measure for Readings of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:UnitMultiplierKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:powerOfTenMultiplier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code indicating how value is accumulated over time for Readings of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:AccumulationKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:accumulationBehaviour ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Code used to specify a particular type of time interval method for Readings of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:TimePeriodOfInterestDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:timeAttribute ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Default interval length specified in seconds for Readings of ReadingType."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:UInt32Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedInt."^^xsd:string ;
+      owl:allValuesFrom xsd:unsignedInt ;
+      owl:onProperty espi:intervalLength ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description """Default value to be used if no value of ReadingQuality.quality is provided.  
+Specific format and valid values per the standard are specified in QualityOfReading."""^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:QualityOfReadingDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:defaultQuality ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Direction associated with current related Readings."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:FlowDirectionKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:flowDirection ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description """[extension] Argument used to introduce numbers into the unit of measure description where they are needed (e.g., 4 where the measure needs an argument such as CEMI(n=4)). Most arguments used in practice however will be integers (i.e., 'denominator'=1).
+Value 0 in 'numerator' and 'denominator' means not applicable."""^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "17"^^xsd:int ;
+      owl:allValuesFrom espi:RationalNumber ;
+      owl:onProperty espi:argumentRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[extension] Critical peak period (CPP) bucket the reading value is attributed to. Value 0 means not applicable. Even though CPP is usually considered a specialized form of time of use 'tou', this attribute is defined explicitly for flexibility."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "14"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int16Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:short."^^xsd:string ;
+      owl:allValuesFrom xsd:short ;
+      owl:onProperty espi:cpp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[extension] Indication of a \"harmonic\" or \"interharmonic\" basis for the measurement. Value 0 in 'numerator' and 'denominator' means not applicable."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "15"^^xsd:int ;
+      owl:allValuesFrom espi:ReadingInterharmonic ;
+      owl:onProperty espi:interharmonicRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description """[extension] Time attribute inherent or fundamental to the reading value (as opposed to 'macroPeriod' that supplies an \"adjective\" to describe aspects of a time period with regard to the measurement). It refers to the way the value was originally measured and not to the frequency at which it is reported or presented. For example, an hourly interval of consumption data would have value 'hourly' as an attribute. However in the case of an hourly sampled voltage value, the meterReadings schema would carry the 'hourly' interval size information.
+It is common for meters to report demand in a form that is measured over the course of a portion of an hour, while enterprise applications however commonly assume the demand (in kW or kVAr) normalised to 1 hour. The sytem that receives readings directly from the meter therefore must perform this transformation before publishing readings for use by the other enterprise systems. The scalar used is chosen based on the block size (not any sub-interval size)."""^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "16"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:TimeAttributeKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:measuringPeriod ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:accumulationBehaviour ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:argumentRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:commodity ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:consumptionTier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:cpp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:currency ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:dataQualifier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:defaultQuality ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:flowDirection ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:interharmonicRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:intervalLength ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:kind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:measuringPeriod ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:phase ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:powerOfTenMultiplier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:timeAttribute ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:tou ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:uom ;
+    ] ;
+.
+espi:ServiceCategory
+  rdf:type owl:Class ;
+  dc:description "Category of service provided to the customer."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#ServiceCategory" ;
+  rdfs:label "Service category"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Service classification Examples are: 0 - electricity 1 - gas The list of specific valid values per the standard are itemized in ServiceKind."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:ServiceKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:kind ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:kind ;
+    ] ;
+.
+espi:ServiceDeliveryPoint
+  rdf:type owl:Class ;
+  dc:description "[extension] Service Delivery Point is representation of revenue UsagePoint attributes"^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#ServiceDeliveryPoint" ;
+  rdfs:label "Service delivery point"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A schedule of charges; structure associated with Tariff that allows the definition of complex tariff structures such as step and time of use."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:String256Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty espi:tariffProfile ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Agreement between the customer and the ServiceSupplier to pay for service at a specific service location. It provides for the recording of certain billing information about the type of service provided at the service location and is used during charge creation to determine the type of service."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:String256Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty espi:customerAgreement ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The name is any free human readable and possibly non unique text naming the object."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:String256Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty espi:name ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:customerAgreement ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:name ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:tariffProfile ;
+    ] ;
+.
+espi:ServiceKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Kind of service represented by the UsagePoint"^^xsd:string ;
+  rdfs:label "Service kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:ServiceStatus
+  rdf:type owl:Class ;
+  dc:description "Contains the current status of the service."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#ServiceStatus" ;
+  rdfs:label "Service status"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The current status of the service."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:ESPIServiceStatusDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:currentStatus ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:currentStatus ;
+    ] ;
+.
+espi:StatusCodeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "indicates the status code of the associated transaction"^^xsd:string ;
+  rdfs:label "Status code datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:String256Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Character string of max length 256"^^xsd:string ;
+  rdfs:label "String256Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+      owl:withRestrictions (
+          [
+            xsd:maxLength "256"^^xsd:string ;
+          ]
+        ) ;
+    ] ;
+.
+espi:String32Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Character string of max length 32"^^xsd:string ;
+  rdfs:label "String32Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+      owl:withRestrictions (
+          [
+            xsd:maxLength "32"^^xsd:string ;
+          ]
+        ) ;
+    ] ;
+.
+espi:String64Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Character string of max length 64"^^xsd:string ;
+  rdfs:label "String64Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+      owl:withRestrictions (
+          [
+            xsd:maxLength "64"^^xsd:string ;
+          ]
+        ) ;
+    ] ;
+.
+espi:SummaryMeasurement
+  rdf:type owl:Class ;
+  dc:description "An aggregated summary measurement reading."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#SummaryMeasurement" ;
+  rdfs:label "Summary measurement"^^xsd:string ;
+  rdfs:subClassOf espi:Object ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The date and time (if needed) of the summary measurement."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:TimeTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:timeStamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The multiplier part of the unit of measure, e.g. \"kilo\" (k)"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:UnitMultiplierKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:powerOfTenMultiplier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The units of the reading, e.g. \"Wh\""^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:UnitSymbolKindDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType."^^xsd:string ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty espi:uom ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The value of the summary measurement."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:Int48Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:powerOfTenMultiplier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:timeStamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:uom ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:value ;
+    ] ;
+.
+espi:ThirdPartyApplicationTypeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Third party application type datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:ThirdPartyApplicationUseDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Third party application use datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:ThirdPartyApplicatonStatusDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Third party applicaton status datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:TimeAttributeKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Code used to specify a particular type of time interval method for Readings of ReadingType. Valid values per the standard are defined in TimeAttributeType."^^xsd:string ;
+  rdfs:label "Time attribute kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:TimeConfiguration
+  rdf:type owl:Class ;
+  dc:description "[extension] Contains attributes related to the configuration of the time service."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#TimeConfiguration" ;
+  rdfs:label "Time configuration"^^xsd:string ;
+  rdfs:subClassOf espi:IdentifiedObject ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Daylight savings time offset from local standard time."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:TimeTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:dstOffset ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Local time zone offset from UTCTime. Does not include any daylight savings time offsets."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:TimeTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:long."^^xsd:string ;
+      owl:allValuesFrom xsd:long ;
+      owl:onProperty espi:tzOffset ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Rule to calculate end of daylight savings time in the current year.  Result of dstEndRule must be greater than result of dstStartRule."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:DstRuleTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:hexBinary."^^xsd:string ;
+      owl:allValuesFrom xsd:hexBinary ;
+      owl:onProperty espi:dstEndRule ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Rule to calculate start of daylight savings time in the current year. Result of dstEndRule must be greater than result of dstStartRule."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:DstRuleTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:hexBinary."^^xsd:string ;
+      owl:allValuesFrom xsd:hexBinary ;
+      owl:onProperty espi:dstStartRule ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:dstEndRule ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:dstOffset ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:dstStartRule ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty espi:tzOffset ;
+    ] ;
+.
+espi:TimePeriodOfInterestDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "[extension]"^^xsd:string ;
+  rdfs:label "Time period of interest datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:TimeTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Time is a signed 64-bit value representing the number of seconds since 0 hours, 0 minutes, 0 seconds, on the 1st of January, 1970."^^xsd:string ;
+  rdfs:label "Time type datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:long ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:long ;
+    ] ;
+.
+espi:UInt16Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Unsigned integer, max inclusive 65535 (2^16-1), same as xs:unsignedShort"^^xsd:string ;
+  rdfs:label "UInt16Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:unsignedShort ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:unsignedShort ;
+    ] ;
+.
+espi:UInt32Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Unsigned integer, max inclusive 4294967295 (2^32-1), same as xs:unsignedInt"^^xsd:string ;
+  rdfs:label "UInt32Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:unsignedInt ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:unsignedInt ;
+    ] ;
+.
+espi:UInt48Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Unsigned integer, max inclusive 281474976710655 (2^48-1), restriction of xs:unsignedLong"^^xsd:string ;
+  rdfs:label "UInt48Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:unsignedLong ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:unsignedLong ;
+      owl:withRestrictions (
+          [
+            xsd:maxInclusive "281474976710655"^^xsd:unsignedLong ;
+          ]
+        ) ;
+    ] ;
+.
+espi:UInt8Datatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Unsigned integer, max inclusive 255 (2^8-1), same as xs:unsignedByte"^^xsd:string ;
+  rdfs:label "UInt8Datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:unsignedByte ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:unsignedByte ;
+    ] ;
+.
+espi:UUIDTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "This pattern defines a UUID"^^xsd:string ;
+  rdfs:label "UUIDType datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+      owl:withRestrictions (
+          [
+            xsd:pattern "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"^^xsd:string ;
+          ]
+        ) ;
+    ] ;
+.
+espi:UnitMultiplierKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "The power of ten unit multipliers."^^xsd:string ;
+  rdfs:label "Unit multiplier kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:UnitSymbolKindDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Code for the base unit of measure for Readings of ReadingType.  Used in combination with the powerOfTenMultiplier to specify the actual unit of measure. Valid values per the standard are defined in UomType."^^xsd:string ;
+  rdfs:label "Unit symbol kind datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+espi:UsagePoint
+  rdf:type owl:Class ;
+  dc:description "Logical point on a network at which consumption or production is either physically measured (e.g., metered) or estimated (e.g., unmetered street lights)."^^xsd:string ;
+  sxml:tag "http://naesb.org/espi#UsagePoint" ;
+  rdfs:label "Usage point"^^xsd:string ;
+  rdfs:subClassOf espi:IdentifiedObject ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Specifies the current status of this usage point. Valid values include: 0 = off 1 = on"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:UInt8Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedByte."^^xsd:string ;
+      owl:allValuesFrom xsd:unsignedByte ;
+      owl:onProperty espi:status ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Specifies the roles that this usage point has been assigned. Bit 1 - isMirror Bit 2 - isPremisesAggregationPoint Bit 3 - isPEV Bit 4 - isDER Bit 5 - isRevenueQuality Bit 6 - isDC Bit 7-16 - Reserved"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is espi:HexBinary16Datatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:hexBinary."^^xsd:string ;
+      owl:allValuesFrom xsd:hexBinary ;
+      owl:onProperty espi:roleFlags ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "[extension] Contains service delivery point information about the UsagePoint if it does represent the service delivery point."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom espi:ServiceDeliveryPoint ;
+      owl:onProperty espi:serviceDeliveryPointRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom espi:ServiceCategory ;
+      owl:onProperty espi:serviceCategoryRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:roleFlags ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:serviceCategoryRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:serviceDeliveryPointRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty espi:status ;
+    ] ;
+.
+espi:accumulationBehaviour
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#accumulationBehaviour" ;
+  rdfs:label "accumulation behaviour"^^xsd:string ;
+.
+espi:amount
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#amount" ;
+  rdfs:label "amount"^^xsd:string ;
+.
+espi:argumentRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#argument" ;
+  rdfs:label "argument ref"^^xsd:string ;
+.
+espi:batchItemInfoRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#batchItemInfo" ;
+  rdfs:label "batch item info ref"^^xsd:string ;
+.
+espi:billLastPeriod
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#billLastPeriod" ;
+  rdfs:label "bill last period"^^xsd:string ;
+.
+espi:billToDate
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#billToDate" ;
+  rdfs:label "bill to date"^^xsd:string ;
+.
+espi:billingPeriodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#billingPeriod" ;
+  rdfs:label "billing period ref"^^xsd:string ;
+.
+espi:commodity
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#commodity" ;
+  rdfs:label "commodity"^^xsd:string ;
+.
+espi:consumptionTier
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#consumptionTier" ;
+  rdfs:label "consumption tier"^^xsd:string ;
+.
+espi:cost
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#cost" ;
+  rdfs:label "cost"^^xsd:string ;
+.
+espi:costAdditionalDetailLastPeriodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#costAdditionalDetailLastPeriod" ;
+  rdfs:label "cost additional detail last period ref"^^xsd:string ;
+.
+espi:costAdditionalLastPeriod
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#costAdditionalLastPeriod" ;
+  rdfs:label "cost additional last period"^^xsd:string ;
+.
+espi:cpp
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#cpp" ;
+  rdfs:label "cpp"^^xsd:string ;
+.
+espi:currency
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#currency" ;
+  rdfs:label "currency"^^xsd:string ;
+.
+espi:currentBillingPeriodOverAllConsumptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#currentBillingPeriodOverAllConsumption" ;
+  rdfs:label "current billing period over all consumption ref"^^xsd:string ;
+.
+espi:currentDayLastYearNetConsumptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#currentDayLastYearNetConsumption" ;
+  rdfs:label "current day last year net consumption ref"^^xsd:string ;
+.
+espi:currentDayNetConsumptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#currentDayNetConsumption" ;
+  rdfs:label "current day net consumption ref"^^xsd:string ;
+.
+espi:currentDayOverallConsumptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#currentDayOverallConsumption" ;
+  rdfs:label "current day overall consumption ref"^^xsd:string ;
+.
+espi:currentStatus
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#currentStatus" ;
+  rdfs:label "current status"^^xsd:string ;
+.
+espi:customerAgreement
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#customerAgreement" ;
+  rdfs:label "customer agreement"^^xsd:string ;
+.
+espi:dataQualifier
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#dataQualifier" ;
+  rdfs:label "data qualifier"^^xsd:string ;
+.
+espi:dateTime
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#dateTime" ;
+  rdfs:label "date time"^^xsd:string ;
+.
+espi:defaultQuality
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#defaultQuality" ;
+  rdfs:label "default quality"^^xsd:string ;
+.
+espi:denominatorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#denominator" ;
+  rdfs:label "denominator ref"^^xsd:string ;
+.
+espi:dstEndRule
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#dstEndRule" ;
+  rdfs:label "dst end rule"^^xsd:string ;
+.
+espi:dstOffset
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#dstOffset" ;
+  rdfs:label "dst offset"^^xsd:string ;
+.
+espi:dstStartRule
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#dstStartRule" ;
+  rdfs:label "dst start rule"^^xsd:string ;
+.
+espi:duration
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#duration" ;
+  rdfs:label "duration"^^xsd:string ;
+.
+espi:extensionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#extension" ;
+  rdfs:label "extension ref"^^xsd:string ;
+.
+espi:flickerPlt
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#flickerPlt" ;
+  rdfs:label "flicker plt"^^xsd:string ;
+.
+espi:flickerPst
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#flickerPst" ;
+  rdfs:label "flicker pst"^^xsd:string ;
+.
+espi:flowDirection
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#flowDirection" ;
+  rdfs:label "flow direction"^^xsd:string ;
+.
+espi:harmonicVoltage
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#harmonicVoltage" ;
+  rdfs:label "harmonic voltage"^^xsd:string ;
+.
+espi:interharmonicRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#interharmonic" ;
+  rdfs:label "interharmonic ref"^^xsd:string ;
+.
+espi:intervalLength
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#intervalLength" ;
+  rdfs:label "interval length"^^xsd:string ;
+.
+espi:intervalReadingRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#IntervalReading" ;
+  rdfs:label "interval reading ref"^^xsd:string ;
+.
+espi:intervalRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#interval" ;
+  rdfs:label "interval ref"^^xsd:string ;
+.
+espi:kind
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#kind" ;
+  rdfs:label "kind"^^xsd:string ;
+.
+espi:longInterruptions
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#longInterruptions" ;
+  rdfs:label "long interruptions"^^xsd:string ;
+.
+espi:mainsVoltage
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#mainsVoltage" ;
+  rdfs:label "mains voltage"^^xsd:string ;
+.
+espi:measurementProtocol
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#measurementProtocol" ;
+  rdfs:label "measurement protocol"^^xsd:string ;
+.
+espi:measuringPeriod
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#measuringPeriod" ;
+  rdfs:label "measuring period"^^xsd:string ;
+.
+espi:name
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#name" ;
+  rdfs:label "name"^^xsd:string ;
+.
+espi:note
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#note" ;
+  rdfs:label "note"^^xsd:string ;
+.
+espi:numerator
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#numerator" ;
+  rdfs:label "numerator"^^xsd:string ;
+.
+espi:operation
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#operation" ;
+  rdfs:label "operation"^^xsd:string ;
+.
+espi:overallConsumptionLastPeriodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#overallConsumptionLastPeriod" ;
+  rdfs:label "overall consumption last period ref"^^xsd:string ;
+.
+espi:peakDemandRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#peakDemand" ;
+  rdfs:label "peak demand ref"^^xsd:string ;
+.
+espi:phase
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#phase" ;
+  rdfs:label "phase"^^xsd:string ;
+.
+espi:powerFrequency
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#powerFrequency" ;
+  rdfs:label "power frequency"^^xsd:string ;
+.
+espi:powerOfTenMultiplier
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#powerOfTenMultiplier" ;
+  rdfs:label "power of ten multiplier"^^xsd:string ;
+.
+espi:previousDayLastYearOverallConsumptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#previousDayLastYearOverallConsumption" ;
+  rdfs:label "previous day last year overall consumption ref"^^xsd:string ;
+.
+espi:previousDayNetConsumptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#previousDayNetConsumption" ;
+  rdfs:label "previous day net consumption ref"^^xsd:string ;
+.
+espi:previousDayOverallConsumptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#previousDayOverallConsumption" ;
+  rdfs:label "previous day overall consumption ref"^^xsd:string ;
+.
+espi:quality
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#quality" ;
+  rdfs:label "quality"^^xsd:string ;
+.
+espi:qualityOfReading
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#qualityOfReading" ;
+  rdfs:label "quality of reading"^^xsd:string ;
+.
+espi:rapidVoltageChanges
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#rapidVoltageChanges" ;
+  rdfs:label "rapid voltage changes"^^xsd:string ;
+.
+espi:ratchetDemandPeriodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#ratchetDemandPeriod" ;
+  rdfs:label "ratchet demand period ref"^^xsd:string ;
+.
+espi:ratchetDemandRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#ratchetDemand" ;
+  rdfs:label "ratchet demand ref"^^xsd:string ;
+.
+espi:readingQualityRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#ReadingQuality" ;
+  rdfs:label "reading quality ref"^^xsd:string ;
+.
+espi:roleFlags
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#roleFlags" ;
+  rdfs:label "role flags"^^xsd:string ;
+.
+espi:rounding
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#rounding" ;
+  rdfs:label "rounding"^^xsd:string ;
+.
+espi:serviceCategoryRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#ServiceCategory" ;
+  rdfs:label "service category ref"^^xsd:string ;
+.
+espi:serviceDeliveryPointRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#ServiceDeliveryPoint" ;
+  rdfs:label "service delivery point ref"^^xsd:string ;
+.
+espi:shortInterruptions
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#shortInterruptions" ;
+  rdfs:label "short interruptions"^^xsd:string ;
+.
+espi:start
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#start" ;
+  rdfs:label "start"^^xsd:string ;
+.
+espi:status
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#status" ;
+  rdfs:label "status"^^xsd:string ;
+.
+espi:statusCode
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#statusCode" ;
+  rdfs:label "status code"^^xsd:string ;
+.
+espi:statusReason
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#statusReason" ;
+  rdfs:label "status reason"^^xsd:string ;
+.
+espi:statusTimeStamp
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#statusTimeStamp" ;
+  rdfs:label "status time stamp"^^xsd:string ;
+.
+espi:summaryIntervalRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#summaryInterval" ;
+  rdfs:label "summary interval ref"^^xsd:string ;
+.
+espi:supplyVoltageDips
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#supplyVoltageDips" ;
+  rdfs:label "supply voltage dips"^^xsd:string ;
+.
+espi:supplyVoltageImbalance
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#supplyVoltageImbalance" ;
+  rdfs:label "supply voltage imbalance"^^xsd:string ;
+.
+espi:supplyVoltageVariations
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#supplyVoltageVariations" ;
+  rdfs:label "supply voltage variations"^^xsd:string ;
+.
+espi:tariffProfile
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#tariffProfile" ;
+  rdfs:label "tariff profile"^^xsd:string ;
+.
+espi:tempOvervoltage
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#tempOvervoltage" ;
+  rdfs:label "temp overvoltage"^^xsd:string ;
+.
+espi:timeAttribute
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#timeAttribute" ;
+  rdfs:label "time attribute"^^xsd:string ;
+.
+espi:timePeriodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://naesb.org/espi#timePeriod" ;
+  rdfs:label "time period ref"^^xsd:string ;
+.
+espi:timeStamp
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#timeStamp" ;
+  rdfs:label "time stamp"^^xsd:string ;
+.
+espi:tou
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#tou" ;
+  rdfs:label "tou"^^xsd:string ;
+.
+espi:tzOffset
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#tzOffset" ;
+  rdfs:label "tz offset"^^xsd:string ;
+.
+espi:uom
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#uom" ;
+  rdfs:label "uom"^^xsd:string ;
+.
+espi:value
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://naesb.org/espi#value" ;
+  rdfs:label "value"^^xsd:string ;
+.
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.

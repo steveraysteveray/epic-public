@@ -1,0 +1,436 @@
+# baseURI: urn:ietf:params:xml:ns:icalendar-2.0
+# imports: http://docs.oasis-open.org/ns/energyinterop/201110
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix energyinterop: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0>
+  rdf:type owl:Ontology ;
+  owl:imports <http://docs.oasis-open.org/ns/energyinterop/201110> ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) urn:ietf:params:xml:ns:icalendar-2.0, urn:ietf:params:xml:ns:icalendar-2.0, urn:ietf:params:xml:ns:icalendar-2.0, urn:ietf:params:xml:ns:icalendar-2.0, urn:ietf:params:xml:ns:icalendar-2.0"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#ArrayOfVavailabilityContainedComponents>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#ArrayOfVavailabilityContainedComponents" ;
+  rdfs:label "Array of vavailability contained components"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0#Available> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#availableRef> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Available>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#available" ;
+  rdfs:label "Available"^^xsd:string ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0#AvailableType> ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#AvailableType>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#AvailableType" ;
+  rdfs:label "Available type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0#Properties> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#propertiesRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#propertiesRef> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Components>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#components" ;
+  rdfs:label "Components"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Date-timeDatatype>
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Date-time datatype"^^xsd:string ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0#DateTimeTypeDatatype> ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype <urn:ietf:params:xml:ns:icalendar-2.0#DateTimeTypeDatatype> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#DateTimeTypeDatatype>
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Date time type datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:dateTime ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:dateTime ;
+      owl:withRestrictions (
+          [
+            xsd:pattern "(\\-|\\+)?\\d{4}\\-\\d{2}\\-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d*)?Z?"^^xsd:string ;
+          ]
+        ) ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Dtend>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#dtend" ;
+  rdfs:label "Dtend"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is icalendar-2:Date-timeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:dateTime."^^xsd:string ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#date-time> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#date-time> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Dtstart>
+  rdf:type owl:Class ;
+  dc:description "The starting time for the activity, data, or state change"^^xsd:string ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#dtstart" ;
+  rdfs:label "Dtstart"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is icalendar-2:Date-timeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:dateTime."^^xsd:string ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#date-time> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#date-time> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Duration>
+  rdf:type owl:Class ;
+  dc:description "The duration of the  activity, data, or state"^^xsd:string ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#duration" ;
+  rdfs:label "Duration"^^xsd:string ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0#DurationPropType> ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#DurationPropType>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#DurationPropType" ;
+  rdfs:label "Duration prop type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is icalendar-2:DurationValueTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#duration> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#duration> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#DurationValueTypeDatatype>
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Duration value type datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+      owl:withRestrictions (
+          [
+            xsd:pattern "(\\+|\\-)?P((\\d+Y)?(\\d+M)?(\\d+D)?T?(\\d+H)?(\\d+M)?(\\d+S)?)|(\\d+W)"^^xsd:string ;
+          ]
+        ) ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Granularity>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#granularity" ;
+  rdfs:label "Granularity"^^xsd:string ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0#DurationPropType> ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Interval>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#interval" ;
+  rdfs:label "Interval"^^xsd:string ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0#WsCalendarIntervalType> ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Properties>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#properties" ;
+  rdfs:label "Properties"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A duration before or after the event end time during which load shed should transit."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom energyinterop:X-eiRecovery ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#x-eiRecoveryRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A duration before or after the event start time during which load shed should transit."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom energyinterop:X-eiRampUp ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#x-eiRampUpRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Set randomization period for start of event"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0#Properties-tolerance> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#toleranceRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The VEN should receive the DR event payload prior to dtstart minus this duration."^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:X-eiNotification ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#x-eiNotificationRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The duration of the  activity, data, or state"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0#Duration> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#durationRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The starting time for the activity, data, or state change"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0#Dtstart> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#dtstartRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#dtstartRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#durationRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#toleranceRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#x-eiNotificationRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#x-eiRampUpRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#x-eiRecoveryRef> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Properties-tolerance>
+  rdf:type owl:Class ;
+  rdfs:label "Properties-tolerance"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0#Properties-tolerance-tolerate> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#tolerateRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#tolerateRef> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Properties-tolerance-tolerate>
+  rdf:type owl:Class ;
+  rdfs:label "Properties-tolerance-tolerate"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is icalendar-2:DurationValueTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#startafter> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#startafter> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#TextDatatype>
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Text datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Uid>
+  rdf:type owl:Class ;
+  dc:description "Used as an index to identify intervals"^^xsd:string ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#uid" ;
+  rdfs:label "Uid"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is icalendar-2:TextDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#text> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#text> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#Vavailability>
+  rdf:type owl:Class ;
+  dc:description "A schedule reflecting device availability for participating in DR events"^^xsd:string ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#vavailability" ;
+  rdfs:label "Vavailability"^^xsd:string ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0#VavailabilityType> ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#VavailabilityType>
+  rdf:type owl:Class ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#VavailabilityType" ;
+  rdfs:label "Vavailability type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0#ArrayOfVavailabilityContainedComponents> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#componentsRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#componentsRef> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#WsCalendarIntervalType>
+  rdf:type owl:Class ;
+  dc:description "An interval takes no sub-components."@en ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#WsCalendarIntervalType" ;
+  rdfs:label "Ws calendar interval type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom <urn:ietf:params:xml:ns:icalendar-2.0#Properties> ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#propertiesRef> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty <urn:ietf:params:xml:ns:icalendar-2.0#propertiesRef> ;
+    ] ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#availableRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#available" ;
+  rdfs:label "available ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#componentsRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#components" ;
+  rdfs:label "components ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#date-time>
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:ietf:params:xml:ns:icalendar-2.0#date-time" ;
+  rdfs:label "date-time"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#dtstartRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#dtstart" ;
+  rdfs:label "dtstart ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#duration>
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:ietf:params:xml:ns:icalendar-2.0#duration" ;
+  rdfs:label "duration"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#durationRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#duration" ;
+  rdfs:label "duration ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#propertiesRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#properties" ;
+  rdfs:label "properties ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#startafter>
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:ietf:params:xml:ns:icalendar-2.0#startafter" ;
+  rdfs:label "startafter"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#text>
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "urn:ietf:params:xml:ns:icalendar-2.0#text" ;
+  rdfs:label "text"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#toleranceRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#tolerance" ;
+  rdfs:label "tolerance ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#tolerateRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#tolerate" ;
+  rdfs:label "tolerate ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#x-eiNotificationRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#x-eiNotification" ;
+  rdfs:label "x-ei notification ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#x-eiRampUpRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#x-eiRampUp" ;
+  rdfs:label "x-ei ramp up ref"^^xsd:string ;
+.
+<urn:ietf:params:xml:ns:icalendar-2.0#x-eiRecoveryRef>
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "urn:ietf:params:xml:ns:icalendar-2.0#x-eiRecovery" ;
+  rdfs:label "x-ei recovery ref"^^xsd:string ;
+.

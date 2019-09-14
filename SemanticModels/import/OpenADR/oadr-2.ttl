@@ -1,0 +1,4060 @@
+# baseURI: http://openadr.org/oadr-2.0b/2012/07
+# imports: http://docs.oasis-open.org/ns/emix/2011/06
+# imports: http://docs.oasis-open.org/ns/emix/2011/06/siscale
+# imports: http://docs.oasis-open.org/ns/energyinterop/201110
+# imports: http://docs.oasis-open.org/ns/energyinterop/201110/payloads
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.w3.org/2000/09/xmldsig
+# imports: http://www.w3.org/2005/Atom
+# imports: urn:ietf:params:xml:ns:icalendar-2.0
+# imports: urn:ietf:params:xml:ns:icalendar-2.0:stream
+# imports: urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07
+# prefix: p2012-07
+
+@prefix A: <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#> .
+@prefix Atom: <http://www.w3.org/2005/Atom#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dsig: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix energyinterop: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix icalendar: <urn:ietf:params:xml:ns:icalendar-2.0#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p2012-07: <http://openadr.org/oadr-2.0b/2012/07#> .
+@prefix payloads: <http://docs.oasis-open.org/ns/energyinterop/201110/payloads#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix siscale: <http://docs.oasis-open.org/ns/emix/2011/06/siscale#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+energyinterop:RegistrationID
+  rdfs:subClassOf energyinterop:RefID ;
+  rdfs:subClassOf energyinterop:Uid ;
+.
+energyinterop:marketContext
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#marketContext" ;
+.
+payloads:EiCreatedEvent
+  dc:description "Respond to a DR Event with optIn or optOut" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#eiCreatedEvent" ;
+.
+payloads:EiRequestEvent
+  dc:description "Request Event from a VTN in pull mode" ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#eiRequestEvent" ;
+.
+<http://openadr.org/oadr-2.0b/2012/07>
+  rdf:type owl:Ontology ;
+  owl:imports <http://docs.oasis-open.org/ns/emix/2011/06> ;
+  owl:imports <http://docs.oasis-open.org/ns/emix/2011/06/siscale> ;
+  owl:imports <http://docs.oasis-open.org/ns/energyinterop/201110> ;
+  owl:imports <http://docs.oasis-open.org/ns/energyinterop/201110/payloads> ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.w3.org/2000/09/xmldsig> ;
+  owl:imports <http://www.w3.org/2005/Atom> ;
+  owl:imports <urn:ietf:params:xml:ns:icalendar-2.0> ;
+  owl:imports <urn:ietf:params:xml:ns:icalendar-2.0:stream> ;
+  owl:imports <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://openadr.org/oadr-2.0b/2012/07" ;
+.
+p2012-07:BaseUnitType
+  rdf:type owl:Class ;
+  dc:description "Custom Units" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#BaseUnitType" ;
+  rdfs:label "Base unit type" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCode ;
+      owl:onProperty p2012-07:siScaleCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:siScaleCodeRef ;
+    ] ;
+.
+p2012-07:CIDT_currency
+  rdf:type p2012-07:CurrencyItemDescriptionType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "currency"^^xsd:token ;
+  rdfs:label "currency" ;
+.
+p2012-07:CIDT_currencyPerKW
+  rdf:type p2012-07:CurrencyItemDescriptionType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "currencyPerKW"^^xsd:token ;
+  rdfs:label "currency per KW" ;
+.
+p2012-07:CIDT_currencyPerKWh
+  rdf:type p2012-07:CurrencyItemDescriptionType ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "currencyPerKWh"^^xsd:token ;
+  rdfs:label "currency per KWh" ;
+.
+p2012-07:Currency
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#currency" ;
+  rdfs:label "Currency" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:CurrencyType ;
+.
+p2012-07:CurrencyItemDescriptionType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#currencyItemDescriptionType" ;
+  rdfs:label "Currency item description type" ;
+  rdfs:subClassOf p2012-07:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      p2012-07:CIDT_currency
+      p2012-07:CIDT_currencyPerKW
+      p2012-07:CIDT_currencyPerKWh
+    ) ;
+.
+p2012-07:CurrencyPerKW
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#currencyPerKW" ;
+  rdfs:label "Currency per KW" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:CurrencyType ;
+.
+p2012-07:CurrencyPerKWh
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#currencyPerKWh" ;
+  rdfs:label "Currency per KWh" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:CurrencyType ;
+.
+p2012-07:CurrencyPerThm
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#currencyPerThm" ;
+  rdfs:label "Currency per thm" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:CurrencyType ;
+.
+p2012-07:CurrencyType
+  rdf:type owl:Class ;
+  dc:description "currency" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#currencyType" ;
+  rdfs:label "Currency type" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "ISO enumeration of currency types, such as USD" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom A:ISO3AlphaCurrencyCodeContentType ;
+      owl:onProperty p2012-07:itemUnitsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom p2012-07:CurrencyItemDescriptionType ;
+      owl:onProperty p2012-07:itemDescriptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCodeDatatype ;
+      owl:onProperty siscale:siScaleCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemDescriptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemUnitsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty siscale:siScaleCode ;
+    ] ;
+.
+p2012-07:Current
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#current" ;
+  rdfs:label "Current" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:CurrentType ;
+.
+p2012-07:CurrentType
+  rdf:type owl:Class ;
+  dc:description "Current" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#CurrentType" ;
+  rdfs:label "Current type" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCodeDatatype ;
+      owl:onProperty siscale:siScaleCode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty siscale:siScaleCode ;
+    ] ;
+.
+p2012-07:CustomUnit
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#customUnit" ;
+  rdfs:label "Custom unit" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:BaseUnitType ;
+.
+p2012-07:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value" ;
+  rdfs:subClassOf dtype:EnumeratedValue ;
+.
+p2012-07:Frequency
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#frequency" ;
+  rdfs:label "Frequency" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:FrequencyType ;
+.
+p2012-07:FrequencyType
+  rdf:type owl:Class ;
+  dc:description "Frequency" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#FrequencyType" ;
+  rdfs:label "Frequency type" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCode ;
+      owl:onProperty p2012-07:siScaleCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:siScaleCodeRef ;
+    ] ;
+.
+p2012-07:ODQT_NoNewValue-PreviousValueUsed
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "No New Value - Previous Value Used"^^xsd:token ;
+  rdfs:label "No new value-Previous value used" ;
+.
+p2012-07:ODQT_NoQuality-NoValue
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "No Quality - No Value"^^xsd:token ;
+  rdfs:label "No quality-No value" ;
+.
+p2012-07:ODQT_QualityBad-CommFailure
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "8"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Bad - Comm Failure"^^xsd:token ;
+  rdfs:label "Quality bad-Comm failure" ;
+.
+p2012-07:ODQT_QualityBad-ConfigurationError
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Bad - Configuration Error"^^xsd:token ;
+  rdfs:label "Quality bad-Configuration error" ;
+.
+p2012-07:ODQT_QualityBad-DeviceFailure
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "5"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Bad - Device Failure"^^xsd:token ;
+  rdfs:label "Quality bad-Device failure" ;
+.
+p2012-07:ODQT_QualityBad-LastKnownValue
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "7"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Bad - Last Known Value"^^xsd:token ;
+  rdfs:label "Quality bad-Last known value" ;
+.
+p2012-07:ODQT_QualityBad-NonSpecific
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Bad - Non Specific"^^xsd:token ;
+  rdfs:label "Quality bad-Non specific" ;
+.
+p2012-07:ODQT_QualityBad-NotConnected
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Bad - Not Connected"^^xsd:token ;
+  rdfs:label "Quality bad-Not connected" ;
+.
+p2012-07:ODQT_QualityBad-OutofService
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "9"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Bad - Out of Service"^^xsd:token ;
+  rdfs:label "Quality bad-Outof service" ;
+.
+p2012-07:ODQT_QualityBad-SensorFailure
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "6"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Bad - Sensor Failure"^^xsd:token ;
+  rdfs:label "Quality bad-Sensor failure" ;
+.
+p2012-07:ODQT_QualityGood-LocalOverride
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "16"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Good - Local Override"^^xsd:token ;
+  rdfs:label "Quality good-Local override" ;
+.
+p2012-07:ODQT_QualityGood-NonSpecific
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "15"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Good - Non Specific"^^xsd:token ;
+  rdfs:label "Quality good-Non specific" ;
+.
+p2012-07:ODQT_QualityLimit-FieldConstant
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "20"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Limit - Field/Constant"^^xsd:token ;
+  rdfs:label "Quality limit-Field constant" ;
+.
+p2012-07:ODQT_QualityLimit-FieldHigh
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "19"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Limit - Field/High"^^xsd:token ;
+  rdfs:label "Quality limit-Field high" ;
+.
+p2012-07:ODQT_QualityLimit-FieldLow
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "18"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Limit - Field/Low"^^xsd:token ;
+  rdfs:label "Quality limit-Field low" ;
+.
+p2012-07:ODQT_QualityLimit-FieldNot
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "17"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Limit - Field/Not"^^xsd:token ;
+  rdfs:label "Quality limit-Field not" ;
+.
+p2012-07:ODQT_QualityUncertain-EUUnitsExceeded
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "13"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Uncertain - EU Units Exceeded"^^xsd:token ;
+  rdfs:label "Quality uncertain-EUUnits exceeded" ;
+.
+p2012-07:ODQT_QualityUncertain-LastUsableValue
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "11"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Uncertain - Last Usable Value"^^xsd:token ;
+  rdfs:label "Quality uncertain-Last usable value" ;
+.
+p2012-07:ODQT_QualityUncertain-NonSpecific
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "10"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Uncertain - Non Specific"^^xsd:token ;
+  rdfs:label "Quality uncertain-Non specific" ;
+.
+p2012-07:ODQT_QualityUncertain-SensorNotAccurate
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "12"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Uncertain - Sensor Not Accurate"^^xsd:token ;
+  rdfs:label "Quality uncertain-Sensor not accurate" ;
+.
+p2012-07:ODQT_QualityUncertain-SubNormal
+  rdf:type p2012-07:OadrDataQualityType ;
+  dtype:order "14"^^xsd:nonNegativeInteger ;
+  dtype:value "Quality Uncertain - Sub Normal"^^xsd:token ;
+  rdfs:label "Quality uncertain-Sub normal" ;
+.
+<http://openadr.org/oadr-2.0b/2012/07#OPT_2.0a>
+  rdf:type p2012-07:OadrProfileType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "2.0a"^^xsd:token ;
+  rdfs:label "2.0a" ;
+.
+<http://openadr.org/oadr-2.0b/2012/07#OPT_2.0b>
+  rdf:type p2012-07:OadrProfileType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "2.0b"^^xsd:token ;
+  rdfs:label "2.0b" ;
+.
+p2012-07:OSNT_EiEvent
+  rdf:type p2012-07:OadrServiceNameType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "EiEvent"^^xsd:token ;
+  rdfs:label "Ei event" ;
+.
+p2012-07:OSNT_EiOpt
+  rdf:type p2012-07:OadrServiceNameType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "EiOpt"^^xsd:token ;
+  rdfs:label "Ei opt" ;
+.
+p2012-07:OSNT_EiRegisterParty
+  rdf:type p2012-07:OadrServiceNameType ;
+  dtype:order "3"^^xsd:nonNegativeInteger ;
+  dtype:value "EiRegisterParty"^^xsd:token ;
+  rdfs:label "Ei register party" ;
+.
+p2012-07:OSNT_EiReport
+  rdf:type p2012-07:OadrServiceNameType ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "EiReport"^^xsd:token ;
+  rdfs:label "Ei report" ;
+.
+p2012-07:OSNT_OadrPoll
+  rdf:type p2012-07:OadrServiceNameType ;
+  dtype:order "4"^^xsd:nonNegativeInteger ;
+  dtype:value "OadrPoll"^^xsd:token ;
+  rdfs:label "Oadr poll" ;
+.
+p2012-07:OTT_simpleHttp
+  rdf:type p2012-07:OadrTransportType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "simpleHttp"^^xsd:token ;
+  rdfs:label "simple http" ;
+.
+p2012-07:OTT_xmpp
+  rdf:type p2012-07:OadrTransportType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "xmpp"^^xsd:token ;
+  rdfs:label "xmpp" ;
+.
+p2012-07:OadrCancelOpt
+  rdf:type owl:Class ;
+  dc:description "Cancel an opt schedule" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelOpt" ;
+  rdfs:label "Oadr cancel opt" ;
+  rdfs:subClassOf p2012-07:OadrCancelOptType ;
+.
+p2012-07:OadrCancelOptType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelOptType" ;
+  rdfs:label "Oadr cancel opt type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for an opt interaction" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:OptID ;
+      owl:onProperty p2012-07:optIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:optIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrCancelPartyRegistration
+  rdf:type owl:Class ;
+  dc:description "Cancel a registration" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelPartyRegistration" ;
+  rdfs:label "Oadr cancel party registration" ;
+  rdfs:subClassOf p2012-07:OadrCancelPartyRegistrationType ;
+.
+p2012-07:OadrCancelPartyRegistrationType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelPartyRegistrationType" ;
+  rdfs:label "Oadr cancel party registration type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for Registration transaction. Not included in response to query registration unless already registered" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:RegistrationID ;
+      owl:onProperty p2012-07:registrationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:registrationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrCancelReport
+  rdf:type owl:Class ;
+  dc:description "Cancel a report" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelReport" ;
+  rdfs:label "Oadr cancel report" ;
+  rdfs:subClassOf p2012-07:OadrCancelReportType ;
+.
+p2012-07:OadrCancelReportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelReportType" ;
+  rdfs:label "Oadr cancel report type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for a particular report request" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportRequestID ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicates if report (in the form of UpdateReport) to be returned following cancellation of Report" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom payloads:ReportToFollow ;
+      owl:onProperty p2012-07:reportToFollowRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportToFollowRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+.
+p2012-07:OadrCanceledOpt
+  rdf:type owl:Class ;
+  dc:description "Acknowledge cancelation of an opt schedule" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledOpt" ;
+  rdfs:label "Oadr canceled opt" ;
+  rdfs:subClassOf p2012-07:OadrCanceledOptType ;
+.
+p2012-07:OadrCanceledOptType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledOptType" ;
+  rdfs:label "Oadr canceled opt type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for an opt interaction" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:OptID ;
+      owl:onProperty p2012-07:optIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:optIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrCanceledPartyRegistration
+  rdf:type owl:Class ;
+  dc:description "Acknowledge cancelation of registration" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledPartyRegistration" ;
+  rdfs:label "Oadr canceled party registration" ;
+  rdfs:subClassOf p2012-07:OadrCanceledPartyRegistrationType ;
+.
+p2012-07:OadrCanceledPartyRegistrationType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledPartyRegistrationType" ;
+  rdfs:label "Oadr canceled party registration type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for Registration transaction. Not included in response to query registration unless already registered" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:RegistrationID ;
+      owl:onProperty p2012-07:registrationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:registrationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrCanceledReport
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledReport" ;
+  rdfs:label "Oadr canceled report" ;
+  rdfs:subClassOf p2012-07:OadrCanceledReportType ;
+.
+p2012-07:OadrCanceledReportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledReportType" ;
+  rdfs:label "Oadr canceled report type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrPendingReports ;
+      owl:onProperty p2012-07:oadrPendingReportsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrPendingReportsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrCreateOpt
+  rdf:type owl:Class ;
+  dc:description "Create an optIn or optOut schedule" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreateOpt" ;
+  rdfs:label "Oadr create opt" ;
+  rdfs:subClassOf p2012-07:OadrCreateOptType ;
+.
+p2012-07:OadrCreateOptType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreateOptType" ;
+  rdfs:label "Oadr create opt type" ;
+  rdfs:subClassOf energyinterop:EiOptType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Device Class target - use only endDeviceAsset." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrDeviceClass ;
+      owl:onProperty p2012-07:oadrDeviceClassRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifies the resources associated with the logical VEN interface. For events, the values specified are the target for the event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiTarget ;
+      owl:onProperty p2012-07:eiTargetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:QualifiedEventID ;
+      owl:onProperty p2012-07:qualifiedEventIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiTargetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrDeviceClassRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:qualifiedEventIDRef ;
+    ] ;
+.
+p2012-07:OadrCreatePartyRegistration
+  rdf:type owl:Class ;
+  dc:description "Used by VEN to initiate registration with VTN" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatePartyRegistration" ;
+  rdfs:label "Oadr create party registration" ;
+  rdfs:subClassOf p2012-07:OadrCreatePartyRegistrationType ;
+.
+p2012-07:OadrCreatePartyRegistrationType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatePartyRegistrationType" ;
+  rdfs:label "Oadr create party registration type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for Registration transaction. Not included in response to query registration unless already registered" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:RegistrationID ;
+      owl:onProperty p2012-07:registrationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "If transport is simpleHttp indicate if VEN is operating in pull exchange model - true or false" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrHttpPullModelDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:boolean." ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty p2012-07:oadrHttpPullModel ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Implementation supports XML signature" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrXmlSignatureDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:boolean." ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty p2012-07:oadrXmlSignature ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "OpenADR profile name such as 2.0a or 2.0b." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrProfileNameDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrProfileName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "OpenADR transport name such as simpleHttp or xmpp" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrTransportNameDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrTransportName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "ReportOnlyDeviceFlag" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrReportOnlyDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:boolean." ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty p2012-07:oadrReportOnly ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Root address used to communicate with other party. Should include port if required" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrTransportAddressDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrTransportAddress ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "VEN name. May be used in VTN GUI" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrVenNameDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrVenName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrProfileName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrReportOnly ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrTransportName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrXmlSignature ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrHttpPullModel ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrTransportAddress ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrVenName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:registrationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrCreateReport
+  rdf:type owl:Class ;
+  dc:description "Request report from other party" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreateReport" ;
+  rdfs:label "Oadr create report" ;
+  rdfs:subClassOf p2012-07:OadrCreateReportType ;
+.
+p2012-07:OadrCreateReportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreateReportType" ;
+  rdfs:label "Oadr create report type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Request report" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrReportRequest ;
+      owl:onProperty p2012-07:oadrReportRequestRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrReportRequestRef ;
+    ] ;
+.
+p2012-07:OadrCreatedEvent
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedEvent" ;
+  rdfs:label "Oadr created event" ;
+  rdfs:subClassOf p2012-07:OadrCreatedEventType ;
+.
+p2012-07:OadrCreatedEventType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedEventType" ;
+  rdfs:label "Oadr created event type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Respond to a DR Event with optIn or optOut" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:EiCreatedEvent ;
+      owl:onProperty p2012-07:eiCreatedEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiCreatedEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrCreatedOpt
+  rdf:type owl:Class ;
+  dc:description "Acknowledge receipt of an opt schedule" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedOpt" ;
+  rdfs:label "Oadr created opt" ;
+  rdfs:subClassOf p2012-07:OadrCreatedOptType ;
+.
+p2012-07:OadrCreatedOptType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedOptType" ;
+  rdfs:label "Oadr created opt type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for an opt interaction" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:OptID ;
+      owl:onProperty p2012-07:optIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:optIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrCreatedPartyRegistration
+  rdf:type owl:Class ;
+  dc:description "Acknowledge receipt of VEN registration, provide VTN registration info" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedPartyRegistration" ;
+  rdfs:label "Oadr created party registration" ;
+  rdfs:subClassOf p2012-07:OadrCreatedPartyRegistrationType ;
+.
+p2012-07:OadrCreatedPartyRegistrationType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedPartyRegistrationType" ;
+  rdfs:label "Oadr created party registration type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for Registration transaction. Not included in response to query registration unless already registered" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:RegistrationID ;
+      owl:onProperty p2012-07:registrationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "OpenADR profiles supported by the implementation" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrProfiles ;
+      owl:onProperty p2012-07:oadrProfilesRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Service specific registration information" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrServiceSpecificInfo ;
+      owl:onProperty p2012-07:oadrServiceSpecificInfoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The VEN shall send an oadrPoll payload to the VTN at most once for each duration specified by this element" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrRequestedOadrPollFreq ;
+      owl:onProperty p2012-07:oadrRequestedOadrPollFreqRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "venID not included in query unless already registered" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VtnID ;
+      owl:onProperty p2012-07:vtnIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreatedPartyRegistrationType-oadrExtensions ;
+      owl:onProperty p2012-07:oadrExtensionsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrProfilesRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:vtnIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrExtensionsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrRequestedOadrPollFreqRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrServiceSpecificInfoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:registrationIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrCreatedPartyRegistrationType-oadrExtensions
+  rdf:type owl:Class ;
+  rdfs:label "Oadr created party registration type-oadr extensions" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreatedPartyRegistrationType-oadrExtensions-oadrExtension ;
+      owl:onProperty p2012-07:oadrExtensionRef ;
+    ] ;
+.
+p2012-07:OadrCreatedPartyRegistrationType-oadrExtensions-oadrExtension
+  rdf:type owl:Class ;
+  rdfs:label "Oadr created party registration type-oadr extensions-oadr extension" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A key value pair of service specific registration information" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrInfo ;
+      owl:onProperty p2012-07:oadrInfoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrExtensionName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrExtensionName ;
+    ] ;
+.
+p2012-07:OadrCreatedReport
+  rdf:type owl:Class ;
+  dc:description "Acknowledge the request for report was received" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedReport" ;
+  rdfs:label "Oadr created report" ;
+  rdfs:subClassOf p2012-07:OadrCreatedReportType ;
+.
+p2012-07:OadrCreatedReportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedReportType" ;
+  rdfs:label "Oadr created report type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "List of periodic reports that have not yet been delivered" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrPendingReports ;
+      owl:onProperty p2012-07:oadrPendingReportsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrPendingReportsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrDataQualityDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Oadr data quality datatype" ;
+  rdfs:subClassOf p2012-07:OadrDataQualityTypeTypeDatatype ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype p2012-07:OadrDataQualityTypeTypeDatatype ;
+    ] ;
+.
+p2012-07:OadrDataQualityType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrDataQualityType" ;
+  rdfs:label "Oadr data quality type" ;
+  rdfs:subClassOf p2012-07:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      p2012-07:ODQT_NoNewValue-PreviousValueUsed
+      p2012-07:ODQT_NoQuality-NoValue
+      p2012-07:ODQT_QualityBad-CommFailure
+      p2012-07:ODQT_QualityBad-ConfigurationError
+      p2012-07:ODQT_QualityBad-DeviceFailure
+      p2012-07:ODQT_QualityBad-LastKnownValue
+      p2012-07:ODQT_QualityBad-NonSpecific
+      p2012-07:ODQT_QualityBad-NotConnected
+      p2012-07:ODQT_QualityBad-OutofService
+      p2012-07:ODQT_QualityBad-SensorFailure
+      p2012-07:ODQT_QualityGood-LocalOverride
+      p2012-07:ODQT_QualityGood-NonSpecific
+      p2012-07:ODQT_QualityLimit-FieldConstant
+      p2012-07:ODQT_QualityLimit-FieldHigh
+      p2012-07:ODQT_QualityLimit-FieldLow
+      p2012-07:ODQT_QualityLimit-FieldNot
+      p2012-07:ODQT_QualityUncertain-EUUnitsExceeded
+      p2012-07:ODQT_QualityUncertain-LastUsableValue
+      p2012-07:ODQT_QualityUncertain-NonSpecific
+      p2012-07:ODQT_QualityUncertain-SensorNotAccurate
+      p2012-07:ODQT_QualityUncertain-SubNormal
+    ) ;
+.
+p2012-07:OadrDataQualityTypeTypeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Oadr data quality type type datatype" ;
+  rdfs:subClassOf xsd:anySimpleType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:anySimpleType ;
+    ] ;
+.
+p2012-07:OadrDeviceClass
+  rdf:type owl:Class ;
+  dc:description "Device Class target - use only endDeviceAsset." ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrDeviceClass" ;
+  rdfs:label "Oadr device class" ;
+  rdfs:subClassOf energyinterop:EiTargetType ;
+.
+p2012-07:OadrDistributeEvent
+  rdf:type owl:Class ;
+  dc:description "Send DR Events to a VEN" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrDistributeEvent" ;
+  rdfs:label "Oadr distribute event" ;
+  rdfs:subClassOf p2012-07:OadrDistributeEventType ;
+.
+p2012-07:OadrDistributeEventType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrDistributeEventType" ;
+  rdfs:label "Oadr distribute event type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "An object containing a demand response event" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrDistributeEventType-oadrEvent ;
+      owl:onProperty p2012-07:oadrEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty payloads:requestID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty energyinterop:vtnID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty energyinterop:vtnID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty payloads:requestID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrDistributeEventType-oadrEvent
+  rdf:type owl:Class ;
+  rdfs:label "Oadr distribute event type-oadr event" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Controls when optIn/optOut repsonse is required. Can be always or never" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrResponseRequiredDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrResponseRequired ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiEvent ;
+      owl:onProperty p2012-07:eiEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrResponseRequired ;
+    ] ;
+.
+p2012-07:OadrGBDataDescription
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrGBDataDescription" ;
+  rdfs:label "Oadr GBData description" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:OadrGBItemBase ;
+.
+p2012-07:OadrGBItemBase
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrGBItemBase" ;
+  rdfs:label "Oadr GBItem base" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom Atom:Feed ;
+      owl:onProperty p2012-07:feedRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:feedRef ;
+    ] ;
+.
+p2012-07:OadrGBPayload
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrGBPayload" ;
+  rdfs:label "Oadr GBPayload" ;
+  rdfs:subClassOf p2012-07:OadrGBStreamPayloadBase ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamPayloadBase> ;
+.
+p2012-07:OadrGBStreamPayloadBase
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrGBStreamPayloadBase" ;
+  rdfs:label "Oadr GBStream payload base" ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamPayloadBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom Atom:Feed ;
+      owl:onProperty p2012-07:feedRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:feedRef ;
+    ] ;
+.
+p2012-07:OadrHttpPullModelDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Oadr http pull model datatype" ;
+  rdfs:subClassOf xsd:boolean ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:boolean ;
+    ] ;
+.
+p2012-07:OadrInfo
+  rdf:type owl:Class ;
+  dc:description "A key value pair of service specific registration information" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrInfo" ;
+  rdfs:label "Oadr info" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrKey ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrKey ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrValue ;
+    ] ;
+.
+p2012-07:OadrLoadControlState
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrLoadControlState" ;
+  rdfs:label "Oadr load control state" ;
+  rdfs:subClassOf p2012-07:OadrLoadControlStateType ;
+.
+p2012-07:OadrLoadControlStateType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrLoadControlStateType" ;
+  rdfs:label "Oadr load control state type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrLoadControlStateTypeType ;
+      owl:onProperty p2012-07:oadrCapacityRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrLoadControlStateTypeType ;
+      owl:onProperty p2012-07:oadrLevelOffsetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrLoadControlStateTypeType ;
+      owl:onProperty p2012-07:oadrPercentOffsetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrLoadControlStateTypeType ;
+      owl:onProperty p2012-07:oadrSetPointRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCapacityRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrLevelOffsetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrPercentOffsetRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrSetPointRef ;
+    ] ;
+.
+p2012-07:OadrLoadControlStateTypeType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrLoadControlStateTypeType" ;
+  rdfs:label "Oadr load control state type type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:float. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:float." ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty p2012-07:oadrMin ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:float. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:float." ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty p2012-07:oadrMax ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:float. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:float." ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty p2012-07:oadrCurrent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:float. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:float." ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty p2012-07:oadrNormal ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCurrent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrMax ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrMin ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrNormal ;
+    ] ;
+.
+p2012-07:OadrPayload
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPayload" ;
+  rdfs:label "Oadr payload" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom dsig:Signature ;
+      owl:onProperty p2012-07:signatureRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrSignedObject ;
+      owl:onProperty p2012-07:oadrSignedObjectRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrSignedObjectRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:signatureRef ;
+    ] ;
+.
+p2012-07:OadrPayloadResourceStatus
+  rdf:type owl:Class ;
+  dc:description "Current resource status information" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPayloadResourceStatus" ;
+  rdfs:label "Oadr payload resource status" ;
+  rdfs:subClassOf energyinterop:PayloadBase ;
+  rdfs:subClassOf p2012-07:OadrPayloadResourceStatusType ;
+.
+p2012-07:OadrPayloadResourceStatusType
+  rdf:type owl:Class ;
+  dc:description "This is the payload for reports that require a status." ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPayloadResourceStatusType" ;
+  rdfs:label "Oadr payload resource status type" ;
+  rdfs:subClassOf energyinterop:PayloadBaseType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "If true then resource/asset is online, if false then offline." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:boolean. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:boolean." ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty p2012-07:oadrOnline ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "If true then the control of the load has been manually overridden" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:boolean. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:boolean." ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty p2012-07:oadrManualOverride ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrLoadControlState ;
+      owl:onProperty p2012-07:oadrLoadControlStateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrManualOverride ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrOnline ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrLoadControlStateRef ;
+    ] ;
+.
+p2012-07:OadrPendingReports
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPendingReports" ;
+  rdfs:label "Oadr pending reports" ;
+  rdfs:subClassOf p2012-07:OadrPendingReportsType ;
+.
+p2012-07:OadrPendingReportsType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPendingReportsType" ;
+  rdfs:label "Oadr pending reports type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for a particular report request" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportRequestID ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+.
+p2012-07:OadrPoll
+  rdf:type owl:Class ;
+  dc:description "Query pull VTN for payloads with new or modified information" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPoll" ;
+  rdfs:label "Oadr poll" ;
+  rdfs:subClassOf p2012-07:OadrPollType ;
+.
+p2012-07:OadrPollType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPollType" ;
+  rdfs:label "Oadr poll type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrProfileNameDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "OpenADR profile name such as 2.0a or 2.0b." ;
+  rdfs:label "Oadr profile name datatype" ;
+  rdfs:subClassOf p2012-07:OadrProfileType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype p2012-07:OadrProfileType ;
+    ] ;
+.
+p2012-07:OadrProfileType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrProfileType" ;
+  rdfs:label "Oadr profile type" ;
+  rdfs:subClassOf p2012-07:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      <http://openadr.org/oadr-2.0b/2012/07#OPT_2.0a>
+      <http://openadr.org/oadr-2.0b/2012/07#OPT_2.0b>
+    ) ;
+.
+p2012-07:OadrProfiles
+  rdf:type owl:Class ;
+  dc:description "OpenADR profiles supported by the implementation" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrProfiles" ;
+  rdfs:label "Oadr profiles" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrProfiles-oadrProfile ;
+      owl:onProperty p2012-07:oadrProfileRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrProfileRef ;
+    ] ;
+.
+p2012-07:OadrProfiles-oadrProfile
+  rdf:type owl:Class ;
+  rdfs:label "Oadr profiles-oadr profile" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "OpenADR profile name such as 2.0a or 2.0b." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrProfileNameDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrProfileName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "OpenADR transports supported by implementation" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrTransports ;
+      owl:onProperty p2012-07:oadrTransportsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrProfileName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrTransportsRef ;
+    ] ;
+.
+p2012-07:OadrQueryRegistration
+  rdf:type owl:Class ;
+  dc:description "Query VTN for registration information without actually registering" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrQueryRegistration" ;
+  rdfs:label "Oadr query registration" ;
+  rdfs:subClassOf p2012-07:OadrQueryRegistrationType ;
+.
+p2012-07:OadrQueryRegistrationType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrQueryRegistrationType" ;
+  rdfs:label "Oadr query registration type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrRegisterReport
+  rdf:type owl:Class ;
+  dc:description "Register Metadata report settings with other party" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRegisterReport" ;
+  rdfs:label "Oadr register report" ;
+  rdfs:subClassOf p2012-07:OadrRegisterReportType ;
+.
+p2012-07:OadrRegisterReportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRegisterReportType" ;
+  rdfs:label "Oadr register report type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for a particular report request" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportRequestID ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrReport ;
+      owl:onProperty p2012-07:oadrReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrRegisteredReport
+  rdf:type owl:Class ;
+  dc:description "Acknowledge registration of Metadata report by other party" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRegisteredReport" ;
+  rdfs:label "Oadr registered report" ;
+  rdfs:subClassOf p2012-07:OadrRegisteredReportType ;
+.
+p2012-07:OadrRegisteredReportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRegisteredReportType" ;
+  rdfs:label "Oadr registered report type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrReportRequest ;
+      owl:onProperty p2012-07:oadrReportRequestRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrReport
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReport" ;
+  rdfs:label "Oadr report" ;
+  rdfs:subClassOf p2012-07:OadrReportType ;
+.
+p2012-07:OadrReportDescription
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportDescription" ;
+  rdfs:label "Oadr report description" ;
+  rdfs:subClassOf p2012-07:OadrReportDescriptionType ;
+.
+p2012-07:OadrReportDescriptionType
+  rdf:type owl:Class ;
+  dc:description "Describes the subject and attributes of a report." ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportDescriptionType" ;
+  rdfs:label "Oadr report description type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A URI identifying a DR Program" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom <http://docs.oasis-open.org/ns/emix/2011/06#MarketContext> ;
+      owl:onProperty p2012-07:marketContextRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Device Class target - use only endDeviceAsset." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportSubject ;
+      owl:onProperty p2012-07:reportSubjectRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Metadata about the Readings, such as mean or derived" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReadingType ;
+      owl:onProperty p2012-07:readingTypeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "ReferenceID for this data point" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:RID ;
+      owl:onProperty p2012-07:rIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Sampling rate for telemetry type data" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrSamplingRate ;
+      owl:onProperty p2012-07:oadrSamplingRateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Sources for data in this report. Examples include meters or submeters. For example, if a meter is capable of providing two different types of measurements, then each measurement stream would be separately identified." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportDataSource ;
+      owl:onProperty p2012-07:reportDataSourceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "What is measured or tracked in this report (Units)." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+      owl:onProperty p2012-07:itemBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportType ;
+      owl:onProperty p2012-07:reportTypeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:rIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:readingTypeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportTypeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemBaseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:marketContextRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrSamplingRateRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportDataSourceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportSubjectRef ;
+    ] ;
+.
+p2012-07:OadrReportOnlyDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "ReportOnlyDeviceFlag" ;
+  rdfs:label "Oadr report only datatype" ;
+  rdfs:subClassOf xsd:boolean ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:boolean ;
+    ] ;
+.
+p2012-07:OadrReportPayload
+  rdf:type owl:Class ;
+  dc:description "Data point values for reports" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportPayload" ;
+  rdfs:label "Oadr report payload" ;
+  rdfs:subClassOf p2012-07:OadrReportPayloadType ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamPayloadBase> ;
+.
+p2012-07:OadrReportPayloadType
+  rdf:type owl:Class ;
+  dc:description "Report payload for use in reports." ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportPayloadType" ;
+  rdfs:label "Oadr report payload type" ;
+  rdfs:subClassOf energyinterop:ReportPayloadType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Enumerated value for the quality of this data item" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrDataQualityDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anySimpleType." ;
+      owl:allValuesFrom xsd:anySimpleType ;
+      owl:onProperty p2012-07:oadrDataQuality ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrDataQuality ;
+    ] ;
+.
+p2012-07:OadrReportRequest
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportRequest" ;
+  rdfs:label "Oadr report request" ;
+  rdfs:subClassOf p2012-07:OadrReportRequestType ;
+.
+p2012-07:OadrReportRequestType
+  rdf:type owl:Class ;
+  dc:description "This type is used to request an EiReport" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportRequestType" ;
+  rdfs:label "Oadr report request type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for a particular report request" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportRequestID ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Specify data points desired in a particular report instance" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportSpecifier ;
+      owl:onProperty p2012-07:reportSpecifierRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportSpecifierRef ;
+    ] ;
+.
+p2012-07:OadrReportType
+  rdf:type owl:Class ;
+  dc:description "eiReport is a Stream of [measurements] recorded over time and delivered to the requestor periodically. The readings may be actual, computed, summed if derived in some other manner." ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportType" ;
+  rdfs:label "Oadr report type" ;
+  rdfs:subClassOf <urn:ietf:params:xml:ns:icalendar-2.0:stream#StreamBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Define data points the implementation is capable of reporting on. Only used in Metadata report" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrReportDescription ;
+      owl:onProperty p2012-07:oadrReportDescriptionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for a particular Metadata report specification" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportSpecifierID ;
+      owl:onProperty p2012-07:reportSpecifierIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Identifier for a particular report request" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportRequestID ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Optional name for a report." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom energyinterop:ReportName ;
+      owl:onProperty p2012-07:reportNameRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Reference ID for a report" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiReportID ;
+      owl:onProperty p2012-07:eiReportIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "The dateTime the payload was created" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom energyinterop:CreatedDateTime ;
+      owl:onProperty p2012-07:createdDateTimeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:createdDateTimeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportRequestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportSpecifierIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiReportIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:reportNameRef ;
+    ] ;
+.
+p2012-07:OadrRequestEvent
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRequestEvent" ;
+  rdfs:label "Oadr request event" ;
+  rdfs:subClassOf p2012-07:OadrRequestEventType ;
+.
+p2012-07:OadrRequestEventType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRequestEventType" ;
+  rdfs:label "Oadr request event type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Request Event from a VTN in pull mode" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:EiRequestEvent ;
+      owl:onProperty p2012-07:eiRequestEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiRequestEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrRequestReregistration
+  rdf:type owl:Class ;
+  dc:description "Used by VTN to request that the VEN reregister" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRequestReregistration" ;
+  rdfs:label "Oadr request reregistration" ;
+  rdfs:subClassOf p2012-07:OadrRequestReregistrationType ;
+.
+p2012-07:OadrRequestReregistrationType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRequestReregistrationType" ;
+  rdfs:label "Oadr request reregistration type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+.
+p2012-07:OadrRequestedOadrPollFreq
+  rdf:type owl:Class ;
+  dc:description "The VEN shall send an oadrPoll payload to the VTN at most once for each duration specified by this element" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRequestedOadrPollFreq" ;
+  rdfs:label "Oadr requested oadr poll freq" ;
+  rdfs:subClassOf icalendar:DurationPropType ;
+.
+p2012-07:OadrResponse
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrResponse" ;
+  rdfs:label "Oadr response" ;
+  rdfs:subClassOf p2012-07:OadrResponseType ;
+.
+p2012-07:OadrResponseRequiredDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Controls when optIn/optOut repsonse is required. Can be always or never" ;
+  rdfs:label "Oadr response required datatype" ;
+  rdfs:subClassOf p2012-07:ResponseRequiredType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype p2012-07:ResponseRequiredType ;
+    ] ;
+.
+p2012-07:OadrResponseType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrResponseType" ;
+  rdfs:label "Oadr response type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrSamplingRate
+  rdf:type owl:Class ;
+  dc:description "Sampling rate for telemetry type data" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrSamplingRate" ;
+  rdfs:label "Oadr sampling rate" ;
+  rdfs:subClassOf p2012-07:OadrSamplingRateType ;
+.
+p2012-07:OadrSamplingRateType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrSamplingRateType" ;
+  rdfs:label "Oadr sampling rate type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "If true then the data will be recorded when it changes, but at no greater a frequency than that specified  by minPeriod." ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:boolean. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:boolean." ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty p2012-07:oadrOnChange ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Maximum sampling period" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom icalendar:DurationValueType ;
+      owl:onProperty p2012-07:oadrMaxPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Minimum sampling period" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom icalendar:DurationValueType ;
+      owl:onProperty p2012-07:oadrMinPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrMaxPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrMinPeriodRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrOnChange ;
+    ] ;
+.
+p2012-07:OadrServiceNameDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Oadr service name datatype" ;
+  rdfs:subClassOf p2012-07:OadrServiceNameType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype p2012-07:OadrServiceNameType ;
+    ] ;
+.
+p2012-07:OadrServiceNameType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrServiceNameType" ;
+  rdfs:label "Oadr service name type" ;
+  rdfs:subClassOf p2012-07:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      p2012-07:OSNT_EiEvent
+      p2012-07:OSNT_EiOpt
+      p2012-07:OSNT_EiRegisterParty
+      p2012-07:OSNT_EiReport
+      p2012-07:OSNT_OadrPoll
+    ) ;
+.
+p2012-07:OadrServiceSpecificInfo
+  rdf:type owl:Class ;
+  dc:description "Service specific registration information" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrServiceSpecificInfo" ;
+  rdfs:label "Oadr service specific info" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrServiceSpecificInfo-oadrService ;
+      owl:onProperty p2012-07:oadrServiceRef ;
+    ] ;
+.
+p2012-07:OadrServiceSpecificInfo-oadrService
+  rdf:type owl:Class ;
+  rdfs:label "Oadr service specific info-oadr service" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A key value pair of service specific registration information" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrInfo ;
+      owl:onProperty p2012-07:oadrInfoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrServiceNameDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrServiceName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrServiceName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrInfoRef ;
+    ] ;
+.
+p2012-07:OadrSignedObject
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrSignedObject" ;
+  rdfs:label "Oadr signed object" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Acknowledge cancelation of an opt schedule" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCanceledOpt ;
+      owl:onProperty p2012-07:oadrCanceledOptRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Acknowledge cancelation of registration" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "17"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCanceledPartyRegistration ;
+      owl:onProperty p2012-07:oadrCanceledPartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Acknowledge receipt of VEN registration, provide VTN registration info" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "19"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreatedPartyRegistration ;
+      owl:onProperty p2012-07:oadrCreatedPartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Acknowledge receipt of a report" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "15"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrUpdatedReport ;
+      owl:onProperty p2012-07:oadrUpdatedReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Acknowledge receipt of an opt schedule" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreatedOpt ;
+      owl:onProperty p2012-07:oadrCreatedOptRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Acknowledge registration of Metadata report by other party" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "13"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrRegisteredReport ;
+      owl:onProperty p2012-07:oadrRegisteredReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Acknowledge the request for report was received" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreatedReport ;
+      owl:onProperty p2012-07:oadrCreatedReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Cancel a registration" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "16"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCancelPartyRegistration ;
+      owl:onProperty p2012-07:oadrCancelPartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Cancel a report" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCancelReport ;
+      owl:onProperty p2012-07:oadrCancelReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Cancel an opt schedule" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCancelOpt ;
+      owl:onProperty p2012-07:oadrCancelOptRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Create an optIn or optOut schedule" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreateOpt ;
+      owl:onProperty p2012-07:oadrCreateOptRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Query VTN for registration information without actually registering" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "21"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrQueryRegistration ;
+      owl:onProperty p2012-07:oadrQueryRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Query pull VTN for payloads with new or modified information" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "22"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrPoll ;
+      owl:onProperty p2012-07:oadrPollRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Register Metadata report settings with other party" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "12"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrRegisterReport ;
+      owl:onProperty p2012-07:oadrRegisterReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Request report from other party" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreateReport ;
+      owl:onProperty p2012-07:oadrCreateReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Send DR Events to a VEN" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrDistributeEvent ;
+      owl:onProperty p2012-07:oadrDistributeEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Send a previously requested report" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "14"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrUpdateReport ;
+      owl:onProperty p2012-07:oadrUpdateReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Used by VEN to initiate registration with VTN" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "18"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreatePartyRegistration ;
+      owl:onProperty p2012-07:oadrCreatePartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Used by VTN to request that the VEN reregister" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "20"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrRequestReregistration ;
+      owl:onProperty p2012-07:oadrRequestReregistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCreatedEvent ;
+      owl:onProperty p2012-07:oadrCreatedEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrRequestEvent ;
+      owl:onProperty p2012-07:oadrRequestEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrResponse ;
+      owl:onProperty p2012-07:oadrResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCanceledReport ;
+      owl:onProperty p2012-07:oadrCanceledReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:ID. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:ID." ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty p2012-07:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCancelOptRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCancelPartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCancelReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCanceledOptRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCanceledPartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCanceledReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCreateOptRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCreatePartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCreateReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCreatedEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCreatedOptRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCreatedPartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCreatedReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrDistributeEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrPollRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrQueryRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrRegisterReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrRegisteredReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrRequestEventRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrRequestReregistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrUpdateReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrUpdatedReportRef ;
+    ] ;
+.
+p2012-07:OadrTransportAddressDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Root address used to communicate with other party. Should include port if required" ;
+  rdfs:label "Oadr transport address datatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+p2012-07:OadrTransportNameDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "OpenADR transport name such as simpleHttp or xmpp" ;
+  rdfs:label "Oadr transport name datatype" ;
+  rdfs:subClassOf p2012-07:OadrTransportType ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype p2012-07:OadrTransportType ;
+    ] ;
+.
+p2012-07:OadrTransportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrTransportType" ;
+  rdfs:label "Oadr transport type" ;
+  rdfs:subClassOf p2012-07:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      p2012-07:OTT_simpleHttp
+      p2012-07:OTT_xmpp
+    ) ;
+.
+p2012-07:OadrTransports
+  rdf:type owl:Class ;
+  dc:description "OpenADR transports supported by implementation" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrTransports" ;
+  rdfs:label "Oadr transports" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrTransports-oadrTransport ;
+      owl:onProperty p2012-07:oadrTransportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrTransportRef ;
+    ] ;
+.
+p2012-07:OadrTransports-oadrTransport
+  rdf:type owl:Class ;
+  rdfs:label "Oadr transports-oadr transport" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "OpenADR transport name such as simpleHttp or xmpp" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:OadrTransportNameDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:oadrTransportName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrTransportName ;
+    ] ;
+.
+p2012-07:OadrUpdateReport
+  rdf:type owl:Class ;
+  dc:description "Send a previously requested report" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrUpdateReport" ;
+  rdfs:label "Oadr update report" ;
+  rdfs:subClassOf p2012-07:OadrUpdateReportType ;
+.
+p2012-07:OadrUpdateReportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrUpdateReportType" ;
+  rdfs:label "Oadr update report type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom payloads:RequestID ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrReport ;
+      owl:onProperty p2012-07:oadrReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:requestIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrUpdatedReport
+  rdf:type owl:Class ;
+  dc:description "Acknowledge receipt of a report" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrUpdatedReport" ;
+  rdfs:label "Oadr updated report" ;
+  rdfs:subClassOf p2012-07:OadrUpdatedReportType ;
+.
+p2012-07:OadrUpdatedReportType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrUpdatedReportType" ;
+  rdfs:label "Oadr updated report type" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Cancel a report" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:OadrCancelReport ;
+      owl:onProperty p2012-07:oadrCancelReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom energyinterop:SchemaVersionType ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:oadrCancelReportRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:schemaVersionRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:venIDRef ;
+    ] ;
+.
+p2012-07:OadrVenNameDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "VEN name. May be used in VTN GUI" ;
+  rdfs:label "Oadr ven name datatype" ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+p2012-07:OadrXmlSignatureDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Implementation supports XML signature" ;
+  rdfs:label "Oadr xml signature datatype" ;
+  rdfs:subClassOf xsd:boolean ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:boolean ;
+    ] ;
+.
+p2012-07:PulseCount
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#pulseCount" ;
+  rdfs:label "Pulse count" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:PulseCountType ;
+.
+p2012-07:PulseCountType
+  rdf:type owl:Class ;
+  dc:description "Pulse Count" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#pulseCountType" ;
+  rdfs:label "Pulse count type" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Pulse count from meter" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "kWh per count" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is p2012-07:PulseFactorDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:float." ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty p2012-07:pulseFactor ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:pulseFactor ;
+    ] ;
+.
+p2012-07:PulseFactorDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "kWh per count" ;
+  rdfs:label "Pulse factor datatype" ;
+  rdfs:subClassOf xsd:float ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:float ;
+    ] ;
+.
+p2012-07:RRT_always
+  rdf:type p2012-07:ResponseRequiredType ;
+  dc:description "Always send a response for every event received." ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "always" ;
+  rdfs:label "always" ;
+.
+p2012-07:RRT_never
+  rdf:type p2012-07:ResponseRequiredType ;
+  dc:description "Never respond." ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "never" ;
+  rdfs:label "never" ;
+.
+p2012-07:ResponseRequiredType
+  rdf:type owl:Class ;
+  dc:description "Defines what type of response is required" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#ResponseRequiredType" ;
+  rdfs:label "Response required type" ;
+  rdfs:subClassOf p2012-07:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      p2012-07:RRT_always
+      p2012-07:RRT_never
+    ) ;
+.
+p2012-07:TUT_celsius
+  rdf:type p2012-07:TemperatureUnitType ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "celsius"^^xsd:token ;
+  rdfs:label "celsius" ;
+.
+p2012-07:TUT_fahrenheit
+  rdf:type p2012-07:TemperatureUnitType ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "fahrenheit"^^xsd:token ;
+  rdfs:label "fahrenheit" ;
+.
+p2012-07:Temperature
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#temperature" ;
+  rdfs:label "Temperature" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:TemperatureType ;
+.
+p2012-07:TemperatureType
+  rdf:type owl:Class ;
+  dc:description "temperature" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#temperatureType" ;
+  rdfs:label "Temperature type" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Temperature in Celsius or Fahrenheit" ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom p2012-07:TemperatureUnitType ;
+      owl:onProperty p2012-07:itemUnitsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCode ;
+      owl:onProperty p2012-07:siScaleCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemUnitsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:siScaleCodeRef ;
+    ] ;
+.
+p2012-07:TemperatureUnitType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#temperatureUnitType" ;
+  rdfs:label "Temperature unit type" ;
+  rdfs:subClassOf p2012-07:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token." ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      p2012-07:TUT_celsius
+      p2012-07:TUT_fahrenheit
+    ) ;
+.
+p2012-07:Therm
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#Therm" ;
+  rdfs:label "Therm" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBase> ;
+  rdfs:subClassOf p2012-07:ThermType ;
+.
+p2012-07:ThermType
+  rdf:type owl:Class ;
+  dc:description "Therm" ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#ThermType" ;
+  rdfs:label "Therm type" ;
+  rdfs:subClassOf <http://docs.oasis-open.org/ns/emix/2011/06#ItemBaseType> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string." ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom siscale:SiScaleCode ;
+      owl:onProperty p2012-07:siScaleCodeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemDescription ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:itemUnits ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty p2012-07:siScaleCodeRef ;
+    ] ;
+.
+p2012-07:createdDateTimeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#createdDateTime" ;
+  rdfs:label "created date time ref" ;
+.
+p2012-07:eiCreatedEventRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#eiCreatedEvent" ;
+  rdfs:label "ei created event ref" ;
+.
+p2012-07:eiEventRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#eiEvent" ;
+  rdfs:label "ei event ref" ;
+.
+p2012-07:eiReportIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#eiReportID" ;
+  rdfs:label "ei report IDRef" ;
+.
+p2012-07:eiRequestEventRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#eiRequestEvent" ;
+  rdfs:label "ei request event ref" ;
+.
+p2012-07:eiResponseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#eiResponse" ;
+  rdfs:label "ei response ref" ;
+.
+p2012-07:eiTargetRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#eiTarget" ;
+  rdfs:label "ei target ref" ;
+.
+p2012-07:feedRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#feed" ;
+  rdfs:label "feed ref" ;
+.
+p2012-07:id
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#Id" ;
+  rdfs:label "id" ;
+.
+p2012-07:itemBaseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#itemBase" ;
+  rdfs:label "item base ref" ;
+.
+p2012-07:itemDescription
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#itemDescription" ;
+  rdfs:label "item description" ;
+.
+p2012-07:itemDescriptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#itemDescription" ;
+  rdfs:label "item description ref" ;
+.
+p2012-07:itemUnits
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#itemUnits" ;
+  rdfs:label "item units" ;
+.
+p2012-07:itemUnitsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#itemUnits" ;
+  rdfs:label "item units ref" ;
+.
+p2012-07:marketContextRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#marketContext" ;
+  rdfs:label "market context ref" ;
+.
+p2012-07:oadrCancelOptRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelOpt" ;
+  rdfs:label "oadr cancel opt ref" ;
+.
+p2012-07:oadrCancelPartyRegistrationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelPartyRegistration" ;
+  rdfs:label "oadr cancel party registration ref" ;
+.
+p2012-07:oadrCancelReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCancelReport" ;
+  rdfs:label "oadr cancel report ref" ;
+.
+p2012-07:oadrCanceledOptRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledOpt" ;
+  rdfs:label "oadr canceled opt ref" ;
+.
+p2012-07:oadrCanceledPartyRegistrationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledPartyRegistration" ;
+  rdfs:label "oadr canceled party registration ref" ;
+.
+p2012-07:oadrCanceledReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCanceledReport" ;
+  rdfs:label "oadr canceled report ref" ;
+.
+p2012-07:oadrCapacityRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCapacity" ;
+  rdfs:label "oadr capacity ref" ;
+.
+p2012-07:oadrCreateOptRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreateOpt" ;
+  rdfs:label "oadr create opt ref" ;
+.
+p2012-07:oadrCreatePartyRegistrationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatePartyRegistration" ;
+  rdfs:label "oadr create party registration ref" ;
+.
+p2012-07:oadrCreateReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreateReport" ;
+  rdfs:label "oadr create report ref" ;
+.
+p2012-07:oadrCreatedEventRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedEvent" ;
+  rdfs:label "oadr created event ref" ;
+.
+p2012-07:oadrCreatedOptRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedOpt" ;
+  rdfs:label "oadr created opt ref" ;
+.
+p2012-07:oadrCreatedPartyRegistrationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedPartyRegistration" ;
+  rdfs:label "oadr created party registration ref" ;
+.
+p2012-07:oadrCreatedReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrCreatedReport" ;
+  rdfs:label "oadr created report ref" ;
+.
+p2012-07:oadrCurrent
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrCurrent" ;
+  rdfs:label "oadr current" ;
+.
+p2012-07:oadrDataQuality
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrDataQuality" ;
+  rdfs:label "oadr data quality" ;
+.
+p2012-07:oadrDeviceClassRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrDeviceClass" ;
+  rdfs:label "oadr device class ref" ;
+.
+p2012-07:oadrDistributeEventRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrDistributeEvent" ;
+  rdfs:label "oadr distribute event ref" ;
+.
+p2012-07:oadrEventRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrEvent" ;
+  rdfs:label "oadr event ref" ;
+.
+p2012-07:oadrExtensionName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrExtensionName" ;
+  rdfs:label "oadr extension name" ;
+.
+p2012-07:oadrExtensionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrExtension" ;
+  rdfs:label "oadr extension ref" ;
+.
+p2012-07:oadrExtensionsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrExtensions" ;
+  rdfs:label "oadr extensions ref" ;
+.
+p2012-07:oadrHttpPullModel
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrHttpPullModel" ;
+  rdfs:label "oadr http pull model" ;
+.
+p2012-07:oadrInfoRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrInfo" ;
+  rdfs:label "oadr info ref" ;
+.
+p2012-07:oadrKey
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrKey" ;
+  rdfs:label "oadr key" ;
+.
+p2012-07:oadrLevelOffsetRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrLevelOffset" ;
+  rdfs:label "oadr level offset ref" ;
+.
+p2012-07:oadrLoadControlStateRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrLoadControlState" ;
+  rdfs:label "oadr load control state ref" ;
+.
+p2012-07:oadrManualOverride
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrManualOverride" ;
+  rdfs:label "oadr manual override" ;
+.
+p2012-07:oadrMax
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrMax" ;
+  rdfs:label "oadr max" ;
+.
+p2012-07:oadrMaxPeriodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrMaxPeriod" ;
+  rdfs:label "oadr max period ref" ;
+.
+p2012-07:oadrMin
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrMin" ;
+  rdfs:label "oadr min" ;
+.
+p2012-07:oadrMinPeriodRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrMinPeriod" ;
+  rdfs:label "oadr min period ref" ;
+.
+p2012-07:oadrNormal
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrNormal" ;
+  rdfs:label "oadr normal" ;
+.
+p2012-07:oadrOnChange
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrOnChange" ;
+  rdfs:label "oadr on change" ;
+.
+p2012-07:oadrOnline
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrOnline" ;
+  rdfs:label "oadr online" ;
+.
+p2012-07:oadrPendingReportsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPendingReports" ;
+  rdfs:label "oadr pending reports ref" ;
+.
+p2012-07:oadrPercentOffsetRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPercentOffset" ;
+  rdfs:label "oadr percent offset ref" ;
+.
+p2012-07:oadrPollRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrPoll" ;
+  rdfs:label "oadr poll ref" ;
+.
+p2012-07:oadrProfileName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrProfileName" ;
+  rdfs:label "oadr profile name" ;
+.
+p2012-07:oadrProfileRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrProfile" ;
+  rdfs:label "oadr profile ref" ;
+.
+p2012-07:oadrProfilesRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrProfiles" ;
+  rdfs:label "oadr profiles ref" ;
+.
+p2012-07:oadrQueryRegistrationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrQueryRegistration" ;
+  rdfs:label "oadr query registration ref" ;
+.
+p2012-07:oadrRegisterReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRegisterReport" ;
+  rdfs:label "oadr register report ref" ;
+.
+p2012-07:oadrRegisteredReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRegisteredReport" ;
+  rdfs:label "oadr registered report ref" ;
+.
+p2012-07:oadrReportDescriptionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportDescription" ;
+  rdfs:label "oadr report description ref" ;
+.
+p2012-07:oadrReportOnly
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrReportOnly" ;
+  rdfs:label "oadr report only" ;
+.
+p2012-07:oadrReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReport" ;
+  rdfs:label "oadr report ref" ;
+.
+p2012-07:oadrReportRequestRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrReportRequest" ;
+  rdfs:label "oadr report request ref" ;
+.
+p2012-07:oadrRequestEventRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRequestEvent" ;
+  rdfs:label "oadr request event ref" ;
+.
+p2012-07:oadrRequestReregistrationRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRequestReregistration" ;
+  rdfs:label "oadr request reregistration ref" ;
+.
+p2012-07:oadrRequestedOadrPollFreqRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrRequestedOadrPollFreq" ;
+  rdfs:label "oadr requested oadr poll freq ref" ;
+.
+p2012-07:oadrResponseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrResponse" ;
+  rdfs:label "oadr response ref" ;
+.
+p2012-07:oadrResponseRequired
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrResponseRequired" ;
+  rdfs:label "oadr response required" ;
+.
+p2012-07:oadrSamplingRateRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrSamplingRate" ;
+  rdfs:label "oadr sampling rate ref" ;
+.
+p2012-07:oadrServiceName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrServiceName" ;
+  rdfs:label "oadr service name" ;
+.
+p2012-07:oadrServiceRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrService" ;
+  rdfs:label "oadr service ref" ;
+.
+p2012-07:oadrServiceSpecificInfoRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrServiceSpecificInfo" ;
+  rdfs:label "oadr service specific info ref" ;
+.
+p2012-07:oadrSetPointRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrSetPoint" ;
+  rdfs:label "oadr set point ref" ;
+.
+p2012-07:oadrSignedObjectRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrSignedObject" ;
+  rdfs:label "oadr signed object ref" ;
+.
+p2012-07:oadrTransportAddress
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrTransportAddress" ;
+  rdfs:label "oadr transport address" ;
+.
+p2012-07:oadrTransportName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrTransportName" ;
+  rdfs:label "oadr transport name" ;
+.
+p2012-07:oadrTransportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrTransport" ;
+  rdfs:label "oadr transport ref" ;
+.
+p2012-07:oadrTransportsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrTransports" ;
+  rdfs:label "oadr transports ref" ;
+.
+p2012-07:oadrUpdateReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrUpdateReport" ;
+  rdfs:label "oadr update report ref" ;
+.
+p2012-07:oadrUpdatedReportRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#oadrUpdatedReport" ;
+  rdfs:label "oadr updated report ref" ;
+.
+p2012-07:oadrValue
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrValue" ;
+  rdfs:label "oadr value" ;
+.
+p2012-07:oadrVenName
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrVenName" ;
+  rdfs:label "oadr ven name" ;
+.
+p2012-07:oadrXmlSignature
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#oadrXmlSignature" ;
+  rdfs:label "oadr xml signature" ;
+.
+p2012-07:optIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#optID" ;
+  rdfs:label "opt IDRef" ;
+.
+p2012-07:pulseFactor
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#pulseFactor" ;
+  rdfs:label "pulse factor" ;
+.
+p2012-07:qualifiedEventIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#qualifiedEventID" ;
+  rdfs:label "qualified event IDRef" ;
+.
+p2012-07:rIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#rID" ;
+  rdfs:label "r IDRef" ;
+.
+p2012-07:readingTypeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#readingType" ;
+  rdfs:label "reading type ref" ;
+.
+p2012-07:registrationIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#registrationID" ;
+  rdfs:label "registration IDRef" ;
+.
+p2012-07:reportDataSourceRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#reportDataSource" ;
+  rdfs:label "report data source ref" ;
+.
+p2012-07:reportNameRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#reportName" ;
+  rdfs:label "report name ref" ;
+.
+p2012-07:reportRequestIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#reportRequestID" ;
+  rdfs:label "report request IDRef" ;
+.
+p2012-07:reportSpecifierIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#reportSpecifierID" ;
+  rdfs:label "report specifier IDRef" ;
+.
+p2012-07:reportSpecifierRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#reportSpecifier" ;
+  rdfs:label "report specifier ref" ;
+.
+p2012-07:reportSubjectRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#reportSubject" ;
+  rdfs:label "report subject ref" ;
+.
+p2012-07:reportToFollowRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#reportToFollow" ;
+  rdfs:label "report to follow ref" ;
+.
+p2012-07:reportTypeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#reportType" ;
+  rdfs:label "report type ref" ;
+.
+p2012-07:requestIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#requestID" ;
+  rdfs:label "request IDRef" ;
+.
+p2012-07:schemaVersionRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#schemaVersion" ;
+  rdfs:label "schema version ref" ;
+.
+p2012-07:siScaleCodeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#siScaleCode" ;
+  rdfs:label "si scale code ref" ;
+.
+p2012-07:signatureRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#Signature" ;
+  rdfs:label "signature ref" ;
+.
+p2012-07:venIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07#venID" ;
+  rdfs:label "ven IDRef" ;
+.
+p2012-07:vtnIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07#vtnID" ;
+  rdfs:label "vtn IDRef" ;
+.
+dc:description
+  rdfs:label "description" ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label" ;
+.
+icalendar:Duration
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty icalendar:duration ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty icalendar:duration ;
+    ] ;
+.

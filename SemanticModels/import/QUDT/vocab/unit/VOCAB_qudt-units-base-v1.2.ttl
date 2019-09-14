@@ -1,0 +1,586 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/base
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.w3.org/2004/02/skos/core
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/unit/base>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Irene Polikoff"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Base Units of Measure"^^xsd:string ;
+  dc:title "QUDT Base Units Vocabulary  Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used base units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 15:18:25 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:versionInfo "$Id: OVG_units-qudt-(v1.1).ttl 4990 2011-06-01 22:18:25Z RalphHodgson $"^^xsd:string ;
+.
+qudt:PhysicsForums
+  rdf:type qudt:Organization ;
+  qudt:url "http://www.physicsforums.com"^^xsd:anyURI ;
+  rdfs:label "Physics Forums"^^xsd:string ;
+.
+qudt:SOU_SI
+  rdf:type qudt:SystemOfUnits ;
+  qudt:hasAllowedUnit unit:CM3 ;
+  qudt:hasAllowedUnit unit:Deg ;
+  qudt:hasAllowedUnit unit:DegC ;
+  qudt:hasAllowedUnit unit:ElementaryCharge ;
+  qudt:hasAllowedUnit unit:HR ;
+  qudt:hasAllowedUnit unit:HartreeEnergy ;
+  qudt:hasAllowedUnit unit:M3-PER-HR ;
+  qudt:hasAllowedUnit unit:MIN ;
+  qudt:hasAllowedUnit unit:MetricTon ;
+  qudt:hasAllowedUnit unit:RAD-PER-MIN ;
+  qudt:hasAllowedUnit unit:SECOND ;
+  qudt:hasBaseUnit unit:KELVIN ;
+  qudt:hasBaseUnit unit:SECOND ;
+  qudt:hasDefinedUnit unit:J-PER-KG-K-PA ;
+  qudt:hasDefinedUnit unit:K-PER-W ;
+  qudt:hasDefinedUnit unit:Lux ;
+  qudt:hasDefinedUnit unit:M2-K ;
+  qudt:hasDefinedUnit unit:M2-PER-K ;
+  qudt:hasDefinedUnit unit:M2-SR ;
+  qudt:hasDefinedUnit unit:M3-PER-K ;
+  qudt:hasDefinedUnit unit:M3-PER-SEC ;
+  qudt:hasDefinedUnit unit:MilliM3 ;
+  qudt:hasDefinedUnit unit:WEBER ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-K ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-KG-K ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-KG-K-M3 ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-KG-K-PA ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-MOL-K ;
+  qudt:hasDerivedCoherentUnit unit:K-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:K-PER-W ;
+  qudt:hasDerivedCoherentUnit unit:Lux ;
+  qudt:hasDerivedCoherentUnit unit:M-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:M-PER-SEC2 ;
+  qudt:hasDerivedCoherentUnit unit:M2-K ;
+  qudt:hasDerivedCoherentUnit unit:M2-PER-K ;
+  qudt:hasDerivedCoherentUnit unit:M2-SR ;
+  qudt:hasDerivedCoherentUnit unit:M3-PER-K ;
+  qudt:hasDerivedCoherentUnit unit:M3-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:QuarticCoulombMeterPerCubicEnergy ;
+  qudt:hasDerivedCoherentUnit unit:WEBER ;
+.
+qudt:Wikipedia
+  rdf:type qudt:Organization ;
+  rdfs:label "Wikipedia"^^xsd:string ;
+.
+unit:Atto
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "atto"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-18 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "a"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Atto"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Atto> ;
+.
+unit:Centi
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "centi"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-2 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "c"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Centi"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Centi-> ;
+  skos:prefLabel "centi"^^xsd:string ;
+.
+unit:Deca
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "deca"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E1 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "da"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Deca"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Deca> ;
+  skos:prefLabel "deca"^^xsd:string ;
+.
+unit:Deci
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "deci"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-1 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "d"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Deci"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Deci-> ;
+  skos:prefLabel "deci"^^xsd:string ;
+.
+unit:Exa
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "exa"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E18 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "E"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Exa"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Exa-> ;
+  skos:prefLabel "exa"^^xsd:string ;
+.
+unit:Exbi
+  rdf:type qudt:BinaryPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:conversionMultiplier "152921504606846976.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Ei"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Exbi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "exbi"^^xsd:string ;
+.
+unit:Femto
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "femto"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-15 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "f"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Femto"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Femto-> ;
+  skos:prefLabel "femto"^^xsd:string ;
+.
+unit:Gibi
+  rdf:type qudt:BinaryPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:conversionMultiplier "1073741824"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Gi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Gibi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+.
+unit:Giga
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "giga"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "G"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Giga"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Giga-> ;
+.
+unit:Hecto
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "hecto"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E2 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Hecto"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hecto-> ;
+.
+unit:Kibi
+  rdf:type qudt:BinaryPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:conversionMultiplier "1024"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Ki"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Kibi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "Kibi"^^xsd:string ;
+.
+unit:Kilo
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kilo"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "k"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Kilo"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kilo> ;
+.
+unit:Mebi
+  rdf:type qudt:BinaryPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:conversionMultiplier "1048576"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Mi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Mebi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+.
+unit:Mega
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mega"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Mega"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mega> ;
+.
+unit:Micro
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "micro"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Micro"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Micro> ;
+  skos:prefLabel "micro"^^xsd:string ;
+.
+unit:Milli
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "milli"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Milli"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Milli-> ;
+.
+unit:NUM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:CountingUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "\\#"^^xsd:string ;
+  qudt:code "1250"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Number}' is a C.G.S System unit for  'Dimensionless' expressed as $\\#$."^^xsd:string ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "\\#"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Number"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Number> ;
+  skos:prefLabel "number"^^xsd:string ;
+.
+unit:NUM-PER-YR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:CountingUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "\\#/yr"^^xsd:string ;
+  qudt:code "1255"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Number per Year}' is a C.G.S System unit for  'Frequency' expressed as $\\#/yr$."^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  qudt:symbol "\\#/yr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Number per Year"^^xsd:string ;
+  skos:prefLabel "number-per-year"^^xsd:string ;
+.
+unit:Nano
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "nano"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Nano"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Nano> ;
+  skos:prefLabel "nano"^^xsd:string ;
+.
+unit:PERCENT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:CountingUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "\\%"^^xsd:string ;
+  qudt:code "1345"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Percent}' is a C.G.S System unit for  'Dimensionless Ratio' expressed as $\\%$."^^xsd:string ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+  qudt:symbol "\\%"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Percent"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Percentage> ;
+  skos:prefLabel "percent"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Percentage?oldid=495284540> ;
+.
+unit:PPB
+  rdf:type qudt:DimensionlessConcentrationUnit ;
+  qudt:abbreviation "PPB"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Dimensionless unit for concentration. Recommended practice is to use specific units such as $ug/l$."^^xsd:string ;
+  qudt:symbol "ppb"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Parts per billion"^^xsd:string ;
+  prov:wasInfluencedBy <http://aurora.regenstrief.org/~ucum/ucum.html#section-Derived-Unit-Atoms> ;
+.
+unit:PPM
+  rdf:type qudt:DimensionlessConcentrationUnit ;
+  qudt:abbreviation "PPM"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Dimensionless unit for concentration. Recommended practice is to use specific units such as $ug/l$."^^xsd:string ;
+  qudt:symbol "ppm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Parts per million"^^xsd:string ;
+  prov:wasInfluencedBy <http://aurora.regenstrief.org/~ucum/ucum.html#section-Derived-Unit-Atoms> ;
+.
+unit:PPTH
+  rdf:type qudt:DimensionlessConcentrationUnit ;
+  qudt:abbreviation "ppth"^^xsd:string ;
+  qudt:conversionMultiplier "0.001"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Dimensionless unit for concentration. Recommended practice is to use specific units such as $ug/l$."^^xsd:string ;
+  qudt:symbol "ppth"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Parts per thousand"^^xsd:string ;
+  prov:wasInfluencedBy <http://aurora.regenstrief.org/~ucum/ucum.html#section-Derived-Unit-Atoms> ;
+.
+unit:PPTR
+  rdf:type qudt:DimensionlessConcentrationUnit ;
+  qudt:abbreviation "PPTR"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e-12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Dimensionless unit for concentration. Recommended practice is to use specific units such as $ug/l$."^^xsd:string ;
+  qudt:symbol "pptr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Parts per trillion"^^xsd:string ;
+  prov:wasInfluencedBy <http://aurora.regenstrief.org/~ucum/ucum.html#section-Derived-Unit-Atoms> ;
+.
+unit:Pebi
+  rdf:type qudt:BinaryPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:conversionMultiplier "125899906842624"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Pi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Pebi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+.
+unit:Peta
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "peta"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E15 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "P"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Peta"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Peta> ;
+.
+unit:Pico
+  rdf:type qudt:DecimalPrefixUnit ;
+  qudt:abbreviation "pico"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "p"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Pico"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pico> ;
+.
+unit:SAMPLE-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:CountingUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "sample-per-sec"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The number of discrete samples of some thing per second."^^xsd:string ;
+  qudt:quantityKind quantity:Frequency ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Sample per second"^^xsd:string ;
+  skos:prefLabel "sample-per-second"^^xsd:string ;
+.
+unit:Tebi
+  rdf:type qudt:BinaryPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:conversionMultiplier "1099511627776"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Ti"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Tebi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "tebi"^^xsd:string ;
+.
+unit:Tera
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "tera"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E12 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "T"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Tera"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tera> ;
+  skos:prefLabel "tera"^^xsd:string ;
+.
+unit:UNITLESS
+  rdf:type qudt:BaseUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DimensionlessUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "unitless"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An explicit unit to say something has no units."^^xsd:string ;
+  qudt:designator "U-000-0000"^^xsd:string ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "U"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Unitless"^^xsd:string ;
+  skos:prefLabel "unitless"^^xsd:string ;
+.
+unit:Yobi
+  rdf:type qudt:BinaryPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:conversionMultiplier "1208925819614629174706176"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Yi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Yobi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+.
+unit:Yocto
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "yocto"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-24 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "y"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Yocto"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Yocto-> ;
+.
+unit:Yotta
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "yotta"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E24 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Y"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Yotta"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Yotta-> ;
+.
+unit:Zebi
+  rdf:type qudt:BinaryPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:conversionMultiplier "1180591620717411303424"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Zi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Zebi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+.
+unit:Zepto
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "zepto"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-21 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "z"^^xsd:string ;
+  rdfs:label "Zepto"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Zepto-> ;
+.
+unit:Zetta
+  rdf:type qudt:DecimalPrefixUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "zetta"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E21 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Dimensionless ;
+  qudt:symbol "Z"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/base> ;
+  rdfs:label "Zetta"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Zetta-> ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.

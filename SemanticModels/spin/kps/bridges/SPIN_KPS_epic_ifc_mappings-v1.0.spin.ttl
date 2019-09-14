@@ -1,0 +1,676 @@
+# baseURI: http://siemens.com/spin/kps/bridges/ifc_mappings
+# imports: http://siemens.com/collections/kps/bridges/integrations
+# imports: http://siemens.com/schemas/kps/adapters/ifc2brick
+# imports: http://spinrdf.org/spin
+# imports: http://spinrdf.org/spinx
+# imports: http://www.linkedmodel.org/1.0/schema/dtype
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: ifc_mappings_spin
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix ifc2brick: <http://siemens.com/schemas/kps/adapters/ifc2brick#> .
+@prefix ifc_mappings_spin: <http://siemens.com/spin/kps/bridges/ifc_mappings#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sc: <http://data.nasa.gov/core/schema/sc#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/spin/kps/bridges/ifc_mappings>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The Siemens IFC to BRICK ontology mapping SPIN functions and magic properties." ;
+  dc:subject "IFC to BRICK SPIN functions and magic properties" ;
+  dc:title "The IFC to BRICK Ontology Mapping - Functions and Magic Properties" ;
+  vaem:hasCatalogEntry voag:EPIC-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:MappingGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This ontology is to be used by EPIC and associated ontologies that need to map between IFC and BRICK." ;
+  vaem:namespace "http://siemens.com/spin/kps/bridges/ifc_mappings#" ;
+  vaem:namespacePrefix "ifc_mappings_spin" ;
+  vaem:specificity "1"^^xsd:int ;
+  vaem:url "http://siemens.com/spin/kps/bridges/ifc_mappings"^^xsd:anyURI ;
+  rdfs:label "ifc to brick mapping rules" ;
+  owl:imports <http://siemens.com/collections/kps/bridges/integrations> ;
+  owl:imports <http://siemens.com/schemas/kps/adapters/ifc2brick> ;
+  owl:imports <http://spinrdf.org/spin> ;
+  owl:imports <http://spinrdf.org/spinx> ;
+  owl:imports <http://www.linkedmodel.org/1.0/schema/dtype> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "$Id: $" ;
+.
+ifc_mappings_spin:AskTemplates
+  rdf:type spin:AskTemplate ;
+  rdfs:label "Ask templates" ;
+  rdfs:subClassOf spin:AskTemplates ;
+  skos:prefLabel "Ask templates" ;
+.
+ifc_mappings_spin:ConstructTemplates
+  rdf:type spin:ConstructTemplate ;
+  rdfs:label "Construct templates" ;
+  rdfs:subClassOf spin:ConstructTemplates ;
+  skos:prefLabel "Construct templates" ;
+.
+ifc_mappings_spin:Functions
+  rdf:type spin:Function ;
+  rdfs:label "Functions" ;
+  rdfs:subClassOf spin:Functions ;
+  skos:prefLabel "Functions" ;
+.
+ifc_mappings_spin:MappingAskTemplates
+  rdf:type spin:AskTemplate ;
+  rdfs:label "CPS to OPCUA mapping ask templates" ;
+  rdfs:subClassOf ifc_mappings_spin:AskTemplates ;
+  skos:prefLabel "Mapping ask templates" ;
+.
+ifc_mappings_spin:MappingConstructTemplates
+  rdf:type spin:ConstructTemplate ;
+  rdfs:label "CPS to OPCUA mapping construct templates" ;
+  rdfs:subClassOf ifc_mappings_spin:ConstructTemplates ;
+  skos:prefLabel "Mapping construct templates" ;
+.
+ifc_mappings_spin:MappingFunctions
+  rdf:type spin:Function ;
+  rdfs:label "Mapping functions" ;
+  rdfs:subClassOf ifc_mappings_spin:Functions ;
+  skos:prefLabel "Mapping functions" ;
+.
+ifc_mappings_spin:MappingSelectTemplates
+  rdf:type spin:SelectTemplate ;
+  rdfs:label "CPS to OPCUA mapping select templates" ;
+  rdfs:subClassOf ifc_mappings_spin:SelectTemplates ;
+  skos:prefLabel "Mapping select templates" ;
+.
+ifc_mappings_spin:MappingUpdateTemplates
+  rdf:type spin:UpdateTemplate ;
+  rdfs:label "CPS to OPCUA Mapping update templates" ;
+  rdfs:subClassOf ifc_mappings_spin:UpdateTemplates ;
+  skos:prefLabel "Mapping update templates" ;
+.
+ifc_mappings_spin:SelectTemplates
+  rdf:type spin:SelectTemplate ;
+  rdfs:label "Select templates" ;
+  rdfs:subClassOf spin:SelectTemplates ;
+  skos:prefLabel "Select templates" ;
+.
+ifc_mappings_spin:UpdateTemplates
+  rdf:type spin:UpdateTemplate ;
+  rdfs:label "Update templates" ;
+  rdfs:subClassOf spin:UpdateTemplates ;
+  skos:prefLabel "Update templates" ;
+.
+ifc_mappings_spin:brickToIFCMapping
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "item" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "alabel" ;
+              ] ;
+            sp:predicate rdfs:label ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            rdf:type sp:TriplePath ;
+            sp:object [
+                sp:varName "par_class" ;
+              ] ;
+            sp:path [
+                rdf:type sp:ModPath ;
+                sp:modMax -2 ;
+                sp:modMin 0 ;
+                sp:subPath rdfs:subClassOf ;
+              ] ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "plabel" ;
+              ] ;
+            sp:predicate rdfs:label ;
+            sp:subject [
+                sp:varName "par_class" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:replaceAll ;
+                sp:arg1 [
+                    sp:varName "alabel" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "plabel" ;
+                  ] ;
+                sp:arg3 "" ;
+              ] ;
+            sp:variable [
+                sp:varName "blabel" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?0" ;
+              ] ;
+            sp:predicate spif:split ;
+            sp:subject [
+                sp:varName "clabel" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "blabel" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object " " ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ne ;
+                sp:arg1 [
+                    sp:varName "par_class" ;
+                  ] ;
+                sp:arg2 rdfs:Resource ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/bridges/mapping#MappingThing> ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "map_thing" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "par_class" ;
+              ] ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "map_thing" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "opar_class" ;
+              ] ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "map_thing" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ne ;
+                sp:arg1 [
+                    sp:varName "opar_class" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "par_class" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ne ;
+                sp:arg1 [
+                    sp:varName "opar_class" ;
+                  ] ;
+                sp:arg2 <http://siemens.com/schemas/kps/bridges/mapping#MappingThing> ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "prop" ;
+              ] ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "opar_class" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "pval" ;
+              ] ;
+            sp:predicate owl:allValuesFrom ;
+            sp:subject [
+                sp:varName "prop" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "val" ;
+              ] ;
+            sp:predicate owl:oneOf ;
+            sp:subject [
+                sp:varName "pval" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:TriplePath ;
+            sp:object [
+                sp:varName "item" ;
+              ] ;
+            sp:path [
+                rdf:type sp:SeqPath ;
+                sp:path1 [
+                    rdf:type sp:ModPath ;
+                    sp:modMax -2 ;
+                    sp:modMin 0 ;
+                    sp:subPath rdf:rest ;
+                  ] ;
+                sp:path2 rdf:first ;
+              ] ;
+            sp:subject [
+                sp:varName "val" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "ilabel" ;
+              ] ;
+            sp:predicate rdfs:label ;
+            sp:subject [
+                sp:varName "item" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type fn:contains ;
+                sp:arg1 [
+                    rdf:type fn:upper-case ;
+                    sp:arg1 [
+                        sp:varName "ilabel" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type fn:upper-case ;
+                    sp:arg1 [
+                        sp:varName "clabel" ;
+                      ] ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  spin:returnType rdfs:Resource ;
+  rdfs:comment """Test invocation of the brickToIFC function:
+
+Load the graph:VOCAB_KPS_epic2brick-v1.0.ttl (BaseURI: http://siemens.com/vocab/kps/bridges/epic2brick)
+
+Execute the SPARQL query:
+
+SELECT ?result
+WHERE {
+    BIND (brick:Relative_Humidity_Sensor AS ?arg1) .
+    BIND (ifc_mappings_spin:brickToIFCMapping(?arg1) AS ?result) .
+}
+
+This returns multiple items so it should be a magic property and not a function
+
+Working test with:          brick:Relative_Humidity_Sensor, brick:Wind_Speed_Sensor
+Non-Working test with: brick:Alarm, brick:Boiler, brick:Building, brick:Fan, brick:Occupancy, brick:Valve, brick:Zone, brick:Return_Fan_Status, brick:AHU, brick:VFD_Alarm, brick:HVAC_Zone""" ;
+  rdfs:label "brick to ifc mapping" ;
+  rdfs:subClassOf ifc_mappings_spin:MappingFunctions ;
+  skos:prefLabel "brick to ifc mapping" ;
+.
+ifc_mappings_spin:brickToIFCMappingProperty
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "item" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "alabel" ;
+              ] ;
+            sp:predicate rdfs:label ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            rdf:type sp:TriplePath ;
+            sp:object [
+                sp:varName "par_class" ;
+              ] ;
+            sp:path [
+                rdf:type sp:ModPath ;
+                sp:modMax -2 ;
+                sp:modMin 0 ;
+                sp:subPath rdfs:subClassOf ;
+              ] ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "plabel" ;
+              ] ;
+            sp:predicate rdfs:label ;
+            sp:subject [
+                sp:varName "par_class" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type spif:replaceAll ;
+                sp:arg1 [
+                    sp:varName "alabel" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "plabel" ;
+                  ] ;
+                sp:arg3 "" ;
+              ] ;
+            sp:variable [
+                sp:varName "blabel" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?0" ;
+              ] ;
+            sp:predicate spif:split ;
+            sp:subject [
+                sp:varName "clabel" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "blabel" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object " " ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ne ;
+                sp:arg1 [
+                    sp:varName "par_class" ;
+                  ] ;
+                sp:arg2 rdfs:Resource ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/bridges/mapping#MappingThing> ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "map_thing" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "par_class" ;
+              ] ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "map_thing" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "opar_class" ;
+              ] ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "map_thing" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ne ;
+                sp:arg1 [
+                    sp:varName "opar_class" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "par_class" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ne ;
+                sp:arg1 [
+                    sp:varName "opar_class" ;
+                  ] ;
+                sp:arg2 <http://siemens.com/schemas/kps/bridges/mapping#MappingThing> ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "prop" ;
+              ] ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "opar_class" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "pval" ;
+              ] ;
+            sp:predicate owl:allValuesFrom ;
+            sp:subject [
+                sp:varName "prop" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "val" ;
+              ] ;
+            sp:predicate owl:oneOf ;
+            sp:subject [
+                sp:varName "pval" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:TriplePath ;
+            sp:object [
+                sp:varName "item" ;
+              ] ;
+            sp:path [
+                rdf:type sp:SeqPath ;
+                sp:path1 [
+                    rdf:type sp:ModPath ;
+                    sp:modMax -2 ;
+                    sp:modMin 0 ;
+                    sp:subPath rdf:rest ;
+                  ] ;
+                sp:path2 rdf:first ;
+              ] ;
+            sp:subject [
+                sp:varName "val" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "ilabel" ;
+              ] ;
+            sp:predicate rdfs:label ;
+            sp:subject [
+                sp:varName "item" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type fn:contains ;
+                sp:arg1 [
+                    rdf:type fn:upper-case ;
+                    sp:arg1 [
+                        sp:varName "ilabel" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type fn:upper-case ;
+                    sp:arg1 [
+                        sp:varName "clabel" ;
+                      ] ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:comment """Executes a given BRICK to IFC mapping and binds its result rows to the variables specified on the right hand side.
+
+Example:
+
+    brick:Relative_Humidity_Sensor ifc_mappings_spin:brickToIFCMappingProperty ?ifc
+
+Testing:
+
+SELECT ?result
+WHERE
+{
+    brick:Relative_Humidity_Sensor ifc_mappings_spin:brickToIFCMappingProperty ?result .
+}
+
+Working test with:         brick:Relative_Humidity_Sensor, brick:Wind_Speed_Sensor
+Non-working test with: brick:Alarm, brick:Boiler, brick:Building, brick:Fan, brick:Occupancy, brick:Valve, brick:Zone, brick:Return_Fan_Status, brick:AHU, brick:VFD_Alarm, brick:HVAC_Zone""" ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:label "brick to ifc mapping" ;
+  rdfs:range rdfs:Resource ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+ifc_mappings_spin:countInstances
+  rdf:type spin:Function ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            rdf:type sp:Count ;
+            sp:expression [
+                sp:varName "known_item" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "known_item" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  spin:returnType xsd:integer ;
+  rdfs:comment """To test countKnownDims use the following:
+
+Load the graph: VOCAB_KP_EMechDevices-v1.0.ttl
+
+SELECT ?cnt
+WHERE {
+    BIND (fonm:DimensionType AS ?arg1) .
+    ?cls rdfs:subClassOf* ?arg1 .
+    BIND (ifc_mappings_spin:countInstances(?cls) AS ?cnt) .
+    FILTER (?cls = ?arg1) .
+}""" ;
+  rdfs:label "count items in enumeration" ;
+  rdfs:subClassOf ifc_mappings_spin:Functions ;
+  skos:prefLabel "count items in enumeration" ;
+.
+<http://spinrdf.org/arg#dim>
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+<http://spinrdf.org/arg#dtype>
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+<http://spinrdf.org/arg#enumType>
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.

@@ -1,0 +1,178 @@
+# baseURI: http://epic/scripts/selectEventsTimespan
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: set
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix set: <http://epic/scripts/selectEventsTimespan#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/selectEventsTimespan>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+set:GetEnd
+  a sml:BindBySelect ;
+  sm:next set:Merge ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:expression [
+                a sp:Max ;
+                sp:expression [
+                    sp:varName "activePeriodEnd" ;
+                  ] ;
+              ] ;
+            sp:varName "eend" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object <http://siemens.com/schemas/kps/epic#Event> ;
+                  sp:predicate rdf:type ;
+                  sp:subject [
+                      sp:varName "event2" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "activePeriodEnd" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 [
+                          a sp:SeqPath ;
+                          sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiActivePeriodRef> ;
+                          sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                        ] ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event2" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Get End" ;
+.
+set:GetStart
+  a sml:BindBySelect ;
+  sm:next set:Merge ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:expression [
+                a sp:Min ;
+                sp:expression [
+                    sp:varName "activePeriodStart" ;
+                  ] ;
+              ] ;
+            sp:varName "sstart" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object <http://siemens.com/schemas/kps/epic#Event> ;
+                  sp:predicate rdf:type ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "activePeriodStart" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 [
+                          a sp:SeqPath ;
+                          sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiActivePeriodRef> ;
+                          sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                        ] ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epicArchive> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Get Start" ;
+.
+set:Merge
+  a sml:Merge ;
+  sm:next set:SerializeToJSON ;
+  rdfs:label "Merge" ;
+.
+set:SerializeToJSON
+  a sml:SerializeSPARQLResults ;
+  sm:next set:selectEventsTimespan_Return ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "start" ;
+          ]
+          [
+            sp:varName "end" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                sp:varName "sstart" ;
+              ] ;
+            sp:variable [
+                sp:varName "start" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                sp:varName "eend" ;
+              ] ;
+            sp:variable [
+                sp:varName "end" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:serialization sm:JSON ;
+  rdfs:label "Serialize To JSON" ;
+.
+set:selectEventsTimespan
+  a sm:Function ;
+  sm:returnModule set:selectEventsTimespan_Return ;
+  rdfs:comment """Returns the start time of the earliest Event ActivePeriod, and the end time of the 
+latest Event Active Period.""" ;
+  rdfs:subClassOf sm:Functions ;
+.
+set:selectEventsTimespan_Return
+  a sml:ReturnText ;
+  rdfs:comment "Returns the earliest and latest times appearing in any Event in the events database. Used to initialize the time slider in the dashboard" ;
+.

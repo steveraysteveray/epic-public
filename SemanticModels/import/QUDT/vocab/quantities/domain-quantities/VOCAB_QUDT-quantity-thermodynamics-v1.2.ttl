@@ -1,0 +1,1427 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/thermodynamics
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://qudt.org/1.2/vocab/unit/thermodynamics
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/thermodynamics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "QUDT Thermodynamics Quantity Kinds Vocabulary "^^xsd:string ;
+  dc:title "QUDT Thermodynamics Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "TBD"^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-03 00:46:52 -0700 (Wed, 03 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/chemistry"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/thermodynamics> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+.
+quantity:AbsoluteHumidity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "AH"^^xsd:string ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Absolute Humidity} is an amount of water vapor, usually discussed per unit volume. Absolute humidity in air ranges from zero to roughly 30 grams per cubic meter when the air is saturated at $30 ^\\circ C$. The absolute humidity changes as air temperature or pressure changes. This is very inconvenient for chemical engineering calculations, e.g. for clothes dryers, where temperature can vary considerably. As a result, absolute humidity is generally defined in chemical engineering as mass of water vapor per unit mass of dry air, also known as the mass mixing ratio, which is much more rigorous for heat and mass balance calculations. Mass of water per unit volume as in the equation above would then be defined as volumetric humidity. Because of the potential confusion."^^xsd:string ;
+  qudt:latexDefinition """$AH = \\frac{\\mathcal{M}_\\omega}{\\vee_{net}}$, 
+
+where $\\mathcal{M}_\\omega$ is the mass of water vapor per unit volume of total air and $\\vee_{net}$ is water vapor mixture."""^^xsd:string ;
+  qudt:symbol "AH"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Absolute Humidity"^^xsd:string ;
+  rdfs:seeAlso quantity:RelativeHumidity ;
+  skos:prefLabel "Absolute Humidity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Humidity#Absolute_humidity> ;
+.
+quantity:AreaTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:FT2-DegF ;
+  qudt:applicableUnit unit:M2-K ;
+  qudt:baseUnitDimensions "K \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot L^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Area Temperature"^^xsd:string ;
+  skos:prefLabel "Area Temperature"^^xsd:string ;
+.
+quantity:AreaThermalExpansion
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:M2-PER-K ;
+  qudt:baseUnitDimensions "L^2/\\Theta"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2/K"^^xsd:string ;
+  qudt:description "When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Area Thermal Expansion"^^xsd:string ;
+  skos:prefLabel "Area Thermal Expansion"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/area_thermal_expansion> ;
+.
+quantity:AreaTimeTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:FT2-HR-DegF ;
+  qudt:applicableUnit unit:FT2-SEC-DegF ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Area Time Temperature"^^xsd:string ;
+  skos:prefLabel "Area Time Temperature"^^xsd:string ;
+.
+quantity:AreicHeatFlowRate
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "heat-flow-rate"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:description "Density of heat flow rate."^^xsd:string ;
+  qudt:symbol "\\varphi "^^xsd:string ;
+  qudt:symbolToken "q"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Aeric Heat Flow Rate"^^xsd:string ;
+  skos:broader quantity:Power ;
+  skos:closeMatch <http://dbpedia.org/resource/Heat_transfer> ;
+  skos:prefLabel "Aeric Heat Flow Rate"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Rate_of_heat_flow> ;
+.
+quantity:CelciusTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:DegC ;
+  qudt:description "\\textit{Celcius Temperature}, the thermodynamic temperature $T_0$, is exactly \\SI{0.01}{\\kelvin} below the thermodynamic temperature of the triple point of water."^^xsd:string ;
+  qudt:latexDefinition "$t = T - T_0$, where $T$ is Thermodynamic Temperature and $T_0 = 273.15 K$."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Celcius temperature"^^xsd:string ;
+  skos:prefLabel "Celcius temperature"^^xsd:string ;
+  prov:wasDerivedFrom quantity:ThermodynamicTemperature ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:CoefficientOfHeatTransfer
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "heat-xfer-coeff"^^xsd:string ;
+  qudt:applicableImperialUnit unit:BTU-PER-FT2-HR-DegF ;
+  qudt:applicableImperialUnit unit:BTU-PER-FT2-SEC-DegF ;
+  qudt:applicableSIUnit unit:W-PER-M2-K ;
+  qudt:applicableUnit unit:BTU-PER-FT2-HR-DegF ;
+  qudt:applicableUnit unit:BTU-PER-FT2-SEC-DegF ;
+  qudt:applicableUnit unit:W-PER-M2-K ;
+  qudt:baseUnitDimensions "M/\\Theta \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/K \\cdot s^3"^^xsd:string ;
+  qudt:description "\\textit{Coefficient of Heat Transfer}, in thermodynamics and in mechanical and chemical engineering, is used in calculating the heat transfer, typically by convection or phase transition between a fluid and a solid. The heat transfer coefficient is the proportionality coefficient between the heat flux, that is heat flow per unit area, $q/A$, and the thermodynamic driving force for the flow of heat (that is, the temperature difference, $ \\bigtriangleup T $).  Areic heat flow rate divided by thermodynamic temperature difference. In building technology, the \\textit{Coefficient of Heat Transfer}, is often called \\textit{thermal transmittance}, with the symbol $U$. \\textit{Coefficient of Heat Transfer}, has SI units in watts per squared meter kelvin: $W/(m^{2} \\cdot K)$ ."^^xsd:string ;
+  qudt:latexDefinition "$K = \\frac{\\varphi}{T}$, where $\\varphi$ is areic heat flow rate and $T$ is thermodynamic temperature difference."^^xsd:string ;
+  qudt:symbol "\\kappa"^^xsd:string ;
+  qudt:symbolToken "K"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Coefficient of Heat Transfer"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Heat_transfer> ;
+  skos:prefLabel "Coefficient of Heat Transfer"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Heat_transfer_coefficient> ;
+.
+quantity:CompressibilityFactor
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "The compressibility factor ($Z$) is a useful thermodynamic property for modifying the ideal gas law to account for the real gas behaviour. The closer a gas is to a phase change, the larger the deviations from ideal behavior. Values for compressibility are calculated using equations of state (EOS), such as the virial equation and van der Waals equation. The compressibility factor for specific gases can be obtained, with out calculation, from compressibility charts. These charts are created by plotting Z as a function of pressure at constant temperature."^^xsd:string ;
+  qudt:symbol "Z"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Compressibility Factor"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:prefLabel "Compressibility Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:CubicExpansionCoefficient
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "cubic-exp-coef"^^xsd:string ;
+  qudt:applicableUnit unit:PER-K ;
+  qudt:latexDefinition "$\\alpha_V = \\frac{1}{V} \\; \\frac{dV}{dT}$, where $V$ is $volume$ and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "\\alpha_v"^^xsd:string ;
+  qudt:symbolToken "alpha"^^xsd:token ;
+  qudt:symbolToken "alpha_v"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Cubic Expansion Coefficient"^^xsd:string ;
+  skos:prefLabel "Cubic Expansion Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:DewPointTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "dewpoint"^^xsd:string ;
+  qudt:applicableUnit unit:KELVIN ;
+  qudt:description "\\textit{Dew Point Temperature} is the temperature at which vapour in air reaches saturation."^^xsd:string ;
+  qudt:symbol "T_d"^^xsd:string ;
+  qudt:symbolToken "T_d"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Dew Point Temperature"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Dew Point Temperature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:Energy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "energy"^^xsd:string ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "Energy is the quantity characterizing the ability of a system to do work."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  qudt:symbolToken "E"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:Enthalpy ;
+  rdfs:seeAlso quantity:Entropy ;
+  rdfs:seeAlso quantity:GibbsEnergy ;
+  rdfs:seeAlso quantity:HelmholtzEnergy ;
+  rdfs:seeAlso quantity:InternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Energy> ;
+  skos:prefLabel "Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:EnergyPerTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/\\Theta \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/K \\cdot s^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Energy per Temperature"^^xsd:string ;
+  skos:prefLabel "Energy per Temperature"^^xsd:string ;
+.
+quantity:Enthalpy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "In thermodynamics, \\textit{enthalpy} is the sum of the internal energy $U$ and the product of pressure $p$ and volume $V$ of a system. The characteristic function (also known as thermodynamic potential) \\textit{enthalpy} used to be called \\textit{heat contents}, which is why it is conventionally indicated by $H$. The specific enthalpy of a working mass is a property of that mass used in thermodynamics, defined as $h=u+p \\cdot v$,  where $u$ is the specific internal energy, $p$ is the pressure, and $v$ is specific volume. In other words, $h = H / m$ where $m$ is the mass of the system. The SI unit for \\textit{Specific Enthalpy} is \\textit{joules per kilogram}."^^xsd:string ;
+  qudt:latexDefinition "$H = U + pV$, where $U$ is internal energy, $p$ is pressure and $V$ is volume."^^xsd:string ;
+  qudt:symbol "H"^^xsd:string ;
+  qudt:symbolToken "H"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Enthalpy"^^xsd:string ;
+  rdfs:seeAlso quantity:InternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Enthalpy> ;
+  skos:prefLabel "Enthalpy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Enthalpy> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Enthalpy> ;
+.
+quantity:Entropy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "entropy"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-K ;
+  qudt:description "When a small amount of heat $dQ$ is received by a system whose thermodynamic temperature is $T$, the entropy of the system increases by $dQ/T$, provided that no irreversible change takes place in the system."^^xsd:string ;
+  qudt:symbol "S"^^xsd:string ;
+  qudt:symbolToken "S"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Entropy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Entropy> ;
+  skos:prefLabel "Entropy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://dbpedia.org/resource/Entropy> ;
+.
+quantity:GibbsEnergy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Gibbs Energy} is one of the potentials are used to measure energy changes in systems as they evolve from an initial state to a final state. The potential used depends on the constraints of the system, such as constant temperature or pressure. \\textit{Internal Energy} is the internal energy of the system, \\textit{Enthalpy} is the internal energy of the system plus the energy related to pressure-volume work, and Helmholtz and Gibbs free energy are the energies available in a system to do useful work when the temperature and volume or the pressure and temperature are fixed, respectively. The name \\textit{Gibbs Free Energy} is also used."^^xsd:string ;
+  qudt:latexDefinition "$G = H - T \\cdot S$, where $H$ is enthalpy, $T$ is thermodynamic temperature and $S$ is entropy."^^xsd:string ;
+  qudt:symbol "G"^^xsd:string ;
+  qudt:symbolToken "G"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Gibbs Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:Energy ;
+  rdfs:seeAlso quantity:Enthalpy ;
+  rdfs:seeAlso quantity:HelmholtzEnergy ;
+  rdfs:seeAlso quantity:InternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Gibbs Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Thermodynamics> ;
+.
+quantity:Heat
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "heat"^^xsd:string ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Heat} is the energy transferred by a thermal process.  Heat can be measured in terms of the dynamical units of energy, as the erg, joule, etc., or in terms of the amount of energy required to produce a definite thermal change in some substance, as, for example, the energy required per degree to raise the temperature of a unit mass of water at some temperature ( calorie, Btu)."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  qudt:symbolToken "Q"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Heat"^^xsd:string ;
+  skos:broader quantity:ThermalEnergy ;
+  skos:exactMatch <http://dbpedia.org/resource/Heat> ;
+  skos:prefLabel "Heat"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:HeatCapacity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "heat-cap"^^xsd:string ;
+  qudt:applicableUnit unit:BTU-PER-DegF ;
+  qudt:applicableUnit unit:BTU-PER-DegR ;
+  qudt:applicableUnit unit:BoltzmannConstant ;
+  qudt:applicableUnit unit:EV-PER-K ;
+  qudt:applicableUnit unit:J-PER-K ;
+  qudt:description "\\textit{Heat Capacity} (usually denoted by a capital $C$, often with subscripts), or thermal capacity, is the measurable physical quantity that characterizes the amount of heat required to change a substance's temperature by a given amount. In the International System of Units (SI), heat capacity is expressed in units of joule(s) (J) per kelvin (K)."^^xsd:string ;
+  qudt:latexDefinition "$C = dQ/dT$, where $Q$ is amount of heat and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "C"^^xsd:string ;
+  qudt:symbol "C_/p"^^xsd:string ;
+  qudt:symbol "Cp"^^xsd:string ;
+  qudt:symbolToken "C"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Heat Capacity"^^xsd:string ;
+  rdfs:seeAlso quantity:Heat ;
+  rdfs:seeAlso quantity:ThermodynamicTemperature ;
+  skos:broader quantity:EnergyPerTemperature ;
+  skos:prefLabel "Heat Capacity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Heat_capacity> ;
+.
+quantity:HeatCapacityRatio
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "The heat capacity ratio, or ratio of specific heats, is the ratio of the heat capacity at constant pressure ($C_P$) to heat capacity at constant volume ($C_V$). For an ideal gas, the heat capacity is constant with temperature ($\\theta$). Accordingly we can express the enthalpy as $H = C_P*\\theta$ and the internal energy as $U = C_V \\cdot \\theta$. Thus, it can also be said that the heat capacity ratio is the ratio between enthalpy and internal energy."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Heat Capacity Ratio"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:exactMatch <http://dbpedia.org/resource/Heat_capacity_ratio> ;
+  skos:prefLabel "Heat Capacity Ratio"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Heat_capacity_ratio> ;
+.
+quantity:HeatFlowRate
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "heat-flow-rate"^^xsd:string ;
+  qudt:applicableUnit unit:BtuPerHour ;
+  qudt:applicableUnit unit:BtuPerSecond ;
+  qudt:applicableUnit unit:KiloCAL-PER-MIN ;
+  qudt:applicableUnit unit:KiloCAL-PER-SEC ;
+  qudt:applicableUnit unit:TonOfRefrigeration ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "The rate of heat flow between two systems is measured in watts (joules per second). The formula for rate of heat flow is $\\bigtriangleup Q / \\bigtriangleup t = -K \\times A \\times \\bigtriangleup T/x$, where $\\bigtriangleup Q / \\bigtriangleup t$ is the rate of heat flow; $-K$ is the thermal conductivity factor; A is the surface area; $\\bigtriangleup T$ is the change in temperature and $x$ is the thickness of the material. $\\bigtriangleup  T/ x$ is called the temperature gradient and is always negative because of the heat of flow always goes from more thermal energy to less)."^^xsd:string ;
+  qudt:symbol "\\Phi"^^xsd:string ;
+  qudt:symbolToken "phi"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Heat Flow Rate"^^xsd:string ;
+  skos:broader quantity:Power ;
+  skos:closeMatch <http://dbpedia.org/resource/Heat_transfer> ;
+  skos:prefLabel "Heat Flow Rate"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Rate_of_heat_flow> ;
+.
+quantity:HeatFlowRatePerUnitArea
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "\\textit{Heat Flux} is the heat rate per unit area. In SI units, heat flux is measured in $W/m^{1}$. Heat rate is a scalar quantity, while heat flux is a vectorial quantity. To define the heat flux at a certain point in space, one takes the limiting case where the size of the surface becomes infinitesimally small."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Heat Flow Rate per Unit Area"^^xsd:string ;
+  skos:broader quantity:PowerPerArea ;
+  skos:prefLabel "Heat Flow Rate per Unit Area"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Heat_flux> ;
+.
+quantity:HelmholtzEnergy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Helmholtz Energy} is one of the potentials are used to measure energy changes in systems as they evolve from an initial state to a final state. The potential used depends on the constraints of the system, such as constant temperature or pressure. \\textit{Internal Energy} is the internal energy of the system, \\textit{Enthalpy} is the internal energy of the system plus the energy related to pressure-volume work, and Helmholtz and Gibbs free energy are the energies available in a system to do useful work when the temperature and volume or the pressure and temperature are fixed, respectively. The name \\textit{Helmholz Free Energy} is also used."^^xsd:string ;
+  qudt:latexDefinition "$H = U - T \\cdot S$, where $U$ is internal energy, $T$ is thermodynamic temperature and $S$ is entropy."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  qudt:symbolToken "A"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Helmholtz Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:Energy ;
+  rdfs:seeAlso quantity:Enthalpy ;
+  rdfs:seeAlso quantity:GibbsEnergy ;
+  rdfs:seeAlso quantity:InternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Helmholtz Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Thermodynamics> ;
+.
+quantity:InternalEnergy
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "int-energy"^^xsd:string ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Internal Energy} is simply its energy. \\textit{internal} refers to the fact that some energy contributions are not considered. For instance, when the total system is in uniform motion, it has kinetic energy. This overall kinetic energy is never seen as part of the internal energy; one could call it external energy. Or, if the system is at constant non-zero height above the surface the Earth, it has constant potential energy in the gravitational field of the Earth. Gravitational energy is only taken into account when it plays a role in the phenomenon of interest, for instance in a colloidal suspension, where the gravitation influences the up- downward motion of the small particles comprising the colloid. In all other cases, gravitational energy is assumed not to contribute to the internal energy; one may call it again external energy."^^xsd:string ;
+  qudt:generalization quantity:EnergyAndWork ;
+  qudt:latexDefinition "For a closed thermodynamic system, $\\Delta U = Q + W$, where $Q$ is amount of heat transferred to the system and $W$ is work done on the system provided that no chemical reactions occur."^^xsd:string ;
+  qudt:symbol "U"^^xsd:string ;
+  qudt:symbolToken "U"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Internal Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:Energy ;
+  rdfs:seeAlso quantity:Enthalpy ;
+  rdfs:seeAlso quantity:GibbsEnergy ;
+  rdfs:seeAlso quantity:HelmholtzEnergy ;
+  owl:sameAs quantity:ThermodynamicEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Internal_energy> ;
+  skos:prefLabel "Internal Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Internal_energy> ;
+.
+quantity:InverseLengthTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:PerMeterKelvin ;
+  qudt:baseUnitDimensions "/K \\cdot m"^^xsd:string ;
+  qudt:baseUnitDimensions "/\\Theta \\cdot L"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Inverse Length Temperature"^^xsd:string ;
+  skos:prefLabel "Inverse Length Temperature"^^xsd:string ;
+.
+quantity:InverseTimeTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:HZ-PER-K ;
+  qudt:applicableUnit unit:MegaHZ-PER-K ;
+  qudt:baseUnitDimensions "/K \\cdot s"^^xsd:string ;
+  qudt:baseUnitDimensions "/\\Theta \\cdot T"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Inverse Time Temperature"^^xsd:string ;
+  skos:prefLabel "Inverse Time Temperature"^^xsd:string ;
+.
+quantity:IsentropicCompressibility
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:PER-PA ;
+  qudt:description "Isentropic compressibility is the extent to which a material reduces its volume when it is subjected to compressive stresses at a constant value of entropy."^^xsd:string ;
+  qudt:latexDefinition "$\\varkappa_S = \\frac{1}{V}\\left (\\frac{\\partial V}{\\partial p} \\right )_S$, where $V$ is volume, $p$ is $pressure$, and $S$ is entropy,"^^xsd:string ;
+  qudt:symbol "\\varkappa_S"^^xsd:string ;
+  qudt:symbolToken "kappa_S"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Isentropic Compressibility"^^xsd:string ;
+  skos:prefLabel "Isentropic Compressibility"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Compressibility> ;
+.
+quantity:IsentropicExponent
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Isentropic exponent is a variant of \\textit{Specific Heat Ratio Capacities}. For an ideal gas \\textit{Isentropic Exponent}$, \\varkappa$. is equal to $\\gamma$, the ratio of its specific heat capacities $c_p$ and $c_v$ under steady pressure and volume."^^xsd:string ;
+  qudt:latexDefinition "$\\varkappa = -\\frac{V}{p}\\left \\{  \\frac{\\partial p}{\\partial  V}\\right \\}_S$, where $V$ is volume, $p$ is pressure, and $S$ is entropy."^^xsd:string ;
+  qudt:symbol "\\varkappa"^^xsd:string ;
+  qudt:symbolToken "kappa"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Isentropic Exponent"^^xsd:string ;
+  rdfs:seeAlso quantity:IsentropicCompressibility ;
+  skos:prefLabel "Isentropic Exponent"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Specific_heat_ratio> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Compressibility> ;
+.
+quantity:IsothermalCompressibility
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:PER-PA ;
+  qudt:description "The isothermal compressibility defines the rate of change of system volume with pressure."^^xsd:string ;
+  qudt:latexDefinition "$\\varkappa_T = \\frac{1}{V}\\left (\\frac{\\partial V}{\\partial p} \\right )_T$, where $V$ is volume, $p$ is $pressure$, and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "\\varkappa_T"^^xsd:string ;
+  qudt:symbolToken "?kappa_T?"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Isothermal Compressibility Factor"^^xsd:string ;
+  skos:prefLabel "Isothermal Compressibility Factor"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Compressibility> ;
+.
+quantity:LengthTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:DegC-CM ;
+  qudt:applicableUnit unit:M-K ;
+  qudt:baseUnitDimensions "K \\cdot m"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot L"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Length Temperature"^^xsd:string ;
+  skos:prefLabel "Length Temperature"^^xsd:string ;
+.
+quantity:LengthTemperatureTime
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:CM-SEC-DegC ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Length Temperature Time"^^xsd:string ;
+  skos:prefLabel "Length Temperature Time"^^xsd:string ;
+.
+quantity:LinearExpansionCoefficient
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "lnr-exp-coef"^^xsd:string ;
+  qudt:applicableUnit unit:PER-K ;
+  qudt:latexDefinition "$\\alpha_l = \\frac{1}{l} \\; \\frac{dl}{dT}$, where $l$ is $length$ and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "\\alpha_l"^^xsd:string ;
+  qudt:symbolToken "alpha_l"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Linear Expansion Coefficient"^^xsd:string ;
+  skos:prefLabel "Linear Expansion Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:LinearThermalExpansion
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:M-PER-K ;
+  qudt:baseUnitDimensions "L/\\Theta"^^xsd:string ;
+  qudt:baseUnitDimensions "m/K"^^xsd:string ;
+  qudt:description "When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion. Different coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by: linear thermal expansion, area thermal expansion, or volumetric thermal expansion."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Linear Thermal Expansion"^^xsd:string ;
+  skos:prefLabel "Linear Thermal Expansion"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/linear_thermal_expansion> ;
+.
+quantity:MassConcentrationOfWater
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:KG-PER-M3 ;
+  qudt:description "\\textit{Mass Concentration of Water Valour} is one of a number of \\textit{Concentration} quantities defined by ISO 8000."^^xsd:string ;
+  qudt:latexDefinition "$w = m/V$, where $m$ is mass of water, irrespective of the form of aggregation, and $V$ is volume. Mass concentration of water at saturation is denoted $w_{sat}$."^^xsd:string ;
+  qudt:symbol "w"^^xsd:string ;
+  qudt:symbolToken "w"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Mass Concentration of Water"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Mass Concentration of Water"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:MassConcentrationOfWaterVapour
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:KG-PER-M3 ;
+  qudt:description "\\textit{Mass Concentration of Water} is one of a number of \\textit{Concentration} quantities  defined by ISO 8000."^^xsd:string ;
+  qudt:latexDefinition "$w = m/V$, where $m$ is mass of water vapour and $V$ is total gas volume. Mass concentration of water vapour at saturation is denoted $v_{sat}$."^^xsd:string ;
+  qudt:symbol "v"^^xsd:string ;
+  qudt:symbolToken "v"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Mass Concentration of Water Vapour"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Mass Concentration of Water Vapour"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:MassFractionOfDryMatter
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Mass Fraction of Dry Matter} is one of a number of \\textit{Concentration} quantities defined by ISO 8000."^^xsd:string ;
+  qudt:latexDefinition "$w_d= 1 - w_{h2o}$, where $w_{h2o}$ is mass fraction of water."^^xsd:string ;
+  qudt:symbol "w_d"^^xsd:string ;
+  qudt:symbolToken "w_d"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Mass Fraction of Dry Matter"^^xsd:string ;
+  rdfs:seeAlso quantity:MassFractionOfWater ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Mass Fraction of Dry Matter"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:MassFractionOfWater
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Mass Fraction of Water} is one of a number of \\textit{Concentration} quantities defined by ISO 8000."^^xsd:string ;
+  qudt:latexDefinition "$w_{H_2o} = \\frac{u}{1+u}$, where $u$ is mass ratio of water to dry water."^^xsd:string ;
+  qudt:symbol "w_{H_2o}"^^xsd:string ;
+  qudt:symbolToken "w_h2o"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Mass Fraction of Water"^^xsd:string ;
+  rdfs:seeAlso quantity:MassFractionOfDryMatter ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Mass Fraction of Water"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:MassRatioOfWaterToDryMatter
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Mass Ratio of Water to Dry Matter} is one of a number of \\textit{Concentration Ratio} quantities  defined by ISO 8000."^^xsd:string ;
+  qudt:latexDefinition "$u = m/m_d$, where $m$ is mass of water vapour and $m_d$ is mass of dry matter. Mass ratio of water to dry matter at saturation is denoted $u_{sat}$."^^xsd:string ;
+  qudt:symbol "u"^^xsd:string ;
+  qudt:symbolToken "u"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Mass Concentration of Water To Dry Matter"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Mass Concentration of Water To Dry Matter"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:MassRatioOfWaterVapourToDryGas
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Mass Ratio of Water Vapour to Dry Gas} is one of a number of \\textit{Concentration Ratio} quantities  defined by ISO 8000."^^xsd:string ;
+  qudt:latexDefinition "$x = m/m_d$, where $m$ is mass of water vapour and $m_d$ is mass of dry gas. Mass ratio of water vapour to dry gas  at saturation is denoted $x_{sat}$."^^xsd:string ;
+  qudt:symbol "x"^^xsd:string ;
+  qudt:symbolToken "x"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Mass Ratio of Water Vapour to Dry Gas"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Mass Ratio of Water Vapour to Dry Gas"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:MassTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:G-PER-DegC ;
+  qudt:applicableUnit unit:KG-K ;
+  qudt:applicableUnit unit:LB-DegF ;
+  qudt:applicableUnit unit:LB-DegR ;
+  qudt:baseUnitDimensions "K \\cdot kg"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot M"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Mass Temperature"^^xsd:string ;
+  skos:prefLabel "Mass Temperature"^^xsd:string ;
+.
+quantity:MassieuFunction
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "massieu-function"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG ;
+  qudt:description "The Massieu function, $\\Psi$, is defined as: $\\Psi = \\Psi (X_1, \\dots , X_i, Y_{i+1}, \\dots , Y_r  )$,  where for every system with degree of freedom $r$ one may choose $r$ variables, e.g. , to define a coordinate system, where $X$ and $Y$ are extensive and intensive variables, respectively, and where at least one extensive variable must be within this set in order to define the size of the system. The $(r + 1)^{th}$ variable,$\\Psi$ , is then called the Massieu function."^^xsd:string ;
+  qudt:latexDefinition "$J = -A/T$, where $A$ is Helmholtz energy and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "J"^^xsd:string ;
+  qudt:symbolToken "J"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Massieu Function"^^xsd:string ;
+  rdfs:seeAlso quantity:PlanckFunction ;
+  rdfs:seeAlso quantity:SpecificEnergy ;
+  rdfs:seeAlso quantity:SpecificEnthalpy ;
+  rdfs:seeAlso quantity:SpecificGibbsEnergy ;
+  rdfs:seeAlso quantity:SpecificHelmholtzEnergy ;
+  rdfs:seeAlso quantity:SpecificInternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Massieu Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Massieu_function> ;
+.
+quantity:MolarHeatCapacity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "j-mol^{-1}-k^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:BtuPerPoundMoleDegreeFahrenheit ;
+  qudt:applicableUnit unit:J-PER-MOL-K ;
+  qudt:applicableUnit unit:KiloCAL-PER-MOL-DegC ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/\\Theta \\cdot M \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/K \\cdot mol \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Molar Heat Capacity} is the amount of heat energy required to raise the temperature of 1 mole of a substance. In SI units, molar heat capacity (symbol: cn) is the amount of heat in joules required to raise 1 mole of a substance 1 Kelvin."^^xsd:string ;
+  qudt:latexDefinition "$C_m = \\frac{C}{n}$, where $C$ is heat capacity and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "C_m"^^xsd:string ;
+  qudt:symbol "cn"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Molar Heat Capacity"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Specific_heat_capacity> ;
+  skos:prefLabel "Molar Heat Capacity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://chemistry.about.com/od/chemistryglossary/g/Molar-Heat-Capacity-Definition.htm> ;
+.
+quantity:PlanckFunction
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "massieu-function"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-K ;
+  qudt:description "The \\yexyit{Planck function} is used to compute the radiance emitted from objects that radiate like a perfect \\textit{Black Body}. The inverse of the \\textit{Planck Function} is used to find the \\textit{Brightness Temperature} of an object. The precise formula for the Planck Function depends on whether the radiance is determined on a \\textit{per unit wavelength} or a \\textit{per unit frequency}. In the ISO System of Quantities, \\textit{Planck Function} is defined by the formula: $Y = -G/T$, where $G$ is Gibbs Energy and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:latexDefinition """The Planck function, $B_{\\tilde{\\nu}}(T)$, is given by: \\newline
+$B_{\\tilde{\\nu}}(T) = \\frac{2h c^2\\tilde{\\nu}^3}{e^{hc / k \\tilde{\\nu} T}-1}$, where, $\\tilde{\\nu}$ is wavelength, $h$ is Planck's Constant, $k$ is Boltzman's Constant, $c$ is the speed of light in a vacuum, $T$ is thermodynamic temperature."""^^xsd:string ;
+  qudt:symbol "Y"^^xsd:string ;
+  qudt:symbolToken "Y"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Planck Function"^^xsd:string ;
+  rdfs:seeAlso quantity:MassieuFunction ;
+  rdfs:seeAlso quantity:SpecificEnergy ;
+  rdfs:seeAlso quantity:SpecificEnthalpy ;
+  rdfs:seeAlso quantity:SpecificGibbsEnergy ;
+  rdfs:seeAlso quantity:SpecificHelmholtzEnergy ;
+  rdfs:seeAlso quantity:SpecificInternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Planck Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19680008986_1968008986.pdf> ;
+  prov:wasInfluencedBy <http://pds-atmospheres.nmsu.edu/education_and_outreach/encyclopedia/planck_function.htm> ;
+  prov:wasInfluencedBy <http://www.star.nesdis.noaa.gov/smcd/spb/calibration/planck.html> ;
+  prov:wasInfluencedBy <http://www.yale.edu/ceo/Documentation/ComputingThePlanckFunction.pdf> ;
+.
+quantity:PowerPerAreaQuarticTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:WattPerSquareMeterQuarticKelvin ;
+  qudt:baseUnitDimensions "M/\\Theta^4 \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/K^4 \\cdot s^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Power per Area Quartic Temperature"^^xsd:string ;
+  skos:prefLabel "Power per Area Quartic Temperature"^^xsd:string ;
+.
+quantity:PressureCoefficient
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "pres-coef"^^xsd:string ;
+  qudt:applicableUnit unit:PA-PER-K ;
+  qudt:latexDefinition "$\\beta = \\left (\\frac{\\partial p}{\\partial T} \\right )_V$, where $p$ is $pressure$,  $T$ is thermodynamic temperature and $V$ is volume."^^xsd:string ;
+  qudt:symbol "\\beta"^^xsd:string ;
+  qudt:symbolToken "beta"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Pressure Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:RatioOfSpecificHeatCapacities
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The specific heat ratio of a gas is the ratio of the specific heat at constant pressure, $c_p$, to the specific heat at constant volume, $c_V$. It is sometimes referred to as the \\textit{adiabatic index} or the \\textit{heat capacity ratio} or the \\textit{isentropic expansion factor} or the \\textit{adiabatic exponent} or the \\textit{isentropic exponent}."^^xsd:string ;
+  qudt:latexDefinition "$\\gamma = c_p / c_V$, where $c$ is the specific heat of a gas, $c_p$ is specific heat capacity at constant pressure, $c_V$ is specific heat capacity at constant volume."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  qudt:symbol "\\varkappa"^^xsd:string ;
+  qudt:symbolToken "k"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Ratio of Specific Heat Capacities"^^xsd:string ;
+  rdfs:seeAlso quantity:IsentropicExponent ;
+  skos:prefLabel "Ratio of Specific Heat Capacities"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Specific_heat_ratio> ;
+.
+quantity:RelativeHumidity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "RH"^^xsd:string ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Humidity} is the ratio of the partial pressure of water vapor in an air-water mixture to the saturated vapor pressure of water at a prescribed temperature. The relative humidity of air depends not only on temperature but also on the pressure of the system of interest. \\textit{Relative Humidity} is also referred to as \\text{Relative Partial Pressure}. Relative partial pressure is often referred to as $RH$ and expressed in percent."^^xsd:string ;
+  qudt:latexDefinition "$\\varphi = p / p_{sat}$, where $p$ is partial pressure of vapour,  $p_{sat}$ is thermodynamic temperature and $V$ is its partial pressure at saturation (at the same temperature). Relative partial pressure is often referred to as $RH$ and expressed in percent. \\textit{Relative Humidity} is also referred to as \\text{Relative Partial Pressure}."^^xsd:string ;
+  qudt:symbol "\\varphi"^^xsd:string ;
+  qudt:symbolToken "varphi"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Relative Humidity"^^xsd:string ;
+  rdfs:seeAlso quantity:AbsoluteHumidity ;
+  owl:sameAs quantity:RelativePartialPressure ;
+  skos:prefLabel "Relative Humidity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Relative_humidity> ;
+.
+quantity:RelativeMassConcentrationOfVapour
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Mass Concentration of Vapour} is one of a number of \\textit{Relative Concentration} quantities  defined by ISO 8000."^^xsd:string ;
+  qudt:latexDefinition "$\\varphi = v / v_{sat}$, where $v$ is mass concentration of water vapour,  $v_{sat}$ is its mass concentration of water vapour at saturation (at the same temperature). For normal cases, the relative partial pressure may be assumed to be equal to relative mass concentration of vapour."^^xsd:string ;
+  qudt:symbol "\\varphi"^^xsd:string ;
+  qudt:symbolToken "varphi"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Relative Mass Concentration of Vapour"^^xsd:string ;
+  rdfs:seeAlso quantity:RelativePartialPressure ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Relative Mass Concentration of Vapour"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:RelativeMassRatioOfVapour
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Mass Ratio of Vapour} is one of a number of \\textit{Relative Concentration} quantities  defined by ISO 8000."^^xsd:string ;
+  qudt:latexDefinition "$\\psi = x / x_{sat}$, where $x$ is mass ratio of water vapour to dry gas,  $x_{sat}$ is its mass raio of water vapour to dry gas at saturation (at the same temperature)."^^xsd:string ;
+  qudt:symbol "\\psi"^^xsd:string ;
+  qudt:symbolToken "varphi"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Relative Mass Ratio of Vapour"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Relative Mass Ratio of Vapour"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:RelativePartialPressure
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "RH"^^xsd:string ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:latexDefinition """$\\varphi = p / p_{sat}$, where $p$ is partial pressure of vapour,  $p_{sat}$ is thermodynamic temperature and $V$ is its
+partial pressure at saturation (at the same temperature). Relative partial pressure is often referred to as $RH$ and expressed in percent. \\textit{Relative Partial Pressure} is also referred to as \\text{Relative Humidity}."""^^xsd:string ;
+  qudt:symbol "\\varphi"^^xsd:string ;
+  qudt:symbolToken "varphi"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Relative Partial Pressure"^^xsd:string ;
+  owl:sameAs quantity:RelativeHumidity ;
+  skos:prefLabel "Relative Partial Pressure"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:RelativePressureCoefficient
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "rel-pres-coef"^^xsd:string ;
+  qudt:applicableUnit unit:PER-K ;
+  qudt:latexDefinition "$\\alpha_p = \\frac{1}{p}\\left (\\frac{\\partial p}{\\partial T} \\right )_V$, where $p$ is $pressure$,  $T$ is thermodynamic temperature and $V$ is volume."^^xsd:string ;
+  qudt:symbol "\\alpha_p"^^xsd:string ;
+  qudt:symbolToken "alpha_p"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Relative Pressure Coefficient"^^xsd:string ;
+  skos:prefLabel "Relative Pressure Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:SpecificEnergy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "specific-energy"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG ;
+  qudt:baseUnitDimensions "m^2/s^2"^^xsd:string ;
+  qudt:description "\\textit{Specific Energy} is defined as the energy per unit mass. Common metric units are $J/kg$. It is an intensive property. Contrast this with energy, which is an extensive property. There are two main types of specific energy: potential energy and specific kinetic energy. Others are the gray and sievert, measures for the absorption of radiation. The concept of specific energy applies to a particular or theoretical way of extracting useful energy from the material considered that is usually implied by context. These intensive properties are each symbolized by using the lower case letter of the symbol for the corresponding extensive property, which is symbolized by a capital letter. For example, the extensive thermodynamic property enthalpy is symbolized by H; specific enthalpy is symbolized by $h$."^^xsd:string ;
+  qudt:latexDefinition "$e = E/m$, where $E$ is energy and $m$ is mass."^^xsd:string ;
+  qudt:symbol "e"^^xsd:string ;
+  qudt:symbolToken "e"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:Enthalpy ;
+  rdfs:seeAlso quantity:MassieuFunction ;
+  rdfs:seeAlso quantity:PlanckFunction ;
+  rdfs:seeAlso quantity:SpecificEnthalpy ;
+  rdfs:seeAlso quantity:SpecificGibbsEnergy ;
+  rdfs:seeAlso quantity:SpecificHelmholtzEnergy ;
+  rdfs:seeAlso quantity:SpecificInternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Specific_energy> ;
+  skos:prefLabel "Specific Energy"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Enthalpy> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Specific_energy> ;
+.
+quantity:SpecificEnthalpy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "specific-enthalpy"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG ;
+  qudt:description "Enthalpy has corresponding intensive (size-independent) properties for pure materials. A corresponding intensive property is specific enthalpy, which is enthalpy per mass of substance involved. Specific enthalpy is denoted by a lower case h, with dimension of energy per mass (SI unit: joule/kg)."^^xsd:string ;
+  qudt:latexDefinition "$h = H/m$, where $H$ is enthalpy and $m$ is mass."^^xsd:string ;
+  qudt:symbol "h"^^xsd:string ;
+  qudt:symbolToken "h"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Enthalpy"^^xsd:string ;
+  rdfs:seeAlso quantity:Enthalpy ;
+  rdfs:seeAlso quantity:MassieuFunction ;
+  rdfs:seeAlso quantity:PlanckFunction ;
+  rdfs:seeAlso quantity:SpecificEnergy ;
+  rdfs:seeAlso quantity:SpecificGibbsEnergy ;
+  rdfs:seeAlso quantity:SpecificHelmholtzEnergy ;
+  rdfs:seeAlso quantity:SpecificInternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Entropy> ;
+  skos:prefLabel "Specific Enthalpy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Enthalpy> ;
+.
+quantity:SpecificEntropy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "entropy"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG-K ;
+  qudt:description "\\textit{Specific Entropy} is entropy per unit of mass."^^xsd:string ;
+  qudt:latexDefinition "$s = S/m$, where $S$ is entropy and $m$ is mass."^^xsd:string ;
+  qudt:symbol "s"^^xsd:string ;
+  qudt:symbolToken "s"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Entropy"^^xsd:string ;
+  rdfs:seeAlso quantity:Entropy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Entropy> ;
+  skos:prefLabel "Specific Entropy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://dbpedia.org/resource/Entropy> ;
+.
+quantity:SpecificGibbsEnergy
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "specific-gibbs-energy"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG ;
+  qudt:description "Energy has corresponding intensive (size-independent) properties for pure materials. A corresponding intensive property is \\textit{Specific Gibbs Energy}, which is \\textit{Gibbs Energy} per mass of substance involved. \\textit{Specific Gibbs Energy} is denoted by a lower case g, with dimension of energy per mass (SI unit: joule/kg)."^^xsd:string ;
+  qudt:latexDefinition "$g = G/m$, where $G$ is Gibbs energy and $m$ is mass."^^xsd:string ;
+  qudt:symbol "g"^^xsd:string ;
+  qudt:symbolToken "g"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Gibbs Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:MassieuFunction ;
+  rdfs:seeAlso quantity:PlanckFunction ;
+  rdfs:seeAlso quantity:SpecificEnergy ;
+  rdfs:seeAlso quantity:SpecificEnthalpy ;
+  rdfs:seeAlso quantity:SpecificHelmholtzEnergy ;
+  rdfs:seeAlso quantity:SpecificInternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Specific Gibbs Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Enthalpy> ;
+.
+quantity:SpecificHeatCapacity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "specific-heat-cap"^^xsd:string ;
+  qudt:applicableUnit unit:BTU-PER-LB-DegF ;
+  qudt:applicableUnit unit:BTU-PER-LB-DegR ;
+  qudt:applicableUnit unit:J-PER-KG-K ;
+  qudt:applicableUnit unit:KiloCAL-PER-GM-DegC ;
+  qudt:baseUnitDimensions "L^2/\\Theta \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2/K \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Specific Heat Capacity} of a solid or liquid is defined as the heat required to raise unit mass of substance by one degree of temperature. This is \\textit{Heat Capacity} divied by \\textit{Mass}. Note that there are corresponding molar quantities."^^xsd:string ;
+  qudt:symbol "c"^^xsd:string ;
+  qudt:symbolToken "c"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Heat Capacity"^^xsd:string ;
+  rdfs:seeAlso quantity:HeatCapacity ;
+  rdfs:seeAlso quantity:Mass ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtConstantPressure ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtConstantVolume ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtSaturation ;
+  skos:exactMatch <http://dbpedia.org/resource/Specific_heat_capacity> ;
+  skos:prefLabel "Specific Heat Capacity"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.taftan.com/thermodynamics/CP.HTM> ;
+.
+quantity:SpecificHeatCapacityAtConstantPressure
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "spiecific-heat-cap-at-constant-p"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG-K ;
+  qudt:description "Specific heat at a constant pressure."^^xsd:string ;
+  qudt:symbol "c_p"^^xsd:string ;
+  qudt:symbolToken "cp"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Heat Capacity at Constant Pressure"^^xsd:string ;
+  rdfs:seeAlso quantity:SpecificHeatCapacity ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtConstantVolume ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtSaturation ;
+  skos:prefLabel "Specific Heat Capacity at Constant Pressure"^^xsd:string ;
+.
+quantity:SpecificHeatCapacityAtConstantVolume
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "specific-heat-cap-at-constant-vol"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG-K ;
+  qudt:description "Specific heat per constant volume."^^xsd:string ;
+  qudt:symbol "c_v"^^xsd:string ;
+  qudt:symbolToken "cv"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Heat Capacity at Constant Volume"^^xsd:string ;
+  rdfs:seeAlso quantity:SpecificHeatCapacity ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtConstantPressure ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtSaturation ;
+  skos:prefLabel "Specific Heat Volume"^^xsd:string ;
+.
+quantity:SpecificHeatCapacityAtSaturation
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "specific-heat-cap-at-sat"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG-K ;
+  qudt:description "Specific heat per constant volume."^^xsd:string ;
+  qudt:symbol "c_{sat}"^^xsd:string ;
+  qudt:symbolToken "csat"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Heat Capacity at Saturation"^^xsd:string ;
+  rdfs:seeAlso quantity:SpecificHeatCapacity ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtConstantPressure ;
+  rdfs:seeAlso quantity:SpecificHeatCapacityAtConstantVolume ;
+  skos:prefLabel "Specific Heat Capacity at Saturation"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:SpecificHeatPressure
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:J-PER-KG-K-PA ;
+  qudt:baseUnitDimensions "L^3/\\Theta \\cdot M"^^xsd:string ;
+  qudt:baseUnitDimensions "m^3/K \\cdot kg"^^xsd:string ;
+  qudt:description "Specific heat at a constant pressure."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Heat Pressure"^^xsd:string ;
+  skos:prefLabel "Specific Heat Pressure"^^xsd:string ;
+.
+quantity:SpecificHeatVolume
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:J-PER-KG-K-M3 ;
+  qudt:baseUnitDimensions "/K \\cdot m \\cdot s^2"^^xsd:string ;
+  qudt:baseUnitDimensions "/\\Theta \\cdot L \\cdot T^2"^^xsd:string ;
+  qudt:description "Specific heat per constant volume."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Heat Volume"^^xsd:string ;
+  skos:prefLabel "Specific Heat Volume"^^xsd:string ;
+.
+quantity:SpecificHelmholtzEnergy
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "specific-helmholz-energy"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG ;
+  qudt:description "Energy has corresponding intensive (size-independent) properties for pure materials. A corresponding intensive property is \\textit{Specific Helmholtz Energy}, which is \\textit{Helmholz Energy} per mass of substance involved. \\textit{Specific Helmholz Energy} is denoted by a lower case u, with dimension of energy per mass (SI unit: joule/kg)."^^xsd:string ;
+  qudt:latexDefinition "$a = A/m$, where $A$ is Helmholtz energy and $m$ is mass."^^xsd:string ;
+  qudt:symbol "a"^^xsd:string ;
+  qudt:symbolToken "a"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Helmholtz Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:MassieuFunction ;
+  rdfs:seeAlso quantity:PlanckFunction ;
+  rdfs:seeAlso quantity:SpecificEnergy ;
+  rdfs:seeAlso quantity:SpecificEnthalpy ;
+  rdfs:seeAlso quantity:SpecificGibbsEnergy ;
+  rdfs:seeAlso quantity:SpecificInternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Specific Helmholtz Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Enthalpy> ;
+.
+quantity:SpecificInternalEnergy
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "specific-int-energy"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-KG ;
+  qudt:description "Energy has corresponding intensive (size-independent) properties for pure materials. A corresponding intensive property is specific internal energy, which is energy per mass of substance involved. Specific internal energy is denoted by a lower case u, with dimension of energy per mass (SI unit: joule/kg)."^^xsd:string ;
+  qudt:latexDefinition "$u = U/m$, where $U$ is thermodynamic energy and $m$ is mass."^^xsd:string ;
+  qudt:symbol "u"^^xsd:string ;
+  qudt:symbolToken "u"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Specific Internal Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:InternalEnergy ;
+  rdfs:seeAlso quantity:MassieuFunction ;
+  rdfs:seeAlso quantity:PlanckFunction ;
+  rdfs:seeAlso quantity:SpecificEnergy ;
+  rdfs:seeAlso quantity:SpecificEnthalpy ;
+  rdfs:seeAlso quantity:SpecificGibbsEnergy ;
+  rdfs:seeAlso quantity:SpecificHelmholtzEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Specific Inernal Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.citizendium.org/wiki/Enthalpy> ;
+.
+quantity:SurfaceCoefficientOfHeatTransfer
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "surface-heat-xfer-coeff"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-M2-K ;
+  qudt:latexDefinition "$q = h (T_s - T_r)$, where $T_s$ is areic heat flow rate is the thermodynamic temperature of the surface, and is a reference thermodynamic temperature characteristic of the adjacent surroundings."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  qudt:symbolToken "h"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Surface Coefficient of Heat Transfer"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Heat_transfer> ;
+  skos:prefLabel "Surface Coefficient of Heat Transfer"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:Temperature
+  rdf:type qudt:PhysicsQuantityKind ;
+  qudt:abbreviation "TEMP"^^xsd:string ;
+  qudt:applicableUnit unit:DegC ;
+  qudt:applicableUnit unit:DegF ;
+  qudt:applicableUnit unit:KELVIN ;
+  qudt:description "Temperature is a physical property of matter that quantitatively expresses the common notions of hot and cold. Objects of low temperature are cold, while various degrees of higher temperatures are referred to as warm or hot. Heat spontaneously flows from bodies of a higher temperature to bodies of lower temperature, at a rate that increases with the temperature difference and the thermal conductivity."^^xsd:string ;
+  rdfs:label "Temperature"^^xsd:string ;
+  rdfs:seeAlso <http://en.wikipedia.org/wiki/Temperature#Temperature_scales> ;
+  owl:sameAs <http://dbpedia.org/resource/Temperature> ;
+  skos:prefLabel "Temperature"^^xsd:string ;
+.
+quantity:TemperaturePerMagneticFluxDensity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:K-PER-T ;
+  qudt:baseUnitDimensions "A \\cdot K \\cdot s^2/kg"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot I \\cdot T^2/M"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Temperature per Magnetic Flux Density"^^xsd:string ;
+  skos:prefLabel "Temperature per Magnetic Flux Density"^^xsd:string ;
+.
+quantity:TemperaturePerTime
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:DegC-PER-HR ;
+  qudt:applicableUnit unit:DegC-PER-MIN ;
+  qudt:applicableUnit unit:DegC-PER-SEC ;
+  qudt:applicableUnit unit:DegF-PER-HR ;
+  qudt:applicableUnit unit:DegF-PER-MIN ;
+  qudt:applicableUnit unit:DegF-PER-SEC ;
+  qudt:applicableUnit unit:DegR-PER-HR ;
+  qudt:applicableUnit unit:DegR-PER-MIN ;
+  qudt:applicableUnit unit:DegR-PER-SEC ;
+  qudt:applicableUnit unit:K-PER-HR ;
+  qudt:applicableUnit unit:K-PER-MIN ;
+  qudt:applicableUnit unit:K-PER-SEC ;
+  qudt:baseUnitDimensions "K/s"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta/T"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Temperature per Time"^^xsd:string ;
+  skos:prefLabel "Temperature per Time"^^xsd:string ;
+.
+quantity:ThermalConductance
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "thermal-insulance"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-K ;
+  qudt:description "This quantity is also called \\textit{Heat Transfer Coefficient}."^^xsd:string ;
+  qudt:latexDefinition "$G = 1/R$, where $R$ is \\textit{Thermal Resistance}"^^xsd:string ;
+  qudt:symbol "G"^^xsd:string ;
+  qudt:symbolToken "G"^^xsd:token ;
+  qudt:symbolToken "H"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Conductance"^^xsd:string ;
+  rdfs:seeAlso quantity:CoefficientOfHeatTransfer ;
+  owl:sameAs quantity:CoefficientOfHeatTransfer ;
+  skos:prefLabel "Thermal Insulance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_insulation> ;
+.
+quantity:ThermalConductivity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "thermal-k"^^xsd:string ;
+  qudt:applicableUnit unit:BTU_IT-FT-PER-FT2-HR-DegF ;
+  qudt:applicableUnit unit:BTU_IT-IN-PER-FT2-HR-DegF ;
+  qudt:applicableUnit unit:BTU_IT-IN-PER-FT2-SEC-DegF ;
+  qudt:applicableUnit unit:BTU_TH-FT-PER-FT2-HR-DegF ;
+  qudt:applicableUnit unit:BTU_TH-IN-PER-FT2-HR-DegF ;
+  qudt:applicableUnit unit:BTU_TH-IN-PER-FT2-SEC-DegF ;
+  qudt:applicableUnit unit:W-PER-M-K ;
+  qudt:baseUnitDimensions "L \\cdot M/\\Theta \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m/K \\cdot s^3"^^xsd:string ;
+  qudt:description "In physics, thermal conductivity, $k$ (also denoted as $\\lambda$), is the property of a material's ability to conduct heat. It appears primarily in Fourier's Law for heat conduction and is the areic heat flow rate divided by temperature gradient."^^xsd:string ;
+  qudt:latexDefinition "$\\lambda = \\frac{\\varphi}{T}$, where $\\varphi$ is areic heat flow rate and $T$ is temperature gradient."^^xsd:string ;
+  qudt:symbol "\\lambda"^^xsd:string ;
+  qudt:symbolToken "k"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Conductivity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_conductivity> ;
+  skos:prefLabel "Thermal Conductivity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_conductivity> ;
+.
+quantity:ThermalDiffusivity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "thermal-diff"^^xsd:string ;
+  qudt:applicableUnit unit:FT2-PER-HR ;
+  qudt:applicableUnit unit:M2-PER-SEC ;
+  qudt:description "In heat transfer analysis, thermal diffusivity (usually denoted $\\alpha$ but $a$, $\\kappa$,$k$, and $D$ are also used) is the thermal conductivity divided by density and specific heat capacity at constant pressure. The formula is: $\\alpha = {k \\over {\\rho c_p}}$, where k is thermal conductivity ($W/(\\mu \\cdot K)$), $\\rho$ is density ($kg/m^{3}$), and $c_p$ is specific heat capacity ($\\frac{J}{(kg \\cdot K)}$) .The denominator $\\rho c_p$, can be considered the volumetric heat capacity ($\\frac{J}{(m^{3} \\cdot K)}$)."^^xsd:string ;
+  qudt:latexDefinition "$a = \\frac{\\lambda}{\\rho   c_\\rho}$, where $\\lambda$ is thermal conductivity, $\\rho$ is mass density and $c_\\rho$ is specific heat capacity at constant pressure."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  qudt:symbol "a"^^xsd:string ;
+  qudt:symbolToken "a"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Diffusivity"^^xsd:string ;
+  rdfs:seeAlso <http://no-valid-base-found.com/> ;
+  skos:broader quantity:AreaPerTime ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_diffusivity> ;
+  skos:prefLabel "Thermal Diffusivity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_diffusivity> ;
+.
+quantity:ThermalEfficiency
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "Thermal efficiency is a dimensionless performance measure of a thermal device such as an internal combustion engine, a boiler, or a furnace. The input to the device is heat, or the heat-content of a fuel that is consumed. The desired output is mechanical work, or heat, or possibly both."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Efficiency"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_efficiency> ;
+  skos:prefLabel "Thermal Efficiency"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:ThermalEnergy
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:BTU_IT ;
+  qudt:applicableUnit unit:BTU_TH ;
+  qudt:applicableUnit unit:CAL ;
+  qudt:applicableUnit unit:KiloCAL ;
+  qudt:applicableUnit unit:ThCalorie ;
+  qudt:applicableUnit unit:Therm ;
+  qudt:applicableUnit unit:ThermUS ;
+  qudt:description "\\textit{Thermal Energy} is the portion of the thermodynamic or internal energy of a system that is responsible for the temperature of the system. From a macroscopic thermodynamic description, the thermal energy of a system is given by its constant volume specific heat capacity C(T), a temperature coefficient also called thermal capacity, at any given absolute temperature (T): $U_{thermal} = C(T) \\cdot T$. "^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Energy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_energy> ;
+  skos:prefLabel "Thermal Energy"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_energy> ;
+.
+quantity:ThermalEnergyLength
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:BTU-FT ;
+  qudt:applicableUnit unit:BTU-IN ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Energy Length"^^xsd:string ;
+  skos:prefLabel "Thermal Energy Length"^^xsd:string ;
+.
+quantity:ThermalInsulance
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "thermal-insulance"^^xsd:string ;
+  qudt:applicableUnit unit:Clo ;
+  qudt:applicableUnit unit:M2-K-PER-W ;
+  qudt:applicableUnit unit:SquareFootHourDegreeFahrenheitPerBtu ;
+  qudt:baseUnitDimensions "K \\cdot s^3/kg"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot T^3/M"^^xsd:string ;
+  qudt:description "\\textit{Thermal Insulation} is the reduction of heat transfer (the transfer of thermal energy between objects of differing temperature) between objects in thermal contact or in range of radiative influence. In building technology, this quantity is often called \\textit{Thermal Resistance}, with the symbol $R$."^^xsd:string ;
+  qudt:latexDefinition "$M = 1/K$, where $K$ is \\textit{Coefficient of Heat Transfer}"^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  qudt:symbolToken "M"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Insulance"^^xsd:string ;
+  rdfs:seeAlso quantity:CoefficientOfHeatTransfer ;
+  skos:prefLabel "Thermal Insulance"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_insulation> ;
+.
+quantity:ThermalResistance
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "thermal-resistance"^^xsd:string ;
+  qudt:applicableUnit unit:DegreeFahrenheitHourPerBtu ;
+  qudt:applicableUnit unit:K-PER-W ;
+  qudt:baseUnitDimensions "K \\cdot s^3/kg \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot T^3/L^2 \\cdot M"^^xsd:string ;
+  qudt:description "\\textit{Thermal Resistance} is a heat property and a measure of a temperature difference by which an object or material resists a heat flow (heat per time unit or thermal resistance). Thermal resistance is the reciprocal thermal conductance. the thermodynamic temperature difference divided by heat flow rate. Thermal resistance $R$ has the units $\\frac{m^2 \\cdot K}{W}$. "^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  qudt:symbolToken "R"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Resistance"^^xsd:string ;
+  rdfs:seeAlso quantity:HeatFlowRate ;
+  rdfs:seeAlso quantity:ThermalInsulance ;
+  rdfs:seeAlso quantity:ThermodynamicTemperature ;
+  skos:exactMatch <http://dbpedia.org/resource/Thermal_resistance> ;
+  skos:prefLabel "Thermal Resistance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Thermal_resistance> ;
+.
+quantity:ThermalResistivity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:DegF-HR ;
+  qudt:applicableUnit unit:M-K-PER-W ;
+  qudt:applicableUnit unit:SquareFootPerBtuInch ;
+  qudt:baseUnitDimensions "K \\cdot s^3/kg \\cdot m"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot T^3/L \\cdot M"^^xsd:string ;
+  qudt:description "The reciprocal of thermal conductivity is thermal resistivity, measured in $kelvin-metres$ per watt ($K \\cdot m/W$)."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermal Resistivity"^^xsd:string ;
+  skos:prefLabel "Thermal Resistivity"^^xsd:string ;
+.
+quantity:ThermodynamicEnergy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "therm-energy"^^xsd:string ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:latexDefinition "For a closed thermodynamic system, $\\Delta U = Q + W$, where $Q$ is amount of heat transferred to the system and $W$ is work done on the system provided that no chemical reactions occur."^^xsd:string ;
+  qudt:symbol "U"^^xsd:string ;
+  qudt:symbolToken "U"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermodynamic Energy"^^xsd:string ;
+  owl:sameAs quantity:InternalEnergy ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Thermodynamic Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:ThermodynamicEntropy
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:description "Thermodynamic Entropy is a measure of the unavailability of a system’s energy to do work. It is a measure of the randomness of molecules in a system and is central to the second law of thermodynamics and the fundamental thermodynamic relation, which deal with physical processes and whether they occur spontaneously. The dimensions of entropy are energy divided by temperature, which is the same as the dimensions of Boltzmann's constant ($kB$) and heat capacity. The SI unit of entropy is $joule per kelvin$. [Wikipedia]"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermodynamic Entropy"^^xsd:string ;
+  skos:broader quantity:EnergyPerTemperature ;
+  skos:prefLabel "Thermodynamic Entropy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:ThermodynamicTemperature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:DegC ;
+  qudt:applicableUnit unit:DegF ;
+  qudt:applicableUnit unit:DegR ;
+  qudt:applicableUnit unit:KELVIN ;
+  qudt:applicableUnit unit:PlanckTemperature ;
+  qudt:baseUnitDimensions "K"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta"^^xsd:string ;
+  qudt:description """Temperature is a physical property of matter that quantitatively expresses the common notions of hot and cold. 
+In thermodynamics, in a system of which the entropy is considered as an independent externally controlled variable, absolute, or thermodynamic, temperature is defined as the derivative of the internal energy with respect to the entropy. This is a base quantity in the International System of Quantities, ISQ, on which the International System of Units, SI, is based."""^^xsd:string ;
+  qudt:symbol "T"^^xsd:string ;
+  qudt:symbol "\\Theta"^^xsd:string ;
+  qudt:symbolToken "T"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Thermodynamic Temperature"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Temperature> ;
+  skos:prefLabel "Thermodynamic temperature"^^xsd:string ;
+.
+quantity:TimeTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:baseUnitDimensions "K \\cdot s"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot T"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Time Temperature"^^xsd:string ;
+  skos:prefLabel "Time Temperature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31890> ;
+.
+quantity:VolumeThermalExpansion
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:M3-PER-K ;
+  qudt:baseUnitDimensions "L^3/\\Theta"^^xsd:string ;
+  qudt:baseUnitDimensions "m^3/K"^^xsd:string ;
+  qudt:description """When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.
+
+Different coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:
+
+    * linear thermal expansion
+    * area thermal expansion
+    * volumetric thermal expansion
+
+These characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.
+
+Some substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients. [Wikipedia]"""^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Volume Thermal Expansion"^^xsd:string ;
+  skos:prefLabel "Volume Thermal Expansion"^^xsd:string ;
+.
+quantity:VolumetricHeatCapacity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:applicableUnit unit:J-PER-M3-K ;
+  qudt:baseUnitDimensions "M/\\Theta \\cdot L \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/K \\cdot m \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Volumetric Heat Capacity (VHC)}, also termed \\textit{volume-specific heat capacity}, describes the ability of a given volume of a substance to store internal energy while undergoing a given temperature change, but without undergoing a phase transition. It is different from specific heat capacity in that the VHC is a \\textit{per unit volume} measure of the relationship between thermal energy and temperature of a material, while the specific heat is a \\textit{per unit mass} measure (or occasionally per molar quantity of the material)."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/quantity/thermodynamics> ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/quantity/thermodynamics> ;
+  rdfs:label "Volumetric Heat Capacity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Volumetric_heat_capacity> ;
+  skos:prefLabel "Volumetric Heat Capacity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Volumetric_heat_capacity> ;
+.
+unit:BTU_IT
+  rdfs:seeAlso unit:BTU_TH ;
+.
+unit:BTU_TH
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  qudt:abbreviation "BtuTH"^^xsd:string ;
+  qudt:code "0145"^^xsd:string ;
+  qudt:conversionMultiplier "1.0543502645"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{British Thermal Unit (thermochemical definition} ($BTU_{th}$) is a traditional unit of energy equal to about $1.0543502645 kilojoule$. It is approximately the amount of energy needed to heat 1 pound (0.454 kg) of water from $39 \\,^{\\circ}{\\rm F}$ ($39 \\,^{\\circ}{\\rm C}$) to $40 \\,^{\\circ}{\\rm F}$ ($4.4 \\,^{\\circ}{\\rm C}$). The unit is most often used in the power, steam generation, heating and air conditioning industries. In scientific contexts the BTU has largely been replaced by the SI unit of energy, the $joule$."^^xsd:string ;
+  qudt:designator "U150-0146"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+  qudt:symbol "Btu_{th}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/thermodynamics> ;
+  rdfs:label "British Thermal Unit (Thermochemical Definition)"^^xsd:string ;
+  rdfs:seeAlso unit:BTU_IT ;
+  skos:prefLabel "british-thermal-unit-th"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/British_thermal_unit> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=31890> ;
+  prov:wasInfluencedBy <http://www.knowledgedoor.com/2/units_and_constants_handbook/british-thermal-unit_group.html> ;
+.
+<http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Catalog Entry v1.2"^^xsd:string ;
+.

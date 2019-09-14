@@ -1,0 +1,985 @@
+# baseURI: http://siemens.com/mapping/epic2brick
+# imports: http://siemens.com/schemas/kps/epic
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# imports: http://siemens.com/schemas/kps/oadr_helper
+# imports: http://siemens.com/schemas/kps/oadr_tweaks
+# imports: http://siemens.com/spin/namespace_functions
+# imports: http://siemens.com/test/postReverseMappingFix
+# imports: http://topbraid.org/schema/schema-single-range
+# imports: http://topbraid.org/spin/spinmapl
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: epic2brick
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix epic2brick: <http://siemens.com/mapping/epic2brick#> .
+@prefix einterop: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix einterop_payloads: <http://docs.oasis-open.org/ns/energyinterop/201110/payloads#> .
+@prefix einterop2: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix fsgim: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim_emgr: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#> .
+@prefix fsgim_emgr_devs: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/energy_manager_component---device_and_model_components#> .
+@prefix fsgim_emix: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#> .
+@prefix fsgim_enums: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim_measurements: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim_oasis: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#> .
+@prefix fsgim_time: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#> .
+@prefix ietf_icalendar: <urn:ietf:params:xml:ns:icalendar-2.0#> .
+@prefix ietf_stream: <urn:ietf:params:xml:ns:icalendar-2.0:stream#> .
+@prefix namespace_functions: <http://siemens.com/spin/namespace_functions#> .
+@prefix oadrDistributeEvent_W_Baseline: <file:///demandresponse/Reference/oadr-samples/Sample_oadrDistributeEvent_W_Baseline.xml#> .
+@prefix oadr_helper: <http://siemens.com/schemas/kps/oadr_helper#> .
+@prefix oasis_emix: <http://docs.oasis-open.org/ns/emix/2011/06#> .
+@prefix oasis_emix_siscale: <http://docs.oasis-open.org/ns/emix/2011/06/siscale#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p1: <http://example.org/file1#> .
+@prefix p2012-07: <http://openadr.org/oadr-2.0b/2012/07#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sample_ev: <file:///demandresponse/EPIC/Software/epic_api/sample_ev.xml#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix spinmapl: <http://topbraid.org/spin/spinmapl#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix unece_codelist: <urn:un:unece:uncefact:codelist:standard:5:ISO42173A:2010-04-07#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/mapping/epic2brick>
+  rdf:type owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:imports <http://siemens.com/schemas/kps/oadr_helper> ;
+  owl:imports <http://siemens.com/schemas/kps/oadr_tweaks> ;
+  owl:imports <http://siemens.com/spin/namespace_functions> ;
+  owl:imports <http://siemens.com/test/postReverseMappingFix> ;
+  owl:imports <http://topbraid.org/schema/schema-single-range> ;
+  owl:imports <http://topbraid.org/spin/spinmapl> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+epic2brick:CurrentValueType-CurrentValue
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass einterop2:CurrentValueType ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:CurrentValue ;
+.
+epic2brick:EiMarketContextType-EventDescriptorType-eiMarketContext
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass einterop2:EiMarketContextType ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:EventDescriptorType-eiMarketContext ;
+.
+epic2brick:EmixBaseType-EiActivePeriod
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim_emix:EmixBaseType ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:EiActivePeriod ;
+.
+epic2brick:EmixBaseType-Properties
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim_emix:EmixBaseType ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1 ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "ical-properties" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass ietf_icalendar:Properties ;
+.
+epic2brick:Event-EiEvent
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:Event ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:EiEvent ;
+.
+epic2brick:EventDescriptor-EventDescriptor
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:EventDescriptor ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:EventDescriptor ;
+.
+epic2brick:EventSignal-EiEventSignal
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:EventSignal ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:EiEventSignal ;
+.
+epic2brick:EventSignal-EiEventSignals
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:EventSignal ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "signals" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:EiEventSignals ;
+.
+epic2brick:IntervalDataContainer-Interval
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim_emgr:IntervalDataContainer ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:Interval ;
+.
+epic2brick:IntervalDataContainer-Uid
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim_emgr:IntervalDataContainer ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_2 ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "calendar_uid" ;
+      sp:arg3 fsgim_oasis:hasInstanceUid ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass ietf_icalendar:Uid ;
+.
+epic2brick:MeasurementMetadataType-CurrencyPerKWh
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim_measurements:MeasurementMetadataType ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass p2012-07:CurrencyPerKWh ;
+.
+epic2brick:MonetaryQuantity-PayloadFloat
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim:MonetaryQuantity ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:PayloadFloat ;
+.
+epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass oadr_helper:OadrCreatePartyRegistration ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass p2012-07:OadrCreatePartyRegistration ;
+.
+epic2brick:OadrDistributeEvent-OadrDistributeEvent
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass oadr_helper:OadrDistributeEvent ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass p2012-07:OadrDistributeEvent ;
+.
+epic2brick:OadrDistributeEvent-OadrDistributeEventType-oadrEvent
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass oadr_helper:OadrDistributeEvent ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "oadrEvent" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass p2012-07:OadrDistributeEventType-oadrEvent ;
+.
+epic2brick:OadrPayload-OadrPayload
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass oadr_helper:OadrPayload ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass p2012-07:OadrPayload ;
+.
+epic2brick:OadrSignedObject-OadrSignedObject
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass oadr_helper:OadrSignedObject ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass p2012-07:OadrSignedObject ;
+.
+epic2brick:PayloadPrice-SignalPayload
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:PayloadPrice ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:SignalPayload ;
+.
+epic2brick:Sequence-Intervals
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim_emgr:Sequence ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass ietf_stream:Intervals ;
+.
+epic2brick:Target-EiTarget
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass epic:Target ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_changeNamespace ;
+      sp:arg1 "OpenADR" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass einterop:EiTarget ;
+.
+epic2brick:UTCDateTimeInterval-Dtstart
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim_time:UTCDateTimeInterval ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "dtStart" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass ietf_icalendar:Dtstart ;
+.
+epic2brick:UTCDateTimeInterval-Duration
+  rdf:type spinmap:Context ;
+  spinmap:sourceClass fsgim_time:UTCDateTimeInterval ;
+  spinmap:target [
+      rdf:type namespace_functions:modified_buildURI_1append ;
+      sp:arg1 "OpenADR" ;
+      sp:arg2 "duration" ;
+      spinmap:source spinmap:_source ;
+    ] ;
+  spinmap:targetClass ietf_icalendar:Duration ;
+.
+epic:Event
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:Event-EiEvent ;
+      spinmap:expression einterop:EiEvent ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:Event-EiEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:EmixBaseType-EiActivePeriod ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiActivePeriodRef" ;
+      spinmap:targetPredicate1 einterop:eiActivePeriodRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:Event-EiEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEventDescriptorRef" ;
+      spinmap:targetPredicate1 einterop:eventDescriptorRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:Event-EiEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:EventSignal-EiEventSignals ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiEventSignalRef" ;
+      spinmap:targetPredicate1 einterop:eiEventSignalsRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:Event-EiEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:Target-EiTarget ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiTargetRef" ;
+      spinmap:targetPredicate1 einterop:eiTargetRef ;
+    ] ;
+.
+epic:EventDescriptor
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression einterop:EventDescriptor ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasCreatedDateTime ;
+      spinmap:targetPredicate1 einterop:createdDateTime ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasEventID ;
+      spinmap:targetPredicate1 einterop:eventID ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasEventStatusRef ;
+      spinmap:targetPredicate1 einterop:eventStatus ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasModificationDateTime ;
+      spinmap:targetPredicate1 einterop:modificationDateTime ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasModificationNumber ;
+      spinmap:targetPredicate1 einterop:modificationNumber ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasModificationReason ;
+      spinmap:targetPredicate1 einterop:modificationReason ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasPriority ;
+      spinmap:targetPredicate1 einterop:priority ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasTestEvent ;
+      spinmap:targetPredicate1 einterop:testEvent ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasVtnComment ;
+      spinmap:targetPredicate1 einterop:vtnComment ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:EventDescriptor-EventDescriptor ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:EiMarketContextType-EventDescriptorType-eiMarketContext ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiMarketContextRef" ;
+      spinmap:targetPredicate1 einterop:eiMarketContextRef ;
+    ] ;
+.
+epic:EventSignal
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignal ;
+      spinmap:expression einterop:EiEventSignal ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignals ;
+      spinmap:expression einterop:EiEventSignals ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignals ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:EventSignal-EiEventSignal ;
+        ] ;
+      spinmap:targetPredicate1 einterop:eiEventSignalRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignal ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasSignalIDRef ;
+      spinmap:targetPredicate1 einterop:signalID ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignal ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasSignalName ;
+      spinmap:targetPredicate1 einterop:signalName ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignal ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasSignalTypeRef ;
+      spinmap:targetPredicate1 einterop:signalType ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignal ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:CurrentValueType-CurrentValue ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasCurrentValueRef" ;
+      spinmap:targetPredicate1 einterop:currentValueRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignal ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:MeasurementMetadataType-CurrencyPerKWh ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasItemBaseRef" ;
+      spinmap:targetPredicate1 p2012-07:currencyPerKWhRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignal ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:Sequence-Intervals ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEventIntervalRef" ;
+      spinmap:targetPredicate1 einterop:intervalsRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:EventSignal-EiEventSignal ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:Target-EiTarget ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasEiTargetRef" ;
+      spinmap:targetPredicate1 einterop:eiTargetRef ;
+    ] ;
+.
+epic:PayloadPrice
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:PayloadPrice-SignalPayload ;
+      spinmap:expression einterop:SignalPayload ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:PayloadPrice-SignalPayload ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:MonetaryQuantity-PayloadFloat ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasPriceRef/fsgim-emix:hasValueRef" ;
+      spinmap:targetPredicate1 einterop:payloadFloatRef ;
+    ] ;
+.
+epic:Target
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:Target-EiTarget ;
+      spinmap:expression einterop:EiTarget ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasGroupID ;
+      spinmap:targetPredicate1 einterop:groupID ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasGroupName ;
+      spinmap:targetPredicate1 einterop:groupName ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasPartyID ;
+      spinmap:targetPredicate1 einterop:partyID ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasResourceID ;
+      spinmap:targetPredicate1 einterop:resourceID ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:Target-EiTarget ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasVenID ;
+      spinmap:targetPredicate1 einterop:venID ;
+    ] ;
+.
+oadr_helper:OadrCreatePartyRegistration
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression p2012-07:OadrCreatePartyRegistration ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrHttpPullModel ;
+      spinmap:targetPredicate1 p2012-07:oadrHttpPullModel ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrProfileName ;
+      spinmap:targetPredicate1 p2012-07:oadrProfileName ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrReportOnly ;
+      spinmap:targetPredicate1 p2012-07:oadrReportOnly ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrTransportAddress ;
+      spinmap:targetPredicate1 p2012-07:oadrTransportAddress ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrTransportName ;
+      spinmap:targetPredicate1 p2012-07:oadrTransportName ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrVenName ;
+      spinmap:targetPredicate1 p2012-07:oadrVenName ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrXmlSignature ;
+      spinmap:targetPredicate1 p2012-07:oadrXmlSignature ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasRequestID ;
+      spinmap:targetPredicate1 p2012-07:requestIDRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasVenID ;
+      spinmap:targetPredicate1 p2012-07:venIDRef ;
+    ] ;
+.
+oadr_helper:OadrDistributeEvent
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:OadrDistributeEvent-OadrDistributeEvent ;
+      spinmap:expression p2012-07:OadrDistributeEvent ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:OadrDistributeEvent-OadrDistributeEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:OadrDistributeEvent-OadrDistributeEventType-oadrEvent ;
+        ] ;
+      spinmap:targetPredicate1 p2012-07:oadrEventRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:OadrDistributeEvent-OadrDistributeEventType-oadrEvent ;
+      spinmap:expression p2012-07:OadrDistributeEventType-oadrEvent ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrDistributeEvent-OadrDistributeEvent ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasRequestID ;
+      spinmap:targetPredicate1 einterop_payloads:requestID ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrDistributeEvent-OadrDistributeEvent ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 oadr_helper:hasVtnID ;
+      spinmap:targetPredicate1 einterop:vtnID ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:OadrDistributeEvent-OadrDistributeEventType-oadrEvent ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:Event-EiEvent ;
+        ] ;
+      spinmap:sourcePath "oadr_helper:hasEiEventsRef" ;
+      spinmap:targetPredicate1 p2012-07:eiEventRef ;
+    ] ;
+.
+oadr_helper:OadrPayload
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:OadrPayload-OadrPayload ;
+      spinmap:expression p2012-07:OadrPayload ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrPayload-OadrPayload ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:OadrSignedObject-OadrSignedObject ;
+        ] ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrSignedObjectRef ;
+      spinmap:targetPredicate1 p2012-07:oadrSignedObjectRef ;
+    ] ;
+.
+oadr_helper:OadrSignedObject
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:OadrSignedObject-OadrSignedObject ;
+      spinmap:expression p2012-07:OadrSignedObject ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrSignedObject-OadrSignedObject ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:OadrCreatePartyRegistration-OadrCreatePartyRegistration ;
+        ] ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrCreatePartyRegistrationRef ;
+      spinmap:targetPredicate1 p2012-07:oadrCreatePartyRegistrationRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:OadrSignedObject-OadrSignedObject ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:OadrDistributeEvent-OadrDistributeEvent ;
+        ] ;
+      spinmap:sourcePredicate1 oadr_helper:hasOadrDistributeEventRef ;
+      spinmap:targetPredicate1 p2012-07:oadrDistributeEventRef ;
+    ] ;
+.
+einterop2:CurrentValueType
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:CurrentValueType-CurrentValue ;
+      spinmap:expression einterop:CurrentValue ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:CurrentValueType-CurrentValue ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:MonetaryQuantity-PayloadFloat ;
+        ] ;
+      spinmap:sourcePath "fsgim-einterop:hasPayloadBaseRef/fsgim-einterop:hasPriceRef/fsgim-emix:hasValueRef" ;
+      spinmap:targetPredicate1 einterop:payloadFloatRef ;
+    ] ;
+.
+einterop2:EiMarketContextType
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:EiMarketContextType-EventDescriptorType-eiMarketContext ;
+      spinmap:expression einterop:EventDescriptorType-eiMarketContext ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:EiMarketContextType-EventDescriptorType-eiMarketContext ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 einterop2:hasMarketContext ;
+      spinmap:targetPredicate1 oasis_emix:marketContext ;
+    ] ;
+.
+fsgim_emix:EmixBaseType
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:EmixBaseType-EiActivePeriod ;
+      spinmap:expression einterop:EiActivePeriod ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:EmixBaseType-EiActivePeriod ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:EmixBaseType-Properties ;
+        ] ;
+      spinmap:targetPredicate1 einterop:propertiesRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:EmixBaseType-Properties ;
+      spinmap:expression ietf_icalendar:Properties ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:EmixBaseType-Properties ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:UTCDateTimeInterval-Dtstart ;
+        ] ;
+      spinmap:sourcePath "fsgim-calendar:hasTimeReferenceRef" ;
+      spinmap:targetPredicate1 ietf_icalendar:dtstartRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:EmixBaseType-Properties ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:UTCDateTimeInterval-Duration ;
+        ] ;
+      spinmap:sourcePath "fsgim-calendar:hasTimeReferenceRef" ;
+      spinmap:targetPredicate1 ietf_icalendar:durationRef ;
+    ] ;
+.
+fsgim_measurements:MeasurementMetadataType
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:MeasurementMetadataType-CurrencyPerKWh ;
+      spinmap:expression p2012-07:CurrencyPerKWh ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:MeasurementMetadataType-CurrencyPerKWh ;
+      spinmap:expression [
+          rdf:type spinmapl:constantResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmapl:result p2012-07:CIDT_currencyPerKWh ;
+        ] ;
+      spinmap:targetPredicate1 p2012-07:itemDescriptionRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:MeasurementMetadataType-CurrencyPerKWh ;
+      spinmap:expression [
+          rdf:type spinmapl:constantResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmapl:result unece_codelist:ISOACCCT_USD ;
+        ] ;
+      spinmap:targetPredicate1 p2012-07:itemUnitsRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:MeasurementMetadataType-CurrencyPerKWh ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 fsgim_measurements:hasSiScaleCodeRef ;
+      spinmap:targetPredicate1 oasis_emix_siscale:siScaleCode ;
+    ] ;
+.
+fsgim:MonetaryQuantity
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:MonetaryQuantity-PayloadFloat ;
+      spinmap:expression einterop:PayloadFloat ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:MonetaryQuantity-PayloadFloat ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 fsgim:hasQuantity ;
+      spinmap:targetPredicate1 einterop:value ;
+    ] ;
+.
+fsgim_emgr:IntervalDataContainer
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:IntervalDataContainer-Interval ;
+      spinmap:expression einterop:Interval ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:IntervalDataContainer-Interval ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:IntervalDataContainer-Uid ;
+        ] ;
+      spinmap:targetPredicate1 einterop:uidRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:IntervalDataContainer-Uid ;
+      spinmap:expression ietf_icalendar:Uid ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:IntervalDataContainer-Uid ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 fsgim_oasis:hasInstanceUid ;
+      spinmap:targetPredicate1 ietf_icalendar:text ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:IntervalDataContainer-Interval ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:PayloadPrice-SignalPayload ;
+        ] ;
+      spinmap:sourcePath "fsgim-sequence:hasAttachRef" ;
+      spinmap:targetPredicate1 einterop:signalPayloadRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:IntervalDataContainer-Interval ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:UTCDateTimeInterval-Dtstart ;
+        ] ;
+      spinmap:sourcePath "fsgim-calendar:hasTimeReferenceRef" ;
+      spinmap:targetPredicate1 einterop:dtstartRef ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:IntervalDataContainer-Interval ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:UTCDateTimeInterval-Duration ;
+        ] ;
+      spinmap:sourcePath "fsgim-calendar:hasTimeReferenceRef" ;
+      spinmap:targetPredicate1 einterop:durationRef ;
+    ] ;
+.
+fsgim_emgr:Sequence
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:Sequence-Intervals ;
+      spinmap:expression ietf_stream:Intervals ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-Path-1 ;
+      spinmap:context epic2brick:Sequence-Intervals ;
+      spinmap:expression [
+          rdf:type spinmap:targetResource ;
+          sp:arg1 spin:_arg1 ;
+          spinmap:context epic2brick:IntervalDataContainer-Interval ;
+        ] ;
+      spinmap:sourcePath "fsgim-sequence:hasIntervalsRef" ;
+      spinmap:targetPredicate1 ietf_stream:intervalRef ;
+    ] ;
+.
+fsgim_time:UTCDateTimeInterval
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:UTCDateTimeInterval-Dtstart ;
+      spinmap:expression ietf_icalendar:Dtstart ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-0-1 ;
+      spinmap:context epic2brick:UTCDateTimeInterval-Duration ;
+      spinmap:expression ietf_icalendar:Duration ;
+      spinmap:targetPredicate1 rdf:type ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:UTCDateTimeInterval-Dtstart ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 fsgim_time:hasStart ;
+      spinmap:targetPredicate1 ietf_icalendar:date-time ;
+    ] ;
+  spinmap:rule [
+      rdf:type spinmap:Mapping-1-1 ;
+      spinmap:context epic2brick:UTCDateTimeInterval-Duration ;
+      spinmap:expression spin:_arg1 ;
+      spinmap:sourcePredicate1 fsgim_time:hasDuration ;
+      spinmap:targetPredicate1 ietf_icalendar:duration ;
+    ] ;
+.

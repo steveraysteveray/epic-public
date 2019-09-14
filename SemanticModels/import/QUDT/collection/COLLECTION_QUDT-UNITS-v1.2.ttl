@@ -1,0 +1,1061 @@
+# baseURI: http://qudt.org/1.2/collection/units
+# imports: http://qudt.org/1.2/vocab/unit/acoustics
+# imports: http://qudt.org/1.2/vocab/unit/aerospace
+# imports: http://qudt.org/1.2/vocab/unit/astronomy
+# imports: http://qudt.org/1.2/vocab/unit/atomic-and-nuclear-physics
+# imports: http://qudt.org/1.2/vocab/unit/base
+# imports: http://qudt.org/1.2/vocab/unit/cgs
+# imports: http://qudt.org/1.2/vocab/unit/clinical-informatics
+# imports: http://qudt.org/1.2/vocab/unit/currency
+# imports: http://qudt.org/1.2/vocab/unit/electromagnetism
+# imports: http://qudt.org/1.2/vocab/unit/environmental-science
+# imports: http://qudt.org/1.2/vocab/unit/imperial
+# imports: http://qudt.org/1.2/vocab/unit/informatics
+# imports: http://qudt.org/1.2/vocab/unit/life-sciences
+# imports: http://qudt.org/1.2/vocab/unit/light
+# imports: http://qudt.org/1.2/vocab/unit/mechanics
+# imports: http://qudt.org/1.2/vocab/unit/nasa
+# imports: http://qudt.org/1.2/vocab/unit/physical-chemistry-and-molecular-physics
+# imports: http://qudt.org/1.2/vocab/unit/si
+# imports: http://qudt.org/1.2/vocab/unit/solid-state-physics
+# imports: http://qudt.org/1.2/vocab/unit/space-and-time
+# imports: http://qudt.org/1.2/vocab/unit/thermodynamics
+# imports: http://qudt.org/1.2/vocab/unit/uscustomary
+# imports: http://www.linkedmodel.org/1.1/owl/schema/core
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/collection/units>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Quantities, Units, Dimensions and Types"^^xsd:string ;
+  dc:title "QUDT (Quantities, Units, Dimensions, and Types) Ontologies Version 1.2"^^xsd:string ;
+  vaem:acronym "QUDT"^^xsd:string ;
+  vaem:content "The QUDT content is made up of schemas and vocabularies. In the table of contents, both schemas and vocabularies are listed. The table is ordered on the 'role' of the ontology. All vocabularies have a hyphenated name starting either with 'qudt' or a name that denotes the source. For example, the NIST constants vocabulary starts with 'nist'."^^xsd:string ;
+  vaem:dateCreated "2011-01-31T10:00:00"^^xsd:dateTime ;
+  vaem:description "QUDT (Quantities, Units, Dimensions, and Types) Ontologies and vocabularies, and generated XSD schemas and XML Vocabularies, were developed for the NASA Exploration Initiatives Ontology Models (NExIOM) project as a foundational part of a comprehensive Information Architecture for NASA’s Constellation Program.  This effort was led by TopQuadrant working with NASA Ames Research Center (ARC).  The goals of the QUDT ontologies are to provide a unified reusable model of measurable quantities, units for measuring different kinds of quantities, the numerical values of quantities in different units of measure, and the data structures and data types used to store and manipulate these objects in software."^^xsd:string ;
+  vaem:hasLicenseType <http://www.linkedmodel.org/owl/schema/core#CreativeCommonsAttributionShareAlike3.0_UnitedStatesLicense> ;
+  vaem:intent "QUDT is intended to provide a set of information models and vocabularies for standardizing units of measure, quantities and data types for the purpose of data interoperability and metadata management in  linked data and semantic web infrastructures. Not all applications of QUDT will require a full dimensional treatment of units. For this reason, there is a vocabulary graph for a basic treatment of units, 'QUDT Unit' , and another graph, 'QUDT Dimensional Units' , for the full treatment."^^xsd:string ;
+  vaem:lastChangedDate "$LastChangedDate: 2013-04-03 23:22:44 -0700 (Wed, 03 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.1/owl/collection/units"^^xsd:string ;
+  vaem:namespacePrefix "qudt-collection"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revisionNumber "1.2"^^xsd:string ;
+  vaem:role vaem:CollectionGraph ;
+  vaem:specificity 1 ;
+  vaem:url "http://qudt.org"^^xsd:anyURI ;
+  vaem:urlForHTML "http://qudt.org/1.1/html/qudt.html"^^xsd:anyURI ;
+  vaem:withAttributionTo qudt:NASA-ARC-Attribution ;
+  vaem:withAttributionTo vaem:TopQuadrantAttribution ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/acoustics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/aerospace> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/astronomy> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/atomic-and-nuclear-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/cgs> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/clinical-informatics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/currency> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/electromagnetism> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/environmental-science> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/imperial> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/informatics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/life-sciences> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/light> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/mechanics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/nasa> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/physical-chemistry-and-molecular-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/si> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/solid-state-physics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/space-and-time> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/thermodynamics> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/uscustomary> ;
+  owl:imports <http://www.linkedmodel.org/1.1/owl/schema/core> ;
+  owl:versionIRI <http://qudt.org/1.1/owl/collection/units> ;
+  owl:versionInfo "$Id: COLLECTION_QUDT-UNITS-v1.2.ttl 1939 2013-04-04 06:22:44Z rhodgson $"^^xsd:string ;
+.
+unit:A-HR
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:A-M2
+  rdf:type qudt:AtomicUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "A-M^2"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of electromagnetic moment."^^xsd:string ;
+  qudt:quantityKind quantity:MagneticDipoleMoment ;
+  qudt:symbol "AM2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/atomic-and-nuclear-physics> ;
+  rdfs:label "Ampere Meter Squared"^^xsd:string ;
+  skos:prefLabel "Ampere Meter Squared"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/ampere+meter+squared> ;
+.
+unit:A-M2-PER-J-SEC
+  rdf:type qudt:AtomicUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "A-m^2/J-s"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of gyromagnetic ratio."^^xsd:string ;
+  qudt:quantityKind quantity:MagneticDipoleMoment ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/atomic-and-nuclear-physics> ;
+  rdfs:label "Ampere Meter Squared Per Joule Second"^^xsd:string ;
+  skos:prefLabel "Ampere Meter Squared Per Joule Second"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/ampere+square+meter+per+joule+second> ;
+.
+unit:A-PER-Deg
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentPerAngle ;
+.
+unit:A-PER-J
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentPerUnitEnergy ;
+.
+unit:A-PER-M
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:A-PER-M2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:A-PER-RAD
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentPerAngle ;
+.
+unit:A-t-PER-IN
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:A-t-PER-M
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AuxillaryMagneticField ;
+.
+unit:AC-FT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Volume ;
+.
+unit:ACRE
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:ANGSTROM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+  rdfs:label "$Angstr\\ddot{o}m$"^^xsd:string ;
+.
+unit:ARE
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:AT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagnetomotiveForce ;
+.
+unit:ATM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:AU
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:ArcMIN
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:ArcSEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:AtmosphereTechnical
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:BAN
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:BAR
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:BARN
+  qudt:quantityKind quantity:Area ;
+.
+unit:BARREL
+  qudt:quantityKind quantity:Volume ;
+.
+unit:BIOT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:BIT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InformationEntropy ;
+.
+unit:BIT-PER-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:Bushel
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:CAL
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:CHAIN
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:CM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:CM-PER-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LinearVelocity ;
+.
+unit:CM-PER-SEC2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:CM-SEC-DegC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LengthTemperatureTime ;
+.
+unit:COULOMB
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:Carat
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:CentiP
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:CentimeterOfWater
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:CircularMil
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:Clo
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ThermalInsulance ;
+.
+unit:ColonyFormingUnit
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MicrobialFormation ;
+.
+unit:Cord
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "cord"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:Curie
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Activity ;
+.
+unit:DB
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:RF-Power ;
+  qudt:quantityKind quantity:SignalStrength ;
+.
+unit:DBC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SignalDetectionThreshold ;
+.
+unit:DIOPTER
+  qudt:quantityKind quantity:Curvature ;
+.
+unit:Dalton
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MolecularMass ;
+.
+unit:Day
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "day"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:Debye
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricDipoleMoment ;
+.
+unit:DecibelReferredToOneMilliwatt
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "decibelreferredtoonemilliwatt"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+.
+unit:Deg
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:DegC-CM
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LengthTemperature ;
+.
+unit:DegreeFahrenheitHourPerBtu
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "degreefahrenheithourperbtu"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ThermalResistance ;
+.
+unit:Denier
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:DryPintUS
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "drypintus"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:DryQuartUS
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "dryquartus"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:ERG
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:ERG-PER-CM2-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:PowerPerArea ;
+.
+unit:ERG-PER-CM3
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyDensity ;
+.
+unit:ERG-PER-G
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SpecificEnergy ;
+.
+unit:ERG-PER-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:ERG-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AngularMomentum ;
+.
+unit:FBM
+  qudt:quantityKind quantity:Volume ;
+.
+unit:FT-PDL
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:FootPoundForcePerSquareFoot
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "footpoundforcepersquarefoot"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:EnergyPerArea ;
+.
+unit:FootUSSurvey
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:FractionalArea
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SolidAngle ;
+.
+unit:GAL_IMP
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:GRAIN-PER-GAL
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Density ;
+.
+unit:GallonUS
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "gallonus"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:GallonUSPerDay
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "gallonusperday"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:GallonUSPerMinute
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "gallonusperminute"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:VolumePerUnitTime ;
+.
+unit:GigaHertz
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "gigahertz"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:Gravity
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LinearAcceleration ;
+.
+unit:HZ
+  rdf:type qudt:AcousticsUnit ;
+.
+unit:HeartBeatsPerMinute
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:HeartRate ;
+.
+unit:Horsepower
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "horsepower"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerBoiler
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerElectric
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerMetric
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:HorsepowerWater
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:InchPoundForce
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:InternationalUnit
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AmountOfSubstance ;
+.
+unit:InternationalUnitPerLiter
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:SerumOrPlasmaLevel ;
+.
+unit:J-M2
+  rdf:type qudt:AtomicUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "j-m2"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:TotalAtomicStoppingPower ;
+  qudt:symbol "j-m^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/atomic-and-nuclear-physics> ;
+  rdfs:label "Joule Meter Squared"^^xsd:string ;
+  skos:prefLabel "Joule Meter Squared"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+unit:J-M2-PER-KG
+  rdf:type qudt:AtomicUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "j-m2/kg"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:TotalMassStoppingPower ;
+  qudt:symbol "j-m^2/kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/atomic-and-nuclear-physics> ;
+  rdfs:label "Joule Meter Squared per Kilogram"^^xsd:string ;
+  skos:prefLabel "Joule Meter Squared per Kilogram"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+unit:J-PER-M
+  rdf:type qudt:AtomicUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "j/m"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:TotalLinearStoppingPower ;
+  qudt:symbol "j-m^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/atomic-and-nuclear-physics> ;
+  rdfs:label "Joule Per Meter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Steradian> ;
+  skos:prefLabel "Joule Per Meter"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31895> ;
+.
+unit:J-PER-M4
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J/m^{4}"^^xsd:string ;
+  qudt:code "0890"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Joule Per Quartic Meter} ($J/m^3$) is a unit in the category of Energy density. This unit is commonly used in the SI unit system."^^xsd:string ;
+  qudt:designator "U-150-0890"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyDensity ;
+  qudt:symbol "J/m^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Joule per Quartic Meter"^^xsd:string ;
+  skos:prefLabel "joule-per-quartic-meter"^^xsd:string ;
+.
+unit:KW
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:Katal
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "katal"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:CatalyticActivity ;
+.
+unit:KiloCAL-PER-CM-SEC-DegC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:ThermalConductivityUnit ;
+  qudt:abbreviation "kilocal-per-cm-sec-degc"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ThermalConductivity ;
+  rdfs:label "Kilocalorie per Centimeter Second Degree Celsius"^^xsd:string ;
+.
+unit:KiloHertz
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kilohertz"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:KiloPascal
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kilopascal"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:KiloPascalAbsolute
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kilopascalabsolute"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:KiloPond
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kilopond"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Force ;
+.
+unit:KilobitsPerSecond
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kilobitspersecond"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:KilocaloriePerGramDegreeCelsius
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kilocaloriepergramdegreecelsius"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:SpecificHeatCapacity ;
+.
+unit:KilogramPerMole
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kilogrampermole"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:MolarMass ;
+.
+unit:LiquidCupUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidOunceUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidPintUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LiquidQuartUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:LongFur
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "longfur"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:LongHundredWeight
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "longhundredweight"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:MOL-PER-KG
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:AmountOfSubstancePerUnitMass ;
+.
+unit:MegaHertz
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "megahertz"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:MegabitsPerSecond
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "megabitspersecond"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:DataRate ;
+.
+unit:MetricTon
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:MicroF
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:MicroHenry
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "microhenry"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:MilAngle
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "milangle"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:PlaneAngle ;
+.
+unit:MilliH
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Inductance ;
+.
+unit:MilliTorr
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:NanoFarad
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "nanofarad"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:NephelometricTurbidityUnit
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Turbidity ;
+.
+unit:OCTAVE
+  rdf:type qudt:AcousticsUnit ;
+  rdf:type qudt:DimensionlessUnit ;
+  rdf:type qudt:LogarithmicUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Oct"^^xsd:string ;
+  qudt:code "0507"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An octave is a doubling or halving of a frequency.  One oct is the logarithmic frequency interval between $f1$ and $f2$ when $f2/f1 = 2$."^^xsd:string ;
+  qudt:designator "U-150-0507"^^xsd:string ;
+  qudt:symbol "oct"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/acoustics> ;
+  rdfs:label "Oct"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Octave> ;
+  skos:prefLabel "oct"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Octave_(electronics)> ;
+.
+unit:OHM-M
+  rdf:type qudt:Unit ;
+.
+unit:OunceImperial
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ounceimperial"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:LiquidVolume ;
+.
+unit:PER-HENRY
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "per-henry"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+.
+unit:PER-M
+  rdf:type qudt:AcousticsUnit ;
+.
+unit:PER-MOL
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:InverseAmountOfSubstance ;
+.
+unit:PER-T-M
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "per-t-m"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:MagneticReluctivity ;
+.
+unit:Peck
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DryVolume ;
+.
+unit:PerMeter
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "permeter"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:InverseLength ;
+.
+unit:PerMeterKelvin
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "permeterkelvin"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:InverseLengthTemperature ;
+.
+unit:PerSquareGigaElectronVolt
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "persquaregigaelectronvolt"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:InverseSquareEnergy ;
+.
+unit:PerTeslaSecond
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "perteslasecond"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ElectricChargePerMass ;
+.
+unit:Phot
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LuminousFluxPerArea ;
+.
+unit:Pica
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:Pico
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Dimensionless ;
+.
+unit:PicoFarad
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "picofarad"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Capacitance ;
+.
+unit:PintImperial
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "pintimperial"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Volume ;
+.
+unit:PlanckArea
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Area ;
+.
+unit:PlanckCharge
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCharge ;
+.
+unit:PlanckCurrent
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:PlanckCurrentDensity
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrentDensity ;
+.
+unit:PlanckDensity
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Density ;
+.
+unit:PlanckEnergy
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:PlanckForce
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Force ;
+.
+unit:PlanckFrequency
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Frequency ;
+.
+unit:PlanckLength
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Length ;
+.
+unit:PlanckMass
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:PlanckMomentum
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:LinearMomentum ;
+.
+unit:PlanckPower
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:PlanckPressure
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:PlanckTemperature
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ThermodynamicTemperature ;
+.
+unit:PlanckTime
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:PlanckVolt
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyPerElectricCharge ;
+.
+unit:PlanckVolume
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Volume ;
+.
+unit:QuarticCoulombMeterPerCubicEnergy
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:QuarticElectricDipoleMomentPerCubicEnergy ;
+.
+unit:RAD-M2-PER-KG
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rad m^2 / kg"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:label "Radian Meter Squared per Kilogram"^^xsd:string ;
+  skos:prefLabel "radian-meter-squared-per-kg"^^xsd:string ;
+.
+unit:RAD-M2-PER-MOL
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rad m^2 / mol"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:label "Radian Meter Squared per Mole"^^xsd:string ;
+  skos:prefLabel "radian-meter-squared-per-mole"^^xsd:string ;
+.
+unit:RADIAN
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "radian"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+.
+unit:RelativePermeability
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Permeability ;
+.
+unit:RelativePermittivity
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Permittivity ;
+.
+unit:S-M2-PER-MOL
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "s-m2-per-mol"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:label "Siemens meter squared per mole"^^xsd:string ;
+.
+unit:S-PER-M
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "s-per-m"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:label "Siemens per meter"^^xsd:string ;
+.
+unit:S2-FT
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "s2-ft"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:AreaTime ;
+.
+unit:SECOND
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:SLUG-PER-FT
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerLength ;
+.
+unit:SLUG-PER-FT2
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerArea ;
+.
+unit:SLUG-PER-FT3
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Density ;
+.
+unit:SLUG-PER-SEC
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:ShortHundredWeight
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "shorthundredweight"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:ShortTon-PER-YD3
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Density ;
+.
+unit:SiderealDay
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:SiderealYear
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Time ;
+.
+unit:SlugPerFootSecond
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+.
+unit:StatA
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ElectricCurrent ;
+.
+unit:StatvoltCentimeter
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "statvoltcentimeter"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ElectricFlux ;
+.
+unit:TON-PER-YD3
+  qudt:quantityKind quantity:Density ;
+.
+unit:TON_LONG
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TON_SHORT
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TON_SHORT-PER-HR
+  qudt:quantityKind quantity:MassPerTime ;
+.
+unit:TeslaMeter
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "teslameter"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:MagneticFluxPerUnitLength ;
+.
+unit:TeslaSecond
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "teslasecond"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:MassPerElectricCharge ;
+.
+unit:ThermEEC
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "thermeec"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:ThermUS
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityKind quantity:ThermalEnergy ;
+.
+unit:TonAssay
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "tonassay"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:TonEnergy
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:TonOfOilEquivalent
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+.
+unit:TonOfRefrigeration
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:Torr
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:ForcePerArea ;
+.
+unit:UnifiedAtomicMassUnit
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:Mass ;
+.
+unit:UnitPole
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagneticFlux ;
+.
+unit:V-A
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "v-a"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+.
+unit:VoltMeter
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "voltmeter"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ElectricFlux ;
+.
+unit:W-PER-M2-K
+  rdf:type qudt:SI-Unit ;
+.
+unit:W-PER-M2-K4
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "W/(m^{2}-K^{4})"^^xsd:string ;
+  qudt:code "1955"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Watt Per Square Meter Per Quartic Kelvin (W/m2-K4) is a unit in the category of light."^^xsd:string ;
+  qudt:designator "U-150-1955"^^xsd:string ;
+  qudt:symbol "W/(m^2.K^4}"^^xsd:string ;
+  rdfs:label "Watt per Square Meter Quartic Kelvin"^^xsd:string ;
+  skos:prefLabel "watt-per-square-meter-quartic-kelvin"^^xsd:string ;
+.
+unit:WATT
+  rdf:type qudt:AcousticsUnit ;
+  qudt:quantityKind quantity:HeatFlowRate ;
+  qudt:quantityKind quantity:Power ;
+.
+unit:WEBER
+  rdf:type qudt:ElectricityAndMagnetismUnit ;
+  rdf:type qudt:Unit ;
+  qudt:quantityKind quantity:MagneticFlux ;
+  qudt:symbol "Wb"^^xsd:string ;
+  qudt:symbolToken "Wb"^^xsd:token ;
+.
+unit:WattPerSquareMeterQuarticKelvin
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "wattpersquaremeterquartickelvin"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:PowerPerAreaQuarticTemperature ;
+.
+unit:WattSquareMeter
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "wattsquaremeter"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:PowerArea ;
+.
+unit:WattSquareMeterPerSteradian
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "wattsquaremeterpersteradian"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:PowerAreaPerSolidAngle ;
+.
+unit:Z
+  qudt:quantityKind quantity:AtomicCharge ;
+.

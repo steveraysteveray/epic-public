@@ -1,0 +1,85 @@
+# baseURI: http://siemens.com/vocab/kps/nmtest
+# imports: http://siemens.com/spin/epic_functions
+# imports: http://siemens.com/vocab/kps/epic_instances
+# prefix: nmtest
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix nmtest: <http://siemens.com/vocab/kps/nmtest#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.
+<http://siemens.com/vocab/kps/nmtest>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The EPIC 'NM' test vocaulary." ;
+  dc:subject "NM test" ;
+  dc:title "The SSF Type Vocabulary" ;
+  vaem:hasCatalogEntry voag:EPIC_NM_Test ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This vocabulary is to be used to test EPIC NM functionality." ;
+  vaem:namespacePrefix "nm" ;
+  vaem:specificity "1"^^xsd:int ;
+  rdfs:label "NM test" ;
+  owl:imports <http://siemens.com/spin/epic_functions> ;
+  owl:imports <http://siemens.com/vocab/kps/epic_instances> ;
+  owl:versionInfo "$Id: $" ;
+.
+nmtest:forecastList
+  rdf:type rdf:List ;
+  rdf:first 0.056 ;
+  rdf:rest (
+      0.056
+      0.054
+      0.052
+      0.052
+      0.4
+    ) ;
+.
+nmtest:intervalList
+  rdf:type rdf:List ;
+  rdf:first "0" ;
+  rdf:rest (
+      "0"
+      "1"
+      "2"
+      "2"
+      "3"
+    ) ;
+.

@@ -1,0 +1,180 @@
+# baseURI: http://epic/scripts/pilotBuildings
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: pilotBuildings
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pilotBuildings: <http://epic/scripts/pilotBuildings#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/pilotBuildings>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+pilotBuildings:GetInfo
+  a sm:Function ;
+  sm:returnModule pilotBuildings:GetInfo_Return ;
+  rdfs:comment "This SPARQLMotion webservice retrieves the information regarding the name, latitude, longitude and resourceID of all EPIC pilot buildings." ;
+  rdfs:subClassOf sm:Functions ;
+.
+pilotBuildings:GetInfo_Return
+  a sml:ReturnText ;
+  sm:nodeX 362 ;
+  sm:nodeY 233 ;
+  rdfs:comment """Retrieves the basic information of every Pilot Building stored in the triplestore at <http://siemens.com/vocab/kps/epic/pilot-buildings> including: name (plab), geo-coordinates (lat, lon), elevation (elev), resourceID and groupID.
+
+Returns a JSON structure containing the above fields.""" ;
+.
+pilotBuildings:SerializeSPARQLResults_1
+  a sml:SerializeSPARQLResults ;
+  sm:next pilotBuildings:GetInfo_Return ;
+  sm:nodeX 370 ;
+  sm:nodeY 113 ;
+  sm:outputVariable "text" ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:orderBy (
+          [
+            sp:varName "resourceID" ;
+          ]
+        ) ;
+      sp:resultVariables (
+          [
+            sp:varName "plab" ;
+          ]
+          [
+            sp:varName "lat" ;
+          ]
+          [
+            sp:varName "lon" ;
+          ]
+          [
+            sp:varName "elev" ;
+          ]
+          [
+            sp:varName "resourceID" ;
+          ]
+          [
+            sp:varName "groupID" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  a sp:TriplePath ;
+                  sp:object <http://siemens.com/schemas/kps/epic-building#Building> ;
+                  sp:path [
+                      a sp:ModPath ;
+                      sp:modMax -2 ;
+                      sp:modMin 0 ;
+                      sp:subPath rdfs:subClassOf ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "class" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "class" ;
+                    ] ;
+                  sp:predicate rdf:type ;
+                  sp:subject [
+                      sp:varName "inst" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "plab" ;
+                    ] ;
+                  sp:predicate rdfs:label ;
+                  sp:subject [
+                      sp:varName "inst" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "geo" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic-building#geoPosition> ;
+                  sp:subject [
+                      sp:varName "inst" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "resourceID" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic-building#resourceID> ;
+                  sp:subject [
+                      sp:varName "inst" ;
+                    ] ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        sp:object [
+                            sp:varName "groupID" ;
+                          ] ;
+                        sp:predicate <http://siemens.com/schemas/kps/epic-building#groupID> ;
+                        sp:subject [
+                            sp:varName "inst" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "lat" ;
+                    ] ;
+                  sp:predicate <http://schema.org/latitude> ;
+                  sp:subject [
+                      sp:varName "geo" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "lon" ;
+                    ] ;
+                  sp:predicate <http://schema.org/longitude> ;
+                  sp:subject [
+                      sp:varName "geo" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "elev" ;
+                    ] ;
+                  sp:predicate <http://schema.org/elevation> ;
+                  sp:subject [
+                      sp:varName "geo" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "pCode" ;
+                    ] ;
+                  sp:predicate <http://schema.org/postalCode> ;
+                  sp:subject [
+                      sp:varName "geo" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic/pilot-buildings> ;
+          ]
+        ) ;
+    ] ;
+  sml:serialization sm:JSON ;
+  rdfs:label "Get Pilot Buildings Info" ;
+.

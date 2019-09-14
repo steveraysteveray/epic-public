@@ -1,0 +1,689 @@
+# baseURI: http://epic/scripts/selectEventWithID
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: se
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix se: <http://epic/scripts/selectEventWithID#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/selectEventWithID>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+se:ConvertRDFToXML_1
+  a sml:ConvertRDFToXML ;
+  sm:next se:SelectEvent_Return ;
+  sm:outputVariable "xml" ;
+  sml:document [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "value" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object <http://topbraid.org/sxml#Document> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:isAttributeUnqualified "false" ;
+.
+se:GetEPICInstances
+  a sml:ApplyConstruct ;
+  sm:next se:MapToOADR ;
+  sml:constructQuery [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrPayload> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "oadrPL" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "oadrSO" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasOadrSignedObjectRef> ;
+            sp:subject [
+                sp:varName "oadrPL" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrSignedObject> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "oadrSO" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "oadrDE" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasOadrDistributeEventRef> ;
+            sp:subject [
+                sp:varName "oadrSO" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "event" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasEiEventsRef> ;
+            sp:subject [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "requestID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+            sp:subject [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "vtnID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasVtnID> ;
+            sp:subject [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:or ;
+                sp:arg1 [
+                    a sp:or ;
+                    sp:arg1 [
+                        a sp:and ;
+                        sp:arg1 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "resourceID" ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            a sp:not ;
+                            sp:arg1 [
+                                a sp:bound ;
+                                sp:arg1 [
+                                    sp:varName "groupID" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:and ;
+                        sp:arg1 [
+                            a sp:not ;
+                            sp:arg1 [
+                                a sp:bound ;
+                                sp:arg1 [
+                                    sp:varName "resourceID" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "groupID" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:and ;
+                    sp:arg1 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "resourceID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "groupID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a xsd:integer ;
+                sp:arg1 [
+                    sp:varName "modificationNumber" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "mod" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "requestID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "vtnID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasVtnID> ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "event" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasEiEventsRef> ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "mod" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "target" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:Optional ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "gID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasGroupID> ;
+                  sp:subject [
+                      sp:varName "target" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            a sp:Optional ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "rID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                  sp:subject [
+                      sp:varName "target" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a <http://siemens.com/spin/epic_functions#getDeNamespace> ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "mod" ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "requestID" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "namespace" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a afn:localname ;
+                sp:arg1 [
+                    sp:varName "event" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "eventLocalName" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a fn:string-length ;
+                sp:arg1 [
+                    sp:varName "eventLocalName" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "eventNameLength" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:eq ;
+                sp:arg1 [
+                    a afn:namespace ;
+                    sp:arg1 [
+                        sp:varName "s" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "namespace" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a afn:localname ;
+                sp:arg1 [
+                    sp:varName "s" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "localName" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a fn:contains ;
+                sp:arg1 [
+                    sp:varName "localName" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "eventLocalName" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:or ;
+                sp:arg1 [
+                    a sp:or ;
+                    sp:arg1 [
+                        a sp:and ;
+                        sp:arg1 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "rID" ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            a sp:not ;
+                            sp:arg1 [
+                                a sp:bound ;
+                                sp:arg1 [
+                                    sp:varName "gID" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:and ;
+                        sp:arg1 [
+                            a sp:not ;
+                            sp:arg1 [
+                                a sp:bound ;
+                                sp:arg1 [
+                                    sp:varName "rID" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "gID" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:and ;
+                    sp:arg1 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "rID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "gID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:if ;
+                sp:arg1 [
+                    a sp:and ;
+                    sp:arg1 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "resourceID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "groupID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:and ;
+                    sp:arg1 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "rID" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "resourceID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "gID" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "groupID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg3 [
+                    a sp:or ;
+                    sp:arg1 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "rID" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "resourceID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "gID" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "groupID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "filterExpr" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                sp:varName "filterExpr" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a sp:concat ;
+                    sp:arg1 [
+                        a afn:namespace ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a afn:localname ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 "_DistributeEvent" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a sp:concat ;
+                    sp:arg1 [
+                        a afn:namespace ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a afn:localname ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 "_SignedObject" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "oadrSO" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a sp:concat ;
+                    sp:arg1 [
+                        a afn:namespace ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a afn:localname ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 "_Payload" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "oadrPL" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:replace true ;
+.
+se:ImportEPIC-OADRMapping
+  a sml:ImportRDFFromWorkspace ;
+  sm:next se:MapToOADR ;
+  sml:baseURI "http://siemens.com/mapping/epic2oadr" ;
+  sml:ignoreImports false ;
+.
+se:ImportEPICDatastore
+  a sml:ImportRDFFromWorkspace ;
+  sm:next se:GetEPICInstances ;
+  sml:baseURI "http://siemens.com/vocab/kps/epic_instances" ;
+.
+se:MapToOADR
+  a sml:ApplyTopSPIN ;
+  sm:next se:ConvertRDFToXML_1 ;
+  sml:flatten true ;
+  sml:replace true ;
+  sml:singlePass false ;
+.
+se:SelectEvent_Return
+  a sml:ReturnText ;
+  sml:text "{?xml}" ;
+.
+se:eventID
+  a rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+se:groupID
+  a rdf:Property ;
+  rdfs:range xsd:string ;
+.
+se:modificationNumber
+  a rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+se:requestID
+  a rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+se:resourceID
+  a rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+se:selectEventWithID
+  a sm:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional false ;
+      spl:predicate se:eventID ;
+      spl:valueType xsd:string ;
+      sm:next se:GetEPICInstances ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional false ;
+      spl:predicate se:modificationNumber ;
+      spl:valueType xsd:integer ;
+      sm:next se:GetEPICInstances ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional false ;
+      spl:predicate se:requestID ;
+      spl:valueType xsd:string ;
+      sm:next se:GetEPICInstances ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional true ;
+      spl:predicate se:groupID ;
+      spl:valueType xsd:string ;
+      sm:next se:GetEPICInstances ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional true ;
+      spl:predicate se:resourceID ;
+      spl:valueType xsd:string ;
+      sm:next se:GetEPICInstances ;
+    ] ;
+  sm:returnModule se:SelectEvent_Return ;
+  rdfs:subClassOf sm:Functions ;
+.

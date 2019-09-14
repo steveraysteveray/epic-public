@@ -1,0 +1,311 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/energy
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/energy>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "QUDT Energy Quantity Kinds Vocabulary"^^xsd:string ;
+  dc:title "QUDT Energy Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "A vocabulary of common quantity kinds in the energy domain."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/energy"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Energy Quantity Kinds"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/isq/quantity/energy> ;
+.
+quantity:EnergyAndWork
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:applicableUnit unit:BTU_IT ;
+  qudt:applicableUnit unit:BTU_TH ;
+  qudt:applicableUnit unit:CAL ;
+  qudt:applicableUnit unit:ERG ;
+  qudt:applicableUnit unit:EV ;
+  qudt:applicableUnit unit:FT-LBF ;
+  qudt:applicableUnit unit:FT-PDL ;
+  qudt:applicableUnit unit:GigaEV ;
+  qudt:applicableUnit unit:HARTREE ;
+  qudt:applicableUnit unit:HartreeEnergy ;
+  qudt:applicableUnit unit:InchPoundForce ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:applicableUnit unit:KiloCAL ;
+  qudt:applicableUnit unit:KiloEV ;
+  qudt:applicableUnit unit:KiloW-HR ;
+  qudt:applicableUnit unit:MeV ;
+  qudt:applicableUnit unit:PlanckEnergy ;
+  qudt:applicableUnit unit:QUAD ;
+  qudt:applicableUnit unit:ThermEEC ;
+  qudt:applicableUnit unit:ThermUS ;
+  qudt:applicableUnit unit:TonEnergy ;
+  qudt:applicableUnit unit:TonOfOilEquivalent ;
+  qudt:applicableUnit unit:W-HR ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/s^2"^^xsd:string ;
+  qudt:description "The concepts of work and energy are closely tied to the concept of force because an applied force can do work on an object and cause a change in energy. Energy is defined as the ability to do work. Work is done on an object when an applied force moves it through a distance. Kinetic energy is the energy of an object in motion. The net work is equal to the change in kinetic energy."^^xsd:string ;
+  qudt:longDescription """The net work is equal to the change in kinetic energy. This relationship is called the work-energy theorem: $Wnet = K. E._f − K. E._o $, where $K. E._f$ is the final kinetic energy and $K. E._0o$ is the original kinetic energy. 
+
+Potential energy, also referred to as stored energy, is the ability of a system to do work due to its position or internal structure.
+
+Change in potential energy is equal to work. The potential energy equations can also be derived from the integral form of work, $\\Delta P. E. = W = \\int  F \\cdot dx$. """^^xsd:string ;
+  rdfs:label "Energy and Work"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Energy> ;
+  skos:exactMatch <http://dbpedia.org/resource/Work_%28physics%29> ;
+  skos:prefLabel "Energy and Work"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.cliffsnotes.com/study_guide/Work-and-Energy.topicArticleId-10453,articleId-10418.html> ;
+.
+quantity:EnergyDensity
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:applicableUnit unit:ERG-PER-CM3 ;
+  qudt:applicableUnit unit:J-PER-M3 ;
+  qudt:hasDimension qudt:DIM_CGS-L-1MT-2 ;
+  rdfs:label "Energy Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Energy_density> ;
+  skos:prefLabel "Energy Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Energy_density> ;
+.
+quantity:EnergyInternal
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:description "The internal energy is the total energy contained by a thermodynamic system. It is the energy needed to create the system, but excludes the energy to displace the system's surroundings, any energy associated with a move as a whole, or due to external force fields. Internal energy has two major components, kinetic energy and potential energy. The internal energy (U) is the sum of all forms of energy (Ei) intrinsic to a thermodynamic system:  $  U = \\sum_i E_i $"^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  rdfs:label "Internal Energy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Internal_energy> ;
+  skos:prefLabel "Internal Energy"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Internal_energy> ;
+  prov:wasInfluencedBy <http://wiki.answers.com/Q/What_is_the_one_letter_symbol_for_energy> ;
+.
+quantity:EnergyKinetic
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:description "The kinetic energy of an object is the energy which it possesses due to its motion. It is defined as the work needed to accelerate a body of a given mass from rest to its stated velocity."^^xsd:string ;
+  rdfs:label "Kinetic Energy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Kinetic_energy> ;
+  skos:prefLabel "Kinetic Energy"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kinetic_energy> ;
+.
+quantity:EnergyPerArea
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:applicableUnit unit:BTU-PER-FT2 ;
+  qudt:applicableUnit unit:FT-LBF-PER-M2 ;
+  qudt:applicableUnit unit:FootPoundForcePerSquareFoot ;
+  qudt:applicableUnit unit:J-PER-M2 ;
+  qudt:applicableUnit unit:KiloCAL-PER-CM2 ;
+  qudt:baseUnitDimensions "kg/s^2"^^xsd:string ;
+  qudt:description "Energy per unit area is a measure of the energy either impinging upon or generated from a given unit of area. This can be a measure of the \"toughness\" of a material, being the amount of energy that needs to be applied per unit area of a crack to cause it to fracture. This is a constant for a given material.."^^xsd:string ;
+  rdfs:label "Energy per Area"^^xsd:string ;
+  skos:prefLabel "Energy per Area"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.calculator.org/property.aspx?name=energy%20per%20unit%20area> ;
+.
+quantity:InverseEnergy
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:baseUnitDimensions "s^2/kg \\cdot m^2"^^xsd:string ;
+  rdfs:label "Inverse Energy"^^xsd:string ;
+  skos:prefLabel "Inverse Energy"^^xsd:string ;
+.
+quantity:InverseLengthTemperature
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  rdfs:label "Inverse Length Temperature"^^xsd:string ;
+  skos:prefLabel "Inverse Length Temperature"^^xsd:string ;
+.
+quantity:InverseSquareEnergy
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:applicableUnit unit:PerSquareGigaElectronVolt ;
+  qudt:baseUnitDimensions "s^4/kg^2 \\cdot m^4"^^xsd:string ;
+  rdfs:label "Inverse Square Energy"^^xsd:string ;
+  skos:prefLabel "Inverse Square Energy"^^xsd:string ;
+.
+quantity:KineticEnergy
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:description "\\textit{Kinetic Energy} is the energy which a body possesses as a consequence of its motion, defined as one-half the product of its mass $m$ and the square of its speed $v$, $ 1/2 mv^{2} $. The kinetic energy per unit volume of a fluid parcel is the $1/2 p v^{2}$ , where $p$ is the density and $v$ the speed of the parcel. See potential energy. For relativistic speeds the kinetic energy is given by $Ek = mc^{2} - m0c^{2}$, where $c$ is the velocity of light in a vacuum, $m0$ is the rest mass, and $m$ is the moving mass."^^xsd:string ;
+  qudt:generalization quantity:EnergyAndWork ;
+  qudt:symbol "KE"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Kinetic_energy"^^xsd:anyURI ;
+  rdfs:label "Kinetic Energy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Kinetic_energy> ;
+  skos:prefLabel "Kinetic Energy"^^xsd:string ;
+.
+quantity:LengthEnergy
+  rdf:type qudt:EnergyQuantityKind ;
+  rdf:type qudt:PhysicsQuantityKind ;
+  qudt:applicableUnit unit:MegaEV-FemtoM ;
+  qudt:baseUnitDimensions "L^3 \\cdot M/T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^3/s^2"^^xsd:string ;
+  qudt:hasDimension qudt:DIM_SI-m3kgs-2 ;
+  rdfs:label "Length Energy"^^xsd:string ;
+  skos:prefLabel "Length Energy"^^xsd:string ;
+.
+quantity:PotentialEnergy
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:description "Energy possessed by a body by virtue of its position in a gravity field in contrast with kinetic energy, that possessed by virtue of its motion."^^xsd:string ;
+  qudt:generalization quantity:EnergyAndWork ;
+  qudt:symbol "PE or U"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Potential_energy"^^xsd:anyURI ;
+  rdfs:label "Potential Energy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:exactMatch <http://dbpedia.org/resource/Potential_energy> ;
+  skos:prefLabel "Potential Energy"^^xsd:string ;
+.
+quantity:Power
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:applicableUnit unit:BTU-PER-HR ;
+  qudt:applicableUnit unit:BTU-PER-SEC ;
+  qudt:applicableUnit unit:ERG-PER-SEC ;
+  qudt:applicableUnit unit:FT-LBF-PER-HR ;
+  qudt:applicableUnit unit:FT-LBF-PER-MIN ;
+  qudt:applicableUnit unit:FT-LBF-PER-SEC ;
+  qudt:applicableUnit unit:HP ;
+  qudt:applicableUnit unit:HorsepowerBoiler ;
+  qudt:applicableUnit unit:HorsepowerElectric ;
+  qudt:applicableUnit unit:HorsepowerMetric ;
+  qudt:applicableUnit unit:HorsepowerWater ;
+  qudt:applicableUnit unit:KiloCAL-PER-MIN ;
+  qudt:applicableUnit unit:KiloCAL-PER-SEC ;
+  qudt:applicableUnit unit:PlanckPower ;
+  qudt:applicableUnit unit:TonOfRefrigeration ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/s^3"^^xsd:string ;
+  qudt:description "Power is the rate at which work is performed or energy is transmitted, or the amount of energy required or expended for a given unit of time. As a rate of change of work done or the energy of a subsystem, power is: $P = W/t$, where $P$ is power, $W$ is work and {t} is time."^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  qudt:url "http://en.wikipedia.org/wiki/Power_%28physics%29"^^xsd:anyURI ;
+  rdfs:label "Power"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Power> ;
+  skos:prefLabel "Power"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Power> ;
+.
+quantity:PowerArea
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:applicableUnit unit:WattSquareMeter ;
+  qudt:baseUnitDimensions "kg \\cdot m^4/s^3"^^xsd:string ;
+  rdfs:label "Power Area"^^xsd:string ;
+  skos:prefLabel "Power Area"^^xsd:string ;
+.
+quantity:PowerAreaPerSolidAngle
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:applicableUnit unit:WattSquareMeterPerSteradian ;
+  qudt:baseUnitDimensions "kg \\cdot m^4/s^3"^^xsd:string ;
+  rdfs:label "Power Area per Solid Angle"^^xsd:string ;
+  skos:prefLabel "Power Area per Solid Angle"^^xsd:string ;
+.
+quantity:PowerPerArea
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:applicableUnit unit:BTU-PER-HR-FT2 ;
+  qudt:applicableUnit unit:BTU-PER-SEC-FT2 ;
+  qudt:applicableUnit unit:ERG-PER-CM2-SEC ;
+  qudt:applicableUnit unit:FT-LBF-PER-FT2-SEC ;
+  qudt:applicableUnit unit:KiloCAL-PER-CM2-MIN ;
+  qudt:applicableUnit unit:KiloCAL-PER-CM2-SEC ;
+  qudt:applicableUnit unit:W-PER-CM2 ;
+  qudt:applicableUnit unit:W-PER-FT2 ;
+  qudt:applicableUnit unit:W-PER-IN2 ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:baseUnitDimensions "kg/s^3"^^xsd:string ;
+  qudt:url "http://www.physicsforums.com/library.php?do=view_item&itemid=406"^^xsd:anyURI ;
+  rdfs:label "Power Per Area"^^xsd:string ;
+  skos:prefLabel "Power per Area"^^xsd:string ;
+.
+quantity:PowerPerAreaAngle
+  rdf:type qudt:EnergyQuantityKind ;
+  rdfs:label "Power per Area Angle"^^xsd:string ;
+  skos:prefLabel "Power per Area Angle"^^xsd:string ;
+.
+quantity:SpecificEnergy
+  qudt:applicableUnit unit:BTU_IT-PER-LB ;
+  qudt:applicableUnit unit:BTU_TH-PER-LB ;
+  qudt:applicableUnit unit:ERG-PER-G ;
+  qudt:applicableUnit unit:J-PER-KG ;
+  qudt:applicableUnit unit:KiloCAL-PER-GM ;
+  rdfs:label "Specific Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Specific_energy> ;
+  skos:prefLabel "Specific Energy"^^xsd:string ;
+.
+quantity:SquareEnergy
+  rdf:type qudt:EnergyQuantityKind ;
+  qudt:baseUnitDimensions "kg^2 \\cdot m^4/s^4"^^xsd:string ;
+  rdfs:label "Square Energy"^^xsd:string ;
+  skos:prefLabel "Square Energy"^^xsd:string ;
+.
+<http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Vocabulary Catalog Entry v1.2"^^xsd:string ;
+.

@@ -1,0 +1,56 @@
+# baseURI: http://siemens.com/schemas/kps/fsgim2qudt
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://siemens.com/schemas/kps/epic
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: fsgim2qudt
+
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix fsgim2qudt: <http://siemens.com/schemas/kps/fsgim2qudt#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+epic:PowerApparentQuantity
+  a owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#QuantityValue> ;
+  rdfs:subClassOf <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#PowerApparentQuantity> ;
+.
+epic:PowerApparentQuantityKind
+  a owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#QuantityKind> ;
+  rdfs:subClassOf <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#PowerApparentType> ;
+.
+epic:PowerReactiveQuantity
+  a owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#QuantityValue> ;
+  rdfs:subClassOf <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#PowerReactiveQuantity> ;
+.
+epic:PowerReactiveQuantityKind
+  a owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#QuantityKind> ;
+  rdfs:subClassOf <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#PowerReactiveType> ;
+.
+epic:PowerRealQuantity
+  a owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#QuantityValue> ;
+  rdfs:subClassOf <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#PowerRealQuantity> ;
+.
+epic:PowerRealQuantityKind
+  a owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#QuantityKind> ;
+  rdfs:subClassOf <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/power_measurements---measurements#PowerRealType> ;
+.
+epic:Unit
+  a owl:Class ;
+  rdfs:subClassOf <http://qudt.org/schema/qudt#Unit> ;
+  rdfs:subClassOf <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#UnitSymbolKindEnumeratedValue> ;
+.
+<http://siemens.com/schemas/kps/fsgim2qudt>
+  a owl:Ontology ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

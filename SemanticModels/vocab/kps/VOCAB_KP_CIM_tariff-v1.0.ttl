@@ -1,0 +1,1943 @@
+# baseURI: http://siemens.com/vocab/kps/cim-tariff
+# imports: http://siemens.com/functions/tariff-functions
+# imports: http://siemens.com/schemas/kps/cim-tariff
+# prefix: td
+
+@prefix IFC4: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://siemens.com/schemas/ssf_datatype#> .
+@prefix enumerations---common_primitive_types_classes_and_enumerations: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#> .
+@prefix fsgim-time: <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tariff: <http://siemens.com/schemas/kps/cim-tariff#> .
+@prefix td: <http://siemens.com/vocab/kps/cim-tariff#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tariff:ChargeKind
+  rdfs:subClassOf tariff:EnumeratedValue ;
+.
+tariff:MonthType
+  rdfs:subClassOf tariff:EnumeratedValue ;
+.
+tariff:RdRule
+  rdfs:subClassOf tariff:EnumeratedValue ;
+.
+tariff:WeekdayType
+  rdfs:subClassOf tariff:EnumeratedValue ;
+.
+<http://siemens.com/vocab/kps/cim-tariff>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "CIM Tariff Datatypes" ;
+  dc:subject "CIM Tariff" ;
+  dc:title "The CIM Tariff Datatypes Vocabulary" ;
+  owl:imports <http://siemens.com/functions/tariff-functions> ;
+  owl:imports <http://siemens.com/schemas/kps/cim-tariff> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+td:A01TariffSummer2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-10-31"^^xsd:date ;
+  tariff:startDate "2018-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA01SummerProfile ;
+  rdfs:label "A01Tariff" ;
+  skos:prefLabel "A01Tariff" ;
+.
+td:A01TariffSummer2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-10-31"^^xsd:date ;
+  tariff:startDate "2019-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA01SummerProfile ;
+  rdfs:label "A01Tariff" ;
+  skos:prefLabel "A01Tariff" ;
+.
+td:A01TariffWinter2017
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-04-30"^^xsd:date ;
+  tariff:startDate "2017-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA01WinterProfile ;
+  rdfs:label "A01Tariff" ;
+  skos:prefLabel "A01Tariff" ;
+.
+td:A01TariffWinter2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-04-30"^^xsd:date ;
+  tariff:startDate "2018-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA01WinterProfile ;
+  rdfs:label "A01Tariff" ;
+  skos:prefLabel "A01Tariff" ;
+.
+td:A01TariffWinter2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2020-04-30"^^xsd:date ;
+  tariff:startDate "2019-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA01WinterProfile ;
+  rdfs:label "A01Tariff" ;
+  skos:prefLabel "A01Tariff" ;
+.
+td:A06TariffSummer2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-10-31"^^xsd:date ;
+  tariff:startDate "2018-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA06SummerProfile ;
+  rdfs:label "A06Tariff" ;
+  skos:prefLabel "A06Tariff" ;
+.
+td:A06TariffSummer2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-10-31"^^xsd:date ;
+  tariff:startDate "2019-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA06SummerProfile ;
+  rdfs:label "A06Tariff" ;
+  skos:prefLabel "A06Tariff" ;
+.
+td:A06TariffWinter2017
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-04-30"^^xsd:date ;
+  tariff:startDate "2017-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA06WinterProfile ;
+  rdfs:label "A06Tariff" ;
+  skos:prefLabel "A06Tariff" ;
+.
+td:A06TariffWinter2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-04-30"^^xsd:date ;
+  tariff:startDate "2018-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA06WinterProfile ;
+  rdfs:label "A06Tariff" ;
+  skos:prefLabel "A06Tariff" ;
+.
+td:A06TariffWinter2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2020-04-30"^^xsd:date ;
+  tariff:startDate "2019-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA06WinterProfile ;
+  rdfs:label "A06Tariff" ;
+  skos:prefLabel "A06Tariff" ;
+.
+td:A10TariffSummer2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-10-31"^^xsd:date ;
+  tariff:startDate "2018-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA10SummerProfile ;
+  rdfs:label "A10Tariff" ;
+  skos:prefLabel "A10Tariff" ;
+.
+td:A10TariffSummer2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-10-31"^^xsd:date ;
+  tariff:startDate "2019-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA10SummerProfile ;
+  rdfs:label "A10Tariff" ;
+  skos:prefLabel "A10Tariff" ;
+.
+td:A10TariffWinter2017
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-04-30"^^xsd:date ;
+  tariff:startDate "2017-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA10WinterProfile ;
+  rdfs:label "A10Tariff" ;
+  skos:prefLabel "A10Tariff" ;
+.
+td:A10TariffWinter2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-04-30"^^xsd:date ;
+  tariff:startDate "2018-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA10WinterProfile ;
+  rdfs:label "A10Tariff" ;
+  skos:prefLabel "A10Tariff" ;
+.
+td:A10TariffWinter2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2020-04-30"^^xsd:date ;
+  tariff:startDate "2019-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEA10WinterProfile ;
+  rdfs:label "A10Tariff" ;
+  skos:prefLabel "A10Tariff" ;
+.
+td:CentralTime
+  rdf:type fsgim-time:LocalTimeParameters ;
+  fsgim-time:hasDstEndRuleRef td:USADSTEndRule ;
+  fsgim-time:hasDstOffset "3600"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasDstStartRuleRef td:USADSTStartRule ;
+  fsgim-time:hasTzOffset "-21600"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasTzid "America/Chicago"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#String> ;
+  vaem:description """Excerpt from https://www.iana.org/time-zones : NorthAmerica   
+
+ US central time, represented by Chicago (tzID: America/Chicago)
+
+ Alabama, Arkansas, Florida panhandle (Bay, Calhoun, Escambia,Gulf, Holmes, Jackson, Okaloosa, Santa Rosa, Walton, and Washington counties), Illinois, western Indiana
+ (Gibson, Jasper, Lake, LaPorte, Newton, Porter, Posey, Spencer, Vanderburgh, and Warrick counties), Iowa, most of Kansas, western Kentucky, Louisiana, Minnesota, Mississippi, Missouri, eastern Nebraska, eastern North Dakota, Oklahoma, eastern South Dakota, western Tennessee, most of Texas, Wisconsin""" ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:DOWStart
+  rdf:type enumerations---common_primitive_types_classes_and_enumerations:WeekdayTypeEnumeratedValue ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:E19TariffSummer2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-10-31"^^xsd:date ;
+  tariff:startDate "2018-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE19SummerProfile ;
+  rdfs:label "E19Tariff" ;
+  skos:prefLabel "E19Tariff" ;
+.
+td:E19TariffSummer2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-10-31"^^xsd:date ;
+  tariff:startDate "2019-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE19SummerProfile ;
+  rdfs:label "E19Tariff" ;
+  skos:prefLabel "E19Tariff" ;
+.
+td:E19TariffWinter2017
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-04-30"^^xsd:date ;
+  tariff:startDate "2017-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE19WinterProfile ;
+  rdfs:label "E19Tariff" ;
+  skos:prefLabel "E19Tariff" ;
+.
+td:E19TariffWinter2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-04-30"^^xsd:date ;
+  tariff:startDate "2018-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE19WinterProfile ;
+  rdfs:label "E19Tariff" ;
+  skos:prefLabel "E19Tariff" ;
+.
+td:E19TariffWinter2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2020-04-30"^^xsd:date ;
+  tariff:startDate "2019-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE19WinterProfile ;
+  rdfs:label "E19Tariff" ;
+  skos:prefLabel "E19Tariff" ;
+.
+td:E20TariffSummer2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-10-31"^^xsd:date ;
+  tariff:startDate "2018-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE20SummerProfile ;
+  rdfs:label "E20Tariff" ;
+  skos:prefLabel "E20Tariff" ;
+.
+td:E20TariffSummer2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-10-31"^^xsd:date ;
+  tariff:startDate "2019-05-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE20SummerProfile ;
+  rdfs:label "E20Tariff" ;
+  skos:prefLabel "E20Tariff" ;
+.
+td:E20TariffWinter2017
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-04-30"^^xsd:date ;
+  tariff:startDate "2017-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE20WinterProfile ;
+  rdfs:label "E20Tariff" ;
+  skos:prefLabel "E20Tariff" ;
+.
+td:E20TariffWinter2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-04-30"^^xsd:date ;
+  tariff:startDate "2018-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE20WinterProfile ;
+  rdfs:label "E20Tariff" ;
+  skos:prefLabel "E20Tariff" ;
+.
+td:E20TariffWinter2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2020-04-30"^^xsd:date ;
+  tariff:startDate "2019-11-01"^^xsd:date ;
+  tariff:tariffProfile td:PGEE20WinterProfile ;
+  rdfs:label "E20Tariff" ;
+  skos:prefLabel "E20Tariff" ;
+.
+td:EasternTime
+  rdf:type fsgim-time:LocalTimeParameters ;
+  fsgim-time:hasDstEndRuleRef td:USADSTEndRule ;
+  fsgim-time:hasDstOffset "3600"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasDstStartRuleRef td:USADSTStartRule ;
+  fsgim-time:hasTzOffset "-18000"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasTzid "America/New_York"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#String> ;
+  vaem:description """Excerpt from https://www.iana.org/time-zones : NorthAmerica   
+
+ US eastern time, represented by New York (tzID : America/New_York)
+
+ Connecticut, Delaware, District of Columbia, most of Florida, Georgia, southeast Indiana (Dearborn and Ohio counties), eastern Kentucky (except America/Kentucky/Louisville below), Maine, Maryland, Massachusetts, New Hampshire, New Jersey, New York, North Carolina, Ohio, Pennsylvania, Rhode Island, South Carolina, eastern Tennessee, Vermont, Virginia, West Virginia""" ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:Flat06Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:Flat06Cost ;
+  rdfs:label "Flat tariff at $0.06/kWh" ;
+.
+td:Flat06ConsumptionTariffInterval
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:Flat06Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "Flat tariff at $0.06/kWh" ;
+.
+td:Flat06Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.06"^^xsd:float ;
+  rdfs:label "Flat tariff at $0.06/kWh" ;
+.
+td:Flat06Tariff
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2040-01-01"^^xsd:date ;
+  tariff:startDate "2017-01-01"^^xsd:date ;
+  tariff:tariffProfile td:Flat06TariffProfile ;
+  rdfs:label "Flat tariff at $0.06/kWh" ;
+.
+td:Flat06TariffProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:Flat06ConsumptionTariffInterval ;
+  tariff:timeTariffIntervals td:Flat06TimeTariffInterval ;
+  rdfs:label "Flat tariff at $0.06/kWh" ;
+.
+td:Flat06TimeTariffInterval
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "saturday" ;
+  tariff:dow "sunday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "Flat tariff at $0.06/kWh" ;
+.
+td:Flat06_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:code "FLAT06" ;
+  tariff:revenueKind "other" ;
+  tariff:tariffs td:Flat06Tariff ;
+  rdfs:label "Flat rate structure at $0.06/kWh" ;
+.
+td:MountainTime
+  rdf:type fsgim-time:LocalTimeParameters ;
+  fsgim-time:hasDstEndRuleRef td:USADSTEndRule ;
+  fsgim-time:hasDstOffset "3600"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasDstStartRuleRef td:USADSTStartRule ;
+  fsgim-time:hasTzOffset "-25200"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasTzid "America/Denver"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#String> ;
+  vaem:description """Excerpt from https://www.iana.org/time-zones : NorthAmerica   
+
+ US mountain time, represented by Denver (tzID: America/Denver)
+
+ Colorado, far western Kansas, Montana, western Nebraska, Nevada border (Jackpot, Owyhee, and Mountain City),New Mexico, southwestern North Dakota,
+ western South Dakota, far western Texas (El Paso County, Hudspeth County,and Pine Springs and Nickel Creek in Culberson County), Utah, Wyoming""" ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA01SummerPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA01SummerPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.21280"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA01SummerPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA01SummerPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.24016"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA01SummerPeriod2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA01SummerPeriod2Charge ;
+  tariff:period 2 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerPeriod2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.26381"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01SummerProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEA01SummerPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA01SummerPeriod1Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA01SummerPeriod2Consumption ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayAfternoon ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEarlyMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEvening ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialSummerWeekend ;
+  rdfs:label "PGE A01 Summer Tariff profile" ;
+  skos:prefLabel "PGE A01 Summer Tariff profile" ;
+.
+td:PGEA01WinterPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA01WinterPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01WinterPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA01WinterPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01WinterPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.20039"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01WinterPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA01WinterPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01WinterPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA01WinterPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01WinterPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.22130"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA01WinterProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEA01WinterPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA01WinterPeriod1Consumption ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayDay ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialWinterWeekend ;
+  rdfs:label "PGE A01 Winter Tariff profile" ;
+  skos:prefLabel "PGE A01 Winter Tariff profile" ;
+.
+td:PGEA06SummerPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA06SummerPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA06SummerPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.19637"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA06SummerPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA06SummerPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.26796"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerPeriod2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA06SummerPeriod2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerPeriod2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA06SummerPeriod2Charge ;
+  tariff:period 2 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerPeriod2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.56478"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06SummerProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEA06SummerPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA06SummerPeriod1Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA06SummerPeriod2Consumption ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayAfternoon ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEarlyMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEvening ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialSummerWeekend ;
+  rdfs:label "PGE A06 Summer Tariff profile" ;
+  skos:prefLabel "PGE A06 Summer Tariff profile" ;
+.
+td:PGEA06WinterPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA06WinterPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06WinterPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA06WinterPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06WinterPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.19565"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06WinterPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA06WinterPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06WinterPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA06WinterPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06WinterPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.21389"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA06WinterProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEA06WinterPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA06WinterPeriod1Consumption ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayDay ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialWinterWeekend ;
+  rdfs:label "PGE A06 Winter Tariff profile" ;
+  skos:prefLabel "PGE A06 Winter Tariff profile" ;
+.
+td:PGEA10SummerPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA10SummerPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA10SummerPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.13513"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA10SummerPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA10SummerPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.1632"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerPeriod2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA10SummerPeriod2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerPeriod2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA10SummerPeriod2Charge ;
+  tariff:period 2 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerPeriod2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.21833"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10SummerProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEA10SummerPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA10SummerPeriod1Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA10SummerPeriod2Consumption ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayAfternoon ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEarlyMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEvening ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialSummerWeekend ;
+  rdfs:label "PGE A10 Summer Tariff profile" ;
+  skos:prefLabel "PGE A10 Summer Tariff profile" ;
+.
+td:PGEA10WinterPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA10WinterPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10WinterPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA10WinterPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10WinterPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.11796"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10WinterPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEA10WinterPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10WinterPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEA10WinterPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10WinterPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.13502"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEA10WinterProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEA10WinterPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEA10WinterPeriod1Consumption ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayDay ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialWinterWeekend ;
+  rdfs:label "PGE A10 Winter Tariff profile" ;
+  skos:prefLabel "PGE A10 Winter Tariff profile" ;
+.
+td:PGEE19SummerPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE19SummerPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE19SummerPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.08671"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE19SummerPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE19SummerPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.11613"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerPeriod2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE19SummerPeriod2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerPeriod2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE19SummerPeriod2Charge ;
+  tariff:period 2 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerPeriod2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.16055"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19SummerProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEE19SummerPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEE19SummerPeriod1Consumption ;
+  tariff:consumptionTariffIntervals td:PGEE19SummerPeriod2Consumption ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayAfternoon ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEarlyMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEvening ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialSummerWeekend ;
+  rdfs:label "PGE E19 Summer Tariff profile" ;
+  skos:prefLabel "PGE E19 Summer Tariff profile" ;
+.
+td:PGEE19WinterPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE19WinterPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19WinterPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE19WinterPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19WinterPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.09401"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19WinterPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE19WinterPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19WinterPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE19WinterPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19WinterPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.11004"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE19WinterProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEE19WinterPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEE19WinterPeriod1Consumption ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayDay ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialWinterWeekend ;
+  rdfs:label "PGE E19 Winter Tariff profile" ;
+  skos:prefLabel "PGE E19 Winter Tariff profile" ;
+.
+td:PGEE20SummerPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE20SummerPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE20SummerPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.08210"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE20SummerPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE20SummerPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.10981"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerPeriod2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE20SummerPeriod2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerPeriod2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE20SummerPeriod2Charge ;
+  tariff:period 2 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerPeriod2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.15018"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20SummerProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEE20SummerPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEE20SummerPeriod1Consumption ;
+  tariff:consumptionTariffIntervals td:PGEE20SummerPeriod2Consumption ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayAfternoon ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEarlyMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayEvening ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialSummerWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialSummerWeekend ;
+  rdfs:label "PGE E20 Summer Tariff profile" ;
+  skos:prefLabel "PGE E20 Summer Tariff profile" ;
+.
+td:PGEE20WinterPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE20WinterPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20WinterPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE20WinterPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20WinterPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.08893"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20WinterPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:PGEE20WinterPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20WinterPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:PGEE20WinterPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20WinterPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.10395"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGEE20WinterProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:PGEE20WinterPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:PGEE20WinterPeriod1Consumption ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayDay ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayMorning ;
+  tariff:timeTariffIntervals td:commercialWinterWeekdayNight ;
+  tariff:timeTariffIntervals td:commercialWinterWeekend ;
+  rdfs:label "PGE E20 Winter Tariff profile" ;
+  skos:prefLabel "PGE E20 Winter Tariff profile" ;
+.
+td:PGEElectricity
+  rdf:type tariff:ServiceCategory ;
+  tariff:pricingStructures td:Flat06_PricingStructure ;
+  tariff:pricingStructures td:PGE_A01_PricingStructure ;
+  tariff:pricingStructures td:PGE_A06_PricingStructure ;
+  tariff:pricingStructures td:PGE_A10_PricingStructure ;
+  tariff:pricingStructures td:PGE_E19_PricingStructure ;
+  tariff:pricingStructures td:PGE_E20_PricingStructure ;
+  tariff:pricingStructures td:PGE_E6X_PricingStructure ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PGE_A01_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:code "PGEA01" ;
+  tariff:revenueKind "commercial" ;
+  tariff:tariffs td:A01TariffSummer2018 ;
+  tariff:tariffs td:A01TariffSummer2019 ;
+  tariff:tariffs td:A01TariffWinter2017 ;
+  tariff:tariffs td:A01TariffWinter2018 ;
+  tariff:tariffs td:A01TariffWinter2019 ;
+  vaem:description """Schedule A-1 applies to single-phase and polyphase alternating-current service (for a
+description of these terms, see Section D of Rule 2*). This schedule is not available to
+residential or agricultural service for which a residential or agricultural schedule is
+applicable, except for single-phase and polyphase service in common areas in a multifamily
+complex (see Common-Area Accounts section). Customers that are otherwise eligible to
+take service on Schedule A-1, but are purchasing power to serve electric vehicle charging
+equipment, are not eligible to take service on this rate schedule.
+Effective November 1, 2012, Schedule A-1 is closed to customers with a maximum demand
+of 75 kW or greater for three consecutive months in the most recent twelve months, or with
+usage of 150,000 kWh per year or greater, and who have at least twelve (12) months of
+hourly usage data available. Eligibility for A-1 will be reviewed annually and migration of
+ineligible customers will be implemented once per year, on bill cycles each November, using
+the same procedures described below for Time-of-Use (TOU) rates adopted in Decision 10-
+02-032 as modified by Decision 11-11-008.""" ;
+  vaem:name "SMALL GENERAL SERVICE" ;
+  vaem:url "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_A-1.pdf"^^xsd:anyURI ;
+  rdfs:label "PGE A01 Pricing Structure" ;
+  skos:prefLabel "PGE A01 pricing structure" ;
+.
+td:PGE_A06_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:code "PGEA06" ;
+  tariff:tariffs td:A06TariffSummer2018 ;
+  tariff:tariffs td:A06TariffSummer2019 ;
+  tariff:tariffs td:A06TariffWinter2017 ;
+  tariff:tariffs td:A06TariffWinter2018 ;
+  tariff:tariffs td:A06TariffWinter2019 ;
+  vaem:description """This time-of-use schedule applies to single-phase and polyphase alternating-current
+service (for a description of these terms, see Section D of Rule 2*). This schedule is not
+available to residential or agricultural service for which a residential or agricultural
+schedule is applicable, except for single-phase and polyphase service in common areas
+in a multifamily complex (see Common-Area Accounts section). Customers with a
+maximum demand of 200 kW or greater for three consecutive months must have an
+interval data meter that can be read remotely by PG&E and be on this or other applicable
+time-of-use schedule.
+Effective April 1, 2017, Schedule A-6 is closed to new customers with a maximum
+demand of 75 kW or greater for three consecutive months in the most recent twelve
+months, or with usage of 150,000 kWh per year or greater, and who have at least twelve
+(12) months of hourly usage data available. For new customers on or after April 1, 2017,
+eligibility for A-6 will be reviewed annually and migration of ineligible customers will be
+implemented once per year, on bill cycles each November, using the same procedures
+described in Schedule A-1 for Time-of-Use (TOU) rates adopted in Decision 10-02-032 as
+modified by Decision 11-11-008. Any customer with a maximum demand of 75 kW or
+greater, or with usage of 150,000 kWh per year or greater, who sends PG&E a letter (via
+certified mail with a return receipt to establish a delivery record date on or before March
+31, 2017) requesting a rate""" ;
+  vaem:name "SMALL GENERAL TIME-OF-USE SERVICE" ;
+  vaem:url "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_A-6.pdf"^^xsd:anyURI ;
+  rdfs:label "PGE A06 Pricing Structure" ;
+  skos:prefLabel "PGE A06 pricing structure" ;
+.
+td:PGE_A10_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:code "PGEA10" ;
+  tariff:revenueKind "commercial" ;
+  tariff:tariffs td:A10TariffSummer2018 ;
+  tariff:tariffs td:A10TariffSummer2019 ;
+  tariff:tariffs td:A10TariffWinter2017 ;
+  tariff:tariffs td:A10TariffWinter2018 ;
+  tariff:tariffs td:A10TariffWinter2019 ;
+  vaem:description """Schedule A-10 is a demand metered rate schedule for general service customers.
+Schedule A-10 applies to single-phase and polyphase alternating-current service (for a
+description of these terms, see Section D of Rule 2*). This schedule is not available to
+residential or agricultural service for which a residential or agricultural schedule is
+applicable, except for single-phase and polyphase service in common areas in a
+multifamily complex (see Common-Area Accounts section).
+Under Rate Schedule A-10, there is a limit on the demand (the number of kilowatts (kW))
+the customer may require from the PG&E system. If the customer's demand exceeds
+499 kW for three consecutive months, the customer's account will be transferred to
+Schedule E-19 or E-20.""" ;
+  vaem:name "MEDIUM GENERAL DEMAND-METERED SERVICE" ;
+  vaem:url "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_A-10.pdf"^^xsd:anyURI ;
+  rdfs:label "PGE A10 Pricing Structure" ;
+  skos:prefLabel "PGE A10 pricing structure" ;
+.
+td:PGE_E19_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:code "PGEE19" ;
+  tariff:revenueKind "commercial" ;
+  tariff:tariffs td:E19TariffSummer2018 ;
+  tariff:tariffs td:E19TariffSummer2019 ;
+  tariff:tariffs td:E19TariffWinter2017 ;
+  tariff:tariffs td:E19TariffWinter2018 ;
+  tariff:tariffs td:E19TariffWinter2019 ;
+  vaem:description """A customer must take service under Schedule E-19 if: (1) the
+customer's load does not meet the Schedule E-20 requirements, but, (2) the customer's
+maximum billing demand (as defined below) has exceeded 499 kilowatts for at least
+three consecutive months during the most recent 12-month period (referred to as
+Schedule E-19). If 70 percent or more of the customer's energy use is for agricultural
+end-uses, the customer will be served under an agricultural schedule. Schedule E-19
+is not applicable to customers for whom residential service would apply, except for
+single-phase and polyphase service in common areas in a multifamily complex (see
+Common-Area Accounts section).""" ;
+  vaem:name "MEDIUM GENERAL DEMAND-METERED TOU SERVICE" ;
+  vaem:url "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-19.pdf"^^xsd:anyURI ;
+  rdfs:label "PGE E19 Pricing Structure " ;
+  skos:prefLabel "PGE E19 pricing structure " ;
+.
+td:PGE_E20_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:code "PGEE20" ;
+  tariff:revenueKind "commercial" ;
+  tariff:tariffs td:E20TariffSummer2018 ;
+  tariff:tariffs td:E20TariffSummer2019 ;
+  tariff:tariffs td:E20TariffWinter2017 ;
+  tariff:tariffs td:E20TariffWinter2018 ;
+  tariff:tariffs td:E20TariffWinter2019 ;
+  vaem:description """A customer is eligible for service under Schedule E-20 if the
+customer’s maximum demand (as defined below) has exceeded 999 kilowatts for at least
+three consecutive months during the most recent 12-month period. If 70 percent or more
+of the customer’s energy use is for agricultural end-uses, the customer will be served
+under an agricultural schedule.
+Customer accounts which fail to qualify under these requirements will be evaluated for
+transfer to service under a different applicable rate schedule.""" ;
+  vaem:name "INDUSTRIAL/GENERAL SERVICE" ;
+  vaem:url "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-19.pdf"^^xsd:anyURI ;
+  rdfs:label "PGE E20 Pricing Structure " ;
+  skos:prefLabel "PGE E20 pricing structure " ;
+.
+td:PGE_E6X_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:revenueKind "residential" ;
+  tariff:tariffs td:e6xWinterTariff ;
+  <http://www.linkedmodel.org/schema/dtype#code> "E-6X"^^xsd:anySimpleType ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:PacificTime
+  rdf:type fsgim-time:LocalTimeParameters ;
+  fsgim-time:hasDstEndRuleRef td:USADSTEndRule ;
+  fsgim-time:hasDstOffset "3600"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasDstStartRuleRef td:USADSTStartRule ;
+  fsgim-time:hasTzOffset "-28800"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasTzid "America/Los_Angeles"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#String> ;
+  vaem:description """Excerpt from https://www.iana.org/time-zones : NorthAmerica   
+
+US Pacific time, represented by Los Angeles (tzID: America/Los_Angeles)
+
+California, northern Idaho (Benewah, Bonner, Boundary, Clearwater, Kootenai, Latah, Lewis, Nez Perce, and Shoshone counties, Idaho county north of the Salmon River, and the towns of Burgdorf and Warren), Nevada (except West Wendover), Oregon (except the northern ¾ of Malheur county), and Washington""" ;
+  skos:prefLabel "" ;
+.
+td:RuleStart
+  rdf:type fsgim-time:DstRuleEnumeratedValue ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCE08BSummerPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCE08BSummerPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.05796"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCE08BSummerPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCE08BSummerPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.08062"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCE08BSummerPeriod2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCE08BSummerPeriod2Charge ;
+  tariff:period 2 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerPeriod2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.10327"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BSummerProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:SCE08BSummerPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:SCE08BSummerPeriod1Consumption ;
+  tariff:consumptionTariffIntervals td:SCE08BSummerPeriod2Consumption ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayAfternoon ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayEarlyMorning ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayEvening ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayMorning ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayNight ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekend ;
+  rdfs:label "SCE TOU-8-RBU Summer Profile" ;
+.
+td:SCE08BTariffSummer2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-09-30"^^xsd:date ;
+  tariff:startDate "2018-06-01"^^xsd:date ;
+  tariff:tariffProfile td:SCE08BSummerProfile ;
+  rdfs:label "SCE TOU-8-RBU Tariff" ;
+.
+td:SCE08BTariffSummer2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-09-30"^^xsd:date ;
+  tariff:startDate "2019-06-01"^^xsd:date ;
+  tariff:tariffProfile td:SCE08BSummerProfile ;
+  rdfs:label "SCE TOU-8-RBU Tariff" ;
+.
+td:SCE08BTariffWinter2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-05-31"^^xsd:date ;
+  tariff:startDate "2018-10-01"^^xsd:date ;
+  tariff:tariffProfile td:SCE08BWinterProfile ;
+  rdfs:label "SCE TOU-8-RBU Tariff" ;
+.
+td:SCE08BTariffWinter2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2020-05-31"^^xsd:date ;
+  tariff:startDate "2019-10-01"^^xsd:date ;
+  tariff:tariffProfile td:SCE08BWinterProfile ;
+  rdfs:label "SCE TOU-8-RBU Tariff" ;
+.
+td:SCE08BWinterPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCE08BWinterPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BWinterPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCE08BWinterPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BWinterPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.06355"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BWinterPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCE08BWinterPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BWinterPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCE08BWinterPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BWinterPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.0745"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCE08BWinterProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:SCE08BWinterPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:SCE08BWinterPeriod1Consumption ;
+  tariff:timeTariffIntervals td:SCEcommercialWinterWeekdayDay ;
+  tariff:timeTariffIntervals td:SCEcommercialWinterWeekdayMorning ;
+  tariff:timeTariffIntervals td:SCEcommercialWinterWeekdayNight ;
+  tariff:timeTariffIntervals td:SCEcommercialWinterWeekend ;
+  rdfs:label "SCE TOU-8-RBU Winter Profile" ;
+.
+td:SCEElectricity
+  rdf:type tariff:ServiceCategory ;
+  tariff:pricingStructures td:SCE_08B_PricingStructure ;
+  tariff:pricingStructures td:SCE_TGS3_PricingStructure ;
+  rdfs:label "SCE Electricity Service" ;
+.
+td:SCETGS3SummerPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCETGS3SummerPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCETGS3SummerPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.05889"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCETGS3SummerPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCETGS3SummerPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.08035"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerPeriod2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCETGS3SummerPeriod2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerPeriod2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCETGS3SummerPeriod2Charge ;
+  tariff:period 2 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerPeriod2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.12313"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3SummerProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:SCETGS3SummerPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:SCETGS3SummerPeriod1Consumption ;
+  tariff:consumptionTariffIntervals td:SCETGS3SummerPeriod2Consumption ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayAfternoon ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayEarlyMorning ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayEvening ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayMorning ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekdayNight ;
+  tariff:timeTariffIntervals td:SCEcommercialSummerWeekend ;
+  rdfs:label "SCE TOU-GS-3 Summer Profile" ;
+.
+td:SCETGS3TariffSummer2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-09-30"^^xsd:date ;
+  tariff:startDate "2018-06-01"^^xsd:date ;
+  tariff:tariffProfile td:SCETGS3SummerProfile ;
+  rdfs:label "SCE TOU-GS-3 Tariff" ;
+.
+td:SCETGS3TariffSummer2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-09-30"^^xsd:date ;
+  tariff:startDate "2019-06-01"^^xsd:date ;
+  tariff:tariffProfile td:SCETGS3SummerProfile ;
+  rdfs:label "SCE TOU-GS-3 Tariff" ;
+.
+td:SCETGS3TariffWinter2018
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2019-05-31"^^xsd:date ;
+  tariff:startDate "2018-10-01"^^xsd:date ;
+  tariff:tariffProfile td:SCETGS3WinterProfile ;
+  rdfs:label "SCE TOU-GS-3 Tariff" ;
+.
+td:SCETGS3TariffWinter2019
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2020-05-31"^^xsd:date ;
+  tariff:startDate "2019-10-01"^^xsd:date ;
+  tariff:tariffProfile td:SCETGS3WinterProfile ;
+  rdfs:label "SCE TOU-GS-3 Tariff" ;
+.
+td:SCETGS3WinterPeriod0Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCETGS3WinterPeriod0Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3WinterPeriod0Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCETGS3WinterPeriod0Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3WinterPeriod0Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.06447"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3WinterPeriod1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:SCETGS3WinterPeriod1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3WinterPeriod1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:SCETGS3WinterPeriod1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3WinterPeriod1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.07518"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCETGS3WinterProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:SCETGS3WinterPeriod0Consumption ;
+  tariff:consumptionTariffIntervals td:SCETGS3WinterPeriod1Consumption ;
+  tariff:timeTariffIntervals td:SCEcommercialWinterWeekdayDay ;
+  tariff:timeTariffIntervals td:SCEcommercialWinterWeekdayMorning ;
+  tariff:timeTariffIntervals td:SCEcommercialWinterWeekdayNight ;
+  tariff:timeTariffIntervals td:SCEcommercialWinterWeekend ;
+  rdfs:label "SCE TOU-GS-3 Winter Profile" ;
+.
+td:SCE_08B_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:code "SCE08B" ;
+  tariff:revenueKind "commercial" ;
+  tariff:tariffs td:SCE08BTariffSummer2018 ;
+  tariff:tariffs td:SCE08BTariffSummer2019 ;
+  tariff:tariffs td:SCE08BTariffWinter2018 ;
+  tariff:tariffs td:SCE08BTariffWinter2019 ;
+  rdfs:label "SCE TOU-8-RBU Pricing Structure" ;
+.
+td:SCE_TGS3_PricingStructure
+  rdf:type tariff:PricingStructure ;
+  tariff:code "SCETGS3" ;
+  tariff:revenueKind "commercial" ;
+  tariff:tariffs td:SCETGS3TariffSummer2018 ;
+  tariff:tariffs td:SCETGS3TariffSummer2019 ;
+  tariff:tariffs td:SCETGS3TariffWinter2018 ;
+  tariff:tariffs td:SCETGS3TariffWinter2019 ;
+  rdfs:label "SCE TOU-GS-3, Option CPP Pricing Structure" ;
+.
+td:SCEcommercialSummerWeekdayAfternoon
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "12:00:00"^^xsd:time ;
+  tariff:periodReference 2 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialSummerWeekdayEarlyMorning
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialSummerWeekdayEvening
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "18:00:00"^^xsd:time ;
+  tariff:periodReference 1 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialSummerWeekdayMorning
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "08:00:00"^^xsd:time ;
+  tariff:periodReference 1 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialSummerWeekdayNight
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "23:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialSummerWeekend
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "saturday" ;
+  tariff:dow "sunday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  tariff:seconds 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialWinterWeekdayDay
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "08:00:00"^^xsd:time ;
+  tariff:periodReference 1 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialWinterWeekdayMorning
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialWinterWeekdayNight
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "21:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:SCEcommercialWinterWeekend
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "saturday" ;
+  tariff:dow "sunday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  tariff:seconds 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:USADSTEndRule
+  rdf:type fsgim-time:DstTransitionRule ;
+  fsgim-time:hasDowRef enumerations---common_primitive_types_classes_and_enumerations:WT_Sunday ;
+  fsgim-time:hasHours "2"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasMonthRef enumerations---common_primitive_types_classes_and_enumerations:MT_November ;
+  fsgim-time:hasRuleRef fsgim-time:DR_FirstOccurance ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:USADSTStartRule
+  rdf:type fsgim-time:DstTransitionRule ;
+  fsgim-time:hasDowRef enumerations---common_primitive_types_classes_and_enumerations:WT_Sunday ;
+  fsgim-time:hasHours "2"^^<http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/primitive_data_types---common_primitive_types_classes_and_enumerations#Integer> ;
+  fsgim-time:hasMonthRef enumerations---common_primitive_types_classes_and_enumerations:MT_March ;
+  fsgim-time:hasRuleRef fsgim-time:DR_SecondOccurence ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialSummerWeekdayAfternoon
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "12:00:00"^^xsd:time ;
+  tariff:periodReference 2 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialSummerWeekdayEarlyMorning
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialSummerWeekdayEvening
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "18:00:00"^^xsd:time ;
+  tariff:periodReference 1 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialSummerWeekdayMorning
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "08:30:00"^^xsd:time ;
+  tariff:periodReference 1 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialSummerWeekdayNight
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "21:30:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialSummerWeekend
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "saturday" ;
+  tariff:dow "sunday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  tariff:seconds 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialWinterWeekdayDay
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "08:30:00"^^xsd:time ;
+  tariff:periodReference 1 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialWinterWeekdayMorning
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialWinterWeekdayNight
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours "21:30:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:commercialWinterWeekend
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "saturday" ;
+  tariff:dow "sunday" ;
+  tariff:hours "00:00:00"^^xsd:time ;
+  tariff:periodReference 0 ;
+  tariff:seconds 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod0Tier1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:e6xPeriod0Tier1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod0Tier1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:e6xPeriod0Tier1Charge ;
+  tariff:period 0 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod0Tier1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.18352"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod0Tier2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:e6xPeriod0Tier2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod0Tier2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:e6xPeriod0Tier2Charge ;
+  tariff:period 0 ;
+  tariff:startValue "10.9"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod0Tier2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.26933"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod1Tier1Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:e6xPeriod1Tier1Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod1Tier1Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:e6xPeriod1Tier1Charge ;
+  tariff:period 1 ;
+  tariff:startValue "0"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod1Tier1Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.20035"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod1Tier2Charge
+  rdf:type tariff:Charge ;
+  tariff:fixedPortion td:e6xPeriod1Tier2Cost ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod1Tier2Consumption
+  rdf:type tariff:ConsumptionTariffInterval ;
+  tariff:charges td:e6xPeriod0Tier2Charge ;
+  tariff:period 1 ;
+  tariff:startValue "10.9"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xPeriod1Tier2Cost
+  rdf:type tariff:AccountingUnit ;
+  tariff:monetaryUnit <http://qudt.org/vocab/unit#USDollar> ;
+  tariff:multiplier 1 ;
+  tariff:value "0.28616"^^xsd:float ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xWinterProfile
+  rdf:type tariff:TariffProfile ;
+  tariff:consumptionTariffIntervals td:e6xPeriod0Tier1Consumption ;
+  tariff:consumptionTariffIntervals td:e6xPeriod0Tier2Consumption ;
+  tariff:consumptionTariffIntervals td:e6xPeriod1Tier1Consumption ;
+  tariff:consumptionTariffIntervals td:e6xPeriod1Tier2Consumption ;
+  tariff:timeTariffIntervals td:e6xWinterWeekdayEvening ;
+  tariff:timeTariffIntervals td:e6xWinterWeekdayMorning ;
+  tariff:timeTariffIntervals td:e6xWinterWeekdayNight ;
+  tariff:timeTariffIntervals td:e6xWinterWeekend ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xWinterTariff
+  rdf:type tariff:Tariff ;
+  tariff:endDate "2018-04-30"^^xsd:date ;
+  tariff:startDate "2017-11-01"^^xsd:date ;
+  tariff:tariffProfile td:e6xWinterProfile ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xWinterWeekdayEvening
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours 17 ;
+  tariff:periodReference 1 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xWinterWeekdayMorning
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours 0 ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xWinterWeekdayNight
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "friday" ;
+  tariff:dow "monday" ;
+  tariff:dow "thursday" ;
+  tariff:dow "tuesday" ;
+  tariff:dow "wednesday" ;
+  tariff:hours 20 ;
+  tariff:periodReference 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.
+td:e6xWinterWeekend
+  rdf:type tariff:TimeTariffInterval ;
+  tariff:dow "saturday" ;
+  tariff:dow "sunday" ;
+  tariff:hours 0 ;
+  tariff:periodReference 0 ;
+  tariff:seconds 0 ;
+  rdfs:label "" ;
+  skos:prefLabel "" ;
+.

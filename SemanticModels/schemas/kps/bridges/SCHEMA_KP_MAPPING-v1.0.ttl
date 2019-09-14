@@ -1,0 +1,30 @@
+# baseURI: http://siemens.com/schemas/kps/bridges/mapping
+# prefix: mapping
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/bridges/mapping>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The Mapping ontology creates superclass for all bridge and adapter models."^^xsd:string ;
+  dc:subject "A bridge and mapping superclass"^^xsd:string ;
+  dc:title "The Mapping class"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology is used for bridging and mapping ontologies."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/bridges/mapping#"^^xsd:string ;
+  vaem:namespacePrefix "mapping"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/bridges/mapping"^^xsd:anyURI ;
+  rdfs:label "IFC to SSN Integration Bridge"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_MAPPING-v1.0.ttl 1954 2018-08-21 13:35:02Z jhodges $"^^xsd:string ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+mapping:MappingThing
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.

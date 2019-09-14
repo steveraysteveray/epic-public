@@ -1,0 +1,839 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/quantity/base>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 13:34:19 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:versionInfo "$Id: OVG_quantities-qudt-(v1.1).ttl 4988 2011-06-01 20:34:19Z RalphHodgson $"^^xsd:string ;
+.
+quantity:AbsoluteHumidity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Absolute Humidity"^^xsd:string ;
+.
+quantity:AbsorbedDose
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Absorbed Dose"^^xsd:string ;
+.
+quantity:AbsorbedDoseRate
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Absorbed Dose Rate"^^xsd:string ;
+.
+quantity:Absorptance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:AcousticImpedance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:Activity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Activity"^^xsd:string ;
+.
+quantity:AmountOfSubstance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:AmountOfSubstancePerUnitMass
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Amount of Substance per Unit Mass"^^xsd:string ;
+.
+quantity:AmountOfSubstancePerUnitVolume
+  rdf:type qudt:QuantityKind ;
+.
+quantity:AngularAcceleration
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Angular Acceleration"^^xsd:string ;
+.
+quantity:AngularFrequency
+  rdf:type qudt:QuantityKind ;
+.
+quantity:AngularMeasurement
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Angular Measurement"^^xsd:string ;
+.
+quantity:AngularMomentum
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Angular Momentum"^^xsd:string ;
+.
+quantity:AngularVelocity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Angular Velocity"^^xsd:string ;
+.
+quantity:AngularWavenumber
+  rdf:type qudt:QuantityKind ;
+.
+quantity:Area
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Area"^^xsd:string ;
+.
+quantity:AreaAngle
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Area Angle"^^xsd:string ;
+.
+quantity:AreaPerTime
+  rdf:type qudt:QuantityKind ;
+.
+quantity:AreaTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Area Temperature"^^xsd:string ;
+.
+quantity:AreaThermalExpansion
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Area Thermal Expansion"^^xsd:string ;
+.
+quantity:AreaTime
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Area Time"^^xsd:string ;
+.
+quantity:AreaTimeTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Area Time Temperature"^^xsd:string ;
+.
+quantity:AtomicCharge
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Atomic Charge"^^xsd:string ;
+.
+quantity:AuxillaryMagneticField
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Auxillary Magnetic Field"^^xsd:string ;
+  owl:sameAs quantity:MagneticFieldStrength ;
+.
+quantity:Capacitance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Capacitance"^^xsd:string ;
+.
+quantity:CatalyticActivity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Catalytic Activity"^^xsd:string ;
+.
+quantity:CoefficientOfHeatTransfer
+  rdf:type qudt:QuantityKind ;
+.
+quantity:Curvature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Curvature"^^xsd:string ;
+.
+quantity:Density
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Density"^^xsd:string ;
+.
+quantity:Dimensionless
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Dimensionless"^^xsd:string ;
+.
+quantity:DimensionlessRatio
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Dimensionless Ratio"^^xsd:string ;
+.
+quantity:DoseEquivalent
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Dose Equivalent"^^xsd:string ;
+.
+quantity:DryVolume
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Dry Volume"^^xsd:string ;
+.
+quantity:DynamicViscosity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Dynamic Viscosity"^^xsd:string ;
+.
+quantity:ElectricCharge
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Charge"^^xsd:string ;
+.
+quantity:ElectricChargeLineDensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Charge Line Density"^^xsd:string ;
+.
+quantity:ElectricChargePerAmountOfSubstance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:ElectricChargePerArea
+  rdf:type qudt:QuantityKind ;
+.
+quantity:ElectricChargePerMass
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Charge Per Mass"^^xsd:string ;
+.
+quantity:ElectricChargeVolumeDensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Charge Volume Density"^^xsd:string ;
+.
+quantity:ElectricConductivity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Conductivity"^^xsd:string ;
+.
+quantity:ElectricCurrent
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Current"^^xsd:string ;
+.
+quantity:ElectricCurrentDensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Current Density"^^xsd:string ;
+.
+quantity:ElectricCurrentPerAngle
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Current per Angle"^^xsd:string ;
+.
+quantity:ElectricDipoleMoment
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Dipole Moment"^^xsd:string ;
+.
+quantity:ElectricFieldStrength
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Field Strength"^^xsd:string ;
+.
+quantity:ElectricFlux
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Flux"^^xsd:string ;
+.
+quantity:ElectricPotential
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Potential"^^xsd:string ;
+  owl:sameAs quantity:EnergyPerElectricCharge ;
+.
+quantity:ElectricPower
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Power"^^xsd:string ;
+.
+quantity:ElectricQuadrupoleMoment
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Electric Quadrupole Moment"^^xsd:string ;
+.
+quantity:EnergyAndWork
+  rdf:type qudt:QuantityKind ;
+.
+quantity:EnergyAndWorkPerMassAmountOfSubstance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:EnergyDensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Energy Density"^^xsd:string ;
+.
+quantity:EnergyPerArea
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Energy per Area"^^xsd:string ;
+.
+quantity:EnergyPerAreaElectricCharge
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Energy Per Area Electric Charge"^^xsd:string ;
+.
+quantity:EnergyPerElectricCharge
+  rdf:type qudt:QuantityKind ;
+  owl:sameAs quantity:ElectricPotential ;
+.
+quantity:EnergyPerSquareMagneticFluxDensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Energy Per Square Magnetic Flux Density"^^xsd:string ;
+.
+quantity:EnergyPerTemperature
+  rdf:type qudt:QuantityKind ;
+.
+quantity:EquivalentAbsorptionArea
+  rdf:type qudt:QuantityKind ;
+.
+quantity:Exposure
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Exposure"^^xsd:string ;
+.
+quantity:Force
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Force"^^xsd:string ;
+.
+quantity:ForcePerArea
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Force Per Area"^^xsd:string ;
+.
+quantity:ForcePerAreaTime
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Force Per Area Time"^^xsd:string ;
+.
+quantity:ForcePerElectricCharge
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Force per Electric Charge"^^xsd:string ;
+.
+quantity:ForcePerLength
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Force per Length"^^xsd:string ;
+.
+quantity:Frequency
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Frequency"^^xsd:string ;
+.
+quantity:GravitationalAttraction
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Gravitational Attraction"^^xsd:string ;
+.
+quantity:HeartRate
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Heart Rate"^^xsd:string ;
+.
+quantity:HeatCapacity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Heat Capacity"^^xsd:string ;
+.
+quantity:HeatFlowRate
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Heat Flow Rate"^^xsd:string ;
+.
+quantity:HeatFluxDensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Heat Flux Density"^^xsd:string ;
+.
+quantity:Illuminance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Illuminance"^^xsd:string ;
+.
+quantity:Inductance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inductance"^^xsd:string ;
+.
+quantity:InformationEntropy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Information Entropy"^^xsd:string ;
+.
+quantity:InverseAmountOfSubstance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:InverseLength
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Length"^^xsd:string ;
+.
+quantity:InverseLengthTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Length Temperature"^^xsd:string ;
+.
+quantity:InverseMagneticFlux
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Magnetic Flux"^^xsd:string ;
+.
+quantity:InversePermittivity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Permittivity"^^xsd:string ;
+.
+quantity:InversePressure
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Pressure"^^xsd:string ;
+.
+quantity:InverseSquareEnergy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Square Energy"^^xsd:string ;
+.
+quantity:InverseTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Temperature"^^xsd:string ;
+.
+quantity:InverseTimeTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Time Temperature"^^xsd:string ;
+.
+quantity:InverseVolume
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Inverse Volume"^^xsd:string ;
+.
+quantity:Irradiance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Irradiance"^^xsd:string ;
+.
+quantity:IsothermalCompressibility
+  rdf:type qudt:QuantityKind ;
+.
+quantity:KinematicViscosity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Kinematic Viscosity"^^xsd:string ;
+.
+quantity:Length
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Length"^^xsd:string ;
+.
+quantity:LengthEnergy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Length Energy"^^xsd:string ;
+.
+quantity:LengthMass
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Length Mass"^^xsd:string ;
+.
+quantity:LengthMolarEnergy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Length Molar Energy"^^xsd:string ;
+.
+quantity:LengthTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Length Temperature"^^xsd:string ;
+.
+quantity:LengthTemperatureTime
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Length Temperature Time"^^xsd:string ;
+.
+quantity:LinearAcceleration
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Linear Acceleration"^^xsd:string ;
+.
+quantity:LinearEnergyTransfer
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Linear Energy Transfer"^^xsd:string ;
+.
+quantity:LinearMomentum
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Linear Momentum"^^xsd:string ;
+.
+quantity:LinearThermalExpansion
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Linear Thermal Expansion"^^xsd:string ;
+.
+quantity:LinearVelocity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Linear Velocity"^^xsd:string ;
+.
+quantity:LiquidVolume
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Liquid Volume"^^xsd:string ;
+.
+quantity:LogarithmicFrequencyInterval
+  rdf:type qudt:QuantityKind ;
+.
+quantity:Luminance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Luminance"^^xsd:string ;
+.
+quantity:LuminousEfficacy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Luminous Efficacy"^^xsd:string ;
+.
+quantity:LuminousEnergy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Luminous Energy"^^xsd:string ;
+.
+quantity:LuminousFlux
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Luminous Flux"^^xsd:string ;
+.
+quantity:LuminousFluxPerArea
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Luminous Flux per Area"^^xsd:string ;
+.
+quantity:LuminousIntensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Luminous Intensity"^^xsd:string ;
+.
+quantity:MagneticDipoleMoment
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Magnetic Dipole Moment"^^xsd:string ;
+.
+quantity:MagneticFieldStrength
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Magnetic Field Strength"^^xsd:string ;
+  owl:sameAs quantity:AuxillaryMagneticField ;
+  skos:prefLabel "Magnetic Field Strength"^^xsd:string ;
+.
+quantity:MagneticFlux
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Magnetic Flux"^^xsd:string ;
+.
+quantity:MagneticFluxDensity
+  rdf:type qudt:QuantityKind ;
+.
+quantity:MagneticFluxPerUnitLength
+  rdf:type qudt:QuantityKind ;
+.
+quantity:MagneticReluctivity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Magnetic Reluctivity"^^xsd:string ;
+.
+quantity:MagnetomotiveForce
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Magnetomotive Force"^^xsd:string ;
+.
+quantity:Mass
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mass"^^xsd:string ;
+.
+quantity:MassAmountOfSubstance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mass Amount of Substance"^^xsd:string ;
+.
+quantity:MassAmountOfSubstanceTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mass Amount of Substance Temperature"^^xsd:string ;
+.
+quantity:MassPerArea
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mass per Area"^^xsd:string ;
+.
+quantity:MassPerElectricCharge
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mass per Electric Charge"^^xsd:string ;
+.
+quantity:MassPerLength
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mass per Length"^^xsd:string ;
+.
+quantity:MassPerTime
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mass per Time"^^xsd:string ;
+.
+quantity:MassTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mass Temperature"^^xsd:string ;
+.
+quantity:MechanicalImpedance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mechanical Impedance"^^xsd:string ;
+.
+quantity:MechanicalMobility
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Mechanical Mobility"^^xsd:string ;
+.
+quantity:MechanicalSurfaceImpedance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:MicrobialFormation
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Microbial Formation"^^xsd:string ;
+.
+quantity:MolarAngularMomentum
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Molar Angular Momentum"^^xsd:string ;
+.
+quantity:MolarEnergy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Molar Energy"^^xsd:string ;
+.
+quantity:MolarHeatCapacity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Molar Heat Capacity"^^xsd:string ;
+.
+quantity:MolarMass
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Molar Mass"^^xsd:string ;
+.
+quantity:MolarVolume
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Molar Volume"^^xsd:string ;
+.
+quantity:MolecularMass
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Molecular Mass"^^xsd:string ;
+.
+quantity:MomentOfInertia
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Moment of Inertia"^^xsd:string ;
+.
+quantity:Permeability
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Permeability"^^xsd:string ;
+.
+quantity:Permittivity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Permittivity"^^xsd:string ;
+.
+quantity:PhaseCoefficient
+  rdf:type qudt:QuantityKind ;
+.
+quantity:PhaseSpeedOfSound
+  rdf:type qudt:QuantityKind ;
+.
+quantity:PlaneAngle
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Plane Angle"^^xsd:string ;
+.
+quantity:Polarizability
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Polarizability"^^xsd:string ;
+.
+quantity:Power
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Power"^^xsd:string ;
+.
+quantity:PowerArea
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Power Area"^^xsd:string ;
+.
+quantity:PowerAreaPerSolidAngle
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Power Area per Solid Angle"^^xsd:string ;
+.
+quantity:PowerPerArea
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Power Per Area"^^xsd:string ;
+.
+quantity:PowerPerAreaAngle
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Power per Area Angle"^^xsd:string ;
+.
+quantity:PowerPerAreaQuarticTemperature
+  rdf:type qudt:QuantityKind ;
+.
+quantity:PowerPerElectricCharge
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Power Per Electric Charge"^^xsd:string ;
+.
+quantity:Pressure
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Pressure"^^xsd:string ;
+.
+quantity:PressureCoefficient
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Pressure Coefficient"^^xsd:string ;
+  skos:prefLabel "Pressure Coefficient"^^xsd:string ;
+.
+quantity:PropagationCoefficient
+  rdf:type qudt:QuantityKind ;
+.
+quantity:RF-Power
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "RF-Power"^^xsd:string ;
+.
+quantity:Radiance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Radiance"^^xsd:string ;
+.
+quantity:RadiantFlux
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Radiant Flux"^^xsd:string ;
+.
+quantity:RadiantIntensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Radiant Intensity"^^xsd:string ;
+.
+quantity:Reflectance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:Resistance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Resistance"^^xsd:string ;
+.
+quantity:RespiratoryRate
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Respiratory Rate"^^xsd:string ;
+.
+quantity:SignalDetectionThreshold
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Signal Detection Threshold"^^xsd:string ;
+.
+quantity:SignalStrength
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Signal Strength"^^xsd:string ;
+.
+quantity:SolidAngle
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Solid Angle"^^xsd:string ;
+.
+quantity:SoundEnergyDensity
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundExposure
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundExposureLevel
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundIntensity
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundParticleAcceleration
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundParticleDisplacement
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundParticleVelocity
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundPower
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundPowerLevel
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundPressure
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundPressureLevel
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundReductionIndex
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SoundVolumeVelocity
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SpecificAcousticImpedance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Specific Acoustic Impedance"^^xsd:string ;
+.
+quantity:SpecificEnergy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Specific Energy"^^xsd:string ;
+.
+quantity:SpecificHeatCapacity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Specific Heat Capacity"^^xsd:string ;
+.
+quantity:SpecificHeatCapacityAtConstantPressure
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SpecificHeatCapacityAtConstantVolume
+  rdf:type qudt:QuantityKind ;
+.
+quantity:SpecificVolume
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Specific Volume"^^xsd:string ;
+.
+quantity:SpeedOfSound
+  rdf:type qudt:QuantityKind ;
+.
+quantity:StandardGravitationalParameter
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Standard Gravitational Parameter"^^xsd:string ;
+.
+quantity:StaticPressure
+  rdf:type qudt:QuantityKind ;
+.
+quantity:StochasticProcess
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Stochastic Process"^^xsd:string ;
+.
+quantity:TemperatureAmountOfSubstance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Temperature Amount of Substance"^^xsd:string ;
+.
+quantity:TemperaturePerMagneticFluxDensity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Temperature per Magnetic Flux Density"^^xsd:string ;
+.
+quantity:TemperaturePerTime
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Temperature per Time"^^xsd:string ;
+.
+quantity:ThermalConductivity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thermal Conductivity"^^xsd:string ;
+.
+quantity:ThermalDiffusivity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thermal Diffusivity"^^xsd:string ;
+.
+quantity:ThermalEnergy
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thermal Energy"^^xsd:string ;
+.
+quantity:ThermalEnergyLength
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thermal Energy Length"^^xsd:string ;
+.
+quantity:ThermalInsulance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thermal Insulance"^^xsd:string ;
+.
+quantity:ThermalResistance
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thermal Resistance"^^xsd:string ;
+.
+quantity:ThermalResistivity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thermal Resistivity"^^xsd:string ;
+.
+quantity:ThermodynamicTemperature
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thermodynamic Temperature"^^xsd:string ;
+.
+quantity:ThrustToMassRatio
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Thrust To Mass Ratio"^^xsd:string ;
+.
+quantity:Time
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Time"^^xsd:string ;
+.
+quantity:TimeAveragedSoundIntensity
+  rdf:type qudt:QuantityKind ;
+.
+quantity:TimeSquared
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Time Squared"^^xsd:string ;
+.
+quantity:Torque
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Torque"^^xsd:string ;
+.
+quantity:Transmittance
+  rdf:type qudt:QuantityKind ;
+.
+quantity:Turbidity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Turbidity"^^xsd:string ;
+.
+quantity:Velocity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Velocity"^^xsd:string ;
+.
+quantity:VideoFrameRate
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Video Frame Rate"^^xsd:string ;
+.
+quantity:Volume
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Volume"^^xsd:string ;
+.
+quantity:VolumePerUnitTime
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Volume per Unit Time"^^xsd:string ;
+.
+quantity:VolumeThermalExpansion
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Volume Thermal Expansion"^^xsd:string ;
+.
+quantity:VolumetricHeatCapacity
+  rdf:type qudt:QuantityKind ;
+  rdfs:label "Volumetric Heat Capacity"^^xsd:string ;
+.
+quantity:Wavelength
+  rdf:type qudt:QuantityKind ;
+.
+quantity:Wavenumber
+  rdf:type qudt:QuantityKind ;
+.

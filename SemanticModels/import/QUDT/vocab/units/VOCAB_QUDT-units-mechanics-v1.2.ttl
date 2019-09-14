@@ -1,0 +1,3222 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/mechanics
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/unit/mechanics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Daniel Mekonnen"^^xsd:string ;
+  dc:contributor "Irene Polikoff"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Units of Measure"^^xsd:string ;
+  dc:title "QUDT Mechanics Units Vocabulary (without dimensions) Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Mechanics Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Mechanics"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used Mechanics units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate:  $"^^vaem:dateUnion ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/unit/acoustics> ;
+.
+unit:ATM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "atm"^^xsd:string ;
+  qudt:code "0100"^^xsd:string ;
+  qudt:conversionMultiplier "101325"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The standard atmosphere (symbol: atm) is an international reference pressure defined as 101.325 kPa and formerly used as unit of pressure. For practical purposes it has been replaced by the bar which is 100 kPa. The difference of about 1% is not significant for many applications, and is within the error range of common pressure gauges."^^xsd:string ;
+  qudt:designator "U-150-0100"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "atm"^^xsd:string ;
+  voag:supersededBy unit:BAR ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Standard Atmosphere"^^xsd:string ;
+  skos:altLabel "technical-atmosphere"^^xsd:string ;
+  skos:prefLabel "standard-atmosphere"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Atmosphere_(unit)> ;
+.
+unit:AssayTon
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "AT"^^xsd:string ;
+  qudt:code "1840"^^xsd:string ;
+  qudt:conversionMultiplier "0.032666667"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In the United States, a unit of mass, approximately 29.167 grams. The number of milligrams of precious metal in one assay ton of the ore being tested is equal to the number of troy ounces of pure precious metal in one 2000-pound ton of the ore. i.e. a bead is obtained that weights 3 milligrams, thus the precious metals in the bead would equal three troy ounces to each ton of ore with the understanding that this varies considerably in the real world as the amount of precious values in each ton of ore varies considerably."^^xsd:string ;
+  qudt:designator "U-150-1840"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "AT"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Assay Ton"^^xsd:string ;
+  skos:prefLabel "assay-ton"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.assaying.org/assayton.htm> ;
+.
+unit:AtmosphereTechnical
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "at"^^xsd:string ;
+  qudt:code "0105"^^xsd:string ;
+  qudt:conversionMultiplier "98066.5"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A technical atmosphere (symbol: at) is a non-SI unit of pressure equal to one kilogram-force per square centimeter. The symbol 'at' clashes with that of the katal (symbol: 'kat'), the SI unit of catalytic activity; a kilotechnical atmosphere would have the symbol 'kat', indistinguishable from the symbol for the katal. It also clashes with that of the non-SI unit, the attotonne, but that unit would be more likely be rendered as the equivalent SI unit."^^xsd:string ;
+  qudt:designator "U-150-0105"^^xsd:string ;
+  qudt:latexDefinition "$1 at = 98.0665 kPa \\approx 0.96784 standard atmospheres$"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "at"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Technical Atmosphere"^^xsd:string ;
+  rdfs:seeAlso unit:ATM ;
+  skos:prefLabel "technical-atmosphere"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Technical_atmosphere> ;
+.
+unit:BAR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "bar"^^xsd:string ;
+  qudt:code "0110"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The bar is a non-SI unit of pressure, defined by the IUPAC as exactly equal to 100,000 Pa. It is about equal to the atmospheric pressure on Earth at sea level, and since 1982 the IUPAC has recommended that the standard for atmospheric pressure should be harmonized to $100,000 Pa = 1 bar \\approx 750.0616827 Torr$. Units derived from the bar are the megabar (symbol: Mbar), kilobar (symbol: kbar), decibar (symbol: dbar), centibar (symbol: cbar), and millibar (symbol: mbar or mb). They are not SI or cgs units, but they are accepted for use with the SI."^^xsd:string ;
+  qudt:designator "U-150-0110"^^xsd:string ;
+  qudt:isAllowedUnitOfSystem qudt:SOU_SI ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "bar"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Bar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bar> ;
+  skos:prefLabel "bar"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bar?oldid=493875987> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bar_(unit)> ;
+.
+unit:BARAD
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "barad"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A barad is a dyne per square centimetre ($dyn \\cdot cm^{-2}$), and is equal to $0.1 Pa $ ($1\\micro bar$, $0.000014504 p.s.i$.). Note that this is precisely the microbar, the confusable bar being related in size to the normal atmospheric pressure, at $100 dyn \\cdot cm^{-2}$. Accordingly barad was not abbreviated, so occurs prefixed as in $cbarad = centibarad$. Despite being the coherent unit for pressure in c.g.s., barad was probably much less common than the non-coherent bar. Barad is sometimes called $barye$, a name also used for $bar$."^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Barad"^^xsd:string ;
+  owl:sameAs unit:BARYE ;
+.
+unit:BARYE
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "barye"^^xsd:string ;
+  qudt:conversionMultiplier "0.1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The barye, or sometimes barad, barrie, bary, baryd, baryed, or barie, is the centimetre-gram-second (CGS) unit of pressure. It is equal to 1 dyne per square centimetre."^^xsd:string ;
+  qudt:isDerivedCoherentUnitOfSystem qudt:SOU_CGS-MECHANICS ;
+  qudt:latexDefinition "$g/(cm\\cdot s{2}$"^^xsd:string ;
+  qudt:quantityKind quantity:Pressure ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Barye"^^xsd:string ;
+  owl:sameAs unit:BARAD ;
+  skos:altLabel "barad"^^xsd:string ;
+  skos:altLabel "barie"^^xsd:string ;
+  skos:altLabel "bary"^^xsd:string ;
+  skos:altLabel "baryd"^^xsd:string ;
+  skos:altLabel "baryed"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Barye> ;
+  skos:prefLabel "barye"^^xsd:string ;
+  prov:wasDerivedFrom <http://en.wikipedia.org/wiki/Barye?oldid=478631158> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Barye?oldid=478631158> ;
+.
+unit:BTU-PER-FT2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyPerAreaUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "Btu/ft^{2}"^^xsd:string ;
+  qudt:code "0250"^^xsd:string ;
+  qudt:conversionMultiplier "11356.5267"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Square Foot}' is an Imperial unit for  'Energy Per Area' expressed as $Btu/ft^{2}$."^^xsd:string ;
+  qudt:designator "U-150-0250"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerArea ;
+  qudt:symbol "Btu/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "BTU per Square Foot"^^xsd:string ;
+  skos:prefLabel "btu-per-square-foot"^^xsd:string ;
+.
+unit:BTU-PER-HR-FT2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  qudt:abbreviation "Btu/(hr-ft^{2})"^^xsd:string ;
+  qudt:code "0200"^^xsd:string ;
+  qudt:conversionMultiplier "3.15459075"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Hour Square Foot}' is an Imperial unit for  'Power Per Area' expressed as $Btu/(hr-ft^{2})$."^^xsd:string ;
+  qudt:designator "U-150-0200"^^xsd:string ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "Btu/(hr-ft^{2})"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "BTU per Hour Square Foot"^^xsd:string ;
+  skos:prefLabel "btu-per-hour-square-foot"^^xsd:string ;
+.
+unit:BTU-PER-SEC-FT2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  qudt:abbreviation "Btu/(s-ft^{2})"^^xsd:string ;
+  qudt:code "0240"^^xsd:string ;
+  qudt:conversionMultiplier "11356.5267"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{BTU per Second Square Foot}' is an Imperial unit for  'Power Per Area' expressed as $Btu/(s-ft^{2})$."^^xsd:string ;
+  qudt:designator "U-150-0240"^^xsd:string ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "Btu/(s-ft^{2})"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "BTU per Second Square Foot"^^xsd:string ;
+  skos:prefLabel "btu-per-second-square-foot"^^xsd:string ;
+.
+unit:BTU_IT-PER-FT3
+  rdf:type qudt:EnergyDensityUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "Btu(IT)-per-ft3"^^xsd:string ;
+  qudt:baseUnitDimensions "M \\cdot L^{-1} \\cdot T^{-2}"^^xsd:string ;
+  qudt:conversionMultiplier 3.725894579E04 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "British Thermal Unit (IT) Per Cubic Foot (Btu (IT)/ft^3) is a unit in the category of Energy density. It is also known as Btu per cubic foot, Btu/cubic foot. This unit is commonly used in the UK, US unit systems. It has a dimension of $ML^{-1}T^{-2}$ where M is mass, L is length, and T is time. It can be converted to the corresponding standard SI unit $J/m^3$ by multiplying its value by a factor of 37258.94579."^^xsd:string ;
+  qudt:quantityKind quantity:EnergyDensity ;
+  qudt:symbol "Btu_{IT}/ft^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "British Thermal Unit (IT) Per Cubic Foot"^^xsd:string ;
+  rdfs:seeAlso unit:BTU_TH-PER-FT3 ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--energy_density--british_thermal_unit_it_per_cubic_foot.cfm> ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/fuel-efficiency--volume/c/> ;
+.
+unit:BTU_TH-PER-FT3
+  rdf:type qudt:EnergyDensityUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "Btu(th)-per-ft3"^^xsd:string ;
+  qudt:conversionMultiplier 3.723403E04 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "British Thermal Unit (TH) Per Cubic Foot ($Btu (TH)/ft^3$) is a unit in the category of Energy density. It is also known as Btu per cubic foot, Btu/cubic foot. This unit is commonly used in the UK, US unit systems. It has a dimension of $ML^{-1}T^{-2}$ where M is mass, L is length, and T is time. It can be converted to the corresponding standard SI unit $J/m^3$ by multiplying its value by a factor of 37234.03."^^xsd:string ;
+  qudt:quantityKind quantity:EnergyDensity ;
+  qudt:symbol "Btu_{TH}/ft^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "British Thermal Unit (TH) Per Cubic Foot"^^xsd:string ;
+  rdfs:seeAlso unit:BTU_IT-PER-FT3 ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenB9.html> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--energy_density--british_thermal_unit_it_per_cubic_foot.cfm> ;
+  prov:wasInfluencedBy <http://www.translatorscafe.com/cafe/EN/units-converter/fuel-efficiency--volume/c/> ;
+.
+unit:Carat
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "Nm/ct"^^xsd:string ;
+  qudt:code "0360"^^xsd:string ;
+  qudt:conversionMultiplier "0.0002"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The carat is a unit of mass equal to 200 mg and is used for measuring gemstones and pearls. The current definition, sometimes known as the metric carat, was adopted in 1907 at the Fourth General Conference on Weights and Measures, and soon afterward in many countries around the world. The carat is divisible into one hundred points of two milligrams each. Other subdivisions, and slightly different mass values, have been used in the past in different locations. In terms of diamonds, a paragon is a flawless stone of at least 100 carats (20 g). The ANSI X.12 EDI standard abbreviation for the carat is CD."^^xsd:string ;
+  qudt:designator "U-150-0360"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "Nm/ct"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Carat"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Carat> ;
+  skos:prefLabel "carat"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Carat?oldid=477129057> ;
+.
+unit:CentiBAR
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "centibar"^^xsd:string ;
+  qudt:conversionMultiplier "1000.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The bar is a non-SI unit of pressure, defined by the IUPAC as exactly equal to 100,000 Pa. It is about equal to the atmospheric pressure on Earth at sea level, and since 1982 the IUPAC has recommended that the standard for atmospheric pressure should be harmonized to $100,000 Pa = 1 bar \\approx 750.0616827 Torr$. Units derived from the bar are the megabar (symbol: Mbar), kilobar (symbol: kbar), decibar (symbol: dbar), centibar (symbol: cbar), and millibar (symbol: mbar or mb). They are not SI or cgs units, but they are accepted for use with the SI."^^xsd:string ;
+  qudt:isAllowedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:BAR ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "cbar"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Centibar"^^xsd:string ;
+  skos:prefLabel "centibar"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bar_(unit)> ;
+.
+unit:CentiP
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DynamicViscosityUnit ;
+  qudt:abbreviation "cP"^^xsd:string ;
+  qudt:code "0370"^^xsd:string ;
+  qudt:conversionMultiplier "0.01"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Centipoise}' is a C.G.S System unit for  'Dynamic Viscosity' expressed as $cP$."^^xsd:string ;
+  qudt:designator "U-150-0370"^^xsd:string ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+  qudt:symbol "cP"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Centipoise"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Poise> ;
+  skos:prefLabel "centipoise"^^xsd:string ;
+.
+unit:CentiST
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:KinematicViscosityUnit ;
+  qudt:abbreviation "cSt"^^xsd:string ;
+  qudt:code "0375"^^xsd:string ;
+  qudt:conversionMultiplier "0.01"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Centistokes}' is a C.G.S System unit for  'Kinematic Viscosity' expressed as $cSt$."^^xsd:string ;
+  qudt:designator "U-150-0375"^^xsd:string ;
+  qudt:quantityKind quantity:KinematicViscosity ;
+  qudt:symbol "cSt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Centistokes"^^xsd:string ;
+  skos:prefLabel "centistokes"^^xsd:string ;
+.
+unit:CentimeterOfWater
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "cmH2O"^^xsd:string ;
+  qudt:code "0365"^^xsd:string ;
+  qudt:conversionMultiplier "98.0630016"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Centimeter of Water}' is a C.G.S System unit for  'Force Per Area' expressed as $cmH2O$."^^xsd:string ;
+  qudt:designator "U-150-0365"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "cmH2O"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Centimeter of Water"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Centimetre_of_water> ;
+  skos:prefLabel "centimeter-of-water"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Centimetre_of_water?oldid=487656894> ;
+.
+unit:DWT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "dwt"^^xsd:string ;
+  qudt:code "1340"^^xsd:string ;
+  qudt:conversionMultiplier "0.00155517384"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Penny Weight}' is a C.G.S System unit for  'Mass' expressed as $dwt$."^^xsd:string ;
+  qudt:designator "U-150-1340"^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "dwt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Penny Weight"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pennyweight> ;
+  skos:prefLabel "penny-weight"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pennyweight?oldid=486693644> ;
+.
+unit:DYN
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ForceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "dyn"^^xsd:string ;
+  qudt:code "0560"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In physics, the dyne is a unit of force specified in the centimetre-gram-second (CGS) system of units. One dyne is equal to In physics, the dyne is a unit of force specified in the centimetre-gram-second (CGS) system of units. One dyne is equal to \\SI{10}{\\micro\\newton}. Equivalently, the dyne is defined as 'the force required to accelerate a mass of one gram at a rate of one centimetre per second squared'. The dyne per centimetre is the unit traditionally used to measure surface tension. For example, the surface tension of distilled water is $72 dyn/cm$ at 25 deg C (77 deg F). Equivalently, the dyne is defined as 'the force required to accelerate a mass of one gram at a rate of one centimetre per second squared'. The dyne per centimetre is the unit traditionally used to measure surface tension. For example, the surface tension of distilled water is 72 dyn/cm at 25 deg C (77 deg F)."^^xsd:string ;
+  qudt:designator "U-150-0560"^^xsd:string ;
+  qudt:isDerivedCoherentUnitOfSystem qudt:SOU_CGS-MECHANICS ;
+  qudt:latexDefinition "$g\\cdot cm/s^{2}$"^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  qudt:symbol "dyn"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Dyne"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Dyne> ;
+  skos:prefLabel "dyne"^^xsd:string ;
+  prov:wasDerivedFrom <http://en.wikipedia.org/wiki/Dyne?oldid=494703827> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Dyne?oldid=494703827> ;
+.
+unit:DYN-CM
+  rdf:type qudt:BendingMomentOrTorqueUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "dyn-cm"^^xsd:string ;
+  qudt:code "0565"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Dyne Centimeter}' is a C.G.S System unit for  'Torque' expressed as $dyn-cm$."^^xsd:string ;
+  qudt:designator "U-150-0565"^^xsd:string ;
+  qudt:quantityKind quantity:Torque ;
+  qudt:symbol "dyn-cm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Dyne Centimeter"^^xsd:string ;
+  skos:prefLabel "dyne-centimeter"^^xsd:string ;
+.
+unit:DYN-PER-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "dyn/cm^{2}"^^xsd:string ;
+  qudt:code "0570"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-1 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Dyne per Square Centimeter}' is a C.G.S System unit for  'Force Per Area' expressed as $dyn/cm^{2}$."^^xsd:string ;
+  qudt:designator "U-150-0570"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "dyn/cm^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Dyne per Square Centimeter"^^xsd:string ;
+  skos:prefLabel "dyne-per-square-centimeter"^^xsd:string ;
+.
+unit:Dalton
+  rdf:type qudt:AtomicMassUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "Da"^^xsd:string ;
+  qudt:code "0485"^^xsd:string ;
+  qudt:conversionMultiplier 1.66053878283e-30 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-0485"^^xsd:string ;
+  qudt:quantityKind quantity:MolecularMass ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Dalton"^^xsd:string ;
+  owl:sameAs unit:UnifiedAtomicMassUnit ;
+  skos:altLabel "atomic-mass-unit"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Dalton> ;
+  skos:prefLabel "dalton"^^xsd:string ;
+  prov:wasInformedBy <http://en.wikipedia.org/wiki/Atomic_mass_unit> ;
+.
+unit:DeciBAR
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "dbar"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The bar is a non-SI unit of pressure, defined by the IUPAC as exactly equal to 100,000 Pa. It is about equal to the atmospheric pressure on Earth at sea level, and since 1982 the IUPAC has recommended that the standard for atmospheric pressure should be harmonized to $100,000 Pa = 1 bar \\approx 750.0616827 Torr$. Units derived from the bar are the megabar (symbol: Mbar), kilobar (symbol: kbar), decibar (symbol: dbar), centibar (symbol: cbar), and millibar (symbol: mbar or mb). They are not SI or cgs units, but they are accepted for use with the SI."^^xsd:string ;
+  qudt:isAllowedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:BAR ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "dbar"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Decibar"^^xsd:string ;
+  skos:prefLabel "decibar"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bar_(unit)> ;
+.
+unit:Denier
+  rdf:type qudt:MassPerLengthUnit ;
+  qudt:abbreviation "denier"^^xsd:string ;
+  qudt:code "0550"^^xsd:string ;
+  qudt:conversionMultiplier 1.1E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Denier or den is a unit of measure for the linear mass density of fibers. It is defined as the mass in grams per 9,000 meters. In the International System of Units the tex is used instead (see below). The denier is based on a natural standard: a single strand of silk is approximately one denier. A 9,000-meter strand of silk weighs about one gram. The term denier is from the French denier, a coin of small value (worth 1/12 of a sou). Applied to yarn, a denier was held to be equal in weight to 1/24 of an ounce. The term microdenier is used to describe filaments that weigh less than one gram per 9,000 meter length."^^xsd:string ;
+  qudt:designator "U-150-0550"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerLength ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Denier"^^xsd:string ;
+  rdfs:seeAlso unit:TEX ;
+  skos:exactMatch <http://dbpedia.org/resource/Denier> ;
+  skos:prefLabel "denier"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Denier?oldid=463382291> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Units_of_textile_measurement#Denier> ;
+.
+unit:ERG
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "erg"^^xsd:string ;
+  qudt:code "0580"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An erg is the unit of energy and mechanical work in the centimetre-gram-second (CGS) system of units, symbol 'erg'. Its name is derived from the Greek ergon, meaning 'work'. An erg is the amount of work done by a force of one dyne exerted for a distance of one centimeter. In the CGS base units, it is equal to one gram centimeter-squared per second-squared ($g \\cdot cm/s$). It is thus equal to 10 joules or 100 nanojoules in SI units. $1 erg = 10 J = 100 nJ$,  $1 erg = 624.15 GeV = 6.2415 \\times 10 eV$, $1 erg = 1 dyne cm = 1 g \\cdot cm/s$."^^xsd:string ;
+  qudt:designator "U-150-0580"^^xsd:string ;
+  qudt:isDerivedCoherentUnitOfSystem qudt:SOU_CGS-MECHANICS ;
+  qudt:latexDefinition "$g\\cdot cm^{2}/s^{2}$"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "erg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Erg"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Erg> ;
+  skos:prefLabel "erg"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Erg?oldid=490293432> ;
+.
+unit:ERG-PER-CM2-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "erg/(cm^{2}-s)"^^xsd:string ;
+  qudt:code "0590"^^xsd:string ;
+  qudt:conversionMultiplier "0.001"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Erg per Square Centimeter Second}' is a C.G.S System unit for  'Power Per Area' expressed as $erg/(cm^{2}-s)$."^^xsd:string ;
+  qudt:designator "U-150-0590"^^xsd:string ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "erg/(cm^{2}-s)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Erg per Square Centimeter Second"^^xsd:string ;
+  skos:prefLabel "erg-per-square-centimeter-second"^^xsd:string ;
+.
+unit:ERG-PER-CM3
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "erg-per-cm3"^^xsd:string ;
+  qudt:code "2018"^^xsd:string ;
+  qudt:conversionMultiplier "0.1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-2018"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyDensity ;
+  qudt:symbol "erg/cm^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Erg per Cubic Centimeter"^^xsd:string ;
+  skos:prefLabel "erg-per-cubic-centimeter"^^xsd:string ;
+.
+unit:ERG-PER-G
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:SpecificEnergyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "erg-per-g"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-4 ;
+  qudt:conversionOffset "0"^^xsd:double ;
+  qudt:quantityKind quantity:SpecificEnergy ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Erg per Gram"^^xsd:string ;
+  skos:prefLabel "erg-per-gram"^^xsd:string ;
+.
+unit:ERG-PER-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerUnit ;
+  qudt:abbreviation "erg/s"^^xsd:string ;
+  qudt:code "0585"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Erg per Second}' is a C.G.S System unit for  'Power' expressed as $erg/s$."^^xsd:string ;
+  qudt:designator "U-150-0585"^^xsd:string ;
+  qudt:latexDefinition "$g\\cdot cm^{2}/s^{3}$"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "erg/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Erg per Second"^^xsd:string ;
+  skos:prefLabel "erg-per-second"^^xsd:string ;
+.
+unit:ERG-SEC
+  rdf:type qudt:AngularMomentumUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "erg-sec"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:AngularMomentum ;
+  qudt:symbol "erg s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Erg Second"^^xsd:string ;
+  skos:prefLabel "erg-second"^^xsd:string ;
+.
+unit:EV
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "eV"^^xsd:string ;
+  qudt:code "0575"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-19 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An electron volt (eV) is the energy that an electron gains when it travels through a potential of one volt. You can imagine that the electron starts at the negative plate of a parallel plate capacitor and accelerates to the positive plate, which is at one volt higher potential. Numerically one eV equals 1.6x10-19 joules or a joule is 6.2x1018 eV. For example, it would take 6.2x1020 eV/sec to light a 100 watt light bulb."^^xsd:string ;
+  qudt:designator "U-150-0575"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:quantityValue qudt:ValueForElectronVolt ;
+  qudt:symbol "eV"^^xsd:string ;
+  rdfs:label "Electron Volt"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Electron_volt> ;
+  skos:prefLabel "electron-volt"^^xsd:string ;
+.
+unit:EV-SEC
+  rdf:type qudt:AngularMomentumUnit ;
+  rdf:type qudt:CGS-Unit ;
+  qudt:abbreviation "eV s"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-19 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Electron Volt Second}' is a C.G.S System unit for  'Angular Momentum' expressed as $eV s$."^^xsd:string ;
+  qudt:quantityKind quantity:AngularMomentum ;
+  qudt:symbol "eV s"^^xsd:string ;
+  rdfs:label "Electron Volt Second"^^xsd:string ;
+  skos:prefLabel "electron-volt-second"^^xsd:string ;
+.
+unit:EarthMass
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "earthmass"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Earth mass ($M_{\\oplus}$) is the unit of mass equal to that of the Earth. In SI Units, $1 M_{\\oplus} = 5.9722 \\times 1024 kg$. Earth mass is often used to describe masses of rocky terrestrial planets. The four terrestrial planets of the Solar System, Mercury, Venus, Earth, and Mars, have masses of 0.055, 0.815, 1.000, and 0.107 Earth masses respectively."^^xsd:string ;
+  qudt:latexDefinition """One Earth mass can be converted to related units:
+
+81.3 Lunar mass (ML)
+0.00315 Jupiter mass (MJ) (Jupiter has 317.83 Earth masses)[1]
+0.0105 Saturn mass (Saturn has 95.16 Earth masses)[3]
+0.0583 Neptune mass (Neptune has 17.147 Earth masses)[4]
+0.000 003 003 Solar mass ($M_{\\odot}$) (The Sun has 332946 Earth masses)"""^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Earth mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Earth_mass> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Earth_mass?oldid=495457885> ;
+.
+unit:FT-LBF
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft-lbf"^^xsd:string ;
+  qudt:code "0670"^^xsd:string ;
+  qudt:conversionMultiplier "1.35581807"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Pound Force}' is an Imperial unit for  'Energy And Work' expressed as $ft-lbf$."^^xsd:string ;
+  qudt:designator "U-150-0670"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "ft-lbf"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Pound Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Foot-pound_force> ;
+  skos:prefLabel "foot-pound-force"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Foot-pound_force?oldid=453269257> ;
+.
+unit:FT-LBF-PER-FT2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyPerAreaUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "ft-lbf/ft^{2}"^^xsd:string ;
+  qudt:code "0690"^^xsd:string ;
+  qudt:conversionMultiplier "14.5939042"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Pound per Square Foot}' is an Imperial unit for  'Energy Per Area' expressed as $ft-lbf/ft^{2}$."^^xsd:string ;
+  qudt:designator "U-150-0690"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerArea ;
+  qudt:symbol "ft-lbf/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Pound per Square Foot"^^xsd:string ;
+  skos:prefLabel "foot-pound-per-square-foot"^^xsd:string ;
+.
+unit:FT-LBF-PER-FT2-SEC
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft-lbf/ft^2s"^^xsd:string ;
+  qudt:code "0695"^^xsd:string ;
+  qudt:conversionMultiplier "14.5939042"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Pound Force per Square Foot Second}' is an Imperial unit for  'Power Per Area' expressed as $ft \\cdot lbf/(ft^2 \\cdot s)$."^^xsd:string ;
+  qudt:designator "U-150-0695"^^xsd:string ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "ft \\cdot lbf/(ft^2 \\cdot s)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Pound Force per Square Foot Second"^^xsd:string ;
+  skos:prefLabel "foot-pound-force-per-square-foot-second"^^xsd:string ;
+.
+unit:FT-LBF-PER-HR
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PowerUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft-lbf/hr"^^xsd:string ;
+  qudt:code "0675"^^xsd:string ;
+  qudt:conversionMultiplier 3.76616129E-3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Pound Force per Hour}' is an Imperial unit for  'Power' expressed as $ft-lbf/hr$."^^xsd:string ;
+  qudt:designator "U-150-0675"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "ft-lbf/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Pound Force per Hour"^^xsd:string ;
+  skos:prefLabel "foot-pound-force-per-hour"^^xsd:string ;
+.
+unit:FT-LBF-PER-M2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft-lbf/m^{2}"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Pound Force per Square Meter}' is a C.G.S System unit for  'Energy Per Area' expressed as $ft-lbf/m^{2}$."^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerArea ;
+  qudt:symbol "ft-lbf/m^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Pound Force per Square Meter"^^xsd:string ;
+  skos:prefLabel "foot-pound-force-per-square-meter"^^xsd:string ;
+.
+unit:FT-LBF-PER-MIN
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PowerUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft-lbf/min"^^xsd:string ;
+  qudt:code "0680"^^xsd:string ;
+  qudt:conversionMultiplier "0.0225969678"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Pound Force per Minute}' is an Imperial unit for  'Power' expressed as $ft-lbf/min$."^^xsd:string ;
+  qudt:designator "U-150-0680"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "ft-lbf/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Pound Force per Minute"^^xsd:string ;
+  skos:prefLabel "foot-pound-force-per-minute"^^xsd:string ;
+.
+unit:FT-LBF-PER-SEC
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PowerUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft-lbf/s"^^xsd:string ;
+  qudt:code "0685"^^xsd:string ;
+  qudt:conversionMultiplier "1.35581807"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Pound Force per Second}' is an Imperial unit for  'Power' expressed as $ft-lbf/s$."^^xsd:string ;
+  qudt:designator "U-150-0685"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "ft-lbf/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Pound Force per Second"^^xsd:string ;
+  skos:prefLabel "foot-pound-force-per-second"^^xsd:string ;
+.
+unit:FT-LBF-SEC
+  rdf:type qudt:AngularMomentumUnit ;
+  rdf:type qudt:CGS-Unit ;
+  qudt:abbreviation "lbf / s"^^xsd:string ;
+  qudt:description "'\\textit{Foot Pound Force Second}' is a C.G.S System unit for  'Angular Momentum' expressed as $lbf / s$."^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:AngularMomentum ;
+  qudt:symbol "lbf / s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Pound Force Second"^^xsd:string ;
+  skos:prefLabel "foot-pound-force-second"^^xsd:string ;
+.
+unit:FT-PDL
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ImperialUnit ;
+  qudt:abbreviation "ft-pdl"^^xsd:string ;
+  qudt:code "0665"^^xsd:string ;
+  qudt:conversionMultiplier "0.042140124"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot Poundal}' is an Imperial unit for  'Energy And Work' expressed as $ft-pdl$."^^xsd:string ;
+  qudt:designator "U-150-0665"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "ft-pdl"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot Poundal"^^xsd:string ;
+  skos:prefLabel "foot-poundal"^^xsd:string ;
+.
+unit:FT2-PER-SEC
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:KinematicViscosityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ft^{2}/s"^^xsd:string ;
+  qudt:code "1695"^^xsd:string ;
+  qudt:conversionMultiplier 0.09290304e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Square Foot per Second}' is an Imperial unit for  'Kinematic Viscosity' expressed as $ft^{2}/s$."^^xsd:string ;
+  qudt:designator "U-150-1695"^^xsd:string ;
+  qudt:quantityKind quantity:KinematicViscosity ;
+  qudt:symbol "ft^{2}/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Square Foot per Second"^^xsd:string ;
+  skos:prefLabel "square-foot-per-second"^^xsd:string ;
+.
+unit:FT_H20
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ftH2O"^^xsd:string ;
+  qudt:code "0640"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Foot of Water}' is a C.G.S System unit for  'Force Per Area' expressed as $ftH2O$."^^xsd:string ;
+  qudt:designator "U-150-0640"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "ftH2O"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Foot of Water"^^xsd:string ;
+  skos:prefLabel "foot-of-water"^^xsd:string ;
+.
+unit:GRAIN
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "gr"^^xsd:string ;
+  qudt:code "0765"^^xsd:string ;
+  qudt:conversionMultiplier 6.479891E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A grain is a unit of measurement of mass that is nominally based upon the mass of a single seed of a cereal.  The grain is the only unit of mass measure common to the three traditional English mass and weight systems; the obsolete Tower grain was, by definition, exactly  /64 of a troy grain. Since 1958, the grain or troy grain measure has been defined in terms of units of mass in the International System of Units as precisely 64.79891 milligrams. Thus, $1 gram \\approx 15.4323584 grains$.  There are precisely 7,000 grains per avoirdupois pound in the imperial and U.S. customary units, and 5,760 grains in the Troy pound."^^xsd:string ;
+  qudt:designator "U-150-0765"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "gr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Grain"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Cereal> ;
+  skos:prefLabel "grain"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cereal?oldid=495222949> ;
+.
+unit:GRAIN-PER-GAL
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  qudt:abbreviation "gr/gal"^^xsd:string ;
+  qudt:code "0770"^^xsd:string ;
+  qudt:conversionMultiplier "0.0142537675"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Grain per Gallon}' is an Imperial unit for  'Density' expressed as $gr/gal$."^^xsd:string ;
+  qudt:designator "U-150-0770"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "gr/gal"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Grain per Gallon"^^xsd:string ;
+  skos:prefLabel "grain-per-gallon"^^xsd:string ;
+.
+unit:GRAM
+  rdf:type qudt:CGS-BaseUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "g"^^xsd:string ;
+  qudt:code "0970"^^xsd:string ;
+  qudt:conversionMultiplier "0.001"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit of mass in the metric system. The name comes from the Greek gramma, a small weight identified in later Roman and Byzantine times with the Latin scripulum or scruple (the English scruple is equal to about 1.3 grams). The gram was originally defined to be the mass of one cubic centimeter of pure water, but to provide precise standards it was necessary to construct physical objects of specified mass. One gram is now defined to be 1/1000 of the mass of the standard kilogram, a platinum-iridium bar carefully guarded by the International Bureau of Weights and Measures in Paris for more than a century. (The kilogram, rather than the gram, is considered the base unit of mass in the SI.) The gram is a small mass, equal to about 15.432 grains or 0.035 273 966 ounce. "^^xsd:string ;
+  qudt:designator "U-150-0970"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "g"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Gram"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gram> ;
+  skos:prefLabel "gram"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gram?oldid=493995797> ;
+.
+unit:GigaEV
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "GeV"^^xsd:string ;
+  qudt:code "2422"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Giga Electron Volt}' is a C.G.S System unit for  'Energy And Work' expressed as $GeV$."^^xsd:string ;
+  qudt:designator "U-150-2422"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "GeV"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Giga Electron Volt"^^xsd:string ;
+  skos:prefLabel "giga-electron-volt"^^xsd:string ;
+.
+unit:HARTREE
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "E_h"^^xsd:string ;
+  qudt:conversionMultiplier 4.35974394E-18 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1822"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "E_h"^^xsd:string ;
+  rdfs:label "Hartree"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hartree> ;
+  skos:prefLabel "hartree"^^xsd:string ;
+.
+unit:HP
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PowerUnit ;
+  qudt:abbreviation "HP"^^xsd:string ;
+  qudt:code "0805"^^xsd:string ;
+  qudt:conversionMultiplier "745.6999"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "550 foot-pound force per second"^^xsd:string ;
+  qudt:designator "U-150-0805"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "HP"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Horsepower"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Horsepower> ;
+  skos:prefLabel "horsepower"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Horsepower?oldid=495510329> ;
+.
+unit:HorsepowerBoiler
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerUnit ;
+  qudt:abbreviation "hp/boiler"^^xsd:string ;
+  qudt:code "0810"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Horsepower Boiler}' is a C.G.S System unit for  'Power' expressed as $hp/boiler$."^^xsd:string ;
+  qudt:designator "U-150-0810"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "hp/boiler"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Horsepower Boiler"^^xsd:string ;
+  skos:prefLabel "horsepower-boiler"^^xsd:string ;
+.
+unit:HorsepowerElectric
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerUnit ;
+  qudt:abbreviation "hp/V"^^xsd:string ;
+  qudt:code "0815"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Horsepower Electric}' is a C.G.S System unit for  'Power' expressed as $hp/V$."^^xsd:string ;
+  qudt:designator "U-150-0815"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "hp/V"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Horsepower Electric"^^xsd:string ;
+  skos:prefLabel "horsepower-electric"^^xsd:string ;
+.
+unit:HorsepowerMetric
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerUnit ;
+  qudt:abbreviation "hp/m"^^xsd:string ;
+  qudt:code "0820"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Horsepower Metric}' is a C.G.S System unit for  'Power' expressed as $hp/m$."^^xsd:string ;
+  qudt:designator "U-150-0820"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "hp/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Horsepower Metric"^^xsd:string ;
+  skos:prefLabel "horsepower-metric"^^xsd:string ;
+.
+unit:HorsepowerWater
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerUnit ;
+  qudt:abbreviation "hp/H2O"^^xsd:string ;
+  qudt:code "0825"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Horsepower Water}' is a C.G.S System unit for  'Power' expressed as $hp/H2O$."^^xsd:string ;
+  qudt:designator "U-150-0825"^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  qudt:symbol "hp/H2O"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Horsepower Water"^^xsd:string ;
+  skos:prefLabel "horsepower-water"^^xsd:string ;
+.
+unit:HundredWeightLong
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "cwt"^^xsd:string ;
+  qudt:code "0850"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Hundred Weight - Long}' is a C.G.S System unit for  'Mass' expressed as $cwt$."^^xsd:string ;
+  qudt:designator "U-150-0850"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "cwt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Hundred Weight - Long"^^xsd:string ;
+  skos:prefLabel "hundred-weight---long"^^xsd:string ;
+.
+unit:HundredWeightShort
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "cwt"^^xsd:string ;
+  qudt:code "0855"^^xsd:string ;
+  qudt:conversionMultiplier "45.359237"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Hundred Weight - Short}' is a C.G.S System unit for  'Mass' expressed as $cwt$."^^xsd:string ;
+  qudt:designator "U-150-0855"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "cwt"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Hundred Weight - Short"^^xsd:string ;
+  skos:prefLabel "short-hundred-weight"^^xsd:string ;
+.
+unit:IN_AQ
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "inAq"^^xsd:string ;
+  qudt:code "0870"^^xsd:string ;
+  qudt:conversionMultiplier "249.080024"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Inches of water, wc, inch water column (inch WC), inAq, Aq, or inH2O is a non-SI unit for pressure. The units are by convention and due to the historical measurement of certain pressure differentials. It is used for measuring small pressure differences across an orifice, or in a pipeline or shaft. Inches of water can be converted to a pressure unit using the formula for pressure head. It is defined as the pressure exerted by a column of water of 1 inch in height at defined conditions for example $39 ^\\circ F$ at the standard acceleration of gravity; 1 inAq is approximately equal to 249 pascals at $0 ^\\circ C$."^^xsd:string ;
+  qudt:designator "U-150-0870"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "inAq"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Inch of Water"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Inch_of_water> ;
+  skos:prefLabel "inch-of-water"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Inch_of_water?oldid=466175519> ;
+.
+unit:IN_HG
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "inHg"^^xsd:string ;
+  qudt:code "0865"^^xsd:string ;
+  qudt:conversionMultiplier "3386.389"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Inches of mercury, (inHg) is a unit of measurement for pressure. It is still widely used for barometric pressure in weather reports, refrigeration and aviation in the United States, but is seldom used elsewhere. It is defined as the pressure exerted by a column of mercury of 1 inch in height at $32 ^\\circ F$ at the standard acceleration of gravity. 1 inHg = 3,386.389 pascals at $0 ^\\circ C$."^^xsd:string ;
+  qudt:designator "U-150-0865"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "inHg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Inch of Mercury"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Inch_of_mercury> ;
+  skos:prefLabel "inch-of-mercury"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Inch_of_mercury?oldid=486634645> ;
+.
+unit:InchPoundForce
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "in-lbf"^^xsd:string ;
+  qudt:conversionMultiplier "16.2698168"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Inch Pound Force}' is a C.G.S System unit for  'Energy And Work' expressed as $in-lbf$."^^xsd:string ;
+  qudt:designator "U-150-2423"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "in-lbf"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Inch Pound Force"^^xsd:string ;
+  skos:prefLabel "inch-pound-force"^^xsd:string ;
+.
+unit:J-PER-KG
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpecificEnergyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J/kg"^^xsd:string ;
+  qudt:code "0900"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-0900"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificEnergy ;
+  qudt:symbol "J/kg"^^xsd:string ;
+  rdfs:label "Joule per Kilogram"^^xsd:string ;
+  skos:prefLabel "joule-per-kilogram"^^xsd:string ;
+.
+unit:J-PER-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J/m^{2}"^^xsd:string ;
+  qudt:code "0920"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Joule Per Square Meter ($J/m^2$) is a unit in the category of Energy density. It is also known as joules per square meter, joule per square metre, joule/square meter, joule/square metre. This unit is commonly used in the SI unit system."^^xsd:string ;
+  qudt:designator "U-150-0920"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerArea ;
+  qudt:symbol "J/m^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Joule per Square Meter"^^xsd:string ;
+  skos:prefLabel "joule-per-square-meter"^^xsd:string ;
+.
+unit:J-PER-M3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "j-per-m3"^^xsd:string ;
+  qudt:code "0890"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-0890"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyDensity ;
+  qudt:symbol "J/m^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Joule per Cubic Meter"^^xsd:string ;
+  skos:prefLabel "joule-per-cubic-meter"^^xsd:string ;
+.
+unit:J-PER-M3-K
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyDensityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J/(m^{3} K)"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:VolumetricHeatCapacity ;
+  qudt:symbol "J/(m^{3} K)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Joule per Cubic Meter Kelvin"^^xsd:string ;
+  skos:prefLabel "joule-per-cubic-meter-kelvin"^^xsd:string ;
+.
+unit:J-SEC
+  rdf:type qudt:AngularMomentumUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J s"^^xsd:string ;
+  qudt:code "2036"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The joule-second is a unit equal to a joule multiplied by a second, used to measure action or angular momentum. The joule-second is the unit used for Planck's constant."^^xsd:string ;
+  qudt:designator "U-150-2036"^^xsd:string ;
+  qudt:quantityKind quantity:AngularMomentum ;
+  qudt:symbol "J s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Joule Second"^^xsd:string ;
+  skos:prefLabel "joule-second"^^xsd:string ;
+.
+unit:J-SEC-PER-MOL
+  rdf:type qudt:MechanicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J s mol^{-1}"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:MolarAngularMomentum ;
+  qudt:symbol "J s mol^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Joule Second per Mole"^^xsd:string ;
+  skos:prefLabel "joule-second-per-mole"^^xsd:string ;
+.
+unit:JOULE
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:ThermalEnergyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "J"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2.kg.s^{-2}"^^xsd:string ;
+  qudt:code "0885"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of work or energy, defined to be the work done by a force of one newton acting to move an object through a distance of one meter in the direction in which the force is applied. Equivalently, since kinetic energy is one half the mass times the square of the velocity, one joule is the kinetic energy of a mass of two kilograms moving at a velocity of $1 m/s$."^^xsd:string ;
+  qudt:designator "U-150-0885"^^xsd:string ;
+  qudt:exactMatch unit:N-M ;
+  qudt:latexDefinition "$\\text{J}\\ \\equiv\\ \\text{joule}\\ \\equiv\\ \\text{CV}\\ \\equiv\\ \\text{coulomb.volt}\\ \\equiv\\ \\frac{\\text{eV}}{1.602\\ 10^{-19}}\\ \\equiv\\ \\frac{\\text{electron.volt}}{1.602\\ 10^{-19}}$"^^xsd:string ;
+  qudt:longDescription "The SI unit of work or energy, defined to be the work done by a force of one newton acting to move an object through a distance of one meter in the direction in which the force is applied. Equivalently, since kinetic energy is one half the mass times the square of the velocity, one joule is the kinetic energy of a mass of two kilograms moving at a velocity of 1 m/s. This is the same as 107 ergs in the CGS system, or approximately 0.737 562 foot-pound in the traditional English system. In other energy units, one joule equals about 9.478 170 x 10-4 Btu, 0.238 846 (small) calories, or 2.777 778 x 10-4 watt hour. The joule is named for the British physicist James Prescott Joule (1818-1889), who demonstrated the equivalence of mechanical and thermal energy in a famous experiment in 1843. "^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "J"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Joule"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Joule> ;
+  skos:prefLabel "joule"^^xsd:string ;
+.
+unit:KG
+  rdf:type qudt:BaseUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:SI-BaseUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg"^^xsd:string ;
+  qudt:code "0971"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The kilogram or kilogramme (SI symbol: kg), also known as the kilo, is the base unit of mass in the International System of Units and is defined as being equal to the mass of the International Prototype Kilogram (IPK), which is almost exactly equal to the mass of one liter of water."^^xsd:string ;
+  qudt:designator "U-000-0971"^^xsd:string ;
+  qudt:longDescription "The kilogram or kilogramme (SI symbol: kg), also known as the kilo, is the base unit of mass in the International System of Units and is defined as being equal to the mass of the International Prototype Kilogram (IPK), which is almost exactly equal to the mass of one liter of water. The avoirdupois (or international) pound, used in both the Imperial system and U.S. customary units, is defined as exactly 0.45359237 kg, making one kilogram approximately equal to 2.2046 avoirdupois pounds."^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kilogram> ;
+  skos:prefLabel "kilogram"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kilogram?oldid=493633626> ;
+.
+unit:KG-M-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearMomentumUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg-m/s"^^xsd:string ;
+  qudt:code "2058"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilogram Meter Per Second}' is a unit for  'Linear Momentum' expressed as $kg-m/s$."^^xsd:string ;
+  qudt:designator "U-150-2058"^^xsd:string ;
+  qudt:quantityKind quantity:LinearMomentum ;
+  qudt:symbol "kg m s^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram Meter Per Second"^^xsd:string ;
+  skos:prefLabel "kilogram-meter-per-second"^^xsd:string ;
+.
+unit:KG-M2
+  rdf:type qudt:AngularMassUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg-m2"^^xsd:string ;
+  qudt:code "2014"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilogram Meter Squared}' is a unit for  'Moment Of Inertia' expressed as $kg-m^2$."^^xsd:string ;
+  qudt:designator "U-150-2014"^^xsd:string ;
+  qudt:quantityKind quantity:MomentOfInertia ;
+  qudt:symbol "kg-m^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram Meter Squared"^^xsd:string ;
+  skos:prefLabel "kilogram-meter-squared"^^xsd:string ;
+.
+unit:KG-M2-PER-SEC
+  rdf:type qudt:AngularMassUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg-m2/sec"^^xsd:string ;
+  qudt:code "2015"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilogram Meter Squared Per Second}' is a unit for  'Angular Momentum' expressed as $kg-m^2-s^{-1}$."^^xsd:string ;
+  qudt:designator "U-150-2015"^^xsd:string ;
+  qudt:quantityKind quantity:AngularMomentum ;
+  qudt:symbol "kg-m^2-s^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram Meter Squared Per Second"^^xsd:string ;
+  skos:prefLabel "kilogram-meter-squared-per-second"^^xsd:string ;
+.
+unit:KG-PER-HR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerTimeUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg/h"^^xsd:string ;
+  qudt:code "2056"^^xsd:string ;
+  qudt:conversionMultiplier "0.000277777778"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Kilogram Per Hour (kg/h) is a unit in the category of Mass flow rate. It is also known as kilogram/hour. Kilogram Per Hour (kg/h) has a dimension of MT-1 where M is mass, and T is time. It can be converted to the corresponding standard SI unit kg/s by multiplying its value by a factor of 0.000277777777778."^^xsd:string ;
+  qudt:designator "U-150-2056"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerTime ;
+  qudt:symbol "kg/h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram per Hour"^^xsd:string ;
+  skos:prefLabel "kilogram-per-hour"^^xsd:string ;
+.
+unit:KG-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerLengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg/m"^^xsd:string ;
+  qudt:code "1000"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Kilogram Per Meter (kg/m) is a unit in the category of Linear mass density. It is also known as kilogram/meter, kilogram/metre, kilograms per meter, kilogram per metre, kilograms per metre. This unit is commonly used in the SI unit system. Kilogram Per Meter (kg/m) has a dimension of ML-1 where M is mass, and L is length. This unit is the standard SI unit in this category. "^^xsd:string ;
+  qudt:designator "U-150-1000"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerLength ;
+  qudt:symbol "kg/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram per Meter"^^xsd:string ;
+  skos:prefLabel "kilogram-per-meter"^^xsd:string ;
+.
+unit:KG-PER-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg/m^2"^^xsd:string ;
+  qudt:code "1010"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Kilogram Per Square Meter (kg/m2) is a unit in the category of Surface density. It is also known as kilograms per square meter, kilogram per square metre, kilograms per square metre, kilogram/square meter, kilogram/square metre. This unit is commonly used in the SI unit system. Kilogram Per Square Meter (kg/m2) has a dimension of ML-2 where M is mass, and L is length. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:designator "U-150-1010"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerArea ;
+  qudt:symbol "kg/m^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram per Square Meter"^^xsd:string ;
+  skos:prefLabel "kilogram-per-square-meter"^^xsd:string ;
+.
+unit:KG-PER-M3
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg/m^3"^^xsd:string ;
+  qudt:code "0995"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Kilogram per cubic metre is an SI derived unit of density, defined by mass in kilograms divided by volume in cubic metres. The official SI symbolic abbreviation is $kg \\cdot m^{-3}$, or equivalently either $kg/m^3$."^^xsd:string ;
+  qudt:designator "U-150-0995"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "kg m^{-3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram per Cubic Meter"^^xsd:string ;
+  skos:prefLabel "kilogram-per-cubic-meter"^^xsd:string ;
+.
+unit:KG-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kg/s"^^xsd:string ;
+  qudt:code "1005"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Kilogram Per Second (kg/s) is a unit in the category of Mass flow rate. It is also known as kilogram/second, kilograms per second. This unit is commonly used in the SI unit system. Kilogram Per Second (kg/s) has a dimension of $MT^{-1}$ where M is mass, and T is time. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:designator "U-150-1005"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerTime ;
+  qudt:symbol "kg/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram per Second"^^xsd:string ;
+  skos:prefLabel "kilogram-per-second"^^xsd:string ;
+.
+unit:KG-PER-SEC2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MechanicsUnit ;
+  qudt:abbreviation "kg-per-sec2"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "kg \\cdot s^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram Second Squared"^^xsd:string ;
+  skos:prefLabel "kilogram-second-squared"^^xsd:string ;
+.
+unit:KGF
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ForceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kgf"^^xsd:string ;
+  qudt:code "0975"^^xsd:string ;
+  qudt:conversionMultiplier "9.80665"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilogram Force}' is a C.G.S System unit for  'Force' expressed as $kgf$."^^xsd:string ;
+  qudt:designator "U-150-0975"^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  qudt:symbol "kgf"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kilogram-force> ;
+  skos:prefLabel "kilogram-force"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kilogram-force?oldid=493375479> ;
+.
+unit:KGF-PER-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kgf/cm^{2}"^^xsd:string ;
+  qudt:code "0985"^^xsd:string ;
+  qudt:conversionMultiplier "98066.5"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilogram Force per Square Centimeter}' is a C.G.S System unit for  'Force Per Area' expressed as $kgf/cm^{2}$."^^xsd:string ;
+  qudt:designator "U-150-0985"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "kgf/cm^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram Force per Square Centimeter"^^xsd:string ;
+  skos:prefLabel "kilogram-force-per-square-centimeter"^^xsd:string ;
+.
+unit:KGF-PER-M
+  rdf:type qudt:BendingMomentOrTorqueUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kgf-m"^^xsd:string ;
+  qudt:code "0980"^^xsd:string ;
+  qudt:conversionMultiplier "9.80665"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilogram Force Meter}' is a C.G.S System unit for  'Torque' expressed as $kgf-m$."^^xsd:string ;
+  qudt:designator "U-150-0980"^^xsd:string ;
+  qudt:quantityKind quantity:Torque ;
+  qudt:symbol "kgf-m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilogram Force Meter"^^xsd:string ;
+  skos:prefLabel "kilogram-force-meter"^^xsd:string ;
+.
+unit:KIP
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ForceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kip"^^xsd:string ;
+  qudt:code "1040"^^xsd:string ;
+  qudt:conversionMultiplier "4448.222"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "1000 pound-force"^^xsd:string ;
+  qudt:designator "U-150-1040"^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  qudt:symbol "kip"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kip"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kip> ;
+  skos:prefLabel "kip"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kip?oldid=492552722> ;
+.
+unit:KIP-PER-IN2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kip/in^{2}"^^xsd:string ;
+  qudt:code "1045"^^xsd:string ;
+  qudt:conversionMultiplier "6894757.89"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kip per Square Inch}' is a C.G.S System unit for  'Force Per Area' expressed as $kip/in^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1045"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "kip/in^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kip per Square Inch"^^xsd:string ;
+  skos:prefLabel "kip-per-square-inch"^^xsd:string ;
+.
+unit:KM3-PER-SEC2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:conversionMultiplier 1.0E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:StandardGravitationalParameter ;
+  qudt:symbol "km^{3}/s^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Cubic Kilometer per Second Squared"^^xsd:string ;
+  skos:prefLabel "cubic-kilometer-per-second-squared"^^xsd:string ;
+.
+unit:KP
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:ForceUnit ;
+  qudt:abbreviation "kp"^^xsd:string ;
+  qudt:code "1020"^^xsd:string ;
+  qudt:conversionMultiplier "9.80665"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Same as kilogramForce"^^xsd:string ;
+  qudt:designator "U-150-1020"^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  qudt:symbol "kp"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilopond"^^xsd:string ;
+  skos:prefLabel "kilopond"^^xsd:string ;
+.
+unit:Kayser
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "$cm^{-1}$"^^xsd:string ;
+  qudt:conversionMultiplier "100.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kayser"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kayser> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kayser?oldid=458489166> ;
+.
+unit:KiloBAR
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "kilobar"^^xsd:string ;
+  qudt:conversionMultiplier "100.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The bar is a non-SI unit of pressure, defined by the IUPAC as exactly equal to 100,000 Pa. It is about equal to the atmospheric pressure on Earth at sea level, and since 1982 the IUPAC has recommended that the standard for atmospheric pressure should be harmonized to $100,000 Pa = 1 bar \\approx 750.0616827 Torr$. Units derived from the bar are the megabar (symbol: Mbar), kilobar (symbol: kbar), decibar (symbol: dbar), centibar (symbol: cbar), and millibar (symbol: mbar or mb). They are not SI or cgs units, but they are accepted for use with the SI."^^xsd:string ;
+  qudt:isAllowedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:BAR ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "kbar"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilobar"^^xsd:string ;
+  skos:prefLabel "kbar"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bar_(unit)> ;
+.
+unit:KiloCAL-PER-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kcal/cm^{2}"^^xsd:string ;
+  qudt:code "0310"^^xsd:string ;
+  qudt:conversionMultiplier 4.184E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilocalorie per Square Centimeter}' is a C.G.S System unit for  'Energy Per Area' expressed as $kcal/cm^{2}$."^^xsd:string ;
+  qudt:designator "U-150-0310"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyPerArea ;
+  qudt:symbol "kcal/cm^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilocalorie per Square Centimeter"^^xsd:string ;
+  skos:prefLabel "kilocalorie-per-square-centimeter"^^xsd:string ;
+.
+unit:KiloCAL-PER-CM2-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kcal/(cm^{2}-min)"^^xsd:string ;
+  qudt:code "0315"^^xsd:string ;
+  qudt:conversionMultiplier 6.97333333E-5 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilocalorie per Square Centimeter Minute}' is a C.G.S System unit for  'Power Per Area' expressed as $kcal/(cm^{2}-min)$."^^xsd:string ;
+  qudt:designator "U-150-0315"^^xsd:string ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "kcal/(cm^{2}-min)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilocalorie per Square Centimeter Minute"^^xsd:string ;
+  skos:prefLabel "kilocalorie-per-square-centimeter-minute"^^xsd:string ;
+.
+unit:KiloCAL-PER-CM2-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kcal/(cm^{2}-s)"^^xsd:string ;
+  qudt:code "0320"^^xsd:string ;
+  qudt:conversionMultiplier 4.184E-7 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilocalorie per Square Centimeter Second}' is a C.G.S System unit for  'Power Per Area' expressed as $kcal/(cm^{2}-s)$."^^xsd:string ;
+  qudt:designator "U-150-0320"^^xsd:string ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "kcal/(cm^{2}-s)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilocalorie per Square Centimeter Second"^^xsd:string ;
+  skos:prefLabel "kilocalorie-per-square-centimeter-second"^^xsd:string ;
+.
+unit:KiloCAL-PER-GM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SpecificEnergyUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kcal/gm"^^xsd:string ;
+  qudt:code "0275"^^xsd:string ;
+  qudt:conversionMultiplier 4.184E6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilocalorie per Gram}' is a C.G.S System unit for  'Specific Energy' expressed as $kcal/gm$."^^xsd:string ;
+  qudt:designator "U-150-0275"^^xsd:string ;
+  qudt:quantityKind quantity:SpecificEnergy ;
+  qudt:symbol "kcal/gm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilocalorie per Gram"^^xsd:string ;
+  skos:prefLabel "kilocalorie-per-gram"^^xsd:string ;
+.
+unit:KiloEV
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "keV"^^xsd:string ;
+  qudt:code "2420"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-16 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilo Electron Volt}' is a C.G.S System unit for  'Energy And Work' expressed as $keV$."^^xsd:string ;
+  qudt:designator "U-150-2420"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "keV"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilo Electron Volt"^^xsd:string ;
+  skos:prefLabel "kilo-electron-volt"^^xsd:string ;
+.
+unit:KiloEV-PER-MicroM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearEnergyTransferUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "keV/microM"^^xsd:string ;
+  qudt:code "2370"^^xsd:string ;
+  qudt:conversionMultiplier 1.60217653E-10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilo Electron Volt per Micrometer}' is a C.G.S System unit for  'Linear Energy Transfer' expressed as $keV/microM$."^^xsd:string ;
+  qudt:designator "U-150-2370"^^xsd:string ;
+  qudt:quantityKind quantity:LinearEnergyTransfer ;
+  qudt:symbol "keV/m^{-6}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilo Electron Volt per Micrometer"^^xsd:string ;
+  skos:prefLabel "kilo-electron-volt-per-micrometer"^^xsd:string ;
+.
+unit:KiloG-SEC2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MechanicsUnit ;
+  rdf:type qudt:SIDerivedUnit ;
+  qudt:abbreviation "kilog-sec2"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "kg-s^2"^^xsd:string ;
+  rdfs:label "Kilogram Second Squared"^^xsd:string ;
+.
+unit:KiloPA
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "KPa"^^xsd:string ;
+  qudt:code "2040"^^xsd:string ;
+  qudt:conversionMultiplier 1000.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Kilopascal is a unit of pressure. 1 kPa is approximately the pressure exerted by a 10-g mass resting on a 1-cm2 area. 101.3 kPa = 1 atm. There are 1,000 pascals in 1 kilopascal."^^xsd:string ;
+  qudt:designator "U-150-2040"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "KPa"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilopascal"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pascal_%28unit%29> ;
+  skos:prefLabel "kilopascal"^^xsd:string ;
+.
+unit:KiloPaA
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "KPaA"^^xsd:string ;
+  qudt:code "2052"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Kilopascal Absolute}' is a SI System unit for  'Force Per Area' expressed as $KPaA$."^^xsd:string ;
+  qudt:designator "U-150-2052"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "KPaA"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilopascal Absolute"^^xsd:string ;
+  skos:prefLabel "kilopascal-absolute"^^xsd:string ;
+.
+unit:KiloW-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "kW-h"^^xsd:string ;
+  qudt:code "1035"^^xsd:string ;
+  qudt:conversionMultiplier 3.6E6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The kilowatt hour, or kilowatt-hour, (symbol $kW \\cdot h$, $kW h$ or $kWh$) is a unit of energy equal to 1000 watt hours or 3.6 megajoules. For constant power, energy in watt hours is the product of power in watts and time in hours. The kilowatt hour is most commonly known as a billing unit for energy delivered to consumers by electric utilities."^^xsd:string ;
+  qudt:designator "U-150-1035"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "kW-h"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Kilowatthour"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kilowatt_hour> ;
+  skos:prefLabel "kilowatthour"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Kilowatt_hour?oldid=494927235> ;
+.
+unit:LB-PER-FT
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerLengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/ft"^^xsd:string ;
+  qudt:code "1490"^^xsd:string ;
+  qudt:conversionMultiplier 1.4881639435695537e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Foot}' is an Imperial unit for  'Mass Per Length' expressed as $lb/ft$."^^xsd:string ;
+  qudt:designator "U-150-1490"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerLength ;
+  qudt:symbol "lb/ft"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Foot"^^xsd:string ;
+  skos:prefLabel "pound-per-foot"^^xsd:string ;
+.
+unit:LB-PER-FT-HR
+  rdf:type qudt:DynamicViscosityUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/(ft-hr)"^^xsd:string ;
+  qudt:code "1495"^^xsd:string ;
+  qudt:conversionMultiplier 4.133788732137649E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Foot Hour}' is an Imperial unit for  'Dynamic Viscosity' expressed as $lb/(ft-hr)$."^^xsd:string ;
+  qudt:designator "U-150-1495"^^xsd:string ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+  qudt:symbol "lb/(ft-hr)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Foot Hour"^^xsd:string ;
+  skos:prefLabel "pound-per-foot-hour"^^xsd:string ;
+.
+unit:LB-PER-FT-SEC
+  rdf:type qudt:DynamicViscosityUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/(ft-s)"^^xsd:string ;
+  qudt:code "1500"^^xsd:string ;
+  qudt:conversionMultiplier 1.4881639435695537e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Foot Second}' is an Imperial unit for  'Dynamic Viscosity' expressed as $lb/(ft-s)$."^^xsd:string ;
+  qudt:designator "U-150-1500"^^xsd:string ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+  qudt:symbol "lb/(ft-s)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Foot Second"^^xsd:string ;
+  skos:prefLabel "pound-per-foot-second"^^xsd:string ;
+.
+unit:LB-PER-FT2
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/ft^{2}"^^xsd:string ;
+  qudt:code "1525"^^xsd:string ;
+  qudt:conversionMultiplier 4.88242763638305e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Pounds or Pounds Force per Square Foot is a British (Imperial) and American pressure unit which is directly related to the psi pressure unit by a factor of 144 (1 sq ft = 12 in x 12 in = 144 sq in). 1 Pound per Square Foot equals 47.8803 Pascals. The psf pressure unit is mostly for lower pressure applications such as specifying building structures to withstand a certain wind force or rating a building floor for maximum weight load. "^^xsd:string ;
+  qudt:designator "U-150-1525"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerArea ;
+  qudt:symbol "lb/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Square Foot"^^xsd:string ;
+  skos:prefLabel "pound-per-square-foot"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.sensorsone.co.uk/pressure-measurement-glossary/psf-pounds-per-square-foot-pressure-unit.html> ;
+.
+unit:LB-PER-FT3
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/ft^{3}"^^xsd:string ;
+  qudt:code "1475"^^xsd:string ;
+  qudt:conversionMultiplier 16.018463373960138e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Cubic Foot}' is an Imperial unit for  'Density' expressed as $lb/ft^{3}$."^^xsd:string ;
+  qudt:designator "U-150-1475"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "lb/ft^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Cubic Foot"^^xsd:string ;
+  skos:prefLabel "pound-per-cubic-foot"^^xsd:string ;
+.
+unit:LB-PER-GAL
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/gal"^^xsd:string ;
+  qudt:code "1505"^^xsd:string ;
+  qudt:conversionMultiplier "99.7763727"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Gallon}' is an Imperial unit for  'Density' expressed as $lb/gal$."^^xsd:string ;
+  qudt:designator "U-150-1505"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "lb/gal"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Gallon"^^xsd:string ;
+  skos:prefLabel "pound-per-gallon"^^xsd:string ;
+.
+unit:LB-PER-HR
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "PPH"^^xsd:string ;
+  qudt:code "1510"^^xsd:string ;
+  qudt:conversionMultiplier 1.2599788055555556E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Pound per hour is a mass flow unit. It is abbreviated as PPH or more conventionally as lb/h. Fuel flow for engines is usually expressed using this unit, it is particularly useful when dealing with gases or liquids as volume flow varies more with temperature and pressure. $1 lb/h = 0.4535927 kg/h = 126.00 mg/s$.  Minimum fuel intake on a jumbojet can be as low as 150 lb/h when idling, however this is not enough to sustain flight."^^xsd:string ;
+  qudt:designator "U-150-1510"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerTime ;
+  qudt:symbol "lb/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Hour"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pound_per_hour> ;
+  skos:prefLabel "pound-per-hour"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pound_per_hour?oldid=328571072> ;
+.
+unit:LB-PER-IN
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerLengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/in"^^xsd:string ;
+  qudt:code "1515"^^xsd:string ;
+  qudt:conversionMultiplier 17.857967322834646e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Inch}' is an Imperial unit for  'Mass Per Length' expressed as $lb/in$."^^xsd:string ;
+  qudt:designator "U-150-1515"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerLength ;
+  qudt:symbol "lb/in"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Inch"^^xsd:string ;
+  skos:prefLabel "pound-per-inch"^^xsd:string ;
+.
+unit:LB-PER-IN3
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/in^{3}"^^xsd:string ;
+  qudt:code "1480"^^xsd:string ;
+  qudt:conversionMultiplier 27679.904710203125e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Cubic Inch}' is an Imperial unit for  'Density' expressed as $lb/in^{3}$."^^xsd:string ;
+  qudt:designator "U-150-1480"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "lb/in^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Cubic Inch"^^xsd:string ;
+  skos:prefLabel "pound-per-cubic-inch"^^xsd:string ;
+.
+unit:LB-PER-M3
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/m^{3}"^^xsd:string ;
+  qudt:conversionMultiplier "0.45359237"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Cubic Meter}' is a C.G.S System unit for  'Density' expressed as $lb/m^{3}$."^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "lbm/m^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Cubic Meter"^^xsd:string ;
+  skos:prefLabel "pound-per-cubic-meter"^^xsd:string ;
+.
+unit:LB-PER-MIN
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerTimeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/min"^^xsd:string ;
+  qudt:code "1520"^^xsd:string ;
+  qudt:conversionMultiplier 0.007559872833333333e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Minute}' is an Imperial unit for  'Mass Per Time' expressed as $lb/min$."^^xsd:string ;
+  qudt:designator "U-150-1520"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerTime ;
+  qudt:symbol "lb/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Minute"^^xsd:string ;
+  skos:prefLabel "pound-per-minute"^^xsd:string ;
+.
+unit:LB-PER-YD3
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lb/yd^{3}"^^xsd:string ;
+  qudt:code "1485"^^xsd:string ;
+  qudt:conversionMultiplier 0.5932764212577829e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound per Cubic Yard}' is an Imperial unit for  'Density' expressed as $lb/yd^{3}$."^^xsd:string ;
+  qudt:designator "U-150-1485"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "lb/yd^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound per Cubic Yard"^^xsd:string ;
+  skos:prefLabel "pound-per-cubic-yard"^^xsd:string ;
+.
+unit:LBF
+  rdf:type qudt:ForceUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf"^^xsd:string ;
+  qudt:code "1415"^^xsd:string ;
+  qudt:conversionMultiplier "4.448222"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force}' is an Imperial unit for  'Force' expressed as $lbf$."^^xsd:string ;
+  qudt:designator "U-150-1415"^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  qudt:symbol "lbf"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pound-force> ;
+  skos:prefLabel "pound-force"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pound-force?oldid=453191483> ;
+.
+unit:LBF-FT
+  rdf:type qudt:BendingMomentOrTorqueUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf-ft"^^xsd:string ;
+  qudt:code "1420"^^xsd:string ;
+  qudt:conversionMultiplier "1.35581807"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force Foot}' is an Imperial unit for  'Torque' expressed as $lbf-ft$."^^xsd:string ;
+  qudt:designator "U-150-1420"^^xsd:string ;
+  qudt:quantityKind quantity:Torque ;
+  qudt:symbol "lbf-ft"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force Foot"^^xsd:string ;
+  skos:prefLabel "pound-force-foot"^^xsd:string ;
+.
+unit:LBF-IN
+  rdf:type qudt:BendingMomentOrTorqueUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf-in"^^xsd:string ;
+  qudt:code "1425"^^xsd:string ;
+  qudt:conversionMultiplier "0.112984839"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force Inch}' is an Imperial unit for  'Torque' expressed as $lbf-in$."^^xsd:string ;
+  qudt:designator "U-150-1425"^^xsd:string ;
+  qudt:quantityKind quantity:Torque ;
+  qudt:symbol "lbf-in"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force Inch"^^xsd:string ;
+  skos:prefLabel "pound-force-inch"^^xsd:string ;
+.
+unit:LBF-PER-FT
+  rdf:type qudt:ForcePerLengthUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf/ft"^^xsd:string ;
+  qudt:code "1430"^^xsd:string ;
+  qudt:conversionMultiplier "14.5939042"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force per Foot}' is an Imperial unit for  'Force Per Length' expressed as $lbf/ft$."^^xsd:string ;
+  qudt:designator "U-150-1430"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerLength ;
+  qudt:symbol "lbf/ft"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force per Foot"^^xsd:string ;
+  skos:prefLabel "pound-force-per-foot"^^xsd:string ;
+.
+unit:LBF-PER-FT2
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf/ft^{2}"^^xsd:string ;
+  qudt:code "1445"^^xsd:string ;
+  qudt:conversionMultiplier "47.8802631"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force per Square Foot}' is an Imperial unit for  'Force Per Area' expressed as $lbf/ft^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1445"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "lbf/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force per Square Foot"^^xsd:string ;
+  skos:prefLabel "pound-force-per-square-foot"^^xsd:string ;
+.
+unit:LBF-PER-IN
+  rdf:type qudt:ForcePerLengthUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf/in"^^xsd:string ;
+  qudt:code "1435"^^xsd:string ;
+  qudt:conversionMultiplier "175.12685"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force per Inch}' is an Imperial unit for  'Force Per Length' expressed as $lbf/in$."^^xsd:string ;
+  qudt:designator "U-150-1435"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerLength ;
+  qudt:symbol "lbf/in"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force per Inch"^^xsd:string ;
+  skos:prefLabel "pound-force-per-inch"^^xsd:string ;
+.
+unit:LBF-PER-IN2
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "psia"^^xsd:string ;
+  qudt:code "1450"^^xsd:string ;
+  qudt:conversionMultiplier "6894.75789"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force per Square Inch}' is an Imperial unit for  'Force Per Area' expressed as $psia$."^^xsd:string ;
+  qudt:designator "U-150-1450"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "psi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force per Square Inch"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pounds_per_square_inch> ;
+  skos:prefLabel "pound-force-per-square-inch"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pounds_per_square_inch?oldid=485678341> ;
+.
+unit:LBF-PER-IN2-SEC
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressRateUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf / in^{2}-s"^^xsd:string ;
+  qudt:conversionMultiplier "6894.75789"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force per Square Inch Second}' is a C.G.S System unit for  'Force Per Area Time' expressed as $lbf / in^{2}-s$."^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerAreaTime ;
+  qudt:symbol "lbf / in^{2}-s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force per Square Inch Second"^^xsd:string ;
+  skos:prefLabel "pound-force-per-square-inch-second"^^xsd:string ;
+.
+unit:LBF-PER-LB
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:ThrustToMassRatioUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf/lb"^^xsd:string ;
+  qudt:code "1440"^^xsd:string ;
+  qudt:conversionMultiplier "9.80665085"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force per Pound}' is an Imperial unit for  'Thrust To Mass Ratio' expressed as $lbf/lb$."^^xsd:string ;
+  qudt:designator "U-150-1440"^^xsd:string ;
+  qudt:quantityKind quantity:ThrustToMassRatio ;
+  qudt:symbol "lbf/lb"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force per Pound"^^xsd:string ;
+  skos:prefLabel "pound-force-per-pound"^^xsd:string ;
+.
+unit:LBF-SEC-PER-FT2
+  rdf:type qudt:DynamicViscosityUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf-s/ft^2"^^xsd:string ;
+  qudt:code "1455"^^xsd:string ;
+  qudt:conversionMultiplier "47.8802631"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force Second per Square Foot}' is an Imperial unit for  'Dynamic Viscosity' expressed as $lbf-s/ft^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1455"^^xsd:string ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+  qudt:symbol "lbf-s/ft^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force Second per Square Foot"^^xsd:string ;
+  skos:prefLabel "pound-force-second-per-square-foot"^^xsd:string ;
+.
+unit:LBF-SEC-PER-IN2
+  rdf:type qudt:DynamicViscosityUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbf-s/in^{2}"^^xsd:string ;
+  qudt:code "1460"^^xsd:string ;
+  qudt:conversionMultiplier "6894.75789"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Pound Force Second per Square Inch}' is an Imperial unit for  'Dynamic Viscosity' expressed as $lbf-s/in^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1460"^^xsd:string ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+  qudt:symbol "lbf-s/in^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Force Second per Square Inch"^^xsd:string ;
+  skos:prefLabel "pound-force-second-per-square-inch"^^xsd:string ;
+.
+unit:LBM
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbm"^^xsd:string ;
+  qudt:code "1400"^^xsd:string ;
+  qudt:conversionMultiplier "0.45359237"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A pound of mass, based on the international standard definition of the pound as exactly 0.45359237 kg."^^xsd:string ;
+  qudt:designator "U-150-1400"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "lbm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Mass"^^xsd:string ;
+  skos:prefLabel "pound-mass"^^xsd:string ;
+.
+unit:LB_TROY
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "lbm"^^xsd:string ;
+  qudt:code "1530"^^xsd:string ;
+  qudt:conversionMultiplier "0.3732417216"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An obsolete unit of mass; the Troy Pound has been defined as exactly 5760 grains, or 0.3732417216 kg. A Troy Ounce is 1/12th of a Troy Pound."^^xsd:string ;
+  qudt:designator "U-150-1530"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "lbm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pound Troy"^^xsd:string ;
+  skos:prefLabel "pound-troy"^^xsd:string ;
+.
+unit:LunarMass
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "lunarmass"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Lunar mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Moon> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Moon?oldid=494566371> ;
+.
+unit:M-Kg
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MechanicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m-kg"^^xsd:string ;
+  qudt:code "1100"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Meter Kilogram}' is a unit for  'Length Mass' expressed as $m-kg$."^^xsd:string ;
+  qudt:designator "U-150-1100"^^xsd:string ;
+  qudt:quantityKind quantity:LengthMass ;
+  qudt:symbol "m-kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Meter Kilogram"^^xsd:string ;
+  skos:prefLabel "meter-kilogram"^^xsd:string ;
+.
+unit:M2-PER-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:KinematicViscosityUnit ;
+  rdf:type qudt:ThermalDiffusivityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m^{2} s^{-1}"^^xsd:string ;
+  qudt:code "1720"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Metres squared per second is the SI derived unit of angular momentum, defined by distance or displacement in metres multiplied by distance again in metres and divided by time in seconds. The unit is written in symbols as m2/s or m2u00b7s-1 or m2s-1. It may be better understood when phrased as \"metres per second times metres\", i.e. the momentum of an object with respect to a position."^^xsd:string ;
+  qudt:designator "U-150-1720"^^xsd:string ;
+  qudt:quantityKind quantity:AreaPerTime ;
+  qudt:symbol "m^{2} s^{-1}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Square Meter per Second"^^xsd:string ;
+  skos:prefLabel "square-meter-per-second"^^xsd:string ;
+.
+unit:M3-PER-KG
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "m^{3}/kg"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Cubic Meter Per Kilogram (m3/kg) is a unit in the category of Specific volume. It is also known as cubic meters per kilogram, cubic metre per kilogram, cubic metres per kilogram, cubic meter/kilogram, cubic metre/kilogram. This unit is commonly used in the SI unit system. Cubic Meter Per Kilogram (m3/kg) has a dimension of M-1L3 where M is mass, and L is length. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:isUnitOfSystem qudt:SOU_NASA ;
+  qudt:isUnitOfSystem qudt:SOU_SI ;
+  qudt:quantityKind quantity:SpecificVolume ;
+  qudt:symbol "m^{3}/kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Cubic Meter per Kilogram"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-kilogram"^^xsd:string ;
+.
+unit:M3-PER-KG-SEC2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:GravitationalAttractionUnit ;
+  qudt:abbreviation "m^3/(kg^s^2)"^^xsd:string ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Ads by Google"^^xsd:string ;
+  qudt:quantityKind quantity:GravitationalAttraction ;
+  qudt:symbol "m^3 kg^{-1} s^{-2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Cubic Meter per Kilogram Second Squared"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-kilogram-second-squared"^^xsd:string ;
+.
+unit:M3-PER-SEC2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:conversionMultiplier "1"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:isUnitOfSystem qudt:SOU_CGS ;
+  qudt:quantityKind quantity:StandardGravitationalParameter ;
+  qudt:symbol "m^{3}/s^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Cubic Meter per Second Squared"^^xsd:string ;
+  skos:prefLabel "cubic-meter-per-second-squared"^^xsd:string ;
+.
+unit:M4
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "m^{4}"^^xsd:string ;
+  qudt:code "0451"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A unit associated with area moments of inertia."^^xsd:string ;
+  qudt:designator "U-150-0451"^^xsd:string ;
+  qudt:quantityKind quantity:SecondAxialMomentOfArea ;
+  qudt:symbol "m^{4}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Quartic Meter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Quartic_metre> ;
+  skos:prefLabel "quartic-meter"^^xsd:string ;
+.
+unit:MeV
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "MeV"^^xsd:string ;
+  qudt:code "2421"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-13 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Mega Electron Volt}' is a C.G.S System unit for  'Energy And Work' expressed as $MeV$."^^xsd:string ;
+  qudt:designator "U-150-2421"^^xsd:string ;
+  qudt:hasMultiplier unit:Mega ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "MeV"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Mega Electron Volt"^^xsd:string ;
+  skos:prefLabel "mega-electron-volt"^^xsd:string ;
+.
+unit:MeV-PER-CM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LinearEnergyTransferUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "MeV/cm"^^xsd:string ;
+  qudt:code "2371"^^xsd:string ;
+  qudt:conversionMultiplier 1.6021765314E-11 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Mega Electron Volt per Centimeter}' is a C.G.S System unit for  'Linear Energy Transfer' expressed as $MeV/cm$."^^xsd:string ;
+  qudt:designator "U-150-2371"^^xsd:string ;
+  qudt:quantityKind quantity:LinearEnergyTransfer ;
+  qudt:symbol "MeV/cm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Mega Electron Volt per Centimeter"^^xsd:string ;
+  skos:prefLabel "mega-electron-volt-per-centimeter"^^xsd:string ;
+.
+unit:MeV-PER-c
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:LinearMomentumUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "MeV/c"^^xsd:string ;
+  qudt:description "'\\textit{Mega Electron Volt per Speed of Light}' is a C.G.S System unit for  'Linear Momentum' expressed as $MeV/c$."^^xsd:string ;
+  qudt:quantityKind quantity:LinearMomentum ;
+  qudt:symbol "MeV/c"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Mega Electron Volt per Speed of Light"^^xsd:string ;
+  skos:prefLabel "mega-electron-volt-per-speed-of-light"^^xsd:string ;
+.
+unit:MegaBAR
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "Mbar"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-1 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The bar is a non-SI unit of pressure, defined by the IUPAC as exactly equal to 100,000 Pa. It is about equal to the atmospheric pressure on Earth at sea level, and since 1982 the IUPAC has recommended that the standard for atmospheric pressure should be harmonized to $100,000 Pa = 1 bar \\approx 750.0616827 Torr$. Units derived from the bar are the megabar (symbol: Mbar), kilobar (symbol: kbar), decibar (symbol: dbar), centibar (symbol: cbar), and millibar (symbol: mbar or mb). They are not SI or cgs units, but they are accepted for use with the SI."^^xsd:string ;
+  qudt:isAllowedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:BAR ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "Mbar"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Megabar"^^xsd:string ;
+  skos:prefLabel "megabar"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bar_(unit)> ;
+.
+unit:MegaEV-FemtoM
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MechanicsUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "MeV fm"^^xsd:string ;
+  qudt:conversionMultiplier 1.60217653E-28 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Mega Electron Volt Femtometer}' is a C.G.S System unit for  'Length Energy' expressed as $MeV fm$."^^xsd:string ;
+  qudt:quantityKind quantity:LengthEnergy ;
+  qudt:symbol "MeV fm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Mega Electron Volt Femtometer"^^xsd:string ;
+  skos:prefLabel "mega-electron-volt-femtometer"^^xsd:string ;
+.
+unit:MegaLBF
+  rdf:type qudt:ForceUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Mlbf"^^xsd:string ;
+  qudt:code "1416"^^xsd:string ;
+  qudt:conversionMultiplier 4.448222E3 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Mlbf"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Mega Pound Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pound-force> ;
+  skos:prefLabel "mega-pound-force"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pound-force?oldid=453191483> ;
+.
+unit:MetricTon
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "mT"^^xsd:string ;
+  qudt:code "1115"^^xsd:string ;
+  qudt:conversionMultiplier "1000"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The tonne (SI unit symbol: t) is a metric system unit of mass equal to 1,000 kilograms (2,204.6 pounds). It is a non-SI unit accepted for use with SI. To avoid confusion with the ton, it is also known as the metric tonne and metric ton in the United States[3] and occasionally in the United Kingdom. In SI units and prefixes, the tonne is a megagram (Mg), a rarely-used symbol, easily confused with mg, for milligram."^^xsd:string ;
+  qudt:designator "U-150-1115"^^xsd:string ;
+  qudt:exactMatch unit:MetricTon ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "mT"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Metric Ton"^^xsd:string ;
+  skos:altLabel "metric-tonne"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tonne> ;
+  skos:prefLabel "tonne"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Tonne?oldid=492526238> ;
+.
+unit:MicroTORR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "microtorr"^^xsd:string ;
+  qudt:code "2026"^^xsd:string ;
+  qudt:conversionMultiplier 1.33322E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{MicroTorr}' is a C.G.S System unit for  'Force Per Area' expressed as $microtorr$."^^xsd:string ;
+  qudt:designator "U-150-2026"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "\\mu torr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "MicroTorr"^^xsd:string ;
+  skos:prefLabel "microtorr"^^xsd:string ;
+.
+unit:MilliBAR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DecimalScaledUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mbar"^^xsd:string ;
+  qudt:code "1170"^^xsd:string ;
+  qudt:conversionMultiplier "1000.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The bar is a non-SI unit of pressure, defined by the IUPAC as exactly equal to 100,000 Pa. It is about equal to the atmospheric pressure on Earth at sea level, and since 1982 the IUPAC has recommended that the standard for atmospheric pressure should be harmonized to $100,000 Pa = 1 bar \\approx 750.0616827 Torr$. Units derived from the bar are the megabar (symbol: Mbar), kilobar (symbol: kbar), decibar (symbol: dbar), centibar (symbol: cbar), and millibar (symbol: mbar or mb). They are not SI or cgs units, but they are accepted for use with the SI."^^xsd:string ;
+  qudt:designator "U-150-1170"^^xsd:string ;
+  qudt:isAllowedUnitOfSystem qudt:SOU_SI ;
+  qudt:isScalingOf unit:BAR ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "mbar"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Millibar"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Bar_%28unit%29> ;
+  skos:prefLabel "millibar"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Bar_(unit)> ;
+.
+unit:MilliM_HG
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mmHg"^^xsd:string ;
+  qudt:code "1175"^^xsd:string ;
+  qudt:conversionMultiplier "86014.2806"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The millimeter of mercury is defined as the pressure exerted at the base of a column of fluid exactly 1 mm high, when the density of the fluid is exactly $13.5951 g/cm^{3}$, at a place where the acceleration of gravity is exactly $9.80665 m/s^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1175"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "mmHg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Millimeter of Mercury"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Torr> ;
+  skos:prefLabel "millimeter-of-mercury"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Torr?oldid=495199381> ;
+.
+unit:MilliM_HGA
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "mmHgA"^^xsd:string ;
+  qudt:code "2002"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Millimeters of Mercury inclusive of atmospheric pressure"^^xsd:string ;
+  qudt:designator "U-150-2002"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "mmHgA"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Millimeter of Mercury - Absolute"^^xsd:string ;
+  skos:prefLabel "millimeter-of-mercury---absolute"^^xsd:string ;
+.
+unit:MilliTorr
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "utorr"^^xsd:string ;
+  qudt:code "2046"^^xsd:string ;
+  qudt:conversionMultiplier "0.133322"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{MilliTorr}' is a C.G.S System unit for  'Force Per Area' expressed as $utorr$."^^xsd:string ;
+  qudt:designator "U-150-2046"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "utorr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "MilliTorr"^^xsd:string ;
+  skos:prefLabel "millitorr"^^xsd:string ;
+.
+unit:N-M
+  rdf:type qudt:BendingMomentOrTorqueUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "N-m"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2.kg.s{-2}"^^xsd:string ;
+  qudt:code "1230"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Torque} is the tendency of a force to cause a rotation, is the product of the force and the distance from the center of rotation to the point where the force is applied. Torque has the same units as work or energy, but it is a different physical concept. To stress the difference, scientists measure torque in newton meters rather than in joules, the SI unit of work. One newton meter is approximately 0.737562 pound foot."^^xsd:string ;
+  qudt:designator "U-150-1230"^^xsd:string ;
+  qudt:exactMatch unit:JOULE ;
+  qudt:quantityKind quantity:Torque ;
+  qudt:siUnitsExpression "N.m"^^xsd:string ;
+  qudt:symbol "N-m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Newton Meter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Newton_metre> ;
+  skos:prefLabel "newton-meter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Newton_metre?oldid=493923333> ;
+.
+unit:N-M-SEC
+  rdf:type qudt:BendingMomentOrTorqueUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "N-m-sec"^^xsd:string ;
+  qudt:baseUnitDimensions "m^2.kg.s{-1}"^^xsd:string ;
+  qudt:code "1231"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI derived unit of angular momentum. "^^xsd:string ;
+  qudt:designator "U-150-1231"^^xsd:string ;
+  qudt:quantityKind quantity:AngularMomentum ;
+  qudt:siUnitsExpression "N.m.sec"^^xsd:string ;
+  qudt:symbol "N-m-sec"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Newton Meter Second"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Newton_metre> ;
+  skos:prefLabel "newton-meter-second"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/SI_derived_unit> ;
+.
+unit:N-PER-KG
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ThrustToMassRatioUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "N/kg"^^xsd:string ;
+  qudt:code "1240"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Gravitational field strength at a point is the gravitational force per unit mass at that point. It is a vector and its S.I. unit is N kg-1."^^xsd:string ;
+  qudt:designator "U-150-1240"^^xsd:string ;
+  qudt:quantityKind quantity:ThrustToMassRatio ;
+  qudt:symbol "N/kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Newton per Kilogram"^^xsd:string ;
+  skos:prefLabel "newton-per-kilogram"^^xsd:string ;
+.
+unit:N-PER-M
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ForcePerLengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "N/m"^^xsd:string ;
+  qudt:code "1245"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Newton Per Meter (N/m) is a unit in the category of Surface tension. It is also known as newtons per meter, newton per metre, newtons per metre, newton/meter, newton/metre. This unit is commonly used in the SI unit system. Newton Per Meter (N/m) has a dimension of MT-2 where M is mass, and T is time. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:designator "U-150-1245"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerLength ;
+  qudt:symbol "N/m"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Newton per Meter"^^xsd:string ;
+  skos:prefLabel "newton-per-meter"^^xsd:string ;
+.
+unit:N-PER-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Pa"^^xsd:string ;
+  qudt:baseUnitDimensions "m^{-1}.kg.s^{-2}"^^xsd:string ;
+  qudt:code "1325"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of pressure. The pascal is the standard pressure unit in the MKS metric system, equal to one newton per square meter or one \"kilogram per meter per second per second.\" The unit is named for Blaise Pascal (1623-1662), French philosopher and mathematician, who was the first person to use a barometer to measure differences in altitude."^^xsd:string ;
+  qudt:designator "U-150-1325"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:siUnitsExpression "N/m^2"^^xsd:string ;
+  qudt:symbol "Pa"^^xsd:string ;
+  qudt:symbolToken "Pa"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "N-PER-M2"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pascal> ;
+  skos:exactMatch unit:PASCAL ;
+  skos:prefLabel "N-PER-M2"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31889> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pascal?oldid=492989202> ;
+.
+unit:NEWTON
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ForceUnit ;
+  qudt:abbreviation "N"^^xsd:string ;
+  qudt:baseUnitDimensions "m.kg.s^{-2}"^^xsd:string ;
+  qudt:code "1225"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The \\textit{Newton} is the SI unit of force. A force of one newton will accelerate a mass of one kilogram at the rate of one meter per second per second. The newton is named for Isaac Newton (1642-1727), the British mathematician, physicist, and natural philosopher. He was the first person to understand clearly the relationship between force (F), mass (m), and acceleration (a) expressed by the formula $F = m \\cdot a$."^^xsd:string ;
+  qudt:designator "U-150-1225"^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  qudt:symbol "N"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Newton"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Newton> ;
+  skos:prefLabel "Newton"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Newton?oldid=488427661> ;
+.
+unit:OZ-PER-FT2
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "oz/ft^{2}"^^xsd:string ;
+  qudt:code "1305"^^xsd:string ;
+  qudt:conversionMultiplier "0.305151727"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Ounce per Square Foot}' is an Imperial unit for  'Mass Per Area' expressed as $oz/ft^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1305"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerArea ;
+  qudt:symbol "oz/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ounce per Square Foot"^^xsd:string ;
+  skos:prefLabel "ounce-per-square-foot"^^xsd:string ;
+.
+unit:OZ-PER-GAL
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "oz/gal"^^xsd:string ;
+  qudt:code "1300"^^xsd:string ;
+  qudt:conversionMultiplier "6.23602329"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Ounce per Gallon}' is an Imperial unit for  'Density' expressed as $oz/gal$."^^xsd:string ;
+  qudt:designator "U-150-1300"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "oz/gal"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ounce per Gallon"^^xsd:string ;
+  skos:prefLabel "ounce-per-gallon"^^xsd:string ;
+.
+unit:OZ-PER-IN3
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "oz/in^{3}"^^xsd:string ;
+  qudt:code "1295"^^xsd:string ;
+  qudt:conversionMultiplier "1729.99404"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Ounce per Cubic Inch}' is an Imperial unit for  'Density' expressed as $oz/in^{3}$."^^xsd:string ;
+  qudt:designator "U-150-1295"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "oz/in^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ounce per Cubic Inch"^^xsd:string ;
+  skos:prefLabel "ounce-per-cubic-inch"^^xsd:string ;
+.
+unit:OZ-PER-YD2
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "oz/yd^{2}"^^xsd:string ;
+  qudt:code "1310"^^xsd:string ;
+  qudt:conversionMultiplier 0.0339057474748823e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Ounce per Square Yard}' is an Imperial unit for  'Mass Per Area' expressed as $oz/yd^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1310"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerArea ;
+  qudt:symbol "oz/yd^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ounce per Square Yard"^^xsd:string ;
+  skos:prefLabel "ounce-per-square-yard"^^xsd:string ;
+.
+unit:OZF
+  rdf:type qudt:ForceUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ozf"^^xsd:string ;
+  qudt:code "1280"^^xsd:string ;
+  qudt:conversionMultiplier "0.278013875"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Ounce Force}' is an Imperial unit for  'Force' expressed as $ozf$."^^xsd:string ;
+  qudt:designator "U-150-1280"^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  qudt:symbol "ozf"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ounce Force"^^xsd:string ;
+  skos:prefLabel "ounce-force"^^xsd:string ;
+.
+unit:OZF-IN
+  rdf:type qudt:BendingMomentOrTorqueUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ozf-in"^^xsd:string ;
+  qudt:code "1285"^^xsd:string ;
+  qudt:conversionMultiplier 7.06155243E-2 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Ounce Force Inch}' is an Imperial unit for  'Torque' expressed as $ozf-in$."^^xsd:string ;
+  qudt:designator "U-150-1285"^^xsd:string ;
+  qudt:quantityKind quantity:Torque ;
+  qudt:symbol "ozf-in"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ounce Force Inch"^^xsd:string ;
+  skos:prefLabel "ounce-force-inch"^^xsd:string ;
+.
+unit:OZM
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "ozm"^^xsd:string ;
+  qudt:code "1275"^^xsd:string ;
+  qudt:conversionMultiplier "0.028349523125"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An ounce of mass is 1/16th of a pound of mass, based on the international standard definition of the pound as exactly 0.45359237 kg."^^xsd:string ;
+  qudt:designator "U-150-1275"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "ozm"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ounce Mass"^^xsd:string ;
+  skos:prefLabel "ounce-mass"^^xsd:string ;
+.
+unit:OZ_TROY
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "oz"^^xsd:string ;
+  qudt:code "1315"^^xsd:string ;
+  qudt:conversionMultiplier "0.0311034768"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "An obsolete unit of mass; the Troy Ounce is 1/12th of a Troy Pound. Based on the international definition of a Troy Pound as 5760 grains, the Troy Ounce is exactly 480 grains, or 0.0311034768 kg."^^xsd:string ;
+  qudt:designator "U-150-1315"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "oz"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ounce Troy"^^xsd:string ;
+  skos:prefLabel "ounce-troy"^^xsd:string ;
+.
+unit:PA-PER-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressRateUnit ;
+  qudt:abbreviation "P / hr"^^xsd:string ;
+  qudt:conversionMultiplier "0.000277777778"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A rate of change of pressure measured as the number of Pascals in a period of one hour."^^xsd:string ;
+  qudt:isScalingOf unit:PA-PER-MIN ;
+  qudt:quantityKind quantity:ForcePerAreaTime ;
+  qudt:symbol "P / hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pascal per Hour"^^xsd:string ;
+  skos:prefLabel "pascal-per-hour"^^xsd:string ;
+.
+unit:PA-PER-MIN
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressRateUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "P / min"^^xsd:string ;
+  qudt:conversionMultiplier "0.0166666667"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A rate of change of pressure measured as the number of Pascals in a period of one minute."^^xsd:string ;
+  qudt:isScalingOf unit:PA-PER-SEC ;
+  qudt:quantityKind quantity:ForcePerAreaTime ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pascal per Minute"^^xsd:string ;
+  skos:prefLabel "pascal-per-minute"^^xsd:string ;
+.
+unit:PA-PER-SEC
+  rdf:type qudt:PressureOrStressRateUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "P / s"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A rate of change of pressure measured as the number of Pascals in a period of one second."^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerAreaTime ;
+  qudt:symbol "P / s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pascal per Second"^^xsd:string ;
+  skos:prefLabel "pascal-per-second"^^xsd:string ;
+.
+unit:PA-SEC
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:DynamicViscosityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Pa-s"^^xsd:string ;
+  qudt:baseUnitDimensions "m^{-1}.kg.s{-1}"^^xsd:string ;
+  qudt:code "1330"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of dynamic viscosity, equal to 10 poises or 1000 centipoises. "^^xsd:string ;
+  qudt:designator "U-150-1330"^^xsd:string ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+  qudt:siUnitsExpression "Pa.s"^^xsd:string ;
+  qudt:symbol "Pa-s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pascal Second"^^xsd:string ;
+  skos:prefLabel "pascal-second"^^xsd:string ;
+.
+unit:PASCAL
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "Pa"^^xsd:string ;
+  qudt:baseUnitDimensions "m^{-1}.kg.s^{-2}"^^xsd:string ;
+  qudt:code "1325"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The SI unit of pressure. The pascal is the standard pressure unit in the MKS metric system, equal to one newton per square meter or one \"kilogram per meter per second per second.\" The unit is named for Blaise Pascal (1623-1662), French philosopher and mathematician, who was the first person to use a barometer to measure differences in altitude."^^xsd:string ;
+  qudt:designator "U-150-1325"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:siUnitsExpression "N/m^2"^^xsd:string ;
+  qudt:symbol "Pa"^^xsd:string ;
+  qudt:symbolToken "Pa"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Pascal"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pascal> ;
+  skos:prefLabel "Pascal"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pascal?oldid=492989202> ;
+.
+unit:PDL
+  rdf:type qudt:ForceUnit ;
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "pdl"^^xsd:string ;
+  qudt:code "1390"^^xsd:string ;
+  qudt:conversionMultiplier "0.138254954376"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The poundal is a unit of force that is part of the foot-pound-second system of units, in Imperial units introduced in 1877, and is from the specialized subsystem of English absolute (a coherent system). The poundal is defined as the force necessary to accelerate 1 pound-mass to 1 foot per second per second. $1 pdl = 0.138254954376 N$ exactly."^^xsd:string ;
+  qudt:designator "U-150-1390"^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  qudt:symbol "pdl"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Poundal"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Poundal> ;
+  skos:prefLabel "poundal"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Poundal?oldid=494626458> ;
+.
+unit:PDL-PER-FT2
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "pdl/ft^2"^^xsd:string ;
+  qudt:code "1395"^^xsd:string ;
+  qudt:conversionMultiplier "1.48816443"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Poundal Per Square Foot ($pdl/ft^2$) is a unit in the category of Pressure. It is also known as poundals per square foot, poundal/square foot. This unit is commonly used in the UK, US unit systems. Poundal Per Square Foot has a dimension of $ML^{-1}T^{-2}$, where M is mass, L is length, and T is time. It can be converted to the corresponding standard SI unit \\si{Pa} by multiplying its value by a factor of 1.488163944."^^xsd:string ;
+  qudt:designator "U-150-1395"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "pdl/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Poundal per Square Foot"^^xsd:string ;
+  skos:prefLabel "poundal-per-square-foot"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--pressure--poundal_per_square_foot.cfm> ;
+.
+unit:PER-GigaEV2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MechanicsUnit ;
+  qudt:abbreviation "/GeV^2"^^xsd:string ;
+  qudt:conversionMultiplier 3.89564405E19 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Per Square Giga Electron Volt Unit is a a demominator unit with dimensions $/GeV^2$."^^xsd:string ;
+  qudt:quantityKind quantity:InverseSquareEnergy ;
+  qudt:symbol "GeV^{-2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Per Square Giga Electron Volt Unit"^^xsd:string ;
+  skos:prefLabel "per-square-giga-electron-volt-unit"^^xsd:string ;
+.
+unit:PER-PA
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "/Pa"^^xsd:string ;
+  qudt:baseUnitDimensions "m^{-1}.kg.s^{-2}"^^xsd:string ;
+  qudt:code "1325"^^xsd:string ;
+  qudt:conversionMultiplier "1.0"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:designator "U-150-1325"^^xsd:string ;
+  qudt:quantityKind quantity:InversePressure ;
+  qudt:siUnitsExpression "m^2/N"^^xsd:string ;
+  qudt:symbol "Pa^{-1}"^^xsd:string ;
+  qudt:symbolToken "1/Pa"^^xsd:token ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Per Pascal"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pascal> ;
+  skos:prefLabel "Per Pascal"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Pascal?oldid=492989202> ;
+.
+unit:POISE
+  rdf:type qudt:DynamicViscosityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "P"^^xsd:string ;
+  qudt:code "1385"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-1 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The poise is the unit of dynamic viscosity in the centimetre gram second system of units. It is named after Jean Louis Marie Poiseuille."^^xsd:string ;
+  qudt:designator "U-150-1385"^^xsd:string ;
+  qudt:isDerivedCoherentUnitOfSystem qudt:SOU_CGS-MECHANICS ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+  qudt:symbol "P"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Poise"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Poise> ;
+  skos:prefLabel "poise"^^xsd:string ;
+  prov:wasDerivedFrom <http://en.wikipedia.org/wiki/Poise?oldid=487835641> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Poise?oldid=487835641> ;
+.
+unit:PlanckDensity
+  rdf:type qudt:MassPerVolumeUnit ;
+  qudt:abbreviation "planckdensity"^^xsd:string ;
+  qudt:conversionMultiplier 5.15500E96 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The Planck density is the unit of density, denoted by $\\rho P$, in the system of natural units known as Planck units. $1 rho P is \\approx 5.1 \\times 10 kg/m$. This is a unit which is very large, about equivalent to 10 solar masses squeezed into the space of a single atomic nucleus. At one unit of Planck time after the Big Bang, the mass density of the universe is thought to have been approximately one unit of Planck density."^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Planck Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_density> ;
+  skos:prefLabel "planck-density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_density?oldid=493642128> ;
+.
+unit:PlanckEnergy
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "planckenergy"^^xsd:string ;
+  qudt:conversionMultiplier 1.9561E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In physics, the unit of energy in the system of natural units known as Planck units is called the Planck energy, denoted by $E_\\rho$. $E_\\rho$ is a derived, as opposed to basic, Planck unit. An equivalent definition is: where is the Planck time. Also: where is the Planck mass."^^xsd:string ;
+  qudt:designator "U-150-2424"^^xsd:string ;
+  qudt:latexDefinition "$E_\\rho = \\sqrt{\\frac{ \\hbar c^5}{G}} \\approx 1.936 \\times 10^9 J \\approx 1.22 \\times 10^{28} eV \\approx 0.5433 MWh$, where  $c$ is the speed of light in a vacuum, $\\hbar$ is the reduced Planck's constant, and $G$ is the gravitational constant."^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "E_\\rho"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Planck Energy"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_energy> ;
+  skos:prefLabel "planck-energy"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_energy?oldid=493639955> ;
+.
+unit:PlanckForce
+  rdf:type qudt:ForceUnit ;
+  qudt:abbreviation "planckforce"^^xsd:string ;
+  qudt:conversionMultiplier 1.21027E44 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Planck force is the derived unit of force resulting from the definition of the base Planck units for time, length, and mass. It is equal to the natural unit of momentum divided by the natural unit of time."^^xsd:string ;
+  qudt:quantityKind quantity:Force ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Planck Force"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_force> ;
+  skos:prefLabel "planck-force"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_force?oldid=493643031> ;
+.
+unit:PlanckMass
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "planckmass"^^xsd:string ;
+  qudt:conversionMultiplier 2.17644E-8 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "In physics, the Planck mass, denoted by $mP$, is the unit of mass in the system of natural units known as Planck units. It is defined so that $\\approx  1.2209 \\times 10 GeV/c_0 = 2.17651(13) \\times 10 kg$, (or $21.7651 \\mu g$), where $c_0$ is the speed of light in a vacuum, $G$ is the gravitational constant, and $\\hbar$ is the reduced Planck constant. Particle physicists and cosmologists often use the reduced Planck mass, which is $\\approx  4.341 \\times 10 kg = 2.435  \\times 10 GeV/c$. The added factor of $1/{\\sqrt{8\\pi}}$ simplifies a number of equations in general relativity. Quantum effects are typified by the magnitude of Planck's constant."^^xsd:string ;
+  qudt:latexDefinition "$m_P = \\sqrt{\\frac{ \\hbar c^3}{G}} \\approx 1.2209 \\times 10^{19} GeV/c^2 = 2.17651(13) \\times 10^{-8}$, where $c$ is the speed of light in a vacuum, $\\hbar$ is the reduced Planck's constant, and $G$ is the gravitational constant. The two digits enclosed by parentheses are the estimated standard error associated with the reported numerical value."^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "m_P"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Planck Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_mass> ;
+  skos:prefLabel "planck-mass"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_mass?oldid=493648632> ;
+.
+unit:PlanckMomentum
+  rdf:type qudt:LinearMomentumUnit ;
+  qudt:conversionMultiplier "6.52485"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:LinearMomentum ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/planck> ;
+  rdfs:label "Planck Momentum"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_momentum> ;
+  skos:prefLabel "planck-momentum"^^xsd:string ;
+.
+unit:PlanckPower
+  rdf:type qudt:PowerUnit ;
+  qudt:abbreviation "planckpower"^^xsd:string ;
+  qudt:conversionMultiplier 3.62831E52 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The Planck energy divided by the Planck time is the Planck power $$P_p $, equal to about $3.62831 \\times 10 W$. This is an extremely large unit; even gamma-ray bursts, the most luminous phenomena known, have output on the order of $1 \\times 10 W$, less than one ten-millionth of the Planck power."^^xsd:string ;
+  qudt:latexDefinition "$P_p = \\sqrt{\\frac{ c^5}{G}}$, where $c$ is the speed of light in a vacuum, and $G$ is the gravitational constant."^^xsd:string ;
+  qudt:quantityKind quantity:Power ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Planck Power"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_power> ;
+  skos:prefLabel "planck-power"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Planck_power?oldid=493642483> ;
+.
+unit:PlanckPressure
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:conversionMultiplier 4.63309E113 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/planck> ;
+  rdfs:label "Planck Pressure"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Planck_pressure> ;
+  skos:prefLabel "planck-pressure"^^xsd:string ;
+.
+unit:QUAD
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "quad"^^xsd:string ;
+  qudt:code "1535"^^xsd:string ;
+  qudt:conversionMultiplier 1.055E18 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "A quad is a unit of energy equal to $10 BTU$, or $1.055 \\times \\SI{10}{\\joule}$, which is $1.055 exajoule$ or $EJ$ in SI units. The unit is used by the U.S. Department of Energy in discussing world and national energy budgets. Some common types of an energy carrier approximately equal 1 quad are: 8,007,000,000 Gallons (US) of gasoline 293,083,000,000 Kilowatt-hours (kWh) 36,000,000 Tonnes of coal 970,434,000,000 Cubic feet of natural gas 5,996,000,000 UK gallons of diesel oil 25,200,000 Tonnes of oil 252,000,000 tonnes of TNT or five times the energy of the Tsar Bomba nuclear test."^^xsd:string ;
+  qudt:designator "U-150-1535"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "quad"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Quad"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Quad> ;
+  skos:prefLabel "quad"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Quad?oldid=492086827> ;
+.
+unit:REV-PER-SEC2
+  rdf:type qudt:AngularAccelerationUnit ;
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "rev/s2"^^xsd:string ;
+  qudt:conversionMultiplier "6.28318531"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Revolution per Second Squared}' is a C.G.S System unit for  'Angular Acceleration' expressed as $rev-per-s^2$."^^xsd:string ;
+  qudt:quantityKind quantity:AngularAcceleration ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/space-and-time> ;
+  rdfs:label "Revolution per Second Squared"^^xsd:string ;
+  skos:prefLabel "revolution-per-second-squared"^^xsd:string ;
+.
+unit:SLUG
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "slug"^^xsd:string ;
+  qudt:code "1640"^^xsd:string ;
+  qudt:conversionMultiplier "14.593903"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The slug is a unit of mass associated with Imperial units. It is a mass that accelerates by $1 ft/s$ when a force of one pound-force ($lbF$) is exerted on it. With standard gravity $gc = 9.80665 m/s$, the international foot of $0.3048 m$ and the avoirdupois pound of $0.45359237 kg$, one slug therefore has a mass of approximately $32.17405 lbm$ or $14.593903 kg$. At the surface of the Earth, an object with a mass of 1 slug exerts a force of about $32.17 lbF$ or $143 N$."^^xsd:string ;
+  qudt:designator "U-150-1640"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "slug"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Slug"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Slug> ;
+  skos:prefLabel "slug"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Slug?oldid=495010998> ;
+.
+unit:SLUG-PER-FT
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerLengthUnit ;
+  qudt:abbreviation "slug/ft"^^xsd:string ;
+  qudt:code "1650"^^xsd:string ;
+  qudt:conversionMultiplier 47.8802591863517e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Slug per Foot}' is an Imperial unit for  'Mass Per Length' expressed as $slug/ft$."^^xsd:string ;
+  qudt:designator "U-150-1650"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerLength ;
+  qudt:symbol "slug/ft"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Slug per Foot"^^xsd:string ;
+  skos:prefLabel "slug-per-foot"^^xsd:string ;
+.
+unit:SLUG-PER-FT2
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerAreaUnit ;
+  qudt:abbreviation "slug/ft^{2}"^^xsd:string ;
+  qudt:code "1665"^^xsd:string ;
+  qudt:conversionMultiplier 157.08746452215124e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Slug per Square Foot}' is an Imperial unit for  'Mass Per Area' expressed as $slug/ft^{2}$."^^xsd:string ;
+  qudt:designator "U-150-1665"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerArea ;
+  qudt:symbol "slug/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Slug per Square Foot"^^xsd:string ;
+  skos:prefLabel "slug-per-square-foot"^^xsd:string ;
+.
+unit:SLUG-PER-FT3
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  qudt:abbreviation "slug/ft^{3}"^^xsd:string ;
+  qudt:code "1645"^^xsd:string ;
+  qudt:conversionMultiplier 515.3788206107324e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Slug per Cubic Foot}' is an Imperial unit for  'Density' expressed as $slug/ft^{3}$."^^xsd:string ;
+  qudt:designator "U-150-1645"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "slug/ft^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Slug per Cubic Foot"^^xsd:string ;
+  skos:prefLabel "slug-per-cubic-foot"^^xsd:string ;
+.
+unit:SLUG-PER-SEC
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerTimeUnit ;
+  qudt:abbreviation "slug/s"^^xsd:string ;
+  qudt:code "1660"^^xsd:string ;
+  qudt:conversionMultiplier 14.593903e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Slug per Second}' is an Imperial unit for  'Mass Per Time' expressed as $slug/s$."^^xsd:string ;
+  qudt:designator "U-150-1660"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerTime ;
+  qudt:symbol "slug/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Slug per Second"^^xsd:string ;
+  skos:prefLabel "slug-per-second"^^xsd:string ;
+.
+unit:STOKES
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:KinematicViscosityUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "St"^^xsd:string ;
+  qudt:code "1790"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Stokes (St) is a unit in the category of Kinematic viscosity. This unit is commonly used in the cgs unit system. Stokes (St) has a dimension of $L^2T^{-1}$ where L is length, and T is time. It can be converted to the corresponding standard SI unit $m^2/s$ by multiplying its value by a factor of 0.0001."^^xsd:string ;
+  qudt:designator "U-150-1790"^^xsd:string ;
+  qudt:isDerivedCoherentUnitOfSystem qudt:SOU_CGS-MECHANICS ;
+  qudt:latexDefinition "$cm^2/s$"^^xsd:string ;
+  qudt:latexDefinition "$cm^{2}/s$"^^xsd:string ;
+  qudt:quantityKind quantity:KinematicViscosity ;
+  qudt:symbol "St"^^xsd:string ;
+  qudt:symbol "v"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Stokes"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Stokes> ;
+  skos:prefLabel "stokes"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stokes?oldid=426159512> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units--kinematic_viscosity--stokes.cfm> ;
+.
+unit:ShortTon-PER-YD3
+  rdf:type qudt:MassPerVolumeUnit ;
+  qudt:abbreviation "ton/yd"^^xsd:string ;
+  qudt:code "1885"^^xsd:string ;
+  qudt:conversionMultiplier 1186.552842515566e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The short ton per cubic yard density measurement unit is used to measure volume in cubic yards in order to estimate weight or mass in short tons."^^xsd:string ;
+  qudt:designator "U-150-1885"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "ton/yd"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Short Ton per Cubic Yard"^^xsd:string ;
+  skos:prefLabel "short-ton-per-cubic-yard"^^xsd:string ;
+.
+unit:SlugPerFootSecond
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:DynamicViscosityUnit ;
+  qudt:abbreviation "slug/(ft-s)"^^xsd:string ;
+  qudt:code "1655"^^xsd:string ;
+  qudt:conversionMultiplier 47.8802591863517e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "'\\textit{Slug per Foot Second}' is a C.G.S System unit for  'Dynamic Viscosity' expressed as $slug/(ft-s)$."^^xsd:string ;
+  qudt:designator "U-150-1655"^^xsd:string ;
+  qudt:quantityKind quantity:DynamicViscosity ;
+  qudt:symbol "slug/(ft-s)"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Slug per Foot Second"^^xsd:string ;
+  skos:prefLabel "slug-per-foot-second"^^xsd:string ;
+.
+unit:SolarMass
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "solarmass"^^xsd:string ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The astronomical unit of mass is the solar mass.The symbol $S$ is often used in astronomy to refer to this unit, although $M_{\\odot}$ is also common. The solar mass, $1.98892 \\time 1030 kg$, is a standard way to express mass in astronomy, used to describe the masses of other stars and galaxies. It is equal to the mass of the Sun, about 333,000 times the mass of the Earth or 1,048 times the mass of Jupiter. In practice, the masses of celestial bodies appear in the dynamics of the solar system only through the products GM, where G is the constant of gravitation."^^xsd:string ;
+  qudt:symbol "S"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Solar mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Solar_mass> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Solar_mass?oldid=494074016> ;
+.
+unit:TEX
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerLengthUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "tex"^^xsd:string ;
+  qudt:code "1810"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E-6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Tex is a unit of measure for the linear mass density of fibers and is defined as the mass in grams per 1000 meters. Tex is more likely to be used in Canada and Continental Europe, while denier remains more common in the United States and United Kingdom. The unit code is 'tex'. The most commonly used unit is actually the decitex, abbreviated dtex, which is the mass in grams per 10,000 meters. When measuring objects that consist of multiple fibers the term 'filament tex' is sometimes used, referring to the mass in grams per 1000 meters of a single filament. Tex is used for measuring fiber size in many products, including cigarette filters, optical cable, yarn, and fabric."^^xsd:string ;
+  qudt:designator "U-150-1810"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerLength ;
+  qudt:symbol "tex"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Tex"^^xsd:string ;
+  rdfs:seeAlso unit:Denier ;
+  skos:exactMatch <http://dbpedia.org/resource/Tex> ;
+  skos:prefLabel "tex"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Tex?oldid=457265525> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Units_of_textile_measurement> ;
+.
+unit:TON-PER-YD3
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  qudt:abbreviation "ton/yd^3"^^xsd:string ;
+  qudt:code "1855"^^xsd:string ;
+  qudt:conversionMultiplier 1328.9391836174336e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The long ton per cubic yard density measurement unit is used to measure volume in cubic yards in order to estimate weight or mass in long tons."^^xsd:string ;
+  qudt:designator "U-150-1855"^^xsd:string ;
+  qudt:quantityKind quantity:Density ;
+  qudt:symbol "ton/yd^{3}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Long Ton per Cubic Yard"^^xsd:string ;
+  skos:prefLabel "long-ton-per-cubic-yard"^^xsd:string ;
+.
+unit:TON_LONG
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "ton"^^xsd:string ;
+  qudt:code "1850"^^xsd:string ;
+  qudt:conversionMultiplier "1016.0469088"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Long ton (weight ton or imperial ton) is the name for the unit called the \"ton\" in the avoirdupois or Imperial system of measurements, as used in the United Kingdom and several other Commonwealth countries. One long ton is equal to 2,240 pounds (1,016 kg), 1.12 times as much as a short ton, or 35 cubic feet (0.9911 m3) of salt water with a density of 64 lb/ft3 (1.025 g/ml).[1] It has some limited use in the United States, most commonly in measuring the displacement of ships, and was the unit prescribed for warships by the Washington Naval Treaty 1922-for example battleships were limited to a mass of 35,000 long tons (36,000 t; 39,000 short tons)."^^xsd:string ;
+  qudt:designator "U-150-1850"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "ton"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Long Ton"^^xsd:string ;
+  skos:prefLabel "long-ton"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Long_ton> ;
+.
+unit:TON_SHORT
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "ton"^^xsd:string ;
+  qudt:code "1880"^^xsd:string ;
+  qudt:conversionMultiplier "907.18474"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The short ton is a unit of mass equal to 2,000 pounds (907.18474 kg). In the United States it is often called simply ton without distinguishing it from the metric ton (tonne, 1,000 kilograms / 2,204.62262 pounds) or the long ton (2,240 pounds / 1,016.0469088 kilograms); rather, the other two are specifically noted. There are, however, some U.S. applications for which unspecified tons normally means long tons."^^xsd:string ;
+  qudt:designator "U-150-1880"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "ton"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Short Ton"^^xsd:string ;
+  skos:prefLabel "short-ton"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Short_ton> ;
+.
+unit:TON_SHORT-PER-HR
+  rdf:type qudt:ImperialUnit ;
+  rdf:type qudt:MassPerTimeUnit ;
+  qudt:abbreviation "ton/hr"^^xsd:string ;
+  qudt:code "1875"^^xsd:string ;
+  qudt:conversionMultiplier "0.251995761"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The short Ton per Hour is a unit used to express a weight processed in a period of time."^^xsd:string ;
+  qudt:designator "U-150-1875"^^xsd:string ;
+  qudt:quantityKind quantity:MassPerTime ;
+  qudt:symbol "ton/hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Short Ton per Hour"^^xsd:string ;
+  skos:prefLabel "short-ton-per-hour"^^xsd:string ;
+.
+unit:TonEnergy
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "t/lbf"^^xsd:string ;
+  qudt:code "1845"^^xsd:string ;
+  qudt:conversionMultiplier 4.184E9 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Energy equivalent of one ton of TNT"^^xsd:string ;
+  qudt:designator "U-150-1845"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "t/lbf"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ton Energy"^^xsd:string ;
+  skos:prefLabel "ton-energy"^^xsd:string ;
+.
+unit:TonOfOilEquivalent
+  rdf:type qudt:EnergyAndWorkUnit ;
+  qudt:abbreviation "toe"^^xsd:string ;
+  qudt:code "1865"^^xsd:string ;
+  qudt:conversionMultiplier 4.1868E10 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description """The tonne of oil equivalent (toe) is a unit of energy: the amount of energy released by burning one tonne of crude oil, approximately 42 GJ (as different crude oils have different calorific values, the exact value of the toe is defined by convention; unfortunately there are several slightly different definitions as discussed below). The toe is sometimes used for large amounts of energy, as it can be more intuitive to visualise, say, the energy released by burning 1000 tonnes of oil than 42,000 billion joules (the SI unit of energy).
+Multiples of the toe are used, in particular the megatoe (Mtoe, one million toe) and the gigatoe (Gtoe, one billion toe)."""^^xsd:string ;
+  qudt:designator "U-150-1865"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "toe"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Ton of Oil Equivalent"^^xsd:string ;
+  skos:prefLabel "ton-of-oil-equivalent"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Tonne_of_oil_equivalent> ;
+.
+unit:Torr
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PressureOrStressUnit ;
+  qudt:abbreviation "torr"^^xsd:string ;
+  qudt:code "1890"^^xsd:string ;
+  qudt:conversionMultiplier "133.322"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The torr is a non-SI unit of pressure with the ratio of 760 to 1 standard atmosphere, chosen to be roughly equal to the fluid pressure exerted by a millimeter of mercury, i.e. , a pressure of 1 torr is approximately equal to one millimeter of mercury. Note that the symbol (Torr) is spelled exactly the same as the unit (torr), but the letter case differs. The unit is written lower-case, while the symbol of the unit (Torr) is capitalized (as upper-case), as is customary in metric units derived from names. Thus, it is correctly written either way, and is only incorrect when specification is first made that the word is being used as a unit, or else a symbol of the unit, and then the incorrect letter case for the specified use is employed."^^xsd:string ;
+  qudt:designator "U-150-1890"^^xsd:string ;
+  qudt:quantityKind quantity:ForcePerArea ;
+  qudt:symbol "torr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Torr"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Torr> ;
+  skos:prefLabel "torr"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Torr?oldid=495199381> ;
+.
+unit:UnifiedAtomicMassUnit
+  rdf:type qudt:MassUnit ;
+  qudt:abbreviation "u"^^xsd:string ;
+  qudt:code "1895"^^xsd:string ;
+  qudt:conversionMultiplier 9.10938215E-31 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The unified atomic mass unit (symbol: $u$) or dalton (symbol: $Da$) is the standard unit that is used for indicating mass on an atomic or molecular scale (atomic mass). It is defined as one twelfth of the mass of an unbound neutral atom of carbon-12 in its nuclear and electronic ground state,[ and has a value of $1.660538921(73) \\times 10^{-27} kg. One dalton is approximately equal to the mass of one nucleon; an equivalence of saying $1 g mol^{-1}. The CIPM have categorised it as a 'non-SI unit' because units values in SI units must be obtained experimentally."^^xsd:string ;
+  qudt:designator "U-150-1895"^^xsd:string ;
+  qudt:quantityKind quantity:Mass ;
+  qudt:symbol "u"^^xsd:string ;
+  rdfs:label "Unified Atomic Mass Unit"^^xsd:string ;
+  owl:sameAs unit:Dalton ;
+  skos:exactMatch <http://dbpedia.org/resource/Atomic_mass_unit> ;
+  skos:prefLabel "unified-atomic-mass-unit"^^xsd:string ;
+  prov:wasInformedBy <http://en.wikipedia.org/wiki/Atomic_mass_unit> ;
+.
+unit:W-HR
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:EnergyAndWorkUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "W-hr"^^xsd:string ;
+  qudt:code "1925"^^xsd:string ;
+  qudt:conversionMultiplier 3600.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "The watt hour is a unit of energy, equal to 3,600 joule."^^xsd:string ;
+  qudt:designator "U-150-1925"^^xsd:string ;
+  qudt:quantityKind quantity:EnergyAndWork ;
+  qudt:symbol "W-hr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Watthour"^^xsd:string ;
+  skos:prefLabel "watthour"^^xsd:string ;
+.
+unit:W-PER-CM2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "W/ft^{2}"^^xsd:string ;
+  qudt:code "1935"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E4 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Watt Per Square Centimeter is a unit of heat flux or thermal flux, the rate of heat energy transfer through a given surface."^^xsd:string ;
+  qudt:designator "U-150-1935"^^xsd:string ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "W/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Watt per Square Centimeter"^^xsd:string ;
+  skos:prefLabel "watt-per-square-centimeter"^^xsd:string ;
+.
+unit:W-PER-FT2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "W/ft^{2}"^^xsd:string ;
+  qudt:conversionMultiplier "10.7639104"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Watt Per Square Foot is a unit of heat flux or thermal flux, the rate of heat energy transfer through a given surface."^^xsd:string ;
+  qudt:quantityKind quantity:HeatFluxDensity ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "W/ft^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Watt per Square Foot"^^xsd:string ;
+  skos:prefLabel "watt-per-square-foot"^^xsd:string ;
+.
+unit:W-PER-IN2
+  rdf:type qudt:CGS-Unit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:Unit ;
+  qudt:abbreviation "W/in^{2}"^^xsd:string ;
+  qudt:code "1940"^^xsd:string ;
+  qudt:conversionMultiplier "1550.0031"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "Watt Per Square Inch is a unit of heat flux or thermal flux, the rate of heat energy transfer through a given surface."^^xsd:string ;
+  qudt:designator "U-150-1940"^^xsd:string ;
+  qudt:quantityKind quantity:HeatFluxDensity ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "W/in^{2}"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Watt per Square Inch"^^xsd:string ;
+  skos:prefLabel "watt-per-square-inch"^^xsd:string ;
+.
+unit:W-PER-M2
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:PowerPerAreaUnit ;
+  rdf:type qudt:ThermodynamicsUnit ;
+  qudt:abbreviation "W/m^2"^^xsd:string ;
+  qudt:code "1950"^^xsd:string ;
+  qudt:conversionMultiplier 1.0e0 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:description "\\textit{Watt per Square Meter} is a unit of irradiance defined as the power received per area. This is a unit in the category of Energy flux. It is also known as watts per square meter, watt per square metre, watts per square metre, watt/square meter, watt/square metre. This unit is commonly used in the SI unit system. Watt Per Square Meter ($W/m^2$) has a dimension of $MT^{-3}$ where M is mass, and T is time. This unit is the standard SI unit in this category."^^xsd:string ;
+  qudt:designator "U-150-1950"^^xsd:string ;
+  qudt:quantityKind quantity:Irradiance ;
+  qudt:quantityKind quantity:PowerArea ;
+  qudt:quantityKind quantity:PowerPerArea ;
+  qudt:symbol "W/m^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mechanics> ;
+  rdfs:label "Watt per Square Meter"^^xsd:string ;
+  skos:prefLabel "watt-per-square-meter"^^xsd:string ;
+  prov:wasInformedBy <http://www.efunda.com/glossary/units/units--energy_flux--watt_per_square_meter.cfm> ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.

@@ -1,0 +1,708 @@
+# baseURI: http://siemens.com/schemas/proglang
+# imports: http://siemens.com/schemas/eqnsandalgs
+# prefix:  prog
+
+@prefix alg: <http://siemens.com/schemas/eqnsandalgs#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prog: <http://siemens.com/schemas/proglang#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/proglang>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "Ontology for programming languages"^^xsd:string ;
+  dc:title "Programming Languages Ontology"^^xsd:string ;
+  dc:subject "Programming languages model"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology provides a baseline for representing programming languages."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/proglang#"^^xsd:string ;
+  vaem:namespacePrefix "prog"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/proglang"^^xsd:anyURI ;
+  rdfs:label "Programming Languages Ontology"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_SSF_programming_languages-v1.0.ttl 1954 2018-08-22 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://siemens.com/schemas/eqnsandalgs> ;
+.
+prog:BASIC
+  rdf:type owl:Class ;
+  dc:description "BASIC is a procedural programming language."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/BASIC"^^xsd:anyURI ;
+  rdfs:label "BASIC"^^xsd:string ;
+  rdfs:subClassOf prog:ProceduralProgrammingLanguage ;
+  skos:prefLabel "BASIC"^^xsd:string ;
+.
+prog:Bash
+  rdf:type owl:Class ;
+  dc:description "Bash is an interpreted programming language."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Bash_(Unix_shell)"^^xsd:anyURI ;
+  rdfs:label "Bash"^^xsd:string ;
+  rdfs:subClassOf prog:BourneShellProgramming ;
+  skos:prefLabel "Bash"^^xsd:string ;
+.
+prog:BatchProgrammingLanguage
+  rdf:type owl:Class ;
+  prog:url "http://en.wikipedia.org/wiki/Windows_PowerShell#Scripting"^^xsd:anyURI ;
+  rdfs:label "Batch programming language"^^xsd:string ;
+  rdfs:subClassOf prog:ScriptingProgrammingLanguage ;
+.
+prog:BourneShellProgramming
+  rdf:type owl:Class ;
+  prog:url "http://en.wikipedia.org/wiki/Unix_shell#Bourne_shell"^^xsd:anyURI ;
+  rdfs:label "Bourne shell programming"^^xsd:string ;
+  rdfs:subClassOf prog:ShellScriptingProgrammingLanguage ;
+.
+prog:C
+  rdf:type owl:Class ;
+  dc:description "C is a procedural programming language."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/C_(programming_language)"^^xsd:anyURI ;
+  rdfs:label "C Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:ProceduralProgrammingLanguage ;
+  skos:prefLabel "C Programming Language"^^xsd:string ;
+.
+prog:CPlusPlus
+  rdf:type owl:Class ;
+  dc:description "C++ is an object oriented language designed with a bias toward system programming (e.g., for use in embedded systems or operating system kernels), with performance, efficiency and flexibility of use as its design requirements."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/C%2B%2B"^^xsd:anyURI ;
+  rdfs:label "C++"^^xsd:string ;
+  rdfs:subClassOf prog:ObjectOrientedProgrammingLanguage ;
+  skos:prefLabel "C++"^^xsd:string ;
+.
+prog:CShellProgramming
+  rdf:type owl:Class ;
+  prog:url "http://en.wikipedia.org/wiki/Unix_shell#C_shell"^^xsd:anyURI ;
+  rdfs:label "C shell programming"^^xsd:string ;
+  rdfs:subClassOf prog:ShellScriptingProgrammingLanguage ;
+.
+prog:Common_Lisp
+  rdf:type owl:Class ;
+  dc:description "Common LISP is a dialect of LISP."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Common_Lisp"^^xsd:anyURI ;
+  rdfs:label "Common Lisp"^^xsd:string ;
+  rdfs:subClassOf prog:LISP ;
+  skos:prefLabel "Common Lisp"^^xsd:string ;
+.
+prog:CompiledProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "A compiled programming language is translated from a human-readable to a computer-readable form by a compiler."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Compiled_language"^^xsd:anyURI ;
+  rdfs:label "Compiled Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:ProgrammingLanguage ;
+  skos:prefLabel "Compiled Programming Language"^^xsd:string ;
+.
+prog:Conditional
+  rdf:type owl:Class ;
+  dc:description "A conditional is a logical expression delimited by parentheses. It is not a stand-alone statement but must be part of a control structure such as an IF or FOR."^^xsd:string ;
+  rdfs:label "Conditional" ;
+  rdfs:subClassOf alg:AlgorithmExpression ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:controlStructureDelimiter ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:expression ;
+    ] ;
+  skos:prefLabel "Conditional"^^xsd:string ;
+.
+prog:ControlStructure
+  rdf:type owl:Class ;
+  dc:description "A control structure is a semantic block of statements."^^xsd:string ;
+  rdfs:label "Control Structure"^^xsd:string ;
+  rdfs:subClassOf prog:StatementBlock ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty prog:statement ;
+    ] ;
+  skos:prefLabel "Control Structure"^^xsd:string ;
+.
+prog:DeclarativeProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "A declarative programming language is one that expresses the logic of a computation without describing its control flow."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Declarative_programming"^^xsd:anyURI ;
+  rdfs:label "Declarative Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:ProgrammingLanguage ;
+  skos:prefLabel "Declarative Programming Language"^^xsd:string ;
+.
+prog:DoWhileConditional
+  rdf:type owl:Class ;
+  rdfs:label "Do while conditional"^^xsd:string ;
+  rdfs:subClassOf prog:Conditional ;
+  skos:prefLabel "Do while conditional"^^xsd:string ;
+.
+prog:DoWhileLoop
+  rdf:type owl:Class ;
+  rdfs:label "Do while loop"^^xsd:string ;
+  rdfs:subClassOf prog:RepetitionControlStructure ;
+.
+prog:FORTRAN
+  rdf:type owl:Class ;
+  dc:description "FORTRAN is a procedural programming language."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Fortran"^^xsd:anyURI ;
+  rdfs:label "FORTRAN"^^xsd:string ;
+  rdfs:subClassOf prog:ProceduralProgrammingLanguage ;
+  skos:prefLabel "Fortran"^^xsd:string ;
+.
+prog:ForConditional
+  rdf:type owl:Class ;
+  rdfs:label "For conditional"^^xsd:string ;
+  rdfs:subClassOf prog:Conditional ;
+  skos:prefLabel "For conditional"^^xsd:string ;
+.
+prog:ForLoop
+  rdf:type owl:Class ;
+  rdfs:label "For loop"^^xsd:string ;
+  rdfs:subClassOf prog:RepetitionControlStructure ;
+.
+prog:Function
+  rdf:type owl:Class ;
+  dc:description "A function is a named sequential control structure with parameters, statement block, and return type."^^xsd:string ;
+  rdfs:label "Function"^^xsd:string ;
+  rdfs:subClassOf prog:SequentialControlStructure ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:functionName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:returnType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://qudt.org/schema/qudt#functionArity> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 0 ;
+      owl:onProperty prog:functionParameter ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty prog:statementblock ;
+    ] ;
+  skos:prefLabel "Function"^^xsd:string ;
+.
+prog:FunctionCall
+  rdf:type owl:Class ;
+  dc:description "A function call is comprised of a function name and zero or more arguments."^^xsd:string ;
+  rdfs:label "Function Call"^^xsd:string ;
+  rdfs:subClassOf alg:Statement ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:functionName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 0 ;
+      owl:onProperty prog:functionArgument ;
+    ] ;
+  skos:prefLabel "Function Call"^^xsd:string ;
+.
+prog:FunctionalProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "A functional programming language treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Functional_programming"^^xsd:anyURI ;
+  rdfs:label "Functional Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:DeclarativeProgrammingLanguage ;
+  skos:prefLabel "Functional Programming Language"^^xsd:string ;
+.
+prog:Haskell
+  rdf:type owl:Class ;
+  dc:description "Haskell is a functional programming language ."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Haskell_(programming_language)"^^xsd:anyURI ;
+  rdfs:label "Haskell"^^xsd:string ;
+  rdfs:subClassOf prog:FunctionalProgrammingLanguage ;
+  skos:prefLabel "Haskell"^^xsd:string ;
+.
+prog:IfConditional
+  rdf:type owl:Class ;
+  rdfs:label "If conditional"^^xsd:string ;
+  rdfs:subClassOf prog:Conditional ;
+  skos:prefLabel "If conditional"^^xsd:string ;
+.
+prog:IfThenBlock
+  rdf:type owl:Class ;
+  rdfs:label "If Then Block"^^xsd:string ;
+  rdfs:subClassOf prog:SelectionControlStructure ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:ifConditional ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:thenBlock ;
+    ] ;
+.
+prog:IfThenElseBlock
+  rdf:type owl:Class ;
+  rdfs:label "If Then Else Block"^^xsd:string ;
+  rdfs:subClassOf prog:SelectionControlStructure ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:elseBlock ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:ifConditional ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:thenBlock ;
+    ] ;
+.
+prog:IfThenElseifBlock
+  rdf:type owl:Class ;
+  rdfs:label "If Then Elseif Block"^^xsd:string ;
+  rdfs:subClassOf prog:SelectionControlStructure ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:elseBlock ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:ifConditional ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:thenBlock ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:elseIfBlock ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:elseifConditional ;
+    ] ;
+.
+prog:ImperativeProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "An imperative programming language imperative programming in which the program is built from one or more procedures."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Imperative_programming"^^xsd:anyURI ;
+  rdfs:label "Imperative Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:ProgrammingLanguage ;
+  skos:prefLabel "Imperative Programming Language"^^xsd:string ;
+.
+prog:InterpretedProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "An interpreted programming language is a language whose statements are executed by an interpreter."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Interpreted_language"^^xsd:anyURI ;
+  rdfs:label "Interpreted Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:ProgrammingLanguage ;
+  skos:prefLabel "Interpreted Programming Language"^^xsd:string ;
+.
+prog:Java
+  rdf:type owl:Class ;
+  dc:description "Java is an object oriented language specifically designed to have as few implementation dependencies as possible."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Java_(programming_language)"^^xsd:anyURI ;
+  rdfs:label "Java"^^xsd:string ;
+  rdfs:subClassOf prog:ObjectOrientedProgrammingLanguage ;
+  skos:prefLabel "Java"^^xsd:string ;
+.
+prog:KornShellProgramming
+  rdf:type owl:Class ;
+  prog:url "http://en.wikipedia.org/wiki/Korn_shell"^^xsd:anyURI ;
+  rdfs:label "Korn shell programming"^^xsd:string ;
+  rdfs:subClassOf prog:BourneShellProgramming ;
+.
+prog:LISP
+  rdf:type owl:Class ;
+  dc:description "LISP (List Processing) is a functional programming language ."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Lisp_(programming_language)"^^xsd:anyURI ;
+  rdfs:label "LISP"^^xsd:string ;
+  rdfs:subClassOf prog:FunctionalProgrammingLanguage ;
+  skos:prefLabel "Lisp"^^xsd:string ;
+.
+prog:LogicProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "A logic programming language treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Logic_programming"^^xsd:anyURI ;
+  rdfs:label "Logic Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:DeclarativeProgrammingLanguage ;
+  skos:prefLabel "Logic Programming Language"^^xsd:string ;
+.
+prog:ObjectDataType
+  rdf:type owl:Class ;
+  dc:description "Any legal object type."^^xsd:string ;
+  rdfs:label "Object Data Type"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://qudt.org/schema/qudt#Datatype> ;
+  skos:prefLabel "Object Data Type"^^xsd:string ;
+.
+prog:ObjectOrientedProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "An object oriented programming language based on the concept of objects, which are data structures that contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Object-oriented_programming"^^xsd:anyURI ;
+  rdfs:label "Procedural Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:StructuredProgrammingLanguage ;
+  skos:prefLabel "Procedural Programming Language"^^xsd:string ;
+.
+prog:ObjectiveC
+  rdf:type owl:Class ;
+  dc:description "Objective C is an object oriented language that adds Smalltalk-style messaging to the C programming language."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Objective-C"^^xsd:anyURI ;
+  rdfs:label "Objective C"^^xsd:string ;
+  rdfs:subClassOf prog:ObjectOrientedProgrammingLanguage ;
+  skos:prefLabel "Objective C"^^xsd:string ;
+.
+prog:Parameter
+  rdf:type owl:Class ;
+  dc:description "A function parameter is a named object with a data type."^^xsd:string ;
+  rdfs:label "Parameter"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:parameterName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:parameterType ;
+    ] ;
+  skos:prefLabel "Parameter"^^xsd:string ;
+.
+prog:Pascal
+  rdf:type owl:Class ;
+  dc:description "Pascal is a procedural programming language."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Pascal_(programming_language)"^^xsd:anyURI ;
+  rdfs:label "Pascal Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:ProceduralProgrammingLanguage ;
+  skos:prefLabel "Pascal Programming Language"^^xsd:string ;
+.
+prog:Perl
+  rdf:type owl:Class ;
+  dc:description "Perl is an interpreted programming language."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Perl"^^xsd:anyURI ;
+  rdfs:label "Perl"^^xsd:string ;
+  rdfs:subClassOf prog:ScriptingProgrammingLanguage ;
+  skos:prefLabel "Perl"^^xsd:string ;
+.
+prog:ProceduralProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "A procedural programming language is a structured programming language based upon the concept of the procedure call."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Procedural_programming"^^xsd:anyURI ;
+  rdfs:label "Procedural Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:StructuredProgrammingLanguage ;
+  skos:prefLabel "Procedural Programming Language"^^xsd:string ;
+.
+prog:ProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "A programming language is digital mechanism for implementing algorithms."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Programming_paradigm"^^xsd:anyURI ;
+  rdfs:label "Programming Language"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty prog:statement ;
+    ] ;
+  skos:prefLabel "Programming Language"^^xsd:string ;
+.
+prog:Prolog
+  rdf:type owl:Class ;
+  dc:description "A logic programming language treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Prolog"^^xsd:anyURI ;
+  rdfs:label "Prolog"^^xsd:string ;
+  rdfs:subClassOf prog:LogicProgrammingLanguage ;
+  skos:prefLabel "Prolog"^^xsd:string ;
+.
+prog:RepetitionControlStructure
+  rdf:type owl:Class ;
+  dc:description "A repetition control structure consists of a conditional and a statement block to repeat."^^xsd:string ;
+  rdfs:label "Repetition Control Structure"^^xsd:string ;
+  rdfs:subClassOf prog:ControlStructure ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:conditional ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty prog:statement ;
+    ] ;
+  skos:prefLabel "Repetition Control Structure"^^xsd:string ;
+.
+prog:Scheme
+  rdf:type owl:Class ;
+  dc:description "Scheme is a dialect of LISP."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Scheme_(programming_language)"^^xsd:anyURI ;
+  rdfs:label "Scheme"^^xsd:string ;
+  rdfs:subClassOf prog:LISP ;
+  skos:prefLabel "Scheme"^^xsd:string ;
+.
+prog:ScriptingProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "An interpreted programming language is a language whose statements are executed by an interpreter."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Scripting_language"^^xsd:anyURI ;
+  rdfs:label "Scripting Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:InterpretedProgrammingLanguage ;
+  skos:prefLabel "Scripting Programming Language"^^xsd:string ;
+.
+prog:SelectCaseDefaultBlock
+  rdf:type owl:Class ;
+  rdfs:label "Select case default block"^^xsd:string ;
+  rdfs:subClassOf prog:SelectionControlStructure ;
+  skos:prefLabel "Select case default block"^^xsd:string ;
+.
+prog:SelectConditional
+  rdf:type owl:Class ;
+  rdfs:label "Select conditional"^^xsd:string ;
+  rdfs:subClassOf prog:Conditional ;
+  skos:prefLabel "Select conditional"^^xsd:string ;
+.
+prog:SelectionControlStructure
+  rdf:type owl:Class ;
+  dc:description "A selection control structure consists of a conditional and one or more statement blocks."^^xsd:string ;
+  rdfs:label "Selection Control Structure"^^xsd:string ;
+  rdfs:subClassOf prog:ControlStructure ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty prog:statement ;
+    ] ;
+  skos:prefLabel "Selection Control Structure"^^xsd:string ;
+.
+prog:SequentialControlStructure
+  rdf:type owl:Class ;
+  dc:description "A sequential control structure is a function."^^xsd:string ;
+  rdfs:label "Sequential Control Structure"^^xsd:string ;
+  rdfs:subClassOf prog:ControlStructure ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty prog:statement ;
+    ] ;
+  skos:prefLabel "Sequential Control Structure"^^xsd:string ;
+.
+prog:ShellScriptingProgrammingLanguage
+  rdf:type owl:Class ;
+  rdfs:label "Shell scripting programming language"^^xsd:string ;
+  rdfs:subClassOf prog:ScriptingProgrammingLanguage ;
+.
+prog:Statement
+  rdf:type owl:Class ;
+  dc:description "A statement is an expression in the programming language."^^xsd:string ;
+  rdfs:label "Statement"^^xsd:string ;
+  rdfs:subClassOf alg:AlgorithmExpression ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:terminator ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty prog:expression ;
+    ] ;
+  skos:prefLabel "Statement"^^xsd:string ;
+.
+prog:StatementBlock
+  rdf:type owl:Class ;
+  dc:description "A statement block is a sequence of statements."^^xsd:string ;
+  rdfs:label "Statement Block"^^xsd:string ;
+  rdfs:subClassOf alg:AlgorithmExpression ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:controlStructureDelimiter ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty prog:controlStructureLiteral ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty prog:statement ;
+    ] ;
+  skos:prefLabel "Statement Block"^^xsd:string ;
+.
+prog:StructuredProgrammingLanguage
+  rdf:type owl:Class ;
+  dc:description "A structured programming language is aimed at improving the clarity, quality, and development time of a computer program by making extensive use of control structures."^^xsd:string ;
+  prog:url "http://en.wikipedia.org/wiki/Structured_programming"^^xsd:anyURI ;
+  rdfs:label "Procedural Programming Language"^^xsd:string ;
+  rdfs:subClassOf prog:ImperativeProgrammingLanguage ;
+  skos:prefLabel "Procedural Programming Language"^^xsd:string ;
+.
+prog:VariableDeclaration
+  rdf:type owl:Class ;
+  dc:description "A variable declaration is comprised of a variable name and type."^^xsd:string ;
+  rdfs:label "Variable Declaration"^^xsd:string ;
+  rdfs:subClassOf alg:Statement ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:variableName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty prog:variableType ;
+    ] ;
+  skos:prefLabel "Variable Declaration"^^xsd:string ;
+.
+prog:WhileConditional
+  rdf:type owl:Class ;
+  rdfs:label "While conditional"^^xsd:string ;
+  rdfs:subClassOf prog:Conditional ;
+  skos:prefLabel "While conditional"^^xsd:string ;
+.
+prog:WhileLoop
+  rdf:type owl:Class ;
+  rdfs:label "While loop"^^xsd:string ;
+  rdfs:subClassOf prog:RepetitionControlStructure ;
+.
+prog:conditional
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:ControlStructure ;
+  rdfs:label "conditional"^^xsd:string ;
+  rdfs:range prog:Conditional ;
+.
+prog:controlStructureDelimiter
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain prog:Statement ;
+  rdfs:label "control structure delimiter"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+prog:controlStructureLiteral
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain prog:StatementBlock ;
+  rdfs:label "control structure literal"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+prog:elseBlock
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:IfThenElseBlock ;
+  rdfs:label "else block"^^xsd:string ;
+  rdfs:range prog:StatementBlock ;
+  rdfs:subPropertyOf prog:statementBlock ;
+.
+prog:elseIfBlock
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:IfThenElseifBlock ;
+  rdfs:label "else if block"^^xsd:string ;
+  rdfs:range prog:StatementBlock ;
+  rdfs:subPropertyOf prog:statementBlock ;
+.
+prog:elseifConditional
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:SelectionControlStructure ;
+  rdfs:label "else if conditional"^^xsd:string ;
+  rdfs:range prog:Conditional ;
+  rdfs:subPropertyOf prog:conditional ;
+.
+prog:expression
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "expression"^^xsd:string ;
+  rdfs:range alg:AlgorithmExpression ;
+.
+prog:functionArgument
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:Function ;
+  rdfs:label "function parameter"^^xsd:string ;
+  rdfs:range prog:ObjectDataType ;
+.
+prog:functionName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain prog:Function ;
+  rdfs:label "function name"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+prog:functionParameter
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:Statement ;
+  rdfs:label "function parameter"^^xsd:string ;
+  rdfs:range prog:Parameter ;
+.
+prog:ifConditional
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:SelectionControlStructure ;
+  rdfs:label "if conditional"^^xsd:string ;
+  rdfs:range prog:Conditional ;
+  rdfs:subPropertyOf prog:conditional ;
+.
+prog:parameterName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain prog:Parameter ;
+  rdfs:label "parameter name"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+prog:parameterType
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:Parameter ;
+  rdfs:label "parameter type"^^xsd:string ;
+  rdfs:range prog:ObjectDataType ;
+.
+prog:returnType
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:Function ;
+  rdfs:label "return type"^^xsd:string ;
+  rdfs:range prog:ObjectDataType ;
+.
+prog:statement
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:ProgrammingLanguage ;
+  rdfs:label "statement"^^xsd:string ;
+  rdfs:range prog:Statement ;
+.
+prog:statementBlock
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:ControlStructure ;
+  rdfs:label "statement block"^^xsd:string ;
+  rdfs:range prog:Statement ;
+.
+prog:terminator
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain prog:Statement ;
+  rdfs:label "statement terminator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+prog:thenBlock
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:IfThenBlock ;
+  rdfs:label "then block"^^xsd:string ;
+  rdfs:range prog:StatementBlock ;
+  rdfs:subPropertyOf prog:statementBlock ;
+.
+prog:url
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "url" ;
+  rdfs:range xsd:anyURI ;
+.
+prog:variableName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain prog:VariableDeclaration ;
+  rdfs:label "variable name"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+prog:variableType
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prog:VariableDeclaration ;
+  rdfs:label "variable type"^^xsd:string ;
+  rdfs:range prog:ObjectDataType ;
+.

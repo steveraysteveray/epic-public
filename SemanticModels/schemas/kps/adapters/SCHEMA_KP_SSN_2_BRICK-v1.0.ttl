@@ -1,0 +1,71 @@
+# baseURI: http://siemens.com/schemas/kps/adapters/ssn2brick
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: http://www.w3.org/ns/ssn/systems/
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# imports: https://brickschema.org/schema/1.0.3/BrickTag
+# prefix: ssn2brick
+
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn2brick: <http://siemens.com/schemas/kps/adapters/ssn2brick#> .
+@prefix tag: <https://brickschema.org/schema/1.0.3/BrickTag#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/adapters/ssn2brick>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The SSN to BRICK mapping creates an interoperability path between these two ontologies."^^xsd:string ;
+  dc:subject "mappings SSN sensor and actuator to BRICK building integration mapping"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology creates an interoperability mapping between the SSN sensor model and the external BRICK building model."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/adapters/ssn2brick#"^^xsd:string ;
+  vaem:namespacePrefix "ssn2brick"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/adapters/ssn2brick"^^xsd:anyURI ;
+  rdfs:label "SSN to BRICK Mapping"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_SSN_2_BRICK-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://www.w3.org/ns/ssn/systems/> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/BrickTag> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ssn2brick:Frequency
+  rdf:type owl:Class ;
+  rdfs:label "Frequency" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf <http://www.w3.org/ns/ssn/systems/Frequency> ;
+  rdfs:subClassOf brick:Frequency ;
+.
+ssn2brick:Input
+  rdf:type owl:Class ;
+  rdfs:label "Input" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf <http://www.w3.org/ns/ssn/Input> ;
+  rdfs:subClassOf tag:Input ;
+.
+ssn2brick:Output
+  rdf:type owl:Class ;
+  rdfs:label "Output" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf <http://www.w3.org/ns/ssn/Output> ;
+  rdfs:subClassOf tag:Output ;
+.
+ssn2brick:Property
+  rdf:type owl:Class ;
+  rdfs:label "Property" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
+  rdfs:subClassOf brick:MeasurementProperty ;
+.
+ssn2brick:System
+  rdf:type owl:Class ;
+  rdfs:label "System" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ;
+  rdfs:subClassOf brick:System ;
+.

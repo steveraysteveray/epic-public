@@ -1,0 +1,87 @@
+# baseURI: http://siemens.com/schemas/kps/bridges/saref2ssn
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: http://siemens.com/schemas/san
+# imports: http://www.w3.org/ns/ssn/
+# imports: https://w3id.org/saref
+# prefix: saref2ssn
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix san: <http://siemens.com/schemas/san#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix saref2ssn: <http://siemens.com/schemas/kps/bridges/saref2ssn#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/bridges/saref2ssn>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The IFC to SSF/FONM integration bridge ontology creates an interoperability path between the ontologies." ;
+  dc:subject "An integration bridge between the IFC and SSF/FONM models" ;
+  dc:title "The IFC to SSF/FONM integration bridge" ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology an integration bridge between the IFC and SSF/FONM models." ;
+  vaem:namespace "http://siemens.com/schemas/kps/bridges/ifc2ssffonm#" ;
+  vaem:namespacePrefix "ifc2ssffonm" ;
+  vaem:url "http://siemens.com/schemas/kps/bridges/ifc2ssffonm"^^xsd:anyURI ;
+  rdfs:label "IFC to SSF/FONM Integration Bridge" ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:imports <http://siemens.com/schemas/san> ;
+  owl:imports ssn: ;
+  owl:imports <https://w3id.org/saref> ;
+  owl:versionInfo "$Id: SCHEMA_KP_IFC_2_FONM-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $" ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+saref2ssn:ActuationFunction
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf sosa:Procedure ;
+  rdfs:subClassOf saref:ActuatingFunction ;
+.
+saref2ssn:Actuator
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf sosa:Actuator ;
+  rdfs:subClassOf saref:Actuator ;
+.
+saref2ssn:Property
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ssn:Property ;
+  rdfs:subClassOf saref:Property ;
+.
+saref2ssn:SensingFunction
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf sosa:Procedure ;
+  rdfs:subClassOf saref:SensingFunction ;
+.
+saref2ssn:Sensor
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf sosa:Sensor ;
+  rdfs:subClassOf saref:Sensor ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty saref2ssn:monitors ;
+    ] ;
+.
+saref2ssn:monitors
+  rdf:type rdf:Property ;
+  rdfs:domain saref2ssn:Sensor ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          saref:Property
+          ssn:Property
+        ) ;
+    ] ;
+  rdfs:subPropertyOf sosa:observedProperty ;
+  rdfs:subPropertyOf saref:IsUsedFor ;
+.

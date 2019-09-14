@@ -1,0 +1,166 @@
+# baseURI: http://qudt.org/1.2/vocab/qudt
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.w3.org/2004/02/skos/core
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix qudtv: <http://qudt.org/vocab/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/qudt>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Irene Polikoff"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Scale Vocabularies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Scales"^^xsd:string ;
+  dc:title "Astrophysics Scales"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Astrophysics Scales Vocabulary is an RDF/OWL specifications of scales relating to cosmology and solar system phenomena."^^xsd:string ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science and Engineering Units"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used units. This comprises the SI and many non-SI Units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 15:18:25 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Scales: Astrophysics"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/unit/base> ;
+.
+qudt:STATS_CHI-SQUARED
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "chi-squared" ;
+  rdfs:label "Chi-squared"^^xsd:string ;
+  skos:prefLabel "Chi-squared"^^xsd:string ;
+.
+qudt:STATS_COEFFICIENT-OF-VARIATION
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "coefficient-of-variation" ;
+  rdfs:label "Coefficient of Variation"^^xsd:string ;
+  skos:prefLabel "Coefficient of Variation"^^xsd:string ;
+.
+qudt:STATS_CORRELATION
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "correlation" ;
+  rdfs:label "Correlation"^^xsd:string ;
+  skos:prefLabel "Correlation"^^xsd:string ;
+.
+qudt:STATS_GEOMETRIC-MEAN
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "geometric-mean" ;
+  rdfs:label "Geometric Mean"^^xsd:string ;
+  skos:prefLabel "Geometric Mean"^^xsd:string ;
+.
+qudt:STATS_HARMONIC-MEAN
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "harmonic-mean" ;
+  rdfs:label "Harmonic Mean"^^xsd:string ;
+  skos:prefLabel "Harmonic Mean"^^xsd:string ;
+.
+qudt:STATS_LOGARITHMS
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "logarithms" ;
+  rdfs:label "Logarithms"^^xsd:string ;
+  skos:prefLabel "Logarithms"^^xsd:string ;
+.
+qudt:STATS_MEAN
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "mean" ;
+  rdfs:label "Mean"^^xsd:string ;
+  skos:prefLabel "Mean"^^xsd:string ;
+.
+qudt:STATS_MEDIAN
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "median" ;
+  rdfs:label "Median"^^xsd:string ;
+  skos:prefLabel "Median"^^xsd:string ;
+.
+qudt:STATS_MODE
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "mode" ;
+  rdfs:label "Mode"^^xsd:string ;
+  skos:prefLabel "Mode"^^xsd:string ;
+.
+qudt:STATS_ORDERED-SET
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "ordered-set" ;
+  rdfs:label "Ordered Set"^^xsd:string ;
+  skos:prefLabel "Ordered Set"^^xsd:string ;
+.
+qudt:STATS_PERCENTILE
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "percentile" ;
+  rdfs:label "Percentile"^^xsd:string ;
+  skos:prefLabel "Percentile"^^xsd:string ;
+.
+qudt:STATS_REGRESSION
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "regression" ;
+  rdfs:label "Regression"^^xsd:string ;
+  skos:prefLabel "Regression"^^xsd:string ;
+.
+qudt:STATS_STANDARD-DEVIATION
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "standard-deviation" ;
+  rdfs:label "Standard Deviation"^^xsd:string ;
+  skos:prefLabel "Standard Deviation"^^xsd:string ;
+.
+qudt:STATS_VARIANCE-ANALYSIS
+  rdf:type qudt:MathsFunctionType ;
+  qudt:literal "variance-analysis" ;
+  rdfs:label "Variance Analysis"^^xsd:string ;
+  skos:prefLabel "Variance Analysis"^^xsd:string ;
+.
+qudt:TT_AFFINE
+  rdf:type qudt:TransformType ;
+  qudt:description "In geometry, an affine transformation or affine map[ or an affinity is a transformation which preserves straight lines (i.e., all points lying on a line initially still lie on a line after transformation) and ratios of distances between points lying on a straight line (e.g., the midpoint of a line segment remains the midpoint after transformation). It does not necessarily preserve angles or lengths."^^xsd:string ;
+  rdfs:label "Affine transformation"^^xsd:string ;
+  skos:prefLabel "Affine transformation"^^xsd:string ;
+.
+qudt:TT_EQUALITY
+  rdf:type qudt:TransformType ;
+  rdfs:label "Equality"^^xsd:string ;
+  skos:prefLabel "Equality"^^xsd:string ;
+.
+qudt:TT_MONOTONIC-ORDER
+  rdf:type qudt:TransformType ;
+  rdfs:label "Monotonic ordering"^^xsd:string ;
+  skos:prefLabel "Monotonic ordering"^^xsd:string ;
+.
+qudt:TT_POSITIVE-SIMILARITIES
+  rdf:type qudt:TransformType ;
+  rdfs:label "Positive Similarities"^^xsd:string ;
+  skos:prefLabel "Positive Similarities"^^xsd:string ;
+.

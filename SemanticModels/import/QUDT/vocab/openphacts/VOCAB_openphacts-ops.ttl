@@ -1,0 +1,488 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/openphacts/ops
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nist-constants
+# imports: http://qudt.org/1.2/vocab/unit/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ops: <http://www.openphacts.org/units/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/schema/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/unit/openphacts/ops>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:rights "OPENPhacts"^^xsd:string ;
+  dc:subject "OPENPhacts Units"^^xsd:string ;
+  dc:title "OPENPhacts Units"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The OPENPhacts Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "SI Science and Engineering Units"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "OPENPhacts extensions to units"^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-25 21:22:57 -0700 (Mon, 25 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit/openphacts/ops"^^xsd:string ;
+  vaem:namespacePrefix "ops"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "OPENPhacts Units"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nist-constants> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+.
+qudt:DimensionVector
+  rdfs:subClassOf owl:Thing ;
+.
+qudt:Figure
+  rdfs:subClassOf owl:Thing ;
+.
+qudt:OPENPHACTS_Unit
+  rdf:type owl:Class ;
+  rdfs:label "OPENPHACTS Unit"^^xsd:string ;
+  rdfs:subClassOf qudt:StandardsUnit ;
+.
+qudt:VolumePerMassUnit
+  rdf:type owl:Class ;
+  rdfs:label "Volume per mass unit"^^xsd:string ;
+  rdfs:subClassOf qudt:VolumeUnit ;
+.
+qudt:VolumePerTimeUnit
+  rdf:type owl:Class ;
+  rdfs:label "Volume per time unit"^^xsd:string ;
+  rdfs:subClassOf qudt:VolumeUnit ;
+.
+vaem:CatalogEntry
+  rdfs:subClassOf owl:Thing ;
+.
+vaem:LicenseModel
+  rdfs:subClassOf owl:Thing ;
+.
+ops:Femtogram
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "fg"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000000000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "fg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Femtogram"^^xsd:string ;
+.
+ops:Femtomolar
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MolarConcentrationUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "fM"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "fmol/dm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Femtomolar"^^xsd:string ;
+.
+ops:Femtomole
+  rdf:type qudt:AmountOfSubstanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "fmol"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "fmol"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Femtomole"^^xsd:string ;
+.
+ops:GramPerLiter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "g/L"^^xsd:string ;
+  qudt:conversionMultiplier 1.0 ;
+  qudt:conversionOffset 0.0 ;
+  qudt:symbol "g/dm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Gram per Liter"^^xsd:string ;
+.
+ops:GramPerMilliliter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "g/mL"^^xsd:string ;
+  qudt:conversionMultiplier 1000000.0 ;
+  qudt:conversionOffset 0.0 ;
+  qudt:symbol "g/cm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Gram per Milliliter"^^xsd:string ;
+.
+ops:LiterPerKilogram
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:VolumePerMassUnit ;
+  qudt:abbreviation "l/kg"^^xsd:string ;
+  qudt:conversionMultiplier 0.001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "l/kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "liter per kilogram"^^xsd:string ;
+.
+ops:LiterPerMinute
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:VolumePerTimeUnit ;
+  qudt:abbreviation "L/min"^^xsd:string ;
+  qudt:conversionMultiplier 0.06 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "L/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "liter per minute"^^xsd:string ;
+.
+ops:LiterPerSecond
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:VolumePerTimeUnit ;
+  qudt:abbreviation "L/s"^^xsd:string ;
+  qudt:conversionMultiplier 0.001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "L/s"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "liter per second"^^xsd:string ;
+.
+ops:Microgram
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "μg"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "μg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Microgram"^^xsd:string ;
+.
+ops:MicrogramPerMilliliter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "μg/mL"^^xsd:string ;
+  qudt:conversionMultiplier 1.0 ;
+  qudt:conversionOffset 0.0 ;
+  qudt:symbol "μg/cm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Microgram per Milliliter"^^xsd:string ;
+.
+ops:Microliter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "μL"^^xsd:string ;
+  qudt:conversionMultiplier 0.000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "μL"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Microliter"^^xsd:string ;
+.
+ops:MicroliterPerMinute
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:VolumePerTimeUnit ;
+  qudt:abbreviation "μL/min"^^xsd:string ;
+  qudt:conversionMultiplier 0.00000006 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "μL/min"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "microliter per minute"^^xsd:string ;
+.
+ops:Micromolar
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MolarConcentrationUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "μM"^^xsd:string ;
+  qudt:conversionMultiplier 0.001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "μmol/dm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Micromolar"^^xsd:string ;
+.
+ops:Micromole
+  rdf:type qudt:AmountOfSubstanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "μmol"^^xsd:string ;
+  qudt:conversionMultiplier 0.000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "μmol"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Micromole"^^xsd:string ;
+.
+ops:Milligram
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "mg"^^xsd:string ;
+  qudt:conversionMultiplier 0.000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "mg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Milligram"^^xsd:string ;
+.
+ops:MilligramPerDeciliter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "mg/dL"^^xsd:string ;
+  qudt:conversionMultiplier 100.0 ;
+  qudt:conversionOffset 0.0 ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Milligram per Deciliter"^^xsd:string ;
+.
+ops:MilligramPerKilogram
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "mg/kg"^^xsd:string ;
+  qudt:symbol "mg/kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Milligram per Kilogram"^^xsd:string ;
+.
+ops:MilligramPerMilliliter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "mg/mL"^^xsd:string ;
+  qudt:conversionMultiplier 1000.0 ;
+  qudt:conversionOffset 0.0 ;
+  qudt:symbol "mg/cm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Milligram per Milliliter"^^xsd:string ;
+.
+ops:Milliliter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:VolumeUnit ;
+  qudt:abbreviation "mL"^^xsd:string ;
+  qudt:conversionMultiplier 0.001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "mL"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Milliliter"^^xsd:string ;
+.
+ops:MilliliterPerKilogram
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  rdf:type qudt:VolumePerMassUnit ;
+  qudt:abbreviation "ml/kg"^^xsd:string ;
+  qudt:conversionMultiplier 0.000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "ml/kg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "milliliter per kilogram"^^xsd:string ;
+.
+ops:Millimolar
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MolarConcentrationUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "mM"^^xsd:string ;
+  qudt:conversionMultiplier 1 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "mmol/dm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Millimolar"^^xsd:string ;
+.
+ops:Millimole
+  rdf:type qudt:AmountOfSubstanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "mmol"^^xsd:string ;
+  qudt:conversionMultiplier 0.001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "mmol"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Millimole"^^xsd:string ;
+.
+ops:Molar
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MolarConcentrationUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "M"^^xsd:string ;
+  qudt:conversionMultiplier 1000 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "mol/dm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Molar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molar_concentration> ;
+.
+ops:Nanogram
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "ng"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "μg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Nanogram"^^xsd:string ;
+.
+ops:NanogramPerMilliliter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "ng/mL"^^xsd:string ;
+  qudt:conversionMultiplier 0.001 ;
+  qudt:conversionOffset 0.0 ;
+  qudt:symbol "ng/cm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Nanogram per Milliliter"^^xsd:string ;
+.
+ops:Nanometer
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:LengthUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "nm"^^xsd:string ;
+  qudt:conversionMultiplier 0.00000001 ;
+  qudt:conversionOffset 0.0 ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Nanometer"^^xsd:string ;
+.
+ops:Nanomolar
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MolarConcentrationUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "nM"^^xsd:string ;
+  qudt:conversionMultiplier 0.000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "nmol/dm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Nanomolar"^^xsd:string ;
+.
+ops:Nanomole
+  rdf:type qudt:AmountOfSubstanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "nmol"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "nmol"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Nanomole"^^xsd:string ;
+.
+ops:PartsPerMillion
+  rdf:type qudt:QuantityKind ;
+  qudt:quantityKind quantity:DimensionlessRatio ;
+  qudt:symbol "ppm"^^xsd:string ;
+  rdfs:label "Parts per Million"^^xsd:string ;
+.
+ops:Picogram
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "pg"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "pg"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Picogram"^^xsd:string ;
+.
+ops:PicogramPerMilliliter
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MassPerVolumeUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "pg/mL"^^xsd:string ;
+  qudt:conversionMultiplier 0.000001 ;
+  qudt:conversionOffset 0.0 ;
+  qudt:symbol "pg/cm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Picogram per Milliliter"^^xsd:string ;
+.
+ops:Picomolar
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:MolarConcentrationUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "pM"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "pmol/dm^3"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Picomolar"^^xsd:string ;
+.
+ops:Picomole
+  rdf:type qudt:AmountOfSubstanceUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "pmol"^^xsd:string ;
+  qudt:conversionMultiplier 0.000000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "pmol"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Picomole"^^xsd:string ;
+.
+ops:SquareAngstrom
+  rdf:type qudt:AreaUnit ;
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:OPENPHACTS_Unit ;
+  rdf:type qudt:SI-Unit ;
+  qudt:abbreviation "Å^2"^^xsd:string ;
+  qudt:conversionMultiplier 0.00000000000000000001 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Å^2"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/1.2/vocab/unit/openphacts/ops> ;
+  rdfs:label "Square Ångström"^^xsd:string ;
+.
+

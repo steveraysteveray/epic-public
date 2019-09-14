@@ -1,0 +1,662 @@
+# baseURI: http://www.w3.org/2009/xmldsig11
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.w3.org/2000/09/xmldsig
+# prefix: xmldsig11
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dsig: <http://www.w3.org/2000/09/xmldsig#> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xmldsig11: <http://www.w3.org/2009/xmldsig11#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+<http://www.w3.org/2009/xmldsig11>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.w3.org/2000/09/xmldsig> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://www.w3.org/2009/xmldsig11#, http://www.w3.org/2009/xmldsig11#"^^xsd:string ;
+.
+xmldsig11:CharTwoFieldParamsType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#CharTwoFieldParamsType" ;
+  rdfs:label "Char two field params type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:positiveInteger. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:positiveInteger."^^xsd:string ;
+      owl:allValuesFrom xsd:positiveInteger ;
+      owl:onProperty xmldsig11:m ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:m ;
+    ] ;
+.
+xmldsig11:CurveType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#CurveType" ;
+  rdfs:label "Curve type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom dsig:CryptoBinary ;
+      owl:onProperty xmldsig11:aRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom dsig:CryptoBinary ;
+      owl:onProperty xmldsig11:bRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:aRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:bRef ;
+    ] ;
+.
+xmldsig11:DEREncodedKeyValue
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#DEREncodedKeyValue" ;
+  rdfs:label "DEREncoded key value"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:DEREncodedKeyValueType ;
+.
+xmldsig11:DEREncodedKeyValueType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#DEREncodedKeyValueType" ;
+  rdfs:label "DEREncoded key value type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:base64Binary. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:base64Binary."^^xsd:string ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:ID. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:ID."^^xsd:string ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty xmldsig11:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:id ;
+    ] ;
+.
+xmldsig11:ECKeyValue
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#ECKeyValue" ;
+  rdfs:label "ECKey value"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:ECKeyValueType ;
+.
+xmldsig11:ECKeyValueType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#ECKeyValueType" ;
+  rdfs:label "ECKey value type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:ECParametersType ;
+      owl:onProperty xmldsig11:eCParametersRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:NamedCurveType ;
+      owl:onProperty xmldsig11:namedCurveRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xmldsig11:ECPointTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty xmldsig11:publicKey ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:ID. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:ID."^^xsd:string ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty xmldsig11:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:eCParametersRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:namedCurveRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:publicKey ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:id ;
+    ] ;
+.
+xmldsig11:ECParametersType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#ECParametersType" ;
+  rdfs:label "ECParameters type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:FieldIDType ;
+      owl:onProperty xmldsig11:fieldIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:CurveType ;
+      owl:onProperty xmldsig11:curveRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xmldsig11:ECPointTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set,  and no base XSD datatype can be found, the generated range is instead xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty xmldsig11:base ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom dsig:CryptoBinary ;
+      owl:onProperty xmldsig11:orderRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:integer. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:integer."^^xsd:string ;
+      owl:allValuesFrom xsd:integer ;
+      owl:onProperty xmldsig11:coFactor ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:ECValidationDataType ;
+      owl:onProperty xmldsig11:validationDataRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:base ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:curveRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:fieldIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:orderRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:coFactor ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:validationDataRef ;
+    ] ;
+.
+xmldsig11:ECPointTypeDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "ECPoint type datatype"^^xsd:string ;
+  rdfs:subClassOf dsig:CryptoBinary ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype dsig:CryptoBinary ;
+    ] ;
+.
+xmldsig11:ECValidationDataType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#ECValidationDataType" ;
+  rdfs:label "ECValidation data type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom dsig:CryptoBinary ;
+      owl:onProperty xmldsig11:seedRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty xmldsig11:hashAlgorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:hashAlgorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:seedRef ;
+    ] ;
+.
+xmldsig11:FieldIDType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#FieldIDType" ;
+  rdfs:label "Field IDType"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:Prime ;
+      owl:onProperty xmldsig11:primeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:TnB ;
+      owl:onProperty xmldsig11:tnBRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:PnB ;
+      owl:onProperty xmldsig11:pnBRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom xmldsig11:GnB ;
+      owl:onProperty xmldsig11:gnBRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:gnBRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:pnBRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:primeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:tnBRef ;
+    ] ;
+.
+xmldsig11:GnB
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#GnB" ;
+  rdfs:label "Gn b"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:CharTwoFieldParamsType ;
+.
+xmldsig11:KeyInfoReference
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#KeyInfoReference" ;
+  rdfs:label "Key info reference"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:KeyInfoReferenceType ;
+.
+xmldsig11:KeyInfoReferenceType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#KeyInfoReferenceType" ;
+  rdfs:label "Key info reference type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:ID. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:ID."^^xsd:string ;
+      owl:allValuesFrom xsd:ID ;
+      owl:onProperty xmldsig11:id ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty xmldsig11:uRI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:uRI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:id ;
+    ] ;
+.
+xmldsig11:NamedCurveType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#NamedCurveType" ;
+  rdfs:label "Named curve type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty xmldsig11:uRI ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:uRI ;
+    ] ;
+.
+xmldsig11:PnB
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#PnB" ;
+  rdfs:label "Pn b"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:PnBFieldParamsType ;
+.
+xmldsig11:PnBFieldParamsType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#PnBFieldParamsType" ;
+  rdfs:label "Pn BField params type"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:CharTwoFieldParamsType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:positiveInteger. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:positiveInteger."^^xsd:string ;
+      owl:allValuesFrom xsd:positiveInteger ;
+      owl:onProperty xmldsig11:k1 ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:positiveInteger. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:positiveInteger."^^xsd:string ;
+      owl:allValuesFrom xsd:positiveInteger ;
+      owl:onProperty xmldsig11:k2 ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:positiveInteger. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:positiveInteger."^^xsd:string ;
+      owl:allValuesFrom xsd:positiveInteger ;
+      owl:onProperty xmldsig11:k3 ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:k1 ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:k2 ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:k3 ;
+    ] ;
+.
+xmldsig11:Prime
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#Prime" ;
+  rdfs:label "Prime"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:PrimeFieldParamsType ;
+.
+xmldsig11:PrimeFieldParamsType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#PrimeFieldParamsType" ;
+  rdfs:label "Prime field params type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom dsig:CryptoBinary ;
+      owl:onProperty xmldsig11:pRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:pRef ;
+    ] ;
+.
+xmldsig11:TnB
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#TnB" ;
+  rdfs:label "Tn b"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:TnBFieldParamsType ;
+.
+xmldsig11:TnBFieldParamsType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#TnBFieldParamsType" ;
+  rdfs:label "Tn BField params type"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:CharTwoFieldParamsType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:positiveInteger. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:positiveInteger."^^xsd:string ;
+      owl:allValuesFrom xsd:positiveInteger ;
+      owl:onProperty xmldsig11:k ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:k ;
+    ] ;
+.
+xmldsig11:X509Digest
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#X509Digest" ;
+  rdfs:label "X509Digest"^^xsd:string ;
+  rdfs:subClassOf xmldsig11:X509DigestType ;
+.
+xmldsig11:X509DigestType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#X509DigestType" ;
+  rdfs:label "X509Digest type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:base64Binary. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:base64Binary."^^xsd:string ;
+      owl:allValuesFrom xsd:base64Binary ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty xmldsig11:algorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig11:algorithm ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+.
+xmldsig11:aRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#A" ;
+  rdfs:label "a ref"^^xsd:string ;
+.
+xmldsig11:algorithm
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#Algorithm" ;
+  rdfs:label "algorithm"^^xsd:string ;
+.
+xmldsig11:bRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#B" ;
+  rdfs:label "b ref"^^xsd:string ;
+.
+xmldsig11:base
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#Base" ;
+  rdfs:label "base"^^xsd:string ;
+.
+xmldsig11:coFactor
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#CoFactor" ;
+  rdfs:label "co factor"^^xsd:string ;
+.
+xmldsig11:curveRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#Curve" ;
+  rdfs:label "curve ref"^^xsd:string ;
+.
+xmldsig11:eCParametersRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#ECParameters" ;
+  rdfs:label "e CParameters ref"^^xsd:string ;
+.
+xmldsig11:fieldIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#FieldID" ;
+  rdfs:label "field IDRef"^^xsd:string ;
+.
+xmldsig11:gnBRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#GnB" ;
+  rdfs:label "gn BRef"^^xsd:string ;
+.
+xmldsig11:hashAlgorithm
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#hashAlgorithm" ;
+  rdfs:label "hash algorithm"^^xsd:string ;
+.
+xmldsig11:id
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#Id" ;
+  rdfs:label "id"^^xsd:string ;
+.
+xmldsig11:k
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#K" ;
+  rdfs:label "k"^^xsd:string ;
+.
+xmldsig11:k1
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#K1" ;
+  rdfs:label "k1"^^xsd:string ;
+.
+xmldsig11:k2
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#K2" ;
+  rdfs:label "k2"^^xsd:string ;
+.
+xmldsig11:k3
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#K3" ;
+  rdfs:label "k3"^^xsd:string ;
+.
+xmldsig11:m
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#M" ;
+  rdfs:label "m"^^xsd:string ;
+.
+xmldsig11:namedCurveRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#NamedCurve" ;
+  rdfs:label "named curve ref"^^xsd:string ;
+.
+xmldsig11:orderRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#Order" ;
+  rdfs:label "order ref"^^xsd:string ;
+.
+xmldsig11:pRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#P" ;
+  rdfs:label "p ref"^^xsd:string ;
+.
+xmldsig11:pnBRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#PnB" ;
+  rdfs:label "pn BRef"^^xsd:string ;
+.
+xmldsig11:primeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#Prime" ;
+  rdfs:label "prime ref"^^xsd:string ;
+.
+xmldsig11:publicKey
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#PublicKey" ;
+  rdfs:label "public key"^^xsd:string ;
+.
+xmldsig11:seedRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#seed" ;
+  rdfs:label "seed ref"^^xsd:string ;
+.
+xmldsig11:tnBRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#TnB" ;
+  rdfs:label "tn BRef"^^xsd:string ;
+.
+xmldsig11:uRI
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2009/xmldsig11#URI" ;
+  rdfs:label "u RI"^^xsd:string ;
+.
+xmldsig11:validationDataRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2009/xmldsig11#ValidationData" ;
+  rdfs:label "validation data ref"^^xsd:string ;
+.

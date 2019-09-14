@@ -1,0 +1,150 @@
+# baseURI: http://siemens.com/vocab/kps/selectEventWithTag
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: st
+
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix st: <http://siemens.com/vocab/kps/selectEventWithTag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/vocab/kps/selectEventWithTag>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+st:ConvertToXML
+  a sml:ConvertRDFToXML ;
+  sm:next st:selectEventWithTag_Return ;
+  sm:outputVariable "xml" ;
+  sml:document [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "value" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object <http://topbraid.org/sxml#Document> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:isAttributeUnqualified "false" ;
+  rdfs:label "Convert to XML" ;
+.
+st:ImportMappingFile
+  a sml:ImportRDFFromWorkspace ;
+  sm:next st:MapToOadr ;
+  sml:baseURI "http://siemens.com/mapping/epic2oadr" ;
+  sml:ignoreImports false ;
+  rdfs:label "Import epic2oadr mapping file" ;
+.
+st:MapToOadr
+  a sml:ApplyTopSPIN ;
+  sm:next st:ConvertToXML ;
+  sml:flatten true ;
+  sml:replace true ;
+  sml:singlePass false ;
+  rdfs:label "Map to OADR" ;
+.
+st:getTriples
+  a sml:ApplyConstruct ;
+  sm:next st:MapToOadr ;
+  sm:nodeX 588 ;
+  sm:nodeY 136 ;
+  sml:constructQuery [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          sp:varName "tag" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "tagURI" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tagURI" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Get the Event triples" ;
+.
+st:selectEventWithTag
+  a sm:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:tag ;
+      spl:valueType xsd:string ;
+      sm:next st:getTriples ;
+      rdfs:comment "The tag (string) for the Event being requested" ;
+    ] ;
+  sm:returnModule st:selectEventWithTag_Return ;
+  rdfs:subClassOf sm:Functions ;
+.
+st:selectEventWithTag_Return
+  a sml:ReturnText ;
+  sml:text "{?xml}" ;
+  rdfs:comment """Retrieves a single OpenADR Distribute Event message containing one or more Events using the unique ?tag as the retrieval parameter.
+ Returns:
+an OpenADR DistributeEvent message in XML format corresponding to the supplied ?tag.
+an empty response in case such a message does not exist.""" ;
+.
+sp:tag
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.

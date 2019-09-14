@@ -1,0 +1,2431 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/currency
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/unit/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/unit/currency>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Daniel Mekonnen"^^xsd:string ;
+  dc:contributor "Irene Polikoff"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Units of Measure"^^xsd:string ;
+  dc:title "QUDT Units Vocabulary (without dimensions) Version 1.1"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science and Engineering Units"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used units. This comprises the SI and many non-SI Units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 15:18:25 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:versionIRI <http://qudt.org/1.1/vocab/unit> ;
+  owl:versionInfo "$Id: OVG_units-qudt-(v1.1).ttl 4990 2011-06-01 22:18:25Z RalphHodgson $"^^xsd:string ;
+.
+qudt:SOU_ISO-4217
+  rdf:type qudt:SystemOfUnits ;
+  qudt:abbreviation "ISO4217"^^xsd:string ;
+  qudt:hasDefinedUnit unit:Afghani ;
+  qudt:hasDefinedUnit unit:AlgerianDinar ;
+  qudt:hasDefinedUnit unit:ArgentinePeso ;
+  qudt:hasDefinedUnit unit:ArmenianDram ;
+  qudt:hasDefinedUnit unit:ArubanGuilder ;
+  qudt:hasDefinedUnit unit:AustralianDollar ;
+  qudt:hasDefinedUnit unit:AzerbaijanianManat ;
+  qudt:hasDefinedUnit unit:BahamianDollar ;
+  qudt:hasDefinedUnit unit:BahrainiDinar ;
+  qudt:hasDefinedUnit unit:Baht ;
+  qudt:hasDefinedUnit unit:Balboa ;
+  qudt:hasDefinedUnit unit:BangladeshiTaka ;
+  qudt:hasDefinedUnit unit:BarbadosDollar ;
+  qudt:hasDefinedUnit unit:BelarussianRuble ;
+  qudt:hasDefinedUnit unit:BelizeDollar ;
+  qudt:hasDefinedUnit unit:BermudaDollar ;
+  qudt:hasDefinedUnit unit:BolivianMvdol ;
+  qudt:hasDefinedUnit unit:Boliviano ;
+  qudt:hasDefinedUnit unit:BrazilianReal ;
+  qudt:hasDefinedUnit unit:BruneiDollar ;
+  qudt:hasDefinedUnit unit:BulgarianLev ;
+  qudt:hasDefinedUnit unit:BurundianFranc ;
+  qudt:hasDefinedUnit unit:CFAFrancBCEAO ;
+  qudt:hasDefinedUnit unit:CFAFrancBEAC ;
+  qudt:hasDefinedUnit unit:CFPFranc ;
+  qudt:hasDefinedUnit unit:CanadianDollar ;
+  qudt:hasDefinedUnit unit:CapeVerdeEscudo ;
+  qudt:hasDefinedUnit unit:CaymanIslandsDollar ;
+  qudt:hasDefinedUnit unit:Cedi ;
+  qudt:hasDefinedUnit unit:ChileanPeso ;
+  qudt:hasDefinedUnit unit:ColombianPeso ;
+  qudt:hasDefinedUnit unit:ComoroFranc ;
+  qudt:hasDefinedUnit unit:ConvertibleMark ;
+  qudt:hasDefinedUnit unit:CordobaOro ;
+  qudt:hasDefinedUnit unit:CostaRicanColon ;
+  qudt:hasDefinedUnit unit:CroatianKuna ;
+  qudt:hasDefinedUnit unit:CubanPeso ;
+  qudt:hasDefinedUnit unit:CyprusPound ;
+  qudt:hasDefinedUnit unit:CzechKoruna ;
+  qudt:hasDefinedUnit unit:Dalasi ;
+  qudt:hasDefinedUnit unit:DanishKrone ;
+  qudt:hasDefinedUnit unit:Denar ;
+  qudt:hasDefinedUnit unit:DjiboutiFranc ;
+  qudt:hasDefinedUnit unit:Dobra ;
+  qudt:hasDefinedUnit unit:DominicanPeso ;
+  qudt:hasDefinedUnit unit:EastCaribbeanDollar ;
+  qudt:hasDefinedUnit unit:EgyptianPound ;
+  qudt:hasDefinedUnit unit:EthiopianBirr ;
+  qudt:hasDefinedUnit unit:Euro ;
+  qudt:hasDefinedUnit unit:EuropeanCompositeUnit ;
+  qudt:hasDefinedUnit unit:EuropeanMonetaryUnit ;
+  qudt:hasDefinedUnit unit:EuropeanUnitOfAccount17 ;
+  qudt:hasDefinedUnit unit:EuropeanUnitOfAccount9 ;
+  qudt:hasDefinedUnit unit:FalklandIslandsPound ;
+  qudt:hasDefinedUnit unit:FijiDollar ;
+  qudt:hasDefinedUnit unit:Forint ;
+  qudt:hasDefinedUnit unit:FrancCongolais ;
+  qudt:hasDefinedUnit unit:GibraltarPound ;
+  qudt:hasDefinedUnit unit:Gold-OunceTroy ;
+  qudt:hasDefinedUnit unit:GoldFranc ;
+  qudt:hasDefinedUnit unit:Guarani ;
+  qudt:hasDefinedUnit unit:GuineaFranc ;
+  qudt:hasDefinedUnit unit:GuyanaDollar ;
+  qudt:hasDefinedUnit unit:HaitiGourde ;
+  qudt:hasDefinedUnit unit:HongKongDollar ;
+  qudt:hasDefinedUnit unit:Hryvnia ;
+  qudt:hasDefinedUnit unit:IcelandKrona ;
+  qudt:hasDefinedUnit unit:IndianRupee ;
+  qudt:hasDefinedUnit unit:IranianRial ;
+  qudt:hasDefinedUnit unit:IraqiDinar ;
+  qudt:hasDefinedUnit unit:JamaicanDollar ;
+  qudt:hasDefinedUnit unit:JapaneseYen ;
+  qudt:hasDefinedUnit unit:JordanianDinar ;
+  qudt:hasDefinedUnit unit:KenyanShilling ;
+  qudt:hasDefinedUnit unit:Kina ;
+  qudt:hasDefinedUnit unit:Kroon ;
+  qudt:hasDefinedUnit unit:KuwaitiDinar ;
+  qudt:hasDefinedUnit unit:Kwanza ;
+  qudt:hasDefinedUnit unit:Kyat ;
+  qudt:hasDefinedUnit unit:Lari ;
+  qudt:hasDefinedUnit unit:LatvianLats ;
+  qudt:hasDefinedUnit unit:LebanesePound ;
+  qudt:hasDefinedUnit unit:Lek ;
+  qudt:hasDefinedUnit unit:Lempira ;
+  qudt:hasDefinedUnit unit:Leone ;
+  qudt:hasDefinedUnit unit:LiberianDollar ;
+  qudt:hasDefinedUnit unit:LibyanDinar ;
+  qudt:hasDefinedUnit unit:Lilangeni ;
+  qudt:hasDefinedUnit unit:LithuanianLitas ;
+  qudt:hasDefinedUnit unit:Loti ;
+  qudt:hasDefinedUnit unit:MalagasyAriary ;
+  qudt:hasDefinedUnit unit:MalawiKwacha ;
+  qudt:hasDefinedUnit unit:MalaysianRinggit ;
+  qudt:hasDefinedUnit unit:MalteseLira ;
+  qudt:hasDefinedUnit unit:Manat ;
+  qudt:hasDefinedUnit unit:MauritiusRupee ;
+  qudt:hasDefinedUnit unit:Metical ;
+  qudt:hasDefinedUnit unit:MexicanPeso ;
+  qudt:hasDefinedUnit unit:MexicanUnidadDeInversion ;
+  qudt:hasDefinedUnit unit:MoldovanLeu ;
+  qudt:hasDefinedUnit unit:MoroccanDirham ;
+  qudt:hasDefinedUnit unit:Naira ;
+  qudt:hasDefinedUnit unit:Nakfa ;
+  qudt:hasDefinedUnit unit:NamibianDollar ;
+  qudt:hasDefinedUnit unit:NepaleseRupee ;
+  qudt:hasDefinedUnit unit:NetherlandsAntillianGuilder ;
+  qudt:hasDefinedUnit unit:NewIsraeliShekel ;
+  qudt:hasDefinedUnit unit:NewTaiwanDollar ;
+  qudt:hasDefinedUnit unit:NewTurkishLira ;
+  qudt:hasDefinedUnit unit:NewZealandDollar ;
+  qudt:hasDefinedUnit unit:Ngultrum ;
+  qudt:hasDefinedUnit unit:NorthKoreanWon ;
+  qudt:hasDefinedUnit unit:NorwegianKrone ;
+  qudt:hasDefinedUnit unit:NuevoSol ;
+  qudt:hasDefinedUnit unit:OmaniRial ;
+  qudt:hasDefinedUnit unit:Ouguiya ;
+  qudt:hasDefinedUnit unit:Paanga ;
+  qudt:hasDefinedUnit unit:PakistanRupee ;
+  qudt:hasDefinedUnit unit:Palladium-OunceTroy ;
+  qudt:hasDefinedUnit unit:Pataca ;
+  qudt:hasDefinedUnit unit:PhilippinePeso ;
+  qudt:hasDefinedUnit unit:Platinum-OunceTroy ;
+  qudt:hasDefinedUnit unit:PoundSterling ;
+  qudt:hasDefinedUnit unit:Pula ;
+  qudt:hasDefinedUnit unit:QatariRial ;
+  qudt:hasDefinedUnit unit:Quetzal ;
+  qudt:hasDefinedUnit unit:Riel ;
+  qudt:hasDefinedUnit unit:RomanianNeLeu ;
+  qudt:hasDefinedUnit unit:Rufiyaa ;
+  qudt:hasDefinedUnit unit:Rupiah ;
+  qudt:hasDefinedUnit unit:RussianRuble ;
+  qudt:hasDefinedUnit unit:RwandaFranc ;
+  qudt:hasDefinedUnit unit:SaintHelenaPound ;
+  qudt:hasDefinedUnit unit:SamoanTala ;
+  qudt:hasDefinedUnit unit:SaudiRiyal ;
+  qudt:hasDefinedUnit unit:SerbianDinar ;
+  qudt:hasDefinedUnit unit:SeychellesRupee ;
+  qudt:hasDefinedUnit unit:Silver-OunceTroy ;
+  qudt:hasDefinedUnit unit:SingaporeDollar ;
+  qudt:hasDefinedUnit unit:SlovakKoruna ;
+  qudt:hasDefinedUnit unit:SolomonIslandsDollar ;
+  qudt:hasDefinedUnit unit:Som ;
+  qudt:hasDefinedUnit unit:SomaliShilling ;
+  qudt:hasDefinedUnit unit:Somoni ;
+  qudt:hasDefinedUnit unit:SouthAfricanRand ;
+  qudt:hasDefinedUnit unit:SouthKoreanWon ;
+  qudt:hasDefinedUnit unit:SpecialDrawingRights ;
+  qudt:hasDefinedUnit unit:SriLankaRupee ;
+  qudt:hasDefinedUnit unit:SudanesePound ;
+  qudt:hasDefinedUnit unit:SurinamDollar ;
+  qudt:hasDefinedUnit unit:SwedishKrona ;
+  qudt:hasDefinedUnit unit:SwissFranc ;
+  qudt:hasDefinedUnit unit:SyrianPound ;
+  qudt:hasDefinedUnit unit:TanzanianShilling ;
+  qudt:hasDefinedUnit unit:Tenge ;
+  qudt:hasDefinedUnit unit:TrinidadAndTobagoDollar ;
+  qudt:hasDefinedUnit unit:Tugrik ;
+  qudt:hasDefinedUnit unit:TunisianDinar ;
+  qudt:hasDefinedUnit unit:UAEDirham ;
+  qudt:hasDefinedUnit unit:UICFranc ;
+  qudt:hasDefinedUnit unit:USDollar ;
+  qudt:hasDefinedUnit unit:USDollar-NextDay ;
+  qudt:hasDefinedUnit unit:USDollar-SameDay ;
+  qudt:hasDefinedUnit unit:UgandaShilling ;
+  qudt:hasDefinedUnit unit:UnidadDeValorReal ;
+  qudt:hasDefinedUnit unit:UnidadesDeFormento ;
+  qudt:hasDefinedUnit unit:UruguayPeso ;
+  qudt:hasDefinedUnit unit:UzbekistanSom ;
+  qudt:hasDefinedUnit unit:Vatu ;
+  qudt:hasDefinedUnit unit:VenezuelanBolvar ;
+  qudt:hasDefinedUnit unit:VietnameseDong ;
+  qudt:hasDefinedUnit unit:WIREuro ;
+  qudt:hasDefinedUnit unit:WIRFranc ;
+  qudt:hasDefinedUnit unit:YemeniRial ;
+  qudt:hasDefinedUnit unit:YuanRenminbi ;
+  qudt:hasDefinedUnit unit:ZambianKwacha ;
+  qudt:hasDefinedUnit unit:ZimbabweDollar ;
+  qudt:hasDefinedUnit unit:Zloty ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "ISO 4217 Currencies"^^xsd:string ;
+.
+unit:Afghani
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "AFN"^^xsd:string ;
+  qudt:code "971"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Afghanistan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Afghani"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Afghani> ;
+  skos:prefLabel "afghani"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Afghani?oldid=485904590> ;
+.
+unit:AlgerianDinar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "DZD"^^xsd:string ;
+  qudt:code "012"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Algeria" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Algerian Dinar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Algerian_dinar> ;
+  skos:prefLabel "algerian-dinar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Algerian_dinar?oldid=492845503> ;
+.
+unit:ArgentinePeso
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ARS"^^xsd:string ;
+  qudt:code "032"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Argentina" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Argentine Peso"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Argentine_peso> ;
+  skos:prefLabel "argentine-peso"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Argentine_peso?oldid=491431588> ;
+.
+unit:ArmenianDram
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "AMD"^^xsd:string ;
+  qudt:code "051"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Armenia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Armenian Dram"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Armenian_dram> ;
+  skos:prefLabel "armenian-dram"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Armenian_dram?oldid=492709723> ;
+.
+unit:ArubanGuilder
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "AWG"^^xsd:string ;
+  qudt:code "533"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Aruba" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Aruban Guilder"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Aruban_florin> ;
+  skos:prefLabel "aruban-guilder"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Aruban_florin?oldid=492925638> ;
+.
+unit:AustralianDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "AUD"^^xsd:string ;
+  qudt:code "036"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Australia, Australian Antarctic Territory, Christmas Island, Cocos (Keeling) Islands, Heard and McDonald Islands, Kiribati, Nauru, Norfolk Island, Tuvalu" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Australian Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Australian_dollar> ;
+  skos:prefLabel "australian-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Australian_dollar?oldid=495046408> ;
+.
+unit:AzerbaijanianManat
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "AZN"^^xsd:string ;
+  qudt:code "944"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Azerbaijan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Azerbaijanian Manat"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Azerbaijani_manat> ;
+  skos:prefLabel "azerbaijanian-manat"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Azerbaijani_manat?oldid=495479090> ;
+.
+unit:BahamianDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BSD"^^xsd:string ;
+  qudt:code "044"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bahamas" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Bahamian Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bahamian_dollar> ;
+  skos:prefLabel "bahamian-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Bahamian_dollar?oldid=492776024> ;
+.
+unit:BahrainiDinar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BHD"^^xsd:string ;
+  qudt:code "048"^^xsd:string ;
+  qudt:currencyExponent 3 ;
+  qudt:description "Bahrain" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Bahraini Dinar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bahraini_dinar> ;
+  skos:prefLabel "bahraini-dinar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Bahraini_dinar?oldid=493086643> ;
+.
+unit:Baht
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "THB"^^xsd:string ;
+  qudt:code "764"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Thailand" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Baht"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thai_baht> ;
+  skos:prefLabel "baht"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Thai_baht?oldid=493286022> ;
+.
+unit:Balboa
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "PAB"^^xsd:string ;
+  qudt:code "590"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Panama" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Balboa"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Balboa> ;
+  skos:prefLabel "balboa"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Balboa?oldid=482550791> ;
+.
+unit:BangladeshiTaka
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BDT"^^xsd:string ;
+  qudt:code "050"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bangladesh" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Bangladeshi Taka"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bangladeshi_taka> ;
+  skos:prefLabel "bangladeshi-taka"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Bangladeshi_taka?oldid=492673895> ;
+.
+unit:BarbadosDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BBD"^^xsd:string ;
+  qudt:code "052"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Barbados" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Barbados Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Barbadian_dollar> ;
+  skos:prefLabel "barbados-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Barbadian_dollar?oldid=494388633> ;
+.
+unit:BelarussianRuble
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BYR"^^xsd:string ;
+  qudt:code "974"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Belarus" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Belarussian Ruble"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Belarusian_ruble> ;
+  skos:prefLabel "belarussian-ruble"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Belarusian_ruble?oldid=494143246> ;
+.
+unit:BelizeDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BZD"^^xsd:string ;
+  qudt:code "084"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Belize" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Belize Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Belize_dollar> ;
+  skos:prefLabel "belize-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Belize_dollar?oldid=462662376> ;
+.
+unit:BermudaDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BMD"^^xsd:string ;
+  qudt:code "060"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bermuda" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Bermuda Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bermudian_dollar> ;
+  skos:prefLabel "bermuda-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Bermudian_dollar?oldid=492670344> ;
+.
+unit:BolivianMvdol
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BOV"^^xsd:string ;
+  qudt:code "984"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bolivia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Bolivian Mvdol (Funds code)"^^xsd:string ;
+  skos:prefLabel "bolivian-mvdol-(funds-code)"^^xsd:string ;
+.
+unit:Boliviano
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BOB"^^xsd:string ;
+  qudt:code "068"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bolivia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Boliviano"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bolivian_boliviano> ;
+  skos:prefLabel "boliviano"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Bolivian_boliviano?oldid=494873944> ;
+.
+unit:BrazilianReal
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BRL"^^xsd:string ;
+  qudt:code "986"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Brazil" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Brazilian Real"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Brazilian_real> ;
+  skos:prefLabel "brazilian-real"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Brazilian_real?oldid=495278259> ;
+.
+unit:BruneiDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BND"^^xsd:string ;
+  qudt:code "096"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Brunei" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Brunei Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Brunei_dollar> ;
+  skos:prefLabel "brunei-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Brunei_dollar?oldid=495134546> ;
+.
+unit:BulgarianLev
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BGN"^^xsd:string ;
+  qudt:code "975"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bulgaria" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Bulgarian Lev"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bulgarian_lev> ;
+  skos:prefLabel "bulgarian-lev"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Bulgarian_lev?oldid=494947467> ;
+.
+unit:BurundianFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BIF"^^xsd:string ;
+  qudt:code "108"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Burundi" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Burundian Franc"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Burundian_franc> ;
+  skos:prefLabel "burundian-franc"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Burundian_franc?oldid=489383699> ;
+.
+unit:CFAFrancBCEAO
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XOF"^^xsd:string ;
+  qudt:code "952"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Currency of Benin, Burkina Faso, CÔte d'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "CFA Franc BCEAO"^^xsd:string ;
+  skos:prefLabel "cfa-franc-bceao"^^xsd:string ;
+.
+unit:CFAFrancBEAC
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XAF"^^xsd:string ;
+  qudt:code "950"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Cameroon, Central African Republic, Congo, Chad, Equatorial Guinea, Gabon" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "CFA Franc BEAC"^^xsd:string ;
+  skos:prefLabel "cfa-franc-beac"^^xsd:string ;
+.
+unit:CFPFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XPF"^^xsd:string ;
+  qudt:code "953"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "French Polynesia, New Caledonia, Wallis and Futuna" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "CFP franc"^^xsd:string ;
+  skos:prefLabel "cfp-franc"^^xsd:string ;
+.
+unit:CanadianDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CAD"^^xsd:string ;
+  qudt:code "124"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Canada" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Canadian Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Canadian_dollar> ;
+  skos:prefLabel "canadian-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Canadian_dollar?oldid=494738466> ;
+.
+unit:CapeVerdeEscudo
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CVE"^^xsd:string ;
+  qudt:code "192"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Cape Verde" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Cape Verde Escudo"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Cape_Verdean_escudo> ;
+  skos:prefLabel "cape-verde-escudo"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Cape_Verdean_escudo?oldid=491416749> ;
+.
+unit:CaymanIslandsDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KYD"^^xsd:string ;
+  qudt:code "136"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Cayman Islands" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Cayman Islands Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Cayman_Islands_dollar> ;
+  skos:prefLabel "cayman-islands-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Cayman_Islands_dollar?oldid=494206112> ;
+.
+unit:Cedi
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "GHS"^^xsd:string ;
+  qudt:code "936"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Ghana" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Cedi"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Ghanaian_cedi> ;
+  skos:prefLabel "cedi"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Ghanaian_cedi?oldid=415914569> ;
+.
+unit:ChileanPeso
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CLP"^^xsd:string ;
+  qudt:code "152"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Chile" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Chilean Peso"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Chilean_peso> ;
+  skos:prefLabel "chilean-peso"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Chilean_peso?oldid=495455481> ;
+.
+unit:ColombianPeso
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "COP"^^xsd:string ;
+  qudt:code "170"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Colombia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Colombian Peso"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Colombian_peso> ;
+  skos:prefLabel "colombian-peso"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Colombian_peso?oldid=490834575> ;
+.
+unit:ComoroFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KMF"^^xsd:string ;
+  qudt:code "174"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Comoros" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Comoro Franc"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Comorian_franc> ;
+  skos:prefLabel "comoro-franc"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Comorian_franc?oldid=489502162> ;
+.
+unit:ConvertibleMark
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BAM"^^xsd:string ;
+  qudt:code "977"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bosnia and Herzegovina" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Convertible Marks"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Bosnia_and_Herzegovina_convertible_mark> ;
+  skos:prefLabel "convertible-marks"^^xsd:string ;
+.
+unit:CordobaOro
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "NIO"^^xsd:string ;
+  qudt:code "558"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Nicaragua" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Cordoba Oro"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Nicaraguan_c%C3%B3rdoba> ;
+  skos:prefLabel "cordoba-oro"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Nicaraguan_córdoba?oldid=486140595> ;
+.
+unit:CostaRicanColon
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CRC"^^xsd:string ;
+  qudt:code "188"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Costa Rica" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Costa Rican Colon"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Costa_Rican_col%C3%B3n> ;
+  skos:prefLabel "costa-rican-colon"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Costa_Rican_colón?oldid=491007608> ;
+.
+unit:CroatianKuna
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "HRK"^^xsd:string ;
+  qudt:code "191"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Croatia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Croatian Kuna"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Croatian_kuna> ;
+  skos:prefLabel "croatian-kuna"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Croatian_kuna?oldid=490959527> ;
+.
+unit:CubanPeso
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CUP"^^xsd:string ;
+  qudt:code "931"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Cuba" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Cuban Peso"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Cuban_peso> ;
+  skos:prefLabel "cuban-peso"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Cuban_peso?oldid=486492974> ;
+.
+unit:CyprusPound
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CYP"^^xsd:string ;
+  qudt:code "132"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Cyprus" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Cyprus Pound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Cypriot_pound> ;
+  skos:prefLabel "cyprus-pound"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Cypriot_pound?oldid=492644935> ;
+.
+unit:CzechKoruna
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CZK"^^xsd:string ;
+  qudt:code "203"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Czech Republic" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Czech Koruna"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Czech_koruna> ;
+  skos:prefLabel "czech-koruna"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Czech_koruna?oldid=493991393> ;
+.
+unit:Dalasi
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "GMD"^^xsd:string ;
+  qudt:code "270"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Gambia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Dalasi"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gambian_dalasi> ;
+  skos:prefLabel "dalasi"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Gambian_dalasi?oldid=489522429> ;
+.
+unit:DanishKrone
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "DKK"^^xsd:string ;
+  qudt:code "208"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Denmark, Faroe Islands, Greenland" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Danish Krone"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Danish_krone> ;
+  skos:prefLabel "danish-krone"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Danish_krone?oldid=491168880> ;
+.
+unit:Denar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MKD"^^xsd:string ;
+  qudt:code "807"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Former Yugoslav Republic of Macedonia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Denar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Macedonian_denar> ;
+  skos:prefLabel "denar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Macedonian_denar?oldid=489550202> ;
+.
+unit:DjiboutiFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "DJF"^^xsd:string ;
+  qudt:code "262"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Djibouti" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Djibouti Franc"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Djiboutian_franc> ;
+  skos:prefLabel "djibouti-franc"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Djiboutian_franc?oldid=486807423> ;
+.
+unit:Dobra
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "STD"^^xsd:string ;
+  qudt:code "678"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "The currency of São Tomé and Príncipe" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Dobra"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Dobra> ;
+  skos:prefLabel "dobra"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Dobra?oldid=475725328> ;
+.
+unit:DominicanPeso
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "DOP"^^xsd:string ;
+  qudt:code "214"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Dominican Republic" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Dominican Peso"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Dominican_peso> ;
+  skos:prefLabel "dominican-peso"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Dominican_peso?oldid=493950199> ;
+.
+unit:EastCaribbeanDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XCD"^^xsd:string ;
+  qudt:code "951"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Anguilla, Antigua and Barbuda, Dominica, Grenada, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "East Caribbean Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/East_Caribbean_dollar> ;
+  skos:prefLabel "east-caribbean-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/East_Caribbean_dollar?oldid=493020176> ;
+.
+unit:EgyptianPound
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "EGP"^^xsd:string ;
+  qudt:code "818"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Egypt" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Egyptian Pound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Egyptian_pound> ;
+  skos:prefLabel "egyptian-pound"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Egyptian_pound?oldid=494670285> ;
+.
+unit:EthiopianBirr
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ETB"^^xsd:string ;
+  qudt:code "230"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Ethiopia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Ethiopian Birr"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Ethiopian_birr> ;
+  skos:prefLabel "ethiopian-birr"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Ethiopian_birr?oldid=493373507> ;
+.
+unit:Euro
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "EUR"^^xsd:string ;
+  qudt:code "978"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "European Union Euro"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Euro"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Euro> ;
+  skos:prefLabel "euro"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Euro?oldid=495293446> ;
+.
+unit:EuropeanCompositeUnit
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XBA"^^xsd:string ;
+  qudt:code "955"^^xsd:string ;
+  qudt:description "Bonds market unit" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "European Composite Unit (EURCO) (Bonds market unit)"^^xsd:string ;
+  skos:prefLabel "european-composite-unit-(eurco)-(bonds-market-unit)"^^xsd:string ;
+.
+unit:EuropeanMonetaryUnit
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XBB"^^xsd:string ;
+  qudt:code "956"^^xsd:string ;
+  qudt:description "Bonds market unit" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "European Monetary Unit (E.M.U.-6) (Bonds market unit)"^^xsd:string ;
+  skos:prefLabel "european-monetary-unit-(e.m.u.-6)-(bonds-market-unit)"^^xsd:string ;
+.
+unit:EuropeanUnitOfAccount17
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XBD"^^xsd:string ;
+  qudt:code "958"^^xsd:string ;
+  qudt:description "Bonds market unit" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "European Unit of Account 17 (E.U.A.-17) (Bonds market unit)"^^xsd:string ;
+  skos:prefLabel "european-unit-of-account-17-(e.u.a.-17)-(bonds-market-unit)"^^xsd:string ;
+.
+unit:EuropeanUnitOfAccount9
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XBC"^^xsd:string ;
+  qudt:code "957"^^xsd:string ;
+  qudt:description "Bonds market unit" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "European Unit of Account 9 (E.U.A.-9) (Bonds market unit)"^^xsd:string ;
+  skos:prefLabel "european-unit-of-account-9-(e.u.a.-9)-(bonds-market-unit)"^^xsd:string ;
+.
+unit:Exbi
+  rdf:type qudt:BinaryPrefixUnit ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Ei"^^xsd:string ;
+  rdfs:label "Exbi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+.
+unit:FalklandIslandsPound
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "FKP"^^xsd:string ;
+  qudt:code "238"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Falkland Islands" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Falkland Islands Pound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Falkland_Islands_pound> ;
+  skos:prefLabel "falkland-islands-pound"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Falkland_Islands_pound?oldid=489513616> ;
+.
+unit:FijiDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "FJD"^^xsd:string ;
+  qudt:code "242"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Fiji" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Fiji Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Fijian_dollar> ;
+  skos:prefLabel "fiji-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Fijian_dollar?oldid=494373740> ;
+.
+unit:Forint
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "HUF"^^xsd:string ;
+  qudt:code "348"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Hungary" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Forint"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hungarian_forint> ;
+  skos:prefLabel "forint"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Hungarian_forint?oldid=492818607> ;
+.
+unit:FrancCongolais
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CDF"^^xsd:string ;
+  qudt:code "976"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Democratic Republic of Congo" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Franc Congolais"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Congolese_franc> ;
+  skos:prefLabel "franc-congolais"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Congolese_franc?oldid=490314640> ;
+.
+unit:Gibi
+  rdf:type qudt:BinaryPrefixUnit ;
+  qudt:conversionMultiplier "1073741824"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Gi"^^xsd:string ;
+  rdfs:label "Gibi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "gibi"^^xsd:string ;
+.
+unit:GibraltarPound
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "GIP"^^xsd:string ;
+  qudt:code "292"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Gibraltar" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Gibraltar pound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gibraltar_pound> ;
+  skos:prefLabel "gibraltar-pound"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Gibraltar_pound?oldid=494842600> ;
+.
+unit:Gold-OunceTroy
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XAU"^^xsd:string ;
+  qudt:code "959"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Gold (one Troy ounce)"^^xsd:string ;
+  skos:prefLabel "gold-(one-troy-ounce)"^^xsd:string ;
+.
+unit:GoldFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XFO"^^xsd:string ;
+  qudt:description "Bank for International Settlements" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Gold franc (special settlement currency)"^^xsd:string ;
+  skos:prefLabel "gold-franc-(special-settlement-currency)"^^xsd:string ;
+.
+unit:Guarani
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "PYG"^^xsd:string ;
+  qudt:code "600"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Paraguay" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Guarani"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Guaran%C3%AD> ;
+  skos:prefLabel "guarani"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Guaraní?oldid=412592698> ;
+.
+unit:GuineaFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "GNF"^^xsd:string ;
+  qudt:code "324"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Guinea" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Guinea Franc"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Guinean_franc> ;
+  skos:prefLabel "guinea-franc"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Guinean_franc?oldid=489527042> ;
+.
+unit:GuyanaDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "GYD"^^xsd:string ;
+  qudt:code "328"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Guyana" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Guyana Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Guyanese_dollar> ;
+  skos:prefLabel "guyana-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Guyanese_dollar?oldid=495070062> ;
+.
+unit:HaitiGourde
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "HTG"^^xsd:string ;
+  qudt:code "332"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Haiti" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Haiti Gourde"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Haitian_gourde> ;
+  skos:prefLabel "haiti-gourde"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Haitian_gourde?oldid=486090975> ;
+.
+unit:HongKongDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "HKD"^^xsd:string ;
+  qudt:code "344"^^xsd:string ;
+  qudt:currencyExponent 1 ;
+  qudt:description "Hong Kong Special Administrative Region" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Hong Kong Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Hong_Kong_dollar> ;
+  skos:prefLabel "hong-kong-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Hong_Kong_dollar?oldid=495133277> ;
+.
+unit:Hryvnia
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "UAH"^^xsd:string ;
+  qudt:code "980"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Ukraine" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Hryvnia"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Ukrainian_hryvnia> ;
+  skos:prefLabel "hryvnia"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Ukrainian_hryvnia?oldid=493064633> ;
+.
+unit:IcelandKrona
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ISK"^^xsd:string ;
+  qudt:code "352"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Iceland" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Iceland Krona"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Icelandic_kr%C3%B3na> ;
+  skos:prefLabel "iceland-krona"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Icelandic_króna?oldid=495457496> ;
+.
+unit:IndianRupee
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "INR"^^xsd:string ;
+  qudt:code "356"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bhutan, India" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Indian Rupee"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Indian_rupee> ;
+  skos:prefLabel "indian-rupee"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Indian_rupee?oldid=495120167> ;
+.
+unit:IranianRial
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "IRR"^^xsd:string ;
+  qudt:code "364"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Iran" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Iranian Rial"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Iranian_rial> ;
+  skos:prefLabel "iranian-rial"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Iranian_rial?oldid=495299431> ;
+.
+unit:IraqiDinar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "IQD"^^xsd:string ;
+  qudt:code "368"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Iraq" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Iraqi Dinar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Iraqi_dinar> ;
+  skos:prefLabel "iraqi-dinar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Iraqi_dinar?oldid=494793908> ;
+.
+unit:JamaicanDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "JMD"^^xsd:string ;
+  qudt:code "388"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Jamaica" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Jamaican Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Jamaican_dollar> ;
+  skos:prefLabel "jamaican-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Jamaican_dollar?oldid=494039981> ;
+.
+unit:JapaneseYen
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "JPY"^^xsd:string ;
+  qudt:code "392"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Japan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Japanese yen"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Japanese_yen> ;
+  skos:prefLabel "japanese-yen"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Japanese_yen?oldid=493771966> ;
+.
+unit:JordanianDinar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "JOD"^^xsd:string ;
+  qudt:code "400"^^xsd:string ;
+  qudt:currencyExponent 3 ;
+  qudt:description "Jordan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Jordanian Dinar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Jordanian_dinar> ;
+  skos:prefLabel "jordanian-dinar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Jordanian_dinar?oldid=495270728> ;
+.
+unit:KenyanShilling
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KES"^^xsd:string ;
+  qudt:code "404"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Kenya" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Kenyan Shilling"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kenyan_shilling> ;
+  skos:prefLabel "kenyan-shilling"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Kenyan_shilling?oldid=489547027> ;
+.
+unit:Kibi
+  rdf:type qudt:BinaryPrefixUnit ;
+  qudt:conversionMultiplier "1024"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Ki"^^xsd:string ;
+  rdfs:label "Kibi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "kibi"^^xsd:string ;
+.
+unit:Kina
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "PGK"^^xsd:string ;
+  qudt:code "598"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Papua New Guinea" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Kina"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kina> ;
+  skos:prefLabel "kina"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Kina?oldid=477155361> ;
+.
+unit:Kroon
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "EEK"^^xsd:string ;
+  qudt:code "233"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Estonia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Kroon"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Estonian_kroon> ;
+  skos:prefLabel "kroon"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Estonian_kroon?oldid=492626188> ;
+.
+unit:KuwaitiDinar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KWD"^^xsd:string ;
+  qudt:code "414"^^xsd:string ;
+  qudt:currencyExponent 3 ;
+  qudt:description "Kuwait" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Kuwaiti Dinar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kuwaiti_dinar> ;
+  skos:prefLabel "kuwaiti-dinar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Kuwaiti_dinar?oldid=489547428> ;
+.
+unit:Kwanza
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "AOA"^^xsd:string ;
+  qudt:code "973"^^xsd:string ;
+  qudt:currencyExponent 1 ;
+  qudt:description "Angola" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Kwanza"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Angolan_kwanza> ;
+  skos:prefLabel "kwanza"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Angolan_kwanza?oldid=491748749> ;
+.
+unit:Kyat
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MMK"^^xsd:string ;
+  qudt:code "104"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Myanmar" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Kyat"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Myanma_kyat> ;
+  skos:prefLabel "kyat"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Myanma_kyat?oldid=441109905> ;
+.
+unit:LaoKip
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "LAK"^^xsd:string ;
+  qudt:code "418"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Laos" ;
+  qudt:symbol "&#x8365;"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Lao kip"^^xsd:string ;
+  skos:prefLabel "laos-kip"^^xsd:string ;
+.
+unit:Lari
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "GEL"^^xsd:string ;
+  qudt:code "981"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Georgia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Lari"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Lari> ;
+  skos:prefLabel "lari"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Lari?oldid=486808394> ;
+.
+unit:LatvianLats
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "LVL"^^xsd:string ;
+  qudt:code "428"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Latvia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Latvian Lats"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Latvian_lats> ;
+  skos:prefLabel "latvian-lats"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Latvian_lats?oldid=492800402> ;
+.
+unit:LebanesePound
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "LBP"^^xsd:string ;
+  qudt:code "422"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Lebanon" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Lebanese Pound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Lebanese_pound> ;
+  skos:prefLabel "lebanese-pound"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Lebanese_pound?oldid=495528740> ;
+.
+unit:Lek
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ALL"^^xsd:string ;
+  qudt:code "008"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Albania" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Lek"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Lek> ;
+  skos:prefLabel "lek"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Lek?oldid=495195665> ;
+.
+unit:Lempira
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "HNL"^^xsd:string ;
+  qudt:code "340"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Honduras" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Lempira"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Lempira> ;
+  skos:prefLabel "lempira"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Lempira?oldid=389955747> ;
+.
+unit:Leone
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SLL"^^xsd:string ;
+  qudt:code "694"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Sierra Leone" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Leone"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Sierra_Leonean_leone> ;
+  skos:prefLabel "leone"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Sierra_Leonean_leone?oldid=493517965> ;
+.
+unit:LiberianDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "LRD"^^xsd:string ;
+  qudt:code "430"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Liberia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Liberian Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Liberian_dollar> ;
+  skos:prefLabel "liberian-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Liberian_dollar?oldid=489549110> ;
+.
+unit:LibyanDinar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "LYD"^^xsd:string ;
+  qudt:code "434"^^xsd:string ;
+  qudt:currencyExponent 3 ;
+  qudt:description "Libya" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Libyan Dinar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Libyan_dinar> ;
+  skos:prefLabel "libyan-dinar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Libyan_dinar?oldid=491421981> ;
+.
+unit:Lilangeni
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SZL"^^xsd:string ;
+  qudt:code "748"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Swaziland" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Lilangeni"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Swazi_lilangeni> ;
+  skos:prefLabel "lilangeni"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Swazi_lilangeni?oldid=490323340> ;
+.
+unit:LithuanianLitas
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "LTL"^^xsd:string ;
+  qudt:code "440"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Lithuania" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Lithuanian Litas"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Lithuanian_litas> ;
+  skos:prefLabel "lithuanian-litas"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Lithuanian_litas?oldid=493046592> ;
+.
+unit:Loti
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "LSL"^^xsd:string ;
+  qudt:code "426"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Lesotho" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Loti"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Loti> ;
+  skos:prefLabel "loti"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Loti?oldid=384534708> ;
+.
+unit:MalagasyAriary
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MGA"^^xsd:string ;
+  qudt:code "969"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Madagascar" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Malagasy Ariary"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Malagasy_ariary> ;
+  skos:prefLabel "malagasy-ariary"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Malagasy_ariary?oldid=489551279> ;
+.
+unit:MalawiKwacha
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MWK"^^xsd:string ;
+  qudt:code "894"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Malawi"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Malawi Kwacha"^^xsd:string ;
+  skos:prefLabel "malawi-kwacha"^^xsd:string ;
+.
+unit:MalaysianRinggit
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MYR"^^xsd:string ;
+  qudt:code "458"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Malaysia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Malaysian Ringgit"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Malaysian_ringgit> ;
+  skos:prefLabel "malaysian-ringgit"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Malaysian_ringgit?oldid=494417091> ;
+.
+unit:MalteseLira
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MTL"^^xsd:string ;
+  qudt:description "Malta" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Maltese Lira"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Maltese_lira> ;
+  skos:prefLabel "maltese-lira"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Maltese_lira?oldid=493810797> ;
+.
+unit:Manat
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "TMM"^^xsd:string ;
+  qudt:code "934"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Turkmenistan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Manat"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Manat> ;
+  skos:prefLabel "manat"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Manat?oldid=486967490> ;
+.
+unit:MauritiusRupee
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MUR"^^xsd:string ;
+  qudt:code "480"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Mauritius" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Mauritius Rupee"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mauritian_rupee> ;
+  skos:prefLabel "mauritius-rupee"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Mauritian_rupee?oldid=487629200> ;
+.
+unit:Mebi
+  rdf:type qudt:BinaryPrefixUnit ;
+  qudt:conversionMultiplier "1048576"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Mi"^^xsd:string ;
+  rdfs:label "Mebi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "mebi"^^xsd:string ;
+.
+unit:Metical
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MZN"^^xsd:string ;
+  qudt:code "943"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Mozambique" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Metical"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mozambican_metical> ;
+  skos:prefLabel "metical"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Mozambican_metical?oldid=488225670> ;
+.
+unit:MexicanPeso
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MXN"^^xsd:string ;
+  qudt:code "484"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Mexico" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Mexican Peso"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mexican_peso> ;
+  skos:prefLabel "mexican-peso"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Mexican_peso?oldid=494829813> ;
+.
+unit:MexicanUnidadDeInversion
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MXV"^^xsd:string ;
+  qudt:code "979"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Mexico" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Mexican Unidad de Inversion (UDI) (Funds code)"^^xsd:string ;
+  skos:prefLabel "mexican-unidad-de-inversion-(udi)-(funds-code)"^^xsd:string ;
+.
+unit:MillionUSD
+  rdf:type qudt:CurrencyUnit ;
+  rdf:type qudt:DerivedUnit ;
+  qudt:abbreviation "Million USD"^^xsd:string ;
+  qudt:code "1180"^^xsd:string ;
+  qudt:conversionMultiplier 1.0E6 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Million US Dollars"^^xsd:string ;
+.
+unit:MillionUSD-PER-YR
+  rdf:type qudt:DerivedUnit ;
+  rdf:type qudt:RateOfReturnUnit ;
+  qudt:abbreviation "M\\$/yr"^^xsd:string ;
+  qudt:code "1190"^^xsd:string ;
+  qudt:symbol "M\\/yr"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Million US Dollars per Year"^^xsd:string ;
+.
+unit:MoldovanLeu
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MDL"^^xsd:string ;
+  qudt:code "498"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Moldova" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Moldovan Leu"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Moldovan_leu> ;
+  skos:prefLabel "moldovan-leu"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Moldovan_leu?oldid=490027766> ;
+.
+unit:MoroccanDirham
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MAD"^^xsd:string ;
+  qudt:code "504"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Morocco, Western Sahara" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Moroccan Dirham"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Moroccan_dirham> ;
+  skos:prefLabel "moroccan-dirham"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Moroccan_dirham?oldid=490560557> ;
+.
+unit:Naira
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "NGN"^^xsd:string ;
+  qudt:code "566"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Nigeria" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Naira"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Nigerian_naira> ;
+  skos:prefLabel "naira"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Nigerian_naira?oldid=493462003> ;
+.
+unit:Nakfa
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ERN"^^xsd:string ;
+  qudt:code "232"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Eritrea" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Nakfa"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Nakfa> ;
+  skos:prefLabel "nakfa"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Nakfa?oldid=415286274> ;
+.
+unit:NamibianDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "NAD"^^xsd:string ;
+  qudt:code "516"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Namibia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Namibian Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Namibian_dollar> ;
+  skos:prefLabel "namibian-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Namibian_dollar?oldid=495250023> ;
+.
+unit:NepaleseRupee
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "NPR"^^xsd:string ;
+  qudt:code "524"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Nepal" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Nepalese Rupee"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Nepalese_rupee> ;
+  skos:prefLabel "nepalese-rupee"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Nepalese_rupee?oldid=476894226> ;
+.
+unit:NetherlandsAntillianGuilder
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ANG"^^xsd:string ;
+  qudt:code "532"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Netherlands Antilles" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Netherlands Antillian Guilder"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Netherlands_Antillean_guilder> ;
+  skos:prefLabel "netherlands-antillian-guilder"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Netherlands_Antillean_guilder?oldid=490030382> ;
+.
+unit:NewIsraeliShekel
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ILS"^^xsd:string ;
+  qudt:code "376"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Israel" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "New Israeli Shekel"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Israeli_new_sheqel> ;
+  skos:prefLabel "new-israeli-shekel"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Israeli_new_sheqel?oldid=316213924> ;
+.
+unit:NewTaiwanDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "TWD"^^xsd:string ;
+  qudt:code "901"^^xsd:string ;
+  qudt:currencyExponent 1 ;
+  qudt:description "Taiwan and other islands that are under the effective control of the Republic of China (ROC)" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "New Taiwan Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/New_Taiwan_dollar> ;
+  skos:prefLabel "new-taiwan-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/New_Taiwan_dollar?oldid=493996933> ;
+.
+unit:NewTurkishLira
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "TRY"^^xsd:string ;
+  qudt:code "949"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Turkey" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "New Turkish Lira"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Turkish_lira> ;
+  skos:prefLabel "new-turkish-lira"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Turkish_lira?oldid=494097764> ;
+.
+unit:NewZealandDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "NZD"^^xsd:string ;
+  qudt:code "554"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Cook Islands, New Zealand, Niue, Pitcairn, Tokelau" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "New Zealand Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/New_Zealand_dollar> ;
+  skos:prefLabel "new-zealand-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/New_Zealand_dollar?oldid=495487722> ;
+.
+unit:Ngultrum
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BTN"^^xsd:string ;
+  qudt:code "064"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Bhutan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Ngultrum"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Bhutanese_ngultrum> ;
+  skos:prefLabel "ngultrum"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Bhutanese_ngultrum?oldid=491579260> ;
+.
+unit:NorthKoreanWon
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KPW"^^xsd:string ;
+  qudt:code "408"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "North Korea" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "North Korean Won"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/North_Korean_won> ;
+  skos:prefLabel "north-korean-won"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/North_Korean_won?oldid=495081686> ;
+.
+unit:NorwegianKrone
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "NOK"^^xsd:string ;
+  qudt:code "578"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Norway" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Norwegian Krone"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Norwegian_krone> ;
+  skos:prefLabel "norwegian-krone"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Norwegian_krone?oldid=495283934> ;
+.
+unit:NuevoSol
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "PEN"^^xsd:string ;
+  qudt:code "604"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Peru" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Nuevo Sol"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Peruvian_nuevo_sol> ;
+  skos:prefLabel "nuevo-sol"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Peruvian_nuevo_sol?oldid=494237249> ;
+.
+unit:OmaniRial
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "OMR"^^xsd:string ;
+  qudt:code "512"^^xsd:string ;
+  qudt:currencyExponent 3 ;
+  qudt:description "Oman" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Rial Omani"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Omani_rial> ;
+  skos:prefLabel "rial-omani"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Omani_rial?oldid=491748879> ;
+.
+unit:Ouguiya
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MRO"^^xsd:string ;
+  qudt:code "478"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Mauritania" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Ouguiya"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mauritanian_ouguiya> ;
+  skos:prefLabel "ouguiya"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Mauritanian_ouguiya?oldid=490027072> ;
+.
+unit:Paanga
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "TOP"^^xsd:string ;
+  qudt:code "776"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Tonga" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Pa'anga"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tongan_pa%CA%BBanga> ;
+  skos:prefLabel "pa'anga"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Tongan_paʻanga?oldid=482738012> ;
+.
+unit:PakistanRupee
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "PKR"^^xsd:string ;
+  qudt:code "586"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Pakistan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Pakistan Rupee"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pakistani_rupee> ;
+  skos:prefLabel "pakistan-rupee"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Pakistani_rupee?oldid=494937873> ;
+.
+unit:Palladium-OunceTroy
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XPD"^^xsd:string ;
+  qudt:code "964"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Palladium (one Troy ounce)"^^xsd:string ;
+  skos:prefLabel "palladium-(one-troy-ounce)"^^xsd:string ;
+.
+unit:Pataca
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MOP"^^xsd:string ;
+  qudt:code "446"^^xsd:string ;
+  qudt:currencyExponent 1 ;
+  qudt:description "Macau Special Administrative Region" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Pataca"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pataca> ;
+  skos:prefLabel "pataca"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Pataca?oldid=482490442> ;
+.
+unit:Pebi
+  rdf:type qudt:BinaryPrefixUnit ;
+  qudt:conversionMultiplier "125899906842624"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Pi"^^xsd:string ;
+  rdfs:label "Pebi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "pebi"^^xsd:string ;
+.
+unit:PhilippinePeso
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "PHP"^^xsd:string ;
+  qudt:code "608"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Philippines" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Philippine Peso"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Philippine_peso> ;
+  skos:prefLabel "philippine-peso"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Philippine_peso?oldid=495411811> ;
+.
+unit:Platinum-OunceTroy
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XPT"^^xsd:string ;
+  qudt:code "962"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Platinum (one Troy ounce)"^^xsd:string ;
+  skos:prefLabel "platinum-(one-troy-ounce)"^^xsd:string ;
+.
+unit:PoundSterling
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "GBP"^^xsd:string ;
+  qudt:code "826"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "United Kingdom" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Pound Sterling"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pound_sterling> ;
+  skos:prefLabel "pound-sterling"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Pound_sterling?oldid=495524329> ;
+.
+unit:Pula
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "BWP"^^xsd:string ;
+  qudt:code "072"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Botswana" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Pula"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Pula> ;
+  skos:prefLabel "pula"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Pula?oldid=495207177> ;
+.
+unit:QatariRial
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "QAR"^^xsd:string ;
+  qudt:code "634"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Qatar" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Qatari Rial"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Qatari_riyal> ;
+  skos:prefLabel "qatari-rial"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Qatari_riyal?oldid=491747452> ;
+.
+unit:Quetzal
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "GTQ"^^xsd:string ;
+  qudt:code "320"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Guatemala" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Quetzal"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Quetzal> ;
+  skos:prefLabel "quetzal"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Quetzal?oldid=489813522> ;
+.
+unit:Riel
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KHR"^^xsd:string ;
+  qudt:code "116"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Cambodia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Riel"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Riel> ;
+  skos:prefLabel "riel"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Riel?oldid=473309240> ;
+.
+unit:RomanianNeLeu
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "RON"^^xsd:string ;
+  qudt:code "946"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Romania" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Romanian New Leu"^^xsd:string ;
+  skos:prefLabel "romanian-new-leu"^^xsd:string ;
+.
+unit:Rufiyaa
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MVR"^^xsd:string ;
+  qudt:code "462"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Maldives" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Rufiyaa"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Maldivian_rufiyaa> ;
+  skos:prefLabel "rufiyaa"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Maldivian_rufiyaa?oldid=491578728> ;
+.
+unit:Rupiah
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "IDR"^^xsd:string ;
+  qudt:code "360"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Indonesia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Rupiah"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Indonesian_rupiah> ;
+  skos:prefLabel "rupiah"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Indonesian_rupiah?oldid=489729458> ;
+.
+unit:RussianRuble
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "RUB"^^xsd:string ;
+  qudt:code "643"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Russia, Abkhazia, South Ossetia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Russian Ruble"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Russian_ruble> ;
+  skos:prefLabel "russian-ruble"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Russian_ruble?oldid=494336467> ;
+.
+unit:RwandaFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "RWF"^^xsd:string ;
+  qudt:code "646"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Rwanda" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Rwanda Franc"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Rwandan_franc> ;
+  skos:prefLabel "rwanda-franc"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Rwandan_franc?oldid=489727903> ;
+.
+unit:SaintHelenaPound
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SHP"^^xsd:string ;
+  qudt:code "654"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Saint Helena" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Saint Helena Pound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Saint_Helena_pound> ;
+  skos:prefLabel "saint-helena-pound"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Saint_Helena_pound?oldid=490152057> ;
+.
+unit:SamoanTala
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "WST"^^xsd:string ;
+  qudt:code "882"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Samoa" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Samoan Tala"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Samoan_tala> ;
+  skos:prefLabel "samoan-tala"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Samoan_tala?oldid=423898531> ;
+.
+unit:SaudiRiyal
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SAR"^^xsd:string ;
+  qudt:code "682"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Saudi Arabia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Saudi Riyal"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Saudi_riyal> ;
+  skos:prefLabel "saudi-riyal"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Saudi_riyal?oldid=491092981> ;
+.
+unit:SerbianDinar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "RSD"^^xsd:string ;
+  qudt:code "941"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Serbia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Serbian Dinar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Serbian_dinar> ;
+  skos:prefLabel "serbian-dinar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Serbian_dinar?oldid=495146650> ;
+.
+unit:SeychellesRupee
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SCR"^^xsd:string ;
+  qudt:code "690"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Seychelles" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Seychelles Rupee"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Seychellois_rupee> ;
+  skos:prefLabel "seychelles-rupee"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Seychellois_rupee?oldid=492242185> ;
+.
+unit:Silver-OunceTroy
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XAG"^^xsd:string ;
+  qudt:code "961"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Silver (one Troy ounce)"^^xsd:string ;
+  skos:prefLabel "silver-(one-troy-ounce)"^^xsd:string ;
+.
+unit:SingaporeDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SGD"^^xsd:string ;
+  qudt:code "702"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Singapore" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Singapore Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Singapore_dollar> ;
+  skos:prefLabel "singapore-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Singapore_dollar?oldid=492228311> ;
+.
+unit:SlovakKoruna
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SKK"^^xsd:string ;
+  qudt:description "Slovakia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Slovak Koruna"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Slovak_koruna> ;
+  skos:prefLabel "slovak-koruna"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Slovak_koruna?oldid=492625951> ;
+.
+unit:SolomonIslandsDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SBD"^^xsd:string ;
+  qudt:code "090"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Solomon Islands" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Solomon Islands Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Solomon_Islands_dollar> ;
+  skos:prefLabel "solomon-islands-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Solomon_Islands_dollar?oldid=490313285> ;
+.
+unit:Som
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KGS"^^xsd:string ;
+  qudt:code "417"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Kyrgyzstan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Som"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Som> ;
+  skos:prefLabel "som"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Som?oldid=495411674> ;
+.
+unit:SomaliShilling
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SOS"^^xsd:string ;
+  qudt:code "706"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Somalia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Somali Shilling"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Somali_shilling> ;
+  skos:prefLabel "somali-shilling"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Somali_shilling?oldid=494434126> ;
+.
+unit:Somoni
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "TJS"^^xsd:string ;
+  qudt:code "972"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Tajikistan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Somoni"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tajikistani_somoni> ;
+  skos:prefLabel "somoni"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Tajikistani_somoni?oldid=492500781> ;
+.
+unit:SouthAfricanRand
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ZAR"^^xsd:string ;
+  qudt:code "710"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "South Africa" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "South African Rand"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/South_African_rand> ;
+  skos:prefLabel "south-african-rand"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/South_African_rand?oldid=493780395> ;
+.
+unit:SouthKoreanWon
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KRW"^^xsd:string ;
+  qudt:code "410"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "South Korea" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "South Korean Won"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/South_Korean_won> ;
+  skos:prefLabel "south-korean-won"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/South_Korean_won?oldid=494404062> ;
+.
+unit:SpecialDrawingRights
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XDR"^^xsd:string ;
+  qudt:code "960"^^xsd:string ;
+  qudt:description "International Monetary Fund" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Special Drawing Rights"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Special_Drawing_Rights> ;
+  skos:prefLabel "special-drawing-rights"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Special_Drawing_Rights?oldid=467224374> ;
+.
+unit:SriLankaRupee
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "LKR"^^xsd:string ;
+  qudt:code "144"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Sri Lanka" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Sri Lanka Rupee"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Sri_Lankan_rupee> ;
+  skos:prefLabel "sri-lanka-rupee"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Sri_Lankan_rupee?oldid=495359963> ;
+.
+unit:SudanesePound
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SDG"^^xsd:string ;
+  qudt:code "938"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Sudan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Sudanese Pound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Sudanese_pound> ;
+  skos:prefLabel "sudanese-pound"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Sudanese_pound?oldid=495263707> ;
+.
+unit:SurinamDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SRD"^^xsd:string ;
+  qudt:code "968"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Suriname" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Surinam Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Surinamese_dollar> ;
+  skos:prefLabel "surinam-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Surinamese_dollar?oldid=490316270> ;
+.
+unit:SwedishKrona
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SEK"^^xsd:string ;
+  qudt:code "752"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Sweden" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Swedish Krona"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Swedish_krona> ;
+  skos:prefLabel "swedish-krona"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Swedish_krona?oldid=492703602> ;
+.
+unit:SwissFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CHF"^^xsd:string ;
+  qudt:code "756"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Switzerland, Liechtenstein" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Swiss Franc"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Swiss_franc> ;
+  skos:prefLabel "swiss-franc"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Swiss_franc?oldid=492548706> ;
+.
+unit:SyrianPound
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "SYP"^^xsd:string ;
+  qudt:code "760"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Syria" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Syrian Pound"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Syrian_pound> ;
+  skos:prefLabel "syrian-pound"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Syrian_pound?oldid=484294722> ;
+.
+unit:TanzanianShilling
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "TZS"^^xsd:string ;
+  qudt:code "834"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Tanzania" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Tanzanian Shilling"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tanzanian_shilling> ;
+  skos:prefLabel "tanzanian-shilling"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Tanzanian_shilling?oldid=492257527> ;
+.
+unit:Tebi
+  rdf:type qudt:BinaryPrefixUnit ;
+  qudt:conversionMultiplier "1099511627776"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Ti"^^xsd:string ;
+  rdfs:label "Tebi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+.
+unit:Tenge
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "KZT"^^xsd:string ;
+  qudt:code "398"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Kazakhstan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Tenge"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Kazakhstani_tenge> ;
+  skos:prefLabel "tenge"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Kazakhstani_tenge?oldid=490523058> ;
+.
+unit:TrinidadAndTobagoDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "TTD"^^xsd:string ;
+  qudt:code "780"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Trinidad and Tobago" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Trinidad and Tobago Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Trinidad_and_Tobago_dollar> ;
+  skos:prefLabel "trinidad-and-tobago-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Trinidad_and_Tobago_dollar?oldid=490325306> ;
+.
+unit:Tugrik
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "MNT"^^xsd:string ;
+  qudt:code "496"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Mongolia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Tugrik"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Mongolian_t%C3%B6gr%C3%B6g> ;
+  skos:prefLabel "tugrik"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Mongolian_tögrög?oldid=495408271> ;
+.
+unit:TunisianDinar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "TND"^^xsd:string ;
+  qudt:code "788"^^xsd:string ;
+  qudt:currencyExponent 3 ;
+  qudt:description "Tunisia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Tunisian Dinar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Tunisian_dinar> ;
+  skos:prefLabel "tunisian-dinar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Tunisian_dinar?oldid=491218035> ;
+.
+unit:UAEDirham
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "AED"^^xsd:string ;
+  qudt:code "784"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "United Arab Emirates" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "United Arab Emirates dirham"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/United_Arab_Emirates_dirham> ;
+  skos:prefLabel "united-arab-emirates-dirham"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/United_Arab_Emirates_dirham?oldid=491806142> ;
+.
+unit:UICFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "XFU"^^xsd:string ;
+  qudt:description "International Union of Railways" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "UIC franc (special settlement currency)"^^xsd:string ;
+  skos:prefLabel "uic-franc-(special-settlement-currency)"^^xsd:string ;
+.
+unit:USDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "USD"^^xsd:string ;
+  qudt:code "0555"^^xsd:string ;
+  qudt:code "840"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "American Samoa, British Indian Ocean Territory, Ecuador, El Salvador, Guam, Haiti, Marshall Islands, Micronesia, Northern Mariana Islands, Palau, Panama, Puerto Rico, East Timor, Turks and Caicos Islands, United States, Virgin Islands" ;
+  qudt:symbol "\\"^^xsd:string ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "US Dollar"^^xsd:string ;
+  skos:prefLabel "us-dollar"^^xsd:string ;
+.
+unit:USDollar-NextDay
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "USN"^^xsd:string ;
+  qudt:code "997"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "United States" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "United States Dollar (next day) (funds code)"^^xsd:string ;
+  skos:prefLabel "united-states-dollar-(next-day)-(funds-code)"^^xsd:string ;
+.
+unit:USDollar-SameDay
+  rdf:type qudt:CurrencyUnit ;
+  qudt:code "998"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "United States" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "United States Dollar (same day) (funds code)"^^xsd:string ;
+  skos:prefLabel "united-states-dollar-(same-day)-(funds-code)"^^xsd:string ;
+.
+unit:UgandaShilling
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "UGX"^^xsd:string ;
+  qudt:code "800"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Uganda" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Uganda Shilling"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Ugandan_shilling> ;
+  skos:prefLabel "uganda-shilling"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Ugandan_shilling?oldid=495383966> ;
+.
+unit:UnidadDeValorReal
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "COU"^^xsd:string ;
+  qudt:code "970"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Colombia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Unidad de Valor Real"^^xsd:string ;
+  skos:prefLabel "unidad-de-valor-real"^^xsd:string ;
+.
+unit:UnidadesDeFormento
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CLF"^^xsd:string ;
+  qudt:code "990"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Chile" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Unidades de formento (Funds code)"^^xsd:string ;
+  skos:prefLabel "unidades-de-formento-(funds-code)"^^xsd:string ;
+.
+unit:UruguayPeso
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "UYU"^^xsd:string ;
+  qudt:code "858"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Uruguay" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Peso Uruguayo"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Uruguayan_peso> ;
+  skos:prefLabel "peso-uruguayo"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Uruguayan_peso?oldid=487528781> ;
+.
+unit:UzbekistanSom
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "UZS"^^xsd:string ;
+  qudt:code "860"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Uzbekistan" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Uzbekistan Som"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Uzbekistani_som> ;
+  skos:prefLabel "uzbekistan-som"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Uzbekistani_som?oldid=490522228> ;
+.
+unit:Vatu
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "VUV"^^xsd:string ;
+  qudt:code "548"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Vanuatu" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Vatu"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Vanuatu_vatu> ;
+  skos:prefLabel "vatu"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Vanuatu_vatu?oldid=494667103> ;
+.
+unit:VenezuelanBolvar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "VEB"^^xsd:string ;
+  qudt:code "937"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Venezuela" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Venezuelan bolvar"^^xsd:string ;
+  skos:prefLabel "venezuelan-bolvar"^^xsd:string ;
+.
+unit:VietnameseDong
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "VND"^^xsd:string ;
+  qudt:code "704"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Vietnam" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Vietnamese ??ng"^^xsd:string ;
+  skos:prefLabel "vietnamese-??ng"^^xsd:string ;
+.
+unit:WIREuro
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CHE"^^xsd:string ;
+  qudt:code "947"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Switzerland" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "WIR Euro (complementary currency)"^^xsd:string ;
+  skos:prefLabel "wir-euro-(complementary-currency)"^^xsd:string ;
+.
+unit:WIRFranc
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CHW"^^xsd:string ;
+  qudt:code "948"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Switzerland" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "WIR Franc (complementary currency)"^^xsd:string ;
+  skos:prefLabel "wir-franc-(complementary-currency)"^^xsd:string ;
+.
+unit:YemeniRial
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "YER"^^xsd:string ;
+  qudt:code "886"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Yemen" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Yemeni Rial"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Yemeni_rial> ;
+  skos:prefLabel "yemeni-rial"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Yemeni_rial?oldid=494507603> ;
+.
+unit:Yobi
+  rdf:type qudt:BinaryPrefixUnit ;
+  qudt:conversionMultiplier "1208925819614629174706176"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Yi"^^xsd:string ;
+  rdfs:label "Yobi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "yobi"^^xsd:string ;
+.
+unit:YuanRenminbi
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "CNY"^^xsd:string ;
+  qudt:code "156"^^xsd:string ;
+  qudt:currencyExponent 1 ;
+  qudt:description "Mainland China" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Yuan Renminbi"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Renminbi> ;
+  skos:prefLabel "yuan-renminbi"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Renminbi?oldid=494799454> ;
+.
+unit:ZambianKwacha
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ZMK"^^xsd:string ;
+  qudt:code "894"^^xsd:string ;
+  qudt:currencyExponent 0 ;
+  qudt:description "Zambia" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Zambian Kwacha"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Zambian_kwacha> ;
+  skos:prefLabel "zambian-kwacha"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Zambian_kwacha?oldid=490328608> ;
+.
+unit:Zebi
+  rdf:type qudt:BinaryPrefixUnit ;
+  qudt:conversionMultiplier "1180591620717411303424"^^xsd:double ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:symbol "Zi"^^xsd:string ;
+  rdfs:label "Zebi"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Binary_prefix> ;
+  skos:prefLabel "zebi"^^xsd:string ;
+.
+unit:ZimbabweDollar
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "ZWD"^^xsd:string ;
+  qudt:code "932"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Zimbabwe" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Zimbabwe Dollar"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Zimbabwean_dollar> ;
+  skos:prefLabel "zimbabwe-dollar"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Zimbabwean_dollar?oldid=491532675> ;
+.
+unit:Zloty
+  rdf:type qudt:CurrencyUnit ;
+  qudt:abbreviation "PLN"^^xsd:string ;
+  qudt:code "985"^^xsd:string ;
+  qudt:currencyExponent 2 ;
+  qudt:description "Poland" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/currency> ;
+  rdfs:label "Zloty"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Polish_z%C5%82oty> ;
+  skos:prefLabel "zloty"^^xsd:string ;
+  <http://www.w3.org/ns/prov#wasInfluencedBy> <http://en.wikipedia.org/wiki/Polish_złoty?oldid=492697733> ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.

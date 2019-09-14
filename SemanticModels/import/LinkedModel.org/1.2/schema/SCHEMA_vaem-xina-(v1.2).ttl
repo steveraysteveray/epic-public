@@ -1,0 +1,65 @@
+# Saved by TopBraid on Tue Aug 30 11:14:01 PDT 2011
+# baseURI: http://www.linkedmodel.org/1.2/schema/vaem-xina
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vaem:    <http://www.linkedmodel.org/schema/vaem#> .
+@prefix vaem-xina:  <http://www.linkedmodel.org/1.2/schema/vaem-xina#> .
+@prefix voag:    <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+voag:VAEM-XINA-CatalogEntry
+      rdf:type vaem:CatalogEntry ;
+      rdfs:label "VAEM-XINA Catalog entry"^^xsd:string .
+
+<http://www.linkedmodel.org/1.2/schema/vaem-xina>
+      rdf:type owl:Ontology ;
+      dc:author "Ralph Hodgson"^^xsd:string ;
+      dc:subject "Names and Identifiers"^^xsd:string ;
+      dc:title "Vocabulary for Attaching Essential Metadata for Names and Identifiers"^^xsd:string ;
+      vaem:dateCreated "2011-08-01"^^vaem:dateUnion ;
+      vaem:description "VAEM-XINA is an extension to VAEM to provide a vocabulary for  'Identifiers', 'Names', 'Acronyms' and 'Abbreviations'."^^xsd:string ;
+      vaem:hasCatalogEntry
+              voag:VAEM-XINA-CatalogEntry ;
+      vaem:hasGraphRole vaem:SchemaGraph ;
+      vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+      vaem:name "VAEM-XINA"^^xsd:string ;
+      vaem:revision "1.2"^^xsd:string ;
+      vaem:usesNonImportedResource
+              dc:description , dc:title , dc:contributor , dc:subject , dc:author ;
+      vaem:withAttributionTo
+              voag:TopQuadrantAttribution ;
+      owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+      owl:versionIRI <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+vaem:abbreviation
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The property 'vaem:abbreviation' provides a common way to define a commonly used abbreviation on a resource."^^xsd:string ;
+      rdfs:label "abbreviation"^^xsd:string .
+
+vaem:acronym
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The property 'vaem:acronym' provides a common way to define a commonly used abbreviation on a resource."^^xsd:string ;
+      rdfs:label "acronym"^^xsd:string .
+
+vaem:hasIdentifier
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The property 'vaemhasIdentifier' is intended for general use as a means to specifiy a unique reference to something. This is an object property that is a sub-property of 'vame:id'."^^xsd:string ;
+      rdfs:label "has identifier"^^xsd:string ;
+      rdfs:subPropertyOf vaem:id .
+
+vaem:id
+      rdf:type rdf:Property ;
+      rdfs:comment "The property 'vaem:id' is intended for general use as a means to specifiy an identifier. The type of this property is intentionally set to 'rdf:Property' so that use of the property can allow both object and scaler values.  For this reason, the property is rangeless."^^xsd:string ;
+      rdfs:label "id"^^xsd:string .
+
+vaem:idString
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The property 'vaem:idString' is intended for general use as a means to specifiy a unique reference to something. This is a data property with a string range and is a sub-property of 'vame:id'."^^xsd:string ;
+      rdfs:label "identifier"^^xsd:string ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf vaem:id .

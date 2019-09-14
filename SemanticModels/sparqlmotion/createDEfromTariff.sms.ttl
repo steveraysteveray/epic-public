@@ -1,0 +1,2346 @@
+# baseURI: http://epic/scripts/epic-tariff
+# imports: http://topbraid.org/sparqlmotionfunctions
+# imports: http://topbraid.org/sparqlmotionlib-tbc
+# prefix: epic-tariff
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix epic-tariff: <http://epic/scripts/epic-tariff#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix tf: <http://siemens.com/functions/tariff-functions#> .
+@prefix time-functions: <http://siemens.com/functions/time-functions#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epic/scripts/epic-tariff>
+  a owl:Ontology ;
+  owl:imports <http://topbraid.org/sparqlmotionfunctions> ;
+  owl:imports <http://topbraid.org/sparqlmotionlib-tbc> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+epic-tariff:ApplyConstruct_1
+  a sml:ApplyConstruct ;
+  sm:next epic-tariff:PerformUpdate_1 ;
+  sml:constructQuery [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrPayload> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "payload" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "signedObject" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasOadrSignedObjectRef> ;
+            sp:subject [
+                sp:varName "payload" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrSignedObject> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "signedObject" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "distributeEvent" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasOadrDistributeEventRef> ;
+            sp:subject [
+                sp:varName "signedObject" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "distributeEvent" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "requestID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+            sp:subject [
+                sp:varName "distributeEvent" ;
+              ] ;
+          ]
+          [
+            sp:object "EPIC1" ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasVtnID> ;
+            sp:subject [
+                sp:varName "distributeEvent" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "event" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasEiEventsRef> ;
+            sp:subject [
+                sp:varName "distributeEvent" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/epic#Event> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventDescriptor" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "activePeriod" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiActivePeriodRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventSignal" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventTarget" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "tag" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/epic#EventDescriptor> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "eventDescriptor" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "marketContext" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiMarketContextRef> ;
+            sp:subject [
+                sp:varName "eventDescriptor" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "modNum" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+            sp:subject [
+                sp:varName "eventDescriptor" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "priority" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPriority> ;
+            sp:subject [
+                sp:varName "eventDescriptor" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+            sp:subject [
+                sp:varName "eventDescriptor" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "createdDT" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasCreatedDateTime> ;
+            sp:subject [
+                sp:varName "eventDescriptor" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "vtnComment" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasVtnComment> ;
+            sp:subject [
+                sp:varName "eventDescriptor" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventStatus" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventStatusRef> ;
+            sp:subject [
+                sp:varName "eventDescriptor" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#EmixBaseType> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "activePeriod" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "activePeriodUTCdt" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+            sp:subject [
+                sp:varName "activePeriod" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#UTCDateTimeInterval> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "activePeriodUTCdt" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "UTCStartdate" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+            sp:subject [
+                sp:varName "activePeriodUTCdt" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "activePeriodDuration" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDuration> ;
+            sp:subject [
+                sp:varName "activePeriodUTCdt" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "UTCEndDate" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+            sp:subject [
+                sp:varName "activePeriodUTCdt" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/epic#EventSignal> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "eventSignal" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "intervalSeq" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventIntervalRef> ;
+            sp:subject [
+                sp:varName "eventSignal" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "itemBase" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasItemBaseRef> ;
+            sp:subject [
+                sp:varName "eventSignal" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "currentValue" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasCurrentValueRef> ;
+            sp:subject [
+                sp:varName "eventSignal" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "signalID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalIDRef> ;
+            sp:subject [
+                sp:varName "eventSignal" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "signalName" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalName> ;
+            sp:subject [
+                sp:varName "eventSignal" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "signalType" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalTypeRef> ;
+            sp:subject [
+                sp:varName "eventSignal" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#Sequence> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "intervalSeq" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "interval" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasIntervalsRef> ;
+            sp:subject [
+                sp:varName "intervalSeq" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#IntervalDataContainer> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "payloadPrice" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasAttachRef> ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "instanceUid" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasInstanceUid> ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "utcdt" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/epic#PayloadPrice> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "payloadPrice" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "priceType" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPriceRef> ;
+            sp:subject [
+                sp:varName "payloadPrice" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#PriceType> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "priceType" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "payloadFloat" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#hasValueRef> ;
+            sp:subject [
+                sp:varName "priceType" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#MonetaryQuantity> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "payloadFloat" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "numericPrice" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#hasQuantity> ;
+            sp:subject [
+                sp:varName "payloadFloat" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#UTCDateTimeInterval> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "utcdt" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "startDate" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+            sp:subject [
+                sp:varName "utcdt" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "endDate" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasEnd> ;
+            sp:subject [
+                sp:varName "utcdt" ;
+              ] ;
+          ]
+          [
+            sp:object "PT60M" ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDuration> ;
+            sp:subject [
+                sp:varName "utcdt" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/epic#Target> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "eventTarget" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+            sp:subject [
+                sp:varName "eventTarget" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "groupID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasGroupID> ;
+            sp:subject [
+                sp:varName "eventTarget" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#CurrentValueType> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "currentValue" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "currentValuePayloadPrice" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPayloadBaseRef> ;
+            sp:subject [
+                sp:varName "currentValue" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#PayloadPriceType> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "currentValuePayloadPrice" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "currentValuePriceType" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPriceRef> ;
+            sp:subject [
+                sp:varName "currentValuePayloadPrice" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#PriceType> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "currentValuePriceType" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "currentValuePayloadFloat" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#hasValueRef> ;
+            sp:subject [
+                sp:varName "currentValuePriceType" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#MonetaryQuantity> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "currentValuePayloadFloat" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "currentValuePrice" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#hasQuantity> ;
+            sp:subject [
+                sp:varName "currentValuePayloadFloat" ;
+              ] ;
+          ]
+          [
+            sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#MeasurementMetadataType> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "itemBase" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "usdUnit" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#hasItemUnitsRef> ;
+            sp:subject [
+                sp:varName "itemBase" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "siScaleCode" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/measurements---common_primitive_types_classes_and_enumerations#hasSiScaleCodeRef> ;
+            sp:subject [
+                sp:varName "itemBase" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a sp:mul ;
+                      sp:arg1 [
+                          a sp:mul ;
+                          sp:arg1 60 ;
+                          sp:arg2 60 ;
+                        ] ;
+                      sp:arg2 1000 ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "initDuration" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:parseDate ;
+                      arg:pattern "yyyy-MM-dd" ;
+                      sp:arg1 [
+                          sp:varName "date" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "start" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/enumerations---common_primitive_types_classes_and_enumerations#CK_USD> ;
+                  sp:variable [
+                      sp:varName "usdUnit" ;
+                    ] ;
+                ]
+                [
+                  sp:object <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#LocalTimeParameters> ;
+                  sp:predicate rdf:type ;
+                  sp:subject [
+                      sp:varName "timezone" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tzID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasTzid> ;
+                  sp:subject [
+                      sp:varName "timezone" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:eq ;
+                      sp:arg1 [
+                          sp:varName "timezoneID" ;
+                        ] ;
+                      sp:arg2 [
+                          a xsd:string ;
+                          sp:arg1 [
+                              sp:varName "tzID" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression 0 ;
+                  sp:variable [
+                      sp:varName "priority" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression 0 ;
+                  sp:variable [
+                      sp:varName "currentValuePrice" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      sp:varName "now" ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "createdDT" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression "No comment" ;
+                  sp:variable [
+                      sp:varName "vtnComment" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression "none" ;
+                  sp:variable [
+                      sp:varName "siScaleCode" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression "far" ;
+                  sp:variable [
+                      sp:varName "eventStatus" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression "1234" ;
+                  sp:variable [
+                      sp:varName "signalID" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression "ENERGY_PRICE"^^xsd:anySimpleType ;
+                  sp:variable [
+                      sp:varName "signalName" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression "price" ;
+                  sp:variable [
+                      sp:varName "signalType" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a tf:getTariffProfile ;
+                      sp:arg1 [
+                          sp:varName "tariffCode" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "start" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "profile" ;
+                    ] ;
+                ]
+                [
+                  a sp:Filter ;
+                  sp:expression [
+                      a sp:bound ;
+                      sp:arg1 [
+                          sp:varName "profile" ;
+                        ] ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a tf:getDow ;
+                      sp:arg1 [
+                          sp:varName "start" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "dow" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:parseDate ;
+                      arg:pattern "yyyy-MM-dd" ;
+                      sp:arg1 [
+                          sp:varName "start" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "utcStart" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a time-functions:calculateUTCOffset ;
+                      sp:arg1 [
+                          sp:varName "utcStart" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "timezone" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "offset" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a time-functions:calculateIterationsCounter ;
+                      sp:arg1 [
+                          sp:varName "date" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "timezone" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "counter" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a xsd:integer ;
+                      sp:arg1 [
+                          sp:varName "modificationNumber" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "modNum" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-DistributeEvent" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "distributeEvent" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-SignedObject" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "signedObject" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-OadrPayload" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "payload" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#" ;
+                          sp:arg3 [
+                              a xsd:string ;
+                              sp:arg1 [
+                                  a spif:encodeURL ;
+                                  sp:arg1 [
+                                      sp:varName "eventID" ;
+                                    ] ;
+                                ] ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "tag" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-EventDescriptor" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "eventDescriptor" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-MarketContext" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "marketContext" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-ActivePeriod" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "activePeriod" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-ActivePeriodDateTime" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "activePeriodUTCdt" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-EventSignal" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "eventSignal" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-EventTarget" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "eventTarget" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-IntervalSequence" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "intervalSeq" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-ItemBase" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "itemBase" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-CurrentValue" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "currentValue" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a time-functions:createDateTime ;
+                      sp:arg1 [
+                          sp:varName "date" ;
+                        ] ;
+                      sp:arg2 [
+                          a sp:mul ;
+                          sp:arg1 [
+                              sp:varName "offset" ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "initDuration" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "UTCStartdate" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression "24H" ;
+                  sp:variable [
+                      sp:varName "activePeriodDuration" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a efunc:timeAdd ;
+                      sp:arg1 [
+                          sp:varName "UTCStartdate" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "activePeriodDuration" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "UTCEndDate" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "?0" ;
+                    ] ;
+                  sp:predicate spif:for ;
+                  sp:subject [
+                      sp:varName "index" ;
+                    ] ;
+                ]
+                [
+                  sp:object 0 ;
+                  sp:predicate rdf:first ;
+                  sp:subject [
+                      sp:varName "?0" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "?1" ;
+                    ] ;
+                  sp:predicate rdf:rest ;
+                  sp:subject [
+                      sp:varName "?0" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "counter" ;
+                    ] ;
+                  sp:predicate rdf:first ;
+                  sp:subject [
+                      sp:varName "?1" ;
+                    ] ;
+                ]
+                [
+                  sp:object () ;
+                  sp:predicate rdf:rest ;
+                  sp:subject [
+                      sp:varName "?1" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a sp:if ;
+                      sp:arg1 [
+                          a sp:lt ;
+                          sp:arg1 [
+                              sp:varName "index" ;
+                            ] ;
+                          sp:arg2 10 ;
+                        ] ;
+                      sp:arg2 [
+                          a sp:concat ;
+                          sp:arg1 "0" ;
+                          sp:arg2 [
+                              a xsd:string ;
+                              sp:arg1 [
+                                  sp:varName "index" ;
+                                ] ;
+                            ] ;
+                        ] ;
+                      sp:arg3 [
+                          a xsd:string ;
+                          sp:arg1 [
+                              sp:varName "index" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "indexString" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-IntervalDataContainer" ;
+                          sp:arg3 "-" ;
+                          sp:arg4 [
+                              sp:varName "indexString" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "interval" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-UTCDateTimeInterval" ;
+                          sp:arg3 "-" ;
+                          sp:arg4 [
+                              sp:varName "indexString" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "utcdt" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-PayloadPrice" ;
+                          sp:arg3 "-" ;
+                          sp:arg4 [
+                              sp:varName "indexString" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "payloadPrice" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-PriceType" ;
+                          sp:arg3 "-" ;
+                          sp:arg4 [
+                              sp:varName "indexString" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "priceType" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:buildURI ;
+                      sp:arg1 [
+                          a fn:concat ;
+                          sp:arg1 [
+                              sp:varName "baseURI" ;
+                            ] ;
+                          sp:arg2 "#Event-PayloadFloat" ;
+                          sp:arg3 "-" ;
+                          sp:arg4 [
+                              sp:varName "indexString" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "payloadFloat" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a xsd:string ;
+                      sp:arg1 [
+                          sp:varName "index" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "instanceUid" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a time-functions:createDateTime ;
+                      sp:arg1 [
+                          sp:varName "date" ;
+                        ] ;
+                      sp:arg2 [
+                          a sp:mul ;
+                          sp:arg1 [
+                              a sp:add ;
+                              sp:arg1 [
+                                  sp:varName "index" ;
+                                ] ;
+                              sp:arg2 [
+                                  sp:varName "offset" ;
+                                ] ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "initDuration" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "startDate" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a time-functions:createDateTime ;
+                      sp:arg1 [
+                          sp:varName "date" ;
+                        ] ;
+                      sp:arg2 [
+                          a sp:mul ;
+                          sp:arg1 [
+                              a sp:add ;
+                              sp:arg1 [
+                                  a sp:add ;
+                                  sp:arg1 [
+                                      sp:varName "index" ;
+                                    ] ;
+                                  sp:arg2 [
+                                      sp:varName "offset" ;
+                                    ] ;
+                                ] ;
+                              sp:arg2 1 ;
+                            ] ;
+                          sp:arg2 [
+                              sp:varName "initDuration" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "endDate" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a spif:parseDate ;
+                      arg:pattern "yyyy-MM-dd'T'HH:mm:ss" ;
+                      sp:arg1 [
+                          sp:varName "startDate" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "utc" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a time-functions:UTCtoLocal ;
+                      sp:arg1 [
+                          sp:varName "utc" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "timezone" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "localDatetime" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a tf:computePrice ;
+                      sp:arg1 [
+                          sp:varName "profile" ;
+                        ] ;
+                      sp:arg2 [
+                          sp:varName "dow" ;
+                        ] ;
+                      sp:arg3 [
+                          a time-functions:parseTime ;
+                          sp:arg1 [
+                              sp:varName "localDatetime" ;
+                            ] ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "numericPrice" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/cim-tariff> ;
+          ]
+        ) ;
+    ] ;
+.
+epic-tariff:ApplyTopSPIN_1
+  a sml:ApplyTopSPIN ;
+  sm:next epic-tariff:ConvertRDFToXML_1 ;
+  sml:flatten true ;
+  sml:predicate spin:rule ;
+  sml:replace true ;
+  sml:singlePass false ;
+  rdfs:label "Map Message to OpenADR" ;
+.
+epic-tariff:BindBySelect_1
+  a sml:BindBySelect ;
+  sm:next epic-tariff:BranchByAsk_1 ;
+  sml:selectQuery [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "baseURI" ;
+          ]
+          [
+            sp:varName "now" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a afn:now ;
+              ] ;
+            sp:variable [
+                sp:varName "now" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:cast ;
+                arg:datatype xsd:string ;
+                sp:arg1 [
+                    sp:varName "now" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "nowString" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression "http://siemens.com/" ;
+            sp:variable [
+                sp:varName "startString" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:concat ;
+                sp:arg1 [
+                    sp:varName "startString" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "nowString" ;
+                  ] ;
+                sp:arg3 "_EPIC" ;
+              ] ;
+            sp:variable [
+                sp:varName "baseURI" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Create baseURI with timestamp" ;
+.
+epic-tariff:BranchByAsk_1
+  a sml:BranchByAsk ;
+  sm:else epic-tariff:LockDB ;
+  sm:if epic-tariff:Get_existing_Event ;
+  sm:next epic-tariff:ApplyTopSPIN_1 ;
+  sml:askQuery [
+      a sp:Ask ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "requestID" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+                  sp:subject [
+                      sp:varName "de" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "event" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasEiEventsRef> ;
+                  sp:subject [
+                      sp:varName "de" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object "ENERGY_PRICE"^^xsd:anySimpleType ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalName> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "desc" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "eventID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "modificationNumber" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        sp:object [
+                            sp:varName "resourceID" ;
+                          ] ;
+                        sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+                [
+                  a sp:Optional ;
+                  sp:elements (
+                      [
+                        sp:object [
+                            sp:varName "groupID" ;
+                          ] ;
+                        sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasGroupID> ;
+                        sp:subject [
+                            sp:varName "event" ;
+                          ] ;
+                      ]
+                    ) ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  rdfs:label "Check for duplicate Events" ;
+.
+epic-tariff:ConvertRDFToXML_1
+  a sml:ConvertRDFToXML ;
+  sm:next epic-tariff:ReturnText_1 ;
+  sm:outputVariable "xml" ;
+  sml:document [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "value" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object <http://topbraid.org/sxml#Document> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:isAttributeUnqualified false ;
+  rdfs:label "Convert to OADR XML" ;
+.
+epic-tariff:CreateDE
+  a sm:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:defaultValue "America/Los_Angeles" ;
+      spl:optional true ;
+      spl:predicate epic-tariff:timezoneID ;
+      spl:valueType xsd:string ;
+      sm:next epic-tariff:BranchByAsk_1 ;
+      rdfs:comment "The time zone identifier." ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional true ;
+      spl:predicate epic-tariff:groupID ;
+      spl:valueType xsd:string ;
+      sm:next epic-tariff:BranchByAsk_1 ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional true ;
+      spl:predicate epic-tariff:resourceID ;
+      spl:valueType xsd:string ;
+      sm:next epic-tariff:BranchByAsk_1 ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate epic-tariff:date ;
+      spl:valueType xsd:string ;
+      sm:next epic-tariff:BranchByAsk_1 ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate epic-tariff:eventID ;
+      spl:valueType xsd:string ;
+      sm:next epic-tariff:BranchByAsk_1 ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate epic-tariff:modificationNumber ;
+      spl:valueType xsd:integer ;
+      sm:next epic-tariff:BranchByAsk_1 ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate epic-tariff:requestID ;
+      spl:valueType xsd:string ;
+      sm:next epic-tariff:BranchByAsk_1 ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate epic-tariff:tariffCode ;
+      spl:valueType xsd:string ;
+      sm:next epic-tariff:BranchByAsk_1 ;
+    ] ;
+  sm:returnModule epic-tariff:ReturnText_1 ;
+  rdfs:comment "Given a tarrifCode, an xsd:date, and an EMR(R) set, build an oadrDistributeEvent message in the triple store, ready for retrieval and transmission." ;
+  rdfs:subClassOf sm:Functions ;
+.
+epic-tariff:Get_existing_Event
+  a sml:ApplyConstruct ;
+  sml:constructQuery [
+      a sp:Construct ;
+      sp:templates (
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrPayload> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "oadrPL" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "oadrSO" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasOadrSignedObjectRef> ;
+            sp:subject [
+                sp:varName "oadrPL" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrSignedObject> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "oadrSO" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "oadrDE" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasOadrDistributeEventRef> ;
+            sp:subject [
+                sp:varName "oadrSO" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "event" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasEiEventsRef> ;
+            sp:subject [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "requestID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+            sp:subject [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "vtnID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasVtnID> ;
+            sp:subject [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:or ;
+                sp:arg1 [
+                    a sp:or ;
+                    sp:arg1 [
+                        a sp:and ;
+                        sp:arg1 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "resourceID" ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            a sp:not ;
+                            sp:arg1 [
+                                a sp:bound ;
+                                sp:arg1 [
+                                    sp:varName "groupID" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:and ;
+                        sp:arg1 [
+                            a sp:not ;
+                            sp:arg1 [
+                                a sp:bound ;
+                                sp:arg1 [
+                                    sp:varName "resourceID" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "groupID" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:and ;
+                    sp:arg1 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "resourceID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "groupID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a xsd:integer ;
+                sp:arg1 [
+                    sp:varName "modificationNumber" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "mod" ;
+              ] ;
+          ]
+          [
+            sp:object <http://siemens.com/schemas/kps/oadr_helper#OadrDistributeEvent> ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "requestID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasRequestID> ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "vtnID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasVtnID> ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "event" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/oadr_helper#hasEiEventsRef> ;
+            sp:subject [
+                sp:varName "de" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "mod" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "target" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:Optional ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "gID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasGroupID> ;
+                  sp:subject [
+                      sp:varName "target" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            a sp:Optional ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "rID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                  sp:subject [
+                      sp:varName "target" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getDeNamespace ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "mod" ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "requestID" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "namespace" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a afn:localname ;
+                sp:arg1 [
+                    sp:varName "event" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "eventLocalName" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a fn:string-length ;
+                sp:arg1 [
+                    sp:varName "eventLocalName" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "eventNameLength" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:eq ;
+                sp:arg1 [
+                    a afn:namespace ;
+                    sp:arg1 [
+                        sp:varName "s" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "namespace" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a afn:localname ;
+                sp:arg1 [
+                    sp:varName "s" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "localName" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a fn:contains ;
+                sp:arg1 [
+                    sp:varName "localName" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "eventLocalName" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:or ;
+                sp:arg1 [
+                    a sp:or ;
+                    sp:arg1 [
+                        a sp:and ;
+                        sp:arg1 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "rID" ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            a sp:not ;
+                            sp:arg1 [
+                                a sp:bound ;
+                                sp:arg1 [
+                                    sp:varName "gID" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:and ;
+                        sp:arg1 [
+                            a sp:not ;
+                            sp:arg1 [
+                                a sp:bound ;
+                                sp:arg1 [
+                                    sp:varName "rID" ;
+                                  ] ;
+                              ] ;
+                          ] ;
+                        sp:arg2 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "gID" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:and ;
+                    sp:arg1 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "rID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "gID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:if ;
+                sp:arg1 [
+                    a sp:and ;
+                    sp:arg1 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "resourceID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "groupID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:and ;
+                    sp:arg1 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "rID" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "resourceID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "gID" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "groupID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg3 [
+                    a sp:or ;
+                    sp:arg1 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "rID" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "resourceID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "gID" ;
+                          ] ;
+                        sp:arg2 [
+                            sp:varName "groupID" ;
+                          ] ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "filterExpr" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                sp:varName "filterExpr" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a sp:concat ;
+                    sp:arg1 [
+                        a afn:namespace ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a afn:localname ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 "_DistributeEvent" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "oadrDE" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a sp:concat ;
+                    sp:arg1 [
+                        a afn:namespace ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a afn:localname ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 "_SignedObject" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "oadrSO" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:buildURI ;
+                sp:arg1 [
+                    a sp:concat ;
+                    sp:arg1 [
+                        a afn:namespace ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a afn:localname ;
+                        sp:arg1 [
+                            sp:varName "event" ;
+                          ] ;
+                      ] ;
+                    sp:arg3 "_Payload" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "oadrPL" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  sml:replace true ;
+  rdfs:label "Get existing Event" ;
+.
+epic-tariff:ImportRDFFromWorkspace_2
+  a sml:ImportRDFFromWorkspace ;
+  sm:next epic-tariff:ApplyTopSPIN_1 ;
+  sml:baseURI "http://siemens.com/mapping/epic2oadr" ;
+  sml:ignoreImports false ;
+  rdfs:label "Import Mapping File EPIC to OpenADR" ;
+.
+epic-tariff:Import_DB
+  a sml:ImportRDFFromWorkspace ;
+  sm:next epic-tariff:Get_existing_Event ;
+  sml:baseURI "http://siemens.com/vocab/kps/epic_instances" ;
+  sml:ignoreImports true ;
+  rdfs:label "Import Database" ;
+.
+epic-tariff:LockDB
+  a sml:RequestLock ;
+  sm:next epic-tariff:ApplyConstruct_1 ;
+  sml:uri "http://siemens.com/vocab/kps/epic_instances" ;
+  rdfs:label "Lock Database" ;
+.
+epic-tariff:PerformUpdate_1
+  a sml:PerformUpdate ;
+  sm:next epic-tariff:UnlockDB ;
+  sml:updateQuery [
+      a sp:Modify ;
+      sp:insertPattern (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  sp:object [
+                      sp:varName "o" ;
+                    ] ;
+                  sp:predicate [
+                      sp:varName "p" ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "tag" ;
+                    ] ;
+                  sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+                  sp:subject [
+                      sp:varName "s" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "o" ;
+              ] ;
+            sp:predicate [
+                sp:varName "p" ;
+              ] ;
+            sp:subject [
+                sp:varName "s" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "tag" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic#hasTag> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+.
+epic-tariff:ReturnText_1
+  a sml:ReturnText ;
+  sml:mimeType "text" ;
+  sml:text "{?xml}" ;
+  rdfs:comment """Creates an OpenADR DistributeEvent message in XML format having the caller-specified eventID, modificationNumber, requestID and optionally resourceID or groupID. The constructed message contains 24 1-hour ENERGY_PRICE intervals which are calculated based on a tariff specified using tariffCode, a date (format: YYYY-MM-DD) and the timezoneID (which defines the LocalTime and requires possible time adjustments due to Daylight Saving Time (DST) being in effect).
+US Time
+timezoneID
+Eastern
+America/New_York
+Central
+America/Chicago
+Mountain
+America/Denver
+Pacific
+America/Los_Angeles
+To avoid confusions between different timezones and DST, all date-times in the XML message are presented in Zulu Time. The start-time of the first of the 24 consecutive intervals corresponds to midnight (00:00:00) in LocalTime but is expressed in Zulu Time. For example, given the following assignments: date=2018-05-12 and timezoneID=America/Los_Angeles the first interval starts at 2018-05-12T00:00:00 PDT (Pacific Time) but is represented as 2018-05-12T07:00:00Z (Zulu Time) in the XML message.
+Returns:
+the OpenADR DistributeEvent message in XML message if no other message exists in the triplestore having the same eventID, modificationNumber, requestID.
+an empty response, otherwise.
+
+Input arguments:
+eventID	: required argument
+requestID: required argument
+modificationNumber :required argument
+tariffCode:required argument
+date:required argument - format : YYYY-MM-DD
+
+timezoneID: optional argument (If left blank, by default \"America/Los_Angeles\" is used).
+resourceID: optional argument*
+groupID: optional argument*
+
+(*) one of resourceID and groupID should be specified
+
+Return value: the XML signal (string).
+
+Note: There still seems to be a bug on days near the transition from/to Daylight Savings Time.
+""" ;
+.
+epic-tariff:UnlockDB
+  a sml:ReleaseLock ;
+  sml:uri "http://siemens.com/vocab/kps/epic_instances" ;
+  rdfs:label "Unlock Database" ;
+.
+epic-tariff:date
+  a rdf:Property ;
+  rdfs:range xsd:string ;
+.
+epic-tariff:eventID
+  a rdf:Property ;
+  rdfs:range xsd:string ;
+.
+epic-tariff:groupID
+  a rdf:Property ;
+  rdfs:range xsd:string ;
+.
+epic-tariff:modificationNumber
+  a rdf:Property ;
+  rdfs:range xsd:integer ;
+.
+epic-tariff:requestID
+  a rdf:Property ;
+  rdfs:range xsd:string ;
+.
+epic-tariff:resourceID
+  a rdf:Property ;
+  rdfs:range xsd:string ;
+.
+epic-tariff:tariffCode
+  a rdf:Property ;
+  rdfs:label "Clear Temp Graph" ;
+  rdfs:range xsd:string ;
+.
+epic-tariff:timezoneID
+  a rdf:Property ;
+  rdfs:label "The timezone identifier" ;
+.

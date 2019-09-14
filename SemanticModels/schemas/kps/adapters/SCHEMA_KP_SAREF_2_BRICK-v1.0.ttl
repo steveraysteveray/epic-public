@@ -1,0 +1,229 @@
+# baseURI: http://siemens.com/schemas/kps/adapters/saref2brick
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# imports: https://brickschema.org/schema/1.0.3/BrickTag
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: https://w3id.org/saref
+# prefix: saref2brick
+
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix saref2brick: <http://siemens.com/schemas/kps/adapters/saref2brick#> .
+@prefix tag: <https://brickschema.org/schema/1.0.3/BrickTag#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/adapters/saref2brick>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The SAREF to BRICK mapping creates an interoperability path between these two ontologies."^^xsd:string ;
+  dc:subject "mappings SAREF building to BRICK integration mapping"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology creates an interoperability mapping between the SAREF building model and the external BRICK building model."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/adapters/saref2brick#"^^xsd:string ;
+  vaem:namespacePrefix "saref2brick"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/adapters/saref2brick"^^xsd:anyURI ;
+  rdfs:label "SAREF to BRICK Mapping"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_SAREF_2_BRICK-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/BrickTag> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:imports <https://w3id.org/saref> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+saref2brick:Actuator
+  rdf:type owl:Class ;
+  rdfs:subClassOf mapping:MappingThing ;
+.
+saref2brick:BuildingSpace
+  rdf:type owl:Class ;
+  rdfs:label "Building space" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Space ;
+  rdfs:subClassOf saref:BuildingSpace ;
+.
+saref2brick:Command
+  rdf:type owl:Class ;
+  rdfs:label "Command" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Command ;
+  rdfs:subClassOf saref:Command ;
+.
+saref2brick:Energy
+  rdf:type owl:Class ;
+  rdf:type saref:Energy ;
+  rdfs:label "Energy" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Energy ;
+  rdfs:subClassOf saref:Energy ;
+.
+saref2brick:EnergyMeter
+  rdf:type owl:Class ;
+  rdfs:label "Energy meter" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Energy_Meter ;
+  rdfs:subClassOf saref:EnergyMeter ;
+.
+saref2brick:Generator
+  rdf:type owl:Class ;
+  rdf:type saref:Generator ;
+  rdfs:label "Generator" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag::Generator ;
+  rdfs:subClassOf saref:Generator ;
+.
+saref2brick:HVAC
+  rdf:type owl:Class ;
+  rdfs:label "HVAC" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:HVAC ;
+  rdfs:subClassOf saref:HVAC ;
+.
+saref2brick:Humidity
+  rdf:type owl:Class ;
+  rdf:type saref:Humidity ;
+  rdfs:label "Humidity" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Humidity ;
+  rdfs:subClassOf saref:Humidity ;
+.
+saref2brick:Lighting
+  rdf:type owl:Class ;
+  rdfs:label "Lighting" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Lighting ;
+  rdfs:subClassOf saref:Lighting ;
+.
+saref2brick:Load
+  rdf:type owl:Class ;
+  rdf:type saref:Load ;
+  rdfs:label "Load" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Load ;
+  rdfs:subClassOf saref:Load ;
+.
+saref2brick:Meter
+  rdf:type owl:Class ;
+  rdfs:label "Meter" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Meter ;
+  rdfs:subClassOf saref:Meter ;
+.
+saref2brick:Occupancy
+  rdf:type owl:Class ;
+  rdf:type saref:Occupancy ;
+  rdfs:label "Occupancy" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Occupancy ;
+  rdfs:subClassOf saref:Occupancy ;
+.
+saref2brick:OffState
+  rdf:type owl:Class ;
+  rdf:type saref:OffState ;
+  rdfs:label "Off state" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Off ;
+  rdfs:subClassOf saref:OffState ;
+.
+saref2brick:OnOffState
+  rdf:type owl:Class ;
+  rdfs:label "On off state" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:On_Off_Status ;
+  rdfs:subClassOf saref:OnOffState ;
+.
+saref2brick:OnState
+  rdf:type owl:Class ;
+  rdf:type saref:OnState ;
+  rdfs:label "On state" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:On ;
+  rdfs:subClassOf saref:OnState ;
+.
+saref2brick:Power
+  rdf:type owl:Class ;
+  rdf:type saref:Power ;
+  rdfs:label "Power" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Power ;
+  rdfs:subClassOf saref:Power ;
+.
+saref2brick:Pressure
+  rdf:type owl:Class ;
+  rdf:type saref:Pressure ;
+  rdfs:label "Pressure" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Pressure ;
+  rdfs:subClassOf saref:Pressure ;
+.
+saref2brick:Property
+  rdf:type owl:Class ;
+  rdfs:label "Property" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:MeasurementProperty ;
+  rdfs:subClassOf saref:Property ;
+.
+saref2brick:Safety
+  rdf:type owl:Class ;
+  rdf:type saref:Safety ;
+  rdfs:label "Safety" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Safety ;
+  rdfs:subClassOf saref:Safety ;
+.
+saref2brick:Sensor
+  rdf:type owl:Class ;
+  rdf:type saref:Sensor ;
+  rdfs:label "Sensor" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Sensor ;
+  rdfs:subClassOf saref:Sensor ;
+.
+saref2brick:StartStopState
+  rdf:type owl:Class ;
+  rdfs:label "Start stop state" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Start_Stop ;
+  rdfs:subClassOf saref:StartStopState ;
+.
+saref2brick:Storage
+  rdf:type owl:Class ;
+  rdf:type saref:Storage ;
+  rdfs:label "Storage" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Storage ;
+  rdfs:subClassOf saref:Storage ;
+.
+saref2brick:Switch
+  rdf:type owl:Class ;
+  rdfs:label "Switch" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Switch ;
+  rdfs:subClassOf saref:Switch ;
+.
+saref2brick:Temperature
+  rdf:type owl:Class ;
+  rdf:type saref:Temperature ;
+  rdfs:label "Temperature" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Temperature ;
+  rdfs:subClassOf saref:Temperature ;
+.
+saref2brick:TemperatureSensor
+  rdf:type owl:Class ;
+  rdfs:label "Temperature Sensor" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Temperature_Sensor ;
+  rdfs:subClassOf saref:TemperatureSensor ;
+.
+saref2brick:Time
+  rdf:type owl:Class ;
+  rdfs:label "Time" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf brick:Time ;
+  rdfs:subClassOf saref:Time ;
+.

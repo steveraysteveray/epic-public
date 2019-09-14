@@ -1,0 +1,90 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/celestial-mechanics
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://qudt.org/1.2/vocab/unit/mechanics
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/quantity/celestial-mechanics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "QUDT Celestial Mechanics Quantity Kinds Vocabulary"^^xsd:string ;
+  dc:title "QUDT Celestial Mechanics Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "Aerospace"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 13:34:19 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/mechanics> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity> ;
+.
+quantity:GravitationalAttraction
+  rdf:type qudt:CelestialMechanicsQuantityKind ;
+  qudt:applicableUnit unit:M3-PER-KG-SEC2 ;
+  qudt:baseUnitDimensions "m^3/kg \\cdot s^2"^^xsd:string ;
+  qudt:description "The force of attraction between all masses in the universe; especially the attraction of the earth's mass for bodies near its surface; the more remote the body the less the gravity; the gravitation between two bodies is proportional to the product of their masses and inversely proportional to the square of the distance between them."^^xsd:string ;
+  qudt:symbol "G"^^xsd:string ;
+  rdfs:label "Gravitational Attraction"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Gravitational_constant> ;
+  skos:prefLabel "Gravitational Attraction"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.thefreedictionary.com/gravitational+attraction> ;
+.
+quantity:StandardGravitationalParameter
+  rdf:type qudt:CelestialMechanicsQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:KM3-PER-SEC2 ;
+  qudt:applicableUnit unit:M3-PER-SEC2 ;
+  qudt:baseUnitDimensions "L^3/T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "m^3/s^2"^^xsd:string ;
+  qudt:description "In celestial mechanics the standard gravitational parameter of a celestial body is the product of the gravitational constant G and the mass M of the body. Expressed as $\\mu = G \\cdot M$. The SI units of the standard gravitational parameter are $m^{3}s^{-2}$."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Standard Gravitational Parameter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Standard_gravitational_parameter> ;
+  skos:prefLabel "Standard Gravitational Parameter"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Standard_gravitational_parameter> ;
+.
+<http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Vocabulary Catalog Entry v1.2"^^xsd:string ;
+.

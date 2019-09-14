@@ -1,0 +1,40 @@
+# baseURI: http://siemens.com/schemas/kps/bridges/ifc2saref
+# imports: http://www.buildingsmart-tech.org/ifcXML/IFC4/final
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: https://w3id.org/saref
+# prefix: ifc2saref
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcXML/IFC4/final#> .
+@prefix ifc2saref: <http://siemens.com/schemas/kps/bridges/ifc2saref#> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/bridges/ifc2saref>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The EPIC integration bridge ontology creates an interoperability path between the ontologies."^^xsd:string ;
+  dc:subject "An integration bridge between the IFC and SAREF models"^^xsd:string ;
+  dc:title "The IFC to SAREF integration bridge"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology is to as a single access point to the EPIC bridge ontologies."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/bridges/ifc2saref#"^^xsd:string ;
+  vaem:namespacePrefix "ifc2saref"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/bridges/ifc2saref"^^xsd:anyURI ;
+  rdfs:label "IFC to SAREF Integration Bridge"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_IFC_2_SAREF-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://www.buildingsmart-tech.org/ifcXML/IFC4/final> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:imports <https://w3id.org/saref> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ifc2saref:Actuator
+  rdf:type owl:Class ;
+  rdfs:subClassOf ifc:IfcActuatorType ;
+  rdfs:subClassOf mapping:MappingThing ;
+.

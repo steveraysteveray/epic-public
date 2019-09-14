@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Building.Information xmlns="http://www.siemens.com/Brick_Building"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.siemens.com/Brick_Building file:/Users/jackhodges/Ontologies/Brick_Building.xsd">
+    <ResourceID xmlns="">ResourceID0</ResourceID>
+    <Building_Electrical_Meter xmlns="">
+        <btag>Building_Electrical_Meter</btag>
+        <uuid>uuid0</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Building_Electrical_Meter>
+    <Weather_Temperature_Sensor xmlns="">
+        <btag>Weather_Temperature_Sensor</btag>
+        <uuid>uuid1</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Temperature_Sensor>
+    <Weather_Temperature_Sensor xmlns="">
+        <btag>Weather_Temperature_Sensor</btag>
+        <uuid>uuid2</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Temperature_Sensor>
+    <Weather_Relative_Humidity_Sensor xmlns="">
+        <btag>Weather_Relative_Humidity_Sensor</btag>
+        <uuid>uuid3</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Relative_Humidity_Sensor>
+    <Weather_Relative_Humidity_Sensor xmlns="">
+        <btag>Weather_Relative_Humidity_Sensor</btag>
+        <uuid>uuid4</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Relative_Humidity_Sensor>
+    <Weather_Rain_Sensor xmlns="">
+        <btag>Weather_Rain_Sensor</btag>
+        <uuid>uuid5</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Rain_Sensor>
+    <Weather_Rain_Sensor xmlns="">
+        <btag>Weather_Rain_Sensor</btag>
+        <uuid>uuid6</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Rain_Sensor>
+    <Weather_Cloud_Coverage_Sensor xmlns="">
+        <btag>Weather_Cloud_Coverage_Sensor</btag>
+        <uuid>uuid7</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Cloud_Coverage_Sensor>
+    <Weather_Cloud_Coverage_Sensor xmlns="">
+        <btag>Weather_Cloud_Coverage_Sensor</btag>
+        <uuid>uuid8</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Cloud_Coverage_Sensor>
+    <Weather_Cloud_Height_Sensor xmlns="">
+        <btag>Weather_Cloud_Height_Sensor</btag>
+        <uuid>uuid9</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Cloud_Height_Sensor>
+    <Weather_Cloud_Height_Sensor xmlns="">
+        <btag>Weather_Cloud_Height_Sensor</btag>
+        <uuid>uuid10</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Cloud_Height_Sensor>
+    <Weather_Wind_Speed_Sensor xmlns="">
+        <btag>Weather_Wind_Speed_Sensor</btag>
+        <uuid>uuid11</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Wind_Speed_Sensor>
+    <Weather_Wind_Speed_Sensor xmlns="">
+        <btag>Weather_Wind_Speed_Sensor</btag>
+        <uuid>uuid12</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Wind_Speed_Sensor>
+    <Weather_Wind_Direction_Sensor xmlns="">
+        <btag>Weather_Wind_Direction_Sensor</btag>
+        <uuid>uuid13</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Wind_Direction_Sensor>
+    <Weather_Wind_Direction_Sensor xmlns="">
+        <btag>Weather_Wind_Direction_Sensor</btag>
+        <uuid>uuid14</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>0</value>
+    </Weather_Wind_Direction_Sensor>
+    <Occupancy_Sensor xmlns="">
+        <btag>Occupancy_Sensor</btag>
+        <uuid>uuid15</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>false</value>
+    </Occupancy_Sensor>
+    <Occupancy_Sensor xmlns="">
+        <btag>Occupancy_Sensor</btag>
+        <uuid>uuid16</uuid>
+        <timestamp>2006-05-04T18:13:51.0</timestamp>
+        <value>false</value>
+    </Occupancy_Sensor>
+</Building.Information>

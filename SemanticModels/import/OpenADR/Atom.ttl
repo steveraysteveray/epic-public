@@ -1,0 +1,926 @@
+# baseURI: http://www.w3.org/2005/Atom
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: Atom
+
+@prefix Atom: <http://www.w3.org/2005/Atom#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.
+<http://www.w3.org/2005/Atom>
+  rdf:type owl:Ontology ;
+  dc:description "An Atom document may have two root elements, feed and entry, as defined in section 2."^^xsd:string ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://www.w3.org/2005/Atom, http://www.w3.org/2005/Atom, http://www.w3.org/2005/Atom"^^xsd:string ;
+.
+Atom:CategoryType
+  rdf:type owl:Class ;
+  dc:description "The Atom category construct is defined in section 4.2.2 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#categoryType" ;
+  rdfs:label "Category type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty Atom:scheme ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty Atom:label ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty Atom:term ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty Atom:term ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:label ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:scheme ;
+    ] ;
+.
+Atom:CommonAttributes
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2005/Atom#commonAttributes" ;
+  rdfs:label "Common attributes"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty Atom:base ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:language. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:language."^^xsd:string ;
+      owl:allValuesFrom xsd:language ;
+      owl:onProperty Atom:lang ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:base ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:lang ;
+    ] ;
+.
+Atom:ContentType
+  rdf:type owl:Class ;
+  dc:description "The Atom content construct is defined in section 4.1.3 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#contentType" ;
+  rdfs:label "Content type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty Atom:src ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty Atom:type ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:src ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:type ;
+    ] ;
+.
+Atom:DateTimeType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2005/Atom#dateTimeType" ;
+  rdfs:label "Date time type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:dateTime. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:dateTime."^^xsd:string ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+.
+Atom:EmailTypeDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Schema definition for an email address."^^xsd:string ;
+  rdfs:label "Email type datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:normalizedString ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:normalizedString ;
+      owl:withRestrictions (
+          [
+            xsd:pattern "\\w+@(\\w+\\.)+\\w+"^^xsd:string ;
+          ]
+        ) ;
+    ] ;
+.
+Atom:Entry
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2005/Atom#entry" ;
+  rdfs:label "Entry"^^xsd:string ;
+  rdfs:subClassOf Atom:EntryType ;
+.
+Atom:EntryType
+  rdf:type owl:Class ;
+  dc:description "The Atom entry construct is defined in section 4.1.2 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#entryType" ;
+  rdfs:label "Entry type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom Atom:PersonType ;
+      owl:onProperty Atom:authorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom Atom:CategoryType ;
+      owl:onProperty Atom:categoryRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:titleRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      owl:allValuesFrom Atom:DateTimeType ;
+      owl:onProperty Atom:updatedRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom Atom:ContentType ;
+      owl:onProperty Atom:contentRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom Atom:PersonType ;
+      owl:onProperty Atom:contributorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom Atom:IdType ;
+      owl:onProperty Atom:idRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom Atom:LinkType ;
+      owl:onProperty Atom:linkRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom Atom:DateTimeType ;
+      owl:onProperty Atom:publishedRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:rightsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:sourceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:summaryRef ;
+    ] ;
+.
+Atom:EnumeratedValue
+  rdf:type owl:Class ;
+  rdfs:label "Enumerated value"^^xsd:string ;
+  rdfs:subClassOf dtype:EnumeratedValue ;
+.
+Atom:Feed
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2005/Atom#feed" ;
+  rdfs:label "Feed"^^xsd:string ;
+  rdfs:subClassOf Atom:FeedType ;
+.
+Atom:FeedType
+  rdf:type owl:Class ;
+  dc:description "The Atom feed construct is defined in section 4.1.1 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#feedType" ;
+  rdfs:label "Feed type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom Atom:PersonType ;
+      owl:onProperty Atom:authorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom Atom:CategoryType ;
+      owl:onProperty Atom:categoryRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:titleRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      owl:allValuesFrom Atom:DateTimeType ;
+      owl:onProperty Atom:updatedRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "12"^^xsd:int ;
+      owl:allValuesFrom Atom:EntryType ;
+      owl:onProperty Atom:entryRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom Atom:PersonType ;
+      owl:onProperty Atom:contributorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom Atom:GeneratorType ;
+      owl:onProperty Atom:generatorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom Atom:IconType ;
+      owl:onProperty Atom:iconRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom Atom:IdType ;
+      owl:onProperty Atom:idRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom Atom:LinkType ;
+      owl:onProperty Atom:linkRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom Atom:LogoType ;
+      owl:onProperty Atom:logoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:rightsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:subtitleRef ;
+    ] ;
+.
+Atom:GeneratorType
+  rdf:type owl:Class ;
+  dc:description "The Atom generator element is defined in section 4.2.4 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#generatorType" ;
+  rdfs:label "Generator type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty Atom:uri ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty Atom:version ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:uri ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:version ;
+    ] ;
+.
+Atom:IconType
+  rdf:type owl:Class ;
+  dc:description "The Atom icon construct is defined in section 4.2.5 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#iconType" ;
+  rdfs:label "Icon type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+.
+Atom:IdType
+  rdf:type owl:Class ;
+  dc:description "The Atom id construct is defined in section 4.2.6 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#idType" ;
+  rdfs:label "Id type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+.
+Atom:LinkType
+  rdf:type owl:Class ;
+  dc:description "The Atom link construct is defined in section 3.4 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#linkType" ;
+  rdfs:label "Link type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:NMTOKEN. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:NMTOKEN."^^xsd:string ;
+      owl:allValuesFrom xsd:NMTOKEN ;
+      owl:onProperty Atom:hreflang ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty Atom:href ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:positiveInteger. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:positiveInteger."^^xsd:string ;
+      owl:allValuesFrom xsd:positiveInteger ;
+      owl:onProperty Atom:length ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty Atom:rel ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty Atom:title ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty Atom:type ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty Atom:href ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:hreflang ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:length ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:rel ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:title ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:type ;
+    ] ;
+.
+Atom:LogoType
+  rdf:type owl:Class ;
+  dc:description "The Atom logo construct is defined in section 4.2.8 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#logoType" ;
+  rdfs:label "Logo type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+.
+Atom:PersonType
+  rdf:type owl:Class ;
+  dc:description "The Atom person construct is defined in section 3.2 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#personType" ;
+  rdfs:label "Person type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty Atom:name ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom Atom:UriType ;
+      owl:onProperty Atom:uriRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is Atom:EmailTypeDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:normalizedString."^^xsd:string ;
+      owl:allValuesFrom xsd:normalizedString ;
+      owl:onProperty Atom:email ;
+    ] ;
+.
+Atom:SourceType
+  rdf:type owl:Class ;
+  dc:description "The Atom source construct is defined in section 4.2.11 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#sourceType" ;
+  rdfs:label "Source type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom Atom:PersonType ;
+      owl:onProperty Atom:authorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom Atom:CategoryType ;
+      owl:onProperty Atom:categoryRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "10"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:titleRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "11"^^xsd:int ;
+      owl:allValuesFrom Atom:DateTimeType ;
+      owl:onProperty Atom:updatedRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom Atom:PersonType ;
+      owl:onProperty Atom:contributorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "3"^^xsd:int ;
+      owl:allValuesFrom Atom:GeneratorType ;
+      owl:onProperty Atom:generatorRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "4"^^xsd:int ;
+      owl:allValuesFrom Atom:IconType ;
+      owl:onProperty Atom:iconRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "5"^^xsd:int ;
+      owl:allValuesFrom Atom:IdType ;
+      owl:onProperty Atom:idRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "6"^^xsd:int ;
+      owl:allValuesFrom Atom:LinkType ;
+      owl:onProperty Atom:linkRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "7"^^xsd:int ;
+      owl:allValuesFrom Atom:LogoType ;
+      owl:onProperty Atom:logoRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "8"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:rightsRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "9"^^xsd:int ;
+      owl:allValuesFrom Atom:TextType ;
+      owl:onProperty Atom:subtitleRef ;
+    ] ;
+.
+Atom:TT_html
+  rdf:type Atom:TextType-type ;
+  dtype:order "1"^^xsd:nonNegativeInteger ;
+  dtype:value "html"^^xsd:token ;
+  rdfs:label "html"^^xsd:string ;
+.
+Atom:TT_text
+  rdf:type Atom:TextType-type ;
+  dtype:order "0"^^xsd:nonNegativeInteger ;
+  dtype:value "text"^^xsd:token ;
+  rdfs:label "text"^^xsd:string ;
+.
+Atom:TT_xhtml
+  rdf:type Atom:TextType-type ;
+  dtype:order "2"^^xsd:nonNegativeInteger ;
+  dtype:value "xhtml"^^xsd:token ;
+  rdfs:label "xhtml"^^xsd:string ;
+.
+Atom:TextType
+  rdf:type owl:Class ;
+  dc:description "The Atom text construct is defined in section 3.1 of the format spec."^^xsd:string ;
+  sxml:tag "http://www.w3.org/2005/Atom#textType" ;
+  rdfs:label "Text type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      owl:allValuesFrom Atom:TextType-type ;
+      owl:onProperty Atom:typeRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty Atom:typeRef ;
+    ] ;
+.
+Atom:TextType-type
+  rdf:type owl:Class ;
+  rdfs:label "Text type-type"^^xsd:string ;
+  rdfs:subClassOf Atom:EnumeratedValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:token. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:token."^^xsd:string ;
+      owl:allValuesFrom xsd:token ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+  owl:oneOf (
+      Atom:TT_html
+      Atom:TT_text
+      Atom:TT_xhtml
+    ) ;
+.
+Atom:UriType
+  rdf:type owl:Class ;
+  sxml:tag "http://www.w3.org/2005/Atom#uriType" ;
+  rdfs:label "Uri type"^^xsd:string ;
+  rdfs:subClassOf Atom:CommonAttributes ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+.
+Atom:authorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#author" ;
+  rdfs:label "author ref"^^xsd:string ;
+.
+Atom:base
+  rdf:type owl:DatatypeProperty ;
+  dc:description """See http://www.w3.org/TR/xmlbase/ for
+                     information about this attribute."""^^xsd:string ;
+  sxml:attribute "http://www.w3.org/2005/Atom#base" ;
+  rdfs:label "base"^^xsd:string ;
+.
+Atom:categoryRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#category" ;
+  rdfs:label "category ref"^^xsd:string ;
+.
+Atom:contentRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#content" ;
+  rdfs:label "content ref"^^xsd:string ;
+.
+Atom:contributorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#contributor" ;
+  rdfs:label "contributor ref"^^xsd:string ;
+.
+Atom:email
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#email" ;
+  rdfs:label "email"^^xsd:string ;
+.
+Atom:entryRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#entry" ;
+  rdfs:label "entry ref"^^xsd:string ;
+.
+Atom:generatorRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#generator" ;
+  rdfs:label "generator ref"^^xsd:string ;
+.
+Atom:href
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#href" ;
+  rdfs:label "href"^^xsd:string ;
+.
+Atom:hreflang
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#hreflang" ;
+  rdfs:label "hreflang"^^xsd:string ;
+.
+Atom:iconRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#icon" ;
+  rdfs:label "icon ref"^^xsd:string ;
+.
+Atom:idRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#id" ;
+  rdfs:label "id ref"^^xsd:string ;
+.
+Atom:label
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#label" ;
+  rdfs:label "label"^^xsd:string ;
+.
+Atom:lang
+  rdf:type owl:DatatypeProperty ;
+  dc:description """In due course, we should install the relevant ISO 2- and 3-letter
+         codes as the enumerated possible values . . ."""^^xsd:string ;
+  sxml:attribute "http://www.w3.org/2005/Atom#lang" ;
+  rdfs:label "lang"^^xsd:string ;
+.
+Atom:length
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#length" ;
+  rdfs:label "length"^^xsd:string ;
+.
+Atom:linkRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#link" ;
+  rdfs:label "link ref"^^xsd:string ;
+.
+Atom:logoRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#logo" ;
+  rdfs:label "logo ref"^^xsd:string ;
+.
+Atom:name
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#name" ;
+  rdfs:label "name"^^xsd:string ;
+.
+Atom:publishedRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#published" ;
+  rdfs:label "published ref"^^xsd:string ;
+.
+Atom:rel
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#rel" ;
+  rdfs:label "rel"^^xsd:string ;
+.
+Atom:rightsRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#rights" ;
+  rdfs:label "rights ref"^^xsd:string ;
+.
+Atom:scheme
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#scheme" ;
+  rdfs:label "scheme"^^xsd:string ;
+.
+Atom:sourceRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#source" ;
+  rdfs:label "source ref"^^xsd:string ;
+.
+Atom:src
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#src" ;
+  rdfs:label "src"^^xsd:string ;
+.
+Atom:subtitleRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#subtitle" ;
+  rdfs:label "subtitle ref"^^xsd:string ;
+.
+Atom:summaryRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#summary" ;
+  rdfs:label "summary ref"^^xsd:string ;
+.
+Atom:term
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#term" ;
+  rdfs:label "term"^^xsd:string ;
+.
+Atom:title
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#title" ;
+  rdfs:label "title"^^xsd:string ;
+.
+Atom:titleRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#title" ;
+  rdfs:label "title ref"^^xsd:string ;
+.
+Atom:type
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#type" ;
+  rdfs:label "type"^^xsd:string ;
+.
+Atom:typeRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#type" ;
+  rdfs:label "type ref"^^xsd:string ;
+.
+Atom:updatedRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#updated" ;
+  rdfs:label "updated ref"^^xsd:string ;
+.
+Atom:uri
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#uri" ;
+  rdfs:label "uri"^^xsd:string ;
+.
+Atom:uriRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://www.w3.org/2005/Atom#uri" ;
+  rdfs:label "uri ref"^^xsd:string ;
+.
+Atom:version
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://www.w3.org/2005/Atom#version" ;
+  rdfs:label "version"^^xsd:string ;
+.

@@ -1,0 +1,555 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/telebiometrics
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/telebiometrics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Telebiometrics Quantity Kinds"^^xsd:string ;
+  dc:title "QUDT Telebimetrics Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "TBD"^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-31 00:23:39 -0700 (Sun, 31 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/chemistry"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/isq/quantity/currency> ;
+.
+quantity:AcousticImpedance
+  rdf:type qudt:TelebiometricsQuantityKind ;
+.
+quantity:ActiveEnergy
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:ActivityThresholds
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Activity Thresholds} are thresholds of sensitivity for radioactivity."^^xsd:string ;
+  qudt:symbol "\\Tbar_t"^^xsd:string ;
+  rdfs:label "Activity Thresholds"^^xsd:string ;
+  skos:prefLabel "Activity Thresholds"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:Adaptation
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:SECOND ;
+  qudt:description "\\textit{Adaptation} is the recovery of visual ability following exposure to light (dark adaptation)."^^xsd:string ;
+  rdfs:label "Adaptation"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Neural_adaptation#Visual> ;
+  skos:prefLabel "Adaptation"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:AngularFrequency
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:AreicHeatFlowRate
+  qudt:latexDefinition "$\\varphi = \\frac{\\Phi}{A}$, where $\\Phi$ is heat flow rate and $A$ is area."^^xsd:string ;
+.
+quantity:AuditoryThresholds
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Auditory Thresholds} is the thresholds of sensitivity to auditory signals and other input to the ear or the sense of hearing."^^xsd:string ;
+  qudt:symbol "\\Tbar_a"^^xsd:string ;
+  rdfs:label "Auditory Thresholds"^^xsd:string ;
+  skos:prefLabel "Auditory Thresholds"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:Breadth
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:abbreviation "breadth"^^xsd:string ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Breadth} is the extent or measure of how broad or wide something is."^^xsd:string ;
+  qudt:symbol "b"^^xsd:string ;
+  rdfs:label "Breadth"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Length> ;
+  skos:prefLabel "Breadth"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wiktionary.org/wiki/breadth> ;
+.
+quantity:Capacitance
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:CartesianArea
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:abbreviation "area"^^xsd:string ;
+  qudt:applicableUnit unit:M2 ;
+  qudt:description "\\textit{Area} is a quantity that expresses the extent of a two-dimensional surface or shape, or planar lamina, in the plane."^^xsd:string ;
+  qudt:latexDefinition "$A = \\int\\int dxdy$, where $x$ and $y$ are cartesian coordinates."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Area"^^xsd:string ;
+  skos:closeMatch quantity:Area ;
+  skos:prefLabel "Area"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Area> ;
+.
+quantity:CartesianCoordinates
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Cartesian Coordinates} specify each point uniquely in a plane by a pair of numerical coordinates, which are the signed distances from the point to two fixed perpendicular directed lines, measured in the same unit of length. "^^xsd:string ;
+  qudt:symbol "x, y, z"^^xsd:string ;
+  rdfs:label "Cartesian Coordinates"^^xsd:string ;
+  skos:prefLabel "Cartesian Coordinates"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Cartesian_coordinate_system> ;
+.
+quantity:CartesianVolume
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:abbreviation "volume"^^xsd:string ;
+  qudt:description "\\textit{Volume} is the quantity of three-dimensional space enclosed by some closed boundary, for example, the space that a substance (solid, liquid, gas, or plasma) or shape occupies or contains."^^xsd:string ;
+  qudt:latexDefinition "$V = \\int\\int\\int dxdydz$, where $x$, $y$, and $z$ are cartesian coordinates."^^xsd:string ;
+  qudt:symbol "V"^^xsd:string ;
+  rdfs:label "Volume"^^xsd:string ;
+  skos:closeMatch quantity:Volume ;
+  skos:prefLabel "Volume"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Volume> ;
+.
+quantity:CoefficientOfHeatTransfer
+  qudt:latexDefinition "$K = \\frac{\\varphi}{T}$, where $\\varphi$ is areic heat flow rate and $T$ is thermodynamic temperature difference."^^xsd:string ;
+.
+quantity:ColdReceptorThreshold
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Cold Receptor Threshold} is the threshold of cold-sensitive free nerve-ending."^^xsd:string ;
+  qudt:symbol "\\Tbar_c"^^xsd:string ;
+  rdfs:label "Cold Receptor Threshold"^^xsd:string ;
+  skos:prefLabel "Cold Receptor Threshold"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:CombinedNonEvaporativeHeatTransferCoefficient
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:W-PER-M2-K ;
+  qudt:description "\\textit{Combined Non Evaporative Heat Transfer Coefficient} is the "^^xsd:string ;
+  qudt:latexDefinition "$h = h_r + h_c + h_k$, where $h_r$ is the linear radiative heat transfer coefficient, $h_c$ is the convective heat transfer coefficient, and $h_k$ is the conductive heat transfer coefficient."^^xsd:string ;
+  qudt:symbol "h"^^xsd:string ;
+  rdfs:label "Combined Non Evaporative Heat Transfer Coefficient"^^xsd:string ;
+  skos:prefLabel "Combined Non Evaporative Heat Transfer Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:ConductionSpeed
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M-PER-SEC ;
+  qudt:description "\\textit{Conduction Speed} is the speed of impulses in nerve fibers."^^xsd:string ;
+  qudt:symbol "c"^^xsd:string ;
+  rdfs:label "Conduction Speed"^^xsd:string ;
+  skos:prefLabel "Conduction Speed"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:ConductiveHeatTransfer
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "\\textit{Conductive Heat Transfer} is proportional to temperature gradient and area of contact."^^xsd:string ;
+  qudt:symbol "\\Phi_k"^^xsd:string ;
+  rdfs:label "Conductive Heat Transfer"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Heat_transfer#Conduction> ;
+  skos:prefLabel "Conductive Heat Transfer"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:ConvectiveHeatTransfer
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "\\textit{Convective Heat Transfer} is convective heat transfer coefficient multiplied by temperature difference and exchange area. "^^xsd:string ;
+  qudt:symbol "\\Phi_c"^^xsd:string ;
+  rdfs:label "Convective Heat Transfer"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Heat_transfer#Convection> ;
+  skos:prefLabel "Convective Heat Transfer"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:CurvatureFromRadius
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "In mathematics \\textit{Curvature} is the amount by which a geometric object deviates from being flat, or straight in the case of a line, but this is defined in different ways depending on the context."^^xsd:string ;
+  qudt:latexDefinition "$\\kappa = \\frac{1}{\\rho}$, where $\\rho$ is the radius of the curvature."^^xsd:string ;
+  qudt:symbol "\\kappa"^^xsd:string ;
+  rdfs:label "Curvature"^^xsd:string ;
+  skos:closeMatch quantity:Curvature ;
+  skos:prefLabel "Curvature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Curvature> ;
+.
+quantity:Diameter
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:abbreviation "diameter"^^xsd:string ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "In classical geometry, the \\textit{Diameter} of a circle is any straight line segment that passes through the center of the circle and whose endpoints lie on the circle. "^^xsd:string ;
+  qudt:latexDefinition "$d = 2r$, where $r$ is the radius of the circle."^^xsd:string ;
+  qudt:symbol "d"^^xsd:string ;
+  rdfs:label "Diameter"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Diameter> ;
+  skos:prefLabel "Diameter"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Diameter> ;
+.
+quantity:Displacement
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Displacement} is the shortest distance from the initial to the final position of a point P."^^xsd:string ;
+  qudt:latexDefinition "$\\Delta r =  R_f - R_i$, where $R_f$ is the final position and $R_i$ is the initial position."^^xsd:string ;
+  qudt:symbol "\\Delta r"^^xsd:string ;
+  rdfs:label "Displacement"^^xsd:string ;
+  skos:prefLabel "Displacement"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Displacement_(vector)> ;
+.
+quantity:Distance
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Distance} is a numerical description of how far apart objects are. "^^xsd:string ;
+  qudt:symbol "d"^^xsd:string ;
+  rdfs:label "Distance"^^xsd:string ;
+  skos:prefLabel "Distance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Distance> ;
+.
+quantity:ElectricPotential
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:EvaporativeHeatTransfer
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "\\textit{Evaporative Heat Transfer} is "^^xsd:string ;
+  qudt:symbol "\\Phi_e"^^xsd:string ;
+  rdfs:label "Evaporative Heat Transfer"^^xsd:string ;
+  skos:prefLabel "Evaporative Heat Transfer"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:EvaporativeHeatTransferCoefficient
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:W-PER-M2-PA ;
+  qudt:description "\\textit{Evaporative Heat Transfer Coefficient} is the areic heat transfer coefficient multiplied by the water vapor pressure difference between skind and the environment, and by the exchange area."^^xsd:string ;
+  qudt:symbol "h_e"^^xsd:string ;
+  rdfs:label "Combined Non Evaporative Heat Transfer Coefficient"^^xsd:string ;
+  skos:prefLabel "Combined Non Evaporative Heat Transfer Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:Force
+  qudt:latexDefinition "$F = \\frac{dp}{dt}$, where $F$ is the resultant force acting on a body, $p$ is momentum of a body, and $t$ is time."^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:GustatoryThreshold
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Gustatory Threshold} are thresholds for classes of tast that can be detected by the human mouth and thresholds of sensitivity to foods, drinks and other substances."^^xsd:string ;
+  qudt:symbol "\\Tbar_g"^^xsd:string ;
+  rdfs:label "Gustatory Threshold"^^xsd:string ;
+  skos:prefLabel "Gustatory Threshold"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:Height
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:abbreviation "height"^^xsd:string ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Height} is the measurement of vertical distance, but has two meanings in common use. It can either indicate how \"tall\" something is, or how \"high up\" it is."^^xsd:string ;
+  qudt:symbol "h"^^xsd:string ;
+  rdfs:label "Height"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Height> ;
+  skos:prefLabel "Height"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Height> ;
+.
+quantity:Impedance
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:Luminance
+  qudt:symbol "L_v"^^xsd:string ;
+.
+quantity:LuminousEmmitance
+  rdf:type qudt:PhotometryQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Luminous Emittance} is the luminous flux per unit area emitted from a surface."^^xsd:string ;
+  qudt:symbol "M_v"^^xsd:string ;
+  rdfs:label "Luminous Emmitance"^^xsd:string ;
+  skos:broader quantity:LuminousFluxPerArea ;
+  skos:prefLabel "Luminous Emmitance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:LuminousFlux
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Luminous_flux> ;
+.
+quantity:MassicActivity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:BQ-PER-KG ;
+  qudt:description "\\textit{Massic Activity} is the activity divided by the total mass of the sample."^^xsd:string ;
+  qudt:symbol "a"^^xsd:string ;
+  rdfs:label "Massic Activity"^^xsd:string ;
+  skos:prefLabel "Massic Activity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://www.encyclo.co.uk/define/massic%20activity> ;
+.
+quantity:OlfactoryThreshold
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Olfactory Threshold} are thresholds for the concentrations of various classes of smell that can be detected."^^xsd:string ;
+  qudt:symbol "\\Tbar_o"^^xsd:string ;
+  rdfs:label "Olfactory Threshold"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Odor_detection_threshold> ;
+  skos:prefLabel "Olfactory Threshold"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:PathLength
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{PathLength} is "^^xsd:string ;
+  qudt:symbol "s"^^xsd:string ;
+  rdfs:label "Path Length"^^xsd:string ;
+  skos:prefLabel "Path Length"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Path_length> ;
+.
+quantity:PhaseDifference
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:PhotoThresholdOfAwarenessFunction
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:Lux ;
+  qudt:description "\\textit{Photo Threshold of Awareness Function} is the ability of the human eye to detect a light that results in a $1^o$ radial angle at the eye with a given duration (temporal summation)."^^xsd:string ;
+  rdfs:label "Photo Threshold of Awareness Function"^^xsd:string ;
+  skos:prefLabel "Photo Threshold of Awareness Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:PositionVector
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "A \\textit{Position Vector}, also known as location vector or radius vector, is a Euclidean vector which represents the position of a point P in space in relation to an arbitrary reference origin O."^^xsd:string ;
+  qudt:latexDefinition "$r = \\overrightarrow{OP}$, where $O$ and $P$ are two points in space."^^xsd:string ;
+  qudt:symbol "r"^^xsd:string ;
+  rdfs:label "Position Vector"^^xsd:string ;
+  skos:prefLabel "Position Vector"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Position_(vector)> ;
+.
+quantity:RadialDistance
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "In classical geometry, the \\textit{Radial Distance} is a coordinate in polar coordinate systems (r, $\\theta$). Basically the radial distance is the scalar Euclidean distance between a point and the origin of the system of coordinates."^^xsd:string ;
+  qudt:latexDefinition "$d = \\sqrt{r_1^2 + r_2^2 -2r_1r_2\\cos{(\\theta_1 - \\theta_2)}}$, where $P_1$ and $P_2$ are two points with polar coordinates $(r_1, \\theta_1)$ and $(r_2, \\theta_2)$, respectively, and $d$ is the distance."^^xsd:string ;
+  qudt:symbol "r_Q, \\rho"^^xsd:string ;
+  rdfs:label "Radial Distance"^^xsd:string ;
+  skos:prefLabel "Radial Distance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Radial_distance_(geometry)> ;
+.
+quantity:RadiativeHeatTransfer
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "\\textit{Radiative Heat Transfer} is proportional to $(T_1^4 - T_2^4)$ and area of the surface, where $T_1$ and $T_2$ are thermodynamic temperatures of two black surfaces, for non totally black surfaces an additional factor less than 1 is needed."^^xsd:string ;
+  qudt:symbol "\\Phi_r"^^xsd:string ;
+  rdfs:label "Radiative Heat Transfer"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Heat_transfer#Radiation> ;
+  skos:prefLabel "Radiative Heat Transfer"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:Radius
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:abbreviation "radius"^^xsd:string ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "In classical geometry, the \\textit{Radius} of a circle or sphere is any line segment from its center to its perimeter the radius of a circle or sphere is the length of any such segment."^^xsd:string ;
+  qudt:latexDefinition "$r = \\frac{d}{2}$, where $d$ is the circle diameter."^^xsd:string ;
+  qudt:symbol "r"^^xsd:string ;
+  rdfs:label "Radius"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Radius> ;
+  skos:prefLabel "Radius"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Radius> ;
+.
+quantity:RadiusOfCurvature
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "In geometry, the \\textit{Radius of Curvature}, R, of a curve at a point is a measure of the radius of the circular arc which best approximates the curve at that point."^^xsd:string ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  rdfs:label "Radius of Curvature"^^xsd:string ;
+  skos:prefLabel "Radius of Curvature"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Radius_of_curvature_(mathematics)> ;
+.
+quantity:SoundPower
+  rdf:type qudt:TelebiometricsQuantityKind ;
+.
+quantity:SoundPressure
+  rdf:type qudt:TelebiometricsQuantityKind ;
+.
+quantity:SpatialSummationFunction
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Spatial Summation Function} is he ability to produce a composite signal from the signals coming into the eyes from different directions."^^xsd:string ;
+  rdfs:label "Spatial Summation Function"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Summation_(neurophysiology)#Spatial_summation> ;
+  skos:prefLabel "Spatial Summation Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:TemporalSummationFunction
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:applicableUnit unit:PER-SEC-SR ;
+  qudt:description "\\textit{Temporal Summation Function} is the ability of the human eye to produce a composite signal from the signals coming into an eye during a short time interval."^^xsd:string ;
+  rdfs:label "Temporal Summation Function"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Summation_(neurophysiology)#Temporal_summation> ;
+  skos:prefLabel "Temporal Summation Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:ThermalConductivity
+  qudt:latexDefinition "$\\lambda = \\frac{\\varphi}{T}$, where $\\varphi$ is areic heat flow rate and $T$ is temperature gradient."^^xsd:string ;
+.
+quantity:Thickness
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:abbreviation "thickness"^^xsd:string ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Thickness} is the the smallest of three dimensions: length, width, thickness."^^xsd:string ;
+  qudt:symbol "d"^^xsd:string ;
+  rdfs:label "Thickness"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Thickness> ;
+  skos:prefLabel "Thickness"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://www.merriam-webster.com/dictionary/thickness> ;
+.
+quantity:TouchThresholds
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Touch Thresholds} are thresholds for touch, vibration and other stimuli to the skin."^^xsd:string ;
+  qudt:symbol "\\Tbar_t"^^xsd:string ;
+  rdfs:label "Touch Thresholds"^^xsd:string ;
+  skos:prefLabel "Touch Thresholds"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:VisionThreshods
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Vision Threshods} is the thresholds of sensitivity of the eye."^^xsd:string ;
+  qudt:symbol "\\Tbar_v"^^xsd:string ;
+  rdfs:label "Vision Threshods"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Absolute_threshold#Vision> ;
+  skos:prefLabel "Vision Threshods"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:WarmReceptorThreshold
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:TelebiometricsQuantityKind ;
+  qudt:description "\\textit{Warm Receptor Threshold} is the threshold of warm-sensitive free nerve-ending."^^xsd:string ;
+  qudt:symbol "\\Tbar_w"^^xsd:string ;
+  rdfs:label "Warm Receptor Threshold"^^xsd:string ;
+  skos:prefLabel "Warm Receptor Threshold"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+<http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Catalog Entry v1.2"^^xsd:string ;
+.

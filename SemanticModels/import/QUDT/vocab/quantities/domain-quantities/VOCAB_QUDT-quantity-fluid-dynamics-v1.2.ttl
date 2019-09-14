@@ -1,0 +1,177 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/fluid-dynamics
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/quantity/fluid-dynamics>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Fluid Dynamics Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^vaem:dateUnion ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/fluid-dynamics> ;
+.
+quantity:AreaPerTime
+  rdfs:label "Area per Time"^^xsd:string ;
+  skos:prefLabel "Area per Time"^^xsd:string ;
+.
+quantity:AtmosphericPressure
+  rdfs:label "Atmospheric Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:exactMatch <http://dbpedia.org/resource/Atmospheric_pressure> ;
+.
+quantity:Circulation
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "In fluid dynamics, circulation is the line integral around a closed curve of the fluid velocity. It has dimensions of length squared over time."^^xsd:string ;
+  qudt:symbol "\\Gamma"^^xsd:string ;
+  rdfs:label "Circulation"^^xsd:string ;
+  skos:broader quantity:AreaPerTime ;
+  skos:exactMatch <http://dbpedia.org/resource/Circulation_%28fluid_dynamics%29> ;
+  skos:prefLabel "Circulation"^^xsd:string ;
+.
+quantity:DynamicPressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:symbol "q"^^xsd:string ;
+  rdfs:label "Dynamic Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:exactMatch <http://dbpedia.org/resource/Dynamic_pressure> ;
+  skos:prefLabel "Dynamic Pressure"^^xsd:string ;
+.
+quantity:DynamicViscosity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:applicableUnit unit:CentiP ;
+  qudt:applicableUnit unit:LB-PER-FT-HR ;
+  qudt:applicableUnit unit:LB-PER-FT-SEC ;
+  qudt:applicableUnit unit:LBF-SEC-PER-FT2 ;
+  qudt:applicableUnit unit:LBF-SEC-PER-IN2 ;
+  qudt:applicableUnit unit:PA-SEC ;
+  qudt:applicableUnit unit:POISE ;
+  qudt:applicableUnit unit:SlugPerFootSecond ;
+  qudt:baseUnitDimensions "kg/m \\cdot s"^^xsd:string ;
+  qudt:description "A measure of the molecular frictional resistance of a fluid as calculated using Newton's law."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  rdfs:label "Dynamic Viscosity"^^xsd:string ;
+  skos:broader quantity:Viscosity ;
+  skos:closeMatch <http://dbpedia.org/resource/Viscosity> ;
+  skos:prefLabel "Dynamic Viscosity"^^xsd:string ;
+  prov:wasInfluencedBy <http://dictionary.reference.com/browse/dynamic+viscosity> ;
+.
+quantity:KinematicViscosity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:applicableUnit unit:CentiST ;
+  qudt:applicableUnit unit:FT2-PER-HR ;
+  qudt:applicableUnit unit:FT2-PER-SEC ;
+  qudt:applicableUnit unit:STOKES ;
+  qudt:description "The ratio of the viscosity of a liquid to its density. Viscosity is a measure of the resistance of a fluid which is being deformed by either shear stress or tensile stress. In many situations, we are concerned with the ratio of the inertial force to the viscous force (that is the Reynolds number), the former characterized by the fluid density $\\rho$. This ratio is characterized by the kinematic viscosity (Greek letter $\\nu$), defined as follows:  $\\nu = \\mu / \\rho$. The SI unit of $\\nu$ is $m^{2}/s$. The SI unit of $\\nu$ is $kg/m^{1}$."^^xsd:string ;
+  qudt:symbol "\\nu"^^xsd:string ;
+  rdfs:label "Kinematic Viscosity"^^xsd:string ;
+  skos:broader quantity:AreaPerTime ;
+  skos:exactMatch <http://dbpedia.org/resource/Viscosity> ;
+  skos:prefLabel "Kinematic Viscosity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Viscosity> ;
+.
+quantity:MassFlowRate
+  owl:sameAs <http://dbpedia.org/resource/Mass_flow_rate> ;
+.
+quantity:MolecularViscosity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "Molecules in a fluid close to a solid boundary sometime strike the boundary and transfer momentum to it. Molecules further from the boundary collide with molecules that have struck the boundary, further transferring the change in momentum into the interior of the fluid. This transfer of momentum is molecular viscosity. Molecules, however, travel only micrometers between collisions, and the process is very inefficient for transferring momentum even a few centimeters. Molecular viscosity is important only within a few millimeters of a boundary."^^xsd:string ;
+  rdfs:label "Molecular Viscosity"^^xsd:string ;
+  skos:broader quantity:Viscosity ;
+  skos:prefLabel "Molecular Viscosity"^^xsd:string ;
+  prov:wasInfluencedBy <http://oceanworld.tamu.edu/resources/ocng_textbook/chapter08/chapter08_01.htm> ;
+.
+quantity:Pressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "Pressure is an effect which occurs when a force is applied on a surface. Pressure is the amount of force acting on a unit area. Pressure is distinct from stress, as the former is the ratio of the component of force normal to a surface to the surface area. Stress is a tensor that relates the vector force to the vector area."^^xsd:string ;
+  rdfs:label "Pressure"^^xsd:string ;
+  skos:broader quantity:ForcePerArea ;
+  skos:exactMatch <http://dbpedia.org/resource/Pressure> ;
+  skos:prefLabel "Pressure"^^xsd:string ;
+.
+quantity:ReynoldsNumber
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "\\textit{Reynolds Number} (Re) is a dimensionless number that gives a measure of the ratio of inertial forces to viscous forces and consequently quantifies the relative importance of these two types of forces for given flow conditions."^^xsd:string ;
+  rdfs:label "Reynolds Number"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:exactMatch <http://dbpedia.org/resource/Reynolds_number> ;
+  skos:prefLabel "Reynolds Number"^^xsd:string ;
+.
+quantity:StaticPressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  rdfs:label "Static Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:prefLabel "Static Pressure"^^xsd:string ;
+.
+quantity:TotalPressure
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description " The total pressure is the sum of the dynamic and static pressures, that is $P_0 = P + q$."^^xsd:string ;
+  qudt:symbol "P_0"^^xsd:string ;
+  rdfs:label "Total Pressure"^^xsd:string ;
+  skos:broader quantity:Pressure ;
+  skos:prefLabel "Total Pressure"^^xsd:string ;
+.
+quantity:Viscosity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "Viscosity is a measure of the resistance of a fluid which is being deformed by either shear stress or extensional stress. In general terms it is the resistance of a liquid to flow, or its \"thickness\". Viscosity describes a fluid's internal resistance to flow and may be thought of as a measure of fluid friction. [Wikipedia]"^^xsd:string ;
+  rdfs:label "Viscosity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Viscosity> ;
+  skos:prefLabel "Viscosity"^^xsd:string ;
+.
+quantity:Vorticity
+  rdf:type qudt:FluidDynamicsQuantityKind ;
+  qudt:description "In the simplest sense, vorticity is the tendency for elements of a fluid to \"spin.\" More formally, vorticity can be related to the amount of \"circulation\" or \"rotation\" (or more strictly, the local angular rate of rotation) in a fluid. The average vorticity in a small region of fluid flow is equal to the circulation C around the boundary of the small region, divided by the area A of the small region. Mathematically, vorticity is a vector field and is defined as the curl of the velocity field."^^xsd:string ;
+  qudt:symbol "\\omega"^^xsd:string ;
+  rdfs:label "Vorticity"^^xsd:string ;
+  skos:broader quantity:AngularVelocity ;
+  skos:prefLabel "Vorticity"^^xsd:string ;
+.

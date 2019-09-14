@@ -1,0 +1,173 @@
+# baseURI: http://siemens.com/schemas/kps/oadr_helper
+# imports: http://siemens.com/schemas/kps/epic
+# imports: http://topbraid.org/sxml
+# prefix: oadr_helper
+
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix oadr_helper: <http://siemens.com/schemas/kps/oadr_helper#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/oadr_helper>
+  a owl:Ontology ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+oadr_helper:OadrCreatePartyRegistration
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty oadr_helper:hasOadrHttpPullModel ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty oadr_helper:hasOadrReportOnly ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty oadr_helper:hasOadrXmlSignature ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty oadr_helper:hasOadrProfileName ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty oadr_helper:hasOadrTransportAddress ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty oadr_helper:hasOadrTransportName ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty oadr_helper:hasOadrVenName ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty oadr_helper:hasRequestID ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty oadr_helper:hasVenID ;
+    ] ;
+.
+oadr_helper:OadrDistributeEvent
+  a owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07 oadr_20b.xsd" ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#EiEventType> ;
+      owl:onProperty oadr_helper:hasEiEventsRef ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty oadr_helper:hasRequestID ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty oadr_helper:hasVtnID ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty oadr_helper:hasEiEventsRef ;
+    ] ;
+.
+oadr_helper:OadrPayload
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom oadr_helper:OadrSignedObject ;
+      owl:onProperty oadr_helper:hasOadrSignedObjectRef ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty oadr_helper:hasOadrSignedObjectRef ;
+    ] ;
+.
+oadr_helper:OadrSignedObject
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom oadr_helper:OadrCreatePartyRegistration ;
+      owl:onProperty oadr_helper:hasOadrCreatePartyRegistrationRef ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom oadr_helper:OadrDistributeEvent ;
+      owl:onProperty oadr_helper:hasOadrDistributeEventRef ;
+    ] ;
+.
+oadr_helper:hasEiEventsRef
+  a owl:ObjectProperty ;
+  rdfs:domain <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#EiEventType> ;
+.
+oadr_helper:hasOadrCreatePartyRegistrationRef
+  a owl:ObjectProperty ;
+.
+oadr_helper:hasOadrDistributeEventRef
+  a owl:ObjectProperty ;
+.
+oadr_helper:hasOadrHttpPullModel
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:boolean ;
+.
+oadr_helper:hasOadrProfileName
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+oadr_helper:hasOadrReportOnly
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:boolean ;
+.
+oadr_helper:hasOadrSignedObjectRef
+  a owl:ObjectProperty ;
+.
+oadr_helper:hasOadrTransportAddress
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+oadr_helper:hasOadrTransportName
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+oadr_helper:hasOadrVenName
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+oadr_helper:hasOadrXmlSignature
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:boolean ;
+.
+oadr_helper:hasRequestID
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+oadr_helper:hasVenID
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
+oadr_helper:hasVtnID
+  a owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.

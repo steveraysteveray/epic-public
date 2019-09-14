@@ -1,0 +1,1973 @@
+# baseURI: http://siemens.com/spin/epic_functions
+# imports: http://siemens.com/functions/time-functions
+# imports: http://siemens.com/schemas/kps/epic
+# imports: http://spinrdf.org/spin
+# imports: http://spinrdf.org/spinx
+# prefix: efunc
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix efunc: <http://siemens.com/spin/epic_functions#> .
+@prefix epic: <http://siemens.com/schemas/kps/epic#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix oadr_helper: <http://siemens.com/schemas/kps/oadr_helper#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spinx: <http://spinrdf.org/spinx#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix time-functions: <http://siemens.com/functions/time-functions#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/spin/epic_functions>
+  a owl:Ontology ;
+  owl:imports <http://siemens.com/functions/time-functions> ;
+  owl:imports <http://siemens.com/schemas/kps/epic> ;
+  owl:imports <http://spinrdf.org/spin> ;
+  owl:imports <http://spinrdf.org/spinx> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+<http://siemens.com/spin/epic_functions#1eventID>
+  a rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+<http://siemens.com/spin/epic_functions#2signalName>
+  a rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+<http://siemens.com/spin/epic_functions#3resourceID>
+  a rdf:Property ;
+  rdfs:subPropertyOf sp:arg ;
+.
+efunc:EPIC_Functions
+  a spin:Function ;
+  rdfs:subClassOf spin:Functions ;
+.
+efunc:calculateDtStart
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "dtStart" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasIntervalsRef> ;
+            sp:subject [
+                sp:varName "sequence" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uid" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasInstanceUid> ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:cast ;
+                arg:datatype xsd:integer ;
+                sp:arg1 [
+                    sp:varName "uid" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "intUid" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:cast ;
+                arg:datatype xsd:string ;
+                sp:arg1 [
+                    a sp:sub ;
+                    sp:arg1 [
+                        sp:varName "intUid" ;
+                      ] ;
+                    sp:arg2 1 ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "targetUid" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "interval" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasIntervalsRef> ;
+            sp:subject [
+                sp:varName "sequence" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "targetUid" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasInstanceUid> ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "targetStart" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasStart> ;
+              ] ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "targetDuration" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasTimeReferenceRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/time---common_primitive_types_classes_and_enumerations#hasDuration> ;
+              ] ;
+            sp:subject [
+                sp:varName "interval" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:timeAdd ;
+                sp:arg1 [
+                    sp:varName "targetStart" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "targetDuration" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "dtStart" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "The UID of the owning intervalDataContainer" ;
+    ] ;
+  rdfs:comment "Calculate the hasStart value for an interval that has UID greater than 0. This function depends on the OpenADR requirement that intervals within an Event have consecutive uid's, beginning with 0 (zero)." ;
+  rdfs:comment """Documentation:
+arg1: the intervalDataContainer with a missing fsgim-time:hasStart property
+Procedure:
+1. Find the intervalDataContainer with UID one less than that of ?arg1
+2. Add the start time and duration to compute the hasStart property for ?arg1""" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:evaluateDemandCap
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:from <http://siemens.com/vocab/kps/epic_instances> ;
+      sp:resultVariables (
+          [
+            sp:varName "newTag" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression spin:_arg1 ;
+            sp:variable [
+                sp:varName "eventID" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression spin:_arg2 ;
+            sp:variable [
+                sp:varName "demandCap" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:selectEventEMSrTag ;
+                sp:arg1 [
+                    sp:varName "eventID" ;
+                  ] ;
+                sp:arg2 [
+                    a efunc:getLargestModNum ;
+                    sp:arg1 [
+                        sp:varName "eventID" ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "signalName" ;
+                      ] ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "signalName" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "priceTag" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:if ;
+                sp:arg1 [
+                    a sp:gt ;
+                    sp:arg1 [
+                        a efunc:getPeakDemand ;
+                        sp:arg1 [
+                            sp:varName "eventID" ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "demandCap" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a efunc:generateNewPriceSignal ;
+                    sp:arg1 [
+                        sp:varName "priceTag" ;
+                      ] ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "priceTag" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "newTag" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      spl:valueType xsd:float ;
+      rdfs:comment "Demand cap (currently hardcoded in kW)" ;
+    ] ;
+  rdfs:comment """This function compares a demand cap to the total demand of all members of a group, interval by interval. If the total demand exceeds the demand cap at any time, it generates a new price signal, inserts it into the db, and returns the new price signal retrieval tag.
+If the total demand is always less than the demand cap, it returns the currently valid (latest modificationNumber) price signal tag for the event.
+Arguments:
+arg1: eventID (string)
+arg2: demand cap (xsd:float)""" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:generateNewPriceSignal
+  a spin:Function ;
+  rdfs:comment """STUB FOR FUNCTION - never created.
+This function creates a new oadrDistributeEvent price signal in triple form, based upon an existing price signal.
+Exactly how the new signal prices differ from the old signal will evolve. Currently it just increases prices by 10%.
+Input arguments:
+arg1: the tag for the existing price signal.
+
+Output:
+The tag for the new signal.""" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:getAggregateForecast
+  a spin:MagicProperty ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  rdfs:comment "STUB FOR FUNCTION - never created." ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+efunc:getBuildingsInGroup
+  a spin:MagicProperty ;
+  spin:body [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:from <http://siemens.com/vocab/kps/epic/pilot-buildings> ;
+      sp:resultVariables (
+          [
+            sp:varName "resourceID" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate <http://siemens.com/schemas/kps/epic-building#groupID> ;
+            sp:subject [
+                sp:varName "inst" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic-building#resourceID> ;
+            sp:subject [
+                sp:varName "inst" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:string ;
+      rdfs:comment "groupID" ;
+    ] ;
+  rdfs:comment "This magic property returns all buildings (resourceID) that belong to the group with groupID = ?arg1" ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+efunc:getDeNamespace
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "namespace" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:NamedGraph ;
+            sp:elements (
+                [
+                  a sp:Bind ;
+                  sp:expression spin:_arg1 ;
+                  sp:variable [
+                      sp:varName "eventID" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression spin:_arg2 ;
+                  sp:variable [
+                      sp:varName "modificationNumber" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression spin:_arg3 ;
+                  sp:variable [
+                      sp:varName "req" ;
+                    ] ;
+                ]
+                [
+                  sp:object oadr_helper:OadrDistributeEvent ;
+                  sp:predicate rdf:type ;
+                  sp:subject [
+                      sp:varName "de" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "req" ;
+                    ] ;
+                  sp:predicate oadr_helper:hasRequestID ;
+                  sp:subject [
+                      sp:varName "de" ;
+                    ] ;
+                ]
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "desc" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 oadr_helper:hasEiEventsRef ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "de" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "eventID" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  sp:object [
+                      sp:varName "modificationNumber" ;
+                    ] ;
+                  sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+                  sp:subject [
+                      sp:varName "desc" ;
+                    ] ;
+                ]
+                [
+                  a sp:Bind ;
+                  sp:expression [
+                      a afn:namespace ;
+                      sp:arg1 [
+                          sp:varName "de" ;
+                        ] ;
+                    ] ;
+                  sp:variable [
+                      sp:varName "namespace" ;
+                    ] ;
+                ]
+              ) ;
+            sp:graphNameNode <http://siemens.com/vocab/kps/epic_instances> ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "modificationNumber" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg3 ;
+      rdfs:comment "requestID" ;
+    ] ;
+  rdfs:comment "Returns the namespace (string) of a DistributeEvent instance with the eventID (arg1 - string), modificationNumber (arg2 - integer) and requestID (arg3 - string). " ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:getForecastSums
+  a spin:MagicProperty ;
+  spin:body [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:orderBy (
+          spin:_arg1
+        ) ;
+      sp:resultVariables (
+          spin:_arg1
+          [
+            sp:varName "sum" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:sumForecasts ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 spin:_arg2 ;
+                sp:arg3 spin:_arg3 ;
+                sp:arg4 0 ;
+              ] ;
+            sp:variable [
+                sp:varName "sum" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      spl:valueType rdf:List ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg3 ;
+      spl:valueType rdf:List ;
+    ] ;
+  rdfs:comment """Documentation:
+
+arg1: the uIDs to sum forecasts for:
+arg2: the parallel list of uIDs matched to forecasts
+arg3: the parallel list of demands matched to uIDs
+
+Algorithm:
+
+Just calls the efunc:sumForecasts SPIN function on each uID
+
+Implementation:
+
+SELECT DISTINCT ?sum
+WHERE {
+    BIND (efunc:sumForecasts(?arg1, ?arg2, ?arg3, 0) AS ?sum) .
+}
+
+which will hopefully run efunc:sumForecasts on each item in ?arg1, which should be equivalent to the following:
+
+SELECT DISTINCT ?item ?sum
+WHERE {
+    BIND (nmtest:intervalList AS ?arg2) .
+    BIND (nmtest:forecastList AS ?arg3) .
+    ?arg2 (rdf:rest)*/rdf:first ?item .
+    BIND (efunc:sumForecasts(?item, ?arg2, ?arg3, 0) AS ?sum) .
+} ORDER BY ?item
+
+which produces the following pairs: \"0\" 0.112, \"1\" 0.054, \"2\" 0.104, and \"3\" 0.4, which are the correct results
+
+Actual sample call:
+
+SELECT ?item ?sum
+WHERE {
+    (?arg1 ?arg2 ?arg3) efunc:getForecastSums ?sum .
+}""" ;
+  rdfs:comment "Given a list of itervals and forecasts return a list of sums" ;
+  rdfs:label "forecast sums" ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+efunc:getGroupID
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "groupID" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "groupID" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasGroupID> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:string ;
+      rdfs:comment "The eventID (string)" ;
+    ] ;
+  rdfs:comment "Given an eventID (arg1), return the (presumed single) groupID identified within the message." ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:getLargestModNum
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:expression [
+                a sp:Max ;
+                sp:expression [
+                    sp:varName "modNum2" ;
+                  ] ;
+              ] ;
+            sp:varName "modNum" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:cast ;
+                sp:arg1 spin:_arg2 ;
+                sp:arg2 xsd:anySimpleType ;
+              ] ;
+            sp:variable [
+                sp:varName "sig" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "sig" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalName> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:Optional ;
+            sp:elements (
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "res" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:or ;
+                sp:arg1 [
+                    a sp:not ;
+                    sp:arg1 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "res" ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:eq ;
+                    sp:arg1 [
+                        sp:varName "res" ;
+                      ] ;
+                    sp:arg2 spin:_arg3 ;
+                  ] ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "modNum2" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional true ;
+      spl:predicate sp:arg3 ;
+      rdfs:comment "resourceID" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "signalName" ;
+    ] ;
+  rdfs:comment """This function takes three arguments (in order):
+eventID
+signalName
+resourceID (optional)
+
+It returns the highest modificationNumber of an event with the specified eventID and signalName. 
+Normally the resourceID should be specified, in which case it returns the modificationNumber of the latest price signal to that resource, or the modificationNumber of the latest demand forecast received from that resource, depending on the signalName specified.
+If resourceID is omitted (only useful if signalName is \"ENERGY_PRICE\"), then it returns the highest modificationNumber of the \"broadcast\" energy price signals (i.e. that don't refer to any specific resourceID). However, be warned that there may have been some targetted price signals sent out to any specific resource that would not be reflected in this response if you don't specify the resourceID.""" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:getLatestForecasts
+  a spin:MagicProperty ;
+  spin:body [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "resourceID" ;
+          ]
+          [
+            sp:varName "uID" ;
+          ]
+          [
+            sp:varName "demand" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate efunc:relevantBuildings ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getLargestModNum ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 "BID_LOAD" ;
+                sp:arg3 [
+                    sp:varName "resourceID" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "modNum" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:bound ;
+                sp:arg1 [
+                    sp:varName "modNum" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "modNum" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?3" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object "BID_LOAD" ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?4" ;
+              ] ;
+            sp:predicate efunc:getQuantitySet ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?5" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "demand" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  rdfs:comment """STUB FOR FUNCTION - never completed.
+Given an eventID, generate sets of (resourceID, uID, demand) using the latest forecasts for the targetted resources.""" ;
+  rdfs:comment """Will try a test with eventID = 178805 and what vocabulary?
+
+SELECT *
+WHERE {
+    BIND (\"178805\" AS ?arg1) .
+    ?arg1 efunc:getLatestForecasts (?resourceUD ?uID ?demand) .
+}""" ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+efunc:getLatestForecastsAndSums
+  a spin:MagicProperty ;
+  spin:body [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:orderBy (
+          [
+            sp:varName "item" ;
+          ]
+        ) ;
+      sp:resultVariables (
+          [
+            sp:varName "item" ;
+          ]
+          [
+            sp:varName "uID" ;
+          ]
+          [
+            sp:varName "demand" ;
+          ]
+          [
+            sp:varName "sum" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate efunc:relevantBuildings ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getLargestModNum ;
+                sp:arg1 spin:_arg1 ;
+                sp:arg2 "BID_LOAD" ;
+                sp:arg3 [
+                    sp:varName "resourceID" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "modNum" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "modNum" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?2" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?3" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?2" ;
+              ] ;
+          ]
+          [
+            sp:object "BID_LOAD" ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?3" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?4" ;
+              ] ;
+            sp:predicate efunc:getQuantitySet ;
+            sp:subject [
+                sp:varName "?0" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uID" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?5" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?4" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "demand" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+          [
+            sp:object () ;
+            sp:predicate rdf:rest ;
+            sp:subject [
+                sp:varName "?5" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "item" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 [
+                    a sp:ModPath ;
+                    sp:modMax -2 ;
+                    sp:modMin 0 ;
+                    sp:subPath rdf:rest ;
+                  ] ;
+                sp:path2 rdf:first ;
+              ] ;
+            sp:subject [
+                sp:varName "uID" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:sumForecasts ;
+                sp:arg1 [
+                    sp:varName "item" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "uID" ;
+                  ] ;
+                sp:arg3 [
+                    sp:varName "Demand" ;
+                  ] ;
+                sp:arg4 0 ;
+              ] ;
+            sp:variable [
+                sp:varName "sum" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  rdfs:comment """NOTE: I don't believe this function was ever completed or used.
+Given an eventID, generate sets of (resourceID, uID, demand) using the latest forecasts for the targetted resources.""" ;
+  rdfs:comment """Will try a test with eventID = 178805 and what vocabulary?
+
+SELECT *
+WHERE {
+    BIND (\"178805\" AS ?arg1) .
+    ?arg1 efunc:getLatestForecasts (?resourceUD ?uID ?demand) .
+}""" ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+efunc:getPeakDemand
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "peak" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression 0.5 ;
+            sp:variable [
+                sp:varName "peak" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  rdfs:comment """STUB FOR FUNCTION - never created.
+This function will examine the total demand values and return the peak value.
+Currently this is hard-coded to return 0.5 kW.""" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:getQuantitySet
+  a spin:MagicProperty ;
+  spin:body [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:from <http://siemens.com/vocab/kps/epic_instances> ;
+      sp:resultVariables (
+          [
+            sp:varName "uID" ;
+          ]
+          [
+            sp:varName "quantity" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression spin:_arg1 ;
+            sp:variable [
+                sp:varName "eventID" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression spin:_arg2 ;
+            sp:variable [
+                sp:varName "modNum" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression spin:_arg3 ;
+            sp:variable [
+                sp:varName "resourceID" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:cast ;
+                sp:arg1 spin:_arg4 ;
+                sp:arg2 xsd:anySimpleType ;
+              ] ;
+            sp:variable [
+                sp:varName "sig" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "eventID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "modNum" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "sig" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalName> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "intDataContainer" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 [
+                    a sp:SeqPath ;
+                    sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                    sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventIntervalRef> ;
+                  ] ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasIntervalsRef> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "uID" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/wscalendarpim---oasis#hasInstanceUid> ;
+            sp:subject [
+                sp:varName "intDataContainer" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "quantity" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 [
+                    a sp:SeqPath ;
+                    sp:path1 [
+                        a sp:SeqPath ;
+                        sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/sequences_and_intervals---energy_manager_component#hasAttachRef> ;
+                        sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasPriceRef> ;
+                      ] ;
+                    sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/emix---emix_pr04#hasValueRef> ;
+                  ] ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/other_common_classes---common_primitive_types_classes_and_enumerations#hasQuantity> ;
+              ] ;
+            sp:subject [
+                sp:varName "intDataContainer" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "modificationNumber" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg3 ;
+      rdfs:comment "resourceID" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg4 ;
+      rdfs:comment "signalName" ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+efunc:relevantBuildings
+  a spin:MagicProperty ;
+  spin:body [
+      a sp:Select ;
+      sp:distinct true ;
+      sp:resultVariables (
+          [
+            sp:varName "resourceID" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a efunc:getGroupID ;
+                sp:arg1 spin:_arg1 ;
+              ] ;
+            sp:variable [
+                sp:varName "groupID" ;
+              ] ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:bound ;
+                sp:arg1 [
+                    sp:varName "groupID" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "groupID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic-building#groupID> ;
+            sp:subject [
+                sp:varName "inst" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "resourceID" ;
+              ] ;
+            sp:predicate <http://siemens.com/schemas/kps/epic-building#resourceID> ;
+            sp:subject [
+                sp:varName "inst" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:string ;
+      rdfs:comment "The eventID (string)" ;
+    ] ;
+  rdfs:comment "Given an eventID, look up the groupID in the message and return all the buildings that are registered with that groupID" ;
+  rdfs:label "relevantBuildings" ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+efunc:selectEventEMSrTag
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "result" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a xsd:integer ;
+                sp:arg1 spin:_arg2 ;
+              ] ;
+            sp:variable [
+                sp:varName "mod" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:cast ;
+                sp:arg1 "ENERGY_PRICE" ;
+                sp:arg2 xsd:anySimpleType ;
+              ] ;
+            sp:variable [
+                sp:varName "signalName" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "desc" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventDescriptorRef> ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEventID> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "mod" ;
+              ] ;
+            sp:predicate <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasModificationNumber> ;
+            sp:subject [
+                sp:varName "desc" ;
+              ] ;
+          ]
+          [
+            a sp:TriplePath ;
+            sp:object [
+                sp:varName "signalName" ;
+              ] ;
+            sp:path [
+                a sp:SeqPath ;
+                sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiEventSignalRef> ;
+                sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasSignalName> ;
+              ] ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:Optional ;
+            sp:elements (
+                [
+                  a sp:TriplePath ;
+                  sp:object [
+                      sp:varName "resourceID" ;
+                    ] ;
+                  sp:path [
+                      a sp:SeqPath ;
+                      sp:path1 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasEiTargetRef> ;
+                      sp:path2 <http://uml.linkedmodels.org/sg/schema/fsgim.rofficial/submodels/eiclasses---energy_interoperation_wd36_pr03#hasResourceID> ;
+                    ] ;
+                  sp:subject [
+                      sp:varName "event" ;
+                    ] ;
+                ]
+              ) ;
+          ]
+          [
+            a sp:Filter ;
+            sp:expression [
+                a sp:or ;
+                sp:arg1 [
+                    a sp:or ;
+                    sp:arg1 [
+                        a sp:not ;
+                        sp:arg1 [
+                            a sp:bound ;
+                            sp:arg1 spin:_arg4 ;
+                          ] ;
+                      ] ;
+                    sp:arg2 [
+                        a sp:not ;
+                        sp:arg1 [
+                            a sp:bound ;
+                            sp:arg1 [
+                                sp:varName "resourceID" ;
+                              ] ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:eq ;
+                    sp:arg1 [
+                        sp:varName "resourceID" ;
+                      ] ;
+                    sp:arg2 spin:_arg4 ;
+                  ] ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "tag" ;
+              ] ;
+            sp:predicate epic:hasTag ;
+            sp:subject [
+                sp:varName "event" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:if ;
+                sp:arg1 [
+                    a sp:not ;
+                    sp:arg1 [
+                        a sp:bound ;
+                        sp:arg1 [
+                            sp:varName "tag" ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg2 "None" ;
+                sp:arg3 [
+                    sp:varName "tag" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "result" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:optional true ;
+      spl:predicate sp:arg4 ;
+      rdfs:comment "resourceID" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "eventID" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "modificationNumber" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg3 ;
+      rdfs:comment "signalName" ;
+    ] ;
+  rdfs:comment "Given an eventID, modificationNumber, signalName, and (optional) resourceID, return the tag of the event signal in the db" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:stringTrimTo
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "newString" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a xsd:string ;
+                sp:arg1 spin:_arg1 ;
+              ] ;
+            sp:variable [
+                sp:varName "sInput" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a xsd:string ;
+                sp:arg1 spin:_arg2 ;
+              ] ;
+            sp:variable [
+                sp:varName "sMatch" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:lastIndexOf ;
+                sp:arg1 [
+                    sp:varName "sInput" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "sMatch" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "index" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a fn:substring ;
+                sp:arg1 [
+                    sp:varName "sInput" ;
+                  ] ;
+                sp:arg2 [
+                    a sp:add ;
+                    sp:arg1 [
+                        sp:varName "index" ;
+                      ] ;
+                    sp:arg2 2 ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "newString" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "string to trim" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "Character to trim to (inclusive)" ;
+    ] ;
+  rdfs:comment "STUB FOR FUNCTION - never completed." ;
+  rdfs:label "stringTrimTo" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:sumForecasts
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "result" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "uifirst" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "uirest" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject spin:_arg2 ;
+          ]
+          [
+            sp:object [
+                sp:varName "fcfirst" ;
+              ] ;
+            sp:predicate rdf:first ;
+            sp:subject spin:_arg3 ;
+          ]
+          [
+            sp:object [
+                sp:varName "fcrest" ;
+              ] ;
+            sp:predicate rdf:rest ;
+            sp:subject spin:_arg3 ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:if ;
+                sp:arg1 [
+                    a sp:eq ;
+                    sp:arg1 spin:_arg1 ;
+                    sp:arg2 [
+                        sp:varName "uifirst" ;
+                      ] ;
+                  ] ;
+                sp:arg2 [
+                    a sp:if ;
+                    sp:arg1 [
+                        a sp:eq ;
+                        sp:arg1 [
+                            sp:varName "uirest" ;
+                          ] ;
+                        sp:arg2 () ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "fcfirst" ;
+                      ] ;
+                    sp:arg3 [
+                        a sp:add ;
+                        sp:arg1 [
+                            sp:varName "fcfirst" ;
+                          ] ;
+                        sp:arg2 [
+                            a efunc:sumForecasts ;
+                            sp:arg1 spin:_arg1 ;
+                            sp:arg2 [
+                                sp:varName "uirest" ;
+                              ] ;
+                            sp:arg3 [
+                                sp:varName "fcrest" ;
+                              ] ;
+                            sp:arg4 spin:_arg4 ;
+                          ] ;
+                      ] ;
+                  ] ;
+                sp:arg3 [
+                    a sp:if ;
+                    sp:arg1 [
+                        a sp:ne ;
+                        sp:arg1 spin:_arg4 ;
+                        sp:arg2 0 ;
+                      ] ;
+                    sp:arg2 [
+                        sp:varName "fcfirst" ;
+                      ] ;
+                    sp:arg3 [
+                        a sp:if ;
+                        sp:arg1 [
+                            a sp:ne ;
+                            sp:arg1 [
+                                sp:varName "uirest" ;
+                              ] ;
+                            sp:arg2 () ;
+                          ] ;
+                        sp:arg2 [
+                            a efunc:sumForecasts ;
+                            sp:arg1 spin:_arg1 ;
+                            sp:arg2 [
+                                sp:varName "uirest" ;
+                              ] ;
+                            sp:arg3 [
+                                sp:varName "fcrest" ;
+                              ] ;
+                            sp:arg4 spin:_arg4 ;
+                          ] ;
+                        sp:arg3 spin:_arg4 ;
+                      ] ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "result" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "The UID of the owning intervalDataContainer" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      spl:valueType rdf:List ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg3 ;
+      spl:valueType rdf:List ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg4 ;
+      spl:valueType xsd:integer ;
+    ] ;
+  spin:returnType xsd:integer ;
+  rdfs:comment """Documentation:
+
+arg1: the uID to sum forecasts for:
+arg2: the parallel list of uIDs matched to forecasts
+arg3: the parallel list of demands matched to uIDs
+arg4: the intermediate result
+
+Algorithm:
+
+1. Break the incoming lists into first and rest components
+2. Test if the first item in the interval list is the same as the first argument
+    2a. If so, test to see if rest of the interval list is empty
+          2ai. If so, return the first forecast value
+          2aii. Otherwise, add the interim result with the result of callinfg the function on the incoming argument, the rest of the interval and forecast lists, and the current intermediate resullt
+    2b. Otherwise, test to see if the interim result is non-zero
+          2bi. If so, return the current first value of the forecast list
+          2bii Otherwise, test to see if the rest of the interval list is empty
+                  - If so, return the intermediate value
+                  - Otherwise, return the calling function on  the incoming argument, the rest of the interval and forecast lists, and the current intermediate resullt
+
+Implementation:
+
+SELECT ?result
+WHERE {
+    ?arg2 rdf:first ?uifirst .
+    ?arg2 rdf:rest ?uirest .
+    ?arg3 rdf:first ?fcfirst .
+    ?arg3 rdf:rest ?fcrest .                                                                                                  *** STEP 1         ***
+    BIND (IF((?arg1 = ?uifirst),                                                                                            *** STEP 2        ***
+                   IF((?uirest = rdf:nil),                                                                                        *** STEP 2a      ***
+                       ?fcfirst,                                                                                                        *** STEP 2ai      ***
+                       (?fcfirst + efunc:sumForecasts(?arg1, ?uirest, ?fcrest, ?arg4))),         *** STEP 2aii     *** (first recursion step, sum plus move down the list)
+                  IF((?arg4 != 0),                                                                                                 *** STEP 2b      ***
+                      ?fcfirst,                                                                                                         *** STEP 2bi     ***
+                      IF((?uirest != rdf:nil),                                                                                   *** STEP 2bii    ***
+                          efunc:sumForecasts(?arg1, ?uirest, ?fcrest, ?arg4),                          *** STEP 2bii-   ***
+                          ?arg4))) AS ?result) .                                                                              *** STEP 2bii--  *** (second recursion step, just move down the list)
+}
+
+Example: Uses VOCAB_KP_EPIC_NM-v1.0.ttl, which defines some sample lists: nmtest:intervalList, nmtest:forecastList
+
+SELECT *
+WHERE {
+    BIND (\"0\" AS ?arg1) .
+    BIND (nmtest:intervalList AS ?arg2) .
+    BIND (nmtest:forecastList AS ?arg3) .
+    BIND (efunc:sumForecasts(?arg1, ?arg2, ?arg3, 0) AS ?result) .
+}
+
+which produces the correct result.""" ;
+  rdfs:comment """STUB FOR FUNCTION - never completed.
+Calculate the sum of forecasts given a uID, and a parallel set of uID and demand lists""" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:sumForecastsJS
+  a spin:Function ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType xsd:string ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      spl:valueType rdf:List ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg3 ;
+      spl:valueType rdf:List ;
+    ] ;
+  spin:returnType xsd:integer ;
+  spinx:javaScriptCode "var previd; var currid = arg2; var prevvalue; var currvalue; if(arg1 != currid) currvalue = 0; else currvalue = prevvalue + arg3; previd = currid; prevvalue = currvalue; return currvalue;" ;
+  rdfs:comment """Documentation:
+
+arg1: the uID to sum forecasts for:
+arg2: the parallel list of uIDs matched to forecasts
+arg3: the parallel list of demands matched to uIDs
+
+Algorithm:
+
+1. Define local vars for previd, currid, prevvalue and currvalue, where currid is initialized to the current arg2 value
+2. Test if the first item in the interval list is the same as the first argument
+    2a. If not, test to see if rest of the interval list is empty
+          2ai. If so, assign the value of currvalue to 0
+          2aii. Otherwise, add the previous value to argument 3
+          2aiii. Assign the value of previd to the value of currid
+          2aiv. Assign the value of prevvalue to the value of currvalue
+          2av.  Return the value of currvalue
+
+Example: Uses VOCAB_KP_EPIC_NM-v1.0.ttl, which defines some sample lists: nmtest:intervalList, nmtest:forecastList
+
+SELECT *
+WHERE {
+    BIND (\"0\" AS ?arg1) .
+    BIND (nmtest:intervalList AS ?arg2) .
+    BIND (nmtest:forecastList AS ?arg3) .
+    BIND (efunc:sumForecastsJS(?arg1, ?arg2, ?arg3) AS ?result) .
+}
+""" ;
+  rdfs:comment """STUB FOR FUNCTION - never completed.
+Calculate the sum of forecasts given a uID, and a parallel set of uID and demand lists""" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+efunc:timeAdd
+  a spin:Function ;
+  spin:body [
+      a sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "result" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            a sp:Bind ;
+            sp:expression [
+                a spif:timeMillis ;
+                sp:arg1 [
+                    a spif:cast ;
+                    arg:datatype xsd:dateTime ;
+                    sp:arg1 spin:_arg1 ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "start" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a time-functions:DurationStrToMS ;
+                sp:durationString spin:_arg2 ;
+              ] ;
+            sp:variable [
+                sp:varName "duration" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a sp:add ;
+                sp:arg1 [
+                    sp:varName "start" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "duration" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "end" ;
+              ] ;
+          ]
+          [
+            a sp:Bind ;
+            sp:expression [
+                a time-functions:msToDate ;
+                arg:ms [
+                    sp:varName "end" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "result" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg1 ;
+      rdfs:comment "A UTC DateTime" ;
+    ] ;
+  spin:constraint [
+      a spl:Argument ;
+      spl:predicate sp:arg2 ;
+      rdfs:comment "A duration, such as PT30M" ;
+    ] ;
+  rdfs:comment "Increment ?arg1 (UTCDateTime) by a value given by ?arg2 (duration). ?arg1 must be a xsd:dateTime" ;
+  rdfs:subClassOf efunc:EPIC_Functions ;
+.
+rdf:PlainLiteral
+  a spin:MagicProperty ;
+  rdfs:label "relevantBuildings" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+<http://www.w3.org/2006/timezone#TimeZone>
+  a spin:Function ;
+  rdfs:label "Calculate the hasEnd value for an interval. This function depends on the hasStart value to already have been populated for all intervals with UID greater or equal to 0." ;
+  rdfs:subClassOf owl:Thing ;
+.

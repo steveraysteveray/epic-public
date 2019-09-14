@@ -1,0 +1,1834 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/electricity-and-magnetism
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://qudt.org/1.2/vocab/unit/electromagnetism
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/electricity-and-magnetism>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Electricty and Magnetism Quantity Kinds"^^xsd:string ;
+  dc:title "QUDT Electricty and Magnetism Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "TBD"^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/chemistry"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasGovernance ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/electromagnetism> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/isq/quantity/electricity-and-magnetism> ;
+.
+quantity:ActiveEnergy
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "active-energy" ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Active Energy} is the electrical energy transformable into some other form of energy."^^xsd:string ;
+  qudt:latexDefinition "$W = \\int_{t_1}^{t_2} p dt$, where $p$ is instantaneous power and the integral interval is the time interval from $t_1$ to $t_2$."^^xsd:string ;
+  qudt:symbol "W"^^xsd:string ;
+  qudt:symbolToken "W"^^xsd:token ;
+  rdfs:label "Active Energy" ;
+  rdfs:seeAlso quantity:InstantaneousPower ;
+  skos:prefLabel "Active Energy" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=601-01-19> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ActivePower
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "active-power" ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "\\textit{Active Power} is, under periodic conditions, the mean value, taken over one period $T$, of the instantaneous power $p$. In complex notation, $P = \\mathbf{Re} \\; \\underline{S}$, where $\\underline{S}$ is \\textit{complex power}."^^xsd:string ;
+  qudt:latexDefinition "$P = \\frac{1}{T}\\int_{0}^{T} pdt$, where $T$ is the period and $p$ is instantaneous power."^^xsd:string ;
+  qudt:symbol "P"^^xsd:string ;
+  qudt:symbolToken "P"^^xsd:token ;
+  rdfs:label "Active Power" ;
+  rdfs:seeAlso quantity:ComplexPower ;
+  rdfs:seeAlso quantity:InstantaneousPower ;
+  skos:prefLabel "Active Power" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-42> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Admittance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "admittance" ;
+  qudt:applicableUnit unit:SIEMENS ;
+  qudt:description "\\textit{Admittance} is a measure of how easily a circuit or device will allow a current to flow. It is defined as the inverse of the impedance ($Z$). "^^xsd:string ;
+  qudt:latexDefinition "$\\underline{Y} = \\frac{1}{\\underline{Z}}$, where $\\underline{Z}$ is impedance."^^xsd:string ;
+  qudt:symbol "\\underline{Y}"^^xsd:string ;
+  qudt:symbolToken "Y"^^xsd:token ;
+  rdfs:label "Admittance" ;
+  rdfs:seeAlso quantity:Impedance ;
+  skos:prefLabel "Admittance" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Admittance> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-51> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ApparentPower
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "apparent-power" ;
+  qudt:applicableUnit unit:V-A ;
+  qudt:description "\\textit{Apparent Power} is the product of the rms voltage $U$ between the terminals of a two-terminal element or two-terminal circuit and the rms electric current I in the element or circuit. Under sinusoidal conditions, the apparent power is the modulus of the complex power."^^xsd:string ;
+  qudt:latexDefinition "$\\left | \\underline{S} \\right | =  UI$, where $U$ is rms value of voltage and $I$ is rms value of electric current."^^xsd:string ;
+  qudt:symbol "\\left | \\underline{S} \\right |"^^xsd:string ;
+  qudt:symbolToken "mod-S"^^xsd:token ;
+  rdfs:label "Apparent Power" ;
+  rdfs:seeAlso quantity:ElectricCurrent ;
+  rdfs:seeAlso quantity:Voltage ;
+  skos:prefLabel "Apparent Power" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-41> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:AuxillaryMagneticField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "H"^^xsd:string ;
+  qudt:applicableUnit unit:A-PER-M ;
+  qudt:applicableUnit unit:A-t-PER-IN ;
+  qudt:applicableUnit unit:A-t-PER-M ;
+  qudt:applicableUnit unit:AbT ;
+  qudt:applicableUnit unit:OERSTED ;
+  qudt:description "Magnetic Fields surround magnetic materials and electric currents and are detected by the force they exert on other magnetic materials and moving electric charges. The electric and magnetic fields are two interrelated aspects of a single object, called the electromagnetic field. A pure electric field in one reference frame is observed as a combination of both an electric field and a magnetic field in a moving reference frame. The Auxillary Magnetic Field, H characterizes how the true Magnetic Field B influences the organization of magnetic dipoles in a given medium."^^xsd:string ;
+  rdfs:label "Auxillary Magnetic Field"^^xsd:string ;
+  owl:sameAs quantity:MagneticFieldStrength ;
+  skos:broader quantity:ElectricCurrentPerUnitLength ;
+  skos:broader quantity:LinearElectricCurrent ;
+  skos:prefLabel "Auxillary Magnetic Field"^^xsd:string ;
+.
+quantity:Capacitance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "capacitance"^^xsd:string ;
+  qudt:applicableUnit unit:AbF ;
+  qudt:applicableUnit unit:FARAD ;
+  qudt:applicableUnit unit:MicroF ;
+  qudt:applicableUnit unit:NanoF ;
+  qudt:applicableUnit unit:PicoF ;
+  qudt:applicableUnit unit:StatF ;
+  qudt:baseUnitDimensions "A^2 \\cdot s^4/kg \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I^2 \\cdot T^4/L^2 \\cdot M"^^xsd:string ;
+  qudt:description "\\textit{Capacitance} is the ability of a body to hold an electrical charge; it is quantified as the amount of electric charge stored for a given electric potential. Capacitance is a scalar-valued quantity."^^xsd:string ;
+  qudt:latexDefinition "$C = Q/U$, where $Q$ is electric charge and $V$ is voltage."^^xsd:string ;
+  qudt:symbol "C"^^xsd:string ;
+  qudt:symbolToken "C"^^xsd:token ;
+  rdfs:label "Capacitance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Capacitance> ;
+  skos:prefLabel "Capacitance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Coercivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "coercivity"^^xsd:string ;
+  qudt:applicableUnit unit:A-PER-M ;
+  qudt:description "\\textit{Coercivity}, also referred to as \\textit(Coercive Field Strength), is the magnetic field strength to be applied to bring the magnetic flux density in a substance from its remaining magnetic flux density to zero. This is defined as the coercive field strength in a substance when either the magnetic flux density or the magnetic polarization and magnetization is brought from its value at magnetic saturation to zero by monotonic reduction of the applied magnetic field strength. The quantity which is brought to zero should be stated, and the appropriate symbol used: $H_{cB}$, $H_{cJ}$ or $H_{cM}$ for the coercivity relating to the magnetic flux density, the magnetic polarization or the magnetization respectively, where $H_{cJ} = H_{cM}$."^^xsd:string ;
+  qudt:symbol "H_{c,B}"^^xsd:string ;
+  qudt:symbolToken "H_c,B"^^xsd:token ;
+  rdfs:label "Coercivity"^^xsd:string ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  skos:prefLabel "Coercivity"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-12-69> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ComplexPower
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "complex-power" ;
+  qudt:applicableUnit unit:V-A ;
+  qudt:description "\\textit{Complex Power}, under sinusoidal conditions, is the product of the phasor $U$ representing the voltage between the terminals of a linear two-terminal element or two-terminal circuit and the complex conjugate of the phasor $I$ representing the electric current in the element or circuit."^^xsd:string ;
+  qudt:latexDefinition "$\\underline{S} = \\underline{U}\\underline{I^*}$, where $\\underline{U}$ is voltage phasor and $\\underline{I^*}$ is the complex conjugage of the current phasor."^^xsd:string ;
+  qudt:symbol "\\underline{S}"^^xsd:string ;
+  qudt:symbolToken "S"^^xsd:token ;
+  rdfs:label "Complex Power" ;
+  rdfs:seeAlso quantity:ElectricCurrentPhasor ;
+  rdfs:seeAlso quantity:VoltagePhasor ;
+  skos:prefLabel "Complex Power" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-39> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Conductance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "conductance" ;
+  qudt:applicableUnit unit:SIEMENS ;
+  qudt:description "\\textit{Conductance}, for a resistive two-terminal element or two-terminal circuit with terminals A and B, quotient of the electric current i in the element or circuit by the voltage $u_{AB}$ between the terminals: $G = \\frac{1}{R}$, where the electric current is taken as positive if its direction is from A to B and negative in the opposite case. The conductance of an element or circuit is the inverse of its resistance."^^xsd:string ;
+  qudt:latexDefinition """$G = Re\\underline{Y}$, where $\\underline{Y}$ is admittance.
+
+Alternatively:
+
+$G = \\frac{1}{R}$, where $R$ is resistance."""^^xsd:string ;
+  qudt:symbol "G"^^xsd:string ;
+  qudt:symbolToken "G"^^xsd:token ;
+  rdfs:label "Conductance" ;
+  rdfs:seeAlso quantity:Admittance ;
+  skos:prefLabel "Conductance" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-06> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Conductivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "conductivity" ;
+  qudt:applicableUnit unit:S-PER-M ;
+  qudt:description "\\textit{Conductivity} is a scalar or tensor quantity the product of which by the electric field strength in a medium is equal to the electric current density. For an isotropic medium the conductivity is a scalar quantity; for an anisotropic medium it is a tensor quantity."^^xsd:string ;
+  qudt:latexDefinition "$\\mathbf{J} = \\sigma \\mathbf{E}$, where $\\mathbf{J}$ is electric current density, and $\\mathbf{E}$ is electric field strength."^^xsd:string ;
+  qudt:symbol "\\gamma"^^xsd:string ;
+  qudt:symbol "\\sigma"^^xsd:string ;
+  qudt:symbolToken "sigma"^^xsd:token ;
+  rdfs:label "Conductivity" ;
+  rdfs:seeAlso quantity:ElectricCurrentDensity ;
+  rdfs:seeAlso quantity:ElectricFieldStrength ;
+  skos:prefLabel "Conductivity" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-12-03> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:CouplingFactor
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "coupling-factor" ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Coupling Factor} is the ratio of an electromagnetic quantity, usually voltage or current, appearing at a specified location of a given circuit to the corresponding quantity at a specified location in the circuit from which energy is transferred by coupling."^^xsd:string ;
+  qudt:latexDefinition "For inductive coupling between two inductive elements, $k = \\frac{\\left | L_{mn} \\right |}{\\sqrt{L_m L_n}}$, where $L_m$ and $L_n$ are their self inductances, and $L_{mn}$ is their mutual inductance."^^xsd:string ;
+  qudt:symbol "k"^^xsd:string ;
+  qudt:symbolToken "k"^^xsd:token ;
+  rdfs:label "Coupling Factor" ;
+  skos:prefLabel "Coupling Factor" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=161-03-18> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:CubicElectricDipoleMomentPerSquareEnergy
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:applicableUnit unit:C3-M-PER-J2 ;
+  qudt:baseUnitDimensions "A^3 \\cdot s^7/kg^2 \\cdot m"^^xsd:string ;
+  qudt:baseUnitDimensions "I^3 \\cdot T^7/L \\cdot M^2"^^xsd:string ;
+  qudt:description "\\textit{Cubic Electric Dipole Moment per Square Energy} is"^^xsd:string ;
+  rdfs:label "Cubic Electric Dipole Moment per Square Energy"^^xsd:string ;
+  skos:prefLabel "Cubic Electric Dipole Moment per Square Energy"^^xsd:string ;
+.
+quantity:CurrentLinkage
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "current-linkage" ;
+  qudt:applicableUnit unit:AMPERE ;
+  qudt:description "\\textit{Current Linkage} is the net electric current through a surface delimited by a closed loop."^^xsd:string ;
+  qudt:symbol "\\Theta"^^xsd:string ;
+  qudt:symbolToken "Theta"^^xsd:token ;
+  rdfs:label "Current Linkage" ;
+  skos:prefLabel "Current Linkage" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-60> ;
+.
+quantity:DisplacementCurrent
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "displacement-current"^^xsd:string ;
+  qudt:applicableUnit unit:AMPERE ;
+  qudt:description "\\textit{Displacement Current} is a quantity appearing in Maxwell's equations that is defined in terms of the rate of change of electric displacement field. Displacement current has the units of electric current density, and it has an associated magnetic field just as actual currents do. However it is not an electric current of moving charges, but a time-varying electric field. In materials, there is also a contribution from the slight motion of charges bound in atoms, dielectric polarization."^^xsd:string ;
+  qudt:latexDefinition "$I_D= \\int_S J_D \\cdot e_n dA$, over a surface $S$, where $J_D$ is displacement current density and $e_n dA$ is the vector surface element."^^xsd:string ;
+  qudt:symbol "I_D"^^xsd:string ;
+  qudt:symbolToken "I_D"^^xsd:token ;
+  rdfs:label "Displacement Current"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricFluxDensity ;
+  skos:prefLabel "Displacement Current"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Displacement_current> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:DisplacementCurrentDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "displacement-current-density"^^xsd:string ;
+  qudt:applicableUnit unit:A-PER-M2 ;
+  qudt:description "\\textit{Displacement Current Density} is the time rate of change of the \\textit{Electric Flux Density}. This is a measure of how quickly the electric field changes if we observe it as a function of time. This is different than if we look at how the electric field changes spatially, that is, over a region of space for a fixed amount of time."^^xsd:string ;
+  qudt:latexDefinition "$J_D = \\frac{\\partial D}{\\partial t}$, where $D$ is electric flux density and $t$ is time."^^xsd:string ;
+  qudt:symbol "J_D"^^xsd:string ;
+  qudt:symbolToken "J_D"^^xsd:token ;
+  rdfs:label "Displacement Current Density"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricFluxDensity ;
+  skos:exactMatch <http://dbpedia.org/resource/Electric_flux> ;
+  skos:prefLabel "Displacement Current Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+  prov:wasInfluencedBy <http://www.maxwells-equations.com/math/partial-electric-flux.php> ;
+.
+quantity:ElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "charge"^^xsd:string ;
+  qudt:applicableUnit unit:A-HR ;
+  qudt:applicableUnit unit:AbC ;
+  qudt:applicableUnit unit:COULOMB ;
+  qudt:applicableUnit unit:ElementaryCharge ;
+  qudt:applicableUnit unit:FARADAY ;
+  qudt:applicableUnit unit:FR ;
+  qudt:applicableUnit unit:PlanckCharge ;
+  qudt:applicableUnit unit:StatC ;
+  qudt:baseUnitDimensions "A \\cdot s"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T"^^xsd:string ;
+  qudt:description "\\textit{Electric Charge} is a fundamental conserved property of some subatomic particles, which determines their electromagnetic interaction. Electrically charged matter is influenced by, and produces, electromagnetic fields. The electric charge on a body may be positive or negative. Two positively charged bodies experience a mutual repulsive force, as do two negatively charged bodies. A positively charged body and a negatively charged body experience an attractive force. Electric charge is carried by discrete particles and can be positive or negative. The sign convention is such that the elementary electric charge $e$, that is, the charge of the proton, is positive. The SI derived unit of electric charge is the coulomb."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_Planck-Q ;
+  qudt:latexDefinition "$dQ = Idt$, where $I$ is electric current."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  qudt:symbolToken "Q"^^xsd:token ;
+  rdfs:label "Electric Charge"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricCurrent ;
+  skos:exactMatch <http://dbpedia.org/resource/Electric_charge> ;
+  skos:prefLabel "Electric Charge"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electric_charge> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electric_charge?oldid=492961669> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricChargeDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "charge-density"^^xsd:string ;
+  qudt:applicableUnit unit:C-PER-M3 ;
+  qudt:description "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively."^^xsd:string ;
+  qudt:latexDefinition "$\\rho = \\frac{dQ}{dV}$, where $Q$ is electric charge and $V$ is Volume."^^xsd:string ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  qudt:symbolToken "rho"^^xsd:token ;
+  rdfs:label "Electric Charge Density"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricChargeSurfaceDensity ;
+  skos:prefLabel "Electric Charge Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Charge_density> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+  prov:wasInfluencedBy <http://www.maxwells-equations.com/pho/charge-density.php> ;
+.
+quantity:ElectricChargeLineDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:C-PER-M ;
+  qudt:baseUnitDimensions "A \\cdot s/m"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T/L"^^xsd:string ;
+  qudt:description "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively. The respective SI units are $C \\cdot $, $m^{-1}$, $C \\cdot m^{-2}$ or $C \\cdot m^{-3}$."^^xsd:string ;
+  qudt:symbol "\\lambda"^^xsd:string ;
+  rdfs:label "Electric Charge Line Density"^^xsd:string ;
+  skos:prefLabel "Electric Charge Line Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Charge_density> ;
+.
+quantity:ElectricChargeLinearDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "linear-charge-density"^^xsd:string ;
+  qudt:applicableUnit unit:C-PER-M ;
+  qudt:description "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively."^^xsd:string ;
+  qudt:latexDefinition "$\\rho_l = \\frac{dQ}{dl}$, where $Q$ is electric charge and $l$ is length."^^xsd:string ;
+  qudt:symbol "\\rho_l"^^xsd:string ;
+  qudt:symbol "\\tau"^^xsd:string ;
+  qudt:symbolToken "tau"^^xsd:token ;
+  rdfs:label "Electric Charge Linear Density"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricChargeDensity ;
+  skos:prefLabel "Electric Charge Linear Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Charge_density> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricChargePerAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:C-PER-MOL ;
+  qudt:applicableUnit unit:StatC-PER-MOL ;
+  qudt:baseUnitDimensions "A \\cdot s/mol"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T/M"^^xsd:string ;
+  qudt:description "\\textit{Electric Charge Per Amount Of Substance} is the charge assocated with a given amount of substance. Un the ISO and SI systems this is $1 mol$."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_SI-sAmol-1 ;
+  rdfs:label "Electric Charge per Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Electric Charge per Amount of Substance"^^xsd:string ;
+.
+quantity:ElectricChargePerArea
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:AbC-PER-CM2 ;
+  qudt:applicableUnit unit:C-PER-M2 ;
+  qudt:applicableUnit unit:StatC-PER-CM2 ;
+  qudt:baseUnitDimensions "A \\cdot s/m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T/L^2"^^xsd:string ;
+  qudt:description "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively. The respective SI units are $C \\cdot m^{-1}$, $C \\cdot m^{-2}$ or $C \\cdot m^{-3}$."^^xsd:string ;
+  qudt:symbol "\\sigma"^^xsd:string ;
+  rdfs:label "Electric Charge per Unit Area"^^xsd:string ;
+  skos:prefLabel "Electric Charge per Unit Area"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Charge_density> ;
+.
+quantity:ElectricChargePerMass
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:C-PER-KG ;
+  qudt:applicableUnit unit:HZ-PER-T ;
+  qudt:applicableUnit unit:MegaHZ-PER-T ;
+  qudt:applicableUnit unit:PerTeslaSecond ;
+  qudt:baseUnitDimensions "A \\cdot s/kg"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T/M"^^xsd:string ;
+  qudt:description "\\textit{Electric Charge Per Mass} is the charge associated with a specific mass of a substance. In the SI and ISO systems this is $1 kg$."^^xsd:string ;
+  rdfs:label "Electric Charge Per Mass"^^xsd:string ;
+  skos:prefLabel "Electric Charge Per Mass"^^xsd:string ;
+.
+quantity:ElectricChargeSurfaceDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "surface-charge-density"^^xsd:string ;
+  qudt:applicableUnit unit:C-PER-M2 ;
+  qudt:description "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively."^^xsd:string ;
+  qudt:latexDefinition "$\\rho_A = \\frac{dQ}{dA}$, where $Q$ is electric charge and $A$ is Area."^^xsd:string ;
+  qudt:symbol "\\rho_A"^^xsd:string ;
+  qudt:symbolToken "rho_A"^^xsd:token ;
+  rdfs:label "Electric Charge Surface Density"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricChargeDensity ;
+  skos:prefLabel "Electric Charge Surface Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Charge_density> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricChargeVolumeDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:C-PER-M3 ;
+  qudt:baseUnitDimensions "A \\cdot s/m^3"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T/L^3"^^xsd:string ;
+  qudt:description "In electromagnetism, charge density is a measure of electric charge per unit volume of space, in one, two or three dimensions. More specifically: the linear, surface, or volume charge density is the amount of electric charge per unit length, surface area, or volume, respectively. The respective SI units are $C \\cdot m^{-1}$, $C \\cdot m^{-2}$ or $C \\cdot m^{-3}$."^^xsd:string ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  rdfs:label "Electric Charge Volume Density"^^xsd:string ;
+  skos:prefLabel "Electric Charge Volume Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Charge_density> ;
+.
+quantity:ElectricConductivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:AbS ;
+  qudt:applicableUnit unit:MHO ;
+  qudt:applicableUnit unit:SIEMENS ;
+  qudt:applicableUnit unit:StatMHO ;
+  qudt:baseUnitDimensions "A^2 \\cdot s^3/kg \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I^2 \\cdot T^3/L^2 \\cdot M"^^xsd:string ;
+  qudt:description "\\textit{Electric Conductivity} or \\textit{Specific Conductance} is a measure of a material's ability to conduct an electric current. When an electrical potential difference is placed across a conductor, its movable charges flow, giving rise to an electric current. The conductivity $\\sigma$ is defined as the ratio of the electric current density $J$ to the electric field $E$: $J = \\sigma E$. In isotropic materials, conductivity is scalar-valued, however in general, conductivity is a tensor-valued quantity."^^xsd:string ;
+  qudt:symbol "\\sigma"^^xsd:string ;
+  rdfs:label "Electric Conductivity"^^xsd:string ;
+  skos:prefLabel "Electric Conductivity"^^xsd:string ;
+.
+quantity:ElectricCurrent
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "current"^^xsd:string ;
+  qudt:applicableUnit unit:A ;
+  qudt:applicableUnit unit:AMPERE ;
+  qudt:applicableUnit unit:AbA ;
+  qudt:applicableUnit unit:BIOT ;
+  qudt:applicableUnit unit:PlanckCurrent ;
+  qudt:applicableUnit unit:StatA ;
+  qudt:baseUnitDimensions "A"^^xsd:string ;
+  qudt:baseUnitDimensions "I"^^xsd:string ;
+  qudt:description "\\textit{Electric Current} is the flow (movement) of electric charge. The amount of electric current through some surface, for example, a section through a copper conductor, is defined as the amount of electric charge flowing through that surface over time. Current is a scalar-valued quantity. Electric current is one of the base quantities in the International System of Quantities, ISQ, on which the International System of Units, SI, is based. "^^xsd:string ;
+  qudt:hasDimension qudt:DIM_Planck-T-1Q ;
+  qudt:symbol "I"^^xsd:string ;
+  qudt:symbolToken "I"^^xsd:token ;
+  rdfs:label "Electric Current"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Electric_current> ;
+  skos:prefLabel "Electric Current"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricCurrentDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "J"^^xsd:string ;
+  qudt:applicableUnit unit:A-PER-M2 ;
+  qudt:applicableUnit unit:AbA-PER-CM2 ;
+  qudt:applicableUnit unit:PlanckCurrentDensity ;
+  qudt:applicableUnit unit:StatA-PER-CM2 ;
+  qudt:baseUnitDimensions "A/m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I/L^2"^^xsd:string ;
+  qudt:description "\\textit{Electric Current Density} is a measure of the density of flow of electric charge; it is the electric current per unit area of cross section. Electric current density is a vector-valued quantity. Electric current, $I$, through a surface $S$ is defined as $I = \\int_S J \\cdot e_n dA$, where $e_ndA$ is the vector surface element."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_Planck-L-2T-1Q ;
+  qudt:latexDefinition "$J = \\rho v$, where $\\rho$ is electric current density and $v$ is volume."^^xsd:string ;
+  qudt:symbol "J"^^xsd:string ;
+  qudt:symbolToken "J"^^xsd:token ;
+  rdfs:label "Electric Current Density"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Current_density> ;
+  skos:prefLabel "Electric Current Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://maxwells-equations.com/density/current.php> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricCurrentPerAngle
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:A-PER-Deg ;
+  qudt:applicableUnit unit:A-PER-RAD ;
+  qudt:baseUnitDimensions "A"^^xsd:string ;
+  qudt:baseUnitDimensions "I/U"^^xsd:string ;
+  qudt:description "\\textit{Electric Current Per Angle} is"^^xsd:string ;
+  rdfs:label "Electric Current per Angle"^^xsd:string ;
+  skos:prefLabel "Electric Current per Angle"^^xsd:string ;
+.
+quantity:ElectricCurrentPerUnitEnergy
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:applicableUnit unit:A-PER-J ;
+  qudt:baseUnitDimensions "A \\cdot s^3/kg \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T^3/L^2 \\cdot M"^^xsd:string ;
+  qudt:description "\\textit{Electric Current per Unit Energy} is"^^xsd:string ;
+  rdfs:label "Electric Current per Unit Energy"^^xsd:string ;
+  skos:prefLabel "Electric Current per Unit Energy"^^xsd:string ;
+.
+quantity:ElectricCurrentPerUnitLength
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:baseUnitDimensions "A/m"^^xsd:string ;
+  qudt:baseUnitDimensions "I/L"^^xsd:string ;
+  rdfs:label "Electric Current per Unit Length"^^xsd:string ;
+  skos:prefLabel "Electric Current per Unit Length"^^xsd:string ;
+.
+quantity:ElectricCurrentPhasor
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "electric-current-phasor" ;
+  qudt:applicableUnit unit:AMPERE ;
+  qudt:description "\\textit{Electric Current Phasor} is a representation of current as a sinusoidal integral quantity using a complex quantity whose argument is equal to the initial phase and whose modulus is equal to the root-mean-square value. A phasor is a constant complex number, usually expressed in exponential form, representing the complex amplitude (magnitude and phase) of a sinusoidal function of time. Phasors are used by electrical engineers to simplify computations involving sinusoids, where they can often reduce a differential equation problem to an algebraic one."^^xsd:string ;
+  qudt:latexDefinition "When $i = \\hat{I} \\cos{(\\omega t + \\alpha)}$, where $i$ is the electric current, $\\omega$ is angular frequence, $t$ is time, and $\\alpha$ is initial phase, then $\\underline{I} = Ie^{ja}$."^^xsd:string ;
+  qudt:symbol "\\underline{I}"^^xsd:string ;
+  rdfs:label "Electric Current Phasor" ;
+  skos:prefLabel "Electric Current Phasor" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Phasor_(electronics)> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-26> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricDipoleMoment
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "dipole-moment"^^xsd:string ;
+  qudt:applicableUnit unit:C-M ;
+  qudt:applicableUnit unit:Debye ;
+  qudt:baseUnitDimensions "A \\cdot m \\cdot s"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot L \\cdot T"^^xsd:string ;
+  qudt:description "\\textit{Electric Dipole Moment} is a measure of the separation of positive and negative electrical charges in a system of (discrete or continuous) charges. It is a vector-valued quantity. If the system of charges is neutral, that is if the sum of all charges is zero, then the dipole moment of the system is independent of the choice of a reference frame; however in a non-neutral system, such as the dipole moment of a single proton, a dependence on the choice of reference point arises. In such cases it is conventional to choose the reference point to be the center of mass of the system or the center of charge, not some arbitrary origin. This convention ensures that the dipole moment is an intrinsic property of the system. The electric dipole moment of a substance within a domain is the vector sum of electric dipole moments of all electric dipoles included in the domain."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_SI-msA ;
+  qudt:latexDefinition """$E_p = -p \\cdot E$, where $E_p$ is the interaction energy of the molecule with electric dipole moment $p$ and an electric field with electric field strength $E$.
+
+$p = q(r_+ - r_i)$, where $r_+$ and $r_-$ are the position vectors to carriers of electric charge $a$ and $-q$, respectively."""^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  qudt:symbolToken "p"^^xsd:token ;
+  rdfs:label "Electric Dipole Moment"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Dipole> ;
+  skos:prefLabel "Electric Dipole Moment"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electric_dipole_moment> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricDisplacement
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "D"^^xsd:string ;
+  qudt:applicableUnit unit:C-PER-M2 ;
+  qudt:description "In a dielectric material the presence of an electric field E causes the bound charges in the material (atomic nuclei and their electrons) to slightly separate, inducing a local electric dipole moment. The Electric Displacement Field, $D$, is a vector field that accounts for the effects of free charges within such dielectric materials. This describes also the charge density on an extended surface that could be causing the field."^^xsd:string ;
+  qudt:latexDefinition "$D = \\epsilon_0 E + P$, where $\\epsilon_0$ is the electric constant, $E$ is electric field strength, and $P$ is electric polarization."^^xsd:string ;
+  qudt:symbol "D"^^xsd:string ;
+  rdfs:label "Electric Displacement"^^xsd:string ;
+  owl:sameAs quantity:ElectricFluxDensity ;
+  skos:broader quantity:ElectricChargePerArea ;
+  skos:prefLabel "Electric Displacement"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-895> ;
+.
+quantity:ElectricDisplacementField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "D"^^xsd:string ;
+  qudt:symbol "D"^^xsd:string ;
+  rdfs:label "Electric Displacement Field"^^xsd:string ;
+  skos:broader quantity:ElectricChargePerArea ;
+  skos:prefLabel "Electric Displacement Field"^^xsd:string ;
+.
+quantity:ElectricField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "E"^^xsd:string ;
+  qudt:applicableUnit unit:AbV-PER-CM ;
+  qudt:applicableUnit unit:StatV-PER-CM ;
+  qudt:applicableUnit unit:V-PER-M ;
+  qudt:baseUnitDimensions "L \\cdot M/I \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m/A \\cdot s^3"^^xsd:string ;
+  qudt:description "The space surrounding an electric charge or in the presence of a time-varying magnetic field has a property called an electric field. This electric field exerts a force on other electrically charged objects. In the idealized case, the force exerted between two point charges is inversely proportional to the square of the distance between them. (Coulomb's Law)."^^xsd:string ;
+  rdfs:label "Electric Field"^^xsd:string ;
+  owl:sameAs <http://dbpedia.org/resource/Electric_field> ;
+  skos:prefLabel "Electric Field"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electric_field> ;
+.
+quantity:ElectricFieldStrength
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "E"^^xsd:string ;
+  qudt:applicableUnit unit:V-PER-M ;
+  qudt:baseUnitDimensions "kg \\cdot m/A \\cdot s^3"^^xsd:string ;
+  qudt:description "\\textit{Electric Field Strength} is the magnitude and direction of an electric field, expressed by the value of $E$, also referred to as \\textit{electric field intensity} or simply the electric field."^^xsd:string ;
+  qudt:latexDefinition "$\\mathbf{E} = \\mathbf{F}/q$, where $\\mathbf{F}$ is force and $q$ is electric charge, of a test particle at rest."^^xsd:string ;
+  qudt:symbol "\\mathbf{E} "^^xsd:string ;
+  qudt:symbolToken "E"^^xsd:token ;
+  rdfs:label "Electric Field Strength"^^xsd:string ;
+  skos:prefLabel "Electric Field"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricFlux
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "electirc-flux"^^xsd:string ;
+  qudt:applicableUnit unit:AbvoltCentimeter ;
+  qudt:applicableUnit unit:COULOMB ;
+  qudt:applicableUnit unit:StatvoltCentimeter ;
+  qudt:applicableUnit unit:VoltMeter ;
+  qudt:baseUnitDimensions "L^3 \\cdot M/I \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^3/A \\cdot s^3"^^xsd:string ;
+  qudt:description "\\textit{Electric Flux} through an area is defined as the electric field multiplied by the area of the surface projected in a plane perpendicular to the field. Electric Flux is a scalar-valued quantity."^^xsd:string ;
+  qudt:latexDefinition "$\\Psi = \\int_S D \\cdot e_n dA$, over a surface $S$, where $D$ is electric flux density and $e_n dA$ is the vector surface element."^^xsd:string ;
+  qudt:symbol "\\Psi"^^xsd:string ;
+  qudt:symbolToken "psi"^^xsd:token ;
+  rdfs:label "Electric Flux"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricFluxDensity ;
+  skos:exactMatch <http://dbpedia.org/resource/Electric_flux> ;
+  skos:prefLabel "Electric Flux"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricFluxDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "electric-flux-density"^^xsd:string ;
+  qudt:applicableUnit unit:C-PER-M2 ;
+  qudt:description "\\textit{Electric Flux Density}, also referred to as \\textit{Electric Displacement}, is related to electric charge density by the following equation: $\\text{div} \\; D = \\rho$, where $\\text{div}$ denotes the divergence."^^xsd:string ;
+  qudt:latexDefinition "$\\mathbf{D}  = \\epsilon_0 E + P$, where $\\epsilon_0$ is the electric constant, $\\mathbf{E} $ is electric field strength, and $P$ is electric polarization."^^xsd:string ;
+  qudt:symbol "\\mathbf{D}"^^xsd:string ;
+  qudt:symbolToken "D"^^xsd:token ;
+  rdfs:label "Electric Flux Density"^^xsd:string ;
+  owl:sameAs quantity:ElectricDisplacement ;
+  skos:exactMatch <http://dbpedia.org/resource/Electric_flux> ;
+  skos:prefLabel "Electric Flux Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricPolarization
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "polarization"^^xsd:string ;
+  qudt:applicableUnit unit:C-PER-M2 ;
+  qudt:description "\\textit{Electric Polarization} is the relative shift of positive and negative electric charge in opposite directions within an insulator, or dielectric, induced by an external electric field. Polarization occurs when an electric field distorts the negative cloud of electrons around positive atomic nuclei in a direction opposite the field. This slight separation of charge makes one side of the atom somewhat positive and the opposite side somewhat negative. In some materials whose molecules are permanently polarized by chemical forces, such as water molecules, some of the polarization is caused by molecules rotating into the same alignment under the influence of the electric field. One of the measures of polarization is electric dipole moment, which equals the distance between the slightly shifted centres of positive and negative charge multiplied by the amount of one of the charges. Polarization P in its quantitative meaning is the amount of dipole moment p per unit volume V of a polarized material, P = p/V."^^xsd:string ;
+  qudt:latexDefinition "$P =\\frac{dp}{dV}$, where $p$ is electic charge density and $V$ is volume."^^xsd:string ;
+  qudt:symbol "P"^^xsd:string ;
+  qudt:symbolToken "P"^^xsd:token ;
+  rdfs:label "Electric Polarization"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricChargeDensity ;
+  rdfs:seeAlso quantity:ElectricDipoleMoment ;
+  skos:prefLabel "Electric Polarization"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.britannica.com/EBchecked/topic/182690/electric-polarization> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricPotential
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:Longdescription "The Electric Potential is a scalar valued quantity associated with an electric field. The electric potential $\\phi(x)$ at a point, $x$, is formally defined as the line integral of the electric field taken along a path from x to the point at infinity. If the electric field is static, that is time independent, then the choice of the path is arbitrary; however if the electric field is time dependent, taking the integral a different paths will produce different results."^^xsd:string ;
+  qudt:abbreviation "potential"^^xsd:string ;
+  qudt:applicableUnit unit:VOLT ;
+  qudt:description "\\textit{Electric Potential} is"^^xsd:string ;
+  qudt:latexDefinition "$-\\textbf{grad} \\; V = E + \\frac{\\partial A}{\\partial t}$, where $E$ is electric field strength, $A$ is magentic vector potential and $t$ is time."^^xsd:string ;
+  qudt:symbol "V"^^xsd:string ;
+  qudt:symbol "\\phi"^^xsd:string ;
+  qudt:symbolToken "V"^^xsd:token ;
+  rdfs:label "Electric Potential"^^xsd:string ;
+  owl:sameAs quantity:EnergyPerElectricCharge ;
+  skos:broader quantity:EnergyPerElectricCharge ;
+  skos:closeMatch <http://dbpedia.org/resource/Category:Units_of_electrical_potential> ;
+  skos:prefLabel "Electric Potential"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricPotentialDifference
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:Longdescription "\\textit{Electric Potential Difference} is a scalar valued quantity associated with an electric field."^^xsd:string ;
+  qudt:abbreviation "diff-potential"^^xsd:string ;
+  qudt:applicableUnit unit:VOLT ;
+  qudt:description "\\textit{Electric Potential Difference} is"^^xsd:string ;
+  qudt:latexDefinition "$V_{ab} = \\int_{r_a(C)}^{r_b} (E +\\frac{\\partial A}{\\partial t}) $, where $E$ is electric field strength, $A$ is magentic vector potential,  $t$ is time, and $r$ is position vector along a curve C from a point $a$ to $b$."^^xsd:string ;
+  qudt:symbol "V_{ab}"^^xsd:string ;
+  qudt:symbolToken "V"^^xsd:token ;
+  rdfs:label "Electric Potential Difference"^^xsd:string ;
+  owl:sameAs quantity:EnergyPerElectricCharge ;
+  skos:broader quantity:EnergyPerElectricCharge ;
+  skos:closeMatch <http://dbpedia.org/resource/Category:Units_of_electrical_potential> ;
+  skos:prefLabel "Electric Potential Difference"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectricPower
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:applicableSIUnit unit:KW ;
+  qudt:applicableSIUnit unit:MegaW ;
+  qudt:applicableSIUnit unit:MilliW ;
+  qudt:applicableSIUnit unit:WATT ;
+  qudt:applicableUnit unit:KW ;
+  qudt:applicableUnit unit:MegaW ;
+  qudt:applicableUnit unit:MilliW ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "\\textit{Electric Power} is the rate at which electrical energy is transferred by an electric circuit. In the simple case of direct current circuits, electric power can be calculated as the product of the potential difference in the circuit (V) and the amount of current flowing in the circuit (I): $P = VI$, where $P$ is the power, $V$ is the potential difference, and $I$ is the current. However, in general electric power is calculated by taking the integral of the vector cross-product of the electrical and magnetic fields over a specified area."^^xsd:string ;
+  qudt:latexDefinition "$p = ui$, where $u$ is instantaneous voltage and $i$ is instantaneous electric current."^^xsd:string ;
+  qudt:symbol "P_E"^^xsd:string ;
+  rdfs:label "Electric Power"^^xsd:string ;
+  skos:broader quantity:ElectricPower ;
+  skos:prefLabel "Electric Power"^^xsd:string ;
+.
+quantity:ElectricQuadrupoleMoment
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:C-M2 ;
+  qudt:baseUnitDimensions "A \\cdot m^2 \\cdot s"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot L^2 \\cdot T"^^xsd:string ;
+  qudt:description "The Electric Quadrupole Moment is a quantity which describes the effective shape of the ellipsoid of nuclear charge distribution. A non-zero quadrupole moment Q indicates that the charge distribution is not spherically symmetric. By convention, the value of Q is taken to be positive if the ellipsoid is prolate and negative if it is oblate. In general, the electric quadrupole moment is tensor-valued."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  rdfs:label "Electric Quadrupole Moment"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Quadrupole> ;
+  skos:prefLabel "Electric Quadrupole Moment"^^xsd:string ;
+.
+quantity:ElectricSusceptibility
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "e-susceptibility"^^xsd:string ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Electric Susceptibility} is the ratio of electric polarization to electric field strength, normalized to the electric constant. The definition applies to an isotropic medium. For an anisotropic medium, electric susceptibility is a second order tensor."^^xsd:string ;
+  qudt:latexDefinition "$\\chi = \\frac{P}{(\\epsilon_0 E)}$, where $P$ is electric polorization, $\\epsilon_0$ is the electric constant, and $E$ is electric field strength."^^xsd:string ;
+  qudt:symbol "\\chi"^^xsd:string ;
+  qudt:symbolToken "chi"^^xsd:token ;
+  rdfs:label "Electric Susceptibility"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricFieldStrength ;
+  rdfs:seeAlso quantity:ElectricPolarization ;
+  rdfs:seeAlso quantity:PermittivityOfVacuum ;
+  skos:exactMatch <http://dbpedia.org/resource/Permittivity> ;
+  skos:prefLabel "Electric Susceptibility"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectromagneticEnergyDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "electromagnetic-energy-density"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-M3 ;
+  qudt:description "\\textit{Electromagnetic Energy Density}, also known as the \\textit{Volumic Electromagnetic Energy}, is the energy associated with an electromagnetic field, per unit volume of the field."^^xsd:string ;
+  qudt:latexDefinition "$w = (1/2) ( \\mathbf{E} \\cdot \\mathbf{D} + \\mathbf{B} \\cdot \\mathbf{H})$, where $\\mathbf{E}$ is electric field strength, $\\mathbf{D}$ is electric flux density, $\\mathbf{M}$ is magnetic flux density, and $\\mathbf{H}$ is magnetic field strength."^^xsd:string ;
+  qudt:symbol "w"^^xsd:string ;
+  qudt:symbolToken "w"^^xsd:token ;
+  rdfs:label "Electromagnetic Energy Density"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricFieldStrength ;
+  rdfs:seeAlso quantity:ElectricFluxDensity ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  rdfs:seeAlso quantity:MagneticFluxDensity ;
+  owl:sameAs quantity:VolumicElectromagneticEnergy ;
+  skos:prefLabel "Electromagnetic Energy Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-64> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectromagneticWavePhaseSpeed
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "electromagnetic-wave-phase-speed"^^xsd:string ;
+  qudt:applicableUnit unit:M-PER-SEC ;
+  qudt:description "\\textit{Electromagnetic Wave Phase Speed} is the ratio of angular velocity and wavenumber."^^xsd:string ;
+  qudt:latexDefinition "$c  = w/k$ where $w$ is angular velocity and $k$ is angular wavenumber."^^xsd:string ;
+  qudt:symbol "c"^^xsd:string ;
+  qudt:symbolToken "c"^^xsd:token ;
+  rdfs:label "Electromagnetic Wave Phase Speed"^^xsd:string ;
+  skos:prefLabel "Electromagnetic Wave Phase Speed"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-66> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ElectromotiveForce
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "In physics, electromotive force, or most commonly $emf$ (seldom capitalized), or (occasionally) electromotance is that which tends to cause current (actual electrons and ions) to flow. More formally, $emf$ is the external work expended per unit of charge to produce an electric potential difference across two open-circuited terminals. \\textit{Electromotive Force} is deprecated in the ISO System of Quantities."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  rdfs:label "Electromotive Force"^^xsd:string ;
+  skos:broader quantity:EnergyPerElectricCharge ;
+  skos:exactMatch <http://dbpedia.org/resource/Electromotive_force> ;
+  skos:prefLabel "Electromotive Force"^^xsd:string ;
+.
+quantity:EnergyPerAreaElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:V-PER-M2 ;
+  qudt:baseUnitDimensions "M/I \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/A \\cdot s^3"^^xsd:string ;
+  qudt:description "\\textit{Energy Per Area Electric Charge} is the amount of electric energy associated with a unit of area."^^xsd:string ;
+  rdfs:label "Energy Per Area Electric Charge"^^xsd:string ;
+  skos:prefLabel "Energy per Area Electric Charge"^^xsd:string ;
+.
+quantity:EnergyPerElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:AbV ;
+  qudt:applicableUnit unit:PlanckVolt ;
+  qudt:applicableUnit unit:StatV ;
+  qudt:applicableUnit unit:VOLT ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/I \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/A \\cdot s^3"^^xsd:string ;
+  qudt:description "Voltage is a representation of the electric potential energy per unit charge. If a unit of electrical charge were placed in a location, the voltage indicates the potential energy of it at that point. In other words, it is a measurement of the energy contained within an electric field, or an electric circuit, at a given point. Voltage is a scalar quantity. The SI unit of voltage is the volt, such that $1 volt = 1 joule/coulomb$."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_Planck-L2MT-2Q-1 ;
+  qudt:symbol "V"^^xsd:string ;
+  rdfs:label "Energy per Electric Charge"^^xsd:string ;
+  owl:sameAs quantity:ElectricPotential ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:prefLabel "Energy per Electric Charge"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.about.com/od/glossary/g/voltage.htm> ;
+.
+quantity:EnergyPerSquareMagneticFluxDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-PER-T2 ;
+  qudt:baseUnitDimensions "A^2 \\cdot m^2 \\cdot s^2/kg"^^xsd:string ;
+  qudt:baseUnitDimensions "I^2 \\cdot L^2 \\cdot T^2/M"^^xsd:string ;
+  qudt:description "\\textit{Energy Per Square Magnetic Flux Density} is a measure of energy for a unit of magnetic flux density."^^xsd:string ;
+  rdfs:label "Energy Per Square Magnetic Flux Density"^^xsd:string ;
+  skos:prefLabel "Energy per Square Magnetic Flux Density"^^xsd:string ;
+.
+quantity:ForcePerElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:N-PER-C ;
+  qudt:baseUnitDimensions "L \\cdot M/I \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m/A \\cdot s^3"^^xsd:string ;
+  qudt:description "The electric field depicts the force exerted on other electrically charged objects by the electrically charged particle the field is surrounding. The electric field is a vector field with SI units of newtons per coulomb ($N C^{-1}$) or, equivalently, volts per metre ($V m^{-1}$ ). The SI base units of the electric field are $kg m s^{-3} A^{-1}$. The strength or magnitude of the field at a given point is defined as the force that would be exerted on a positive test charge of 1 coulomb placed at that point"^^xsd:string ;
+  rdfs:label "Force per Electric Charge"^^xsd:string ;
+  skos:prefLabel "Force per Electric Charge"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electric_field> ;
+.
+quantity:Impedance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "impedance" ;
+  qudt:applicableUnit unit:OHM ;
+  qudt:description "\\textit{Impedance} is the measure of the opposition that a circuit presents to the passage of a current when a voltage is applied. In quantitative terms, it is the complex ratio of the voltage to the current in an alternating current (AC) circuit. Impedance extends the concept of resistance to AC circuits, and possesses both magnitude and phase, unlike resistance, which has only magnitude. When a circuit is driven with direct current (DC), there is no distinction between impedance and resistance; the latter can be thought of as impedance with zero phase angle."^^xsd:string ;
+  qudt:latexDefinition "$\\underline{Z} = \\underline{U} / \\underline{I}$, where $\\underline{U}$ is the voltage phasor and $\\underline{I}$ is the electric current phasor."^^xsd:string ;
+  qudt:symbol "\\underline{Z}"^^xsd:string ;
+  qudt:symbolToken "Z"^^xsd:token ;
+  rdfs:label "Impedance" ;
+  rdfs:seeAlso quantity:ElectricCurrentPhasor ;
+  rdfs:seeAlso quantity:VoltagePhasor ;
+  owl:sameAs <http://dbpedia.org/resource/Electrical_impedance> ;
+  skos:prefLabel "Impedance" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electrical_impedance> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-43> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Inductance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:AbH ;
+  qudt:applicableUnit unit:HENRY ;
+  qudt:applicableUnit unit:MicroH ;
+  qudt:applicableUnit unit:MilliH ;
+  qudt:applicableUnit unit:StatH ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/I^2 \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/A^2 \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Inductance} is an electromagentic quantity that characterizes a circuit's resistance to any change of electric current; a change in the electric current through induces an opposing electromotive force (EMF). Quantitatively, inductance is proportional to the magnetic flux per unit of electric current."^^xsd:string ;
+  qudt:latexDefinition "$L =\\frac{\\Psi}{I}$, where $I$ is an electric current in a thin conducting loop, and $\\Psi$ is the linked flux caused by that electric current."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  qudt:symbol "L_m"^^xsd:string ;
+  qudt:symbolToken "L"^^xsd:token ;
+  rdfs:label "Inductance"^^xsd:string ;
+  rdfs:seeAlso quantity:MutualInductance ;
+  skos:exactMatch <http://dbpedia.org/resource/Inductance> ;
+  skos:prefLabel "Inductance"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-19> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:InstantaneousPower
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description """\\textit{Instantaneous Power}, for a two-terminal element or a two-terminal circuit with terminals A and B, is the product of the voltage $u_{AB}$ between the terminals and the electric current i in the element or circuit: $p = $u_{AB} \\cdot i$, where $u_{AB} is the line integral of the electric field strength from A to B, and where the electric current in the element or circuit is taken positive if its direction is from A to B and negative in the opposite case.  For an n-terminal circuit, it is the sum of the instantaneous powers relative to the n - 1 pairs of terminals when one of the terminals is chosen as a common terminal for the pairs. 
+
+
+
+For a polyphase element, it is the sum of the instantaneous powers in all phase elements of a polyphase element.  For a polyphase line consisting of m line conductors and one neutral conductor, it is the sum of the m instantaneous powers expressed for each line conductor by the product of the polyphase line-to-neutral voltage and the corresponding line current."""^^xsd:string ;
+  qudt:latexDefinition "$p = ui$, where $u$ is instantaneous voltage and $i$ is instantaneous electric current."^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  qudt:symbolToken "p"^^xsd:token ;
+  rdfs:label "Instantaneous Power"^^xsd:string ;
+  skos:prefLabel "Instantaneous Power"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Power> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-30> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-31> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=141-02-14> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=141-03-10> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:InverseMagneticFlux
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:HZ-PER-V ;
+  qudt:baseUnitDimensions "A \\cdot s^2/kg \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T^2/L^2 \\cdot M"^^xsd:string ;
+  qudt:description "\\textit{Inverse Magnetic Flux} is"^^xsd:string ;
+  rdfs:label "Inverse Magnetic Flux"^^xsd:string ;
+  skos:prefLabel "Inverse Magnetic Flux"^^xsd:string ;
+.
+quantity:InversePermittivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:M-PER-F ;
+  qudt:baseUnitDimensions "L^3 \\cdot M/I^2 \\cdot T^4"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^3/A^2 \\cdot s^4"^^xsd:string ;
+  qudt:description "\\textit{Inverse Permittivity} is"^^xsd:string ;
+  rdfs:label "Inverse Permittivity"^^xsd:string ;
+  skos:prefLabel "Inverse Permittivity"^^xsd:string ;
+.
+quantity:LeakageFactor
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "leakage-factor" ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Leakage Factor} is the ratio of the total magnetic flux to the useful magnetic flux of a magnetic circuit."^^xsd:string ;
+  qudt:latexDefinition "$\\sigma = 1 - k^2$, where $k$ is the coupling factor."^^xsd:string ;
+  qudt:symbol "\\sigma"^^xsd:string ;
+  qudt:symbolToken "sigma"^^xsd:token ;
+  rdfs:label "Leakage Factor" ;
+  skos:prefLabel "Leakage Factor" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=221-04-12> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:LengthPerUnitElectricCurrent
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:baseUnitDimensions "L/I"^^xsd:string ;
+  qudt:baseUnitDimensions "m/A"^^xsd:string ;
+  qudt:description "\\textit{Length per Unit Electric Current} is"^^xsd:string ;
+  rdfs:label "Length per Unit Electric Current"^^xsd:string ;
+  skos:prefLabel "Length per Unit Electric Current"^^xsd:string ;
+.
+quantity:LinearElectricCurrent
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:baseUnitDimensions "A/m"^^xsd:string ;
+  qudt:description "\\textit{Linear Electric Linear Current} is the electric current per unit line."^^xsd:string ;
+  rdfs:label "Linear Electric Current"^^xsd:string ;
+  skos:prefLabel "Linear Electric Current"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.asknumbers.com/ElectricalConversion.aspx> ;
+.
+quantity:LinearElectricCurrentDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "lineic-electric-current"^^xsd:string ;
+  qudt:applicableUnit unit:A-PER-M ;
+  qudt:description "\\textit{Linear Electric Linear Current Density} is the electric current per unit length. Electric current, $I$, through a curve $C$ is defined as $I = \\int_C J _s \\times e_n$, where $e_n$ is a unit vector perpendicular to the surface and line vector element, and $dr$ is the differential of position vector $r$."^^xsd:string ;
+  qudt:latexDefinition "$J_s = \\rho_A v$, where $\\rho_A$ is surface density of electric charge and $v$ is velocity."^^xsd:string ;
+  qudt:symbol "J_s"^^xsd:string ;
+  qudt:symbolToken "J_s"^^xsd:token ;
+  rdfs:label "Linear Electric Current Density"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricChargeSurfaceDensity ;
+  rdfs:seeAlso quantity:ElectricCurrentDensity ;
+  skos:prefLabel "Linear Electric Current Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.asknumbers.com/ElectricalConversion.aspx> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:LinkedFlux
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "linked-flux"^^xsd:string ;
+  qudt:applicableUnit unit:WEBER ;
+  qudt:description "\\textit{Linked Flux} is defined as the path integral of the magnetic vector potential. This is the line integral of a magnetic vector potential $A$ along a curve $C$. The line vector element $dr$ is the differential of position vector $r$."^^xsd:string ;
+  qudt:latexDefinition "$\\Psi_m = \\int_C A \\cdot dr$, where $A$ is magnetic vector potential and $dr$ is the vector element of the curve $C$."^^xsd:string ;
+  qudt:symbol "\\Psi"^^xsd:string ;
+  qudt:symbol "\\Psi_m"^^xsd:string ;
+  qudt:symbolToken "Psi"^^xsd:token ;
+  rdfs:label "Linked Flux"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Magnetic_flux> ;
+  skos:prefLabel "Linked Flux"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-24> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-1800> ;
+.
+quantity:LossAngle
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "loss-angle" ;
+  qudt:applicableUnit unit:RADIAN ;
+  qudt:description "\\textit{Loss Angle} is"^^xsd:string ;
+  qudt:latexDefinition "$\\delta = \\arctan d$, where $d$ is loss factor."^^xsd:string ;
+  qudt:symbol "\\delta"^^xsd:string ;
+  rdfs:label "Loss Angle" ;
+  skos:prefLabel "Loss Angle" ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:LossFactor
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "loss-factor" ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Loss Factor} is the inverse of \\textit{Quality Factor} and is the ratio of the \\textit{resistance} and modulus of \\textit{reactance}."^^xsd:string ;
+  qudt:latexDefinition "$d = \\frac{1}{Q}$, where $Q$ is quality factor."^^xsd:string ;
+  qudt:symbol "d"^^xsd:string ;
+  qudt:symbolToken "d"^^xsd:token ;
+  rdfs:label "Loss Factor" ;
+  rdfs:seeAlso quantity:QualityFactor ;
+  rdfs:seeAlso quantity:Reactance ;
+  rdfs:seeAlso quantity:Resistance ;
+  skos:prefLabel "Loss Factor" ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticAreaMoment
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-area-moment"^^xsd:string ;
+  qudt:applicableUnit unit:WEBER ;
+  qudt:description "\\textit{Magnetic Area Moment}, for a magnetic dipole, is a vector quantity equal to the product of the current, the loop area, and the unit vector normal to the loop plane, the direction of which corresponds to the loop orientation. \\textit{Magnetic Area Moment} is also referred to as \\textit{Mangnetic Moment}."^^xsd:string ;
+  qudt:latexDefinition """$m = I e_n A$, where $I$ is electric current in a small closed loop, $e_n$ is a unit vector perpendicular to the loop, and $A$ is the area of the loop. The magnetic moment of a substance within a domain is the vector sum of the magnetic moments of all
+
+entities included in the domain."""^^xsd:string ;
+  qudt:symbol "m"^^xsd:string ;
+  qudt:symbolToken "m"^^xsd:token ;
+  rdfs:label "Magnetic Area Moment"^^xsd:string ;
+  owl:sameAs quantity:MagneticMoment ;
+  skos:prefLabel "Magnetic Moment"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-49> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticConstant
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "magnetic-constant"^^xsd:string ;
+  qudt:applicableUnit unit:H-PER-M ;
+  qudt:description "\\textit{Magentic Constant}, also known as \\textit{Permeability of Vacuum}, is a scalar constant $\\mu_0$ such that, in a vacuum the product wuth the magnetic field vector, $\\overrightarrow{H}$ is equal to the magnetic flux density vector, $\\overrightarrow{B}$."^^xsd:string ;
+  qudt:latexDefinition "$\\mu_0 = \\frac{\\overrightarrow{B}}{\\overrightarrow{H}}$, where $\\overrightarrow{B}$ is the B-Filed magnetic vector, and $\\overrightarrow{H}$ is the H-Filed magnetic vector. The value of $\\mu_0$ is \\SI[per-mode=symbol]{\\approx 1.256637e-6}{\\henry\\per\\metre}."^^xsd:string ;
+  qudt:symbol "\\mu_0"^^xsd:string ;
+  qudt:symbolToken "mu_0"^^xsd:token ;
+  owl:sameAs quantity:PermeabilityOfVacuum ;
+  skos:prefLabel "Magentic Constant"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=705-03-14> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticDipoleMoment
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-dipole-moment"^^xsd:string ;
+  qudt:applicableUnit unit:EV-PER-T ;
+  qudt:applicableUnit unit:J-PER-T ;
+  qudt:applicableUnit unit:Wb-M ;
+  qudt:baseUnitDimensions "A \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot L^2"^^xsd:string ;
+  qudt:description "\\textit{Magnetic Dipole Moment} is the magnetic moment of a system is a measure of the magnitude and the direction of its magnetism. Magnetic moment usually refers to its Magnetic Dipole Moment, and quantifies the contribution of the system's internal magnetism to the external dipolar magnetic field produced by the system (that is, the component of the external magnetic field that is inversely proportional to the cube of the distance to the observer). The Magnetic Dipole Moment is a vector-valued quantity. For a particle or nucleus, vector quantity causing an increment $\\Delta W = -\\mu \\cdot B$ to its energy $W$ in an external magnetic field with magnetic flux density $B$."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_SI-m2A ;
+  qudt:latexDefinition """$E_m = -m \\cdot B$, where $E_m$ is the interaction energy of the molecule with magnetic diploe moment $m$ and a magnetic field with magnetic flux density $B$
+
+or,
+
+$J_m = \\mu_0 M$ where $\\mu_0$ is the magnetic constant and $M$ is Magnetization."""^^xsd:string ;
+  qudt:symbol "J_m"^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  qudt:symbolToken "J_m"^^xsd:token ;
+  rdfs:label "Magnetic Dipole Moment"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Magnetic_moment> ;
+  skos:prefLabel "Magnetic Dipole Moment"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Magnetic_moment> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-55> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "B"^^xsd:string ;
+  qudt:applicableUnit unit:AbT ;
+  qudt:applicableUnit unit:GAUSS ;
+  qudt:applicableUnit unit:Gamma ;
+  qudt:applicableUnit unit:TESLA ;
+  qudt:baseUnitDimensions "M/I \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/A \\cdot s^2"^^xsd:string ;
+  qudt:description "The Magnetic Field, denoted $B$, is a fundamental field in electrodynamics which characterizes the magnetic force exerted by electric currents.  It is closely related to the auxillary magnetic field H (see quantity:AuxillaryMagneticField)."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_Planck-MT-1Q-1 ;
+  qudt:symbol "B"^^xsd:string ;
+  rdfs:label "Magnetic Field"^^xsd:string ;
+  skos:prefLabel "Magnetic Field"^^xsd:string ;
+.
+quantity:MagneticFieldStrength
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:applicableUnit unit:A-PER-M ;
+  qudt:description "\\textit{Magnetic Field Strength} is a vector quantity obtained at a given point by subtracting the magnetization $M$ from the magnetic flux density $B$ divided by the magnetic constant $\\mu_0$. The magnetic field strength is related to the total current density $J_{tot}$ via: $\\text{rot} H = J_{tot}$."^^xsd:string ;
+  qudt:latexDefinition "$\\mathbf{H} = \\frac{\\mathbf{B} }{\\mu_0} - M$, where $\\mathbf{B} $ is magnetic flux density, $\\mu_0$ is the magnetic constant and $M$ is magnetization."^^xsd:string ;
+  qudt:symbol "\\mathbf{H} "^^xsd:string ;
+  qudt:symbolToken "H"^^xsd:token ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-56> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticFlux
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-flux"^^xsd:string ;
+  qudt:applicableUnit unit:AbV-SEC ;
+  qudt:applicableUnit unit:MX ;
+  qudt:applicableUnit unit:UnitPole ;
+  qudt:applicableUnit unit:WEBER ;
+  qudt:applicableUnit unit:Wb ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/I \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/A \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Magnetic Flux} is the product of the average magnetic field times the perpendicular area that it penetrates."^^xsd:string ;
+  qudt:latexDefinition "$\\Phi = \\int_S B \\cdot e_n d A$, over a surface $S$, where $B$ is magnetic flux density and $e_n dA$ is the vector surface element."^^xsd:string ;
+  qudt:symbol "\\Phi"^^xsd:string ;
+  qudt:symbol "\\phi"^^xsd:string ;
+  qudt:symbolToken "Phi"^^xsd:token ;
+  rdfs:label "Magnetic Flux"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Magnetic_flux> ;
+  skos:prefLabel "Magnetic Flux"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-1800> ;
+.
+quantity:MagneticFluxDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-flux-density"^^xsd:string ;
+  qudt:applicableUnit unit:TESLA ;
+  qudt:baseUnitDimensions "kg/A \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Magnetic Flux Density} is a vector quantity and is the magnetic flux per unit area of a magnetic field at right angles to the magnetic force. It can be defined in terms of the effects the field has, for example by $B = F/q v \\sin \\theta$, where $F$ is the force a moving charge $q$ would experience if it was travelling at a velocity $v$ in a direction making an angle θ with that of the field. The magnetic field strength is also a vector quantity and is related to $B$ by: $H = B/\\mu$, where $\\mu$ is the permeability of the medium."^^xsd:string ;
+  qudt:latexDefinition "$\\mathbf{F}  = qv \\times B$, where $F$ is force and $v$ is velocity of any test particle with electric charge $q$."^^xsd:string ;
+  qudt:symbol "\\textit{\\textbf{B}} "^^xsd:string ;
+  qudt:symbolToken "B"^^xsd:token ;
+  rdfs:label "Magnetic Flux Density"^^xsd:string ;
+  skos:prefLabel "Magnetic Flux Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-1798> ;
+.
+quantity:MagneticFluxPerUnitLength
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:TeslaMeter ;
+  qudt:baseUnitDimensions "L \\cdot M/I \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m/A \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Magnetic Flux per Unit Length} is a quantity in the SI and C.G.S. Systems of Quantities."^^xsd:string ;
+  rdfs:label "Magnetic Flux per Unit Length"^^xsd:string ;
+  skos:prefLabel "Magnetic Flux per Unit Length"^^xsd:string ;
+.
+quantity:MagneticMoment
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-moment"^^xsd:string ;
+  qudt:applicableUnit unit:WEBER ;
+  qudt:description "\\textit{Magnetic Moment}, for a magnetic dipole, is a vector quantity equal to the product of the current, the loop area, and the unit vector normal to the loop plane, the direction of which corresponds to the loop orientation. \\textit{Magnetic Moment} is also referred to as \\textit{Mangnetic Area Moment}."^^xsd:string ;
+  qudt:latexDefinition """$m = I e_n A$, where $I$ is electric current in a small closed loop, $e_n$ is a unit vector perpendicular to the loop, and $A$ is the area of the loop. The magnetic moment of a substance within a domain is the vector sum of the magnetic moments of all
+
+entities included in the domain."""^^xsd:string ;
+  qudt:symbol "m"^^xsd:string ;
+  qudt:symbolToken "m"^^xsd:token ;
+  rdfs:label "Magnetic Moment"^^xsd:string ;
+  owl:sameAs quantity:MagneticAreaMoment ;
+  skos:prefLabel "Magnetic Moment"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-49> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticPolarization
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-polarization"^^xsd:string ;
+  qudt:applicableUnit unit:TESLA ;
+  qudt:description "\\textit{Magnetic Polarization} is a vector quantity equal to the product of the magnetization $M$ and the magnetic constant $\\mu_0$."^^xsd:string ;
+  qudt:latexDefinition "$J_m = \\mu_0 M$,  where $\\mu_0$ is the magentic constant and $M$ is magnetization."^^xsd:string ;
+  qudt:symbol "J_m"^^xsd:string ;
+  qudt:symbolToken "J_m"^^xsd:token ;
+  rdfs:label "Magnetic Polarization"^^xsd:string ;
+  rdfs:seeAlso quantity:MagneticConstant ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  rdfs:seeAlso quantity:Magnetization ;
+  skos:prefLabel "Magnetic Polarization"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-54> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticReluctivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-T-M ;
+  qudt:baseUnitDimensions "A \\cdot s^2/kg \\cdot m"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot T^2/L \\cdot M"^^xsd:string ;
+  qudt:description "\\textit{Length Per Unit Magnetic Flux} is the the resistance of a material to the establishment of a magnetic field in it. It is the reciprocal of \\textit{Magnetic Permeability}, the inverse of the measure of the ability of a material to support the formation of a magnetic field within itself."^^xsd:string ;
+  rdfs:label "Magnetic Reluctivity"^^xsd:string ;
+  rdfs:seeAlso quantity:Permeability ;
+  skos:prefLabel "Length per Unit Magnetic Flux"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Permeability_(electromagnetism)> ;
+.
+quantity:MagneticSusceptability
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-susceptability"^^xsd:string ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Magnetic Susceptability} is a scalar or tensor quantity the product of which by the magnetic constant $\\mu_0$ and by the magnetic field strength $H$ is equal to the magnetic polarization $J$. The definition given applies to an isotropic medium. For an anisotropic medium permeability is a second order tensor."^^xsd:string ;
+  qudt:latexDefinition "$\\kappa = \\frac{M}{H}$,  where $M$ is magnetization,  and $H$ is magnetic field strength."^^xsd:string ;
+  qudt:symbol "\\kappa"^^xsd:string ;
+  qudt:symbolToken "kappa"^^xsd:token ;
+  rdfs:label "Magnetic Susceptability"^^xsd:string ;
+  rdfs:seeAlso quantity:MagneticConstant ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  rdfs:seeAlso quantity:Magnetization ;
+  skos:prefLabel "Magnetic Susceptability"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-12-37> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticTension
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "magnetic-tension" ;
+  qudt:applicableUnit unit:AMPERE ;
+  qudt:description "\\textit{Magnetic Tension} is a scalar quantity equal to the line integral of the magnetic field strength \\mathbf{H} along a specified path linking two points a and b."^^xsd:string ;
+  qudt:latexDefinition "$U_m = \\int_{r_a(C)}^{r_b} \\mathbf{H} \\cdot dr$, where $\\mathbf{H}$ is magnetic field strength and $r$ is the position vector along a given curve $C$ from point $a$ to point $b$."^^xsd:string ;
+  qudt:symbol "U_m"^^xsd:string ;
+  qudt:symbolToken "U_m"^^xsd:token ;
+  rdfs:label "Magnetic Tension" ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  skos:prefLabel "Magnetic Tension" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-57> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagneticVectorPotential
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-vector-potential"^^xsd:string ;
+  qudt:applicableUnit unit:Wb-PER-M ;
+  qudt:description "\\textit{Magnetic Vector Potential} is the vector potential of the magnetic flux density. The magnetic vector potential is not unique since any irrotational vector field quantity can be added to a given magnetic vector potential without changing its rotation. Under static conditions the magnetic vector potential is often chosen so that its divergence is zero."^^xsd:string ;
+  qudt:latexDefinition "$\\B = \\textbf{rot} A$, where $B$ is magnetic flux density."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  qudt:symbolToken "A"^^xsd:token ;
+  rdfs:label "Magnetic Vector Potential"^^xsd:string ;
+  rdfs:seeAlso quantity:MagneticFluxDensity ;
+  skos:prefLabel "Magnetic Vector Potential"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-23> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Magnetization
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "magentization"^^xsd:string ;
+  qudt:applicableUnit unit:A-PER-M ;
+  qudt:description "\\textit{Magnetization} is defined as the ratio of magnetic moment per unit volume. It is a vector-valued quantity."^^xsd:string ;
+  qudt:latexDefinition "$M = dm/dV$, where $m$ is magentic moment of a substance in a domain with Volume $V$."^^xsd:string ;
+  qudt:symbol "H_i"^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  qudt:symbolToken "M"^^xsd:token ;
+  rdfs:label "Magnetization"^^xsd:string ;
+  skos:broader quantity:LinearElectricCurrent ;
+  skos:prefLabel "Magnetization"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-52> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MagnetizationField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "M"^^xsd:string ;
+  qudt:description "The Magnetization Field is defined as the ratio of magnetic moment per unit volume. It is a vector-valued quantity."^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Magnetization Field"^^xsd:string ;
+  skos:broader quantity:ElectricCurrentPerUnitLength ;
+  skos:prefLabel "Magnetization Field"^^xsd:string ;
+.
+quantity:MagnetomotiveForce
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "mmf"^^xsd:string ;
+  qudt:applicableUnit unit:AMPERE ;
+  qudt:applicableUnit unit:AT ;
+  qudt:applicableUnit unit:GI ;
+  qudt:applicableUnit unit:OE-CM ;
+  qudt:baseUnitDimensions "A"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot U"^^xsd:string ;
+  qudt:description "\\textit{Magnetomotive Force}  ($mmf$) is the ability of an electric circuit to produce magnetic flux. Just as the ability of a battery to produce electric current is called its electromotive force or emf, mmf is taken as the work required to move a unit magnet pole from any point through any path which links the electric circuit back the same point in the presence of the magnetic force produced by the electric current in the circuit. \\textit{Magnetomotive Force} is the scalar line integral of the magnetic field strength along a closed path."^^xsd:string ;
+  qudt:latexDefinition "$F_m = \\oint \\mathbf{H} \\cdot dr$, where $\\mathbf{H}$ is magnetic field strength and $r$ is position vector along a given curve $C$ from point $a$ to point $b$."^^xsd:string ;
+  qudt:symbol "F_m"^^xsd:string ;
+  rdfs:label "Magnetomotive Force"^^xsd:string ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  skos:exactMatch <http://dbpedia.org/resource/Magnetomotive_force> ;
+  skos:prefLabel "Magnetomotive Force"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-60> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MassPerElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:TeslaSecond ;
+  qudt:baseUnitDimensions "M/I \\cdot T"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/A \\cdot s"^^xsd:string ;
+  qudt:description "The mass-to-charge ratio ratio ($m/Q$) is a physical quantity that is widely used in the electrodynamics of charged particles, for example, in electron optics and ion optics. The importance of the mass-to-charge ratio, according to classical electrodynamics, is that two particles with the same mass-to-charge ratio move in the same path in a vacuum when subjected to the same electric and magnetic fields. Its SI units are $kg/C$, but it can also be measured in Thomson ($Th$)."^^xsd:string ;
+  rdfs:label "Mass per Electric Charge"^^xsd:string ;
+  skos:prefLabel "Mass per Electric Charge"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass-to-charge_ratio> ;
+.
+quantity:ModulusOfAdmittance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "modulus-of-admittance" ;
+  qudt:applicableUnit unit:SIEMENS ;
+  qudt:description "\\textit{Modulus Of Admittance} is the absolute value of the quantity \\textit{admittance}."^^xsd:string ;
+  qudt:latexDefinition "$Y = \\left | \\underline{Y} \\right |$, where $\\underline{Y}$ is admittance."^^xsd:string ;
+  qudt:symbol "Y"^^xsd:string ;
+  qudt:symbolToken "Y"^^xsd:token ;
+  rdfs:label "Modulus Of Admittance" ;
+  rdfs:seeAlso quantity:Admittance ;
+  skos:prefLabel "Modulus Of Admittance" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Absolute_value> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Admittance> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-51> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ModulusOfImpedance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "modulus-of-impedance"^^xsd:string ;
+  qudt:applicableUnit unit:OHM ;
+  qudt:description """\\textit{Modulus Of Impedance} is the absolute value of the quantity \\textit{impedance}. Apparent impedance is defined more generally as
+
+the quotient of rms voltage and rms electric current; it is often denoted by $Z$."""^^xsd:string ;
+  qudt:latexDefinition "$Z = \\left | \\underline{Z} \\right |$, where $\\underline{Z}$ is impedance."^^xsd:string ;
+  qudt:symbol "Z"^^xsd:string ;
+  qudt:symbolToken "Z"^^xsd:token ;
+  rdfs:label "Modulus Of Impedance"^^xsd:string ;
+  rdfs:seeAlso quantity:Impedance ;
+  skos:prefLabel "Modulus Of Impendance" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Absolute_value> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electrical_impedance> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MutualInductance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "mutual-inductance" ;
+  qudt:applicableUnit unit:HENRY ;
+  qudt:description "\\textit{Mutual Inductance} is the non-diagonal term of the inductance matrix. For two loops, the symbol $M$ is used for $L_{12}$."^^xsd:string ;
+  qudt:latexDefinition "$L_{mn} = \\frac{\\Psi_m}{I_n}$, where $I_n$ is an electric current in a thin conducting loop $n$ and $\\Psi_m$ is the linked flux caused by that electric current in another loop $m$."^^xsd:string ;
+  qudt:symbol "L_{mn}"^^xsd:string ;
+  qudt:symbolToken "L_mn"^^xsd:token ;
+  rdfs:label "Mutual Inductance" ;
+  rdfs:seeAlso quantity:Inductance ;
+  skos:prefLabel "Mutual Inductance" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-36> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:NonActivePower
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "nonactive-power"^^xsd:string ;
+  qudt:applicableUnit unit:V-A ;
+  qudt:description "\\textit{Non-active Power}, for a two-terminal element or a two-terminal circuit under periodic conditions, is the quantity equal to the square root of the difference of the squares of the apparent power and the active power."^^xsd:string ;
+  qudt:latexDefinition "$Q^{'} = \\sqrt{{\\left | \\underline{S} \\right |}^2 - P^2}$, where $\\underline{S}$ is apparent power and $P$ is active power."^^xsd:string ;
+  qudt:symbol "Q'"^^xsd:string ;
+  qudt:symbolToken "Q'"^^xsd:token ;
+  rdfs:label "Non-active Power"^^xsd:string ;
+  rdfs:seeAlso quantity:ActivePower ;
+  rdfs:seeAlso quantity:ApparentPower ;
+  skos:prefLabel "Non-active Power"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-43> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Permeability
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "permeability"^^xsd:string ;
+  qudt:applicableUnit unit:H-PER-M ;
+  qudt:applicableUnit unit:HZ-PER-M ;
+  qudt:applicableUnit unit:RelativePermeability ;
+  qudt:applicableUnit unit:StatH-PER-CM ;
+  qudt:baseUnitDimensions "L \\cdot M/I^2 \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m/A^2 \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Permeability} is the degree of magnetization of a material that responds linearly to an applied magnetic field. In general permeability is a tensor-valued quantity. The definition given applies to an isotropic medium. For an anisotropic medium permeability is a second order tensor. In electromagnetism, permeability is the measure of the ability of a material to support the formation of a magnetic field within itself. In other words, it is the degree of magnetization that a material obtains in response to an applied magnetic field. Magnetic permeability is typically represented by the Greek letter $\\mu$. The term was coined in September, 1885 by Oliver Heaviside. The reciprocal of magnetic permeability is \\textit{Magnetic Reluctivity}."^^xsd:string ;
+  qudt:latexDefinition "$\\mu = \\frac{B}{H}$,  where $B$ is magnetic flux density,  and $H$ is magnetic field strength."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  qudt:symbolToken "mu"^^xsd:token ;
+  rdfs:label "Permeability"^^xsd:string ;
+  rdfs:seeAlso quantity:MagneticConstant ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  rdfs:seeAlso quantity:MagneticFluxDensity ;
+  rdfs:seeAlso quantity:PermeabilityOfVacuum ;
+  skos:exactMatch <http://dbpedia.org/resource/Permeability> ;
+  skos:prefLabel "Permeability"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Permeability_(electromagnetism)> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:PermeabilityOfVacuum
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  qudt:abbreviation "vacuum-permeability"^^xsd:string ;
+  qudt:applicableUnit unit:H-PER-M ;
+  qudt:description "\\textit{Permeability of Vacuum}, also known as \\textit{Magnetic Constant}, is a scalar constant $\\mu_0$ such that, in a vacuum the product wuth the magnetic field vector, $\\overrightarrow{H}$ is equal to the magnetic flux density vector, $\\overrightarrow{B}$."^^xsd:string ;
+  qudt:exactConstant "true"^^xsd:boolean ;
+  qudt:latexDefinition "$\\mu_0 = \\frac{\\overrightarrow{B}}{\\overrightarrow{H}}$, where $\\overrightarrow{B}$ is the B-Filed magnetic vector, and $\\overrightarrow{H}$ is the H-Field magnetic vector. The value of $\\mu_0$ is \\SI[per-mode=symbol]{\\approx 1.256637e-6}{\\henry\\per\\metre}."^^xsd:string ;
+  qudt:quantityKind quantity:Permittivity ;
+  qudt:quantityValue quantity:Value_MagneticConstant ;
+  qudt:symbol "\\mu_0"^^xsd:string ;
+  qudt:symbolToken "mu_0"^^xsd:token ;
+  voag:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Permeability of Vacuum"^^xsd:string ;
+  owl:sameAs quantity:MagneticConstant ;
+  skos:exactMatch <http://dbpedia.org/resource/Vacuum_permeability> ;
+  skos:prefLabel "Permeability of Vacuum"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=705-03-14> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Permeance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "permeance" ;
+  qudt:applicableUnit unit:HENRY ;
+  qudt:description "\\textit{Permeance} is the inverse of reluctance. Permeance is a measure of the quantity of flux for a number of current-turns in magnetic circuit. A magnetic circuit almost acts as though the flux is \"conducted\", therefore permeance is larger for large cross sections of a material and smaller for longer lengths. This concept is analogous to electrical conductance in the electric circuit."^^xsd:string ;
+  qudt:latexDefinition "$\\Lambda = \\frac{1}{R_m}$, where $R_m$ is reluctance."^^xsd:string ;
+  qudt:symbol "\\Lambda"^^xsd:string ;
+  rdfs:label "Permeance" ;
+  rdfs:seeAlso quantity:Reluctance ;
+  skos:prefLabel "Permeance" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Permeance> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Permittivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "permittivity"^^xsd:string ;
+  qudt:applicableUnit unit:AbF-PER-CM ;
+  qudt:applicableUnit unit:F-PER-M ;
+  qudt:applicableUnit unit:RelativePermittivity ;
+  qudt:baseUnitDimensions "A^2 \\cdot s^4/kg \\cdot m^3"^^xsd:string ;
+  qudt:baseUnitDimensions "I^2 \\cdot T^4/L^3 \\cdot M"^^xsd:string ;
+  qudt:description "\\textit{Permittivity} is a physical quantity that describes how an electric field affects, and is affected by a dielectric medium, and is determined by the ability of a material to polarize in response to the field, and thereby reduce the total electric field inside the material.  Permittivity is often a scalar valued quantity, however in the general case it is tensor-valued."^^xsd:string ;
+  qudt:latexDefinition "$\\epsilon = \\frac{D}{E}$, where $D$ is electric flux density and $E$ is electric field strength."^^xsd:string ;
+  qudt:symbol "\\epsilon"^^xsd:string ;
+  qudt:symbolToken "epsilon"^^xsd:token ;
+  rdfs:label "Permittivity"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricFieldStrength ;
+  rdfs:seeAlso quantity:ElectricFluxDensity ;
+  skos:exactMatch <http://dbpedia.org/resource/Permittivity> ;
+  skos:prefLabel "Permittivity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Permittivity?oldid=494094133> ;
+  prov:wasInfluencedBy <http://maxwells-equations.com/materials/permittivity.php> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:PermittivityOfVacuum
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "vacuum-permittivity"^^xsd:string ;
+  qudt:applicableUnit unit:F-PER-M ;
+  qudt:description "\\textit{Permittivity of Vacuum}, also known as the \\textit{electric constant}, is a constant whose value is \\SI{\\approx 6.854188e-12}{\\farad\\per\\metre}."^^xsd:string ;
+  qudt:latexDefinition "$\\epsilon = \\frac{\\mathbf{D}}{\\mathbf{E}}$, where $\\mathbf{D}$ is electric flux density and $\\mathbf{E}$ is electric field strength."^^xsd:string ;
+  qudt:symbol "\\epsilon_0"^^xsd:string ;
+  qudt:symbolToken "epsilon_0"^^xsd:token ;
+  rdfs:label "Permittivity of Vacuum"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricFieldStrength ;
+  rdfs:seeAlso quantity:ElectricFluxDensity ;
+  rdfs:seeAlso quantity:Permittivity ;
+  skos:exactMatch <http://dbpedia.org/resource/Permittivity> ;
+  skos:prefLabel "Permittivity of Vacuum"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:PhaseDifference
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "phase-difference" ;
+  qudt:applicableUnit unit:RADIAN ;
+  qudt:description "\\textit{Phase Difference} is the difference, expressed in electrical degrees or time, between two waves having the same frequency and referenced to the same point in time. Two oscillators that have the same frequency and different phases have a phase difference, and the oscillators are said to be out of phase with each other. The amount by which such oscillators are out of step with each other can be expressed in degrees from \\SI{0}{\\degree} to \\SI{360}{\\degree}, or in radians from 0 to \\num{2\\pi}. If the phase difference is 180 degrees ($\\pi$ radians), then the two oscillators are said to be in antiphase."^^xsd:string ;
+  qudt:latexDefinition "$\\varphi = \\varphi_u - \\varphi_i$, where $\\varphi_u$ is the initial phase of the voltage and $\\varphi_i$ is the initial phase of the electric current."^^xsd:string ;
+  qudt:symbol "\\varphi"^^xsd:string ;
+  qudt:symbolToken "varphi"^^xsd:token ;
+  rdfs:label "Phase Difference" ;
+  skos:prefLabel "Phase Difference" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Phase_(waves)#Phase_difference> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=103-07-06> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Polarizability
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:C2-M-PER-J ;
+  qudt:baseUnitDimensions "A^2 \\cdot s^4/kg"^^xsd:string ;
+  qudt:baseUnitDimensions "I^2 \\cdot T^4/M"^^xsd:string ;
+  qudt:description "\\textit{Polarizability} is the relative tendency of a charge distribution, like the electron cloud of an atom or molecule, to be distorted from its normal shape by an external electric field, which may be caused by the presence of a nearby ion or dipole. The electronic polarizability $\\alpha$ is defined as the ratio of the induced dipole moment of an atom to the electric field that produces this dipole moment. Polarizability is often a scalar valued quantity, however in the general case it is tensor-valued."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  rdfs:label "Polarizability"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Polarizability> ;
+  skos:prefLabel "Polarizability"^^xsd:string ;
+.
+quantity:PolarizationField
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "The Polarization Field is the vector field that expresses the density of permanent or induced electric dipole moments in a dielectric material. The polarization vector P is defined as the ratio of electric dipole moment per unit volume."^^xsd:string ;
+  qudt:symbol "P"^^xsd:string ;
+  rdfs:label "Polarization Field"^^xsd:string ;
+  skos:broader quantity:ElectricChargePerArea ;
+  skos:prefLabel "Polarization Field"^^xsd:string ;
+.
+quantity:PowerFactor
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "power-factor" ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Power Factor}, under periodic conditions, is the ratio of the absolute value of the active power $P$ to the apparent power $S$."^^xsd:string ;
+  qudt:latexDefinition "$\\lambda = \\left | P \\right | / \\left | S \\right |$, where $P$ is active power and $S$ is apparent power."^^xsd:string ;
+  qudt:symbol "\\lambda"^^xsd:string ;
+  qudt:symbolToken "lambda"^^xsd:token ;
+  rdfs:label "Power Factor" ;
+  rdfs:seeAlso quantity:ActivePower ;
+  rdfs:seeAlso quantity:ApparentPower ;
+  skos:prefLabel "Power Factor" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-46> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:PowerPerElectricCharge
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:V-PER-SEC ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/I \\cdot T^4"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/A \\cdot s^4"^^xsd:string ;
+  qudt:description "\\textit{Power Per Electric Charge} is the amount of energy generated by a unit of electric charge."^^xsd:string ;
+  rdfs:label "Power Per Electric Charge"^^xsd:string ;
+  skos:prefLabel "Power per Electric Charge"^^xsd:string ;
+.
+quantity:PoyntingVector
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "poynting-vector"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:description "\\textit{Poynting Vector} is the vector product of the electric field strength \\mathbf{E} and the magnetic field strength \\mathbf{H} of the electromagnetic field at a given point. The flux of the Poynting vector through a closed surface is equal to the electromagnetic power passing through this surface. For a periodic electromagnetic field, the time average of the Poynting vector is a vector of which, with certain reservations, the direction may be considered as being the direction of propagation of electromagnetic energy and the magnitude considered as being the average electromagnetic power flux density."^^xsd:string ;
+  qudt:latexDefinition "$\\mathbf{S} = \\mathbf{E}  \\times \\mathbf{H} $, where $\\mathbf{E}$ is electric field strength and \\mathbf{H}  is magnetic field strength."^^xsd:string ;
+  qudt:symbol "\\mathbf{S} "^^xsd:string ;
+  qudt:symbolToken "S"^^xsd:token ;
+  rdfs:label "Poynting Vector"^^xsd:string ;
+  skos:prefLabel "Poynting Vector"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-66> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:QualityFactor
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "quality-factor"^^xsd:string ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Quality Factor}, of a resonant circuit, is a measure of the \"goodness\" or quality of a resonant circuit. A higher value for this figure of merit correspondes to a more narrow bandwith, which is desirable in many applications. More formally, $Q$ is the ratio of power stored to power dissipated in the circuit reactance and resistance, respectively"^^xsd:string ;
+  qudt:latexDefinition "If $\\underline{Z} = R + jX$, then $Q = \\left | X \\right |/R$, where $\\underline{Z}$ is impedance, $R$ is resistance, and $X$ is reactance."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  qudt:symbolToken "Q"^^xsd:token ;
+  rdfs:label "Quality Factor" ;
+  rdfs:seeAlso quantity:Impedance ;
+  rdfs:seeAlso quantity:Resistance ;
+  skos:prefLabel "Quality Factor" ;
+  prov:wasInfluencedBy <http://en.sourcetronic.com/electrical-measurement-glossary/quality-factor.html> ;
+  prov:wasInfluencedBy <http://www.allaboutcircuits.com/vol_2/chpt_6/6.html> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:QuarticElectricDipoleMomentPerCubicEnergy
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:applicableUnit unit:QuarticCoulombMeterPerCubicEnergy ;
+  qudt:baseUnitDimensions "A^4 \\cdot s^{10}/kg^3 \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I^4 \\cdot T^{10}/L^2 \\cdot M^3"^^xsd:string ;
+  qudt:description "\\textit{Quartic Electric Dipole Moment per Cubic Energy} is"^^xsd:string ;
+  rdfs:label "Quartic Electric Dipole Moment per Cubic Energy"^^xsd:string ;
+  skos:prefLabel "Quartic Electric Dipole Moment per Cubic Energy"^^xsd:string ;
+.
+quantity:Reactance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "reactance" ;
+  qudt:applicableUnit unit:OHM ;
+  qudt:description "\\textit{Reactance} is the opposition of a circuit element to a change of electric current or voltage, due to that element's inductance or capacitance. A built-up electric field resists the change of voltage on the element, while a magnetic field resists the change of current. The notion of reactance is similar to electrical resistance, but they differ in several respects. Capacitance and inductance are inherent properties of an element, just like resistance."^^xsd:string ;
+  qudt:latexDefinition "$X = im \\underline{Z}$, where $\\underline{Z}$ is impedance and $im$ denotes the imaginary part."^^xsd:string ;
+  qudt:symbol "X"^^xsd:string ;
+  qudt:symbolToken "X"^^xsd:token ;
+  rdfs:label "Reactance" ;
+  rdfs:seeAlso quantity:Impedance ;
+  owl:sameAs <http://dbpedia.org/resource/Electrical_reactance> ;
+  skos:prefLabel "Reactance" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electrical_reactance?oldid=494180019> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-46> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ReactivePower
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "reactive-power" ;
+  qudt:applicableUnit unit:V-A ;
+  qudt:description "\\textit{Reactive Power}, for a linear two-terminal element or two-terminal circuit, under sinusoidal conditions, is the quantity equal to the product of the apparent power $S$ and the sine of the displacement angle $\\psi$. The absolute value of the reactive power is equal to the non-active power. The ISO (and SI) unit for reactive power is the voltampere. The special name \\textit{var} and symbol \\textit{var} are given in IEC 60027 1."^^xsd:string ;
+  qudt:latexDefinition "$Q = lm \\underline{S}$, where $\\underline{S}$ is complex power. Alternatively expressed as: $Q = S \\cdot \\sin  \\psi$, where $\\psi$ is the displacement angle."^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  qudt:symbolToken "Q"^^xsd:token ;
+  rdfs:label "Reactive Power" ;
+  rdfs:seeAlso quantity:ComplexPower ;
+  skos:prefLabel "Reactive Power" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-44> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:RelativePermeability
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "rel-permeability"^^xsd:string ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Permeability} is the ratio of permability to that of a vacuum."^^xsd:string ;
+  qudt:latexDefinition "$\\mu = \\frac{B}{H}$,  where $B$ is magnetic flux density,  and $H$ is magnetic field strength."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  qudt:symbolToken "mu"^^xsd:token ;
+  rdfs:label "Relative Permeability"^^xsd:string ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  rdfs:seeAlso quantity:MagneticFluxDensity ;
+  rdfs:seeAlso quantity:Permeability ;
+  rdfs:seeAlso quantity:PermeabilityOfVacuum ;
+  skos:exactMatch <http://dbpedia.org/resource/Permeability> ;
+  skos:prefLabel "Relative Permeability"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:RelativePermittivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "rel-permittivity"^^xsd:string ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Permittivity} is the ration of permittivity to the permittivity of a vacuum."^^xsd:string ;
+  qudt:latexDefinition "$\\epsilon_r = \\epsilon / \\epsilon_0$, where $\\epsilon$ is permittivity and $\\epsilon_0$ is the electric constant."^^xsd:string ;
+  qudt:symbol "\\epsilon_r"^^xsd:string ;
+  qudt:symbolToken "epsilon-r"^^xsd:token ;
+  rdfs:label "Relative Permittivity"^^xsd:string ;
+  rdfs:seeAlso quantity:Permittivity ;
+  rdfs:seeAlso quantity:PermittivityOfVacuum ;
+  skos:exactMatch <http://dbpedia.org/resource/Permittivity> ;
+  skos:prefLabel "Relative Permittivity"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Reluctance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "reluctance" ;
+  qudt:applicableUnit unit:PER-HENRY ;
+  qudt:description "\\textit{Reluctance} or magnetic resistance, is a concept used in the analysis of magnetic circuits. It is analogous to resistance in an electrical circuit, but rather than dissipating electric energy it stores magnetic energy. In likeness to the way an electric field causes an electric current to follow the path of least resistance, a magnetic field causes magnetic flux to follow the path of least magnetic reluctance. It is a scalar, extensive quantity, akin to electrical resistance."^^xsd:string ;
+  qudt:latexDefinition "$R_m = \\frac{U_m}{\\Phi}$, where $U_m$ is magnetic tension, and $\\Phi$ is magnetic flux."^^xsd:string ;
+  qudt:symbol "R_m"^^xsd:string ;
+  rdfs:label "Reluctance" ;
+  rdfs:seeAlso quantity:MagneticFlux ;
+  rdfs:seeAlso quantity:MagneticTension ;
+  skos:prefLabel "Reluctance" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Magnetic_reluctance> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Resistance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:AbOHM ;
+  qudt:applicableUnit unit:OHM ;
+  qudt:applicableUnit unit:PlanckResistance ;
+  qudt:applicableUnit unit:StatOHM ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/I^2 \\cdot T^3"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/A^2 \\cdot s^3"^^xsd:string ;
+  qudt:description "The electrical resistance of an object is a measure of its opposition to the passage of a steady electric current."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_Planck-L2MT-1Q-2 ;
+  qudt:latexDefinition "$R = \\frac{u}{i}$, where $u$ is instantaneous voltage and $i$ is instantaneous electric current."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  qudt:symbolToken "R"^^xsd:token ;
+  rdfs:label "Resistance"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricCurrent ;
+  rdfs:seeAlso quantity:Impedance ;
+  rdfs:seeAlso quantity:InstantaneousPower ;
+  skos:exactMatch <http://dbpedia.org/resource/Resistance> ;
+  skos:prefLabel "Resistance"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-45> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Resistivity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "resistivity" ;
+  qudt:applicableUnit unit:OHM-M ;
+  qudt:description "\\textit{Resistivity} is the inverse of the conductivity when this inverse exists."^^xsd:string ;
+  qudt:latexDefinition "$\\rho = \\frac{1}{\\sigma}$, if it exists, where $\\sigma$ is conductivity."^^xsd:string ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  qudt:symbolToken "rho"^^xsd:token ;
+  rdfs:label "Resistivity" ;
+  rdfs:seeAlso quantity:Conductivity ;
+  skos:prefLabel "Resistivity" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-12-04> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:ScalarMagneticPotential
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "scalar-magnetic-potential"^^xsd:string ;
+  qudt:applicableUnit unit:AMPERE ;
+  qudt:description "\\textit{Scalar Magnetic Potential} is the scalar potential of an irrotational magnetic field strength. The negative of the gradient of the scalar magnetic potential is the irrotational magnetic field strength. The magnetic scalar potential is not unique since any constant scalar field can be added to it without changing its gradient."^^xsd:string ;
+  qudt:latexDefinition "$\\mathbf{H} = -grad V_m$, where $\\mathbf{H}$ is magnetic field strength."^^xsd:string ;
+  qudt:symbol "V_m"^^xsd:string ;
+  qudt:symbol "\\varphi"^^xsd:string ;
+  qudt:symbolToken "V_m"^^xsd:token ;
+  rdfs:label "Scalar Magnetic Potential"^^xsd:string ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  skos:prefLabel "Scalar Magnetic Potential"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-58> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:SourceVoltage
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "source-voltage"^^xsd:string ;
+  qudt:applicableUnit unit:VOLT ;
+  qudt:description """\\textit{Source Voltage}, also referred to as \\textit{Source Tension} is the voltage between the two terminals of a voltage source when there is no
+
+electric current through the source. The name \\textit{electromotive force} with the abbreviation \\textit{EMF} and the symbol $E$ is deprecated."""^^xsd:string ;
+  qudt:symbol "U_s"^^xsd:string ;
+  qudt:symbolToken "U_s"^^xsd:token ;
+  rdfs:label "Source Voltage"^^xsd:string ;
+  skos:prefLabel "Source Voltage"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:SpeedOfLight
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:description "\\textit{Speed of Light} is the speed of electomagnetic waves in vacuum and has the value \\SI{2.99792458e8}{\\metre\\per\\second}."^^xsd:string ;
+  qudt:latexDefinition "$c_0 = 1 / \\sqrt{\\epsilon_0 \\mu_0}$, where {\\epsilon_0} is the permittivity of vacuum, and $\\mu_0$ is the magnetic constant."^^xsd:string ;
+  qudt:symbol "C_0"^^xsd:string ;
+  qudt:symbolToken "c_0"^^xsd:token ;
+  rdfs:seeAlso quantity:MagneticConstant ;
+  rdfs:seeAlso quantity:PermittivityOfVacuum ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=113-01-34> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Susceptance
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "susceptance" ;
+  qudt:applicableUnit unit:SIEMENS ;
+  qudt:description "\\textit{Susceptance} is the imaginary part of admittance. The inverse of admittance is impedance and the real part of admittance is conductance. "^^xsd:string ;
+  qudt:latexDefinition "$B = \\lim{\\underline{Y}}$, where $\\underline{Y}$ is admittance."^^xsd:string ;
+  qudt:symbol "B"^^xsd:string ;
+  qudt:symbolToken "B"^^xsd:token ;
+  rdfs:label "Susceptance" ;
+  rdfs:seeAlso quantity:Conductance ;
+  rdfs:seeAlso quantity:Impedance ;
+  owl:sameAs <http://dbpedia.org/resource/Susceptance> ;
+  skos:prefLabel "Susceptance" ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Susceptance?oldid=430151986> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-12-54> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:TotalCurrent
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "displacement-current"^^xsd:string ;
+  qudt:applicableUnit unit:AMPERE ;
+  qudt:description "\\textit{Total Current} is the sum of the electric current that is flowing through a surface and the displacement current."^^xsd:string ;
+  qudt:latexDefinition "$I_{tot}= I + I_D$, where $I$ is electric current and $I_D$ is displacement current."^^xsd:string ;
+  qudt:symbol "I_t"^^xsd:string ;
+  qudt:symbol "I_{tot}"^^xsd:string ;
+  qudt:symbolToken "I_tot"^^xsd:token ;
+  rdfs:label "Total Current"^^xsd:string ;
+  rdfs:seeAlso quantity:DisplacementCurrent ;
+  rdfs:seeAlso quantity:ElectricCurrent ;
+  skos:prefLabel "Total Current"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:TotalCurrentDensity
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "displacement-current-density"^^xsd:string ;
+  qudt:applicableUnit unit:A-PER-M2 ;
+  qudt:description "\\textit{Total Current Density} is the sum of the electric current density and the displacement current density."^^xsd:string ;
+  qudt:latexDefinition "$J_{tot}= J + J_D$, where $J$ is electric current density and $J_D$ is displacement current density."^^xsd:string ;
+  qudt:symbol "J_t"^^xsd:string ;
+  qudt:symbol "J_{tot}"^^xsd:string ;
+  qudt:symbolToken "J_tot"^^xsd:token ;
+  rdfs:label "Total Current Density"^^xsd:string ;
+  rdfs:seeAlso quantity:DisplacementCurrentDensity ;
+  rdfs:seeAlso quantity:ElectricCurrentDensity ;
+  skos:prefLabel "Total Current Density"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:Turns
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "turns" ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Turns} is the number of turns in a winding."^^xsd:string ;
+  qudt:symbol "N"^^xsd:string ;
+  rdfs:label "Turns" ;
+  skos:prefLabel "Turns" ;
+.
+quantity:Voltage
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:Longdescription """\\textit{Voltage}, also referred to as \\textit{Electric Tension}, is the difference between electrical potentials of two points. For an electric field within a medium, $U_{ab} = \\int_{r_a(C)}^{r_b} (E_{dr})$, where $E$ is electric field strength.
+
+
+
+For an irrotational electric field, the voltage is independent of the path between the two points $a$ and $b$."""^^xsd:string ;
+  qudt:abbreviation "potential"^^xsd:string ;
+  qudt:applicableUnit unit:VOLT ;
+  qudt:description "\\textit{Voltage} is"^^xsd:string ;
+  qudt:latexDefinition "$\\U_{ab} = V_a - V_b$, where $V_a$ and $V_b$ are electric potentials at points $a$ and $b$, respectively."^^xsd:string ;
+  qudt:symbol "U"^^xsd:string ;
+  qudt:symbol "U_{ab}"^^xsd:string ;
+  qudt:symbolToken "U"^^xsd:token ;
+  rdfs:label "Voltage"^^xsd:string ;
+  owl:sameAs quantity:EnergyPerElectricCharge ;
+  skos:broader quantity:EnergyPerElectricCharge ;
+  skos:closeMatch <http://dbpedia.org/resource/Category:Units_of_electrical_potential> ;
+  skos:prefLabel "Voltage"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:VoltagePhasor
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  qudt:abbreviation "voltage-phasor" ;
+  qudt:applicableUnit unit:VOLT ;
+  qudt:description "\\textit{Voltage Phasor} is a representation of voltage as a sinusoidal integral quantity using a complex quantity whose argument is equal to the initial phase and whose modulus is equal to the root-mean-square value. A phasor is a constant complex number, usually expressed in exponential form, representing the complex amplitude (magnitude and phase) of a sinusoidal function of time. Phasors are used by electrical engineers to simplify computations involving sinusoids, where they can often reduce a differential equation problem to an algebraic one."^^xsd:string ;
+  qudt:latexDefinition "When $u = \\hat{U} \\cos{(\\omega t + \\alpha)}$, where $u$ is the voltage, $\\omega$ is angular frequency, $t$ is time, and $\\alpha$ is initial phase, then $\\underline{U} = Ue^{ja}$."^^xsd:string ;
+  qudt:symbol "\\underline{U}"^^xsd:string ;
+  rdfs:label "Voltage Phasor" ;
+  skos:prefLabel "Voltage Phasor" ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=131-11-26> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:VolumicElectromagneticEnergy
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "volumic-electromagnetic-energy"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-M3 ;
+  qudt:description "\\textit{Volumic Electromagnetic Energy}, also known as the \\textit{Electromagnetic Energy Density}, is the energy associated with an electromagnetic field, per unit volume of the field."^^xsd:string ;
+  qudt:latexDefinition "$w = (1/2) ( \\mathbf{E} \\cdot \\mathbf{D} + \\mathbf{B} \\cdot \\mathbf{H})$, where $\\mathbf{E}$ is electric field strength, $\\mathbf{D}$ is electric flux density, $\\mathbf{M}$ is magnetic flux density, and $\\mathbf{H}$ is magnetic field strength."^^xsd:string ;
+  qudt:symbol "w"^^xsd:string ;
+  qudt:symbolToken "w"^^xsd:token ;
+  rdfs:label "Volumic Electromagnetic Energy"^^xsd:string ;
+  rdfs:seeAlso quantity:ElectricFieldStrength ;
+  rdfs:seeAlso quantity:ElectricFluxDensity ;
+  rdfs:seeAlso quantity:MagneticFieldStrength ;
+  rdfs:seeAlso quantity:MagneticFluxDensity ;
+  owl:sameAs quantity:ElectromagneticEnergyDensity ;
+  skos:prefLabel "Volumic Electromagnetic Energy"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-64> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+unit:KW
+  rdf:type qudt:ElectricPowerUnit ;
+.
+unit:MegaW
+  rdf:type qudt:ElectricPowerUnit ;
+.
+unit:MilliW
+  rdf:type qudt:ElectricPowerUnit ;
+.
+unit:WATT
+  rdf:type qudt:ElectricPowerUnit ;
+.

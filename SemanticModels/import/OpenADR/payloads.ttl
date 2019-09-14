@@ -1,0 +1,179 @@
+# baseURI: http://docs.oasis-open.org/ns/energyinterop/201110/payloads
+# imports: http://docs.oasis-open.org/ns/energyinterop/201110
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: payloads
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix energyinterop: <http://docs.oasis-open.org/ns/energyinterop/201110#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix payloads: <http://docs.oasis-open.org/ns/energyinterop/201110/payloads#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+energyinterop:EventResponses
+  dc:description "optIn or optOut responses for received events"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110#eventResponses" ;
+.
+<http://docs.oasis-open.org/ns/energyinterop/201110/payloads>
+  rdf:type owl:Ontology ;
+  owl:imports <http://docs.oasis-open.org/ns/energyinterop/201110> ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://docs.oasis-open.org/ns/energyinterop/201110/payloads, http://docs.oasis-open.org/ns/energyinterop/201110/payloads, http://docs.oasis-open.org/ns/energyinterop/201110/payloads, http://docs.oasis-open.org/ns/energyinterop/201110/payloads, http://docs.oasis-open.org/ns/energyinterop/201110/payloads"^^xsd:string ;
+.
+payloads:EiCreatedEvent
+  rdf:type owl:Class ;
+  dc:description "Respond to a DR Event with optIn or optOut"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#eiCreatedEvent" ;
+  rdfs:label "Ei created event"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Indicate whether received payload is acceptable"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EiResponse ;
+      owl:onProperty payloads:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "optIn or optOut responses for received events"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:EventResponses ;
+      owl:onProperty payloads:eventResponsesRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty payloads:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty payloads:eiResponseRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty payloads:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty payloads:eventResponsesRef ;
+    ] ;
+.
+payloads:EiRequestEvent
+  rdf:type owl:Class ;
+  dc:description "Request Event from a VTN in pull mode"^^xsd:string ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#eiRequestEvent" ;
+  rdfs:label "Ei request event"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "A ID used to match up a logical transaction request and response"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is payloads:RequestIDDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty payloads:requestID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      dc:description "Limit the number of events contained in the oadrDistributeEvent payload"^^xsd:string ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "2"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is payloads:ReplyLimitDatatype. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:unsignedInt."^^xsd:string ;
+      owl:allValuesFrom xsd:unsignedInt ;
+      owl:onProperty payloads:replyLimit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom energyinterop:VenID ;
+      owl:onProperty payloads:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty payloads:requestID ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty payloads:venIDRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty payloads:replyLimit ;
+    ] ;
+.
+payloads:ReplyLimitDatatype
+  rdf:type rdfs:Datatype ;
+  rdfs:label "Reply limit datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:unsignedInt ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:unsignedInt ;
+    ] ;
+.
+payloads:ReportToFollowDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "Indicates if report (in the form of UpdateReport) to be returned following cancellation of Report"^^xsd:string ;
+  rdfs:label "Report to follow datatype"^^xsd:string ;
+  rdfs:subClassOf xsd:boolean ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:boolean ;
+    ] ;
+.
+payloads:RequestIDDatatype
+  rdf:type rdfs:Datatype ;
+  dc:description "A ID used to match up a logical transaction request and response"^^xsd:string ;
+  rdfs:label "Request IDDatatype"^^xsd:string ;
+  rdfs:subClassOf xsd:string ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:onDatatype xsd:string ;
+    ] ;
+.
+payloads:eiResponseRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#eiResponse" ;
+  rdfs:label "ei response ref"^^xsd:string ;
+.
+payloads:eventResponsesRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#eventResponses" ;
+  rdfs:label "event responses ref"^^xsd:string ;
+.
+payloads:replyLimit
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#replyLimit" ;
+  rdfs:label "reply limit"^^xsd:string ;
+.
+payloads:requestID
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#requestID" ;
+  rdfs:label "request ID"^^xsd:string ;
+.
+payloads:venIDRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://docs.oasis-open.org/ns/energyinterop/201110/payloads#venID" ;
+  rdfs:label "ven IDRef"^^xsd:string ;
+.
+dc:description
+  rdfs:label "description"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.

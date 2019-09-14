@@ -1,0 +1,1617 @@
+# baseURI: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/schema/vaem
+# imports: http://www.w3.org/ns/prov
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/nidr>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Units of Measure"^^xsd:string ;
+  dc:title "QUDT Units Vocabulary (without dimensions) Version 1.1"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science and Engineering Units"^^xsd:string ;
+  vaem:hasGraphRole vaem:CurationGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used units. This comprises the SI and many non-SI Units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2011-06-01 15:18:25 -0700 (Wed, 01 Jun 2011) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.2.1"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:imports <http://www.w3.org/ns/prov> ;
+  owl:versionIRI <http://qudt.org/1.1/vocab/unit> ;
+  owl:versionInfo "$Id: OVG_units-qudt-(v1.1).ttl 4990 2011-06-01 22:18:25Z RalphHodgson $"^^xsd:string ;
+.
+qudt:AbbreviationRule
+  rdf:type owl:Class ;
+  rdfs:label "Abbreviation Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:NameConstructionRule ;
+.
+qudt:COMMENT_GUC-001
+  rdf:type qudt:SP811-Comment ;
+  qudt:description "The SI unit of time (actually time interval) is the second (s) and should be used in all technical calculations. When time relates to calendar cycles, the minute (min), hour (h), and day (d) might be necessary. For example, the kilometer per hour (km/h) is the usual unit for expressing vehicular speeds. Although there is no universally accepted symbol for the year, Ref. [4: ISO 80000-3] suggests the symbol a."^^xsd:string ;
+  vaem:title "Time and rotational frequency"^^xsd:string ;
+  rdfs:label "General Usage Comment: Time and rotational frequency"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.1> ;
+.
+qudt:COMMENT_GUC-002
+  rdf:type qudt:SP811-Comment ;
+  qudt:description "The SI unit of volume is the cubic meter (m3) and may be used to express the volume of any substance, whether solid, liquid, or gas. The liter (L) is a special name for the cubic decimeter (dm3), but the CGPM recommends that the liter not be used to give the results of high accuracy measurements of volumes [1, 2]. Also, it is not common practice to use the liter to express the volumes of solids nor to use multiples of the liter such as the kiloliter (kL) [see section 6.2.8, and also Table 6, footnote (b)]."^^xsd:string ;
+  vaem:title "Volume"^^xsd:string ;
+  rdfs:label "General Usage Comment: Volume"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.2> ;
+.
+qudt:COMMENT_GUC-003
+  rdf:type qudt:SP811-Comment ;
+  qudt:description "In science and technology, the weight of a body in a particular reference frame is defined as the force that gives the body an acceleration equal to the local acceleration of free fall in that reference frame [4: ISO 80000-4]. Thus the SI unit of the quantity weight defined in this way is the newton (N). When the reference frame is a celestial object, Earth for example, the weight of a body is commonly called the local force of gravity on the body."^^xsd:string ;
+  vaem:title "Weight"^^xsd:string ;
+  rdfs:label "General Usage Comment: Weight"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.3> ;
+.
+qudt:COMMENT_GUC-004
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """The terms atomic weight and molecular weight are obsolete and thus should be avoided. They have been replaced by the equivalent but preferred terms relative atomic mass, symbol Ar, and relative molecular mass, symbol Mr, respectively [4: ISO 31-8], which better reflect their definitions. Similar to atomic weight and molecular weight, relative atomic mass and relative molecular mass are quantities of dimension one and are expressed simply as numbers. The definitions of these quantities are as follows [4: ISO 31-8]: 
+
+Relative atomic mass (formerly atomic weight): ratio of the average mass per atom of an element to 1/12 of the mass of the atom of the nuclide 12C. 
+
+Relative molecular mass (formerly molecular weight): ratio of the average mass per molecule or specified entity of a substance to 1/12 of the mass of an atom of the nuclide 12C."""^^xsd:string ;
+  vaem:title "Relative atomic mass and relative molecular mass"^^xsd:string ;
+  rdfs:label "General Usage Comment: Relative atomic mass and relative molecular mass"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.4> ;
+.
+qudt:COMMENT_GUC-005
+  rdf:type qudt:SP811-Comment ;
+  qudt:description "As discussed in section 4.2.1.1, Celsius temperature (t) is defined in terms of thermodynamic temperature (T) by the equation t = T - T0, where T0 = 273.15 K by definition. This implies that the numerical value of a given temperature interval or temperature difference whose value is expressed in the unit degree Celsius (°C) is equal to the numerical value of the same interval or difference when its value is expressed in the unit kelvin (K); or in the notation of section 7.1, note 2, {Δt }°C = {ΔT}K. Thus temperature intervals or temperature differences may be expressed in either the degree Celsius or the kelvin using the same numerical value.	"^^xsd:string ;
+  vaem:title "Temperature interval and temperature difference"^^xsd:string ;
+  rdfs:label "General Usage Comment: Temperature interval and temperature difference"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.5> ;
+.
+qudt:COMMENT_GUC-006
+  rdf:type qudt:SP811-Comment ;
+  qudt:description "The following section discusses amount of substance, and the subsequent nine sections, which are based on Ref. [4: ISO 31-8] and which are succinctly summarized in Table 12, discuss quantities that are quotients involving amount of substance, volume, or mass. In the table and its associated sections, symbols for substances are shown as subscripts, for example, xB, nB, bB. However, it is generally preferable to place symbols for substances and their states in parentheses immediately after the quantity symbol, for example n(H2SO4). (For a detailed discussion of the use of the SI in physical chemistry, see the book cited in Ref.[6], note 3.)		"^^xsd:string ;
+  vaem:title "Amount of substance, concentration, molality, and the like"^^xsd:string ;
+  rdfs:label "General Usage Comment: Amount of substance, concentration, molality, and the like"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6> ;
+.
+qudt:COMMENT_GUC-007
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: n (also v).   SI unit: mole (mol).
+
+Definition: See section A.7.
+
+Notes:
+
+1. Amount of substance is one of the seven base quantities upon which the SI is founded (see section 4.1 and Table 1).
+
+2. In general, n(xB) = n(B) / x, where x is a number. Thus, for example, if the amount of substance of H2SO4 is 5 mol, the amount of substance of (1/3)H2SO4 is 15 mol: n[(1/3) H2 SO 4] = 3n(H2SO4)."""^^xsd:string ;
+  vaem:title "Time and rotational frequency"^^xsd:string ;
+  rdfs:label "General Usage Comment: Amount of substance"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.1> ;
+.
+qudt:COMMENT_GUC-008
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: xB (also yB).       SI unit: one (1) (amount-of-substance fraction is a quantity of dimension one).
+
+Definition: ratio of the amount of substance of B to the amount of substance of the mixture: xB = nB/n.
+
+Notes:
+
+1. This quantity is commonly called “mole fraction of B” but this Guide prefers the name “amount of- substance fraction of B,” because it does not contain the name of the unit mole (compare kilogram fraction to mass fraction).
+
+2. For a mixture composed of substances A, B, C, . . . , nA + nB + nC + ...  
+
+3. A related quantity is amount-of-substance ratio of B (commonly called “mole ratio of solute B”), symbol rB. It is the ratio of the amount of substance of B to the amount of substance of the solvent substance: rB = nB/nS. For a single solute C in a solvent substance (a one-solute solution), rC = xC/(1 - xC). This follows from the relations n = nC + nS, xC = nC / n, and rC = nC / nS, where the solvent substance S can itself be a mixture."""^^xsd:string ;
+  vaem:title "Mole fraction of B; amount-of-substance fraction of B"^^xsd:string ;
+  rdfs:label "General Usage Comment: Mole fraction of B; amount-of-substance fraction of B"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.2> ;
+.
+qudt:COMMENT_GUC-009
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: Vm.       SI unit: cubic meter per mole (m3/mol).
+
+Definition: volume of a substance divided by its amount of substance: Vm = V/n.
+
+Notes:
+
+1. The word “molar” means “divided by amount of substance.”
+
+2. For a mixture, this term is often called “mean molar volume.”
+
+3. The amagat should not be used to express molar volumes or reciprocal molar volumes. (One amagat is the molar volume Vm of a real gas at p = 101 325 Pa and T = 273.15 K and is approximately equal to 22.4 × 10-3 m3/mol. The name “amagat” is also given to 1/Vm of a real gas at p = 101 325 Pa and T = 273.15 K and in this case is approximately equal to 44.6 mol/m3.) solvent substance S can itself be a mixture."""^^xsd:string ;
+  vaem:title "Molar volume"^^xsd:string ;
+  rdfs:label "General Usage Comment: Molar volume"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.3> ;
+.
+qudt:COMMENT_GUC-010
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol:	M.       SI unit: kilogram per mole (kg/mol).
+
+Definition: mass of a substance divided by its amount of substance: M = m/n.
+
+Notes:
+1. For a mixture, this term is often called “mean molar mass.”
+
+2. The molar mass of a substance B of definite chemical composition is given by M(B) = Mr(B) × 10-3 kg/mol = Mr(B) kg/kmol = Mr g/mol, where Mr(B) is the relative molecular mass of B (see section 8.4). The molar mass of an atom or nuclide X is M(X) = Ar(X) × 10-3 kg/mol = Ar(X) kg/kmol = Ar(X) g/mol, where Ar(X) is the relative atomic mass of X (see section 8.4)."""^^xsd:string ;
+  vaem:title "Molar mass"^^xsd:string ;
+  rdfs:label "General Usage Comment: Molar mass"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.4> ;
+.
+qudt:COMMENT_GUC-011
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: cB.       SI unit: mole per cubic meter (mol/m3).
+
+Definition: amount of substance of B divided by the volume of the mixture: cB = nB/V. 
+
+Notes:
+
+1. This Guide prefers the name “amount-of-substance concentration of B” for this quantity because it is unambiguous. However, in practice, it is often shortened to amount concentration of B, or even simply to concentration of B. Unfortunately, this last form can cause confusion because there are several different “concentrations,” for example, mass concentration of B, ρB = mB/V; and molecular concentration of B, CB = NB/V, where NB is the number of molecules of B.
+
+2. The term normality and the symbol N should no longer be used because they are obsolete. One should avoid writing, for example, “a 0.5 N solution of H2SO4” and write instead “a solution having an amount-of-substance concentration of c [(1/2)H2SO4]) = 0.5 mol/dm3” (or 0.5 kmol/m3 or 0.5 mol/L since 1 mol/dm3 = 1 kmol/m3 = 1 mol/L)."""^^xsd:string ;
+  vaem:title "Concentration of B; amount-of-substance concentration of B"^^xsd:string ;
+  rdfs:label "General Usage Comment: Concentration of B; amount-of-substance concentration of B"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.5> ;
+.
+qudt:COMMENT_GUC-012
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: φB.       SI unit: one (1) (volume fraction is a quantity of dimension one).
+
+Definition: for a mixture of substances A, B, C, . . . ,	
+
+where xA, xB, xC, . . . are the amount-of-substance fractions of A, B, C, . . ., V*m,A , V* m,B , V* m,C , . . . are the molar volumes of the pure substances A, B, C, . . . at the same temperature and pressure, and where the summation is over all the substances A, B, C, . . . so that ΣxA = 1.	"""^^xsd:string ;
+  vaem:title "Volume fraction of B"^^xsd:string ;
+  rdfs:label "General Usage Comment: Volume fraction of B"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.6> ;
+.
+qudt:COMMENT_GUC-013
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: ρ.       SI unit: kilogram per cubic meter (kg/m3).
+
+Definition: mass of a substance divided by its volume: ρ = m / V.
+
+Notes:
+
+1. This Guide prefers the name “mass density” for this quantity because there are several different “densities,” for example, number density of particles, n = N / V; and charge density, ρ = Q / V.
+
+2. Mass density is the reciprocal of specific volume (see section 8.6.9): ρ = 1 / ν."""^^xsd:string ;
+  vaem:title "Mass density; density"^^xsd:string ;
+  rdfs:label "General Usage Comment: Mass density; density"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.7> ;
+.
+qudt:COMMENT_GUC-014
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: bB (also mB).       SI unit: mole per kilogram (mol/kg).
+
+Definition: amount of substance of solute B in a solution divided by the mass of the solvent: bB = nB / mA.
+
+Note: The term molal and the symbol m should no longer be used because they are obsolete. One should use instead the term molality of solute B and the unit mol/kg or an appropriate decimal multiple or submultiple of this unit. (A solution having, for example, a molality of 1 mol/kg was often called a 1 molal solution, written 1 m solution.)"""^^xsd:string ;
+  vaem:title "Molality of solute B"^^xsd:string ;
+  rdfs:label "General Usage Comment: Molality of solute B"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.8> ;
+.
+qudt:COMMENT_GUC-015
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: ν.      SI unit: cubic meter per kilogram (m3/kg).
+
+Definition: volume of a substance divided by its mass: ν = V / m.
+
+Note: Specific volume is the reciprocal of mass density (see section 8.6.7): ν = 1 / ρ."""^^xsd:string ;
+  vaem:title "Specific volume"^^xsd:string ;
+  rdfs:label "General Usage Comment: Specific volume"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.9> ;
+.
+qudt:COMMENT_GUC-016
+  rdf:type qudt:SP811-Comment ;
+  qudt:description """Quantity symbol: wB.      SI unit: one (1) (mass fraction is a quantity of dimension one).
+
+Definition: mass of substance B divided by the mass of the mixture: wBB = mB / m."""^^xsd:string ;
+  vaem:title "Mass fraction of B"^^xsd:string ;
+  rdfs:label "General Usage Comment: Mass fraction of B"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.6.10> ;
+.
+qudt:COMMENT_GUC-017
+  rdf:type qudt:SP811-Comment ;
+  qudt:description "This section briefly introduces logarithmic quantities and units. It is based on Ref. [5: IEC 60027-3], which should be consulted for further details. Two of the most common logarithmic quantities are level-of a-field-quantity, symbol LF, and level-of-a-power-quantity, symbol LP; and two of the most common logarithmic units are the units in which the values of these quantities are expressed: the neper, symbol Np, or the bel, symbol B, and decimal multiples and submultiples of the neper and bel formed by attaching SI prefixes to them, such as the millineper, symbol mNp (1 mNp = 0.001 Np), and the decibel, symbol dB (1 dB = 0.1 B)."^^xsd:string ;
+  vaem:title "Logarithmic quantities and units: level, neper, bel"^^xsd:string ;
+  rdfs:label "General Usage Comment: Logarithmic quantities and units: level, neper, bel"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.7> ;
+.
+qudt:COMMENT_GUC-018
+  rdf:type qudt:SP811-Comment ;
+  qudt:description "The proper SI units for expressing values of viscosity η (also called dynamic viscosity) and values of kinematic viscosity ν are, respectively, the pascal second (Pa·s) and the meter squared per second (m2/s) (and their decimal multiples and submultiples as appropriate). The CGS units commonly used to express values of these quantities, the poise (P) and the stoke (St), respectively [and their decimal submultiples the centipoise (cP) and the centistoke (cSt)], are not to be used; see section 5.3.1 and Table 10, which gives the relations 1 P = 0.1 Pa·s and 1 St = 10-4 m2/s."^^xsd:string ;
+  vaem:title "Viscosity"^^xsd:string ;
+  rdfs:label "General Usage Comment: Viscosity"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.8> ;
+.
+qudt:COMMENT_GUC-019
+  rdf:type qudt:SP811-Comment ;
+  qudt:description "Reference [4: ISO 31-0] has introduced the new adjectives “massic,” “volumic,” “areic,” and “lineic” into the English language based on their French counterparts: “massique,” “volumique,” “surfacique,” and “linéique.” They are convenient and NIST authors may wish to use them. They are equivalent, respectively, to “specific,” “density,” “surface . . . density,” and “linear . . . density,” as explained below."^^xsd:string ;
+  vaem:title "Massic, volumic, areic, lineic"^^xsd:string ;
+  rdfs:label "General Usage Comment: Massic, volumic, areic, lineic"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec08.html#8.9> ;
+.
+qudt:CapitalizationRule
+  rdf:type owl:Class ;
+  rdfs:label "Capitalization Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:GrammarRule ;
+.
+qudt:Comment
+  rdf:type owl:Class ;
+  rdfs:label "Comment"^^xsd:string ;
+  rdfs:subClassOf qudt:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:rationale ;
+    ] ;
+.
+qudt:FIG_NIR-UNIT-IDENTIFIER-EXAMPLE-MICROA
+  rdf:type qudt:Figure ;
+  qudt:figureCaption "UNIT Identifier Example: Micro Ampere"^^xsd:string ;
+  qudt:figureLabel "NIR-UNIT-IDENTIFIER-EXAMPLE-MICROA"^^xsd:string ;
+  qudt:imageLocation "../diagrams/UNIT-Identifier-Example-MicroA.png"^^xsd:anyURI ;
+  qudt:width "6.0"^^xsd:string ;
+  rdfs:label "FIG NIR-UNIT-IDENTIFIER-EXAMPLE-MICROA"^^xsd:string ;
+.
+qudt:FIG_NIR-UNIT-IDENTIFIER-SYNTAX
+  rdf:type qudt:Figure ;
+  qudt:figureCaption "UNIT Identifier Syntax"^^xsd:string ;
+  qudt:figureLabel "NIR-UNIT-IDENTIFIER-SYNTAX"^^xsd:string ;
+  qudt:imageLocation "../diagrams/UNIT-Identifier-Syntax.png"^^xsd:anyURI ;
+  qudt:width "6.0"^^xsd:string ;
+  rdfs:label "FIG NIR-UNIT-IDENTIFIER-SYNTAX"^^xsd:string ;
+.
+qudt:GeneralPrintingRule
+  rdf:type owl:Class ;
+  rdfs:label "General Printing Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:PrintingRule ;
+.
+qudt:GrammarRule
+  rdf:type owl:Class ;
+  dc:description "A grammar rule is concerned with issues such as correct capitalization, use of plural or singular names, punctuation, spacing, hyphenation and spelling."^^xsd:string ;
+  rdfs:label "Grammar Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:Rule ;
+.
+qudt:HumanReadableRule
+  rdf:type owl:Class ;
+  rdfs:label "Human Readable Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:Rule ;
+.
+qudt:IdentifierRule
+  rdf:type owl:Class ;
+  rdfs:label "Identifier Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:NameConstructionRule ;
+.
+qudt:MachineProcessableRule
+  rdf:type owl:Class ;
+  rdfs:label "Machine Processable Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:Rule ;
+.
+qudt:MathSymbolUsageRule
+  rdf:type owl:Class ;
+  rdfs:label "Math Symbol Usage Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:UsageRule ;
+.
+qudt:NameConstructionRule
+  rdf:type owl:Class ;
+  dc:description """General principles for the writing of unit symbols and numbers were first given by the 9th Conference Gènèrale des Poids et Mesures (CGPM) (1948, Resolution 7). 
+These were subsequently elaborated by ISO, IEC, and other international standards-developing bodies. 
+As a consequence, a general consensus now exists on how unit symbols and names, including prefix symbols and names, as well as quantity symbols, should be written and used and how the values of quantities should be expressed. 
+Compliance with these rules and style conventions, the most important of which are presented in this section, supports the readability of scientific and technical papers."""^^xsd:string ;
+  rdfs:label "Naming Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:Rule ;
+.
+qudt:PluralsRule
+  rdf:type owl:Class ;
+  rdfs:label "Plurals Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:GrammarRule ;
+.
+qudt:PreferredNameRule
+  rdf:type owl:Class ;
+  dc:description "There are no preferred name rules for this version of the QUDT Handbook."^^xsd:string ;
+  rdfs:label "Preferred Name Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:NameConstructionRule ;
+.
+qudt:PrintingRule
+  rdf:type owl:Class ;
+  dc:description "Printing rules are concerned with how quantities, units, dimensions and data types are expressed in human-readable texts."^^xsd:string ;
+  rdfs:label "Typesetting Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:Rule ;
+.
+qudt:PunctuationRule
+  rdf:type owl:Class ;
+  rdfs:label "Punctuation Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:GrammarRule ;
+.
+qudt:QUDT-Rule
+  rdf:type owl:Class ;
+  dc:description "QUDT extends the NIST rules with the following rules."^^xsd:string ;
+  rdfs:label "QUDT Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:Rule ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:Figure ;
+      owl:onProperty qudt:figure ;
+    ] ;
+.
+qudt:QuantityNameUsageRule
+  rdf:type owl:Class ;
+  dc:description """The value of a quantity is expressed as the product of a number and a unit, and the number multiplying the unit is the numerical value of the quantity expressed in that unit. The numerical value of a quantity depends on the choice of unit. Thus, the value of a particular quantity is independent of the choice of unit, although the numerical value is different for different units.
+
+Symbols for quantities are generally single letters set in an italic font, although they may be qualified by further information in subscripts or superscripts or in brackets. As examples, \"$C$\" is the recommended symbol for \"heat capacity\", \"$Cm$\" for \"molar heat capacity\", \"$Cm_p$\" for \"molar heat capacity at constant pressure\", and \"$Cm_V$\" for \"molar heat capacity at constant volume\". 
+
+Recommended names and symbols for quantities are listed in many standard references, such as the ISO~31 Quantities and Units, the Commission for Symbols, Units, Nomenclature, Atomic Masses and Fundamental Constants (SUNAMCO) of the International Union of Pure and Applied Physics (IUPAP) Red Book, Symbols, Units, Nomenclature and Fundamental Constants in Physics, and the IUPAC Green Book, Quantities, Units and Symbols in Physical Chemistry.
+
+However, symbols for quantities are recommendations (in contrast to symbols for units, for which the use of the correct form is mandatory). 
+In particular circumstances, users may wish to use a symbol of their own choice for a quantity, for example, to avoid a conflict arising from the use of the same symbol for two different quantities. In such cases, the meaning of the symbol is clearly stated.  However, neither the name of a quantity nor the symbol used to denote it should imply any particular choice of unit.
+
+Symbols for units are treated as mathematical entities.  In expressing the value of a quantity as the product of a numerical value and a unit, both the numerical value and the unit may be treated by the ordinary rules of algebra.  This procedure is described as the use of quantity calculus, or the algebra of quantities. 
+For example, the equation \\fbox{$T = 293 K$} may equally be written \\fbox{$T/K = 293$}.  It is often convenient to write the quotient of a quantity and a unit in this way for the heading of a column in a table, so that the entries in the table are all simply numbers. """^^xsd:string ;
+  rdfs:label "Quantity Name Usage Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:UsageRule ;
+.
+qudt:QuantityPrintingRule
+  rdf:type owl:Class ;
+  rdfs:label "Quantity Printing Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:PrintingRule ;
+.
+qudt:QuantitySymbolNameRule
+  rdf:type owl:Class ;
+  rdfs:label "Quantity Symbol Name Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:SymbolNameRule ;
+.
+qudt:QuantityValueExpressionRule
+  rdf:type owl:Class ;
+  dc:description "A value expression rule  stipulates how a quantified value should be written in human-readable text."^^xsd:string ;
+  rdfs:label "Quantity Value Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:UsageRule ;
+.
+qudt:RULE_GSP-005
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "Symbols representing purely descriptive terms (for example, the chemical elements) are expressed in a Roman character font, as are symbols representing mathematical constants that never change (for example, $\\pi$) and symbols representing explicitly defined functions or well-defined operators (for example, $\\Gamma(x)$ or $div$)."^^xsd:string ;
+  qudt:designator "R-GSP-005"^^xsd:string ;
+  qudt:example """\\textit{Chemical Elements}
+
+\\vspace{10pt}
+$\\rm Ar$\\; argon \\quad
+$\\rm B$ \\; boron \\quad
+$\\rm C$ \\; carbon"""^^xsd:string ;
+  qudt:example """\\textit{Mathematical Constants, Functions, and Operators}
+
+\\vspace{10pt}
+
+\\begin{tabular}{l l l l}
+$\\rm e$ & base of natural logarithms & $\\sum{x_{\\rm i}}$	&  $\\sum$, sum of\\\\
+$\\rm exp$ $x$ & $\\rm exp$, exponential of & $\\rm log_{\\mathit{a}} x$ & $\\rm log_{\\mathit{a}}$, logarithm to the base $a$ of \\\\
+$\\rm d\\mathit{x}/\\rm d\\mathit{t}$ &  $\\rm d$, 1st derivative of &	$\\sin{x}$ & sin, sine of\\\\
+\\end{tabular}"""^^xsd:string ;
+  qudt:example """\\textit{Symbols Used as Subscripts and Superscripts are Roman if Descriptive}
+
+\\vspace{10pt}
+
+$\\epsilon_0^{(\\rm ir)} \\; \\rm ir$ irrational, \\quad
+$\\rm E_k   \\; \\rm k$  kinetic, \\quad
+$\\rm V^l_m \\; \\rm m$  molar, $\\rm l$ liquid phase, \\quad
+$\\rm \\mu B \\; \\rm B$  Bohr"""^^xsd:string ;
+  vaem:title "Symbols for Descriptive Terms use Roman Typeface"^^xsd:string ;
+  rdfs:label "R-GSP-005: Symbols for Descriptive Terms Use Roman Typeface"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.2.3> ;
+.
+qudt:RULE_GSP-006
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "Several samples of equations displaying correct type are shown in NIST SP~811, section 10.2.4."^^xsd:string ;
+  qudt:designator "R-GSP-006"^^xsd:string ;
+  vaem:title "Sample Equations Showing Correct Type"^^xsd:string ;
+  rdfs:label "R-GSP-006: Sample Equations Showing Correct Type"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.2.4> ;
+.
+qudt:RULE_GSP-007
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "The proper form, in both Roman and italic type, of the upper-case and lower-case letters of the Greek alphabet are shown in Table 13 of NISTSP~811 section.~10.3."^^xsd:string ;
+  qudt:designator "R-GSP-007"^^xsd:string ;
+  vaem:title "Sample equations showing correct type"^^xsd:string ;
+  rdfs:label "R-GSP-007: Greek Alphabet in Roman And Italic Type"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.3> ;
+.
+qudt:RULE_GSP-008
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:PunctuationRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "Symbols for the elements are normally printed in Roman type without regard to the type used in the surrounding text (see NIST SP~811 \\href{http://physics.nist.gov/Pubs/SP811/sec10.html#10.2.3}{section 10.2.3)}. They are not followed by a period unless at the end of a sentence."^^xsd:string ;
+  qudt:designator "R-GSP-008"^^xsd:string ;
+  vaem:title "Typeface and punctuation for element symbols"^^xsd:string ;
+  rdfs:label "R-GSP-008: Typeface and Punctuation for Element Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.4.1> ;
+.
+qudt:RULE_GSP-009
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """A number of specific rules apply to subscripts and superscripts on elements:
+
+1. The nucleon number (mass number) of a nuclide is indicated in the left superscript position: $^{28}\\rm Si$.
+
+2. The number of atoms in a molecule of a particular nuclide is shown in the right subscript position: $^1\\rm H_2$. 
+
+3. The proton number (atomic number) is indicated in the left subscript position: $_{29}\\rm Cu$.
+
+4. The state of ionization or excitation is indicated in the right superscript position, some examples of which are as follows: 
+
+a. State of ionization: $\\rm Ba^{++}$, $\\rm{Co(NO_2)_6^{---}}$, $\\rm{Co(NO_2)^3_{6}}^- }$, $\\rm{[Co(NO_2)_6]^{3-}}$
+
+b. Electronic excited state: $\\rm Ne^{\\ast}$, $\\rm CO^{\\ast}$
+
+c. Nuclear excited state: $\\rm ^{15}N^{\\ast}$ or $\\rm ^{15}N^m$"""^^xsd:string ;
+  qudt:designator "R-GSP-009"^^xsd:string ;
+  vaem:title "Typeface and punctuation for element symbols"^^xsd:string ;
+  rdfs:label "R-GSP-009: Subscripts and Superscripts on Element Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.4.2> ;
+.
+qudt:RULE_GSP-010
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "Arabic numerals expressing the numerical values of quantities (see NIST SP~811 \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.6}{ section.7.6)} are generally printed in light face (that is, regular) Roman type irrespective of the type used for the surrounding text. Arabic numerals other than numerical values of quantities may be printed in light face or bold italics, or in bold Roman type; but light face Roman type is usually preferred."^^xsd:string ;
+  qudt:designator "R-GSP-010"^^xsd:string ;
+  vaem:title "Typeface for numbers"^^xsd:string ;
+  rdfs:label "R-GSP-010: Typeface for Numbers"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.5.1> ;
+.
+qudt:RULE_GSP-011
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:PunctuationRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "The recommended decimal sign or marker for use in the United States is the dot on the line [see NIST SP~811 Appendex D, references \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#03}{3} and \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#06}{6}]. For numbers less than one, a zero is written before the decimal marker. For example, $0.25 s$ is the correct form, not $.25 s$."^^xsd:string ;
+  qudt:designator "R-GSP-011"^^xsd:string ;
+  vaem:title "Decimal sign or marker"^^xsd:string ;
+  rdfs:label "R-GSP-011: Decimal Sign or Marker"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.5.2> ;
+.
+qudt:RULE_GSP-012
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:SpacingAndHyphenation ;
+  qudt:description "Digits should be separated into groups of three, counting from the decimal marker towards the left and right, by the use of a thin, fixed space. However, this practice is not usually followed for numbers having only four digits on either side of the decimal marker except when uniformity in a table is desired.	"^^xsd:string ;
+  qudt:designator "R-GSP-012"^^xsd:string ;
+  qudt:example """\\textit{Grouping of Digits}
+
+\\begin{tabular}{l l l}
+76 483 522 &\\textit{but not}:& 76,483,522\\\\
+43 279.168 29&\\textit{but not}:& 43,279.168 29\\\\
+8012 or 8 012	&\\textit{but not}:&8,012\\\\
+0.491 722 3&\\textit{highly preferred to}:&0.4917223\\\\
+0.5947 or 0.594 7&\\textit{but not}:& 0.59 47\\\\
+8012.5947 or 8 012.594 7 &\\textit{but not}:&8 012.5947 or 8012.594 7\\\\
+\\end{tabular}"""^^xsd:string ;
+  qudt:rationale "The comma is widely used as the decimal marker outside the U.S.; it should not be used to separate digits into groups of three. "^^xsd:string ;
+  vaem:title "Grouping digits"^^xsd:string ;
+  rdfs:label "R-GSP-012: Grouping Digits"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.5.3> ;
+.
+qudt:RULE_GSP-013
+  rdf:type qudt:GeneralPrintingRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """When the dot is used as the decimal marker as in the U.S., the preferred sign for the multiplication of numbers or values of quantities is a cross (that is, multiplication sign) (x), not a half-high (that is, centered) dot ($\\cdot$).
+
+Notes:
+
+\\begin{enumerate}
+\\item When the comma is used as the decimal marker, the preferred sign for the multiplication of numbers is the half-high dot. However, even when the comma is so used, the QUDT guidance is to prefer the cross for the multiplication of values of quantities.
+\\item The multiplication of quantity symbols (or numbers in parentheses or values of quantities in parentheses) may be indicated in one of the following ways: $ab$, $a\\;b$, $a\\cdot b$, $a$ x $b$.
+\\end{enumerate}"""^^xsd:string ;
+  qudt:designator "R-GSP-013"^^xsd:string ;
+  qudt:example """\\textit{Multiplication of Numbers}
+
+\\vspace{6pt}
+\\begin{tabular}{l l l}
+25 x 60.5 &\\textit{but not}:& 25·60.5\\\\
+53 m/s x 10.2 s &\\textit{but not}:& 53 m/s·10.2 s\\\\
+15 x 72 kg &\\textit{but not}:&15·72 kg\\\\
+\\end{tabular}"""^^xsd:string ;
+  vaem:title "Multiplying numbers"^^xsd:string ;
+  rdfs:label "R-GSP-013: Multiplying Numbers"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.5.4> ;
+.
+qudt:RULE_MSU-001
+  rdf:type qudt:MathSymbolUsageRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "As is the case for quantity symbols, most of the mathematical signs and symbols used in the physical sciences and technology are standardized. They may be found in \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#04iso31-11}{NIST~SP~811 Appendix D, reference 4:~ISO~31-11} and should be used by authors to the fullest possible extent. Refer to \\href{http://physics.nist.gov/Pubs/SP811/footnotes.html#f05}{NIST~SP~811 footnote~5}."^^xsd:string ;
+  qudt:designator "R-MSU-001"^^xsd:string ;
+  qudt:example """\\textit{Standardized Mathematical Signs and Symbols}
+
+\\vspace{6pt}
+\\begin{tabular}{l l l}
+$^\\wedge$  & (conjunction sign, $p \\; ^\\wedge \\; q$ means $p$ and $q$)\\\\
+$\\ne$  & ($a \\ne b$, $a$ is not equal to $b$)\\\\
+$\\approx$& ($a \\approx b$, $a$ is approximately equal to $b$)\\\\
+$\\sim$& ($a \\sim b$, $a$ is proportionally equal to $b$)\\\\
+$\\arcsin\\;x$& (arc sine of x)\\\\
+$log_a\\; x$ & (logarithm to the base $a$ of $x$)\\\\
+$lb\\;x$& ($lb\\; x = log_2\\; x$)\\\\
+$\\ln\\;x$& ($\\ln\\;x = \\log_e\\; x$)\\\\
+$\\lg\\;x$ & ($\\lg\\; x = \\log_10\\; x$)\\\\
+\\end{tabular}"""^^xsd:string ;
+  vaem:title "Standardized mathematical signs and symbols"^^xsd:string ;
+  rdfs:label "R-MSU-001: Standardized Mathematical Signs and Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.1.2> ;
+.
+qudt:RULE_QNU-001
+  rdf:type qudt:QuantityNameUsageRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "Derived quantities formed from other quantities by division are written using the words “divided by” or per rather than the words “per unit” in order to avoid the appearance of associating a particular unit with the derived quantity. "^^xsd:string ;
+  qudt:designator "R-QNU-001"^^xsd:string ;
+  qudt:example """\\textit{Derived Quantities Formed by Division}
+
+\\vspace{6pt}
+
+Pressure is force divided by area, or pressure is force per area.
+Not: pressure is force per unit area."""^^xsd:string ;
+  vaem:title "Quantity equations and numerical-value equations"^^xsd:string ;
+  rdfs:label "R-QNU-001: Proper Names of Quotient Quantities"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.12> ;
+.
+qudt:RULE_QNU-002
+  rdf:type qudt:QuantityNameUsageRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """When discussing quantities or reporting their values, one should distinguish between a phenomenon, body, or substance, and an attribute ascribed to it. For example, one should recognize the difference between a body and its mass, a surface and its area, a capacitor and its capacitance, and a coil and its inductance.
+
+This means that although it is acceptable to say “an object of mass 1 kg was attached to a string to form a pendulum,” it is not acceptable to say “a mass of 1 kg was attached to a string to form a pendulum.”"""^^xsd:string ;
+  qudt:designator "R-QNU-002"^^xsd:string ;
+  qudt:rationale "Avoids confusion."^^xsd:string ;
+  vaem:title "Distinction Between an Object and its Attribute"^^xsd:string ;
+  rdfs:label "R-QNU-002: Distinction Between an Object and its Attribute"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.13> ;
+.
+qudt:RULE_QNU-003
+  rdf:type qudt:QuantityNameUsageRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """A quantity equation expresses a relation among quantities. An example is \\fbox{$l = \\nu t$}, where \"$l$\" is the distance a particle in uniform motion with velocity \"$\\nu$\" travels in the time \"$t$\".
+
+The expression of a quantity equation is explicitly independent of the units used to express the values of the quantities that compose the equation. A numerical value equation expresses a relation among numerical values of quantities and therefore does depend on the units used to express the values of the quantities."""^^xsd:string ;
+  qudt:designator "R-QNU-003"^^xsd:string ;
+  qudt:rationale "Quantity equations are preferred because of the descriptive universality they offer. Specifically, quantities have the capacity to describe phenomena without reference to a particular set of units.  Because a quantity equation such as $l = \\nu t$ is independent of the units used to express the values of the quantities that compose the equation, and because \"$l$\", \"$\\nu$\", and \"$t$\" represent quantities and not numerical values of quantities, it is, therefore, incorrect to associate the equation with a statement such as “where $l$ is in meters, $\\nu$ is in meters per second, and $t$ is in seconds.\""^^xsd:string ;
+  vaem:title "Quantity equations and numerical-value equations"^^xsd:string ;
+  rdfs:label "R-QNU-003: Quantity Equations Preferred to Numerical-Value Equations"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.11> ;
+.
+qudt:RULE_QNU-004
+  rdf:type qudt:QuantityNameUsageRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """When multiplying or dividing quantity symbols any of the following methods may be used: $ab, ab, a \\cdot b, a \\times b, a/b, ba, ab^{-1}$.
+When multiplying the value of quantities either a multiplication sign, \"x\", or brackets should be used - not a half-high (centered) dot. 
+When multiplying numbers only the multiplication sign, \"x\", should be used.
+
+When dividing the values of quantities using a solidus, brackets are used to remove ambiguities."""^^xsd:string ;
+  qudt:designator "R-QNU-004"^^xsd:string ;
+  rdfs:label "R-QNU-004: Quantity Multiplication and Division"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.11> ;
+.
+qudt:RULE_QSN-001
+  rdf:type qudt:QuantitySymbolNameRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """The use of words, acronyms, or other ad hoc groups of letters as quantity symbols should be avoided by authors. For example, use the quantity symbol \"$Z_m$\" for mechanical impedance, as opposed to \"$MI$\". In fact, there are nationally and internationally accepted symbols for literally hundreds of quantities used in the physical sciences and technology.
+
+Many of these symbols are given in NIST~SP~811 references \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#04}{4} and \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#05}{5}, and it is likely that symbols for the quantities used in most publications can be found in international standards or can readily be adapted from the symbols and principles given in this Handbook."""^^xsd:string ;
+  qudt:designator "R-QSN-001"^^xsd:string ;
+  qudt:example """\\textit{Standardized Quantity Symbols}
+
+\\vspace{10pt}
+\\begin{tabular}{l l l}
+$\\Omega$ (solid angle)	& $Z_m$ (mechanical impedance)\\\\
+$LP$ (level of a power quantity) & $\\Delta r$ (relative mass excess)\\\\
+$p$ (pressure)	& $\\sigma_{tot}$ (total cross section) \\\\
+$\\kappa T$ (isothermal compressibility)	& $E_u$ (Euler number)\\\\
+$E$ (electric field strength) & $T_N$ (Néel temperature)\\\\
+\\end{tabular}
+
+Note that the ISO-80000 Standards may have different specifications for NIST~SP~811 symbols."""^^xsd:string ;
+  qudt:rationale "Because of their international acceptance, authors are urged to use the symbols in NIST~SP~811, Appendix D, references \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#04}{4} and \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#05}{5} to the fullest extent possible."^^xsd:string ;
+  vaem:title "Standardized quantity symbols"^^xsd:string ;
+  rdfs:label "R-QSN-001: Standardized Quantity Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#04> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#05> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.1.1> ;
+.
+qudt:RULE_QSP-003
+  rdf:type qudt:QuantityPrintingRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "Italics are used to print symbols for quantities in ways that vary according to usage."^^xsd:string ;
+  qudt:designator "R-QSP-003"^^xsd:string ;
+  qudt:example """\\textit{Constants are usually physical quantities and thus their symbols are italic}
+
+\\vspace{10pt}
+Constants are usually physical quantities and thus their symbols are italic; however, in general, symbols used as subscripts and superscripts are roman if descriptive (see NIST SP~811 \\href{http://physics.nist.gov/Pubs/SP811/sec10.html#10.2.3}{section 10.2.3}):	
+\\vspace{10pt}
+
+\\begin{tabular}{l l l}
+$N_{\\rm A}$          	Avogadro constant, $\\rm A$ Avogadro & $R$         	molar gas constant\\\\
+$\\Theta_{\\rm D}$	Debye temperature, $\\rm D$ Debye   & $ \\rm Z$ 	atomic number\\\\
+$e$	elementary charge	&  $m_{\\rm e}$	$m$ mass, $\\rm e$ electron\\\\
+\\end{tabular}
+"""^^xsd:string ;
+  qudt:example """\\textit{Running Numbers and Symbols for Variables in Mathematical Equations are Italic}
+\\vspace{6pt}
+
+This is also true for symbols for parameters such as $a$ and $b$ that may be considered constant in a given context:
+\\vspace{6pt}
+
+\\[y = \\sum_{i=1}^{m} x_i z_i  \\quad
+ x = ay^2 = bz^2 \\]"""^^xsd:string ;
+  qudt:example """\\textit{Symbols Used as Subscripts and Superscripts}
+\\vspace{10pt}
+
+Symbols used as subscripts and superscripts are italic if they represent quantities or variables:
+
+1. $\\rm C_{\\mathit p}$, where $p$ is pressure
+
+2. $q_m$, where $m$ is mass
+
+3. $\\sigma_{\\Omega}$, where $\\Omega$ is solid angle
+
+4. $\\omega_z \\;z$, where $z$ is a coordinate"""^^xsd:string ;
+  qudt:example """\\textit{Symbols for Quantities and Functions are Italic}
+\\vspace{10pt}
+
+Symbols for quantities are italic, as are symbols for functions in general, for example, $f (x):$
+\\vspace{10pt}
+
+\\begin{tabular}{l l l}
+$t$ = 3s           $t$ is time, s second   & $T$ = 22 K             	$T$ is temperature, K kelvin \\\\
+$r$ = 11 cm 	$r$ is radius, cm centimeter   & $\\lambda$ = 633 nm		$\\lambda$ is wavelength, nm nanometer\\\\
+\\end{tabular}"""^^xsd:string ;
+  qudt:example """\\textit{Symbols for Vectors, Tensors and Matrices}
+\\vspace{10pt}
+
+Symbols for vectors are boldface italic, symbols for tensors are sans-serif bold italic, and symbols for matrices are italic:
+\\vspace{10pt}
+
+$\\mathbf{\\mathit{A \\cdot B = C}} $ (vectors)   \\quad
+$\\mathsf{T}$ (tensors)           
+"""^^xsd:string ;
+  vaem:title "Quantities and variables — italic                "^^xsd:string ;
+  rdfs:label "R-QSP-003: Quantities and Variables — Italic"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.2.1> ;
+.
+qudt:RULE_QVE-001
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """The value of a quantity is its magnitude expressed as the product of a number and a unit, and the number multiplying the unit is the numerical value of the quantity expressed in that unit.
+
+More formally, the value of quantity \"$A$\" can be written as \\fbox{$A = \\{A\\}[A]$}, where\"$\\{A\\}$\" is the numerical value of \"A\" when the value of \"A\" is expressed in the unit \"[A]\". The numerical value can therefore be written as \\fbox{$\\{A\\} = A / [A]$}, which is a convenient form for use in figures and tables."""^^xsd:string ;
+  qudt:designator "R-QVE-001"^^xsd:string ;
+  qudt:rationale "Eliminates the possibility of misunderstanding. For example, an axis of a graph or the heading of a column of a table can be labeled “$t/^\\circ\\rm C$” instead of “$t (^\\circ\\rm C)$” or “Temperature $(^\\circ\\rm C)$.” Similarly, an axis or column heading can be labeled “$E/(V/m)$” instead of “$E (V/m)$” or “Electric field strength $(V/m)$.”"^^xsd:string ;
+  vaem:title "Value and numerical value of a quantity"^^xsd:string ;
+  rdfs:label "R-QVE-001: Value and Numerical Value of a Quantity"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.1> ;
+.
+qudt:RULE_QVE-002
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "The value of a quantity is expressed using no more than one unit. "^^xsd:string ;
+  qudt:designator "R-QVE-002"^^xsd:string ;
+  vaem:title "Number of units per value of a quantity"^^xsd:string ;
+  rdfs:label "R-QVE-002: Number of Units per Value of a Quantity"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.3> ;
+.
+qudt:RULE_QVE-003
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """The value of a quantity is expressed as the product of a number and a unit (see \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.1}{NIST~SP~811 section 7.1}). Thus, to avoid possible confusion, this handbook stipulates that values of quantities must be written so that it is completely clear to which unit symbols the numerical values of the quantities belong.
+
+The first of these recommendations once again recognizes that unit symbols are not like ordinary words or abbreviations but are mathematical entities (see   \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.2}{NIST~P811 section 7.2})."""^^xsd:string ;
+  qudt:designator "R-QVE-003"^^xsd:string ;
+  qudt:example """\\textit{Mathematical constants, functions, and operators}
+
+\\begin{tabular}{l l l l}
+51 mm x 51 mm x 25 mm & 	\\textit{but not}:	&  51 x 51 x 25 mm\\\\
+225 nm to 2400 nm or (225 to 2400) nm & 	\\textit{but not}: & 225 to 2400 nm \\\\
+$0^{\\circ}{\\rm C}$ to $100^{\\circ}{\\rm C}$ or (0 to 100) $^{\\circ}{\\rm C}$ &  	\\textit{but not}: &	$0^{\\circ}{\\rm C}$ -$ 100^{\\circ}{\\rm C}$\\\\
+0 V to 5 V or (0 to 5) V &  	\\textit{but not}: &	0 - 5 V\\\\
+(8.2, 9.0, 9.5, 9.8, 10.0) GHz &  \\textit{but not}: &	8.2, 9.0, 9.5, 9.8, 10.0 GHz\\\\
+63.2 m $\\pm$ 0.1 m or (63.2 $\\pm$ 0.1) m &  \\textit{but not}: &	63.2 $\\pm$ 0.1 m or 63.2 m $\\pm$ 0.1\\\\
+129 $s$ - 3 $s$ or (129 - 3) $s$ & \\textit{but not}:&129 - 3 $s$ = 126 $s$
+\\end{tabular}"""^^xsd:string ;
+  qudt:rationale "To avoid possible confusion, this Handbook, like the NIST Guide, strongly recommends that the word “to” be used to indicate a range of values for a quantity instead of a range dash (that is, a long hyphen) because the dash could be misinterpreted as a minus sign. "^^xsd:string ;
+  vaem:title "Clarity in Assigning Numerical Values of Quantities to their Respective Unit Symbols"^^xsd:string ;
+  rdfs:label "R-QVE-003: Clarity in Assigning Numerical Values of Quantities to their Respective Unit Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.7> ;
+.
+qudt:RULE_QVE-004
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """In keeping with NIST SP~811, Appendix D, referemce\\href{http://physics.nist.gov/Pubs/SP811/appenD.html#04iso31-0}{4: ISO 31-0}, the position taken in this Handbook is that it is acceptable to use the internationally recognized symbol \"$\\%$ (percent)\" for the number \"$0.01$\" with the SI and thus to express the values of quantities of dimension one (see \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.14}{NIST~SP~811 section 7.14}) with its aid. 
+
+When it is used, a space is left between the symbol \"$\\%$\" and the number by which it is multiplied (see NIST~SP~811, Appendix D, reference \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#04iso31-0}{4: ISO 31-0}. Further, in keeping with NIST~SP~811,  \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.6}{section 7.6}, the symbol \"$\\% $\" should be used, not the name “percent.”	"""^^xsd:string ;
+  qudt:designator "R-QVE-004"^^xsd:string ;
+  qudt:example """\\textit{Usage of Percentage}
+\\vspace{10pt}
+
+$x_{\\rm B} = 0.0025 = 0.25\\;\\%$ \\quad \\textit{but not}: \\quad
+$x_{\\rm B} = 0.0025 = 0.25\\%$ or $x_{\\rm B} = 0.25$ percent"""^^xsd:string ;
+  vaem:title "%, percentage by, fraction"^^xsd:string ;
+  rdfs:label "R-QVE-004: Use of Percentage Symbol"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.10.2> ;
+.
+qudt:RULE_QVE-005
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "When the value of a quantity is given, it is incorrect to attach letters or other symbols to the unit in order to provide information about the quantity or its conditions of measurement. Instead, the letters or other symbols should be attached to the quantity."^^xsd:string ;
+  qudt:designator "R-QVE-005"^^xsd:string ;
+  vaem:title "Unacceptability of attaching information to units"^^xsd:string ;
+  rdfs:label "R-QVE-005: Unacceptability of Attaching Information to Units"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.4> ;
+.
+qudt:RULE_QVE-006
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "When the value of a quantity is given, any information concerning the quantity or its conditions of measurement must be presented in such a way as not to be associated with the unit. This means that quantities must be defined so that they can be expressed solely in acceptable units (including the unit one (see  NIST~SP~811 \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.10}{section 7.10)."^^xsd:string ;
+  qudt:designator "R-QVE-006"^^xsd:string ;
+  vaem:title "Unacceptability of mixing information with units"^^xsd:string ;
+  rdfs:label "R-QVE-006: Unacceptability of Mixing Information with Units"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.5> ;
+.
+qudt:RULE_QVE-007
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "Any derived quantity \"$Q$\" can be expressed in terms of the SI base quantities length \"$l$\" , mass \"$m$\" time \"$t$\", electric current \"$l$\" , thermodynamic temperature \"$T$\", amount of substance \"$n$\", and luminous intensity \"$I_v$\"."^^xsd:string ;
+  qudt:designator "R-QVE-007"^^xsd:string ;
+  qudt:rationale """Any SI derived quantity \"$Q$\" can be expressed in terms of the SI base quantities by an equation of the form:
+
+\\vspace{.25in}
+\\begin{center}
+\\Large
+\\begin{equation}
+Q = l^\\alpha m^\\beta t^\\gamma I^\\delta T^\\epsilon n^\\zeta I_v^\\eta \\sum\\limits_{k = 1}^K {a_k} ,
+\\normalsize
+\\end{equation}
+\\end{center}
+\\vspace{.25in}
+
+in which the exponents \"$\\alpha$\", \"$beta$\", \"$\\gamma$\", \"$\\ldots$\" are numbers and the factors \"$a_k$\" are also numbers."""^^xsd:string ;
+  vaem:title "Dimension of a Quantity"^^xsd:string ;
+  rdfs:label "R-QVE-007: Dimension of a Quantity"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.14> ;
+.
+qudt:RULE_QVE-008
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """In the expression for the value of a quantity, the unit symbol is placed after the numerical value and a space is left between the numerical value and the unit symbol.
+
+The only exceptions to this rule are for the unit symbols for degree, minute, and second for plane angle: $^\\circ, \\,', and\\,\\, ''$, respectively (see  \\href{http://physics.nist.gov/Pubs/SP811/sec05.html#table6}{NIST~SP~811 Table 6}), in which case no space is left between the numerical value and the unit symbol."""^^xsd:string ;
+  qudt:designator "R-QVE-008"^^xsd:string ;
+  vaem:title "Space between numerical value and unit symbol"^^xsd:string ;
+  rdfs:label "R-QVE-008: Space Between Numerical Value and Unit Symbol"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.2> ;
+.
+qudt:RULE_QVE-009
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "It is unacceptable to use Roman numerals to express the values of quantities. In particular, one should not use $C$, $M$, and $MM$ as substitutes for $10^2$, $10^3$, and $10^6$, respectively."^^xsd:string ;
+  qudt:designator "R-QVE-009"^^xsd:string ;
+  vaem:title "Unacceptability of Roman Numerals for Quantity Values"^^xsd:string ;
+  rdfs:label "R-QVE-009: Unacceptability of Roman Numerals"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.10.4> ;
+.
+qudt:RULE_QVE-010
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "This Handbook takes the position that the key elements of a scientific or technical paper, particularly the results of measurements and the values of quantities that influence the measurements, should be presented in a way that is as independent of language as possible. To promote the comprehension of quantitative information in general and its broad understandability in particular, values of quantities should be expressed in acceptable units using the Arabic symbols for numbers, that is, the Arabic numerals, not the spelled-out names of the Arabic numerals; and the symbols for the units, as opposed to the spelled-out names of the units.	"^^xsd:string ;
+  qudt:designator "R-QVE-010"^^xsd:string ;
+  qudt:rationale "Allows work to be understood by as broad an audience as possible, including readers with limited knowledge of English. "^^xsd:string ;
+  vaem:title "Symbols for numbers and units versus spelled-out names of numbers and units"^^xsd:string ;
+  rdfs:label "R-QVE-010: Symbols for Numbers and Units Versus Spelled-Out Names of Numbers And Units"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.6> ;
+.
+qudt:RULE_QVE-011
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """The selection of the appropriate decimal multiple or submultiple of a unit for expressing the value of a quantity, and thus the choice of prefix, is governed by these factors: 
+
+\\begin{itemize}
+\\item the need to indicate which digits of a numerical value are significant,
+\\item the need to have numerical values that are easily understood, and
+\\item the practice in a particular field of science or technology.
+\\end{itemize}
+
+A digit is significant if it is required to express the numerical value of a quantity. In the expression $l = 1200\\; m$, it is not possible to tell whether the last two zeroes are significant or only indicate the magnitude of the numerical value of $l$. However, in the expression $l = 1.200\\; km$, which uses the SI prefix symbol for $10^3$ (kilo, symbol k), the two zeroes are assumed to be significant because if they were not, the value of $l$ would have been written $l = 1.2\\; km$."""^^xsd:string ;
+  qudt:designator "R-QVE-011"^^xsd:string ;
+  vaem:title "Choosing SI prefixes"^^xsd:string ;
+  rdfs:label "R-QVE-011: Choosing SI Prefixes"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.9> ;
+.
+qudt:RULE_QVE-012
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """Certain quantities, such as refractive index, relative permeability, and mass fraction, are defined as the ratio of two mutually comparable quantities and thus are of dimension one (see \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.14}{NIST~SP~811 section 7.14}). The coherent SI unit for such a quantity is the ratio of two identical SI units and may be expressed by the number 1. However, the number 1 generally does not appear in the expression for the value of a quantity of dimension one. For example, the value of the refractive index of a given medium is expressed as $n = 1.51 \\times 1 = 1.51$.
+
+On the other hand, certain quantities of dimension one have units with special names and symbols which should be used. Plane angle and solid angle, for which the SI units are the radian (rad) and steradian (sr), respectively, are examples of such quantities (see \\href{http://physics.nist.gov/Pubs/SP811/sec04.html#4.2.1}{NIST~SP~811 section 4.2.1})."""^^xsd:string ;
+  qudt:designator "R-QVE-012"^^xsd:string ;
+  vaem:title "Values of quantities expressed simply as numbers: the unit one, symbol 1"^^xsd:string ;
+  rdfs:label "R-QVE-012: The Unit One, Symbol 1"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec04.html#4.2.1> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.10> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.14> ;
+.
+qudt:RULE_QVE-013
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "Because SI prefix symbols cannot be attached to the unit one (see NIST SP~811 \\href{http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.6}{section 6.2.6}), powers of 10 are used to express decimal multiples and submultiples of the unit one."^^xsd:string ;
+  qudt:designator "R-QVE-013"^^xsd:string ;
+  vaem:title "Decimal multiples and submultiples of the unit one"^^xsd:string ;
+  rdfs:label "R-QVE-013: Decimal Multiples and Submultiples of the Unit One"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.6> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.10.1> ;
+.
+qudt:RULE_QVE-014
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description "In keeping with \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#04iso31-0}{NIST~SP~811 Ref. [4: ISO 31-0]}, this Handbook takes the position that the language-dependent terms part per million, part per billion, and part per trillion, and their respective abbreviations “ppm,” “ppb,” and “ppt” (and similar terms and abbreviations), are not acceptable for use with the SI to express the values of quantities. Forms such as those given in the following examples should be used instead.	"^^xsd:string ;
+  qudt:designator "R-QVE-014"^^xsd:string ;
+  vaem:title "Unacceptability of ppm, ppb, and ppt"^^xsd:string ;
+  rdfs:label "R-QVE-014: Unacceptability of \"ppm\", \"ppb\", and \"ppt\""^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#04> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.10.3> ;
+.
+qudt:RULE_QVE-015
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """The numerical value always precedes the unit, and a space is always used to separate the unit from the number. Thus the value of the quantity is the product of the number and the unit, the space being regarded as a multiplication sign (just as a space between units implies multiplication). The only exceptions to this rule are for the unit symbols for degree, minute, and second for plane angle, $^\\circ$, ', and '', respectively, for which no space is left between the numerical value and the unit symbol.
+
+This rule means that the symbol $^\\circ$ C for the degree Celsius is preceded by a space when one expresses values of Celsius temperature t.
+
+Even when the value of a quantity is used as an adjective, a space is left between the numerical value and the unit symbol. 
+Only when the name of the unit is spelled out would the ordinary rules of grammar apply, so that in English a hyphen would be used to separate the number from the unit."""^^xsd:string ;
+  qudt:designator "R-QVE-015"^^xsd:string ;
+  vaem:title "Standardized quantity symbols"^^xsd:string ;
+  rdfs:label "R-QVE-015: Numeric Value of a Quantity Precedes the Unit Symbol."^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#04> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#05> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.1.1> ;
+.
+qudt:RULE_QVE-016
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """In any one expression, only one unit is used. 
+An exception to this rule is in expressing the values of time and of plane angles using non-SI units. 
+However, for plane angles it is generally preferable to divide the degree decimally. 
+Thus one would write 22.20$^\\circ$ rather than 22 $^\\circ$ 12', except in fields such as navigation, cartography, astronomy, and in the measurement of very small angles."""^^xsd:string ;
+  qudt:designator "R-QVE-016"^^xsd:string ;
+  rdfs:label "R-QVE-016:A Value Expression is Restricted to One Unit."^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#04> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#05> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.1.1> ;
+.
+qudt:RULE_QVE-017
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """The symbol used to separate the integral part of a number from its decimal part is called the decimal marker. 
+Following the 22nd CGPM (2003, Resolution 10), the decimal marker \"shall be either the point on the line or the comma on the line.\"
+The decimal marker chosen should be that which is customary in the context concerned. If the number is between +1 and -1, then the decimal marker is always preceded by a zero.
+
+Following the 9th CGPM (1948, Resolution7) and the 22nd CGPM (2003, Resolution 10), for numbers with many digits the digits may be divided into groups of three by a thin space, in order to facilitate reading. 
+Neither dots nor commas are inserted in the spaces between groups of three. However, when there are only four digits before or after the decimal marker, it is customary not to use a space to isolate a single digit. For numbers in a table, the format used should not vary within one column."""^^xsd:string ;
+  qudt:designator "R-QVE-017"^^xsd:string ;
+  rdfs:label "R-QVE-017: Use of Decimal Maker"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#04> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#05> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.1.1> ;
+.
+qudt:RULE_QVE-018
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """The uncertainty that is associated with the estimated value of a quantity should be evaluated and expressed in accordance with the Guide to the Expression of Uncertainty in Measurement [ISO, 1995]. 
+The standard uncertainty (i.e. estimated standard deviation, coverage factor k = 1) associated with a quantity x is denoted by $u(x)$. 
+If any coverage factor, k, different from one, is used, this factor must be stated."""^^xsd:string ;
+  qudt:designator "R-QVE-018"^^xsd:string ;
+  qudt:example """\\vspace{.25in}
+\\begin{center}
+\\begin{equation}
+\\LARGE
+	\\boxed{m_n = 1.674 927 28(29) \\times 10^{-27} kg}
+\\normalsize
+\\end{equation}
+\\end{center}
+\\vspace{.25in}
+
+where $m_n$ is the symbol for the quantity (in this case the mass of a neutron), and the number in parenthesis is the numerical value of the combined standard uncertainty of the estimated value of $m_n$ referred to the last two digits of the quoted value; in this case 
+
+\\vspace{.25in}
+\\begin{center}
+\\begin{equation}
+\\LARGE
+	\\boxed{ u(m_n) = 0.00000029 \\times 10^{-27} kg}
+\\normalsize
+\\end{equation}
+\\end{center}
+\\vspace{.25in}"""^^xsd:string ;
+  rdfs:label "R-QVE-018: Convention for Expressing Uncertainty"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#04> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#05> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.1.1> ;
+.
+qudt:RULE_QVE-019
+  rdf:type qudt:QuantityValueExpressionRule ;
+  rdf:type qudt:SP811-Rule ;
+  qudt:description """The coherent SI unit for dimensionless quantities, also termed quantities of dimension one, is the number one, symbol 1. 
+Values of such quantities are expressed simply as numbers. 
+The unit symbol 1 or unit name \\emp{one} are not explicitly shown, nor are special symbols or names given to the unit one, apart from a few exceptions as follows.
+ 
+For the quantity plane angle, the unit one is given the special name radian, symbol rad, and for the quantity solid angle, the unit one is given the special name steradian, symbol sr. 
+For the logarithmic ratio quantities, the special names neper, symbol Np, bel, symbol B, and decibel, symbol dB, are used.
+
+Because SI prefix symbols can neither be attached to the symbol 1 nor to the name \\emph{one}, powers of 10 are used to express the values of particularly large or small dimensionless quantities."""^^xsd:string ;
+  qudt:designator "R-QVE-019"^^xsd:string ;
+  rdfs:label "R-QVE-019: Expressing Values for Dimensionless Quantities"^^xsd:string ;
+.
+qudt:RULE_UIR-002
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "For a Unit QName primitive unit symbols appear unaltered without plurals or abbreviation."^^xsd:string ;
+  qudt:designator "R-UIR-002"^^xsd:string ;
+  qudt:example "\\framebox{unit:A} for Ampere"^^xsd:string ;
+  qudt:rationale "There should be a single representation for unit primitives."^^xsd:string ;
+  vaem:title "Canonical Unit Identifier Names"^^xsd:string ;
+  rdfs:label "R-UIR-002: Canonical Unit Identifier Names"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.3> ;
+.
+qudt:RULE_UIR-003
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "All units should be capitalized in \\href{http://www.w3.org/Addressing/}{Universal Resource Identifiers (URI)}."^^xsd:string ;
+  qudt:designator "R-UIR-003"^^xsd:string ;
+  qudt:example "The symbol 'a' for Ampere becomes 'A' in the unit's URI."^^xsd:string ;
+  qudt:rationale "For consistency across all unit names and with convention."^^xsd:string ;
+  vaem:title "Unit Name Capitalization"^^xsd:string ;
+  rdfs:label "R-UIR-003: Unit Capitalization in Identifiers"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1> ;
+.
+qudt:RULE_UIR-004
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Units multiplied together are referenced with a dash '-' symbol between the units."^^xsd:string ;
+  qudt:designator "R-UIR-004"^^xsd:string ;
+  qudt:example "The unit $KG \\cdot SEC \\; $ has the qname \\framebox{unit:KG-SEC}"^^xsd:string ;
+  qudt:rationale "By QUDT convention, * is replaced with '-'."^^xsd:string ;
+  vaem:title "Composite Unit Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-004: Composite Unit Identifiers"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.5> ;
+.
+qudt:RULE_UIR-005
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "By QUDT convention, the '/' symbol is replaced by \\box{-PER-}"^^xsd:string ;
+  qudt:designator "R-UIR-005"^^xsd:string ;
+  qudt:example "The unit $KG/ SEC  \\; $ has the QName \\framebox{unit:KG-PER-SEC}"^^xsd:string ;
+  qudt:rationale "A URI should not contain the character '/'. \\textit{PER} is an acceptable substitute. Having hyphens around \\textit{PER} makes the QName more readable."^^xsd:string ;
+  vaem:title "Composite Units with Denominator Components"^^xsd:string ;
+  rdfs:label "R-UIR-005: Composite Units with Denominator Components"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.6> ;
+.
+qudt:RULE_UIR-006
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Units raised to a power are referenced with a number replacing the exponent."^^xsd:string ;
+  qudt:designator "R-UIR-006"^^xsd:string ;
+  qudt:example "$kg m / sec^2$ \\; \\rightarrow \\framebox{unit:KG-M-PER-SEC2}."^^xsd:string ;
+  qudt:rationale "By QUDT convention, the $sec^2$ symbol is replaced by SEC2."^^xsd:string ;
+  vaem:title "Unit Exponents in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-006: Unit Exponents In Identifiers"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.6> ;
+.
+qudt:RULE_UIR-007
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Unit prefixes, as modifiers, are exceptions to the multiplier rule (no hyphen)"^^xsd:string ;
+  qudt:designator "R-UIR-007"^^xsd:string ;
+  qudt:rationale "By QUDT convention,  kilo joule is expressed as \\framebox{KiloJ}"^^xsd:string ;
+  vaem:title "Unit Prefixes in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-007: Unit Prefixes in Identifiers"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.3> ;
+.
+qudt:RULE_UIR-008
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Naming exception: Unit prefixes use camel case notation rather than all caps"^^xsd:string ;
+  qudt:designator "R-UIR-008"^^xsd:string ;
+  qudt:example "kilo joule \\rightarrow \\framebox{unit:KiloJ} (not KILOJ)"^^xsd:string ;
+  qudt:rationale "QUDT convention"^^xsd:string ;
+  vaem:title "Unit Prefix Capitalization Exception in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-008: Unit Prefix Capitalization Exception in Identifiers"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2> ;
+.
+qudt:RULE_UIR-009
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Naming exception: Unit prefixes use abbreviations in some cases"^^xsd:string ;
+  qudt:designator "R-UIR-009"^^xsd:string ;
+  qudt:example """\\begin{tabular}{l l l}
+kilogram                 & \\rightarrow \\framebox{KG}               &  (not KiloGM)     \\\\
+milli meter              & \\rightarrow \\framebox{unit:MM }      &  (not MilliM)       \\\\
+megabytes              & \\rightarrow \\framebox{unit:MB}        &  (not MegaBYTE) \\\\
+mega electron volts & \\rightarrow \\framebox{unit:MeV}      & (not MegaEV)      \\\\
+kilo calories             & \\rightarrow \\framebox{unit:KCAL}    & (not KiloCAL)      \\\\
+kilowatt hours         & \\rightarrow \\framebox{unit:KW-HR}  & (not KiloW-HR)   \\\\
+kilogram farads       & \\rightarrow \\framebox{unit:KF}         & (not KG-F)
+\\end{tabular}"""^^xsd:string ;
+  qudt:rationale "By convention, some prefixes use abbreviations."^^xsd:string ;
+  vaem:title "Unit Prefix Abbreviation Exception in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-009: Unit Prefix Abbreviation Exception in Identifiers"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2> ;
+.
+qudt:RULE_UIR-010
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Unit prefixes cannot be combined"^^xsd:string ;
+  qudt:designator "R-UIR-010"^^xsd:string ;
+  qudt:example "milli micrometer\\rightarrow \\framebox{unit:NM} (not MilliMicroM)"^^xsd:string ;
+  qudt:rationale "Prefixes cannot be combined."^^xsd:string ;
+  vaem:title "Multiple Unit Prefix Disallowance"^^xsd:string ;
+  rdfs:label "R-UIR-010: Multiple Unit Prefix Disallowance"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.4> ;
+.
+qudt:RULE_UIR-011
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Naming capitalization exception: Turn unit is lower case 't'"^^xsd:string ;
+  qudt:designator "R-UIR-011"^^xsd:string ;
+  qudt:example """'t' for 'turn' as opposed to 'T' which conflicts with 'tesla'. \\newline
+Other examples are DegF, DegC, DegK, DegR"""^^xsd:string ;
+  qudt:rationale "By QUDT convention, some units are not capitalized so that they don't conflict with established unit symbols."^^xsd:string ;
+  vaem:title "Unit Capitalization Exception in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-011: Unit Capitalization Exception in Identifiers"^^xsd:string ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2> ;
+.
+qudt:RULE_UIR-012
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Naming multiplication after division: After the first division all multiplications are part of the divisor"^^xsd:string ;
+  qudt:designator "R-UIR-012"^^xsd:string ;
+  qudt:example "$kg m / sec^2 k $ \\; \\rightarrow \\; \\framebox{unit:KG-M-PER-SEC2-K}"^^xsd:string ;
+  qudt:rationale "By QUDT convention, any multiplication in the divisor are concatenated after the PER."^^xsd:string ;
+  vaem:title "Composite Units with Division in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-012: Composite Units with Division in Identifiers"^^xsd:string ;
+.
+qudt:RULE_UIR-013
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Unit modifiers will be appended to the unit name without a hyphen"^^xsd:string ;
+  qudt:designator "R-UIR-013"^^xsd:string ;
+  qudt:example "Pascal Absolute \\rightarrow{PaA}"^^xsd:string ;
+  qudt:rationale "By QUDT convention, any unit modifiers are appended to the unit in a similar manner as prefixes."^^xsd:string ;
+  vaem:title "Unit Suffix as Modifier in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-013: Unit Suffix as Modifier in Identifiers"^^xsd:string ;
+.
+qudt:RULE_UIR-014
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Unit associations will be appended to the unit name with an underscore"^^xsd:string ;
+  qudt:designator "R-UIR-014"^^xsd:string ;
+  qudt:example """Pascal Absolute \\rightarrow{unit:PaA} \\newline
+Other examples are FT\\_H2O, OZ\\_TROY, IN\\_HG, and TON\\_SHORT"""^^xsd:string ;
+  qudt:rationale "By QUDT convention, any unit associations, such as 'of' are represented with an underscore '\\_' after the unit."^^xsd:string ;
+  vaem:title "Unit Association Suffix Qualifiers in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-014: Unit Association Suffix Qualifiers In Identifiers"^^xsd:string ;
+.
+qudt:RULE_UIR-015
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description "Unit association prefixes will be prepended to the unit name with an underscore"^^xsd:string ;
+  qudt:designator "R-UIR-015"^^xsd:string ;
+  qudt:example "US Dry Gallon \\rightarrow{unit:US\\_DRY\\_GALLON}"^^xsd:string ;
+  qudt:rationale "By QUDT convention, any unit associations, such as 'of' are represented with an underscore '\\_' before the unit."^^xsd:string ;
+  vaem:title "Unit Prefix Modifiers in Identifiers"^^xsd:string ;
+  rdfs:label "R-UIR-015: Unit Prefix Modifiers in Identifiers"^^xsd:string ;
+.
+qudt:RULE_UIR-016
+  rdf:type qudt:IdentifierRule ;
+  rdf:type qudt:QUDT-Rule ;
+  qudt:description """A \\textit{Unit} Identifier has a precise grammar that uniquely identifies the unit as a member of a domain. Scaled units have an identifier that appends a \\textit{scaling code} to the base unit. The identifier starts with a capital 'U' and is followed by the \\textit{Domain Field}, then an '-' delimiter for the \\textit{Member Field}. 
+
+If the unit is a scaled unit, an optional append is specified with a coding that depends on whether the scaling is binary or decimal. For decimal scalings the delimiter is a 'P' for a positive exponent (of a power of ten) and 'N' for a negative exponent. In the case of a binary scaling, there can only be a positive scaling and the delimiter is the character 'B'.
+
+The syntax for a unit identifier is shown in figure \\ref{fig:NIR-UNIT-IDENTIFIER-SYNTAX}."""^^xsd:string ;
+  qudt:designator "R-UIR-016"^^xsd:string ;
+  qudt:example """unit:AMPERE  has the code $\\rm{U150-50}$
+
+unit:MicroA has the code  $\\rm{U150-50N6}$
+
+unit:MicroA is illustrated in figure \\ref{fig:NIR-UNIT-IDENTIFIER-EXAMPLE-MICROA}."""^^xsd:string ;
+  qudt:figure qudt:FIG_NIR-UNIT-IDENTIFIER-SYNTAX ;
+  qudt:rationale "A unit has an identifier as well as a QName. The purpose of the identifier is to allow a unit of measure to be represented in metadata exchanges, modeling and simulation data structures. Letter delimiters are used to allow the numeric fields to be of any length."^^xsd:string ;
+  vaem:title "Unit Identifier Codes"^^xsd:string ;
+  rdfs:label "R-UIR-016: Unit Identifier Codes"^^xsd:string ;
+.
+qudt:RULE_UNU-001
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "Because it could possibly lead to confusion, mathematical operations are not applied to unit names but only to unit symbols. (See also NIST SP~811 Secs. \\href{http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.7}{6.1.7} and \\href{http://physics.nist.gov/Pubs/SP811/sec09.html#9.5}{9.5.})"^^xsd:string ;
+  qudt:designator "R-UNU-001"^^xsd:string ;
+  qudt:example """\\textit{Mathematical Operations on Unit Symbols but not Unit Names}
+\\vspace{10pt}
+
+joule per kilogram or J/kg or $\\rm J\\cdot kg^{-1}$ \\quad
+but not:  \\quad
+joule/kilogram or  $\\rm joule \\cdot kilogram^{-1}$"""^^xsd:string ;
+  vaem:title "Unacceptability of applying mathematical operations to unit names"^^xsd:string ;
+  rdfs:label "R-UNU-001: Applying Mathematical Operations to Unit Names"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec09.html#9.8> ;
+.
+qudt:RULE_UNU-002
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:SpellingRule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description """When the name of a unit containing a prefix is spelled out, no space or hyphen is used between the prefix and unit name (see  \\href{http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.3}{NIST~SP~811 section 6.2.3}).
+
+\\href{http://physics.nist.gov/Pubs/SP811/appenD.html#06}{NIST~SP~811 Ref.  [6]} points out that there are three cases in which the final vowel of an SI prefix is commonly omitted: megohm (not megaohm), kilohm (not kiloohm), and hectare (not hectoare). In all other cases in which the unit name begins with a vowel, both the final vowel of the prefix and the vowel of the unit name are retained and both are pronounced."""^^xsd:string ;
+  qudt:designator "R-UNU-002"^^xsd:string ;
+  qudt:example """\\textit{Spelling of Unit Names with Prefixes}
+
+\\begin{tabular}{l l l}
+milligram  & \\textit{but not} & milli-gram \\\\
+kilopascal & \\textit{but not} & kilo-pascal
+\\end{tabular}"""^^xsd:string ;
+  vaem:title "Spelling unit names with prefixes"^^xsd:string ;
+  rdfs:label "R-UNU-002: Spelling Unit Names with Prefixes"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec09.html#9.3> ;
+.
+qudt:RULE_UNU-003
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:SpellingRule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "When the name of a derived unit formed from other units by multiplication is spelled out, a space, which is preferred by \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#06}{NIST~SP~811 Ref. [6]} and this Handbook, or a hyphen is used to separate the names of the individual units."^^xsd:string ;
+  qudt:designator "R-UNU-003"^^xsd:string ;
+  qudt:example """\\textit{Units Derived by Multiplication}
+\\vspace{10pt}
+
+\\textit{pascal second} or \\textit{pascal-second}"""^^xsd:string ;
+  vaem:title "Spelling unit names obtained by multiplication"^^xsd:string ;
+  rdfs:label "R-UNU-003: Spelling Unit Names Obtained by Multiplication"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec09.html#9.4> ;
+.
+qudt:RULE_UNU-004
+  rdf:type qudt:NameConstructionRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:SpellingRule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "When the abbreviation of a derived unit formed from other units by division is constructed, the word “per” is used, surrounded by hyphens ('-')  and not a solidus. (See also \\href{http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.7}{NIST~SP~811 section 6.1.7} and \\href{http://physics.nist.gov/Pubs/SP811/sec09.html#9.8}{NIST~SP~811 section 9.8.})"^^xsd:string ;
+  qudt:designator "R-UNU-004"^^xsd:string ;
+  qudt:example """\\textit{Units Derived by Division}
+\\vspace{10pt}
+
+\\textit{ampere-per-meter} but not:  \\textit{ampere/meter}"""^^xsd:string ;
+  vaem:title "Spelling unit names obtained by division"^^xsd:string ;
+  rdfs:label "R-UNU-004: Specifying Unit Abbreviations for Units Obtained by Division"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec09.html#9.5> ;
+.
+qudt:RULE_UNU-005
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:SpellingRule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "When the names of units raised to powers are spelled out, modifiers such as “squared” or “cubed” are used and are placed after the unit name."^^xsd:string ;
+  qudt:designator "R-UNU-005"^^xsd:string ;
+  qudt:example """\\textit{Names of Units Raised to Powers}
+
+\\vspace{10pt}
+meter per second squared $ (m/s2)$. The modifiers “square” or “cubic” may, however, be placed before the unit name in the case of area or volume.
+\\vspace{10pt}
+
+square centimeter $(cm^2)$ \\quad 
+cubic millimeter $(mm^3)$  \\quad 
+ampere per square meter $(A/m^2)$ \\quad 
+kilogram per cubic meter $(kg/m^3)$"""^^xsd:string ;
+  vaem:title "Spelling unit names raised to powers"^^xsd:string ;
+  rdfs:label "R-UNU-005: Spelling Unit Names Raised to Powers"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec09.html#9.6> ;
+.
+qudt:RULE_UNU-006
+  rdf:type qudt:NameConstructionRule ;
+  rdf:type qudt:PluralsRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "Plural unit names are used when they are required by the rules of English grammar. They are normally formed regularly, for example, “henries” is the plural of henry. According to \\href{http://physics.nist.gov/Pubs/SP811/appenD.html#06}{Ref. [6]}, the following plurals are irregular: Singular —lux, hertz, siemens; Plural —lux, hertz, siemens. (See also NIST SP~811 \\href{http://physics.nist.gov/Pubs/SP811/sec09.html#9.7}{ section 9.7.})"^^xsd:string ;
+  qudt:designator "R-UNU-006"^^xsd:string ;
+  vaem:title "Plurals"^^xsd:string ;
+  rdfs:label "R-UNU-006: Plurals"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec09.html#9.2> ;
+.
+qudt:RULE_UNU-007
+  rdf:type qudt:CapitalizationRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description """When spelled out in full, unit names are treated like ordinary English nouns. Thus the names of all units start with a lower-case letter, except at the beginning of a sentence or in capitalized material such as a title.
+
+In keeping with this rule, the correct spelling of the name of the unit $^\\circ C$ is “degree Celsius” (the unit “degree” begins with a lowercase “d” and the modifier “Celsius” begins with an uppercase “C” because it is the name of a person)."""^^xsd:string ;
+  qudt:designator "R-UNU-007"^^xsd:string ;
+  vaem:title "Capitalization"^^xsd:string ;
+  rdfs:label "R-UNU-007: Capitalization"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec09.html#9.1> ;
+.
+qudt:RULE_UNU-008
+  rdf:type qudt:NameConstructionRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:SpellingRule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description """A derived unit is usually singular in English, for example, the value $3\\; m^2\\cdotK/W$ is usually spelled out as “three square meter kelvin per watt,” and the value $3\\; C\\cdotm^2/V$ is usually spelled out as “three coulomb meter squared per volt.” However, a “single” unit may be plural; for example, the value $5\\; kPa$ is spelled out as “five kilopascals,” although “five kilopascal” is acceptable. If in such a single-unit case the number is less than one, the unit is always singular when spelled out; for example, $0.5\\; kPa$ is spelled out as “five-tenths kilopascal.”
+
+Note that these other spelling conventions are given for completeness; as indicated in \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.6}{NIST~SP~811 section 7.6}, it is the position of this Handbook that symbols for numbers and units should be used to express the values of quantities, not the spelled-out names of numbers and units. """^^xsd:string ;
+  qudt:designator "R-UNU-008"^^xsd:string ;
+  vaem:title "Other spelling conventions"^^xsd:string ;
+  rdfs:label "R-UNU-008: Other Spelling Conventions"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.6> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec09.html#9.7> ;
+.
+qudt:RULE_USN-001
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitSymbolNameRule ;
+  qudt:description "Symbols for units formed from other units by multiplication are indicated by means of either a halfhigh (that is, centered) dot or a space. "^^xsd:string ;
+  qudt:designator "R-USN-001"^^xsd:string ;
+  qudt:rationale "As is the case for NIST SP811, QUDT prefers the half-high dot because it is less likely to lead to confusion."^^xsd:string ;
+  vaem:title "Unit symbols obtained by multiplication"^^xsd:string ;
+  rdfs:label "R-USN-001: Units Obtained by Multiplication"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.5> ;
+.
+qudt:RULE_USN-002
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitSymbolNameRule ;
+  qudt:description "Symbols for units formed from other units by division are indicated by means of a solidus (oblique stroke, / ) , a horizontal line, or negative exponents."^^xsd:string ;
+  qudt:designator "R-USN-002"^^xsd:string ;
+  vaem:title "Unit symbols obtained by division"^^xsd:string ;
+  rdfs:label "R-USN-002: Units Obtained by Division"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.6> ;
+.
+qudt:RULE_USN-003
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitSymbolNameRule ;
+  qudt:description "The grouping formed by a prefix symbol attached to a unit symbol constitutes a new inseparable symbol (forming a multiple or submultiple of the unit concerned) which can be raised to a positive or negative power and which can be combined with other unit symbols to form compound unit symbols."^^xsd:string ;
+  qudt:designator "R-USN-003"^^xsd:string ;
+  vaem:title "Inseparability of prefix and unit"^^xsd:string ;
+  rdfs:label "R-USN-003: Inseparability of Prefix and Unit"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.3> ;
+.
+qudt:RULE_USN-004
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitSymbolNameRule ;
+  qudt:description "Compound prefix names or symbols, that is, prefix names or symbols formed by the juxtaposition of two or more prefix names or symbols, are not permitted."^^xsd:string ;
+  qudt:designator "R-USN-004"^^xsd:string ;
+  vaem:title "Unacceptability of compound prefixes"^^xsd:string ;
+  rdfs:label "R-USN-004: Compound Prefixes"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.4> ;
+.
+qudt:RULE_USN-005
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitSymbolNameRule ;
+  qudt:description "For historical reasons, the name “kilogram” for the SI base unit of mass contains the name “kilo,” the SI prefix for $10^3$. Thus, because compound prefixes are unacceptable (see NIST SP~811 section \\href{http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.4}{6.2.4}), symbols for decimal multiples and submultiples of the unit of mass are formed by attaching SI prefix symbols to g, the unit symbol for gram, and the names of such multiples and submultiples are formed by attaching SI prefix names to the name “gram.”"^^xsd:string ;
+  qudt:designator "R-USN-005"^^xsd:string ;
+  vaem:title "Prefixes and the kilogram"^^xsd:string ;
+  rdfs:label "R-USN-005: Prefixes and the Kilogram"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.7> ;
+.
+qudt:RULE_USN-006
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitSymbolNameRule ;
+  qudt:description "Just as the quantity symbol should not imply any particular choice of unit, the unit symbol should not be used to provide specific information about the quantity, and should never be the sole source of information on the quantity."^^xsd:string ;
+  qudt:designator "R-USN-006"^^xsd:string ;
+  qudt:rationale "Units are never qualified by further information about the nature of the quantity; any extra information on the nature of the quantity should be attached to the quantity symbol and not to the unit symbol."^^xsd:string ;
+  vaem:title "Standardized quantity symbols"^^xsd:string ;
+  rdfs:label "R-USN-006: Unit Names Should Not Contain any Quantity-Specific Information."^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#04> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/appenD.html#05> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.1.1> ;
+.
+qudt:RULE_USP-002
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitPrintingRule ;
+  qudt:description "Unit symbols are printed in roman (upright) type regardless of the type used in the surrounding text.   (See also \\href{http://physics.nist.gov/Pubs/SP811/sec10.html#10.2}{NIST SP~811 section 10.2 }and Secs.  \\href{http://physics.nist.gov/Pubs/SP811/sec10.html#10.2.1}{10.2.1}  to \\href{http://physics.nist.gov/Pubs/SP811/sec10.html#10.2.4}{10.2.4}"^^xsd:string ;
+  qudt:designator "R-USP-002"^^xsd:string ;
+  vaem:title "Typeface"^^xsd:string ;
+  rdfs:label "R-USP-002: Roman Typeface for Units"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.1> ;
+.
+qudt:RULE_USP-003
+  rdf:type qudt:CapitalizationRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitPrintingRule ;
+  qudt:description """Unit symbols are printed in lower-case letters except that:
+
+\\begin{enumerate}
+\\item the symbol or the first letter of the symbol is an upper-case letter when the name of the unit is derived from the name of a person; and
+\\item  the recommended symbol for the liter in the United States is L. (See \\href{http://physics.nist.gov/Pubs/SP811/sec05.html#table6
+}{Table 6}, footnote (b).)
+\\end{enumerate}"""^^xsd:string ;
+  qudt:designator "R-USP-003"^^xsd:string ;
+  vaem:title "Capitalization of Unit Symbols"^^xsd:string ;
+  rdfs:label "R-USP-003: Capitalization of Unit Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec05.html#table6> ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.2> ;
+.
+qudt:RULE_USP-004
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitPrintingRule ;
+  qudt:description "Prefix names and symbols are printed in roman (upright) type regardless of the type used in the surrounding text, and are attached to unit symbols without a space between the prefix name or symbol and the unit name or symbol. This last rule also applies to prefixes attached to unit names."^^xsd:string ;
+  qudt:designator "R-USP-004"^^xsd:string ;
+  vaem:title "Typeface and spacing"^^xsd:string ;
+  rdfs:label "R-USP-004: Units are Printed with a Roman Typeface with no Embedded Spaces"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.1> ;
+.
+qudt:RULE_USP-005
+  rdf:type qudt:CapitalizationRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitPrintingRule ;
+  qudt:description "The prefix symbols Y (yotta), Z (zetta), E (exa), P (peta), T (tera), G (giga), and M (mega) are printed in upper-case letters while all other prefix symbols are printed in lower-case letters. (see NIST SP~811 Sect 4 \\href{http://physics.nist.gov/Pubs/SP811/sec04.html#table5}{Table 5})Prefix names are normally printed in lowercase letters."^^xsd:string ;
+  qudt:designator "R-USP-005"^^xsd:string ;
+  vaem:title "Prefix Capitalization"^^xsd:string ;
+  rdfs:label "R-USP-005: Prefix Capitalization"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.2> ;
+.
+qudt:RULE_USP-006
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitPrintingRule ;
+  qudt:description "The symbols for units and SI prefixes are roman:"^^xsd:string ;
+  qudt:designator "R-USP-006"^^xsd:string ;
+  qudt:example """\\textit{Symbols for Units and SI Prefixes are Roman}
+\\vspace{10pt}
+
+\\begin{tabular}{l l l}
+$\\rm m$ \\quad meter &$\\rm g$\\quad gram  & $\\rm L $\\quad liter\\\\
+$\\rm cm$	\\quad centimeter &$\\rm \\mu g$\\quad microgram&$ \\rm mL$\\quad milliliter\\\\
+\\end{tabular}"""^^xsd:string ;
+  vaem:title "Symbols for Units and SI Prefixes are Roman"^^xsd:string ;
+  rdfs:label "R-USP-006: Symbols for Units and SI Prefixes are Roman"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec10.html#10.2.2> ;
+.
+qudt:RULE_USU-001
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "Unit symbols and unit names are not used together.  (See also NIST SP~811 Secs. \\href{http://physics.nist.gov/Pubs/SP811/sec09.html#9.5}{9.5} and \\href{http://physics.nist.gov/Pubs/SP811/sec09.html#9.8}{9.8}.)"^^xsd:string ;
+  qudt:designator "R-USU-001"^^xsd:string ;
+  vaem:title "Unacceptability of unit symbols and unit names together"^^xsd:string ;
+  rdfs:label "R-USU-001: Unacceptability of Unit Symbols and Unit Names Together"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.7> ;
+.
+qudt:RULE_USU-002
+  rdf:type qudt:PluralsRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "Unit symbols are unaltered in the plural."^^xsd:string ;
+  qudt:designator "R-USU-002"^^xsd:string ;
+  vaem:title "Plurality Does Not Alter Usage of Unit Symbols"^^xsd:string ;
+  rdfs:label "R-USU-002: Plurality Does Not Alter Usage of Unit Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.3> ;
+.
+qudt:RULE_USU-004
+  rdf:type qudt:AbbreviationRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "It is not permissible to use abbreviations for their unit symbols or names, such as sec (for either s or second), sq. mm (for either $mm^2$ or square millimeter), cc (for either $cm^3$ or cubic centimeter), mins (for either min or minutes), hrs (for either h or hours), lit (for either L or liter), amps (for either A or amperes), AMU (for either u or unified atomic mass unit), or mps (for either m/s or meter per second). Although the values of quantities are normally expressed using symbols for numbers and symbols for units (see also NIST SP~811 \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.6}{ section 7.6}), if for some reason the name of a unit is more appropriate than the unit symbol (see also  NIST SP~811 section 7.6, \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.6note3}{note 3}), the name of the unit should be spelled out in full."^^xsd:string ;
+  qudt:designator "R-USU-004"^^xsd:string ;
+  qudt:rationale "Because acceptable units generally have internationally recognized symbols and names, use of abbreviations creates opportunity for confusion and misinterpretation."^^xsd:string ;
+  vaem:title "Unacceptability of Abbreviations for Units"^^xsd:string ;
+  rdfs:label "R-USU-004: No Abbreviated Unit Names"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.8> ;
+.
+qudt:RULE_USU-005
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UsageRule ;
+  qudt:description "In a derived unit formed by division, the use of a prefix symbol (or a prefix name) in both the Images/numerator and the denominator can cause confusion. Thus, for example, $10 kV/mm$ is acceptable, but $10 MV/m$ is often considered preferable because it contains only one prefix symbol and it is in the Images/numerator. In a derived unit formed by multiplication, the use of more than one prefix symbol (or more than one prefix name) can also cause confusion. Thus, for example, $10 MV \\cdot ms$ is acceptable, but $10 kV \\cdot s$ is often considered preferable."^^xsd:string ;
+  qudt:designator "R-USU-005"^^xsd:string ;
+  vaem:title "Usage of Multiple Prefixes"^^xsd:string ;
+  rdfs:label "R-USU-005: Multiple Prefixes"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.5> ;
+.
+qudt:RULE_USU-006
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "Prefix symbols cannot stand alone and thus cannot be attached to the number 1, the symbol for the unit one. In a similar vein, prefix names cannot be attached to the name of the unit one, that is, to the word “one.” (See NIST SP~811 section \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.10}{7.10} for a discussion of the unit one.)"^^xsd:string ;
+  qudt:designator "R-USU-006"^^xsd:string ;
+  vaem:title "Unacceptability of stand-alone prefixes"^^xsd:string ;
+  rdfs:label "R-USU-006: Stand Alone Prefixes"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.6> ;
+.
+qudt:RULE_USU-007
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UsageRule ;
+  qudt:description """Prefix symbols may be used with the unit symbol ºC and prefix names may be used with the unit name “degree Celsius.” For example, 12 m ºC (12 millidegrees Celsius) is acceptable. However, to avoid confusion, prefix symbols (and prefix names) are not used with the time-related unit symbols (names) min (minute), h (hour), d (day); nor with the angle-related symbols (names) ° (degree), ' (minute), and \" (second). (See NIST SP~811 \\href{http://physics.nist.gov/Pubs/SP811/sec05.html#table6}{Table 6}).
+
+Prefix symbols (and prefix names) may be used with the unit symbols (names) L (liter), t (metric ton), eV (electronvolt), u (unified atomic mass unit), Da (dalton) (see Tables \\href{http://physics.nist.gov/Pubs/SP811/sec05.html#table6}{6} and\\href{http://physics.nist.gov/Pubs/SP811/sec05.html#table7} {7}). However, although submultiples of the liter such as mL (milliliter) and dL (deciliter) are in common use, multiples of the liter such as kL (kiloliter) and ML (megaliter) are not. """^^xsd:string ;
+  qudt:designator "R-USU-007"^^xsd:string ;
+  vaem:title "Prefixes with the degree Celsius and units accepted for use with the SI"^^xsd:string ;
+  rdfs:label "R-USU-007: Prefixes with The Degree Celsius and Units Accepted for Use With The SI"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.2.8> ;
+.
+qudt:RULE_USU-008
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "Symbols for units are never used without numerical values or quantity symbols (they are not abbreviations)."^^xsd:string ;
+  qudt:designator "R-USU-008"^^xsd:string ;
+  qudt:example """\\textit{Unacceptability of Stand-Alone Unit Symbols}
+\\vspace{10pt}
+
+\\begin{tabular}{l l l}
+there are $10^6$ mm in 1 km  &but not:& there are many mm in a km\\\\
+it is sold by the cubic meter&but not:&it is sold by the $m^3$\\\\
+\\end{tabular}
+\\vspace{10pt}
+
+$t/^\\circ\\rm C$, $E/(V/m)$, $p/MPa$, and the like are perfectly acceptable (see NIST SP~811 section \\href{http://physics.nist.gov/Pubs/SP811/sec07.html#7.1}{7.1}).
+"""^^xsd:string ;
+  vaem:title "Unacceptability of stand-alone unit symbols"^^xsd:string ;
+  rdfs:label "R-USU-008: Unit Symbol Usage Rule:Unacceptabiity of Stand-Alone Unit Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec07.html#7.8> ;
+.
+qudt:RULE_USU-009
+  rdf:type qudt:PunctuationRule ;
+  rdf:type qudt:SP811-Rule ;
+  rdf:type qudt:UnitUsageRule ;
+  qudt:description "Unit symbols are not followed by a period unless at the end of a sentence."^^xsd:string ;
+  qudt:designator "R-USU-009"^^xsd:string ;
+  vaem:title "Punctuation of Unit Symbols"^^xsd:string ;
+  rdfs:label "R-USU-009: Punctuation of Unit Symbols"^^xsd:string ;
+  prov:wasInfluencedBy <http://physics.nist.gov/Pubs/SP811/sec06.html#6.1.4> ;
+.
+qudt:Rule
+  dc:description "The QUDT naming, design, and usage rules are based on the NIST rules as documented in \\href{http://www.nist.gov/pml/pubs/sp811/index.cfm}{NIST SP~811}."^^xsd:string ;
+  prov:wasInfluencedBy <http://www.nist.gov/pml/pubs/sp811/index.cfm> ;
+.
+qudt:SP811-Comment
+  rdf:type owl:Class ;
+  dc:description "National Institute of Standards and Technology (NIST) Special Publication 811 Comments on some quantities and their units"^^xsd:string ;
+  rdfs:label "SP~811 Comment"^^xsd:string ;
+  rdfs:subClassOf qudt:Comment ;
+.
+qudt:SP811-Rule
+  rdf:type owl:Class ;
+  rdfs:label "NIST SP 811 Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:Rule ;
+.
+qudt:SpacingAndHyphenation
+  rdf:type owl:Class ;
+  rdfs:label "Spacing and Hyphenation Rules"^^xsd:string ;
+  rdfs:subClassOf qudt:GrammarRule ;
+.
+qudt:SpellingRule
+  rdf:type owl:Class ;
+  rdfs:label "Spelling Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:GrammarRule ;
+.
+qudt:SymbolNameRule
+  rdf:type owl:Class ;
+  dc:description """Unit symbols are printed in Roman (upright) type regardless of the type used in the surrounding text.  They are printed in lowercase letters unless they are derived from a proper name, in which case the first letter is a capital letter.
+
+An exception, adopted by the 16th CGPM (1979, Resolution 6), is that either capital \"L\" or lowercase \"l\" is allowed for the liter. To avoid possible confusion between the numeral \"1 (one)\" and the lowercase letter \"l\", the symbol \"L\" is preferred in the U.S.; see NIST SP~811 footnote (b) of Table~6.
+
+A multiple or submultiple prefix, if used, is part of the unit and precedes the unit symbol without a separator.  A prefix is never used in isolation, and compound prefixes are never used.
+
+Unit symbols are mathematical entities and not abbreviations. Therefore, they are not followed by a period except at the end of a sentence; neither the plural nor mixed unit symbols and unit names are used within one expression, since names are not mathematical entities.
+
+In forming products and quotients of unit symbols the normal rules of algebraic multiplication or division apply. 
+Multiplication is indicated by a space or a half-high, centered dot \"$\\cdot$\", since some prefixes could be misinterpreted as a unit symbol. 
+
+Division is indicated by a horizontal line, by a solidus (oblique stroke, \"/\") or by negative exponents.  When several unit symbols are combined, take care to avoid ambiguities, for example, by using brackets or negative exponents.  A solidus is not to be used more than once in a given expression without brackets to remove ambiguities.
+
+It is not permissible to use abbreviations for unit symbols or unit names such as \"sec\" for either \"s\" or \"second\", \"sq. mm \" for either \"$mm^2$\" or \"square millimeter\", \"cc\" for either \"$cm^3$\" or \"cubic centimeter\", or \"mps\" for either \"m/s\" or \"meter per second\".  The use of the correct symbols for SI units and for units in general is mandatory.  In this way ambiguities and misunderstandings in the values of quantities are avoided."""^^xsd:string ;
+  rdfs:label "Symbol Name Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:NameConstructionRule ;
+.
+qudt:Unit
+  qudt:hasRule qudt:RULE_USN-001 ;
+  qudt:hasRule qudt:RULE_USU-002 ;
+  qudt:hasRule qudt:RULE_USU-009 ;
+.
+qudt:UnitPrintingRule
+  rdf:type owl:Class ;
+  rdfs:label "Unit Printing Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:PrintingRule ;
+.
+qudt:UnitSymbolNameRule
+  rdf:type owl:Class ;
+  rdfs:label "Unit Symbol Name Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:SymbolNameRule ;
+.
+qudt:UnitUsageRule
+  rdf:type owl:Class ;
+  dc:description """Unit names are normally printed in Roman (upright) type and are treated like ordinary nouns. In English, the names of units start with a lowercase letter (even when the symbol for the unit begins with a capital letter), except at the beginning of a sentence or in capitalized material such as a title. In keeping with this rule, the correct spelling of the name of the unit with the symbol \"$^\\circ$C\" is “degree Celsius” (the unit degree begins with a lowercase \"d\" and the modifier Celsius begins with an uppercase \"C\" because it is a proper name).
+
+Although the values of quantities are normally expressed using symbols for numbers and symbols for units, if for some reason the unit name is more appropriate than the unit symbol, the unit name should be spelled out in full. When the name of a unit is combined with the name of a multiple or submultiple prefix, no space or hyphen is used between the prefix name and the unit name. The combination of prefix name plus unit name is a single word.
+
+In both English and French, when the name of a derived unit is formed from the names of individual units by multiplication, then either a space or a hyphen is used to separate the names of the individual units.
+
+In both English and French, modifiers such as \"squared\" or \"cubed\" are used in the names of units raised to powers; they are placed after the unit name.  However, in the case of area or volume, as an alternative the modifiers \"square\" or \"cubic\" may be used. These modifiers are placed before the unit name, but this applies only in English."""^^xsd:string ;
+  rdfs:label "Unit Usage rule"^^xsd:string ;
+  rdfs:subClassOf qudt:UsageRule ;
+.
+qudt:UsageRule
+  rdf:type owl:Class ;
+  dc:description "Usage rules are concerned with the required and recommended ways of expressing math symbols and signs, quantity names and symbols, unit names and symbols, and quantity values."^^xsd:string ;
+  rdfs:label "Usage Rule"^^xsd:string ;
+  rdfs:subClassOf qudt:Rule ;
+.
+qudt:hasRule
+  rdfs:range qudt:Rule ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.
+skos:closeMatch
+  rdf:type rdf:Property ;
+.
+skos:exactMatch
+  rdf:type rdf:Property ;
+.
+[
+  rdf:type rdf:Statement ;
+  qudt:figure qudt:FIG_NIR-UNIT-IDENTIFIER-EXAMPLE-MICROA ;
+  rdf:object """unit:AMPERE  has the code \\tt{U150M150}
+
+uni:MicroA has the code  \\tt{U150M150N6}
+
+The last example is illustrated in \\ref{fig:NIR-UNIT-IDENTIFIER-EXMAMPLE-MICROA}."""^^xsd:string ;
+  rdf:predicate qudt:example ;
+  rdf:subject qudt:RULE_UIR-016 ;
+  rdfs:label ""^^xsd:string ;
+].
+[
+  rdf:type rdf:Statement ;
+  qudt:figure qudt:FIG_NIR-UNIT-IDENTIFIER-SYNTAX ;
+  rdf:object """A \\textit{Unit} Identifier has a precise grammar that uniquely identifies the unit as a member of a domain. Scaled units have an identifier that appends a \\textit{scaling code} to the base unit. The identifier starts with a capital 'U' and is followed by the \\textit{Domain Field}, then an 'M' delimiter for the \\textit{Member Field}. 
+
+If the unit is a scaled unit, an optional append is specified with a coding that depends on whether the scaling is binary or decimal. For decimal scalings the delimiter is a 'P' for a positive exponent (of a power of ten) and 'N' for a negative exponent. In the case of a binary scaling, there can only be a positive scaling and the delimiter is the character 'B'.
+
+The syntax for a unit identifier is shown in \\ref{fig:NIR-UNIT-IDENTIFIER-SYNTAX}."""^^xsd:string ;
+  rdf:predicate qudt:description ;
+  rdf:subject qudt:RULE_UIR-016 ;
+  rdfs:label ""^^xsd:string ;
+].

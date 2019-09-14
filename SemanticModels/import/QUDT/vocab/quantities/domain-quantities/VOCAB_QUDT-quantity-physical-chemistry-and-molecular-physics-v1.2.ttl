@@ -1,0 +1,892 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/physical-chemistry-and-molecular-physics
+# imports: http://qudt.org/1.2/collection/units
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mc: <http://www.linkedmodel.org/owl/schema/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:author
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "author"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:date
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "date"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/physical-chemistry-and-molecular-physics>
+  rdf:type owl:Ontology ;
+  dc:author "Jack Hodges"^^xsd:string ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Space and Time Quantities"^^xsd:string ;
+  dc:title "QUDT SI Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "Space and Time"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:CurationGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/isq/quantity/physical-chemistry-and-molecular-physics"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/collection/units> ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/physical-chemistry-and-molecular-physics> ;
+.
+quantity:AbsoluteActivity
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Absolute Activity} is the exponential of the ratio of the chemical potential to $RT$ where $R$ is the gas constant and $T$ the thermodynamic temperature."^^xsd:string ;
+  qudt:latexDefinition "$\\lambda_B = e^{\\frac{\\mu_B}{RT}}$, where $\\mu_B$ is the chemical potential of substance $B$, $R$ is the molar gas constant, and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "\\lambda_B"^^xsd:string ;
+  rdfs:label "Absolute Activity"^^xsd:string ;
+  skos:broader quantity:InverseVolume ;
+  skos:prefLabel "Absolute Activity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://goldbook.iupac.org/A00019.html> ;
+.
+quantity:ActivityCoefficient
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "An \\textit{Activity Coefficient} is a factor used in thermodynamics to account for deviations from ideal behaviour in a mixture of chemical substances. In an ideal mixture, the interactions between each pair of chemical species are the same (or more formally, the enthalpy change of solution is zero) and, as a result, properties of the mixtures can be expressed directly in terms of simple concentrations or partial pressures of the substances present e.g. Raoult's law. Deviations from ideality are accommodated by modifying the concentration by an activity coefficient. "^^xsd:string ;
+  qudt:latexDefinition "$f_B = \\frac{\\lambda_B}{(\\lambda_B^*x_B)}$, where $\\lambda_B$ the absolute activity of substance $B$, $\\lambda_B^*$ is the absolute activity of the pure substance $B$ at the same temperature and pressure, and $x_B$ is the amount-of-substance fraction of substance $B$."^^xsd:string ;
+  qudt:symbol "f_B"^^xsd:string ;
+  rdfs:label "Activity Coefficient"^^xsd:string ;
+  skos:prefLabel "Activity Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Activity_coefficient> ;
+.
+quantity:AmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:description "\\textit{Amount of Substance} is a standards-defined quantity that measures the size of an ensemble of elementary entities, such as atoms, molecules, electrons, and other particles. It is sometimes referred to as chemical amount. The International System of Units (SI) defines the amount of substance to be proportional to the number of elementary entities present. The SI unit for amount of substance is $mole$. It has the unit symbol $mol$. The mole is defined as the amount of substance that contains an equal number of elementary entities as there are atoms in 0.012kg of the isotope carbon-12. This number is called Avogadro's number and has the value $6.02214179(30) \\times 10$. The only other unit of amount of substance in current use is the $pound-mole$ with the symbol $lb-mol$, which is sometimes used in chemical engineering in the United States. One $pound-mole$ is exactly $453.59237 mol$."^^xsd:string ;
+  rdfs:label "Amount of Substance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Amount_of_substance> ;
+  skos:prefLabel "Amount of Substance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Amount_of_substance> ;
+.
+quantity:AmountOfSubstanceConcentrationOfB
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "mol-m^{-3}"^^xsd:string ;
+  qudt:applicableUnit unit:MOL-PER-M3 ;
+  qudt:description "\\textit{Amount of Substance of Concentration of B} is defined as the amount of a constituent divided by the volume of the mixture."^^xsd:string ;
+  qudt:latexDefinition "$C_B = \\frac{n_B}{V}$, where $n_B$ is the amount of substance $B$ and $V$ is the volume."^^xsd:string ;
+  qudt:symbol "C_B"^^xsd:string ;
+  rdfs:label "Amount of Substance of Concentration of B"^^xsd:string ;
+  skos:prefLabel "Amount of Substance of Concentration of B"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Amount_of_substance_concentration> ;
+.
+quantity:AmountOfSubstanceFractionOfB
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Amount of Substance of Fraction of B} is defined as tthe amount of a constituent divided by the total amount of all constituents in a mixture."^^xsd:string ;
+  qudt:latexDefinition "$x_B = \\frac{n_B}{n}$, where $n_B$ is the amount of substance $B$ and $n$ is the total amount of substance."^^xsd:string ;
+  qudt:symbol "X_B"^^xsd:string ;
+  rdfs:label "Amount of Substance of Fraction of B"^^xsd:string ;
+  skos:prefLabel "Amount of Substance of Fraction of B"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Amount_fraction> ;
+.
+quantity:AmountOfSubstancePerUnitMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Amount of Substance per Unit Mass"^^xsd:string ;
+  skos:broader quantity:Concentration ;
+  skos:prefLabel "Amount of substance per unit mass"^^xsd:string ;
+.
+quantity:AmountOfSubstancePerUnitVolume
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Amount of Substance Per Unit Volume"^^xsd:string ;
+  skos:broader quantity:Concentration ;
+  skos:prefLabel "Amount of Substance Per Unit Volume"^^xsd:string ;
+.
+quantity:AngleOfOpticalRotation
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:RAD ;
+  qudt:description "The \\textit{Angle of Optical Rotation} is the angle through which plane-polarized light is rotated clockwise, as seen when facing the light source, in passing through an optically active medium."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  rdfs:label "Angle of Optical Rotation"^^xsd:string ;
+  skos:prefLabel "Angle of Optical Rotation"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Optical_rotation> ;
+.
+quantity:AtomicNumber
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Atomic Number}, also known as the proton number, is the number of protons found in the nucleus of an atom and therefore identical to the charge number of the nucleus. A nuclide is a species of atom with specified numbers of protons and neutrons. Nuclides with the same value of Z but different values of N are called isotopes of an element. The ordinal number of an element in the periodic table is equal to the atomic number. The atomic number equals the charge of the nucleus in units of the elementary charge."^^xsd:string ;
+  qudt:symbol "Z"^^xsd:string ;
+  rdfs:label "Atomic Number"^^xsd:string ;
+  skos:prefLabel "Atomic Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Atomic_number> ;
+.
+quantity:AvogadroConstant
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "mole^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:PER-MOL ;
+  qudt:belongsToSystemOfQuantities qudt:SOQ_ISQ ;
+  qudt:latexDefinition "$L = \\frac{N}{n}$, where $N$ is the number of particles and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "L, N_A"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Avogadro_constant> ;
+.
+quantity:BoltzmannConstant
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  qudt:abbreviation "j-k^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-K ;
+  qudt:description "The \\textit{Boltzmann Constant} is a physical constant relating energy at the individual particle level with temperature."^^xsd:string ;
+  qudt:latexDefinition "$k = \\frac{R}{N_A}$, where $R$ is the molar gas constant and $N_A$ is the Avagadro constant."^^xsd:string ;
+  qudt:quantityValue quantity:Value_BoltzmannConstant ;
+  qudt:symbol "k"^^xsd:string ;
+  mc:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Boltzmann Constant"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Gas_constant> ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Boltzmann_constant> ;
+.
+quantity:CanonicalPartitionFunction
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "A \\textit{Canonical Partition Function} applies to a canonical ensemble, in which the system is allowed to exchange heat with the environment at fixed temperature, volume, and number of particles."^^xsd:string ;
+  qudt:latexDefinition "$Z = \\sum_r e^{-\\frac{E_r}{kT}}$, where the sum is over all quantum states consistent with given energy, volume, external fields, and content, $E_r$ is the energy in the $rth$ quantum state, $k$ is the Boltzmann constant, and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "Z"^^xsd:string ;
+  rdfs:label "Canonical Partition Function"^^xsd:string ;
+  skos:prefLabel "Canonical Partition Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)> ;
+.
+quantity:CatalyticActivity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Catalytic Activity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Catalysis> ;
+  skos:prefLabel "Catalytic Activity"^^xsd:string ;
+.
+quantity:ChargeNumber
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Charge Number}, or just valance of an ion is the coefficient that, when multiplied by the elementary charge, gives the ion's charge."^^xsd:string ;
+  qudt:symbol "z"^^xsd:string ;
+  rdfs:label "Charge Number"^^xsd:string ;
+  skos:prefLabel "Charge Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Charge_number> ;
+.
+quantity:ChemicalAffinity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-PER-MOL ;
+  qudt:description "In chemical physics and physical chemistry, \\textit{Chemical Affinity} is the electronic property by which dissimilar chemical species are capable of forming chemical compounds. Chemical affinity can also refer to the tendency of an atom or compound to combine by chemical reaction with atoms or compounds of unlike composition."^^xsd:string ;
+  qudt:latexDefinition "$A = -\\sum \\nu_b\\mu_B$, where $\\nu_b$ is the stoichiometric number of substance $B$ and $\\mu_B$ is the chemical potential of substance $B$."^^xsd:string ;
+  qudt:symbol "A"^^xsd:string ;
+  rdfs:label "Chemical Affinity"^^xsd:string ;
+  skos:prefLabel "Chemical Affinity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Chemical_affinity> ;
+.
+quantity:ChemicalPotential
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "j-mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-MOL ;
+  qudt:description "\\textit{Chemical Potential}, also known as partial molar free energy, is a form of potential energy that can be absorbed or released during a chemical reaction."^^xsd:string ;
+  qudt:latexDefinition "$\\mu_B = (\\frac{\\partial G}{\\partial n_B})_{T,p,n_i}$, where $G$ is Gibbs energy, and $n_B$ is the amount of substance $B$."^^xsd:string ;
+  qudt:symbol "\\mu_B"^^xsd:string ;
+  rdfs:label "Chemical Potential"^^xsd:string ;
+  skos:prefLabel "Chemical Potential"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Chemical_potential> ;
+.
+quantity:Concentration
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Concentration"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Concentration> ;
+  skos:prefLabel "Concentration"^^xsd:string ;
+.
+quantity:DegreeOfDissociation
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Degree of Dissociation} is the fraction of original solute molecules that have dissociated."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  mc:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Degree of Dissociation"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Faraday_constant> ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Dissociation_(chemistry)> ;
+.
+quantity:DiffusionCoefficient
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "m^2 sec^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:M2-PER-SEC ;
+  qudt:description "The \\textit{Diffusion Coefficient} is a proportionality constant between the molar flux due to molecular diffusion and the gradient in the concentration of the species (or the driving force for diffusion). Diffusivity is encountered in Fick's law and numerous other equations of physical chemistry."^^xsd:string ;
+  qudt:latexDefinition "$C_B \\left \\langle \\nu_B \\right \\rangle = -D grad C_B$, where $C_B$ the local molecular concentration of substance $B$ in the mixture and $\\left \\langle \\nu_B \\right \\rangle$ is the local average velocity of the molecules of $B$."^^xsd:string ;
+  qudt:symbol "D"^^xsd:string ;
+  rdfs:label "Diffusion Coefficient"^^xsd:string ;
+  skos:prefLabel "Diffusion Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_diffusivity> ;
+.
+quantity:ElectricChargePerAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdfs:label "Electric Charge per Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Electric Charge per Amount of Substance"^^xsd:string ;
+.
+quantity:ElectricDipoleMoment
+  rdf:type qudt:ChemistryQuantityKind ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electric_dipole_moment> ;
+.
+quantity:ElectricPolarizability
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "c-m^2-v^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-MOL ;
+  qudt:description "\\textit{Electric Polarizability} is the relative tendency of a charge distribution, like the electron cloud of an atom or molecule, to be distorted from its normal shape by an external electric field, which is applied typically by inserting the molecule in a charged parallel-plate capacitor, but may also be caused by the presence of a nearby ion or dipole."^^xsd:string ;
+  qudt:latexDefinition "$\\alpha_{i,j} = \\frac{\\partial p_i}{\\partial E_j}$, where $p_i$ is the cartesian component along the $i-axis$ of the electric dipole moment induced by the applied electric field strength acting on the molecule, and $E_j$ is the component along the $j-axis$ of this electric field strength."^^xsd:string ;
+  qudt:symbol "\\alpha"^^xsd:string ;
+  rdfs:label "Electric Polarizability"^^xsd:string ;
+  skos:prefLabel "Electric Polarizability"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Polarizability> ;
+.
+quantity:ElectrolyticConductivity
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "s m^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:S-M2-PER-MOL ;
+  qudt:applicableUnit unit:S-PER-M ;
+  qudt:description "\\textit{Electrolytic Conductivity} of an electrolyte solution is a measure of its ability to conduct electricity."^^xsd:string ;
+  qudt:latexDefinition "$x = \\frac{J}{E}$, where $J$ is the electrolytic current density and $E$ is the electric field strength."^^xsd:string ;
+  qudt:symbol "x"^^xsd:string ;
+  mc:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Electrolytic Conductivity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Conductivity_(electrolytic)> ;
+.
+quantity:ElementaryCharge
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "c"^^xsd:string ;
+  qudt:applicableUnit unit:COULOMB ;
+  qudt:description "The \\textit{Elementary Charge} is the electric charge carried by a single proton, or equivalently, the negation (opposite) of the electric charge carried by a single electron."^^xsd:string ;
+  qudt:symbol "e"^^xsd:string ;
+  rdfs:label "Elementary Charge"^^xsd:string ;
+  skos:prefLabel "Elementary Charge"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Elementary_charge> ;
+.
+quantity:EnergyAndWorkPerMassAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Energy and Work per Mass Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Energy and Work per Mass Amount of Substance"^^xsd:string ;
+.
+quantity:EquilibriumConstant
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:description "The \\textit{Equlilbrium Constant}, also known as the thermodynamic equilibrium constant, is an expression that gives us a ratio of the products and reactants of a reaction at equilibrium with respect to a specific unit."^^xsd:string ;
+  qudt:latexDefinition "$K^\\Theta = \\Pi_B(\\lambda_B^\\Theta)^{-\\nu_B}$, where $\\Pi_B$ denotes the product for all substances $B$, $\\lambda_B^\\Theta$ is the standard absolute activity of substance $B$, and $\\nu_B$ is the stoichiometric number of the substance $B$."^^xsd:string ;
+  qudt:symbol "K^\\Theta"^^xsd:string ;
+  rdfs:label "Equilibrium Constant"^^xsd:string ;
+  rdfs:seeAlso quantity:EquilibriumConstantOnConcentrationBasis ;
+  rdfs:seeAlso quantity:EquilibriumConstantOnPressureBasis ;
+  skos:prefLabel "Equilibrium Constant"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Equilibrium_constant> ;
+.
+quantity:EquilibriumConstantOnConcentrationBasis
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:description "The \\textit{Equlilbrium Constant}, also known as the thermodynamic equilibrium constant, is an expression that gives us a ratio of the products and reactants of a reaction at equilibrium with respect to a specific unit."^^xsd:string ;
+  qudt:latexDefinition "$K_c = \\Pi_B(c_B)^{-\\nu_B}$, for solutions"^^xsd:string ;
+  qudt:symbol "K_c"^^xsd:string ;
+  rdfs:comment "The unit is unit:MOL-PER-M3 raised to the N where N is the summation of stoichiometric numbers. I don't know what to do with this."^^xsd:string ;
+  rdfs:label "Equilibrium Constant on Concentration Basis"^^xsd:string ;
+  skos:broader quantity:EquilibriumConstant ;
+  skos:prefLabel "Equilibrium Constant on Concentration Basis"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Equilibrium_constant> ;
+.
+quantity:EquilibriumConstantOnPressureBasis
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Equlilbrium Constant}, also known as the thermodynamic equilibrium constant, is an expression that gives us a ratio of the products and reactants of a reaction at equilibrium with respect to a specific unit."^^xsd:string ;
+  qudt:latexDefinition "$K_p = \\Pi_B(p_B)^{-\\nu_B}$, for gases"^^xsd:string ;
+  qudt:symbol "K_p"^^xsd:string ;
+  rdfs:label "Equilibrium Constant on Pressure Basis"^^xsd:string ;
+  skos:broader quantity:EquilibriumConstant ;
+  skos:prefLabel "Equilibrium Constant on Pressure Basis"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Equilibrium_constant> ;
+.
+quantity:ExtentOfReaction
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "mol"^^xsd:string ;
+  qudt:applicableUnit unit:MOL ;
+  qudt:description "In physical chemistry, the \\textit{Extent of Reaction} is a quantity that measures the extent in which the reaction proceeds."^^xsd:string ;
+  qudt:latexDefinition "$dn_B = \\nu_B d\\xi$, where $n_B$ is the amount of substance $B$ and $\\nu_B$ is the stoichiometric number of substance $B$."^^xsd:string ;
+  qudt:symbol "\\xi"^^xsd:string ;
+  rdfs:label "Extent of Reaction"^^xsd:string ;
+  skos:prefLabel "Extent of Reaction"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Extent_of_reaction> ;
+.
+quantity:FaradayConstant
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "c mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:C-PER-MOL ;
+  qudt:description "The \\textit{Faraday Constant} is the magnitude of electric charge per mole of electrons."^^xsd:string ;
+  qudt:latexDefinition "$F = N_A e$, where $N_A$ is the Avagadro constant and $e$ is the elementary charge."^^xsd:string ;
+  qudt:symbol "F"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Faraday_constant> ;
+.
+quantity:Fugacity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "pa"^^xsd:string ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:description "\\textit{Fugacity} of a real gas is an effective pressure which replaces the true mechanical pressure in accurate chemical equilibrium calculations. It is equal to the pressure of an ideal gas which has the same chemical potential as the real gas."^^xsd:string ;
+  qudt:symbol "\\tilde{p}_B"^^xsd:string ;
+  rdfs:label "Fugacity"^^xsd:string ;
+  skos:prefLabel "Fugacity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Fugacity> ;
+.
+quantity:GrandCanonicalPartitionFunction
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "An \\textit{Grand Canonical Partition Function} for a grand canonical ensemble, a system that can exchange both heat and particles with the environment, which has a constant temperature and a chemical potential."^^xsd:string ;
+  qudt:latexDefinition "$\\Xi = \\sum_{N_A, N_B, ...} Z(N_A, N_B, ...) \\cdot \\lambda_A^{N_A} \\cdot \\lambda_B^{N_B} \\cdot ...$, where $Z(N_A, N_B, ...)$ is the canonical partition function for the given number of particles $A, B, ...,$, and $\\lambda_A, \\lambda_B, ...$ are the absolute activities of particles $A, B, ...$."^^xsd:string ;
+  qudt:symbol "\\Xi"^^xsd:string ;
+  rdfs:label "Grand Canonical Partition Function"^^xsd:string ;
+  skos:broader quantity:CanonicalPartitionFunction ;
+  skos:prefLabel "Grand Canonical Partition Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)> ;
+.
+quantity:InverseAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Inverse Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Inverse Amount of Substance"^^xsd:string ;
+.
+quantity:IonTransportNumber
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Ion Transport Number} is a quantity which indicates the different contribution of ions to the electric current in electrolytes due to different electrical mobility."^^xsd:string ;
+  qudt:latexDefinition "$t_B = \\frac{i_B}{i}$, where $i_B$ is the electric current carried by the ion $B$ and $i$ is the total electric current."^^xsd:string ;
+  qudt:symbol "t_B"^^xsd:string ;
+  rdfs:label "Ion Transport Number"^^xsd:string ;
+  skos:prefLabel "Ion Transport Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ion_transport_number> ;
+.
+quantity:IonicStrength
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:PhysicalConstant ;
+  qudt:abbreviation "mol kg^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:MOL-PER-KG ;
+  qudt:description "The \\textit{Ionic Strength} of a solution is a measure of the concentration of ions in that solution."^^xsd:string ;
+  qudt:latexDefinition "$I = \\frac{1}{2} \\sum z_i^2 b_i$, where the summation is carried out over all ions with charge number $z_i$ and molality $m_i$."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  mc:hasGovernance quantity:CODATA_GovernanceDetails ;
+  rdfs:label "Ionic Strength"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Ionic_strength> ;
+.
+quantity:LengthMolarEnergy
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Length Molar Energy"^^xsd:string ;
+  skos:prefLabel "Length Molar Energy"^^xsd:string ;
+.
+quantity:MagneticDipoleMoment
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:latexDefinition """$E_m = -m \\cdot B$, where $E_m$ is the interaction energy of the molecule with magnetic diploe moment $m$ and a magnetic field with magnetic flux density $B$
+
+or,
+
+$J_m = \\mu_0 M$ where $\\mu_0$ is the magnetic constant and $M$ is Magnetization."""^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Magnetic_moment> ;
+.
+quantity:MassAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Mass Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Mass Amount of Substance"^^xsd:string ;
+.
+quantity:MassAmountOfSubstanceTemperature
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Mass Amount of Substance Temperature"^^xsd:string ;
+  skos:prefLabel "Mass Amount of Substance Temperature"^^xsd:string ;
+.
+quantity:MassConcentration
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "kg-m^{-3}"^^xsd:string ;
+  qudt:applicableUnit unit:KG-PER-M3 ;
+  qudt:description "The \\textit{Mass Concentration} of substance B  is defined as the mass of a constituent  divided by the volume of the mixture ."^^xsd:string ;
+  qudt:latexDefinition "$\\rho_B = \\frac{m_B}{V}$, where $m_B$ is the mass of substance $B$ and $V$ is the volume."^^xsd:string ;
+  qudt:symbol "\\rho_B"^^xsd:string ;
+  rdfs:label "Mass Concentration"^^xsd:string ;
+  skos:broader quantity:InverseVolume ;
+  skos:prefLabel "Mass Concentration"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_concentration_(chemistry)> ;
+.
+quantity:MassDensity
+  rdf:type qudt:ChemistryQuantityKind ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+.
+quantity:MassFraction
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Mass Fraction} is the fraction of one substance with mass to the mass of the total mixture ."^^xsd:string ;
+  qudt:latexDefinition "$w_B = \\frac{m_B}{m}$, where $m_B$ is the mass of substance $B$ and $m$ is the total."^^xsd:string ;
+  qudt:symbol "w_B"^^xsd:string ;
+  rdfs:label "Mass Fraction"^^xsd:string ;
+  skos:broader quantity:InverseVolume ;
+  skos:prefLabel "Mass Fraction"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mass_fraction_(chemistry)> ;
+.
+quantity:MeanFreePath
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "m"^^xsd:string ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "\\textit{Mean Free Path} is the average distance travelled by a moving particle (such as an atom, a molecule, a photon) between successive impacts (collisions) which modify its direction or energy or other particle properties."^^xsd:string ;
+  qudt:symbol "l, \\lambda"^^xsd:string ;
+  rdfs:label "Mean Free Path"^^xsd:string ;
+  skos:broader quantity:MolecularMass ;
+  skos:prefLabel "Mean Free Path"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Mean_free_path> ;
+.
+quantity:MicroCanonicalPartitionFunction
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "A \\textit{Micro Canonical Partition Function} applies to a micro canonical ensemble, in which the system is allowed to exchange heat with the environment at fixed temperature, volume, and a fixed number of particles."^^xsd:string ;
+  qudt:latexDefinition "$\\Omega = \\sum_r 1$, where the sum is over all quantum states consistent with given energy. volume, external fields, and content."^^xsd:string ;
+  qudt:symbol "\\Omega"^^xsd:string ;
+  rdfs:label "Micro Canonical Partition Function"^^xsd:string ;
+  skos:broader quantity:CanonicalPartitionFunction ;
+  skos:prefLabel "Micro Canonical Partition Function"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Microcanonical_ensemble> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)#Grand_canonical_partition_function> ;
+.
+quantity:MolalityOfSolute
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "mol-kg^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:MOL-PER-KG ;
+  qudt:description "The \\textit{Molality of Solute} of a solution is defined as the amount of substance of solute divided by the mass in kg of the solvent."^^xsd:string ;
+  qudt:latexDefinition "$b_B = \\frac{n_B}{m_a}$, where $n_B$ is the amount of substance and $m_A$ is the mass."^^xsd:string ;
+  qudt:symbol "b_B"^^xsd:string ;
+  rdfs:label "Molality of Solute"^^xsd:string ;
+  skos:broader quantity:InverseVolume ;
+  skos:prefLabel "Molality of Solute"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Molality> ;
+.
+quantity:MolarConductivity
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:applicableUnit unit:S-M2-PER-MOL ;
+  qudt:description "\\textit{Molar Conductivity} is the conductivity of an electrolyte solution divided by the molar concentration of the electrolyte, and so measures the efficiency with which a given electrolyte conducts electricity in solution."^^xsd:string ;
+  qudt:latexDefinition "$\\Gamma_m = \\frac{x}{c_B}$, where $x$ is the electrolytic conductivity and $c_B$ is the amount-of-substance concentration."^^xsd:string ;
+  qudt:symbol "\\Gamma_m"^^xsd:string ;
+  rdfs:label "Molar Conductivity"^^xsd:string ;
+  skos:broader quantity:Conductivity ;
+  skos:prefLabel "Molar Conductivity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Molar_conductivity> ;
+  prov:wasInfluencedBy <http://encyclopedia2.thefreedictionary.com/molar+conductivity> ;
+.
+quantity:MolarEnergy
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "j-mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-MOL ;
+  qudt:latexDefinition "$U_m = \\frac{U}{n}$, where $U$ is internal energy and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "U_M"^^xsd:string ;
+  rdfs:label "Molar Energy"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Energy> ;
+  skos:prefLabel "Molar Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+.
+quantity:MolarEntropy
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "j-mol^{-1}-k^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-MOL-K ;
+  qudt:description "The \\textit{Standard Molar Entropy} is the entropy content of one mole of substance, under standard conditions (not standard temperature and pressure STP)."^^xsd:string ;
+  qudt:latexDefinition "$S_m = \\frac{S}{n}$, where $S$ is entropy and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "S_m"^^xsd:string ;
+  rdfs:label "Molar Entropy"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Specific_heat_capacity> ;
+  skos:prefLabel "Molar Entropy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Standard_molar_entropy> ;
+.
+quantity:MolarGasConstant
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "j-mol^{-1}-k^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-MOL-K ;
+  qudt:description "The \\textit{Molar Gas Constant} (also known as the gas constant, universal, or ideal gas constant, denoted by the symbol R) is a physical constant which is featured in many fundamental equations in the physical sciences, such as the ideal gas law and the Nernst equation. It is equivalent to the Boltzmann constant, but expressed in units of energy (i.e. the pressure-volume product) per temperature increment per mole (rather than energy per temperature increment per particle)."^^xsd:string ;
+  qudt:latexDefinition "$pV_m = RT$, where $p$ is pressure, $V_m$ is molar volume, and $T$ is thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Gas_constant> ;
+.
+quantity:MolarHeatCapacity
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "j-mol^{-1}-k^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-MOL-K ;
+  qudt:hasDimension qudt:DIM_ISO-L2MT-2H-1N-1 ;
+  qudt:latexDefinition "$C_m = \\frac{C}{n}$, where $C$ is heat capacity and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "C_m"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+.
+quantity:MolarMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "kg-mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:KG-PER-MOL ;
+  qudt:hasDimension qudt:DIM_ISO-MN-1 ;
+  rdfs:label "Molar Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molar_mass> ;
+  skos:prefLabel "Molar Mass"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+.
+quantity:MolarOpticalRotatoryPower
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:RAD-M2-PER-MOL ;
+  qudt:description "The \\textit{Molar Optical Rotatory Power} Angle of optical rotation divided by the optical path length through the medium and by the amount concentration giving the molar optical rotatory power."^^xsd:string ;
+  qudt:latexDefinition "$\\alpha_n = \\alpha \\frac{A}{n}$, where $\\alpha$ is the angle of optical rotation, and $n$ is the amount of substance of the optically active component in the path of a linearly polarized light beam of cross sectional area $A$."^^xsd:string ;
+  qudt:symbol "\\alpha_n"^^xsd:string ;
+  rdfs:label "Molar Optical Rotatory Power"^^xsd:string ;
+  skos:prefLabel "Molar Optical Rotatory Power"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://goldbook.iupac.org/O04313.html> ;
+.
+quantity:MolarVolume
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "m^3-mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:M3-PER-MOL ;
+  qudt:hasDimension qudt:DIM_ISO-L3N-1 ;
+  qudt:latexDefinition "$V_m = \\frac{V}{n}$, where $V$ is volume and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "V_m"^^xsd:string ;
+  rdfs:label "Molar Volume"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molar_volume> ;
+  skos:prefLabel "Molar Volume"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+.
+quantity:MoleFraction
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:description "In chemistry, the mole fraction of a component in a mixture is the relative proportion of molecules belonging to the component to those in the mixture, by number of molecules. It is one way of measuring concentration."^^xsd:string ;
+  rdfs:label "Mole Fraction"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:exactMatch <http://dbpedia.org/resource/Mole_fraction> ;
+  skos:prefLabel "Mole Fraction"^^xsd:string ;
+.
+quantity:MolecularConcentration
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "m^{-3}"^^xsd:string ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "The \\textit{Molecular Concentration} of substance B  is defined as the number of molecules of B  divided by the volume of the mixture "^^xsd:string ;
+  qudt:latexDefinition "$C_B = \\frac{N_B}{V}$, where $N_B$ is the number of molecules of $B$ and $V$ is the volume."^^xsd:string ;
+  qudt:symbol "C_B"^^xsd:string ;
+  rdfs:label "Molecular Concentration"^^xsd:string ;
+  skos:broader quantity:InverseVolume ;
+  skos:prefLabel "Molecular Concentration"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Molar_concentration> ;
+.
+quantity:MolecularMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:description "The molecular mass, or molecular weight of a chemical compound is the mass of one molecule of that compound, relative to the unified atomic mass unit, u. Molecular mass should not be confused with molar mass, which is the mass of one mole of a substance."^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Molecular Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molecular_mass> ;
+  skos:prefLabel "Molecular Mass"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Molecular_mass#Relative_molecular_mass> ;
+.
+quantity:NumberDensity
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:abbreviation "m^{-3}"^^xsd:string ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:hasDimension qudt:DIM_ISO-L-3 ;
+  qudt:latexDefinition "$n = \\frac{N}{V}$, where $N$ is the number of particles and $V$ is volume."^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Number_density> ;
+.
+quantity:NumberOfParticles
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Number of Particles}, also known as the particle number, of a thermodynamic system, conventionally indicated with the letter N, is the number of constituent particles in that system."^^xsd:string ;
+  qudt:symbol "N_B"^^xsd:string ;
+  rdfs:label "Number of Particles"^^xsd:string ;
+  skos:prefLabel "Number of Particles"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Particle_number> ;
+.
+quantity:OsmoticCoefficient
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Osmotic Coefficient} is a quantity which characterises the deviation of a solvent from ideal behavior."^^xsd:string ;
+  qudt:latexDefinition "$\\varphi = -(M_A\\sum b_B)^{-1} \\ln a_A$, where $M_A$ is the molar mass of the solvent $A$, $\\sum$ denotes summation over all the solutes, $b_B$ is the molality of solute $B$, and $a_A$ is the activity of solvent $A$."^^xsd:string ;
+  qudt:symbol "\\varphi"^^xsd:string ;
+  rdfs:label "Osmotic Coefficient"^^xsd:string ;
+  skos:prefLabel "Osmotic Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Osmotic_coefficient> ;
+.
+quantity:OsmoticPressure
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:description "The \\textit{Osmotic Pressure} is the pressure which needs to be applied to a solution to prevent the inward flow of water across a semipermeable membrane."^^xsd:string ;
+  qudt:latexDefinition "$\\varphi = -(M_A\\sum b_B)^{-1} \\ln a_A$, where $M_A$ is the molar mass of the solvent $A$, $\\sum$ denotes summation over all the solutes, $b_B$ is the molality of solute $B$, and $a_A$ is the activity of solvent $A$."^^xsd:string ;
+  qudt:symbol "\\Pi"^^xsd:string ;
+  rdfs:label "Osmotic Pressure"^^xsd:string ;
+  skos:prefLabel "Osmotic Pressure"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Osmotic_pressure> ;
+.
+quantity:PartialPressure
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "pa"^^xsd:string ;
+  qudt:applicableUnit unit:PASCAL ;
+  qudt:description "\\textit{Partial Pressure} is the pressure that the gas would have if it alone occupied the volume of the mixture at the same temperature."^^xsd:string ;
+  qudt:latexDefinition "$p_B = x_B \\cdot p$, where $x_B$ is the amount-of-substance fraction of substance $B$ and $p$ is the total pressure."^^xsd:string ;
+  qudt:symbol "p_B"^^xsd:string ;
+  rdfs:label "Partial Pressure"^^xsd:string ;
+  skos:prefLabel "Partial Pressure"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Partial_pressure> ;
+.
+quantity:RelativeAtomicMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Atomic Mass } is a dimensionless physical quantity, the ratio of the average mass of atoms of an element (from a given source) to 1/12 of the mass of an atom of carbon-12 (known as the unified atomic mass unit)"^^xsd:string ;
+  qudt:symbol "A_r"^^xsd:string ;
+  rdfs:label "Relative Atomic Mass"^^xsd:string ;
+  skos:prefLabel "Relative Atomic Mass"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Relative_atomic_mass> ;
+.
+quantity:RelativeMolecularMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Relative Molecular Mass } is equivalent to the numerical value of the molecular mass expressed in unified atomic mass units. The molecular mass (m) is the mass of a molecule."^^xsd:string ;
+  qudt:symbol "M_r"^^xsd:string ;
+  rdfs:label "Relative Molecular Mass"^^xsd:string ;
+  skos:broader quantity:MolecularMass ;
+  skos:prefLabel "Relative Molecular Mass"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Molecular_mass#Relative_molecular_mass> ;
+.
+quantity:SpecificOpticalRotatoryPower
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:RAD-M2-PER-KG ;
+  qudt:description "The \\textit{Specific Optical Rotatory Power} Angle of optical rotation divided by the optical path length through the medium and by the mass concentration of the substance giving the specific optical rotatory power."^^xsd:string ;
+  qudt:latexDefinition "$\\alpha_m = \\alpha \\frac{A}{m}$, where $\\alpha$ is the angle of optical rotation, and $m$ is the mass of the optically active component in the path of a linearly polarized light beam of cross sectional area $A$."^^xsd:string ;
+  qudt:symbol "\\alpha_m"^^xsd:string ;
+  rdfs:label "Specific Optical Rotatory Power"^^xsd:string ;
+  skos:prefLabel "Specific Optical Rotatory Power"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://goldbook.iupac.org/O04313.html> ;
+.
+quantity:StandardAbsoluteActivity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Standard Absolute Activity} is proportional to the absoulte activity of the pure substance $B$ at the same temperature and pressure multiplied by the standard pressure."^^xsd:string ;
+  qudt:latexDefinition "$\\lambda_B^\\Theta = \\lambda_B^*(p^\\Theta)$, where $\\lambda_B^\\Theta$ the absolute activity of the pure substance $B$ at the same temperature and pressure, and $p^\\Theta$ is standard pressure."^^xsd:string ;
+  qudt:symbol "\\lambda_B^\\Theta"^^xsd:string ;
+  rdfs:label "Standard Absolute Activity"^^xsd:string ;
+  skos:prefLabel "Standard Absolute Activity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Activity_coefficient> ;
+.
+quantity:StandardChemicalPotential
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "j-mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-MOL ;
+  qudt:description "\\textit{Standard Chemical Potential} is the value of the chemical potential at standard conditions"^^xsd:string ;
+  qudt:symbol "\\mu_B^\\Theta"^^xsd:string ;
+  rdfs:label "Standard Chemical Potential"^^xsd:string ;
+  skos:broader quantity:ChemicalPotential ;
+  skos:prefLabel "Standard Chemical Potential"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Chemical_potential> ;
+.
+quantity:StatisticalWeight
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "A \\textit{Statistical Weight} is the relative probability (possibly unnormalized) of a particular feature of a state."^^xsd:string ;
+  qudt:symbol "g"^^xsd:string ;
+  rdfs:label "Statistical Weight"^^xsd:string ;
+  skos:prefLabel "Statistical Weight"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Statistical_weight> ;
+.
+quantity:StoichiometricNumber
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Chemical reactions, as macroscopic unit operations, consist of simply a very large number of elementary reactions, where a single molecule reacts with another molecule. As the reacting molecules (or moieties) consist of a definite set of atoms in an integer ratio, the ratio between reactants in a complete reaction is also in integer ratio. A reaction may consume more than one molecule, and the \\textit{Stoichiometric Number} counts this number, defined as positive for products (added) and negative for reactants (removed)."^^xsd:string ;
+  qudt:symbol "\\nu_B"^^xsd:string ;
+  rdfs:label "Stoichiometric Number"^^xsd:string ;
+  skos:prefLabel "Stoichiometric Number"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Stoichiometry> ;
+.
+quantity:TemperatureAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Temperature Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Temperature Amount of Substance"^^xsd:string ;
+.
+quantity:ThermalDiffusionFactor
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Thermal diffusion is a phenomenon in which a temperature gradient in a mixture of fluids gives rise to a flow of one constituent relative to the mixture as a whole. in the context of the equation that describes thermal diffusion, the \\textit{Thermal Diffusion Factor} is ."^^xsd:string ;
+  qudt:latexDefinition "$\\alpha_T = \\frac{k_T}{(x_A x_B)}$, where $k_T$ is the thermal diffusion ratio, and $x_A$ and $x_B$ are the local amount-of-substance fractions of the two substances $A$ and $B$."^^xsd:string ;
+  qudt:symbol "\\alpha_T"^^xsd:string ;
+  rdfs:label "Thermal Diffusion Factor"^^xsd:string ;
+  skos:prefLabel "Thermal Diffusion Factor"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://www.thermopedia.com/content/1189/> ;
+.
+quantity:ThermalDiffusionRatio
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "The \\textit{Thermal Diffusion Ratio} is proportional to the product of the component concentrations."^^xsd:string ;
+  qudt:latexDefinition "In a steady state of a binary mixture in which thermal diffusion occurs, $grad x_B  = -(\\frac{k_T}{T}) grad T$, where $x_B$ is the amount-of-substance fraction of the heavier substance $B$, and $T$ is the local thermodynamic temperature."^^xsd:string ;
+  qudt:symbol "k_T"^^xsd:string ;
+  rdfs:label "Thermal Diffusion Ratio"^^xsd:string ;
+  skos:prefLabel "Thermal Diffusion Ratio"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://www.thermopedia.com/content/1189/> ;
+.
+quantity:ThermalDiffusionRatioCoefficient
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "m^2 sec^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:M2-PER-SEC ;
+  qudt:description "The \\textit{Thermal Diffusion Coefficient} is ."^^xsd:string ;
+  qudt:latexDefinition "$D_T  = kT \\cdot D$, where $k_T$ is the thermal diffusion ratio, and $D$ is the diffusion coefficient."^^xsd:string ;
+  qudt:symbol "D_T"^^xsd:string ;
+  rdfs:label "Thermal Diffusion Coefficient"^^xsd:string ;
+  skos:prefLabel "Thermal Diffusion Coefficient"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://www.thermopedia.com/content/1189/> ;
+.
+quantity:Turbidity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdfs:label "Turbidity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Turbidity> ;
+  skos:prefLabel "Turbidity"^^xsd:string ;
+.
+quantity:VolumeFraction
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{Volume Fraction} is the volume of a constituent divided by the volume of all constituents of the mixture prior to mixing. Volume fraction is also called volume concentration in ideal solutions where the volumes of the constituents are additive (the volume of the solution is equal to the sum of the volumes of its ingredients)."^^xsd:string ;
+  qudt:latexDefinition "$\\varphi_B = \\frac{x_B V_{m,B}^*}{\\sum x_i V_{m,i}^*}$, where $V_{m,i}^*$ is the molar volume of the pure substances $i$ at the same temperature and pressure, $x_i$ denotes the amount-of-substance fraction of substance $i$, and $\\sum$ denotes summation over all substances $i$."^^xsd:string ;
+  qudt:symbol "\\varphi_B"^^xsd:string ;
+  rdfs:label "Volume Fraction"^^xsd:string ;
+  skos:prefLabel "Volume Fraction"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Volume_fraction> ;
+.
+<http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Catalog Entry v1.2"^^xsd:string ;
+.

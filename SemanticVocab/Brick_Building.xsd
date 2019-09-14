@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by Jack Hodges (Siemens AHI Group) -->
+<!-- ====================================================================== -->
+<!-- ===== [Brick_Building] XML Schema File ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency: SIEMENS
+Schema version: 1.0
+Schema date: 12 October 2018
+Copyright (C) SIEMENS (2018). All Rights Reserved.
+
+	This document and translations of it may be copied and furnished to others, 
+	and derivative works that comment on or otherwise explain it or assist 
+	in its implementation may be prepared, copied, published and distributed, 
+	in whole or in part, without restriction of any kind, provided that the 
+	above copyright notice and this paragraph are included on all such copies 
+	and derivative works. However, this document itself may not be modified in 
+	any way, such as by removing the copyright notice or references to 
+	SIEMENS, except as needed for the purpose of developing 
+	SIEMENS specifications, or as required to translate it 
+	into languages other than English.
+
+	The limited permissions granted above are perpetual and will not be revoked 
+	by SIEMENS or its successors or assigns.
+
+	This document and the information contained herein is provided on an "AS IS"
+	basis and CONTROL CHAIN MANAGEMENT DISCLAIMS ALL WARRANTIES, 
+	EXPRESS OR IMPLIED, INCLUDING 	BUT NOT LIMITED TO ANY WARRANTY 
+	THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS
+	OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR 
+	A PARTICULAR PURPOSE.
+ -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.siemens.com/import/brick/Brick_Building"
+    targetNamespace="http://www.siemens.com/import/brick/Brick_Building" elementFormDefault="unqualified"
+    attributeFormDefault="unqualified">
+    <!-- =================================================================== -->
+    <!-- ===== Includes                                                ===== -->
+    <!-- =================================================================== -->
+    <!-- no inclides at this time                                      ===== -->
+    <!-- =================================================================== -->
+    <!-- =================================================================== -->
+    <!-- ===== Imports                                                 ===== -->
+    <!-- =================================================================== -->
+    <!--  no imports at this time                                      ===== -->
+    <!-- =================================================================== -->
+    <!-- =================================================================== -->
+    <!-- ===== Element Declarations 			                       ===== -->
+    <!-- =================================================================== -->
+    <!-- ===== Element - Building_Information 	    	               ===== -->
+    <!-- =================================================================== -->
+
+    <xsd:element name="Building_Information">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ResourceID" type="xsd:string"/>
+                <xsd:element name="Building_Electrical_Meter" type="Building_Electrical_Meter"
+                    minOccurs="0"/>
+                <xsd:element name="Weather_Temperature_Sensor" type="Weather_Temperature_Sensor"
+                    minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="Weather_Relative_Humidity_Sensor"
+                    type="Weather_Relative_Humidity_Sensor" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="Weather_Rain_Sensor" type="Weather_Rain_Sensor" minOccurs="0"
+                    maxOccurs="unbounded"/>
+                <xsd:element name="Weather_Cloud_Coverage_Sensor"
+                    type="Weather_Cloud_Coverage_Sensor" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="Weather_Cloud_Height_Sensor" type="Weather_Cloud_Height_Sensor"
+                    minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="Weather_Wind_Speed_Sensor" type="Weather_Wind_Speed_Sensor"
+                    minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="Weather_Wind_Direction_Sensor"
+                    type="Weather_Wind_Direction_Sensor" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="Occupancy_Sensor" type="Occupancy_Sensor" minOccurs="0"
+                    maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <!-- =================================================================== -->
+    <!-- ===== Complex Type - Basic types              				   ===== -->
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Building_Electrical_Meter              ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Building_Electrical_Meter">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Building_Electrical_Meter"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:float" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Weather_Temperature_Sensor             ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Weather_Temperature_Sensor">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Weather_Temperature_Sensor"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:float" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Weather_Relative_Humidity_Sensor       ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Weather_Relative_Humidity_Sensor">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Weather_Relative_Humidity_Sensor"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:float" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Weather_Rain_Sensor                    ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Weather_Rain_Sensor">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Weather_Rain_Sensor"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:float" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Weather_Cloud_Coverage_Sensor          ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Weather_Cloud_Coverage_Sensor">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Weather_Cloud_Coverage_Sensor"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:float" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Weather_Cloud_Height_Sensor            ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Weather_Cloud_Height_Sensor">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Weather_Cloud_Height_Sensor"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:float" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Weather_Wind_Speed_Sensor              ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Weather_Wind_Speed_Sensor">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Weather_Wind_Speed_Sensor"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:float" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Weather_Wind_Direction_Sensor          ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Weather_Wind_Direction_Sensor">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Weather_Wind_Direction_Sensor"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:float" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- =================================================================== -->
+    <!-- =====  Complex Type -  Occupancy_Sensor                       ===== -->
+    <!-- =================================================================== -->
+    <xsd:complexType name="Occupancy_Sensor">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="En">
+            </xsd:documentation>
+            <xsd:appinfo>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="btag" type="xsd:string" fixed="Occupancy_Sensor"/>
+            <xsd:element name="uuid" type="xsd:string" maxOccurs="1"/>
+            <xsd:element name="timestamp" type="xsd:dateTime" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:boolean" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="value" type="xsd:float"/>
+</xsd:schema>

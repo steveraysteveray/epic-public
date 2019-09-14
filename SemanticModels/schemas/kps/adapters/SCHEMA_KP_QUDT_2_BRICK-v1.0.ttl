@@ -1,0 +1,222 @@
+# baseURI: http://siemens.com/schemas/kps/adapters/qudt2brick
+# imports: http://qudt.org/1.2/schema/datatype
+# imports: http://siemens.com/import/qudt/1.2
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# imports: https://brickschema.org/schema/1.0.3/BrickTag
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# prefix: qudt2brick
+
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix qudt2brick: <http://siemens.com/schemas/kps/adapters/qudt2brick#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tag: <https://brickschema.org/schema/1.0.3/BrickTag#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/adapters/qudt2brick>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges"^^xsd:string ;
+  dc:description "The QUDT to BRICK mapping creates an interoperability path between these two ontologies."^^xsd:string ;
+  dc:subject "mappings QUDT building to BRICK integration mapping"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology creates an interoperability mapping between the QUDT quantity, unit, and dimension model and the external BRICK building model."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/adapters/qudt2brick#"^^xsd:string ;
+  vaem:namespacePrefix "qudt2brick"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/adapters/qudt2brick"^^xsd:anyURI ;
+  rdfs:label "QUDT to BRICK Mapping"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_QUDT_2_BRICK-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/datatype> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/BrickTag> ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+qudt2brick:Acceleration
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Acceleration" ;
+  rdfs:label "Acceleration" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Acceleration ;
+  owl:sameAs quantity:Acceleration ;
+.
+qudt2brick:Angle
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Angle" ;
+  rdfs:label "Angle" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Angle ;
+  owl:sameAs quantity:Angle ;
+.
+qudt2brick:Current
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:ElectricCurrent" ;
+  rdfs:label "Current" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Current ;
+  owl:sameAs quantity:ElectricCurrent ;
+.
+qudt2brick:Date
+  rdf:type owl:Class ;
+  rdfs:comment "Related to quantity:Time" ;
+  rdfs:label "Date" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Date ;
+.
+qudt2brick:Dewpoint
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:DewPointTemperature" ;
+  rdfs:label "Dewpoint" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Dewpoint ;
+  owl:sameAs quantity:DewPointTemperature ;
+.
+qudt2brick:Energy
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Energy" ;
+  rdfs:label "Energy" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf qudt:EnergyQuantityKind ;
+  rdfs:subClassOf tag:Energy ;
+  owl:sameAs quantity:Energy ;
+.
+qudt2brick:Enthalpy
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Enthalpy" ;
+  rdfs:label "Enthalpy" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Enthalpy ;
+  owl:sameAs quantity:Enthalpy ;
+.
+qudt2brick:Frequency
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Frequency" ;
+  rdfs:label "Frequency" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Frequency ;
+  owl:sameAs quantity:Frequency ;
+.
+qudt2brick:Heat
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Heat" ;
+  rdfs:label "Heat" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Heat ;
+  owl:sameAs quantity:Heat ;
+.
+qudt2brick:Humidity
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:MassRatioOfWaterVapourToDryGas?" ;
+  rdfs:label "Humidity" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Humidity ;
+  owl:sameAs quantity:MassRatioOfWaterVapourToDryGas ;
+.
+qudt2brick:Luminance
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Luminance" ;
+  rdfs:label "Luminance" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Luminance ;
+  owl:sameAs quantity:Luminance ;
+.
+qudt2brick:MeasurementProperty
+  rdf:type owl:Class ;
+  rdfs:label "Measurement property" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf qudt:QuantityKind ;
+  rdfs:subClassOf tag:MeasurementProperty ;
+.
+qudt2brick:Position
+  rdf:type owl:Class ;
+  rdfs:label "Position" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf qudt:Coordinates ;
+  rdfs:subClassOf tag:Position ;
+.
+qudt2brick:Power
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Power or quantity:ElectricPower" ;
+  rdfs:label "Power" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Power ;
+  owl:sameAs quantity:ElectricPower ;
+.
+qudt2brick:Pressure
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Pressure" ;
+  rdfs:label "Pressure" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Pressure ;
+  owl:sameAs quantity:Pressure ;
+.
+qudt2brick:Speed
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Speed" ;
+  rdfs:label "Speed" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Speed ;
+  owl:sameAs quantity:Speed ;
+.
+qudt2brick:Temperature
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Temperature or quantity:ThermodynamicTemperature" ;
+  rdfs:label "Temperature" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Temperature ;
+  owl:sameAs quantity:Temperature ;
+.
+qudt2brick:Time
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Time" ;
+  rdfs:label "Time" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Time ;
+  owl:sameAs quantity:Time ;
+.
+qudt2brick:Torque
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Torque" ;
+  rdfs:label "Torque" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Torque ;
+  owl:sameAs quantity:Torque ;
+.
+qudt2brick:Unit
+  rdf:type owl:Class ;
+  rdfs:label "Unit" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf qudt:Unit ;
+  rdfs:subClassOf tag:Unit ;
+.
+qudt2brick:Velocity
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Velocity" ;
+  rdfs:label "Velocity" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Velocity ;
+  owl:sameAs quantity:Velocity ;
+.
+qudt2brick:Voltage
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Voltage" ;
+  rdfs:label "Voltage" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Voltage ;
+  owl:sameAs quantity:Voltage ;
+.
+qudt2brick:Volume
+  rdf:type owl:Class ;
+  rdfs:comment "Same as quantity:Volume" ;
+  rdfs:label "Volume" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf tag:Volume ;
+  owl:sameAs quantity:Volume ;
+.

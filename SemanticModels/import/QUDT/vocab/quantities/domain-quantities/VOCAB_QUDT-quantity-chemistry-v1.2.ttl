@@ -1,0 +1,365 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/chemistry
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/chemistry>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "International System of Quantities (ISQ) - Mechanics"^^xsd:string ;
+  dc:title "QUDT ISQ Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "TBD"^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/chemistry"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/isq/quantity/mechanics> ;
+.
+quantity:AmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:InternationalUnit ;
+  qudt:applicableUnit unit:MOL ;
+  qudt:baseUnitDimensions "M"^^xsd:string ;
+  qudt:baseUnitDimensions "mol"^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Amount of Substance"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Amount_of_substance> ;
+  skos:prefLabel "Amount of Substance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Amount_of_substance> ;
+.
+quantity:AmountOfSubstancePerUnitMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:MolePerKilogram ;
+  qudt:baseUnitDimensions "M/M"^^xsd:string ;
+  qudt:baseUnitDimensions "mol/kg"^^xsd:string ;
+  rdfs:label "Amount of Substance per Unit Mass"^^xsd:string ;
+  skos:broader quantity:Concentration ;
+  skos:prefLabel "Amount of substance per unit mass"^^xsd:string ;
+.
+quantity:AmountOfSubstancePerUnitVolume
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:MOL-PER-M3 ;
+  qudt:baseUnitDimensions "M/L^3"^^xsd:string ;
+  qudt:baseUnitDimensions "mol/m^3"^^xsd:string ;
+  qudt:description "The amount of substance per unit volume is called the molar density. Molar density is an intensive property of a substance and depends on the temperature and pressure."^^xsd:string ;
+  rdfs:label "Amount of Substance Per Unit Volume"^^xsd:string ;
+  skos:broader quantity:Concentration ;
+  skos:prefLabel "Amount of Substance Per Unit Volume"^^xsd:string ;
+  prov:wasInfluencedBy <http://www.ask.com/answers/72367781/what-is-defined-as-the-amount-of-substance-per-unit-of-volume> ;
+.
+quantity:CatalyticActivity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:Longdescription "An index of the actual or potential activity of a catalyst. The catalytic activity of an enzyme or an enzyme-containing preparation is defined as the property measured by the increase in the rate of conversion of a specified chemical reaction that the enzyme produces in a specified assay system. Catalytic activity is an extensive quantity and is a property of the enzyme, not of the reaction mixture; it is thus conceptually different from rate of conversion although measured by and equidimensional with it. The unit for catalytic activity is the $katal$; it may also be expressed in mol $s^{-1}$. Dimensions: $N T^{-1}$. Former terms such as catalytic ability, catalytic amount, and enzymic activity are no er recommended. Derived quantities are molar catalytic activity, specific catalytic activity, and catalytic activity concentration. Source(s): \\href{http://www.answers.com/topic/catalytic-activity-biochemistry}{www.answers.com}"^^xsd:string ;
+  qudt:applicableUnit unit:KAT ;
+  qudt:baseUnitDimensions "M/T"^^xsd:string ;
+  qudt:baseUnitDimensions "mol/s"^^xsd:string ;
+  rdfs:label "Catalytic Activity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Catalysis> ;
+  skos:prefLabel "Catalytic Activity"^^xsd:string ;
+.
+quantity:Concentration
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:description "In chemistry, concentration is defined as the abundance of a constituent divided by the total volume of a mixture. Furthermore, in chemistry, four types of mathematical description can be distinguished: mass concentration, molar concentration, number concentration, and volume concentration. The term concentration can be applied to any kind of chemical mixture, but most frequently it refers to solutes in solutions."^^xsd:string ;
+  rdfs:label "Concentration"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Concentration> ;
+  skos:prefLabel "Concentration"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Concentration> ;
+.
+quantity:ElectricDipoleMoment
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "dipole-moment"^^xsd:string ;
+  qudt:applicableUnit unit:C-M ;
+  qudt:applicableUnit unit:Debye ;
+  qudt:baseUnitDimensions "A \\cdot m \\cdot s"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot L \\cdot T"^^xsd:string ;
+  qudt:symbol "p"^^xsd:string ;
+  qudt:symbolToken "p"^^xsd:token ;
+  rdfs:label "Electric Dipole Moment"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Dipole> ;
+  skos:prefLabel "Electric Dipole Moment"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Electric_dipole_moment> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:EnergyAndWorkPerMassAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:BtuPerPoundMole ;
+  rdfs:label "Energy and Work per Mass Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Energy and Work per Mass Amount of Substance"^^xsd:string ;
+.
+quantity:InverseAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:PER-MOL ;
+  qudt:baseUnitDimensions "/M"^^xsd:string ;
+  qudt:baseUnitDimensions "/mol"^^xsd:string ;
+  rdfs:label "Inverse Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Inverse Amount of Substance"^^xsd:string ;
+.
+quantity:LengthMolarEnergy
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:J-M-PER-MOL ;
+  qudt:baseUnitDimensions "L^3 \\cdot M/M \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^3/mol \\cdot s^2"^^xsd:string ;
+  rdfs:label "Length Molar Energy"^^xsd:string ;
+  skos:prefLabel "Length Molar Energy"^^xsd:string ;
+.
+quantity:MagneticDipoleMoment
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:ElectricityAndMagnetismQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "magnetic-dipole-moment"^^xsd:string ;
+  qudt:applicableUnit unit:EV-PER-T ;
+  qudt:applicableUnit unit:J-PER-T ;
+  qudt:applicableUnit unit:Wb-M ;
+  qudt:baseUnitDimensions "A \\cdot m^2"^^xsd:string ;
+  qudt:baseUnitDimensions "I \\cdot L^2"^^xsd:string ;
+  qudt:latexDefinition """$E_m = -m \\cdot B$, where $E_m$ is the interaction energy of the molecule with magnetic diploe moment $m$ and a magnetic field with magnetic flux density $B$
+
+or,
+
+$J_m = \\mu_0 M$ where $\\mu_0$ is the magnetic constant and $M$ is Magnetization."""^^xsd:string ;
+  qudt:symbol "J_m"^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  qudt:symbolToken "J_m"^^xsd:token ;
+  rdfs:label "Magnetic Dipole Moment"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Magnetic_moment> ;
+  skos:prefLabel "Magnetic Dipole Moment"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Magnetic_moment> ;
+  prov:wasInfluencedBy <http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=121-11-55> ;
+  prov:wasInfluencedBy <http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=31891> ;
+.
+quantity:MassAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:LB-MOL ;
+  rdfs:label "Mass Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Mass Amount of Substance"^^xsd:string ;
+.
+quantity:MassAmountOfSubstanceTemperature
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:LB-MOL-DegF ;
+  rdfs:label "Mass Amount of Substance Temperature"^^xsd:string ;
+  skos:prefLabel "Mass Amount of Substance Temperature"^^xsd:string ;
+.
+quantity:MolarEnergy
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "j-mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-MOL ;
+  qudt:applicableUnit unit:KiloCAL-PER-MOL ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/M \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/mol \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Molar Energy} is the total energy contained by a thermodynamic system. The unit is $J/mol$, also expressed as $joule/mole$,  or $joules per mole$. This unit is commonly used in the SI unit system. The quantity has the dimension of $M \\cdot L^2 \\cdot  T_{-2} \\cdot N^{-1}$ where $M$ is mass, $L$ is length, $T$ is time, and $N$ is amount of substance."^^xsd:string ;
+  qudt:latexDefinition "$U_m = \\frac{U}{n}$, where $U$ is internal energy and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "U_M"^^xsd:string ;
+  rdfs:label "Molar Energy"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Energy> ;
+  skos:prefLabel "Molar Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://www.efunda.com/glossary/units/units-molar_energy-joule_per_mole.cfm> ;
+.
+quantity:MolarHeatCapacity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:ThermodynamicsQuantityKind ;
+  qudt:abbreviation "j-mol^{-1}-k^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:BtuPerPoundMoleDegreeFahrenheit ;
+  qudt:applicableUnit unit:J-PER-MOL-K ;
+  qudt:applicableUnit unit:KiloCAL-PER-MOL-DegC ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/\\Theta \\cdot M \\cdot T^2"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/K \\cdot mol \\cdot s^2"^^xsd:string ;
+  qudt:description "\\textit{Molar Heat Capacity} is the amount of heat energy required to raise the temperature of 1 mole of a substance. In SI units, molar heat capacity (symbol: cn) is the amount of heat in joules required to raise 1 mole of a substance 1 Kelvin."^^xsd:string ;
+  qudt:hasDimension qudt:DIM_ISO-L2MT-2H-1N-1 ;
+  qudt:hasDimension qudt:DIM_SI-m2kgs-2K-1mol-1 ;
+  qudt:latexDefinition "$C_m = \\frac{C}{n}$, where $C$ is heat capacity and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "C_m"^^xsd:string ;
+  qudt:symbol "cn"^^xsd:string ;
+  rdfs:label "Molar Heat Capacity"^^xsd:string ;
+  skos:closeMatch <http://dbpedia.org/resource/Specific_heat_capacity> ;
+  skos:prefLabel "Molar Heat Capacity"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://chemistry.about.com/od/chemistryglossary/g/Molar-Heat-Capacity-Definition.htm> ;
+.
+quantity:MolarMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "kg-mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:KG-PER-MOL ;
+  qudt:applicableUnit unit:KilogramPerMole ;
+  qudt:baseUnitDimensions "M/M"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/mol"^^xsd:string ;
+  qudt:description "In chemistry, the molar mass M is defined as the mass of a given substance (chemical element or chemical compound) divided by its amount of substance. It is a physical property of a given substance. The base SI unit for molar mass is $kg/mol$."^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Molar Mass"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molar_mass> ;
+  skos:prefLabel "Molar Mass"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Molar_mass> ;
+.
+quantity:MolarVolume
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:abbreviation "m^3-mol^{-1}"^^xsd:string ;
+  qudt:applicableUnit unit:M3-PER-MOL ;
+  qudt:baseUnitDimensions "L^3/M"^^xsd:string ;
+  qudt:baseUnitDimensions "m^3/mol"^^xsd:string ;
+  qudt:description "The molar volume, symbol $V_m$, is the volume occupied by one mole of a substance (chemical element or chemical compound) at a given temperature and pressure. It is equal to the molar mass ($M$) divided by the mass density ($\\rho$). It has the SI unit cubic metres per mole ($m^{1}/mol$). For ideal gases, the molar volume is given by the ideal gas equation: this is a good approximation for many common gases at standard temperature and pressure. For crystalline solids, the molar volume can be measured by X-ray crystallography."^^xsd:string ;
+  qudt:latexDefinition "$V_m = \\frac{V}{n}$, where $V$ is volume and $n$ is amount of substance."^^xsd:string ;
+  qudt:symbol "V_m"^^xsd:string ;
+  rdfs:label "Molar Volume"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Molar_volume> ;
+  skos:prefLabel "Molar Volume"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Molar_volume> ;
+.
+quantity:MoleFraction
+  rdf:type qudt:ChemistryQuantityKind ;
+  qudt:Longdescription "In chemistry, the mole fraction of a component in a mixture is the relative proportion of molecules being to the component to those in the mixture, by number of molecules. It is one way of measuring concentration."^^xsd:string ;
+  qudt:description "In chemistry, the mole fraction of a component in a mixture is the relative proportion of molecules belonging to the component to those in the mixture, by number of molecules. It is one way of measuring concentration."^^xsd:string ;
+  rdfs:label "Mole Fraction"^^xsd:string ;
+  skos:broader quantity:DimensionlessRatio ;
+  skos:exactMatch <http://dbpedia.org/resource/Mole_fraction> ;
+  skos:prefLabel "Mole Fraction"^^xsd:string ;
+.
+quantity:MolecularMass
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:Dalton ;
+  qudt:description "The molecular mass, or molecular weight of a chemical compound is the mass of one molecule of that compound, relative to the unified atomic mass unit, u. Molecular mass should not be confused with molar mass, which is the mass of one mole of a substance."^^xsd:string ;
+  qudt:symbol "M"^^xsd:string ;
+  rdfs:label "Molecular Mass"^^xsd:string ;
+  skos:broader quantity:Mass ;
+  skos:exactMatch <http://dbpedia.org/resource/Molecular_mass> ;
+  skos:prefLabel "Molecular Mass"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Molecular_mass#Relative_molecular_mass> ;
+.
+quantity:NumberDensity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:SpaceAndTimeQuantityKind ;
+  qudt:abbreviation "m^{-3}"^^xsd:string ;
+  qudt:applicableUnit unit:PER-M3 ;
+  qudt:description "In physics, astronomy, and chemistry, number density (symbol: n) is a kind of quantity used to describe the degree of concentration of countable objects (atoms, molecules, dust particles, galaxies, etc.) in the three-dimensional physical space."^^xsd:string ;
+  qudt:latexDefinition "$n = \\frac{N}{V}$, where $N$ is the number of particles and $V$ is volume."^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Number Density"^^xsd:string ;
+  skos:broader quantity:InverseVolume ;
+  skos:exactMatch <http://dbpedia.org/resource/Number_density> ;
+  skos:prefLabel "Number Density"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31894> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Number_density> ;
+.
+quantity:TemperatureAmountOfSubstance
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:MOL-DegC ;
+  qudt:applicableUnit unit:MOL-K ;
+  qudt:baseUnitDimensions "K \\cdot mol"^^xsd:string ;
+  qudt:baseUnitDimensions "\\Theta \\cdot M"^^xsd:string ;
+  rdfs:label "Temperature Amount of Substance"^^xsd:string ;
+  skos:prefLabel "Temperature Amount of Substance"^^xsd:string ;
+.
+quantity:Turbidity
+  rdf:type qudt:ChemistryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:NephelometricTurbidityUnit ;
+  qudt:description "Turbidity is the cloudiness or haziness of a fluid, or of air, caused by individual particles (suspended solids) that are generally invisible to the naked eye, similar to smoke in air. Turbidity in open water is often caused by phytoplankton and the measurement of turbidity is a key test of water quality. The higher the turbidity, the higher the risk of the drinkers developing gastrointestinal diseases, especially for immune-compromised people, because contaminants like virus or bacteria can become attached to the suspended solid."^^xsd:string ;
+  qudt:longDescription "Turbidity is the cloudiness or haziness of a fluid, or of air, caused by individual particles (suspended solids) that are generally invisible to the naked eye, similar to smoke in air. Turbidity in open water is often caused by phytoplankton and the measurement of turbidity is a key test of water quality. The higher the turbidity, the higher the risk of the drinkers developing gastrointestinal diseases, especially for immune-compromised people, because contaminants like virus or bacteria can become attached to the suspended solid. The suspended solids interfere with water disinfection with chlorine because the particles act as shields for the virus and bacteria. Similarly suspended solids can protect bacteria from UV sterilisation of water. Fluids can contain suspended solid matter consisting of particles of many different sizes. While some suspended material will be large enough and heavy enough to settle rapidly to the bottom container if a liquid sample is left to stand (the settleable solids), very small particles will settle only very slowly or not at all if the sample is regularly agitated or the particles are colloidal. These small solid particles cause the liquid to appear turbid."^^xsd:string ;
+  rdfs:label "Turbidity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Turbidity> ;
+  skos:prefLabel "Turbidity"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Turbidity> ;
+.

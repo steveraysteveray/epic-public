@@ -1,0 +1,463 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/light
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:author
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "author"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:date
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "date"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/light>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Light Quantity Kinds Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-QUANTITIES-VocabCatalogEntry ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity> ;
+.
+quantity:Absorptance
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Absorptance is the ratio of the radiation absorbed by a surface to that incident upon it. Also known as absorbance."^^xsd:string ;
+  qudt:latexDefinition "$\\alpha = \\frac{\\Phi_a}{\\Phi_m}$, where $\\Phi_a$ is the absorbed radiant flux or the absorbed luminous flux, and $\\Phi_m$ is the radiant flux or luminous flux of the incident radiation."^^xsd:string ;
+  qudt:symbol "\\alpha, a"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Absorptance"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Absorbance> ;
+  skos:prefLabel "Absorptance"^^xsd:string ;
+.
+quantity:EinsteinTransitionProbability
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Given two atomic states of energy $E_j$ and $E_k$.  Let $E_j > E_k$.  Assume the atom is bathed in radiation of energy density $u(w)$.  Transitions between these states can take place in three different ways. Spontaneous, induced/stimulated emission, and induced absorption. $A_jk$ represents the Einstein transition probability for spontaneous emission."^^xsd:string ;
+  qudt:latexDefinition "$\\frac{-dN_j}{dt} = A_jkN_j$, where $-dN_j$ is the number of molecules spontaneously leaving the state j for the state k during a time interval of duration $dt$, $N_j$ is the number of molecules in the state j, and $E_j > E_k$."^^xsd:string ;
+  qudt:symbol "A_jkN_j"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Einstein Transition Probability"^^xsd:string ;
+  skos:exactMatch <http://electron6.phys.utk.edu/qm2/modules/m10/einstein.htm> ;
+  skos:prefLabel "Einstein Transition Probability"^^xsd:string ;
+.
+quantity:Emissivity
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Emissivity of a material (usually written $\\varepsilon$ or e) is the relative ability of its surface to emit energy by radiation."^^xsd:string ;
+  qudt:latexDefinition "$\\varepsilon = \\frac{M}{M_b}$, where $M$ is the radiant exitance of a thermal radiator and $M_b$ is the radiant exitance of a blackbody at the same temperature."^^xsd:string ;
+  qudt:symbol "\\varepsilon"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Emissivity"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Emissivity> ;
+  skos:prefLabel "Emissivity"^^xsd:string ;
+.
+quantity:Frequency
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:latexDefinition """$f = 1/T$, where $T$ is a period.
+
+Alternatively,
+
+$\\nu = 1/T$"""^^xsd:string ;
+  qudt:symbol "\\nu, f"^^xsd:string ;
+.
+quantity:Illuminance
+  qudt:applicableUnit unit:Lux ;
+  qudt:latexDefinition "$E_v = \\frac{d\\Phi}{dA}$, where $d\\Phi$ is the luminous flux incident on an element of the surface with area $dA$."^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Illuminance> ;
+.
+quantity:Irradiance
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:abbreviation "W-PER-M2"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:latexDefinition "$E = \\frac{d\\Phi}{dA}$, where $d\\Phi$ is the radiant flux incident on an element of the surface with area $dA$."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Irradiance> ;
+.
+quantity:LinearAbsorptionCoefficient
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "The Linear Absorption Coefficient is a quantity that characterizes how easily a material or medium can be penetrated by a beam of light, sound, particles, or other energy or matter."^^xsd:string ;
+  qudt:latexDefinition "$\\alpha(\\lambda) = \\frac{1}{\\Phi_\\lambda(\\lambda)}\\frac{d\\Phi_\\lambda(\\lambda)}{dl}$, where $\\frac{d\\Phi}{\\Phi}$ is the relative decrease, caused by absorption, in the spectral radiant flux $\\Phi$ of a collimated beam of electromagnetic radiation corresponding to the wavelength $\\lambda$ during traversal of an infinitesimal layer of a medium and $dl$ is the length traversed."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Linear Absorption Coefficient"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Attenuation_coefficient> ;
+  skos:prefLabel "Linear Absorption Coefficient"^^xsd:string ;
+.
+quantity:LinearAttenuationCoefficient
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{Linear Attenuation Coefficient}, also called the attenuation coefficient,  narrow beam attenuation coefficient, or absorption coefficient, is a quantity that characterizes how easily a material or medium can be penetrated by a beam of light, sound, particles, or other energy or matter."^^xsd:string ;
+  qudt:symbol "\\mu"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Linear Attenuation Coefficient"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Attenuation_coefficient> ;
+  skos:prefLabel "Linear Attenuation Coefficient"^^xsd:string ;
+.
+quantity:Luminance
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:latexDefinition "$L_v = \\frac{dI_v}{dA}$, where $dI_v$ is the luminous intensity of an element of the surface with the area $dA$ of the orthogonal projection of this element on a plane perpendicular to the given direction."^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Luminance> ;
+.
+quantity:LuminousEfficacy
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:abbreviation "lm/w"^^xsd:string ;
+  qudt:latexDefinition "$K = \\frac{\\Phi_v}{\\Phi}$, where $\\Phi_v$ is the luminous flux and $\\Phi$ is the corresponding radiant flux."^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Luminous_efficacy> ;
+.
+quantity:LuminousEmmitance
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:symbol "M_v"^^xsd:string ;
+  rdfs:label "Luminous Emmitance"^^xsd:string ;
+  skos:broader quantity:LuminousFluxPerArea ;
+  skos:prefLabel "Luminous Emmitance"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=43012> ;
+.
+quantity:LuminousEnergy
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:abbreviation "T-J"^^xsd:string ;
+  qudt:latexDefinition "$Q_v = \\int_{0}^{\\Delta t}{\\Phi_v}{dt}$, where $\\Phi_v$ is the luminous flux occurring during the time interval with duration $\\Delta t$."^^xsd:string ;
+  skos:closeMatch quantity:RadiantEnergy ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Luminous_energy> ;
+.
+quantity:LuminousFlux
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:latexDefinition "$\\Phi_v = K_m \\int_{0}^{\\infty}{\\Phi_\\lambda(\\lambda)}{V(\\lambda)d\\lambda}$, where $K_m$ is the maximum spectral luminous efficacy, $\\Phi_\\lambda(\\lambda)$ is the spectral radiant flux, $V(\\lambda)$ is the spectral luminous efficiency, and $\\lambda$ is the wavelength."^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Luminous_flux> ;
+.
+quantity:MassAbsorptionCoefficient
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "m2/kg"^^xsd:string ;
+  qudt:applicableUnit unit:M2-PER-KG ;
+  qudt:description "The mass absorption coefficient is the linear absorption coefficient divided by the density of the absorber."^^xsd:string ;
+  qudt:latexDefinition "$\\a_m = \\frac{a}{\\rho}$, where $a$ is the linear absorption coefficient and $\\rho$ is the mass density of the medium."^^xsd:string ;
+  qudt:symbol "\\a_m"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Mass Absorption Coefficient"^^xsd:string ;
+  skos:exactMatch <http://medical-dictionary.thefreedictionary.com/mass+absorption+coefficient> ;
+  skos:prefLabel "Mass Absorption Coefficient"^^xsd:string ;
+.
+quantity:MassAttenuationCoefficient
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "m2/kg"^^xsd:string ;
+  qudt:applicableUnit unit:M2-PER-KG ;
+  qudt:description "\\textit{Mass Attenuation Coefficient} is a measurement of how strongly a chemical species or substance absorbs or scatters light at a given wavelength, per unit mass."^^xsd:string ;
+  qudt:latexDefinition "$\\mu_m = \\frac{\\mu}{\\rho}$, where $\\mu$ is the linear attenuation coefficient and $\\rho$ is the mass density of the medium."^^xsd:string ;
+  qudt:symbol "\\mu_m"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Mass Attenuation Coefficient"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Mass_attenuation_coefficient> ;
+  skos:prefLabel "Mass Attenuation Coefficient"^^xsd:string ;
+.
+quantity:MolarAbsorptionCoefficient
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "m2/kg"^^xsd:string ;
+  qudt:applicableUnit unit:M2-PER-KG ;
+  qudt:description "\\textit{Molar Absorption Coefficient} is a spectrophotometric unit indicating the light a substance absorbs with respect to length, usually centimeters, and concentration, usually moles per liter."^^xsd:string ;
+  qudt:latexDefinition "$x = aV_m$, where $a$ is the linear absorption coefficient and $V_m$ is the molar volume."^^xsd:string ;
+  qudt:symbol "x"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Molar Absorption Coefficient"^^xsd:string ;
+  skos:exactMatch <http://medical-dictionary.thefreedictionary.com/molar+absorption+coefficient> ;
+  skos:prefLabel "Molar Absorption Coefficient"^^xsd:string ;
+.
+quantity:NapierianAbsorbance
+  rdf:type qudt:PhotometryQuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Napierian Absorbance is the natural (Napierian) logarithm of the reciprocal of the spectral internal transmittance."^^xsd:string ;
+  qudt:latexDefinition "$A_e(\\lambda) = -ln(\\tau(\\lambda))$, where $\\tau$ is the transmittance at a given wavelength $\\lambda$."^^xsd:string ;
+  qudt:symbol "A_e, B"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Napierian Absorbance"^^xsd:string ;
+  skos:exactMatch <http://eilv.cie.co.at/term/798> ;
+  skos:prefLabel "Napierian Absorbance"^^xsd:string ;
+.
+quantity:Radiance
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:latexDefinition "$L = \\frac{dI}{dA}\\frac{1}{cos\\alpha}$, where $dI$ is the radiant intensity emitted from an element of the surface area $dA$, and angle $\\alpha$ is the angle between the normal to the surface and the given direction."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiance> ;
+.
+quantity:RadianceFactor
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Radiance Factor is the ratio of the radiance of the surface element in the given direction to that of a perfect reflecting or transmitting diffuser identically irradiated unit."^^xsd:string ;
+  qudt:latexDefinition "$\\beta = \\frac{L_n}{L_d}$, where $L_n$ is the radiance of a surface element in a given direction and $L_d$ is the radiance of the perfect reflecting or transmitting diffuser identically irradiated and viewed. Reflectance factor is equivalent to radiance factor or luminance factor (when the cone angle is infinitely small, and is equivalent to reflectance when the cone angle is $2π sr$."^^xsd:string ;
+  qudt:symbol "\\beta"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Radiance Factor"^^xsd:string ;
+  skos:exactMatch <http://www.encyclo.co.uk/define/radiance%20factor> ;
+  skos:prefLabel "Radiance Factor"^^xsd:string ;
+.
+quantity:RadiantEmmitance
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:description "Irradiance and Radiant Emittance are radiometry terms for the power per unit area of electromagnetic radiation at a surface. \"Irradiance\" is used when the electromagnetic radiation is incident on the surface. \"Radiant emmitance\" (or \"radiant exitance\") is used when the radiation is emerging from the surface."^^xsd:string ;
+  qudt:latexDefinition "$M = \\frac{d\\Phi}{dA}$, where $d\\Phi$ is the radiant flux leaving the element of the surface area $dA$."^^xsd:string ;
+  rdfs:label "Radiant Emmitance"^^xsd:string ;
+  skos:broader quantity:PowerPerArea ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Irradiance> ;
+  skos:prefLabel "Radiant Emmitance"^^xsd:string ;
+.
+quantity:RadiantEnergy
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "M-L2-PER-T2"^^xsd:string ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "In radiometry,\\textit{Radiant Energy} is the energy of electromagnetic waves. The quantity of radiant energy may be calculated by integrating radiant flux (or power) with respect to time.  In nuclear physics, \\textit{Radiant Energy} is energy, excluding rest energy, of the particles that are emitted, transferred, or received."^^xsd:string ;
+  qudt:latexDefinition "$Q_e$"^^xsd:string ;
+  qudt:symbol "Q_e"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Radiant Energy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:closeMatch quantity:LuminousEnergy ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiant_energy> ;
+  skos:prefLabel "Radiant Energy"^^xsd:string ;
+.
+quantity:RadiantEnergyDensity
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "M-PER-L-T2"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-M3 ;
+  qudt:description "\\textit{Radiant Energy} is the energy of electromagnetic waves. The quantity of radiant energy may be calculated by integrating radiant flux (or power) with respect to time. Visible radiant energy is called luminous energy. The SI unit is the joule."^^xsd:string ;
+  qudt:latexDefinition "$w$, $\\rho = \\frac{dQ}{dV}$, where $dQ$ is the radiant energy in an elementary three-dimensional domain."^^xsd:string ;
+  qudt:symbol "w, \\rho"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Radiant Energy Density"^^xsd:string ;
+  skos:broader quantity:Power ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiant_energy_density> ;
+  skos:prefLabel "Radiant Energy Density"^^xsd:string ;
+  skos:relatedMatch quantity:RadiantFlux ;
+.
+quantity:RadiantExposure
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "J-PER-CM2"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-M2 ;
+  qudt:description "Radiant exposure is a measure of the total radiant energy incident on a surface per unit area; equal to the integral over time of the radiant flux density. Also known as exposure."^^xsd:string ;
+  qudt:latexDefinition "$H = \\int_{0}^{\\Delta t}{E}{dt}$, where $E$ is the irradiance acting during the time interval with duration $\\Delta t$."^^xsd:string ;
+  qudt:symbol "H_e"^^xsd:string ;
+  rdfs:label "Radiant Exposure"^^xsd:string ;
+  skos:exactMatch <http://omlc.ogi.edu/education/ece532/class1/irradiance.html> ;
+  skos:prefLabel "Radiant Exposure"^^xsd:string ;
+.
+quantity:RadiantFluence
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "M-PER-T2"^^xsd:string ;
+  qudt:applicableUnit unit:J-PER-M2 ;
+  qudt:description "Radiant fluence rate, or spherical irradiance, is equal to the total radiant flux incident on a small sphere divided by the area of the diametrical cross-section of the sphere."^^xsd:string ;
+  qudt:latexDefinition "$H_0 = \\int_{0}^{\\Delta t}{E_0}{dt}$, where $E_0$ is the spherical radiance acting during time interval with duration $\\Delta t$."^^xsd:string ;
+  qudt:symbol "H_e,0"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Radiant Fluence"^^xsd:string ;
+  skos:prefLabel "Radiant Fluence"^^xsd:string ;
+.
+quantity:RadiantFluenceRate
+  rdf:type qudt:PhotometryQuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "M-PER-T3"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:description "Radiant fluence rate, or spherical irradiance, is equal to the total radiant flux incident on a small sphere divided by the area of the diametrical cross-section of the sphere."^^xsd:string ;
+  qudt:latexDefinition "$E_0 = \\int{L}{d\\Omega}$, where $d\\Omega$ is the solid angle of each elementary beam passing through the given point and $L$ its radiance at that point in the direction of the beam."^^xsd:string ;
+  qudt:symbol "E_e,0"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Radiant Fluence Rate"^^xsd:string ;
+  skos:broader quantity:Power ;
+  skos:exactMatch <http://goldbook.iupac.org/FT07376.html> ;
+  skos:prefLabel "Radiant Fluence Rate"^^xsd:string ;
+.
+quantity:RadiantFlux
+  qudt:abbreviation "M-L2-PER-T3"^^xsd:string ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:latexDefinition "$\\Phi = \\frac{dQ}{dt}$, where $dQ$ is the radiant energy emitted, transferred, or received during a time interval of the duration $dt$."^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiant_flux> ;
+.
+quantity:RadiantIntensity
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:latexDefinition "$I = \\frac{d\\Phi}{d\\Omega}$, where $d\\Phi$ is the radiant flux leaving the source in an elementary cone containing the given direction with the solid angle $d\\Omega$."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiant_intensity> ;
+.
+quantity:Refectance
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Refectance and reflectivity generally refer to the fraction of incident electromagnetic power that is reflected at an interface, while the term \"reflection coefficient\" is used for the fraction of electric field reflected. Reflectance is always a positive real number."^^xsd:string ;
+  qudt:latexDefinition "$\\rho = \\frac{\\Phi_t}{\\Phi_m}$, where $\\Phi_t$ is the reflected radiant flux or the reflected luminous flux, and $\\Phi_m$ is the radiant flux or luminous flux of the incident radiation."^^xsd:string ;
+  qudt:symbol "\\rho"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Refectance"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Reflectivity> ;
+  skos:prefLabel "Refectance"^^xsd:string ;
+.
+quantity:ReflectanceFactor
+  rdf:type qudt:PhotometryQuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Reflectance Factor is the measure of the ability of a surface to reflect light or other electromagnetic radiation, equal to the ratio of the reflected flux to the incident flux."^^xsd:string ;
+  qudt:latexDefinition "$R = \\frac{\\Phi_n}{\\Phi_d}$, where $\\Phi_n$ is the radiant flux or luminous flux reflected in the directions delimited by a given cone and $\\Phi_d$ is the flux reflected in the same directions by an identically radiated diffuser of reflectance equal to 1."^^xsd:string ;
+  qudt:symbol "R"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Reflectance Factor"^^xsd:string ;
+  skos:exactMatch <http://www.thefreedictionary.com/reflectance+factor> ;
+  skos:prefLabel "Reflectance Factor"^^xsd:string ;
+.
+quantity:RefractiveIndex
+  rdf:type qudt:LightQuantityKind ;
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "\\textit{refractive index} or index of refraction n of a substance (optical medium) is a dimensionless number that describes how light, or any other radiation, propagates through that medium."^^xsd:string ;
+  qudt:latexDefinition "$n = \\frac{c_0}{c}$, where $c_0$ is the speed of light in vacuum, and $c$ is the speed of light in the medium."^^xsd:string ;
+  qudt:symbol "n"^^xsd:string ;
+  rdfs:label "Refractive index"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Refractive_index> ;
+.
+quantity:SpectralLuminousEfficiency
+  rdf:type qudt:PhotometryQuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "lm/watt"^^xsd:string ;
+  qudt:applicableUnit unit:LM-PER-W ;
+  qudt:description "The Spectral Luminous Efficiency is a measure of how well a light source produces visible light. It is the ratio of luminous flux to power. A common choice is to choose units such that the maximum possible efficacy, 683 lm/W, corresponds to an efficiency of 100%."^^xsd:string ;
+  qudt:latexDefinition "$V(\\lambda) = \\frac{\\Phi_\\lambda(\\lambda_m)}{\\Phi_\\lambda(\\lambda)}$, where $\\Phi_\\lambda(\\lambda_m)$ is the spectral radiant flux at wavelength $\\lambda_m$ and $\\Phi_\\lambda(\\lambda)$ is the spectral radiant flux at wavelength $\\lambda$, such that both radiations produce equal luminous sensations under specified photometric conditions and $\\lambda_m$ is chosen so that the maximum value of this ratio is equal to 1."^^xsd:string ;
+  qudt:symbol "V"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Spectral Luminous Efficiency"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Luminous_efficacy> ;
+  skos:prefLabel "Spectral Luminous Efficiency"^^xsd:string ;
+.
+quantity:SphericalIlluminance
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:applicableUnit unit:Lux ;
+  qudt:description "Spherical illuminance is equal to quotient of the total luminous flux $\\Phi_v$ incident on a small sphere by the cross section area of that sphere."^^xsd:string ;
+  qudt:latexDefinition "$E_v,0 = \\int_{4\\pi sr}{L_v}{d\\Omega}$, where $d\\Omega$ is the solid angle of each elementary beam passing through the given point and $L_v$ is its luminance at that point in the direction of the beam."^^xsd:string ;
+  rdfs:label "Illuminance"^^xsd:string ;
+  skos:broader quantity:Illuminance ;
+  skos:exactMatch <http://eilv.cie.co.at/term/1245> ;
+  skos:prefLabel "Illuminance"^^xsd:string ;
+.
+quantity:Transmittance
+  rdf:type qudt:PhotometryQuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Transmittance is the fraction of incident light (electromagnetic radiation) at a specified wavelength that passes through a sample."^^xsd:string ;
+  qudt:latexDefinition "$\\tau = \\frac{\\Phi_t}{\\Phi_m}$, where $\\Phi_t$ is the transmitted radiant flux or the transmitted luminous flux, and $\\Phi_m$ is the radiant flux or luminous flux of the incident radiation."^^xsd:string ;
+  qudt:symbol "\\tau, T"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Transmittance"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Transmittance> ;
+  skos:prefLabel "Transmittance"^^xsd:string ;
+.
+quantity:TransmittanceDensity
+  rdf:type qudt:PhotometryQuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:UNITLESS ;
+  qudt:description "Transmittance is the fraction of incident light (electromagnetic radiation) at a specified wavelength that passes through a sample."^^xsd:string ;
+  qudt:latexDefinition "$A_1_0(\\lambda) = -lg(\\tau(\\lambda))$, where $\\tau$ is the transmittance at a given wavelength $\\lambda$."^^xsd:string ;
+  qudt:symbol "A_10, D"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Transmittance Density"^^xsd:string ;
+  skos:prefLabel "Transmittance Density"^^xsd:string ;
+.
+quantity:Value_StefanBoltzmannConstant
+  qudt:unit unit:W-PER-M2-K4 ;
+.
+quantity:Wavelength
+  rdf:type qudt:LightQuantityKind ;
+  qudt:applicableUnit unit:M ;
+  qudt:description "For a monochromatic wave, \\textit{wavelength} is the distance between two successive points in a direction perpendicular to the wavefront where at a given instant the phase differs by $2\\pi$. The wavelength of a sinusoidal wave is the spatial period of the wave—the distance over which the wave's shape repeats. The SI unit of wavelength is the meter."^^xsd:string ;
+  qudt:latexDefinition "$\\lambda = \\frac{c}{\\nu}$, where $\\lambda$ is the wave length, $\\nu$ is the frequency, and $c$ is the speed of light in the medium."^^xsd:string ;
+  qudt:symbol "\\lambda"^^xsd:string ;
+  rdfs:label "Wave Length"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Wavelength> ;
+.
+quantity:Wavenumber
+  rdf:type qudt:PhotometryQuantityKind ;
+  qudt:applicableUnit unit:PER-M ;
+  qudt:description "\\textit{Wavenumber} is the spatial frequency of a wave - the number of waves that exist over a specified distance. More formally, it is the reciprocal of the wavelength. It is also the magnitude of the wave vector. Light passing through different media keeps its frequency, but not its wavelength or wavenumber. The unit for wavenumber commonly used in spectroscopy is centimetre to power minus one, PER-CM, rather than metre to power minus one, PER-M."^^xsd:string ;
+  qudt:latexDefinition """$\\sigma = \\frac{\\nu}{c}$, where $\\sigma$ is the wave number, $\\nu$ is the frequency, and $c$ is the speed of light in the medium.
+
+Or:
+
+$k = \\frac{2\\pi}{\\lambda}= \\frac{2\\pi\\upsilon}{\\upsilon_p}=\\frac{\\omega}{\\upsilon_p}$, where $\\upsilon$ is the frequency of the wave, $\\lambda$ is the wavelength, $\\omega = 2\\pi \\upsilon$ is the angular frequency of the wave, and $\\upsilon_p$ is the phase velocity of the wave."""^^xsd:string ;
+  qudt:symbol "\\sigma"^^xsd:string ;
+.

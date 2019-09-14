@@ -1,0 +1,116 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/information-theory
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/quantity/information-theory>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:creator "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Measurable Quantities"^^xsd:string ;
+  dc:title "QUDT Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The 'QUDT-Quantity Vocabulary\" provides a base set of quantities according to the 'Quantity' Schema Ontology.  A quantity is a measure of an observable phenomenon, that, when associated with something, becomes a property of that thing; a particular object, event, or physical system. As stated at Wikipedia, in the language of measurement, quantities are quantifiable aspects of the world, such as time, distance, velocity, mass, momentum, energy, and weight, and units are used to describe their measure."^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-02 18:53:29 -0700 (Tue, 02 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/quantity"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.1"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity> ;
+  owl:versionInfo "$Id: VOCAB_QUDT-quantity-information-theory-v1.2.ttl 1937 2013-04-03 01:53:29Z rhodgson $"^^xsd:string ;
+.
+quantity:Capacity
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  qudt:description "In computer operations, (a) the largest quantity which can be stored, processed, or transferred; (b) the largest number of digits or characters which may regularly be processed; (c) the upper and lower limits of the quantities which may be processed. In other contexts, the amount of material that  can be stored, such as fuel or food."^^xsd:string ;
+  qudt:symbol "TBD"^^xsd:string ;
+  rdfs:label "Capacity"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/Capacity> ;
+  skos:prefLabel "Capacity"^^xsd:string ;
+.
+quantity:DataRate
+  rdf:type qudt:CommunicationsQuantityKind ;
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:BIT-PER-SEC ;
+  qudt:applicableUnit unit:KilobitsPerSecond ;
+  qudt:applicableUnit unit:MegabitsPerSecond ;
+  qudt:description "The frequency derived from the period of time required to transmit one bit. This represents the amount of data transferred per second by a communications channel or a computing or storage device. Data rate is measured in units of bits per second (written \"b/s\" or \"bps\"), bytes per second (Bps), or baud. When applied to data rate, the multiplier prefixes \"kilo-\", \"mega-\", \"giga-\", etc. (and their abbreviations, \"k\", \"M\", \"G\", etc.) always denote powers of 1000. For example, 64 kbps is 64,000 bits per second. This contrasts with units of storage which use different prefixes to denote multiplication by powers of 1024, for example 1 kibibit = 1024 bits."^^xsd:string ;
+  rdfs:label "Data Rate"^^xsd:string ;
+  skos:broader quantity:InformationFlowRate ;
+  skos:exactMatch <http://dbpedia.org/resource/Data_rate> ;
+  skos:prefLabel "Data Rate"^^xsd:string ;
+.
+quantity:InformationEntropy
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:BAN ;
+  qudt:applicableUnit unit:BIT ;
+  qudt:applicableUnit unit:BYTE ;
+  qudt:applicableUnit unit:NAT ;
+  qudt:description "Information Entropy is a concept from information theory. It tells how much information there is in an event. In general, the more uncertain or random the event is, the more information it will contain. The concept of information entropy was created by a mathematician. He was named Claude Elwood Shannon. It has applications in many areas, including lossless data compression, statistical inference, cryptography and recently in other disciplines as biology, physics or machine learning."^^xsd:string ;
+  rdfs:label "Information Entropy"^^xsd:string ;
+  skos:prefLabel "Information Entropy"^^xsd:string ;
+  prov:wasInfluencedBy <http://simple.wikipedia.org/wiki/Information_entropy> ;
+.
+quantity:InformationFlowRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdfs:label "Information flow rate"^^xsd:string ;
+  skos:prefLabel "Information flow rate"^^xsd:string ;
+.
+quantity:VideoFrameRate
+  rdf:type qudt:InformationTheoryQuantityKind ;
+  rdf:type qudt:QuantityKind ;
+  qudt:applicableUnit unit:FRAME-PER-SEC ;
+  qudt:description "Frame rate (also known as frame frequency) is the frequency (rate) at which an imaging device produces unique consecutive images called frames. The term applies equally well to computer graphics, video cameras, film cameras, and motion capture systems. Frame rate is most often expressed in frames per second (FPS) and is also expressed in progressive scan monitors as hertz (Hz)."^^xsd:string ;
+  rdfs:label "Video Frame Rate"^^xsd:string ;
+  skos:broader quantity:InformationFlowRate ;
+  skos:prefLabel "Video Frame Rate"^^xsd:string ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Frame_rate> ;
+.
+<http://voag.linkedmodel.org/schema/voag#VocabCatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Vocabulary Catalog Entry v1.2"^^xsd:string ;
+.

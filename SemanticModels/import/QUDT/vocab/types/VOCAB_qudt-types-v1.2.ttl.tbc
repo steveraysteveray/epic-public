@@ -1,0 +1,91 @@
+# baseURI: null
+
+# c14n-version: 3
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms: <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference: <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual: <http://topbraid.org/visual#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/schema/qudt#AerospaceCoordinateSystem>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#designator>
+    ) ;
+.
+<http://qudt.org/schema/qudt#BitFieldType>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#rdfsDatatype>
+      <http://qudt.org/schema/qudt#abbreviation>
+      <http://qudt.org/schema/qudt#identifier>
+    ) ;
+.
+<http://qudt.org/schema/qudt#BooleanType>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#rdfsDatatype>
+      <http://qudt.org/schema/qudt#designator>
+    ) ;
+.
+<http://qudt.org/schema/qudt#CharacterType>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#rdfsDatatype>
+      <http://qudt.org/schema/qudt#designator>
+    ) ;
+.
+<http://qudt.org/schema/qudt#Datatype>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#designator>
+    ) ;
+.
+<http://qudt.org/schema/qudt#DateTimeStringType>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#rdfsDatatype>
+      <http://qudt.org/schema/qudt#designator>
+    ) ;
+.
+<http://qudt.org/schema/qudt#IntegerDatatype>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#rdfsDatatype>
+      <http://qudt.org/schema/qudt#designator>
+    ) ;
+.
+<http://qudt.org/schema/qudt#ReferenceFrame>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#designator>
+      <http://qudt.org/schema/qudt#literal>
+    ) ;
+.
+<http://qudt.org/schema/qudt#RotatingReferenceFrame>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#designator>
+      <http://qudt.org/schema/qudt#literal>
+    ) ;
+.
+<http://qudt.org/schema/qudt#ScalarDatatype>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://qudt.org/schema/qudt#rdfsDatatype>
+      <http://qudt.org/schema/qudt#code>
+      <http://qudt.org/schema/qudt#designator>
+    ) ;
+.

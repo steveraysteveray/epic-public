@@ -1,0 +1,116 @@
+# baseURI: http://siemens.com/schemas/kps/iotschema
+# prefix: iotschema
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix iotschema: <http://siemens.com/schemas/kps/iotschema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/iotschema>
+  rdf:type owl:Ontology ;
+  dc:creator "Darko Anicic"^^xsd:string ;
+  dc:description "The IoTSchema ontology is the root ontology for the IoT Schema project, which is a standards-based intermediary between W3C TD and deep semantic models."^^xsd:string ;
+  dc:subject "Shallow to deep semantic integration"^^xsd:string ;
+  dc:title "The IoT Schema ontology"^^xsd:string ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "The IoTSchema ontology integrates shallow (TD) and deep semantic models."^^xsd:string ;
+  vaem:namespace "http://siemens.com/schemas/kps/iotschema#"^^xsd:string ;
+  vaem:namespacePrefix "iotschema"^^xsd:string ;
+  vaem:url "http://siemens.com/schemas/kps/iotschema"^^xsd:anyURI ;
+  rdfs:label "IoTSchema ontology"^^xsd:string ;
+  owl:versionInfo "$Id: SCHEMA_KP_iotschema-v1.0.ttl 1954 2018-08-27 13:35:02Z jhodges $"^^xsd:string ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+iotschema:DynamicPropertySet
+  rdf:type owl:Class ;
+  rdfs:subClassOf iotschema:Root ;
+.
+iotschema:Entity
+  rdf:type owl:Class ;
+  rdfs:subClassOf iotschema:Root ;
+.
+iotschema:Property
+  rdf:type owl:Class ;
+  rdfs:subClassOf iotschema:Root ;
+.
+iotschema:Root
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+iotschema:collectsData
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain iotschema:Entity ;
+  rdfs:label "collects data" ;
+  rdfs:range iotschema:DynamicPropertySet ;
+.
+iotschema:hasProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain iotschema:DynamicPropertySet ;
+  rdfs:label "has property" ;
+  rdfs:range iotschema:Property ;
+.
+iotschema:iotID
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain iotschema:DynamicPropertySet ;
+  rdfs:label "iot ID" ;
+  rdfs:range xsd:string ;
+.
+iotschema:limit
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain iotschema:DynamicPropertySet ;
+  rdfs:label "limit" ;
+  rdfs:range xsd:decimal ;
+.
+iotschema:name
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          iotschema:Property
+          iotschema:DynamicPropertySet
+        ) ;
+    ] ;
+  rdfs:label "name" ;
+  rdfs:range xsd:string ;
+.
+iotschema:rangeFrom
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain iotschema:DynamicPropertySet ;
+  rdfs:label "range from" ;
+  rdfs:range xsd:dateTime ;
+.
+iotschema:rangeTo
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain iotschema:DynamicPropertySet ;
+  rdfs:label "range to" ;
+  rdfs:range xsd:dateTime ;
+.
+iotschema:timeStamp
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain iotschema:DynamicPropertySet ;
+  rdfs:label "time stamp" ;
+  rdfs:range xsd:dateTime ;
+.
+iotschema:unit
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain iotschema:Property ;
+  rdfs:label "unit" ;
+  rdfs:range xsd:string ;
+.
+iotschema:value
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain iotschema:Property ;
+  rdfs:label "value" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          xsd:decimal
+          xsd:integer
+          xsd:boolean
+        ) ;
+    ] ;
+.

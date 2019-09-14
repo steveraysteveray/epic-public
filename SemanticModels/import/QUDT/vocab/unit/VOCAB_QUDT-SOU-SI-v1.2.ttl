@@ -1,0 +1,375 @@
+# baseURI: http://qudt.org/1.2/vocab/unit/si
+# imports: http://qudt.org/1.2/collection/units
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nist-constants
+# imports: http://qudt.org/1.2/vocab/unit/base
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dimension: <http://qudt.org/vocab/dimension#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<http://qudt.org/1.2/vocab/unit/si>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "James E. Masters"^^xsd:string ;
+  dc:rights "The QUDT SI Vocabulary is issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "SI System of Units"^^xsd:string ;
+  dc:title "QUDT SI System of Units"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "The QUDT SI Units Vocabulary is an RDF/OWL specifications of common units of measure in the science and engineering domains. All SI Units are included. Links, where possible, have been made to dbpedia using 'skos:closeMatch' and 'skos:exactMatch'."^^xsd:string ;
+  vaem:hasCatalogEntry voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:hasDisciplineScope "All Disciplines"^^xsd:string ;
+  vaem:hasDomainScope "SI Science and Engineering Units"^^xsd:string ;
+  vaem:hasGraphRole vaem:VocabularyGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "To provide a vocabulary of commonly used SI units. This comprises the SI and many non-SI Units."^^xsd:string ;
+  vaem:lastUpdated "$LastChangedDate: 2013-03-25 21:22:57 -0700 (Mon, 25 Mar 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/vocab/unit"^^xsd:string ;
+  vaem:namespacePrefix "qudt-unit"^^xsd:string ;
+  vaem:ownedBy "qudt.org"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource unit:AU ;
+  vaem:usesNonImportedResource unit:BohrRadius ;
+  vaem:usesNonImportedResource unit:C_0 ;
+  vaem:usesNonImportedResource unit:Cm2-m ;
+  vaem:usesNonImportedResource unit:Cm2-s ;
+  vaem:usesNonImportedResource unit:ElementaryCharge ;
+  vaem:usesNonImportedResource unit:HA ;
+  vaem:usesNonImportedResource unit:HartreeEnergy ;
+  vaem:usesNonImportedResource unit:Hour ;
+  vaem:usesNonImportedResource unit:In-PER-s2 ;
+  vaem:usesNonImportedResource unit:PlanckConstant ;
+  vaem:usesNonImportedResource unit:S2-FT ;
+  vaem:usesNonImportedResource unit:WATT ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource voag:QUDT-UNITS-VocabCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasCatalogEntry ;
+  vaem:usesNonImportedResource voag:hasLicenseType ;
+  vaem:usesNonImportedResource voag:withAttributionTo ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Unit"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/collection/units> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nist-constants> ;
+  owl:imports <http://qudt.org/1.2/vocab/unit/base> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/unit/si> ;
+.
+qudt:SOU_MKS
+  rdf:type qudt:SystemOfUnits ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/mks> ;
+  rdfs:label "MKS System Of Units"^^xsd:string ;
+.
+qudt:SOU_SI
+  rdf:type qudt:SystemOfUnits ;
+  qudt:abbreviation "SI"^^xsd:string ;
+  qudt:description "The International System of Units (abbreviated SI from French: Système international d'unités) is the modern form of the metric system and is generally a system of units of measurement devised around seven base units and the convenience of the number ten. The older metric system included several groups of units. The SI was established in 1960, based on the metre-kilogram-second system, rather than the centimetre-gram-second system, which, in turn, had a few variants."^^xsd:string ;
+  qudt:hasAllowedUnit unit:AU ;
+  qudt:hasAllowedUnit unit:BohrRadius ;
+  qudt:hasAllowedUnit unit:CM2 ;
+  qudt:hasAllowedUnit unit:CM3 ;
+  qudt:hasAllowedUnit unit:C_0 ;
+  qudt:hasAllowedUnit unit:DAY ;
+  qudt:hasAllowedUnit unit:Deg ;
+  qudt:hasAllowedUnit unit:DegC ;
+  qudt:hasAllowedUnit unit:EV ;
+  qudt:hasAllowedUnit unit:ElementaryCharge ;
+  qudt:hasAllowedUnit unit:FemtoM ;
+  qudt:hasAllowedUnit unit:GRAM ;
+  qudt:hasAllowedUnit unit:HA ;
+  qudt:hasAllowedUnit unit:HR ;
+  qudt:hasAllowedUnit unit:HartreeEnergy ;
+  qudt:hasAllowedUnit unit:KG-PER-HR ;
+  qudt:hasAllowedUnit unit:KM ;
+  qudt:hasAllowedUnit unit:KiloPA ;
+  qudt:hasAllowedUnit unit:KiloPaA ;
+  qudt:hasAllowedUnit unit:LITER ;
+  qudt:hasAllowedUnit unit:M3-PER-HR ;
+  qudt:hasAllowedUnit unit:MIN ;
+  qudt:hasAllowedUnit unit:MetricTon ;
+  qudt:hasAllowedUnit unit:MicroF ;
+  qudt:hasAllowedUnit unit:MicroH ;
+  qudt:hasAllowedUnit unit:MilliH ;
+  qudt:hasAllowedUnit unit:NP ;
+  qudt:hasAllowedUnit unit:NanoF ;
+  qudt:hasAllowedUnit unit:PicoF ;
+  qudt:hasAllowedUnit unit:PlanckConstant ;
+  qudt:hasAllowedUnit unit:RAD-PER-MIN ;
+  qudt:hasAllowedUnit unit:SECOND ;
+  qudt:hasBaseUnit unit:AMPERE ;
+  qudt:hasBaseUnit unit:CANDELA ;
+  qudt:hasBaseUnit unit:KELVIN ;
+  qudt:hasBaseUnit unit:MOL ;
+  qudt:hasBaseUnit unit:SECOND ;
+  qudt:hasBaseUnit unit:UNITLESS ;
+  qudt:hasBaseUnit unit:WATT ;
+  qudt:hasDecimalMultiplier unit:Atto ;
+  qudt:hasDecimalMultiplier unit:Centi ;
+  qudt:hasDecimalMultiplier unit:Deca ;
+  qudt:hasDecimalMultiplier unit:Deci ;
+  qudt:hasDecimalMultiplier unit:Exa ;
+  qudt:hasDecimalMultiplier unit:Femto ;
+  qudt:hasDecimalMultiplier unit:Giga ;
+  qudt:hasDecimalMultiplier unit:Hecto ;
+  qudt:hasDecimalMultiplier unit:Kilo ;
+  qudt:hasDecimalMultiplier unit:Mega ;
+  qudt:hasDecimalMultiplier unit:Micro ;
+  qudt:hasDecimalMultiplier unit:Milli ;
+  qudt:hasDecimalMultiplier unit:Nano ;
+  qudt:hasDecimalMultiplier unit:Peta ;
+  qudt:hasDecimalMultiplier unit:Pico ;
+  qudt:hasDecimalMultiplier unit:Tera ;
+  qudt:hasDecimalMultiplier unit:Yocto ;
+  qudt:hasDecimalMultiplier unit:Yotta ;
+  qudt:hasDecimalMultiplier unit:Zepto ;
+  qudt:hasDecimalMultiplier unit:Zetta ;
+  qudt:hasDefinedUnit unit:A-PER-M ;
+  qudt:hasDefinedUnit unit:A-PER-M2 ;
+  qudt:hasDefinedUnit unit:A-PER-RAD ;
+  qudt:hasDefinedUnit unit:A-t-PER-M ;
+  qudt:hasDefinedUnit unit:AT ;
+  qudt:hasDefinedUnit unit:BQ ;
+  qudt:hasDefinedUnit unit:C-M ;
+  qudt:hasDefinedUnit unit:C-PER-KG ;
+  qudt:hasDefinedUnit unit:C-PER-M ;
+  qudt:hasDefinedUnit unit:C-PER-M3 ;
+  qudt:hasDefinedUnit unit:C-PER-MOL ;
+  qudt:hasDefinedUnit unit:CD-PER-M2 ;
+  qudt:hasDefinedUnit unit:COULOMB ;
+  qudt:hasDefinedUnit unit:F-PER-M ;
+  qudt:hasDefinedUnit unit:FARAD ;
+  qudt:hasDefinedUnit unit:GRAY ;
+  qudt:hasDefinedUnit unit:GY-PER-SEC ;
+  qudt:hasDefinedUnit unit:HENRY ;
+  qudt:hasDefinedUnit unit:HZ ;
+  qudt:hasDefinedUnit unit:HZ-PER-M ;
+  qudt:hasDefinedUnit unit:J-PER-K ;
+  qudt:hasDefinedUnit unit:J-PER-KG ;
+  qudt:hasDefinedUnit unit:J-PER-KG-K ;
+  qudt:hasDefinedUnit unit:J-PER-KG-K-M3 ;
+  qudt:hasDefinedUnit unit:J-PER-KG-K-PA ;
+  qudt:hasDefinedUnit unit:J-PER-M2 ;
+  qudt:hasDefinedUnit unit:J-PER-M3 ;
+  qudt:hasDefinedUnit unit:J-PER-M3-K ;
+  qudt:hasDefinedUnit unit:J-PER-MOL ;
+  qudt:hasDefinedUnit unit:J-PER-MOL-K ;
+  qudt:hasDefinedUnit unit:J-PER-T ;
+  qudt:hasDefinedUnit unit:J-SEC ;
+  qudt:hasDefinedUnit unit:K-PER-W ;
+  qudt:hasDefinedUnit unit:KAT ;
+  qudt:hasDefinedUnit unit:KG-K ;
+  qudt:hasDefinedUnit unit:KG-M2 ;
+  qudt:hasDefinedUnit unit:KG-PER-M ;
+  qudt:hasDefinedUnit unit:KG-PER-SEC ;
+  qudt:hasDefinedUnit unit:KG-PER-SEC2 ;
+  qudt:hasDefinedUnit unit:KiloG-SEC2 ;
+  qudt:hasDefinedUnit unit:LM ;
+  qudt:hasDefinedUnit unit:Lux ;
+  qudt:hasDefinedUnit unit:M-K ;
+  qudt:hasDefinedUnit unit:M-K-PER-W ;
+  qudt:hasDefinedUnit unit:M-Kg ;
+  qudt:hasDefinedUnit unit:M-PER-F ;
+  qudt:hasDefinedUnit unit:M-PER-HR ;
+  qudt:hasDefinedUnit unit:M-PER-K ;
+  qudt:hasDefinedUnit unit:M-PER-MIN ;
+  qudt:hasDefinedUnit unit:M-PER-SEC ;
+  qudt:hasDefinedUnit unit:M-PER-SEC2 ;
+  qudt:hasDefinedUnit unit:M2-K ;
+  qudt:hasDefinedUnit unit:M2-K-PER-W ;
+  qudt:hasDefinedUnit unit:M2-PER-K ;
+  qudt:hasDefinedUnit unit:M2-PER-SEC ;
+  qudt:hasDefinedUnit unit:M2-SR ;
+  qudt:hasDefinedUnit unit:M3-PER-K ;
+  qudt:hasDefinedUnit unit:M3-PER-KG-SEC2 ;
+  qudt:hasDefinedUnit unit:M3-PER-SEC ;
+  qudt:hasDefinedUnit unit:MOL-K ;
+  qudt:hasDefinedUnit unit:MOL-PER-KG ;
+  qudt:hasDefinedUnit unit:MOL-PER-M3 ;
+  qudt:hasDefinedUnit unit:MilliM3 ;
+  qudt:hasDefinedUnit unit:N-M ;
+  qudt:hasDefinedUnit unit:N-PER-C ;
+  qudt:hasDefinedUnit unit:N-PER-KG ;
+  qudt:hasDefinedUnit unit:N-PER-M ;
+  qudt:hasDefinedUnit unit:N-SEC-PER-M3 ;
+  qudt:hasDefinedUnit unit:PA-SEC ;
+  qudt:hasDefinedUnit unit:PER-MOL ;
+  qudt:hasDefinedUnit unit:PER-SEC ;
+  qudt:hasDefinedUnit unit:RAD ;
+  qudt:hasDefinedUnit unit:RAD-PER-SEC ;
+  qudt:hasDefinedUnit unit:RAD-PER-SEC2 ;
+  qudt:hasDefinedUnit unit:S2 ;
+  qudt:hasDefinedUnit unit:SIEMENS ;
+  qudt:hasDefinedUnit unit:SIEVERT ;
+  qudt:hasDefinedUnit unit:STERADIAN ;
+  qudt:hasDefinedUnit unit:TESLA ;
+  qudt:hasDefinedUnit unit:V-PER-M ;
+  qudt:hasDefinedUnit unit:W-PER-M-K ;
+  qudt:hasDefinedUnit unit:W-PER-M2 ;
+  qudt:hasDefinedUnit unit:W-PER-M2-K ;
+  qudt:hasDefinedUnit unit:W-PER-M2-SR ;
+  qudt:hasDefinedUnit unit:W-PER-SR ;
+  qudt:hasDefinedUnit unit:WATT ;
+  qudt:hasDefinedUnit unit:WEBER ;
+  qudt:hasDerivedCoherentUnit unit:A-PER-J ;
+  qudt:hasDerivedCoherentUnit unit:A-PER-M ;
+  qudt:hasDerivedCoherentUnit unit:A-PER-M2 ;
+  qudt:hasDerivedCoherentUnit unit:A-PER-RAD ;
+  qudt:hasDerivedCoherentUnit unit:A-t-PER-M ;
+  qudt:hasDerivedCoherentUnit unit:AT ;
+  qudt:hasDerivedCoherentUnit unit:BQ ;
+  qudt:hasDerivedCoherentUnit unit:C-M ;
+  qudt:hasDerivedCoherentUnit unit:C-M2 ;
+  qudt:hasDerivedCoherentUnit unit:C-PER-KG ;
+  qudt:hasDerivedCoherentUnit unit:C-PER-M ;
+  qudt:hasDerivedCoherentUnit unit:C-PER-M2 ;
+  qudt:hasDerivedCoherentUnit unit:C-PER-M3 ;
+  qudt:hasDerivedCoherentUnit unit:C-PER-MOL ;
+  qudt:hasDerivedCoherentUnit unit:C2-M-PER-J ;
+  qudt:hasDerivedCoherentUnit unit:C3-M-PER-J2 ;
+  qudt:hasDerivedCoherentUnit unit:CD-PER-M2 ;
+  qudt:hasDerivedCoherentUnit unit:COULOMB ;
+  qudt:hasDerivedCoherentUnit unit:F-PER-M ;
+  qudt:hasDerivedCoherentUnit unit:FARAD ;
+  qudt:hasDerivedCoherentUnit unit:GRAY ;
+  qudt:hasDerivedCoherentUnit unit:GY-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:HENRY ;
+  qudt:hasDerivedCoherentUnit unit:HZ ;
+  qudt:hasDerivedCoherentUnit unit:HZ-PER-K ;
+  qudt:hasDerivedCoherentUnit unit:HZ-PER-M ;
+  qudt:hasDerivedCoherentUnit unit:HZ-PER-T ;
+  qudt:hasDerivedCoherentUnit unit:HZ-PER-V ;
+  qudt:hasDerivedCoherentUnit unit:J-M-PER-MOL ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-K ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-KG ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-KG-K ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-KG-K-M3 ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-KG-K-PA ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-M2 ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-M3 ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-M3-K ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-MOL ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-MOL-K ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-T ;
+  qudt:hasDerivedCoherentUnit unit:J-PER-T2 ;
+  qudt:hasDerivedCoherentUnit unit:J-SEC ;
+  qudt:hasDerivedCoherentUnit unit:J-SEC-PER-MOL ;
+  qudt:hasDerivedCoherentUnit unit:K-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:K-PER-T ;
+  qudt:hasDerivedCoherentUnit unit:K-PER-W ;
+  qudt:hasDerivedCoherentUnit unit:KAT ;
+  qudt:hasDerivedCoherentUnit unit:KG-K ;
+  qudt:hasDerivedCoherentUnit unit:KG-M2 ;
+  qudt:hasDerivedCoherentUnit unit:KG-PER-M ;
+  qudt:hasDerivedCoherentUnit unit:KG-PER-M2 ;
+  qudt:hasDerivedCoherentUnit unit:KG-PER-MOL ;
+  qudt:hasDerivedCoherentUnit unit:KG-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:KG-PER-SEC2 ;
+  qudt:hasDerivedCoherentUnit unit:LM ;
+  qudt:hasDerivedCoherentUnit unit:LM-PER-W ;
+  qudt:hasDerivedCoherentUnit unit:LM-SEC ;
+  qudt:hasDerivedCoherentUnit unit:Lux ;
+  qudt:hasDerivedCoherentUnit unit:M-K ;
+  qudt:hasDerivedCoherentUnit unit:M-K-PER-W ;
+  qudt:hasDerivedCoherentUnit unit:M-Kg ;
+  qudt:hasDerivedCoherentUnit unit:M-PER-F ;
+  qudt:hasDerivedCoherentUnit unit:M-PER-K ;
+  qudt:hasDerivedCoherentUnit unit:M-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:M-PER-SEC2 ;
+  qudt:hasDerivedCoherentUnit unit:M2-K ;
+  qudt:hasDerivedCoherentUnit unit:M2-K-PER-W ;
+  qudt:hasDerivedCoherentUnit unit:M2-PER-K ;
+  qudt:hasDerivedCoherentUnit unit:M2-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:M2-SR ;
+  qudt:hasDerivedCoherentUnit unit:M3-PER-K ;
+  qudt:hasDerivedCoherentUnit unit:M3-PER-KG ;
+  qudt:hasDerivedCoherentUnit unit:M3-PER-KG-SEC2 ;
+  qudt:hasDerivedCoherentUnit unit:M3-PER-MOL ;
+  qudt:hasDerivedCoherentUnit unit:M3-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:MOL-K ;
+  qudt:hasDerivedCoherentUnit unit:MOL-PER-KG ;
+  qudt:hasDerivedCoherentUnit unit:MOL-PER-M3 ;
+  qudt:hasDerivedCoherentUnit unit:N-M ;
+  qudt:hasDerivedCoherentUnit unit:N-PER-C ;
+  qudt:hasDerivedCoherentUnit unit:N-PER-KG ;
+  qudt:hasDerivedCoherentUnit unit:N-PER-M ;
+  qudt:hasDerivedCoherentUnit unit:NEWTON ;
+  qudt:hasDerivedCoherentUnit unit:PA-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:PA-SEC ;
+  qudt:hasDerivedCoherentUnit unit:PER-M ;
+  qudt:hasDerivedCoherentUnit unit:PER-M-K ;
+  qudt:hasDerivedCoherentUnit unit:PER-M3 ;
+  qudt:hasDerivedCoherentUnit unit:PER-MOL ;
+  qudt:hasDerivedCoherentUnit unit:PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:PER-T-M ;
+  qudt:hasDerivedCoherentUnit unit:PER-T-SEC ;
+  qudt:hasDerivedCoherentUnit unit:QuarticCoulombMeterPerCubicEnergy ;
+  qudt:hasDerivedCoherentUnit unit:RAD-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:RAD-PER-SEC2 ;
+  qudt:hasDerivedCoherentUnit unit:ROENTGEN ;
+  qudt:hasDerivedCoherentUnit unit:S2 ;
+  qudt:hasDerivedCoherentUnit unit:SIEMENS ;
+  qudt:hasDerivedCoherentUnit unit:SIEVERT ;
+  qudt:hasDerivedCoherentUnit unit:STERADIAN ;
+  qudt:hasDerivedCoherentUnit unit:TESLA ;
+  qudt:hasDerivedCoherentUnit unit:V-PER-M ;
+  qudt:hasDerivedCoherentUnit unit:V-PER-M2 ;
+  qudt:hasDerivedCoherentUnit unit:V-PER-SEC ;
+  qudt:hasDerivedCoherentUnit unit:W-PER-M-K ;
+  qudt:hasDerivedCoherentUnit unit:W-PER-M2 ;
+  qudt:hasDerivedCoherentUnit unit:W-PER-M2-K ;
+  qudt:hasDerivedCoherentUnit unit:W-PER-M2-SR ;
+  qudt:hasDerivedCoherentUnit unit:W-PER-SR ;
+  qudt:hasDerivedCoherentUnit unit:WATT ;
+  qudt:hasDerivedCoherentUnit unit:WEBER ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit/si> ;
+  rdfs:label "International System of Units"^^xsd:string ;
+  skos:exactMatch <http://dbpedia.org/resource/International_System_of_Units> ;
+  prov:wasDerivedFrom qudt:SOU_MKS ;
+  prov:wasInfluencedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-2791> ;
+  prov:wasInformedBy <http://aurora.regenstrief.org/~ucum/ucum.html> ;
+  prov:wasInformedBy <http://physics.info/system-international/> ;
+  prov:wasInformedBy <http://physics.nist.gov/Pubs/SP811> ;
+  prov:wasInformedBy <http://www.nist.gov/pml/pubs/sp811/index.cfm> ;
+  prov:wasInformedBy <http://www.oxfordreference.com/view/10.1093/acref/9780198605225.001.0001/acref-9780198605225-e-1292> ;
+  prov:wasInformedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-appendix-0003> ;
+  prov:wasInformedBy <http://www.oxfordreference.com/view/10.1093/acref/9780199233991.001.0001/acref-9780199233991-e-2791> ;
+.
+voag:QUDT-UNITS-VocabCatalogEntry
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT UNITS Vocab Catalog Entry"^^xsd:string ;
+.
+voag:hasCatalogEntry
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalog entry"^^xsd:string ;
+.
+voag:hasLicenseType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has license type"@en-US ;
+.
+voag:withAttributionTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "with attribution to"^^xsd:string ;
+.

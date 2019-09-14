@@ -1,0 +1,105 @@
+# baseURI: http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties
+# imports: http://topbraid.org/sxml
+# imports: http://www.linkedmodel.org/schema/dtype
+# prefix: xmldsig-properties
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix xmldsig-properties: <http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties>
+  rdf:type owl:Ontology ;
+  owl:imports <http://topbraid.org/sxml> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:versionInfo "Created with TopBraid Composer from the XML Schema(s) http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties"^^xsd:string ;
+.
+xmldsig-properties:NonceValueType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties#NonceValueType" ;
+  rdfs:label "Nonce value type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:string. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:string."^^xsd:string ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dtype:value ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "true"^^xsd:boolean ;
+      rdfs:comment "The actual range for this restriction is xsd:anyURI. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:anyURI."^^xsd:string ;
+      owl:allValuesFrom xsd:anyURI ;
+      owl:onProperty xmldsig-properties:encodingType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig-properties:encodingType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty dtype:value ;
+    ] ;
+.
+xmldsig-properties:ReplayProtect
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties#ReplayProtect" ;
+  rdfs:label "Replay protect"^^xsd:string ;
+  rdfs:subClassOf xmldsig-properties:ReplayProtectType ;
+.
+xmldsig-properties:ReplayProtectType
+  rdf:type owl:Class ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties#ReplayProtectType" ;
+  rdfs:label "Replay protect type"^^xsd:string ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "0"^^xsd:int ;
+      rdfs:comment "The actual range for this restriction is xsd:dateTime. However, since \"Use only XSD datatypes for datatype properties\" flag was set, the generated range is xsd:dateTime."^^xsd:string ;
+      owl:allValuesFrom xsd:dateTime ;
+      owl:onProperty xmldsig-properties:timestamp ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      sxml:isAttribute "false"^^xsd:boolean ;
+      sxml:order "1"^^xsd:int ;
+      owl:allValuesFrom xmldsig-properties:NonceValueType ;
+      owl:onProperty xmldsig-properties:nonceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig-properties:nonceRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty xmldsig-properties:timestamp ;
+    ] ;
+.
+xmldsig-properties:encodingType
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties#EncodingType" ;
+  rdfs:label "encoding type"^^xsd:string ;
+.
+xmldsig-properties:nonceRef
+  rdf:type owl:ObjectProperty ;
+  sxml:tag "http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties#nonce" ;
+  rdfs:label "nonce ref"^^xsd:string ;
+.
+xmldsig-properties:timestamp
+  rdf:type owl:DatatypeProperty ;
+  sxml:attribute "http://openadr.org/oadr-2.0b/2012/07/xmldsig-properties#timestamp" ;
+  rdfs:label "timestamp"^^xsd:string ;
+.
+skos:prefLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "pref label"^^xsd:string ;
+.

@@ -1,0 +1,241 @@
+# baseURI: http://siemens.com/schemas/kps/adapters/ifc2brick
+# imports: http://siemens.com/schemas/kps/bridges/mapping
+# imports: http://www.buildingsmart-tech.org/ifcXML/IFC4/final
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# imports: https://brickschema.org/schema/1.0.3/BrickTag
+# prefix: ifc2brick
+
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcXML/IFC4/final#> .
+@prefix ifc2brick: <http://siemens.com/schemas/kps/adapters/ifc2brick#> .
+@prefix mapping: <http://siemens.com/schemas/kps/bridges/mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tag: <https://brickschema.org/schema/1.0.3/BrickTag#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/adapters/ifc2brick>
+  rdf:type owl:Ontology ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The IFC to BRICK mapping creates an interoperability path between these two ontologies." ;
+  dc:subject "mappings IFC building to BRICK integration mapping" ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:intent "This ontology creates an interoperability mapping between the IFC building model and the external BRICK building model." ;
+  vaem:namespace "http://siemens.com/schemas/kps/adapters/ifc2brick#" ;
+  vaem:namespacePrefix "ifc2brick" ;
+  vaem:url "http://siemens.com/schemas/kps/adapters/ifc2brick"^^xsd:anyURI ;
+  rdfs:label "IFC to BRICK Mapping" ;
+  owl:imports <http://siemens.com/schemas/kps/bridges/mapping> ;
+  owl:imports <http://www.buildingsmart-tech.org/ifcXML/IFC4/final> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/BrickTag> ;
+  owl:versionInfo "$Id: SCHEMA_KP_IFC_2_BRICK-v1.0.ttl 1954 2018-08-20 13:35:02Z jhodges $" ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ifc2brick:Alarm
+  rdf:type owl:Class ;
+  rdfs:label "Alarm" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcAlarm ;
+  rdfs:subClassOf brick:Alarm ;
+.
+ifc2brick:Boiler
+  rdf:type owl:Class ;
+  rdfs:label "Boiler" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcBoiler ;
+  rdfs:subClassOf brick:Boiler ;
+.
+ifc2brick:Building
+  rdf:type owl:Class ;
+  rdfs:label "Building" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcBuilding ;
+  rdfs:subClassOf brick:Building ;
+.
+ifc2brick:Chiller
+  rdf:type owl:Class ;
+  rdfs:label "Chiller" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcChiller ;
+  rdfs:subClassOf brick:Chiller ;
+.
+ifc2brick:Coil
+  rdf:type owl:Class ;
+  rdfs:label "Coil" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcCoil ;
+  rdfs:subClassOf brick:Coil ;
+.
+ifc2brick:Compressor
+  rdf:type owl:Class ;
+  rdfs:label "Compressor" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcCompressor ;
+  rdfs:subClassOf brick:Compressor ;
+.
+ifc2brick:Condenser
+  rdf:type owl:Class ;
+  rdfs:label "Condenser" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcCondenser ;
+  rdfs:subClassOf brick:Condenser ;
+.
+ifc2brick:CoolingTower
+  rdf:type owl:Class ;
+  rdfs:label "Cooling tower" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcCoolingTower ;
+  rdfs:subClassOf brick:Cooling_Tower ;
+.
+ifc2brick:Damper
+  rdf:type owl:Class ;
+  rdfs:label "Damper" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcDamper ;
+  rdfs:subClassOf brick:Damper ;
+.
+ifc2brick:Direction
+  rdf:type owl:Class ;
+  rdfs:label "Direction" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcDirection ;
+  rdfs:subClassOf brick:Direction ;
+.
+ifc2brick:DuctSegment
+  rdf:type owl:Class ;
+  rdfs:label "Duct segment" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcDuctSegment ;
+  rdfs:subClassOf tag:Duct ;
+.
+ifc2brick:ElectricGenerator
+  rdf:type owl:Class ;
+  rdfs:label "Electric generator" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcElectricGenerator ;
+  rdfs:subClassOf tag:Generator ;
+.
+ifc2brick:ElectricMotor
+  rdf:type owl:Class ;
+  rdfs:label "Electric motor" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcElectricMotor ;
+  rdfs:subClassOf tag:Motor ;
+.
+ifc2brick:Face
+  rdf:type owl:Class ;
+  rdfs:label "Face" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcFace ;
+  rdfs:subClassOf tag:Face ;
+.
+ifc2brick:Fan
+  rdf:type owl:Class ;
+  rdfs:label "Fan" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcFan ;
+  rdfs:subClassOf brick:Fan ;
+.
+ifc2brick:Filter
+  rdf:type owl:Class ;
+  rdfs:label "Filter" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcFilter ;
+  rdfs:subClassOf brick:Filter ;
+.
+ifc2brick:FlowMeter
+  rdf:type owl:Class ;
+  rdfs:label "Flow meter" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcFlowMeter ;
+  rdfs:subClassOf brick:Flow_Meter ;
+.
+ifc2brick:Occupancy
+  rdf:type owl:Class ;
+  rdfs:comment "ifc:IfcOccupant is related as is brick:Occupied" ;
+  rdfs:label "Occupancy" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcOccupant ;
+  rdfs:subClassOf brick:Occupancy ;
+.
+ifc2brick:Property
+  rdf:type owl:Class ;
+  rdfs:label "Property" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcProperty ;
+  rdfs:subClassOf brick:MeasurementProperty ;
+.
+ifc2brick:Pump
+  rdf:type owl:Class ;
+  rdfs:label "Pump" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcPump ;
+  rdfs:subClassOf brick:Pump ;
+.
+ifc2brick:Reference
+  rdf:type owl:Class ;
+  rdfs:label "Reference" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcReference ;
+  rdfs:subClassOf tag:Reference ;
+.
+ifc2brick:Resource
+  rdf:type owl:Class ;
+  rdfs:label "Resource" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcResource ;
+  rdfs:subClassOf brick:Resource ;
+.
+ifc2brick:Roof
+  rdf:type owl:Class ;
+  rdfs:label "Roof" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcRoof ;
+  rdfs:subClassOf brick:Roof ;
+.
+ifc2brick:Sensor
+  rdf:type owl:Class ;
+  rdfs:label "Sensor" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcSensor ;
+  rdfs:subClassOf brick:Sensor ;
+.
+ifc2brick:Space
+  rdf:type owl:Class ;
+  rdfs:label "Space" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcSpace ;
+  rdfs:subClassOf brick:Space ;
+.
+ifc2brick:SpaceHeater
+  rdf:type owl:Class ;
+  rdfs:label "Space heater" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcSpaceHeater ;
+  rdfs:subClassOf brick:Space_Heater ;
+.
+ifc2brick:Tank
+  rdf:type owl:Class ;
+  rdfs:label "Tank" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcTank ;
+  rdfs:subClassOf tag:Tank ;
+.
+ifc2brick:Valve
+  rdf:type owl:Class ;
+  rdfs:label "Valve" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcValve ;
+  rdfs:subClassOf brick:Valve ;
+.
+ifc2brick:Zone
+  rdf:type owl:Class ;
+  rdfs:label "Zone" ;
+  rdfs:subClassOf mapping:MappingThing ;
+  rdfs:subClassOf ifc:IfcZone ;
+  rdfs:subClassOf brick:Zone ;
+.

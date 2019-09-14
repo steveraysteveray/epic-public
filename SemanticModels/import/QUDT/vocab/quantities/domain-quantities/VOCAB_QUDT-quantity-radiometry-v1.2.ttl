@@ -1,0 +1,204 @@
+# baseURI: http://qudt.org/1.2/vocab/quantity/radiometry
+# imports: http://qudt.org/1.2/schema/quantity
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/nidr
+# imports: http://qudt.org/1.2/vocab/quantity/base
+# imports: http://www.linkedmodel.org/schema/vaem
+
+# c14n-version: 3
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "contributor"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "creator"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "description"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "rights"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "subject"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:isDefinedBy dc: ;
+  rdfs:label "title"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+<http://qudt.org/1.2/vocab/quantity/radiometry>
+  rdf:type owl:Ontology ;
+  dc:author "Ralph Hodgson"^^xsd:string ;
+  dc:contributor "Jack Spivak"^^xsd:string ;
+  dc:creator "Ralph Hodgson"^^xsd:string ;
+  dc:rights "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc."^^xsd:string ;
+  dc:subject "Radiometry Quantity Kinds"^^xsd:string ;
+  dc:title "QUDT ISQ Quantities Vocabulary Version 1.2"^^xsd:string ;
+  vaem:dateCreated "2010-12-30T21:26:38"^^xsd:dateTime ;
+  vaem:description "TBD"^^xsd:string ;
+  vaem:hasAspectScope "Basic treatment of quantities and units. No dimensional treatment in this graph."^^xsd:string ;
+  vaem:hasCatalogEntry <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:hasDisciplineScope "All disciplines"^^xsd:string ;
+  vaem:hasDomainScope "Science, Medicine and Engineering"^^xsd:string ;
+  vaem:hasGraphRole vaem:ViewGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:lastUpdated "$LastChangedDate: 2013-04-18 22:12:56 -0700 (Thu, 18 Apr 2013) $"^^xsd:string ;
+  vaem:namespace "http://qudt.org/1.2/vocab/quantity/chemistry"^^xsd:string ;
+  vaem:namespacePrefix "qudt-quantity"^^xsd:string ;
+  vaem:revision "1.2"^^xsd:string ;
+  vaem:specificity 1 ;
+  vaem:usesNonImportedResource dc:author ;
+  vaem:usesNonImportedResource dc:contributor ;
+  vaem:usesNonImportedResource dc:creator ;
+  vaem:usesNonImportedResource dc:description ;
+  vaem:usesNonImportedResource dc:rights ;
+  vaem:usesNonImportedResource dc:subject ;
+  vaem:usesNonImportedResource dc:title ;
+  vaem:usesNonImportedResource voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:usesNonImportedResource <http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2> ;
+  vaem:usesNonImportedResource voag:QUDT-Attribution ;
+  vaem:usesNonImportedResource skos:closeMatch ;
+  vaem:usesNonImportedResource skos:exactMatch ;
+  vaem:withAttributionTo voag:QUDT-Attribution ;
+  rdfs:label "QUDT Quantity"^^xsd:string ;
+  owl:imports <http://qudt.org/1.2/schema/quantity> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/nidr> ;
+  owl:imports <http://qudt.org/1.2/vocab/quantity/base> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  owl:versionIRI <http://qudt.org/1.2/vocab/quantity/radiometry> ;
+.
+quantity:Irradiance
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "W-PER-M2"^^xsd:string ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:description "Irradiance and Radiant Emittance are radiometry terms for the power per unit area of electromagnetic radiation at a surface. \"Irradiance\" is used when the electromagnetic radiation is incident on the surface. \"Radiant emmitance\" (or \"radiant exitance\") is used when the radiation is emerging from the surface."^^xsd:string ;
+  qudt:latexDefinition "$E = \\frac{d\\Phi}{dA}$, where $d\\Phi$ is the radiant flux incident on an element of the surface with area $dA$."^^xsd:string ;
+  qudt:symbol "E"^^xsd:string ;
+  rdfs:label "Irradiance"^^xsd:string ;
+  skos:broader quantity:PowerPerArea ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Irradiance> ;
+  skos:prefLabel "Irradiance"^^xsd:string ;
+.
+quantity:Radiance
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:W-PER-M2-SR ;
+  qudt:baseUnitDimensions "M/T^3 \\cdot U"^^xsd:string ;
+  qudt:baseUnitDimensions "kg/s^3"^^xsd:string ;
+  qudt:description "\\textit{Radiance} is a radiometric measure that describes the amount of light that passes through or is emitted from a particular area, and falls within a given solid angle in a specified direction."^^xsd:string ;
+  qudt:latexDefinition "$L = \\frac{dI}{dA}\\frac{1}{cos\\alpha}$, where $dI$ is the radiant intensity emitted from an element of the surface area $dA$, and angle $\\alpha$ is the angle between the normal to the surface and the given direction."^^xsd:string ;
+  qudt:symbol "L"^^xsd:string ;
+  rdfs:label "Radiance"^^xsd:string ;
+  skos:broader quantity:PowerPerAreaAngle ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiance> ;
+  skos:prefLabel "Radiance"^^xsd:string ;
+.
+quantity:RadiantEmmitance
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:W-PER-M2 ;
+  qudt:description "Irradiance and Radiant Emittance are radiometry terms for the power per unit area of electromagnetic radiation at a surface. \"Irradiance\" is used when the electromagnetic radiation is incident on the surface. \"Radiant emmitance\" (or \"radiant exitance\") is used when the radiation is emerging from the surface."^^xsd:string ;
+  qudt:latexDefinition "$M = \\frac{d\\Phi}{dA}$, where $d\\Phi$ is the radiant flux leaving the element of the surface area $dA$."^^xsd:string ;
+  rdfs:label "Radiant Emmitance"^^xsd:string ;
+  skos:broader quantity:PowerPerArea ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Irradiance> ;
+  skos:prefLabel "Radiant Emmitance"^^xsd:string ;
+.
+quantity:RadiantEnergyDensity
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "M-L2-PER-T3"^^xsd:string ;
+  qudt:description "\\textit{Radiant Energy Density}, or radiant power, is the radiant energy per unit time."^^xsd:string ;
+  qudt:latexDefinition "$w$, $\\rho = \\frac{dQ}{dV}$, where $dQ$ is the radiant energy in an elementary three-dimensional domain, and $dV$ is the volume."^^xsd:string ;
+  qudt:symbol "w, \\rho"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Radiant Energy Density"^^xsd:string ;
+  owl:sameAs quantity:RadiantFlux ;
+  skos:broader quantity:Power ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiant_energy_density> ;
+  skos:prefLabel "Radiant Energy Density"^^xsd:string ;
+  skos:relatedMatch quantity:RadiantFlux ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31892> ;
+.
+quantity:RadiantFlux
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "M-L2-PER-T3"^^xsd:string ;
+  qudt:applicableUnit unit:WATT ;
+  qudt:description "Radiant Flux, or radiant power, is the measure of the total power of electromagnetic radiation (including infrared, ultraviolet, and visible light). The power may be the total emitted from a source, or the total landing on a particular surface."^^xsd:string ;
+  qudt:latexDefinition "$\\Phi = \\frac{dQ}{dt}$, where $dQ$ is the radiant energy emitted, transferred, or received during a time interval of the duration $dt$."^^xsd:string ;
+  qudt:symbol "\\phi"^^xsd:string ;
+  rdfs:label "Radiant Flux"^^xsd:string ;
+  skos:broader quantity:Power ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiant_flux> ;
+  skos:prefLabel "Radiant Flux"^^xsd:string ;
+.
+quantity:RadiantIntensity
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:applicableUnit unit:W-PER-SR ;
+  qudt:baseUnitDimensions "L^2 \\cdot M/T^3 \\cdot U"^^xsd:string ;
+  qudt:baseUnitDimensions "kg \\cdot m^2/s^3"^^xsd:string ;
+  qudt:description "Radiant Intensity is a measure of the intensity of electromagnetic radiation. It is defined as power per unit solid angle."^^xsd:string ;
+  qudt:latexDefinition "$I = \\frac{d\\Phi}{d\\Omega}$, where $d\\Phi$ is the radiant flux leaving the source in an elementary cone containing the given direction with the solid angle $d\\Omega$."^^xsd:string ;
+  qudt:symbol "I"^^xsd:string ;
+  rdfs:label "Radiant Intensity"^^xsd:string ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiant_intensity> ;
+  skos:prefLabel "Radiant Intensity"^^xsd:string ;
+.
+quantity:Radiosity
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:description "Radiosity is the total emitted and reflected radiation leaving a surface."^^xsd:string ;
+  rdfs:label "Radiosity"^^xsd:string ;
+  skos:broader quantity:PowerPerArea ;
+  skos:prefLabel "Radiosity"^^xsd:string ;
+.
+quantity:VisibleRadiantEnergy
+  rdf:type qudt:QuantityKind ;
+  rdf:type qudt:RadiometryQuantityKind ;
+  qudt:abbreviation "M-L2-PER-T2"^^xsd:string ;
+  qudt:applicableUnit unit:JOULE ;
+  qudt:description "\\textit{Visible Radiant Energy}, also known as luminous energy, is the energy of electromagnetic waves. It is energy of the particles that are emitted, transferred, or received as radiation."^^xsd:string ;
+  qudt:latexDefinition "Q"^^xsd:string ;
+  qudt:symbol "Q"^^xsd:string ;
+  qudt:systemDerivedQuantityKind qudt:SOQ_SI ;
+  rdfs:label "Visible Radiant Energy"^^xsd:string ;
+  skos:broader quantity:EnergyAndWork ;
+  skos:closeMatch quantity:LuminousEnergy ;
+  skos:exactMatch <http://en.wikipedia.org/wiki/Radiant_energy> ;
+  skos:prefLabel "Visible Radiant Energy"^^xsd:string ;
+  prov:wasDerivedFrom <http://www.iso.org/iso/catalogue_detail?csnumber=31892> ;
+  prov:wasInfluencedBy <http://en.wikipedia.org/wiki/Radiant_energy> ;
+.
+<http://voag.linkedmodel.org/schema/voag#CatalogEntry_QUDT-QUANTITY-KINDS-v1.2>
+  rdf:type vaem:CatalogEntry ;
+  rdfs:label "QUDT Quantity Kinds Catalog Entry v1.2"^^xsd:string ;
+.

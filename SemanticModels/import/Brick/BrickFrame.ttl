@@ -1,0 +1,258 @@
+# baseURI: https://brickschema.org/schema/1.0.3/BrickFrame
+
+@prefix bf: <https://brickschema.org/schema/1.0.3/BrickFrame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://brickschema.org/schema/1.0.3/BrickFrame>
+  rdf:type owl:Ontology ;
+.
+bf:Equipment
+  rdf:type owl:Class ;
+  rdfs:subClassOf bf:Taggable ;
+.
+bf:FunctionBlock
+  rdf:type owl:Class ;
+.
+bf:Label
+  rdf:type owl:Class ;
+  rdfs:subClassOf bf:Taggable ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty bf:hasToken ;
+      owl:someValuesFrom bf:Token ;
+    ] ;
+.
+bf:Location
+  rdf:type owl:Class ;
+  rdfs:subClassOf bf:Taggable ;
+.
+bf:ObservedSignal
+  rdf:type owl:Class ;
+  rdfs:subClassOf bf:Signal ;
+.
+bf:Point
+  rdf:type owl:Class ;
+  rdfs:subClassOf bf:Taggable ;
+.
+bf:Signal
+  rdf:type owl:Class ;
+.
+bf:Tag
+  rdf:type owl:Class ;
+.
+bf:TagSet
+  rdf:type owl:Class ;
+.
+bf:Taggable
+  rdf:type owl:Class ;
+.
+bf:Token
+  rdf:type owl:Class ;
+  rdfs:subClassOf bf:Taggable ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty bf:hasTag ;
+      owl:someValuesFrom bf:Token ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty bf:hasTagSet ;
+      owl:someValuesFrom bf:TagSet ;
+    ] ;
+.
+bf:UnobservedSignal
+  rdf:type owl:Class ;
+  rdfs:subClassOf bf:Signal ;
+.
+bf:contains
+  rdf:type owl:ObjectProperty ;
+  owl:inverseOf bf:isLocatedIn ;
+.
+bf:controls
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  owl:inverseOf bf:isControlledBy ;
+.
+bf:equivalentTagSet
+  rdf:type owl:AnnotationProperty ;
+.
+bf:feeds
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  owl:inverseOf bf:isFedBy ;
+.
+bf:hasInput
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:FunctionBlock ;
+  rdfs:range bf:Signal ;
+  owl:inverseOf bf:isInputOf ;
+.
+bf:hasMeasurement
+  rdf:type owl:ObjectProperty ;
+  owl:inverseOf bf:isMeasuredBy ;
+.
+bf:hasOutput
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:FunctionBlock ;
+  rdfs:range bf:Signal ;
+  owl:inverseOf bf:isOutputOf ;
+.
+bf:hasPart
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:TransitiveProperty ;
+  owl:inverseOf bf:isPartOf ;
+.
+bf:hasPoint
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:range bf:Point ;
+  owl:inverseOf bf:isPointOf ;
+.
+bf:hasSubAsset
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:TransitiveProperty ;
+.
+bf:hasTag
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:Taggable ;
+  rdfs:range bf:Tag ;
+  owl:inverseOf bf:isTagOf ;
+.
+bf:hasTagSet
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:Taggable ;
+  rdfs:range bf:TagSet ;
+  owl:inverseOf bf:isTagSetOf ;
+.
+bf:hasToken
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:Label ;
+  rdfs:range bf:Token ;
+  owl:inverseOf bf:isTokenOf ;
+.
+bf:isControlledBy
+  rdf:type owl:ObjectProperty ;
+.
+bf:isFedBy
+  rdf:type owl:ObjectProperty ;
+.
+bf:isHierarchical
+  rdf:type owl:AnnotationProperty ;
+.
+bf:isInputOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:Signal ;
+  rdfs:range bf:FunctionBlock ;
+.
+bf:isLocatedIn
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:TransitiveProperty ;
+.
+bf:isMeasuredBy
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:TransitiveProperty ;
+.
+bf:isOutputOf
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:Signal ;
+  rdfs:range bf:FunctionBlock ;
+.
+bf:isPartOf
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:TransitiveProperty ;
+.
+bf:isPointOf
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:range bf:Point ;
+.
+bf:isTagOf
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:Tag ;
+  rdfs:range bf:Taggable ;
+.
+bf:isTagSetOf
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:TagSet ;
+  rdfs:range bf:Taggable ;
+.
+bf:isTokenOf
+  rdf:type owl:AsymmetricProperty ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain bf:Token ;
+  rdfs:range bf:Label ;
+.
+bf:similarTagSet
+  rdf:type owl:AnnotationProperty ;
+  rdfs:domain bf:TagSet ;
+  rdfs:range bf:TagSet ;
+.
+bf:usedBy
+  rdf:type owl:AnnotationProperty ;
+.
+bf:usedByDimension
+  rdf:type owl:AnnotationProperty ;
+  rdfs:subPropertyOf bf:usedBy ;
+.
+bf:usedByPoint
+  rdf:type owl:AnnotationProperty ;
+  rdfs:subPropertyOf bf:usedByDimension ;
+.
+bf:usesDimension
+  rdf:type owl:AnnotationProperty ;
+  owl:inverseOf bf:usedByDimension ;
+.
+bf:usesEquipment
+  rdf:type owl:AnnotationProperty ;
+  rdfs:subPropertyOf bf:usesDimension ;
+.
+bf:usesLocation
+  rdf:type owl:AnnotationProperty ;
+  rdfs:subPropertyOf bf:usesDimension ;
+.
+bf:usesMeasurement
+  rdf:type owl:AnnotationProperty ;
+  rdfs:subPropertyOf bf:usesDimension ;
+.
+bf:usesPoint
+  rdf:type owl:AnnotationProperty ;
+  rdfs:subPropertyOf bf:usesDimension ;
+.
+bf:usesTag
+  rdf:type owl:AnnotationProperty ;
+.
