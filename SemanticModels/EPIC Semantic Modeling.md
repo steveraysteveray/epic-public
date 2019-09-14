@@ -1,40 +1,4 @@
 
-<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 1; ALERTS: 28.</p>
-<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
-
-<p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
-<a href="#gdcalert2">alert2</a>
-<a href="#gdcalert3">alert3</a>
-<a href="#gdcalert4">alert4</a>
-<a href="#gdcalert5">alert5</a>
-<a href="#gdcalert6">alert6</a>
-<a href="#gdcalert7">alert7</a>
-<a href="#gdcalert8">alert8</a>
-<a href="#gdcalert9">alert9</a>
-<a href="#gdcalert10">alert10</a>
-<a href="#gdcalert11">alert11</a>
-<a href="#gdcalert12">alert12</a>
-<a href="#gdcalert13">alert13</a>
-<a href="#gdcalert14">alert14</a>
-<a href="#gdcalert15">alert15</a>
-<a href="#gdcalert16">alert16</a>
-<a href="#gdcalert17">alert17</a>
-<a href="#gdcalert18">alert18</a>
-<a href="#gdcalert19">alert19</a>
-<a href="#gdcalert20">alert20</a>
-<a href="#gdcalert21">alert21</a>
-<a href="#gdcalert22">alert22</a>
-<a href="#gdcalert23">alert23</a>
-<a href="#gdcalert24">alert24</a>
-<a href="#gdcalert25">alert25</a>
-<a href="#gdcalert26">alert26</a>
-<a href="#gdcalert27">alert27</a>
-<a href="#gdcalert28">alert28</a>
-
-<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
-
-
-
 # EPIC Semantic Modeling
 
 Table of Contents
@@ -77,10 +41,6 @@ This section provides a technical overview of the project structure, OpenADR Sch
 The high-level structure of the “**Semantic Models**” directory is presented below : 
 
 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt text](../images/Semantic-Modeling0.png "image_tooltip")
 
 
@@ -115,12 +75,7 @@ In order to be able to parse the incoming OpenADR XML message, then convert it t
 
 It is important to select the last option “Use only XSD datatypes for datatype properties and literals”.
 
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling1.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling1.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling1.png "image_tooltip")
 
 
 _Figure 2: Option Selection during “Import XSD Schema Files”_
@@ -128,11 +83,6 @@ _Figure 2: Option Selection during “Import XSD Schema Files”_
 By enabling the last option, TBC-ME Import Tool will automatically convert any ObjectProperty which actually refers to a xsd:Datatype and change it to the appropriate literal. 
 
 After a successful conversion, you should see the following turtle (.ttl) files :  \
-
-
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling2.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
 ![alt_text](images/Semantic-Modeling2.png "image_tooltip")
@@ -155,20 +105,14 @@ In this case, _oadr:oadrDistributeEvent_ has a nested 'child' Datatype element (
 
 
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling3.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling3.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling3.png "image_tooltip")
 
 
 However, the _payloads:RequestID_ is not defined anywhere and as a result the RDF instances are not populated correctly. 
 
 
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling4.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling4.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling4.png "image_tooltip")
 
 
 In the newly created instance of type _oadr:oadrDistributeEvent_, the Object property p2012-07:requestIDRef has not been populated. Instead, the nested <pyld:requestID> XML element has been mapped to an instance of class pyld:requestID which has been created on the fly by TBC-ME. 
@@ -177,10 +121,7 @@ As it has already been stated the problem arises because the Import Tool creates
 
 
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling5.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling5.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling5.png "image_tooltip")
 
 
 The solution to this issue is to manually hand-craft the appropriate Datatype properties in the child’s namespace - when they were originally defined by the XSD Schema File. In our example, we can solve the problem by creating the owl:DatatypeProperty payloads:requestID. It is vital to also transfer the sxml annotations to ensure that the round-tripping will be successful. The fix is presented in the following Figure.
@@ -188,31 +129,19 @@ The solution to this issue is to manually hand-craft the appropriate Datatype pr
 <span style="text-decoration:underline;">NOTE</span> : An owl:ObjectProperty is annotated with an sxml:tag whereas an owl:DatatypeProperty is annotated with an sxml:attribute, reflecting the original XML structure.
 
 
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling6.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling6.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling6.png "image_tooltip")
 
 
 After we have defined the appropriate owl:DatatypeProperty in the child’s namespace and deleted the owl:ObjectProperty that has been incorrectly generated by TBC-ME, we have to also update the property definitions of the parent class as shown : 
 
 
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling7.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling7.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling7.png "image_tooltip")
 
 
 After applying the manual fix, we get the desired output as presented below : 
 
 
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling8.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling8.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling8.png "image_tooltip")
 
 
 For any updates and a possible solution by TopQuadrant, please refer to the [GoogleGroup Thread](https://groups.google.com/d/topic/topbraid-users/IV79lazoDG8/discussion).
@@ -254,11 +183,7 @@ A new SPINMap file should be created for each generated JSON ontology using the 
     *   Define arbitrarily complex SPARQL mappings between properties in the resulting popups.
 
 
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling9.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling9.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling9.png "image_tooltip")
 
 
 _Figure 4. Listing of the OpenADR classes mapped to EPIC classes_
@@ -266,11 +191,7 @@ _Figure 4. Listing of the OpenADR classes mapped to EPIC classes_
 Apart from the “Target Resource” SPINMap Target Function described in detail in [SPINMAP: SPARQL-BASED Ontology Mapping](http://www.topquadrant.com/2011/04/21/spinmap-sparql-based-ontology-mapping-with-a-graphical-notation/), another useful feature of SPINMap is the “Property Path Traversal”. It’s powerful capabilities are best shown through a simple example scenario (found under “sandbox” directory). 
 
 
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling10.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling10.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling10.png "image_tooltip")
 
 
 _Figure 5. Example Scenario to illustrate the Property Path Traversal Feature for SPINMap_
@@ -281,12 +202,9 @@ As depicted in Figure 5, in the “source” ontology class classes:Thing_1 has 
 
 1. Click on the upper right arrow of the source class and drag the arrow to the corresponding ObjectProperty of the destination class. Selections are automatically colored in green as shown below.
 
-	
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling11.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/Semantic-Modeling11.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling11.png "image_tooltip")
 
 
 
@@ -294,11 +212,7 @@ As depicted in Figure 5, in the “source” ontology class classes:Thing_1 has 
 2. Define the property path (e.g. classes:hasThing_2/ classes:hasThing_3/ classes: hasThing_4) in the resulting popup as shown : 
 
 
-
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling12.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling12.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling12.png "image_tooltip")
 
 
 
@@ -306,11 +220,7 @@ As depicted in Figure 5, in the “source” ontology class classes:Thing_1 has 
 3. In the resulting pop-up window “Create Mapping Function”, first select “spinmap:targetResource” found under “spl:URIFunctions” of the  Navigation Panel. 
 
 
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling13.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling13.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling13.png "image_tooltip")
 
 
 
@@ -321,11 +231,7 @@ As depicted in Figure 5, in the “source” ontology class classes:Thing_1 has 
 1. In the resulting pop-up, select the appropriate mapping and click “OK”. <span style="text-decoration:underline;">NOTE</span>: The mapping relation between source and destination classes must be already defined prior to this procedure.
 
 
-
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling14.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling14.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling14.png "image_tooltip")
 
 
 
@@ -472,11 +378,7 @@ _Figure 6. Excerpt of an OpenADR message illustrating Intervals of an Pricing Ev
 A SPIN Rule is attached to the _fsgim-sequence:IntervalDataContainer_ Class. The rule will fire iteratively for all Intervals in the Event Sequence. Using a “Property Path” traversal (in the reverse direction now, from child to parent), the rule first finds the dtStart time of the ActivePeriod which corresponds to the dtStart of the first Interval in the sequence (assuming it has uid = ‘0’ (zero)). For any consecutive Intervals which have not yet been assigned a dtStart, the rule calculates its dtStart via the function _efunc:calculateDtStart_. 
 
 
-
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling15.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling15.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling15.png "image_tooltip")
 
 
 _Figure 7. SPIN rule attached to fsgim-sequence:IntervalDataContainer Class._
@@ -493,11 +395,7 @@ Procedure:
 2. Add the start time and duration to compute the hasStart property for ?arg1
 
 
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling16.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling16.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling16.png "image_tooltip")
 
 
 _Figure 8. Definition of Function efunc:calculateDtStart._
@@ -514,10 +412,7 @@ Procedure:
 
 ## 
 
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling17.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling17.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling17.png "image_tooltip")
 
 
 _Figure 9. Definition of Function efunc:timeAdd._
@@ -532,11 +427,7 @@ _Figure 9. Definition of Function efunc:timeAdd._
 When mapping EPIC instances back to OpenADR, we followed the same approach as described in [OpenADR to EPIC Mapping](#openadr-to-epic-mapping).  A listing of all the EPIC classes mapped back to OpenADR classes is shown in Figure 10 (19 mappings in total). Both [Semantic XML](#semantic-xml) annotations and [Namespace Functions ](#namespace-functions)TargetFunctions proved to be of great assistance.
 
 
-
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling18.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling18.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling18.png "image_tooltip")
 
 
 _Figure 10. Listing of the EPIC classes mapped to OpenADR classes_
@@ -547,11 +438,7 @@ _Figure 10. Listing of the EPIC classes mapped to OpenADR classes_
 As described earlier, Semantic XML introduces two annotation properties _sxml:element_ and _sxml:attribute_ that are used to define the mapping and to enable round-tripping between XML and OWL. When an incoming OpenADR XML message is converted to RDF, the resultant triples are instances of classes that have already been annotated and linked to an instance of the class _sxml:Document_ that basically enables the round-tripping between XML and OWL. However, when the OpenADR RDF triples are converted to EPIC triples, the Semantic XML annotations are not preserved neither the instance of the sxml:Document is mapped to any equivalent class as it is part of TopBraid’s ecosystem and not related to the EPIC schema. This creates a problem when mapping EPIC instances back to OpenADR aiming to reconstruct the incoming OpenADR XML message via Semantic XML. In order to overcome this issue, we have created a SPIN Rule that fires whenever an instance of a specific OpenADR Event  class is created as a result of mapping from EPIC. This rule - currently attached only to DistributeEvent class - creates the required sxml:Document instance and the appropriate property connections (in this case with the DistributeEvent object - Figure 11). 
 
 
-
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling19.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling19.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling19.png "image_tooltip")
  
 
 _Figure 11. SPIN rule to create the required sxml:Document instance_
@@ -576,11 +463,7 @@ Receiving incoming OpenADR messages from the grid involves several steps :
  
 
 
-
-<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling20.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling20.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling20.png "image_tooltip")
 
 
 _Figure 12. SPARQLMotion script for receiving OpenADR XML messages_
@@ -592,11 +475,7 @@ As described in the Section Namespace Functions, in order to be able to distingu
 Module “Create baseURI with Timestamp” creates the unique baseURI by appending the timestamp to the prefix URI specified by the user (_baseURIString_). 
 
 
-
-<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling21.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling21.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling21.png "image_tooltip")
 
 
 _Figure 13. Create unique namespace by appending timestamps_
@@ -604,11 +483,7 @@ _Figure 13. Create unique namespace by appending timestamps_
 The module labeled “ConvertOpenADRXMLToRDF” receives the XML message as a string (_xmlStringInput_) and interprets the string according to the OpenADR schema imported as oadr-2.ttl. 
 
 
-
-<p id="gdcalert23" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling22.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert24">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling22.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling22.png "image_tooltip")
 
 
 _Figure 14. Convert XML to RDF via Semantic XML annotations_
@@ -618,11 +493,7 @@ _Figure 14. Convert XML to RDF via Semantic XML annotations_
 The RDF triples are then handed to the “Map OpenADR to EPIC instances” module that uses the oadr2epic.ttl SPINMap™ specification file to map the OpenADR triples to EPIC triples.(Fig. 15).
 
 
-
-<p id="gdcalert24" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling23.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert25">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling23.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling23.png "image_tooltip")
 
 
 _Figure 15. Configuration Panel of TopSPIN Module_
@@ -631,11 +502,7 @@ The final step of the script involves inserting the newly defined instances into
 
 
 
-
-<p id="gdcalert25" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling24.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert26">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling24.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling24.png "image_tooltip")
 
 
 _Figure 16. Definition of Update  Query used to insert EPIC triples to named graph_
@@ -764,11 +631,7 @@ Generating messages in any desired format, including OpenADR encoded as XML, is 
 4. Sending the resulting encoded message.
 
 
-
-<p id="gdcalert26" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling25.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert27">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling25.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling25.png "image_tooltip")
  \
 _Figure 17. SPARQLMotion script for reconstructing OpenADR XML messages_
 
@@ -776,11 +639,7 @@ _Figure 17. SPARQLMotion script for reconstructing OpenADR XML messages_
 Module “Get EPIC Instances associated with EventID” performs a SPARQL CONSTRUCT (equivalent to an SQL SELECT) call to retrieve the triples associated with an EventID specified as an input argument. Note that using this approach it will be just as easy to generate XML-encoded OpenADR as it is to generate data according to any other schema, provided that schema definition file is available in OWL.
 
 
-
-<p id="gdcalert27" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling26.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert28">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling26.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling26.png "image_tooltip")
 
 
 _Figure 18. Definition of CONSTRUCT statement to Filter Instances that are associated with a specific EventID - (filter by namespace convention)_
@@ -790,11 +649,7 @@ The “filtered” EPIC RDF triples are then handed to the “Map EPIC to OpenAD
 The final step of the script involves converting the newly defined instances to XML which is accomplished using the “Convert RDF to OpenADR XML” module via Semantic XML (Figure 19).
 
 
-
-<p id="gdcalert28" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Semantic-Modeling27.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert29">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Semantic-Modeling27.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling27.png "image_tooltip")
 
 
 _Figure 19. Specify the sxml:Document to be used_
