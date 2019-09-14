@@ -31,7 +31,10 @@ contains all the instance vocabularies that refer to the EPIC schema.
 
 # Table of Contents
 -[Technology](#technology)
+
 -[Recommended Reading](#recommended-reading)
+
+-[Technical Documentation](Technical-Documentation)
 
 # Technology
 
