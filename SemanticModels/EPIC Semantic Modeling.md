@@ -48,19 +48,19 @@ _Figure 1: EPIC Semantic Models  Project Structure_
 
 
 
-*   The **functions **directory contains files which define “helper” functions specific to the EPIC project and assist in manipulating the properties of RDF Instances - For more details, refer to [Post Mapping Fix](#post-mapping-fix).
-*   The **import **directory contains all External Ontology Schemata which are imported by and integrated with EPIC schema. For more details, refer to[ OpenADR : Generate Ontology Schema](#openadr-generate-ontology-schema).
-*   The **mappings **directory contains SPINMap files which define rule-based mappings between EPIC and other Demand-Response Communication Protocols - Currently only OpenADR is supported. For more details, refer mainly to  [OpenADR to EPIC Mapping](#openadr-to-epic-mapping) and [Semantic XML](#semantic-xml).
-*   The **sandbox **directory contains all files which are used during a Proof-of-Concept development procedure and should be removed on the production-ready version - Left as a convenient place for future developers to experiment safely with new features and ideas.
-*   The **schemas **directory contains the definitions of the core class and properties of the EPIC Information Model and helper extensions as well as integrations with the following External Ontologies : BRICK, QUDT and SSN.
-*   The **sparqlmotion **directory contains all scripts which define web service endpoints and enable the interaction with Topbraid’s Triple Store. The subdirectory **debug **contains fully working parts of the production-ready _triplestoreOperations.sms.ttl_ SPARQLMotion script and is left to help future developers get accustomed and experiment with the basic flow of the underlying web services. For more details, refer to [SPARQLMotion Scripts](#sparqlmotion-scripts).
-*   The **spin **directory contains RDF/SPIN files that define SPIN rules and SPINMap functions which are used during and after the mapping procedure. For more details, refer to [Namespace Functions](#namespace-functions).
-*   The **vocab **directory contains all the instance vocabularies that refer to the EPIC schema.
+*   The **functions** directory contains files which define “helper” functions specific to the EPIC project and assist in manipulating the properties of RDF Instances - For more details, refer to [Post Mapping Fix](#post-mapping-fix).
+*   The **import** directory contains all External Ontology Schemata which are imported by and integrated with EPIC schema. For more details, refer to[ OpenADR : Generate Ontology Schema](#openadr--generate-ontology-schema).
+*   The **mappings** directory contains SPINMap files which define rule-based mappings between EPIC and other Demand-Response Communication Protocols - Currently only OpenADR is supported. For more details, refer mainly to  [OpenADR to EPIC Mapping](#openadr-to-epic-mapping) and [Semantic XML](#semantic-xml).
+*   The **sandbox** directory contains all files which are used during a Proof-of-Concept development procedure and should be removed on the production-ready version - Left as a convenient place for future developers to experiment safely with new features and ideas.
+*   The **schemas** directory contains the definitions of the core class and properties of the EPIC Information Model and helper extensions as well as integrations with the following External Ontologies : BRICK, QUDT and SSN.
+*   The **sparqlmotion** directory contains all scripts which define web service endpoints and enable the interaction with Topbraid’s Triple Store. The subdirectory **debug **contains fully working parts of the production-ready _triplestoreOperations.sms.ttl_ SPARQLMotion script and is left to help future developers get accustomed and experiment with the basic flow of the underlying web services. For more details, refer to [SPARQLMotion Scripts](#sparqlmotion-scripts).
+*   The **spin** directory contains RDF/SPIN files that define SPIN rules and SPINMap functions which are used during and after the mapping procedure. For more details, refer to [Namespace Functions](#namespace-functions).
+*   The **vocab** directory contains all the instance vocabularies that refer to the EPIC schema.
 
 
 ## OpenADR : Generate Ontology Schema
 
-As defined in EPIC’s Technical Specification Document [2],  the Information Storage receives pricing and response events that are sent from the Utility using  the OpenADR model. For a description on the context of Demand-Response and the usage of OpenADR, please refer to [1], [Profile Specification](https://drive.google.com/open?id=0ByHEprcY_BsMeUJtWlJDRUQtNW8) and [Implementation Guide](https://drive.google.com/open?id=0ByHEprcY_BsMbHNKUlQ0ajl1ODg). 
+As defined in EPIC’s Technical Specification Document [2],  the Information Storage receives pricing and response events that are sent from the Utility using  the OpenADR model. 
 
 Receiving incoming OpenADR messages from the grid involves several steps:
 
@@ -85,7 +85,7 @@ By enabling the last option, TBC-ME Import Tool will automatically convert any O
 After a successful conversion, you should see the following turtle (.ttl) files :  \
 
 
-![alt_text](images/Semantic-Modeling2.png "image_tooltip")
+![alt_text](..images/Semantic-Modeling2.png "image_tooltip")
 
 
 _Figure 3: OpenADR Ontology using “Import XSD Schema Files”_
@@ -149,7 +149,7 @@ For any updates and a possible solution by TopQuadrant, please refer to the [Goo
 
 ## Semantic XML
 
-At this point, it is also recommended to review the Help>Creating, Importing, Querying, Saving XML documents with Semantic XML or access this[ link](http://127.0.0.1:50475/help/ntopic/org.topbraidcomposer.core/html/XMap.htm?resultof=%22semantic%22%20%22semant%22%20%22xml%22%20) while TBC-ME is running locally on your machine as well as watch this [Video-Tutorial](https://www.youtube.com/watch?v=_qHq3HcXHP4).  Semantic XML is a technology from TopQuadrant for mapping arbitrary XML documents to RDF. Semantic XML can be used to convert XML files to OWL so that you can run SPARQL queries,etc on them. You can also manipulate the resulting OWL model and then save it back to XML. In order to control the Semantic XML mappings, you can use process ontologies, which can usually be generated by importing them from XML Schemas. 
+At this point, it is also recommended to review the Help>Creating, Importing, Querying, Saving XML documents with Semantic XML or access this[ link](http://localhost:50475/help/ntopic/org.topbraidcomposer.core/html/XMap.htm?resultof=%22semantic%22%20%22semant%22%20%22xml%22%20) while TBC-ME is running locally on your machine as well as watch this [Video-Tutorial](https://www.youtube.com/watch?v=_qHq3HcXHP4).  Semantic XML is a technology from TopQuadrant for mapping arbitrary XML documents to RDF. Semantic XML can be used to convert XML files to OWL so that you can run SPARQL queries,etc on them. You can also manipulate the resulting OWL model and then save it back to XML. In order to control the Semantic XML mappings, you can use process ontologies, which can usually be generated by importing them from XML Schemas. 
 
 Semantic XML is based on a small ontology that defines various classes and attributes to enable round-tripping between XML and OWL. In particular it introduces two annotation properties sxml:element and sxml:attribute that are used to define the mapping. In our case, the process ontology is the converted OpenADR. The following mapping strategy will be applied (excerpt from TopBraid’s Documentation):
 
