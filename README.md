@@ -30,8 +30,8 @@ contains all the instance vocabularies that refer to the EPIC schema.
 # How to Get Started with EPIC Semantic Modeling
 
 # Table of Contents
-## Technology (#technology)
-## Recommended Reading (#recommended-reading)
+-[Technology](#technology)
+-[Recommended Reading](#recommended-reading)
 
 # Technology
 
