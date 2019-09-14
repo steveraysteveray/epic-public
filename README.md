@@ -1,11 +1,21 @@
+This repository contains the semantic technology software for a project funded by the California Energy Commission, [Electric Program Investment Charge Program - EPIC](https://www.energy.ca.gov/programs-and-topics/programs/electric-program-investment-charge-epic-program), and led by the University of California - Berkeley. Siemens Corporation and Carnegie Mellon University operated as subcontractors to UC Berkeley to provide these semantic technology deliverables.
 
-# How to Get Started with EPIC Semantic Modeling
+Credit is due to the following team:
 
-Note: This file was generated from some excellent documentation written by Dimitris Kiritsis while he was a graduate student at CMU. However, some of the functions documented may have changed slightly from the time this was written.
+Team leads: Jack Hodges (Siemens), Steve Ray (CMU)
+
+Team members (Siemens): Jason Koh, Kimberly Garcia, Brian Xia
+
+Team members (CMU): Ankit Jain, Rajat Pandey, Dimitris Tzannetos, Prabhu Saitu
+
+
+# Understanding the EPIC Semantic Modeling Software
+
+Note: This file was generated from some excellent documentation written by Dimitris Tzannetos while he was a graduate student at CMU. However, some of the functions documented may have changed slightly from the time this was written.
 
 # Table of Contents
 
-- [Project Structure](#project-structure)
+- [Project File Structure](#project-file-structure)
 
 - [Technology](#technology)
 
@@ -13,7 +23,7 @@ Note: This file was generated from some excellent documentation written by Dimit
 
 - [Technical Documentation](#technical-documentation)
 
-- [Project File Structure](#project-file-structure)
+- [Directory Structure](#directory-structure)
 
 - [OpenADR : Generate Ontology Schema](#openadr--generate-ontology-schema)
 
@@ -94,7 +104,7 @@ Before starting working on Semantic Modeling, it is strongly recommended to revi
 This section provides a technical overview of the project structure, OpenADR Schema Ontology conversion, SPINMap files, SPARQLMotion script implementation, script interaction, and generated output. The purpose of this section is to help future developers get started on the project.
 
 
-## Project Structure
+## Directory Structure
 
 The high-level structure of the “**Semantic Models**” directory is presented below : 
 
