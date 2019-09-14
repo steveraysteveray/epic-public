@@ -34,33 +34,33 @@ contains all the instance vocabularies that refer to the EPIC schema.
 
 -[Recommended Reading](#recommended-reading)
 
--[Technical Documentation](technical-documentation)
+-[Technical Documentation](#technical-documentation)
 
--[Project Structure](project-structure)
+-[Project Structure](#project-structure)
 
--[OpenADR : Generate Ontology Schema](openadr--generate-ontology-schema)
+-[OpenADR : Generate Ontology Schema](#openadr--generate-ontology-schema)
 
--[Semantic XML](semantic-xml)
+-[Semantic XML](#semantic-xml)
 
--[OpenADR to EPIC Mapping](openadr-to-epic-mapping)
+-[OpenADR to EPIC Mapping](#openadr-to-epic-mapping)
 
-   -[Namespace Functions](namespace-functions)
+  -[Namespace Functions](#namespace-functions)
 
-   -[Post Mapping Fix](post-mapping-fix)
+  -[Post Mapping Fix](#post-mapping-fix)
 
-   -[EPIC to OpenADR Mapping](epic-to-openadr-mapping)
+  -[EPIC to OpenADR Mapping](#epic-to-openadr-mapping)
 
-   -[PostReverseMappingFix](postreversemappingfix)
+  -[PostReverseMappingFix](#postreversemappingfix)
 
--[SPARQLMotion Scripts](sparqlmotion-scripts)
+-[SPARQLMotion Scripts](#sparqlmotion-scripts)
 
-   -[triplestoreOperations:XMLInsert](triplestoreoperationsxmlinsert)
+  -[triplestoreOperations:XMLInsert](#triplestoreoperationsxmlinsert)
 
-   -[triplestoreOperations:SelectByEventID](triplestoreoperationsselectbyeventid)
+  -[triplestoreOperations:SelectByEventID](#triplestoreoperationsselectbyeventid)
 
--[Postman Tool](postman-tool)
+-[Postman Tool](#postman-tool)
 
--[References](references)
+-[References](#references)
 
 
 # Technology
