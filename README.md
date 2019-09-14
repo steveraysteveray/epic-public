@@ -1,6 +1,8 @@
 
 # How to Get Started with EPIC Semantic Modeling
 
+Note: This file was generated from some excellent documentation written by Dimitris Kiritsis while he was a graduate student at CMU. However, some of the functions documented may have changed slightly from the time this was written.
+
 # Table of Contents
 
 - [Project Structure](#project-structure)
@@ -11,7 +13,7 @@
 
 - [Technical Documentation](#technical-documentation)
 
-- [Project Structure](#project-structure)
+- [Project File Structure](#project-file-structure)
 
 - [OpenADR : Generate Ontology Schema](#openadr--generate-ontology-schema)
 
@@ -37,7 +39,7 @@
 
 - [References](#references)
 
-# Project Structure
+# Project File Structure
 
 - SemanticArchive, SemanticVocab: Archival and current (respectively) database directories, not intended for direct editing.
 
@@ -61,7 +63,7 @@
 
 # Technology
 
-We used an Eclipse based semantic development environment called TopBraid Composer Maestro Edition (_TBC-ME_) from TopQuadrant. Version: 5.2.2 - JAVA version 1.8.0_121. This IDE allowed us to easily create SPARQLMotion scripts to define web service endpoints and interact with the Triple Store.
+We used an Eclipse based semantic development environment called TopBraid Composer Maestro Edition (_TBC-ME_) from TopQuadrant. Version: 6.1 - JAVA version 1.8.0_121. This IDE allowed us to easily create SPARQLMotion scripts to define web service endpoints and interact with the Triple Store.
 
 
 # Recommended Reading
