@@ -85,7 +85,7 @@ By enabling the last option, TBC-ME Import Tool will automatically convert any O
 After a successful conversion, you should see the following turtle (.ttl) files :  \
 
 
-![alt_text](..images/Semantic-Modeling2.png "image_tooltip")
+![alt_text](../images/Semantic-Modeling2.png "image_tooltip")
 
 
 _Figure 3: OpenADR Ontology using “Import XSD Schema Files”_
