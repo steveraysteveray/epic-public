@@ -11,7 +11,7 @@ Team members (CMU): Ankit Jain, Rajat Pandey, Dimitris Tzannetos, Prabhu Saitu
 
 # Understanding the EPIC Semantic Modeling Software
 
-Note: This README file was generated from some excellent documentation written by Dimitris Tzannetos while he was a graduate student at CMU. However, some of the functions documented may have changed slightly from the time this was written.
+Note: This README file was generated from some excellent documentation written by Dimitris Tzannetos while he was a graduate student at CMU. However, some of the functions documented may have changed slightly from the time his document was written.
 
 # Table of Contents
 
