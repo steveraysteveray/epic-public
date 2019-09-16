@@ -75,6 +75,8 @@ Note: This README file was generated from some excellent documentation written b
 
 We used an Eclipse based semantic development environment called TopBraid Composer Maestro Edition (_TBC-ME_) from TopQuadrant. Version: 6.1 - JAVA version 1.8.0_121. This IDE allowed us to easily create SPARQLMotion scripts to define web service endpoints and interact with the Triple Store.
 
+To install this software, import each of the three folders (SemanticModels, SemanticVocab, SemanticArchive) as projects in the TopBraid development environment.
+
 
 # Recommended Reading
 
