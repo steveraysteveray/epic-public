@@ -25,7 +25,15 @@ Note: This README file was generated from some excellent documentation written b
 
 - [Directory Structure](#directory-structure)
 
-- [OpenADR : Generate Ontology Schema](#openadr--generate-ontology-schema)
+- [SPARQLMotion Scripts](#sparqlmotion-scripts)
+
+  - [triplestoreOperations:XMLInsert](#triplestoreoperationsxmlinsert)
+
+  - [triplestoreOperations:SelectByEventID](#triplestoreoperationsselectbyeventid)
+
+- [Postman Tool](#postman-tool)
+
+- [Appendix - OpenADR : Generate Ontology Schema](#openadr--generate-ontology-schema)
 
 - [Semantic XML](#semantic-xml)
 
@@ -38,14 +46,6 @@ Note: This README file was generated from some excellent documentation written b
   - [EPIC to OpenADR Mapping](#epic-to-openadr-mapping)
 
   - [PostReverseMappingFix](#postreversemappingfix)
-
-- [SPARQLMotion Scripts](#sparqlmotion-scripts)
-
-  - [triplestoreOperations:XMLInsert](#triplestoreoperationsxmlinsert)
-
-  - [triplestoreOperations:SelectByEventID](#triplestoreoperationsselectbyeventid)
-
-- [Postman Tool](#postman-tool)
 
 - [References](#references)
 
@@ -127,6 +127,319 @@ _Figure 1: EPIC Semantic Models  Project Structure_
 *   The **spin** directory contains RDF/SPIN files that define SPIN rules and SPINMap functions which are used during and after the mapping procedure. For more details, refer to [Namespace Functions](#namespace-functions).
 *   The **vocab** directory contains all the instance vocabularies that refer to the EPIC schema.
 
+
+## SPARQLMotion Scripts
+
+This section describes the functionality and provides an overview of the Basic Flow of the webservice endpoints that were created to interact with the Triple Store.
+
+
+### triplestoreOperations:XMLInsert
+
+Receiving incoming OpenADR messages from the grid involves several steps :
+
+
+
+1. Parsing the incoming XML message  
+2. Converting the XML into RDF triples according to the OpenADR schema
+3. Transforming the OpenADR triples into EPIC triples
+4. Storing the EPIC triples in the triplestore
+
+ 
+
+
+![alt_text](images/Semantic-Modeling20.png "image_tooltip")
+
+
+_Figure 12. SPARQLMotion script for receiving OpenADR XML messages_
+
+As described in the Section Namespace Functions, in order to be able to distinguish between instances of the same class, we used the convention of having unique namespaces (base URIs) among RDF triples that correspond to different OpenADR XML messages. To guarantee the uniqueness of each namespace, we append the timestamp of the arrival to the baseURI.
+
+
+
+Module “Create baseURI with Timestamp” creates the unique baseURI by appending the timestamp to the prefix URI specified by the user (_baseURIString_). 
+
+
+![alt_text](images/Semantic-Modeling21.png "image_tooltip")
+
+
+_Figure 13. Create unique namespace by appending timestamps_
+
+The module labeled “ConvertOpenADRXMLToRDF” receives the XML message as a string (_xmlStringInput_) and interprets the string according to the OpenADR schema imported as oadr-2.ttl. 
+
+
+![alt_text](images/Semantic-Modeling22.png "image_tooltip")
+
+
+_Figure 14. Convert XML to RDF via Semantic XML annotations_
+
+
+
+The RDF triples are then handed to the “Map OpenADR to EPIC instances” module that uses the oadr2epic.ttl SPINMap™ specification file to map the OpenADR triples to EPIC triples.(Fig. 15).
+
+
+![alt_text](images/Semantic-Modeling23.png "image_tooltip")
+
+
+_Figure 15. Configuration Panel of TopSPIN Module_
+
+The final step of the script involves inserting the newly defined instances into a named graph in our triplestore, which is accomplished using the “Update Named Graph” module, taking the name of the graph as an input argument (_graphURIString_). (Figure 16). \
+
+
+
+![alt_text](images/Semantic-Modeling24.png "image_tooltip")
+
+
+_Figure 16. Definition of Update  Query used to insert EPIC triples to named graph_
+
+
+<table>
+  <tr>
+   <td colspan="2" ><strong>triplestoreOperations:XMLInsert</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Description</strong></p>
+
+   </td>
+   <td>Inserts an OpenADR XML file into the Triple Store as RDF Triples corresponding to the EPIC Schema.
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>URL</strong></p>
+
+   </td>
+   <td>http://localhost:8083/tbl/sparqlmotion
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Method</strong></p>
+
+   </td>
+   <td>POST
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>URL/ Data Parameters</strong></p>
+
+   </td>
+   <td><strong>Required:</strong>
+<ul>
+
+<li> id = triplestoreOperations:XMLInsert
+
+<li> xmlStringInput = [the OpenADR XML represented as a String]
+
+<p>
+<strong>Optional:</strong>
+<ul>
+
+<li>graphURIString = [ the URI of the named graph represented as a String]
+
+<li>default value = http://siemens.com/vocab/kps/epic_instances
+<p>
+
+    NOTE : the URI and corresponding file must be already defined
+<ul>
+
+<li> baseURIString = [ the partial URI that will be created for the EPIC RDF triples represented as a String]
+<p>
+
+    default value = http://siemens.com/test
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Success Response</strong></p>
+
+   </td>
+   <td>Code: 200 OK
+<p>
+Content: The XML has been converted and mapped to EPIC RDF Triples into the graph: http://siemens.com/vocab/kps/epic_instances .
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Error Response</strong></p>
+
+   </td>
+   <td>Code: 500
+<p>
+Content: internal error has been reported by the SPARQLMotion engine of TopBraid Live Summary and Details shown
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Sample Call</strong></p>
+
+   </td>
+   <td>curl -X POST \
+<p>
+  http://localhost:8083/tbl/sparqlmotion \
+<p>
+  -H 'cache-control: no-cache' \
+<p>
+  -H 'content-type: application/x-www-form-urlencoded' \
+<p>
+  -d 'id=triplestoreOperations%3AXMLInsert&xmlStringInput= [encoded version of OpenADR message]
+<p>
+ 
+<p>
+A fully functional example can be found<a href="https://drive.google.com/open?id=0BxxrPPAUmmuGNlFiMVZqMjJQczg"> here</a>
+<p>
+ 
+   </td>
+  </tr>
+</table>
+
+
+
+### triplestoreOperations:SelectByEventID 
+
+Generating messages in any desired format, including OpenADR encoded as XML, is more or less a matter of doing the previous steps in reverse. Specifically:
+
+
+
+1. Retrieving the desired triples from the triplestore.
+2. Transforming the EPIC triples into the triples consistent with a target schema, such as OpenADR.
+3. Converting the triples into the desired encoding, such as XML.
+4. Sending the resulting encoded message.
+
+
+![alt_text](images/Semantic-Modeling25.png "image_tooltip")
+ \
+_Figure 17. SPARQLMotion script for reconstructing OpenADR XML messages_
+
+ \
+Module “Get EPIC Instances associated with EventID” performs a SPARQL CONSTRUCT (equivalent to an SQL SELECT) call to retrieve the triples associated with an EventID specified as an input argument. Note that using this approach it will be just as easy to generate XML-encoded OpenADR as it is to generate data according to any other schema, provided that schema definition file is available in OWL.
+
+
+![alt_text](images/Semantic-Modeling26.png "image_tooltip")
+
+
+_Figure 18. Definition of CONSTRUCT statement to Filter Instances that are associated with a specific EventID - (filter by namespace convention)_
+
+The “filtered” EPIC RDF triples are then handed to the “Map EPIC to OpenADR ” module that uses the epic2oadr.ttl SPINMap™ specification file to map the EPIC triples to OpenADR triples, following exactly the same procedure/options are described previously in “Map OpenADR to EPIC instances” module.
+
+The final step of the script involves converting the newly defined instances to XML which is accomplished using the “Convert RDF to OpenADR XML” module via Semantic XML (Figure 19).
+
+
+![alt_text](images/Semantic-Modeling27.png "image_tooltip")
+
+
+_Figure 19. Specify the sxml:Document to be used_
+
+
+<table>
+  <tr>
+   <td colspan="2" ><strong>triplestoreOperations:SelectByEventID</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Description</strong></p>
+
+   </td>
+   <td>Returns the OpenADR XML DistributeEvent message distinguished by the eventID attribute. 
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>URL</strong></p>
+
+   </td>
+   <td>http://localhost:8083/tbl/sparqlmotion?&id=triplestoreOperations:SelectByEventID&eventID=[eventID]
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Method</strong></p>
+
+   </td>
+   <td>GET
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>URL/ Data Parameters</strong></p>
+
+   </td>
+   <td><strong>Required:</strong>
+<ul>
+
+<li>  id = triplestoreOperations SelectByEventID
+
+<li> eventID = [the eventide associated with a specific Event]
+
+<p>
+ 
+<p>
+<strong>Optional:  NONE</strong>
+<p>
+ 
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Success Response</strong></p>
+
+   </td>
+   <td>Code: 200 OK
+<p>
+Content: The XML represented as a String in OpenADR format
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Error Response</strong></p>
+
+   </td>
+   <td>Code: 404 
+<p>
+Content: Problem accessing /tbl/sparqlmotion -> Check URL Parameters
+   </td>
+  </tr>
+  <tr>
+   <td><p style="text-align: right">
+<strong>Sample Call</strong></p>
+
+   </td>
+   <td>curl -X GET \
+<p>
+  'http://localhost:8083/tbl/sparqlmotion?=&id=triplestoreOperations%3ASelectByEventID&eventID=TEST_2' \
+<p>
+  -H 'cache-control: no-cache' \
+<p>
+  -H 'content-type: application/x-www-form-urlencoded' 
+<p>
+ 
+<p>
+A fully functional example can be found<a href="https://drive.google.com/open?id=0BxxrPPAUmmuGU0M5U1FxczNUTnM"> here</a>
+   </td>
+  </tr>
+</table>
+
+
+
+### Postman Tool
+
+Postman is a powerful HTTP client which provides a simple GUI to make requests to the RESTful APIs. It is strongly recommended to install Postman in order to test the web service endpoints from external tools rather than from within TBC-ME debug panel. For instructions on how to install the Chrome Extension, you can refer to this [video](https://www.youtube.com/watch?list=PLM-7VG-sgbtD8qBnGeQM5nvlpqB_ktaLZ&v=8veXJ9YGlFI).
+
+
+# Appendix
+
+As an example of how one integrates external standards, this section details how to import the OpenADR specification, map the contents to local classes, and translate messages from and to OpenADR-compliant XML.
 
 ## OpenADR : Generate Ontology Schema
 
@@ -508,313 +821,6 @@ As described earlier, Semantic XML introduces two annotation properties _sxml:el
 _Figure 11. SPIN rule to create the required sxml:Document instance_
 
 
-## SPARQLMotion Scripts
-
-This section describes the functionality and provides an overview of the Basic Flow of the webservice endpoints that were created to interact with the Triple Store.
-
-
-### triplestoreOperations:XMLInsert
-
-Receiving incoming OpenADR messages from the grid involves several steps :
-
-
-
-1. Parsing the incoming XML message  
-2. Converting the XML into RDF triples according to the OpenADR schema
-3. Transforming the OpenADR triples into EPIC triples
-4. Storing the EPIC triples in the triplestore
-
- 
-
-
-![alt_text](images/Semantic-Modeling20.png "image_tooltip")
-
-
-_Figure 12. SPARQLMotion script for receiving OpenADR XML messages_
-
-As described in the Section Namespace Functions, in order to be able to distinguish between instances of the same class, we used the convention of having unique namespaces (base URIs) among RDF triples that correspond to different OpenADR XML messages. To guarantee the uniqueness of each namespace, we append the timestamp of the arrival to the baseURI.
-
-
-
-Module “Create baseURI with Timestamp” creates the unique baseURI by appending the timestamp to the prefix URI specified by the user (_baseURIString_). 
-
-
-![alt_text](images/Semantic-Modeling21.png "image_tooltip")
-
-
-_Figure 13. Create unique namespace by appending timestamps_
-
-The module labeled “ConvertOpenADRXMLToRDF” receives the XML message as a string (_xmlStringInput_) and interprets the string according to the OpenADR schema imported as oadr-2.ttl. 
-
-
-![alt_text](images/Semantic-Modeling22.png "image_tooltip")
-
-
-_Figure 14. Convert XML to RDF via Semantic XML annotations_
-
-
-
-The RDF triples are then handed to the “Map OpenADR to EPIC instances” module that uses the oadr2epic.ttl SPINMap™ specification file to map the OpenADR triples to EPIC triples.(Fig. 15).
-
-
-![alt_text](images/Semantic-Modeling23.png "image_tooltip")
-
-
-_Figure 15. Configuration Panel of TopSPIN Module_
-
-The final step of the script involves inserting the newly defined instances into a named graph in our triplestore, which is accomplished using the “Update Named Graph” module, taking the name of the graph as an input argument (_graphURIString_). (Figure 16). \
-
-
-
-![alt_text](images/Semantic-Modeling24.png "image_tooltip")
-
-
-_Figure 16. Definition of Update  Query used to insert EPIC triples to named graph_
-
-
-<table>
-  <tr>
-   <td colspan="2" ><strong>triplestoreOperations:XMLInsert</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Description</strong></p>
-
-   </td>
-   <td>Inserts an OpenADR XML file into the Triple Store as RDF Triples corresponding to the EPIC Schema.
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>URL</strong></p>
-
-   </td>
-   <td>http://localhost:8083/tbl/sparqlmotion
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Method</strong></p>
-
-   </td>
-   <td>POST
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>URL/ Data Parameters</strong></p>
-
-   </td>
-   <td><strong>Required:</strong>
-<ul>
-
-<li> id = triplestoreOperations:XMLInsert
-
-<li> xmlStringInput = [the OpenADR XML represented as a String]
-
-<p>
-<strong>Optional:</strong>
-<ul>
-
-<li>graphURIString = [ the URI of the named graph represented as a String]
-
-<li>default value = http://siemens.com/vocab/kps/epic_instances
-<p>
-
-    NOTE : the URI and corresponding file must be already defined
-<ul>
-
-<li> baseURIString = [ the partial URI that will be created for the EPIC RDF triples represented as a String]
-<p>
-
-    default value = http://siemens.com/test
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Success Response</strong></p>
-
-   </td>
-   <td>Code: 200 OK
-<p>
-Content: The XML has been converted and mapped to EPIC RDF Triples into the graph: http://siemens.com/vocab/kps/epic_instances .
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Error Response</strong></p>
-
-   </td>
-   <td>Code: 500
-<p>
-Content: internal error has been reported by the SPARQLMotion engine of TopBraid Live Summary and Details shown
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Sample Call</strong></p>
-
-   </td>
-   <td>curl -X POST \
-<p>
-  http://localhost:8083/tbl/sparqlmotion \
-<p>
-  -H 'cache-control: no-cache' \
-<p>
-  -H 'content-type: application/x-www-form-urlencoded' \
-<p>
-  -d 'id=triplestoreOperations%3AXMLInsert&xmlStringInput= [encoded version of OpenADR message]
-<p>
- 
-<p>
-A fully functional example can be found<a href="https://drive.google.com/open?id=0BxxrPPAUmmuGNlFiMVZqMjJQczg"> here</a>
-<p>
- 
-   </td>
-  </tr>
-</table>
-
-
-
-### triplestoreOperations:SelectByEventID 
-
-Generating messages in any desired format, including OpenADR encoded as XML, is more or less a matter of doing the previous steps in reverse. Specifically:
-
-
-
-1. Retrieving the desired triples from the triplestore.
-2. Transforming the EPIC triples into the triples consistent with a target schema, such as OpenADR.
-3. Converting the triples into the desired encoding, such as XML.
-4. Sending the resulting encoded message.
-
-
-![alt_text](images/Semantic-Modeling25.png "image_tooltip")
- \
-_Figure 17. SPARQLMotion script for reconstructing OpenADR XML messages_
-
- \
-Module “Get EPIC Instances associated with EventID” performs a SPARQL CONSTRUCT (equivalent to an SQL SELECT) call to retrieve the triples associated with an EventID specified as an input argument. Note that using this approach it will be just as easy to generate XML-encoded OpenADR as it is to generate data according to any other schema, provided that schema definition file is available in OWL.
-
-
-![alt_text](images/Semantic-Modeling26.png "image_tooltip")
-
-
-_Figure 18. Definition of CONSTRUCT statement to Filter Instances that are associated with a specific EventID - (filter by namespace convention)_
-
-The “filtered” EPIC RDF triples are then handed to the “Map EPIC to OpenADR ” module that uses the epic2oadr.ttl SPINMap™ specification file to map the EPIC triples to OpenADR triples, following exactly the same procedure/options are described previously in “Map OpenADR to EPIC instances” module.
-
-The final step of the script involves converting the newly defined instances to XML which is accomplished using the “Convert RDF to OpenADR XML” module via Semantic XML (Figure 19).
-
-
-![alt_text](images/Semantic-Modeling27.png "image_tooltip")
-
-
-_Figure 19. Specify the sxml:Document to be used_
-
-
-<table>
-  <tr>
-   <td colspan="2" ><strong>triplestoreOperations:SelectByEventID</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Description</strong></p>
-
-   </td>
-   <td>Returns the OpenADR XML DistributeEvent message distinguished by the eventID attribute. 
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>URL</strong></p>
-
-   </td>
-   <td>http://localhost:8083/tbl/sparqlmotion?&id=triplestoreOperations:SelectByEventID&eventID=[eventID]
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Method</strong></p>
-
-   </td>
-   <td>GET
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>URL/ Data Parameters</strong></p>
-
-   </td>
-   <td><strong>Required:</strong>
-<ul>
-
-<li>  id = triplestoreOperations SelectByEventID
-
-<li> eventID = [the eventide associated with a specific Event]
-
-<p>
- 
-<p>
-<strong>Optional:  NONE</strong>
-<p>
- 
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Success Response</strong></p>
-
-   </td>
-   <td>Code: 200 OK
-<p>
-Content: The XML represented as a String in OpenADR format
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Error Response</strong></p>
-
-   </td>
-   <td>Code: 404 
-<p>
-Content: Problem accessing /tbl/sparqlmotion -> Check URL Parameters
-   </td>
-  </tr>
-  <tr>
-   <td><p style="text-align: right">
-<strong>Sample Call</strong></p>
-
-   </td>
-   <td>curl -X GET \
-<p>
-  'http://localhost:8083/tbl/sparqlmotion?=&id=triplestoreOperations%3ASelectByEventID&eventID=TEST_2' \
-<p>
-  -H 'cache-control: no-cache' \
-<p>
-  -H 'content-type: application/x-www-form-urlencoded' 
-<p>
- 
-<p>
-A fully functional example can be found<a href="https://drive.google.com/open?id=0BxxrPPAUmmuGU0M5U1FxczNUTnM"> here</a>
-   </td>
-  </tr>
-</table>
-
-
-
-### Postman Tool
-
-Postman is a powerful HTTP client which provides a simple GUI to make requests to the RESTful APIs. It is strongly recommended to install Postman in order to test the web service endpoints from external tools rather than from within TBC-ME debug panel. For instructions on how to install the Chrome Extension, you can refer to this [video](https://www.youtube.com/watch?list=PLM-7VG-sgbtD8qBnGeQM5nvlpqB_ktaLZ&v=8veXJ9YGlFI).
 
 
 # References
