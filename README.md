@@ -130,7 +130,7 @@ _Figure 1: EPIC Semantic Models  Project Structure_
 
 ## SPARQLMotion Scripts
 
-This section describes the functionality and provides an overview of the Basic Flow of the webservice endpoints that were created to interact with the Triple Store.
+This section describes the functionality and provides an overview of the Basic Flow of the webservice endpoints that were created to interact with the Triple Store. Again, the latest API calls are described in the Word document [API-calls.docx in this repository.](./API-calls.docx). The two API calls documented below are not the current ones, but the descriptions are included here as a tutorial on how the webservice calls are constructed.
 
 
 ### triplestoreOperations:XMLInsert
